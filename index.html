@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Own a Home — Owner Financing | Lonchando</title>
+<meta name="description" content="Own a home with owner financing. Locked price, a monthly payment close to rent, no bank needed."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- ════════════════════════════════════════════════════════════════════════
+     LONCHANDO PROPERTY PAGE
+     To list a different home, edit ONLY the CONFIG block near the bottom of
+     this file (look for  ▼▼▼ EDIT THIS  ). Don't touch anything else.
+     ════════════════════════════════════════════════════════════════════════ -->
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --paper:#fbf8f1;        /* warm page background        */
+  --card:#ffffff;          /* card surface                */
+  --ink:#1c1b17;           /* main text                   */
+  --ink-soft:#5a5750;      /* secondary text              */
+  --line:#e7e2d6;          /* hairlines                   */
+  --pine:#14532d;          /* deep brand green            */
+  --pine-deep:#0e3b20;
+  --lime:#c8f542;          /* Lonchando highlight (sparing)*/
+  --honey:#f5a623;         /* warm accent                 */
+  --honey-soft:#fff3df;
+  --go:#1f7a3d;            /* CTA green                   */
+  --go-hover:#196332;
+  --radius:18px;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:'DM Sans',system-ui,sans-serif;font-size:17px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:680px;margin:0 auto;padding:0 20px}
+
+/* ── TOP BAR ─────────────────────────────────────────────── */
+.topbar{padding:18px 0;display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.5px;color:var(--pine)}
+.eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);border:1px solid var(--line);padding:5px 10px;border-radius:999px;background:var(--card)}
+
+/* ── HERO ────────────────────────────────────────────────── */
+.hero{margin-top:6px}
+.hero-photo{
+  position:relative;width:100%;aspect-ratio:16/10;border-radius:var(--radius);
+  overflow:hidden;background:linear-gradient(135deg,#1c5234,#2e7d4f);
+  display:flex;align-items:center;justify-content:center;
+}
+.hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.hero-photo .fallback{opacity:.9}
+.status-tag{
+  position:absolute;top:14px;left:14px;z-index:2;
+  font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;
+  background:var(--lime);color:var(--pine-deep);padding:6px 11px;border-radius:999px;font-weight:500;
+}
+.headline{
+  font-family:'Bricolage Grotesque',sans-serif;font-weight:800;
+  font-size:clamp(30px,8vw,46px);line-height:1.05;letter-spacing:-1px;
+  margin:22px 0 8px;color:var(--ink);
+}
+.headline em{font-style:normal;color:var(--pine)}
+.subhead{font-size:18px;color:var(--ink-soft);max-width:32ch}
+
+/* ── DEAL STRIP ──────────────────────────────────────────── */
+.deal-strip{
+  display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;
+  background:var(--line);border:1px solid var(--line);border-radius:var(--radius);
+  overflow:hidden;margin:22px 0 8px;
+}
+.deal-cell{background:var(--card);padding:16px 14px;text-align:center}
+.deal-cell .num{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(20px,5.5vw,26px);color:var(--pine);line-height:1}
+.deal-cell .lab{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft);margin-top:7px}
+.deal-cell.hero-cell{background:var(--pine)}
+.deal-cell.hero-cell .num{color:#fff}
+.deal-cell.hero-cell .lab{color:#bfe6cb}
+
+/* ── CTA BUTTONS ─────────────────────────────────────────── */
+.cta-group{display:flex;gap:10px;margin:18px 0 6px;flex-wrap:wrap}
+.btn{
+  flex:1;min-width:150px;text-align:center;text-decoration:none;
+  font-family:'DM Sans',sans-serif;font-weight:600;font-size:17px;
+  padding:16px 18px;border-radius:14px;transition:transform .12s ease,background .15s ease;
+}
+.btn-primary{background:var(--go);color:#fff}
+.btn-primary:hover{background:var(--go-hover)}
+.btn-secondary{background:var(--card);color:var(--pine);border:1.5px solid var(--pine)}
+.btn-secondary:hover{background:#f0f6f1}
+.btn:active{transform:scale(.98)}
+.btn:focus-visible{outline:3px solid var(--honey);outline-offset:2px}
+.cta-note{font-family:'DM Mono',monospace;font-size:12px;color:var(--ink-soft);margin-top:4px}
+
+/* ── SECTIONS ────────────────────────────────────────────── */
+.section{margin-top:46px}
+.sec-label{
+  font-family:'DM Mono',monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--honey);margin-bottom:16px;display:flex;align-items:center;gap:10px;
+}
+.sec-label::after{content:'';flex:1;height:1px;background:var(--line)}
+.sec-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:28px;letter-spacing:-.5px;margin-bottom:6px}
+
+/* terms list */
+.terms{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.term-row{display:flex;justify-content:space-between;align-items:center;padding:15px 18px;border-bottom:1px solid var(--line);gap:16px}
+.term-row:last-child{border-bottom:none}
+.term-row .k{color:var(--ink-soft);font-size:15px}
+.term-row .v{font-family:'DM Mono',monospace;font-weight:500;font-size:17px;color:var(--ink);text-align:right}
+.term-row.big .v{font-size:20px;color:var(--pine);font-weight:500}
+
+/* steps */
+.steps{display:flex;flex-direction:column;gap:14px}
+.step{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.step .n{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;color:var(--lime);background:var(--pine);width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step .body h3{font-family:'DM Sans',sans-serif;font-weight:600;font-size:18px;margin-bottom:2px}
+.step .body p{font-size:15px;color:var(--ink-soft)}
+
+/* why cards */
+.why{display:grid;gap:12px}
+.why-card{background:var(--honey-soft);border:1px solid #f3e3c5;border-radius:14px;padding:18px}
+.why-card h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:18px;margin-bottom:4px;color:var(--pine)}
+.why-card p{font-size:15px;color:#6b5836}
+
+/* gallery */
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.gallery .tile{aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:#ece7da;display:flex;align-items:center;justify-content:center}
+.gallery .tile img{width:100%;height:100%;object-fit:cover;display:block}
+.gallery .ph{font-family:'DM Mono',monospace;font-size:11px;color:#a89f8a;letter-spacing:1px}
+
+/* closing CTA */
+.closer{margin-top:48px;background:var(--pine);border-radius:var(--radius);padding:34px 24px;text-align:center;color:#fff}
+.closer h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(24px,6vw,32px);letter-spacing:-.5px;margin-bottom:8px}
+.closer p{color:#cfe7d6;margin-bottom:20px}
+.closer .btn-primary{background:var(--lime);color:var(--pine-deep)}
+.closer .btn-primary:hover{background:#d7ff5f}
+.closer .btn-secondary{background:transparent;color:#fff;border-color:#4f8a64}
+.closer .btn-secondary:hover{background:rgba(255,255,255,.08)}
+
+/* footer */
+.foot{margin:40px 0 30px;text-align:center;color:var(--ink-soft);font-size:13px;line-height:1.7}
+.foot .fb{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:18px;color:var(--pine);letter-spacing:-.5px}
+/* <!-- COMPLIANCE: your RMLO / attorney's required disclosures go in the .foot block below before this page goes public --> */
+
+/* reveal motion */
+.reveal{opacity:0;transform:translateY(16px)}
+.reveal.in{opacity:1;transform:none;transition:opacity .6s ease,transform .6s ease}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+@media (min-width:560px){
+  body{font-size:18px}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="topbar">
+    <div class="brand">Lonchando</div>
+    <div class="eyebrow">Owner Financing</div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-photo">
+      <span class="status-tag" id="statusTag">Available</span>
+      <img id="heroImg" alt="" hidden>
+      <svg class="fallback" id="heroFallback" width="92" height="92" viewBox="0 0 24 24" fill="none" stroke="#bfe6cb" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9h14v-9"/><path d="M10 19v-5h4v5"/>
+      </svg>
+    </div>
+
+    <h1 class="headline" id="headline"></h1>
+    <p class="subhead" id="subhead"></p>
+
+    <div class="deal-strip">
+      <div class="deal-cell hero-cell"><div class="num" id="dMonthly"></div><div class="lab">per month</div></div>
+      <div class="deal-cell"><div class="num" id="dMoveIn"></div><div class="lab">to move in</div></div>
+      <div class="deal-cell"><div class="num" id="dPrice"></div><div class="lab">locked price</div></div>
+    </div>
+
+    <div class="cta-group">
+      <a class="btn btn-primary" id="ctaCall" href="#">Call to tour this home</a>
+      <a class="btn btn-secondary" id="ctaText" href="#">Text us</a>
+    </div>
+    <p class="cta-note" id="ctaNote"></p>
+  </section>
+
+  <!-- DEAL TERMS -->
+  <section class="section reveal">
+    <div class="sec-label">Here's the deal</div>
+    <h2 class="sec-title">Simple, honest numbers</h2>
+    <div class="terms" id="termsList"></div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section reveal">
+    <div class="sec-label">How it works</div>
+    <h2 class="sec-title">Owner financing, in 4 steps</h2>
+    <div class="steps">
+      <div class="step"><div class="n">01</div><div class="body"><h3>Tour the home</h3><p>Call or text us and we'll set up a time for you to walk through it.</p></div></div>
+      <div class="step"><div class="n">02</div><div class="body"><h3>Sign a simple agreement</h3><p>We finance it ourselves with a contract for deed — no bank, no mortgage application.</p></div></div>
+      <div class="step"><div class="n">03</div><div class="body"><h3>Get the keys</h3><p>Make your move-in payment and the home is yours to live in.</p></div></div>
+      <div class="step"><div class="n">04</div><div class="body"><h3>Build ownership</h3><p>Every monthly payment goes toward the home you're buying — at a price locked the day you sign.</p></div></div>
+    </div>
+  </section>
+
+  <!-- WHY DIFFERENT -->
+  <section class="section reveal">
+    <div class="sec-label">Why this is different</div>
+    <h2 class="sec-title">It's not renting</h2>
+    <div class="why">
+      <div class="why-card"><h3>You're buying, not renting</h3><p>Your name is on the agreement from day one. You're the homeowner.</p></div>
+      <div class="why-card"><h3>The price is locked</h3><p>It won't go up while you pay it down. What you agree to today is what you pay.</p></div>
+      <div class="why-card"><h3>A payment close to rent</h3><p>Own a home for about what you'd pay a landlord — without a bank approval in the way.</p></div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section reveal" id="gallerySection">
+    <div class="sec-label">Take a look</div>
+    <h2 class="sec-title">Inside the home</h2>
+    <div class="gallery" id="gallery"></div>
+  </section>
+
+  <!-- CLOSER -->
+  <section class="closer reveal">
+    <h2 id="closerTitle"></h2>
+    <p>Call or text and we'll set up a time to walk through it. No pressure, no bank.</p>
+    <div class="cta-group" style="max-width:400px;margin:0 auto">
+      <a class="btn btn-primary" id="ctaCall2" href="#">Call to tour</a>
+      <a class="btn btn-secondary" id="ctaText2" href="#">Text us</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="foot">
+    <div class="fb">Lonchando</div>
+    <p id="footLine"></p>
+    <!-- ▼ COMPLIANCE: paste the disclosures your RMLO / attorney gives you here, before this page is shared publicly. ▲ -->
+  </footer>
+
+</div>
+
+<script>
+/* ══════════════════════════════════════════════════════════════════════════
+   ▼▼▼ EDIT THIS — everything you change for a new home lives in CONFIG ▼▼▼
+   Put real values between the quotes. Leave a photo array empty ( [] ) and the
+   page shows tasteful placeholders until you add real photos.
+   ══════════════════════════════════════════════════════════════════════════ */
+const CONFIG = {
+  // --- who to contact (used by the Call / Text buttons) ---
+  phone: "5513586625",                 // digits only, no spaces or dashes
+  contactName: "Lonchando",            // shown in the small note under the buttons
+
+  // --- the home ---
+  city:  "St. Louis",
+  state: "MO",
+  beds:  3,
+  baths: 1,
+  sqft:  1100,
+  status: "Available",                 // "Available"  or  "Pending"
+
+  // --- the deal (what the buyer sees) ---
+  monthlyPayment: 950,                 // per month
+  moveIn:         4000,                // move-in / deposit
+  lockedPrice:    89900,               // locked purchase price
+  termText:       "30-year owner financing (contract for deed)",
+
+  // --- photos: paste image links OR filenames you upload to the same folder ---
+  heroPhoto: "",                       // e.g. "margaretta-front.jpg"  (leave "" for placeholder)
+  photos:    [],                       // e.g. ["kitchen.jpg","living.jpg","bed1.jpg","bath.jpg"]
+};
+/* ▲▲▲ EDIT THIS — nothing below needs to change ▲▲▲ */
+
+
+/* ---------- render (don't edit) ---------- */
+(function(){
+  const $ = id => document.getElementById(id);
+  const money = n => "$" + Number(n||0).toLocaleString();
+  const C = CONFIG;
+
+  // headline + subhead
+  $("headline").innerHTML = `Own a home in <em>${C.city}</em>.<br>No bank needed.`;
+  $("subhead").textContent = "Owner financing with a locked price and a monthly payment close to rent.";
+  $("closerTitle").textContent = "Want to see it in person?";
+  $("footLine").textContent = `Owner-financed homes in ${C.state}. Lonchando is not a bank or mortgage lender.`;
+
+  // status tag
+  $("statusTag").textContent = C.status || "Available";
+
+  // deal strip
+  $("dMonthly").textContent = money(C.monthlyPayment) ;
+  $("dMoveIn").textContent  = money(C.moveIn);
+  $("dPrice").textContent   = money(C.lockedPrice);
+
+  // hero photo
+  if (C.heroPhoto){
+    const img = $("heroImg");
+    img.src = C.heroPhoto;
+    img.alt = `Home for sale in ${C.city}, ${C.state}`;
+    img.hidden = false;
+    img.onload = ()=>{ $("heroFallback").style.display = "none"; };
+    img.onerror = ()=>{ img.hidden = true; };
+  }
+
+  // terms list
+  const terms = [
+    ["Your monthly payment", money(C.monthlyPayment), true],
+    ["Move-in payment", money(C.moveIn), false],
+    ["Locked purchase price", money(C.lockedPrice), false],
+    ["Financing", C.termText, false],
+    ["The home", `${C.beds} bd · ${C.baths} ba${C.sqft?` · ${Number(C.sqft).toLocaleString()} sqft`:""}`, false],
+    ["Location", `${C.city}, ${C.state}`, false],
+  ];
+  $("termsList").innerHTML = terms.map(([k,v,big])=>
+    `<div class="term-row${big?" big":""}"><span class="k">${k}</span><span class="v">${v}</span></div>`
+  ).join("");
+
+  // gallery
+  const g = $("gallery");
+  if (C.photos && C.photos.length){
+    g.innerHTML = C.photos.map(src=>
+      `<div class="tile"><img src="${src}" alt="Photo of the home" loading="lazy" onerror="this.parentNode.innerHTML='<span class=&quot;ph&quot;>Photo</span>'"></div>`
+    ).join("");
+  } else {
+    g.innerHTML = Array.from({length:4}).map(()=>
+      `<div class="tile"><span class="ph">Photo coming soon</span></div>`
+    ).join("");
+  }
+
+  // contact buttons
+  const tel = (C.phone||"").replace(/[^\d+]/g,"");
+  const prettyPhone = tel.length===10 ? `(${tel.slice(0,3)}) ${tel.slice(3,6)}-${tel.slice(6)}` : C.phone;
+  const smsBody = encodeURIComponent(`Hi ${C.contactName}, I saw the home in ${C.city} and I'd like to tour it.`);
+  ["ctaCall","ctaCall2"].forEach(id=>$(id).href = `tel:${tel}`);
+  ["ctaText","ctaText2"].forEach(id=>$(id).href = `sms:${tel}?&body=${smsBody}`);
+  $("ctaNote").textContent = `Call or text ${prettyPhone} — we usually reply same day.`;
+
+  // scroll reveal (respects reduced-motion via CSS)
+  if ("IntersectionObserver" in window){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
+    },{threshold:.12});
+    document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+  } else {
+    document.querySelectorAll(".reveal").forEach(el=>el.classList.add("in"));
+  }
+})();
+</script>
+</body>
+</html>

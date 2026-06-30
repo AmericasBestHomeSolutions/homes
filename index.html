@@ -299,7 +299,8 @@ const CONFIG = {
   // --- who to contact (used by the Call / Text buttons) ---
   phone: "5513586625",                 // digits only, no spaces or dashes
   contactName: "Lonchando",            // shown in the small note under the buttons
-  formspreeId: "xzdlakbq",             // the code from your Formspree form's endpoint (lead form sends here)
+  formspreeId: "xzdlakbq",             // the code from your Formspree form's endpoint (emails you each lead)
+  makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",  // Make.com webhook → saves lead to Notion CRM
 
   // --- the home ---
   city:  "St. Louis",
@@ -385,32 +386,39 @@ const CONFIG = {
   ["ctaText","ctaText2"].forEach(id=>$(id).href = `sms:${tel}?&body=${smsBody}`);
   $("ctaNote").textContent = `Call or text ${prettyPhone} — we usually reply same day.`;
 
-  // lead form → Formspree
+  // lead form → Formspree (email) + Make (Notion CRM)
   (function(){
     const form = $("leadForm"), note = $("lfNote"), btn = $("lfSubmit");
     const section = $("leadSection");
     const id = (C.formspreeId||"").trim();
-    if (id && id !== "PASTE_YOUR_ID_HERE") {
-      note.textContent = "We usually reply same day.";
-    } else {
-      note.textContent = "⚠ Form not connected yet — add your Formspree ID in CONFIG.";
-    }
+    const hook = (C.makeWebhook||"").trim();
+    note.textContent = (id || hook) ? "We usually reply same day." :
+      "⚠ Form not connected yet — add a Formspree ID or Make webhook in CONFIG.";
+
     form.addEventListener("submit", async (e)=>{
       e.preventDefault();
-      if (!id || id === "PASTE_YOUR_ID_HERE") {
-        note.textContent = "⚠ Form not connected yet — add your Formspree ID in CONFIG.";
+      if (!id && !hook) {
+        note.textContent = "⚠ Form not connected yet — add a Formspree ID or Make webhook in CONFIG.";
         return;
       }
       btn.disabled = true; btn.textContent = "Sending…";
-      try {
-        const res = await fetch(`https://formspree.io/f/${id}`, {
-          method: "POST",
-          headers: { "Accept": "application/json" },
-          body: new FormData(form)
-        });
-        if (res.ok) { section.classList.add("sent"); }
-        else { throw new Error("bad response"); }
-      } catch (err) {
+
+      // gather the lead, plus which home and where it came from
+      const data = new FormData(form);
+      data.append("property", `${C.city}, ${C.state}`);
+      data.append("source", "Property page");
+
+      // send to both destinations; success if at least one accepts the lead
+      const targets = [];
+      if (id)   targets.push(fetch(`https://formspree.io/f/${id}`, { method:"POST", headers:{ "Accept":"application/json" }, body:data }));
+      if (hook) targets.push(fetch(hook, { method:"POST", body:data }));
+
+      const results = await Promise.allSettled(targets);
+      const ok = results.some(r => r.status === "fulfilled" && r.value.ok);
+
+      if (ok) {
+        section.classList.add("sent");
+      } else {
         btn.disabled = false; btn.textContent = "Send my info";
         note.textContent = "Something went wrong — please call or text us instead.";
       }

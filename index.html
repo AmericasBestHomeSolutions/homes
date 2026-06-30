@@ -132,6 +132,20 @@ body{
 .gallery .ph{font-family:'DM Mono',monospace;font-size:11px;color:#a89f8a;letter-spacing:1px}
 
 /* closing CTA */
+.lead{margin-top:48px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px 22px;text-align:center}
+.lead h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(22px,5.5vw,28px);letter-spacing:-.5px;color:var(--pine);margin-bottom:6px}
+.lead p.sub{color:var(--ink-soft);margin-bottom:20px;max-width:38ch;margin-left:auto;margin-right:auto}
+.lead form{max-width:420px;margin:0 auto;display:flex;flex-direction:column;gap:12px;text-align:left}
+.lead label{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:-6px}
+.lead input,.lead select{font-family:inherit;font-size:16px;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);border-radius:12px;padding:13px 14px;width:100%}
+.lead input:focus,.lead select:focus{outline:none;border-color:var(--pine)}
+.lead .btn-primary{margin-top:6px;cursor:pointer;border:none}
+.lead .form-note{font-family:'DM Mono',monospace;font-size:11px;color:var(--ink-soft);margin-top:2px}
+.lead .thanks{display:none;padding:18px 8px}
+.lead .thanks h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;color:var(--pine);margin-bottom:6px}
+.lead .thanks p{color:var(--ink-soft)}
+.lead.sent form{display:none}
+.lead.sent .thanks{display:block}
 .closer{margin-top:48px;background:var(--pine);border-radius:var(--radius);padding:34px 24px;text-align:center;color:#fff}
 .closer h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(24px,6vw,32px);letter-spacing:-.5px;margin-bottom:8px}
 .closer p{color:#cfe7d6;margin-bottom:20px}
@@ -230,6 +244,33 @@ body{
   </section>
 
   <!-- CLOSER -->
+  <!-- LEAD FORM -->
+  <section class="lead reveal" id="leadSection">
+    <h2>Interested? Let's talk.</h2>
+    <p class="sub">Leave your info and we'll reach out to set up a tour. No pressure, no bank.</p>
+    <form id="leadForm">
+      <label for="lfName">Name</label>
+      <input id="lfName" name="name" type="text" autocomplete="name" required>
+      <label for="lfPhone">Phone</label>
+      <input id="lfPhone" name="phone" type="tel" autocomplete="tel" required>
+      <label for="lfEmail">Email</label>
+      <input id="lfEmail" name="email" type="email" autocomplete="email" required>
+      <label for="lfMoveIn">How soon are you looking to move in?</label>
+      <select id="lfMoveIn" name="move_in" required>
+        <option value="" disabled selected>Choose one…</option>
+        <option value="ASAP">As soon as possible</option>
+        <option value="1-3 months">1–3 months</option>
+        <option value="Just looking">Just looking for now</option>
+      </select>
+      <button type="submit" class="btn btn-primary" id="lfSubmit">Send my info</button>
+      <p class="form-note" id="lfNote"></p>
+    </form>
+    <div class="thanks">
+      <h3>Got it — thank you!</h3>
+      <p>We'll reach out shortly. In the meantime, feel free to call or text us below.</p>
+    </div>
+  </section>
+
   <section class="closer reveal">
     <h2 id="closerTitle"></h2>
     <p>Call or text and we'll set up a time to walk through it. No pressure, no bank.</p>
@@ -258,6 +299,7 @@ const CONFIG = {
   // --- who to contact (used by the Call / Text buttons) ---
   phone: "5513586625",                 // digits only, no spaces or dashes
   contactName: "Lonchando",            // shown in the small note under the buttons
+  formspreeId: "xzdlakbq",             // the code from your Formspree form's endpoint (lead form sends here)
 
   // --- the home ---
   city:  "St. Louis",
@@ -342,6 +384,38 @@ const CONFIG = {
   ["ctaCall","ctaCall2"].forEach(id=>$(id).href = `tel:${tel}`);
   ["ctaText","ctaText2"].forEach(id=>$(id).href = `sms:${tel}?&body=${smsBody}`);
   $("ctaNote").textContent = `Call or text ${prettyPhone} — we usually reply same day.`;
+
+  // lead form → Formspree
+  (function(){
+    const form = $("leadForm"), note = $("lfNote"), btn = $("lfSubmit");
+    const section = $("leadSection");
+    const id = (C.formspreeId||"").trim();
+    if (id && id !== "PASTE_YOUR_ID_HERE") {
+      note.textContent = "We usually reply same day.";
+    } else {
+      note.textContent = "⚠ Form not connected yet — add your Formspree ID in CONFIG.";
+    }
+    form.addEventListener("submit", async (e)=>{
+      e.preventDefault();
+      if (!id || id === "PASTE_YOUR_ID_HERE") {
+        note.textContent = "⚠ Form not connected yet — add your Formspree ID in CONFIG.";
+        return;
+      }
+      btn.disabled = true; btn.textContent = "Sending…";
+      try {
+        const res = await fetch(`https://formspree.io/f/${id}`, {
+          method: "POST",
+          headers: { "Accept": "application/json" },
+          body: new FormData(form)
+        });
+        if (res.ok) { section.classList.add("sent"); }
+        else { throw new Error("bad response"); }
+      } catch (err) {
+        btn.disabled = false; btn.textContent = "Send my info";
+        note.textContent = "Something went wrong — please call or text us instead.";
+      }
+    });
+  })();
 
   // scroll reveal (respects reduced-motion via CSS)
   if ("IntersectionObserver" in window){

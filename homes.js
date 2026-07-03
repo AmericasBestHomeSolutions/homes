@@ -13,7 +13,7 @@
 
 /* --- who to contact — set ONCE, used by every home's page --- */
 const CONTACT = {
-  phone: "5513586625",                 // digits only, no spaces or dashes
+  phone: "5515509906",                 // digits only, no spaces or dashes — Quo business number
   contactName: "Lonchando",            // shown in the small note under the buttons
   formspreeId: "xzdlakbq",             // Formspree form code (emails you each lead)
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",  // Make.com webhook → saves lead to Notion CRM

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>How Owner Financing Works | Lonchando</title>
+<meta name="description" content="How owner financing works, in plain language — the process, what you get, and what's expected of you as the homeowner."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- ════════════════════════════════════════════════════════════════════════
+     LONCHANDO — HOW OWNER FINANCING WORKS (explainer page)
+     Plain-language page + FAQ. Video slot near the top is ready — when you have
+     a video, paste its share/embed link into the VIDEO block in the script at
+     the bottom (look for  ▼▼▼ VIDEO  ). Until then it shows a tasteful placeholder.
+     ════════════════════════════════════════════════════════════════════════ -->
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --paper:#fbf8f1;
+  --card:#ffffff;
+  --ink:#1c1b17;
+  --ink-soft:#5a5750;
+  --line:#e7e2d6;
+  --pine:#14532d;
+  --pine-deep:#0e3b20;
+  --lime:#c8f542;
+  --honey:#f5a623;
+  --honey-soft:#fff3df;
+  --go:#1f7a3d;
+  --go-hover:#196332;
+  --radius:18px;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:'DM Sans',system-ui,sans-serif;font-size:17px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:680px;margin:0 auto;padding:0 20px}
+
+/* ── TOP BAR ─────────────────────────────────────────────── */
+.topbar{padding:18px 0;display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.5px;color:var(--pine);text-decoration:none}
+.eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);border:1px solid var(--line);padding:5px 10px;border-radius:999px;background:var(--card)}
+
+/* ── INTRO ───────────────────────────────────────────────── */
+.headline{
+  font-family:'Bricolage Grotesque',sans-serif;font-weight:800;
+  font-size:clamp(30px,8vw,46px);line-height:1.05;letter-spacing:-1px;
+  margin:14px 0 8px;color:var(--ink);
+}
+.headline em{font-style:normal;color:var(--pine)}
+.subhead{font-size:18px;color:var(--ink-soft);max-width:34ch}
+
+/* ── VIDEO ───────────────────────────────────────────────── */
+.video-wrap{
+  position:relative;width:100%;aspect-ratio:16/9;border-radius:var(--radius);
+  overflow:hidden;margin:24px 0 8px;background:linear-gradient(135deg,#1c5234,#2e7d4f);
+  display:flex;align-items:center;justify-content:center;
+}
+.video-wrap iframe{width:100%;height:100%;border:0;display:block}
+.video-ph{text-align:center;color:#dff2e5;padding:20px}
+.video-ph .play{
+  width:64px;height:64px;border-radius:999px;background:rgba(255,255,255,.16);
+  display:flex;align-items:center;justify-content:center;margin:0 auto 12px;
+}
+.video-ph .lab{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:1px;text-transform:uppercase;opacity:.9}
+
+/* ── SECTIONS ────────────────────────────────────────────── */
+.section{margin-top:44px}
+.sec-label{
+  font-family:'DM Mono',monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase;
+  color:var(--honey);margin-bottom:16px;display:flex;align-items:center;gap:10px;
+}
+.sec-label::after{content:'';flex:1;height:1px;background:var(--line)}
+.sec-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:28px;letter-spacing:-.5px;margin-bottom:10px}
+.lede{color:var(--ink-soft);font-size:17px;margin-bottom:6px}
+
+/* steps */
+.steps{display:flex;flex-direction:column;gap:14px}
+.step{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.step .n{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;color:var(--lime);background:var(--pine);width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step .body h3{font-family:'DM Sans',sans-serif;font-weight:600;font-size:18px;margin-bottom:2px}
+.step .body p{font-size:15px;color:var(--ink-soft)}
+
+/* benefit cards */
+.cards2{display:grid;gap:12px}
+.good-card{background:var(--honey-soft);border:1px solid #f3e3c5;border-radius:14px;padding:18px}
+.good-card h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:18px;margin-bottom:4px;color:var(--pine)}
+.good-card p{font-size:15px;color:#6b5836}
+
+/* responsibility list */
+.resp{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.resp .row{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;border-bottom:1px solid var(--line)}
+.resp .row:last-child{border-bottom:none}
+.resp .ic{flex-shrink:0;width:26px;height:26px;border-radius:8px;background:var(--pine);display:flex;align-items:center;justify-content:center;margin-top:1px}
+.resp .row h3{font-family:'DM Sans',sans-serif;font-weight:600;font-size:16px;margin-bottom:1px}
+.resp .row p{font-size:14px;color:var(--ink-soft)}
+.resp-note{font-family:'DM Mono',monospace;font-size:12px;color:var(--ink-soft);margin-top:12px;text-align:center}
+
+/* FAQ (native accordion, no JS) */
+.faq{display:flex;flex-direction:column;gap:10px}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.faq summary{
+  list-style:none;cursor:pointer;padding:16px 18px;font-weight:600;font-size:17px;color:var(--ink);
+  display:flex;justify-content:space-between;align-items:center;gap:12px;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:22px;color:var(--pine);flex-shrink:0;transition:transform .15s ease}
+.faq details[open] summary::after{content:'–'}
+.faq details[open] summary{color:var(--pine)}
+.faq .ans{padding:0 18px 18px;color:var(--ink-soft);font-size:15px}
+
+/* CTA buttons */
+.cta-group{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.btn{
+  flex:1;min-width:150px;text-align:center;text-decoration:none;
+  font-family:'DM Sans',sans-serif;font-weight:600;font-size:17px;
+  padding:16px 18px;border-radius:14px;transition:transform .12s ease,background .15s ease;
+}
+.btn:active{transform:scale(.98)}
+.btn:focus-visible{outline:3px solid var(--honey);outline-offset:2px}
+
+.closer{margin-top:48px;background:var(--pine);border-radius:var(--radius);padding:34px 24px;text-align:center;color:#fff}
+.closer h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(24px,6vw,32px);letter-spacing:-.5px;margin-bottom:8px}
+.closer p{color:#cfe7d6;margin-bottom:20px}
+.closer .btn-primary{background:var(--lime);color:var(--pine-deep)}
+.closer .btn-primary:hover{background:#d7ff5f}
+.closer .btn-secondary{background:transparent;color:#fff;border:1.5px solid #4f8a64}
+.closer .btn-secondary:hover{background:rgba(255,255,255,.08)}
+
+/* footer */
+.foot{margin:40px 0 30px;text-align:center;color:var(--ink-soft);font-size:13px;line-height:1.7}
+.foot .fb{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:18px;color:var(--pine);letter-spacing:-.5px}
+/* <!-- COMPLIANCE: your RMLO / attorney's required disclosures go in the .foot block below before this page goes public --> */
+
+/* reveal motion */
+.reveal{opacity:0;transform:translateY(16px)}
+.reveal.in{opacity:1;transform:none;transition:opacity .6s ease,transform .6s ease}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+@media (min-width:560px){ body{font-size:18px} }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="topbar">
+    <a class="brand" href="./">Lonchando</a>
+    <div class="eyebrow">Owner Financing</div>
+  </header>
+
+  <!-- INTRO -->
+  <h1 class="headline">How it works, <em>in plain English.</em></h1>
+  <p class="subhead">Owner financing lets you own a home without a bank. Here's exactly how it works — and what it means to be the homeowner.</p>
+
+  <!-- VIDEO -->
+  <div class="video-wrap" id="videoWrap">
+    <div class="video-ph" id="videoPh">
+      <div class="play">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="#dff2e5" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+      </div>
+      <div class="lab">Video walkthrough coming soon</div>
+    </div>
+  </div>
+
+  <!-- WHAT IT IS -->
+  <section class="section reveal">
+    <div class="sec-label">The short version</div>
+    <h2 class="sec-title">You're buying — not renting</h2>
+    <p class="lede">With owner financing, <strong>we</strong> are the bank. Instead of you going to get a mortgage, we finance the home to you directly with a simple written agreement. You move in as the buyer, you make a monthly payment, and that payment goes toward owning the home — at a price locked the day you sign. No bank approval standing in the way.</p>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section reveal">
+    <div class="sec-label">Step by step</div>
+    <h2 class="sec-title">From first call to keys</h2>
+    <div class="steps">
+      <div class="step"><div class="n">01</div><div class="body"><h3>Reach out & tour the home</h3><p>Call or text us about a home you like and we'll set up a time to walk through it together.</p></div></div>
+      <div class="step"><div class="n">02</div><div class="body"><h3>Agree on the numbers</h3><p>We go over the move-in payment, the monthly payment, and the locked price — all in plain language, no surprises.</p></div></div>
+      <div class="step"><div class="n">03</div><div class="body"><h3>Sign a simple agreement</h3><p>We finance it ourselves with a contract for deed. No bank, no mortgage application, no long approval process.</p></div></div>
+      <div class="step"><div class="n">04</div><div class="body"><h3>Get the keys & move in</h3><p>Make your move-in payment and the home is yours to live in from day one.</p></div></div>
+      <div class="step"><div class="n">05</div><div class="body"><h3>Build ownership every month</h3><p>Each monthly payment goes toward the home you're buying, at the price you locked in when you signed.</p></div></div>
+    </div>
+  </section>
+
+  <!-- WHAT YOU GET -->
+  <section class="section reveal">
+    <div class="sec-label">What you get</div>
+    <h2 class="sec-title">Why people choose this</h2>
+    <div class="cards2">
+      <div class="good-card"><h3>You own from day one</h3><p>Your name is on the agreement the day you sign. You're the homeowner, not a tenant.</p></div>
+      <div class="good-card"><h3>The price is locked</h3><p>It won't go up while you pay it down. What you agree to today is what you pay.</p></div>
+      <div class="good-card"><h3>A payment close to rent</h3><p>Own a home for about what you'd pay a landlord — and it builds toward something that's yours.</p></div>
+      <div class="good-card"><h3>No bank in the way</h3><p>No mortgage application and no bank approval deciding whether you get a home.</p></div>
+    </div>
+  </section>
+
+  <!-- RESPONSIBILITIES -->
+  <section class="section reveal">
+    <div class="sec-label">The honest part</div>
+    <h2 class="sec-title">What's expected of you</h2>
+    <p class="lede">Owning is different from renting — in the good ways above, and in the responsibilities below. We want you to know exactly what you're stepping into, so it works out for you.</p>
+    <div class="resp" style="margin-top:14px">
+      <div class="row">
+        <span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c8f542" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <div><h3>Pay on time, every month</h3><p>Your monthly payment keeps your agreement in good standing and builds your ownership.</p></div>
+      </div>
+      <div class="row">
+        <span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c8f542" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <div><h3>Property taxes & insurance</h3><p>As the homeowner, these are yours to keep current. We'll explain how it's handled before you sign.</p></div>
+      </div>
+      <div class="row">
+        <span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c8f542" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <div><h3>Upkeep & repairs</h3><p>It's your home, so the maintenance is yours too — there's no landlord to call. Many people love this part; it's your place.</p></div>
+      </div>
+      <div class="row">
+        <span class="ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c8f542" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+        <div><h3>Treat it like your own</h3><p>Because it is. Care for it the way you'd care for anything you're building toward owning outright.</p></div>
+      </div>
+    </div>
+    <p class="resp-note">Not sure if this is right for you? That's exactly what a quick call is for.</p>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section reveal">
+    <div class="sec-label">Questions people ask</div>
+    <h2 class="sec-title">Straight answers</h2>
+    <div class="faq">
+      <details>
+        <summary>Do I need good credit or a bank?</summary>
+        <div class="ans">No bank and no mortgage application. Because we finance the home ourselves, this isn't a bank credit approval. Call us and we'll talk through your situation honestly.</div>
+      </details>
+      <details>
+        <summary>Is this the same as renting?</summary>
+        <div class="ans">No. When you rent, the money is gone and the home stays the landlord's. Here, you're the buyer from day one and every payment goes toward owning the home at a locked price.</div>
+      </details>
+      <details>
+        <summary>What do I pay to move in?</summary>
+        <div class="ans">Each home lists its move-in payment and monthly payment right on its page. There are no hidden numbers — we go over all of it with you before anything is signed.</div>
+      </details>
+      <details>
+        <summary>What happens if I miss a payment?</summary>
+        <div class="ans">Life happens — talk to us early if things get tight. Your written agreement spells out exactly how payments work, and we'll walk through every line with you before you sign so there are no surprises.</div>
+      </details>
+      <details>
+        <summary>Can I paint, fix up, or improve the home?</summary>
+        <div class="ans">Yes — it's your home. Many buyers love making it their own. We'll cover any specifics in your agreement.</div>
+      </details>
+      <details>
+        <summary>How is this different from a bank mortgage?</summary>
+        <div class="ans">A mortgage means a bank decides if you qualify, then loans you the money. Here we skip the bank entirely and finance it to you directly with a simple contract for deed — usually faster and with far less paperwork.</div>
+      </details>
+    </div>
+  </section>
+
+  <!-- CLOSER -->
+  <section class="closer reveal">
+    <h2>Ready to find your home?</h2>
+    <p>Browse our available homes, or call and tell us what you're looking for.</p>
+    <div class="cta-group" style="max-width:400px;margin:0 auto">
+      <a class="btn btn-primary" href="./">See available homes</a>
+      <a class="btn btn-secondary" id="ctaCall" href="#">Call or text us</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="foot">
+    <div class="fb">Lonchando</div>
+    <p>Owner-financed homes. Lonchando is not a bank or mortgage lender.</p>
+    <!-- ▼ COMPLIANCE: paste the disclosures your RMLO / attorney gives you here, before this page is shared publicly. ▲ -->
+  </footer>
+
+</div>
+
+<script src="homes.js"></script>
+<script>
+/* ══════════════════════════════════════════════════════════════════════════
+   ▼▼▼ VIDEO — when you have an explainer video, paste its EMBED link here.
+   Examples:
+     YouTube  → "https://www.youtube.com/embed/XXXXXXXXXXX"
+     Vimeo    → "https://player.vimeo.com/video/XXXXXXXXX"
+   Leave it as ""  to keep showing the "coming soon" placeholder.
+   ══════════════════════════════════════════════════════════════════════════ */
+const VIDEO_EMBED_URL = "";
+/* ▲▲▲ nothing else needs editing ▲▲▲ */
+
+(function(){
+  const $ = id => document.getElementById(id);
+
+  // video: show the real embed if a link is set, otherwise keep the placeholder
+  if (VIDEO_EMBED_URL && VIDEO_EMBED_URL.trim()){
+    const wrap = $("videoWrap");
+    wrap.innerHTML = `<iframe src="${VIDEO_EMBED_URL.trim()}" title="How owner financing works" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>`;
+  }
+
+  // contact button — reuses the shared CONTACT settings from homes.js
+  if (typeof CONTACT !== "undefined"){
+    const tel = (CONTACT.phone||"").replace(/[^\d+]/g,"");
+    const smsBody = encodeURIComponent(`Hi ${CONTACT.contactName}, I have a question about how owner financing works.`);
+    $("ctaCall").href = `sms:${tel}?&body=${smsBody}`;
+    $("ctaCall").addEventListener("click", ()=>{}, false);
+  }
+
+  // scroll reveal (respects reduced-motion via CSS)
+  if ("IntersectionObserver" in window){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
+    },{threshold:.12});
+    document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
+  } else {
+    document.querySelectorAll(".reveal").forEach(el=>el.classList.add("in"));
+  }
+})();
+</script>
+</body>
+</html>

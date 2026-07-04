@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M24 3 41 9V23C41 33 33 41 24 45 15 41 7 33 7 23V9Z' fill='%2315315e'/><path d='M15 26 24 18 33 26Z' fill='%23e23b3b'/><rect x='17.5' y='26' width='13' height='9' fill='white'/><rect x='22' y='30' width='4' height='5' fill='%2315315e'/></svg>"/>
 <title>Owner-Financed Homes | Americas Best Home Solutions</title>
 <meta name="description" content="Own a home without a bank. Owner financing across Illinois, Missouri and Michigan — a locked price and a monthly payment close to rent. Browse available homes."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,18 +20,18 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --paper:#fbf8f1;         /* warm page background        */
-  --card:#ffffff;          /* card surface                */
-  --ink:#1c1b17;           /* main text                   */
-  --ink-soft:#5a5750;      /* secondary text              */
-  --line:#e7e2d6;          /* hairlines                   */
-  --pine:#14532d;          /* deep brand green            */
-  --pine-deep:#0e3b20;
-  --lime:#c8f542;          /* highlight (used sparingly)  */
-  --honey:#f5a623;         /* warm accent                 */
-  --honey-soft:#fff3df;
-  --go:#1f7a3d;            /* CTA green                   */
-  --go-hover:#196332;
+  --paper:#f4f7fc;         /* clean cool-white page background   */
+  --card:#ffffff;          /* card surface                      */
+  --ink:#16213a;           /* main text (deep navy-black)        */
+  --ink-soft:#5b6577;      /* secondary text                    */
+  --line:#e2e8f2;          /* hairlines                         */
+  --pine:#15315e;          /* deep brand NAVY (trust surfaces)  */
+  --pine-deep:#0f2444;     /* darker navy                       */
+  --lime:#ffffff;          /* white accent on navy (steps/tags) */
+  --honey:#e23b3b;         /* RED accent (section labels)       */
+  --honey-soft:#eaf1fb;    /* soft blue tint (icon backgrounds) */
+  --go:#e23b3b;            /* RED call-to-action buttons        */
+  --go-hover:#c92f2f;      /* darker red on hover               */
   --radius:18px;
 }
 html{scroll-behavior:smooth}
@@ -50,26 +51,26 @@ body{
 .brand .bn small{display:block;font-family:'DM Mono',monospace;font-weight:400;font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);margin-top:2px}
 .topnav{display:flex;align-items:center;gap:8px}
 .topnav a{font-size:14px;font-weight:600;color:var(--ink-soft);text-decoration:none;padding:8px 10px;border-radius:10px}
-.topnav a:hover{color:var(--pine);background:#f2eee3}
+.topnav a:hover{color:var(--pine);background:#eef2f9}
 .topnav a.call{background:var(--pine);color:#fff;display:inline-flex;align-items:center;gap:6px}
 .topnav a.call:hover{background:var(--pine-deep);color:#fff}
 @media (max-width:520px){ .topnav a.nav-hide{display:none} }
 
 /* ── HERO ────────────────────────────────────────────────── */
-.hero{position:relative;background:linear-gradient(160deg,#12492a 0%,#0e3b20 100%);color:#fff;border-radius:26px;overflow:hidden;margin-top:6px;padding:40px 28px 30px}
+.hero{position:relative;background:linear-gradient(160deg,#17376a 0%,#0f2444 100%);color:#fff;border-radius:26px;overflow:hidden;margin-top:6px;padding:40px 28px 30px}
 .hero-art{position:absolute;left:0;right:0;bottom:0;width:100%;height:auto;display:block;opacity:.9;pointer-events:none}
 .hero-inner{position:relative;z-index:2;max-width:620px}
-.hero .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#bfe6cb;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);padding:6px 12px;border-radius:999px;margin-bottom:16px}
+.hero .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#a9c4e8;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);padding:6px 12px;border-radius:999px;margin-bottom:16px}
 .hero h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(32px,7vw,52px);line-height:1.03;letter-spacing:-1.2px;margin-bottom:14px}
-.hero h1 em{font-style:normal;color:var(--lime)}
-.hero p.lead{font-size:clamp(16px,2.3vw,19px);color:#dcefe1;max-width:44ch;margin-bottom:8px}
-.hero p.reassure{font-size:15px;color:#a9cdb4;max-width:44ch;margin-bottom:24px}
+.hero h1 em{font-style:normal;color:#ff5c5c}
+.hero p.lead{font-size:clamp(16px,2.3vw,19px);color:#d3e3f7;max-width:44ch;margin-bottom:8px}
+.hero p.reassure{font-size:15px;color:#9fbce4;max-width:44ch;margin-bottom:24px}
 .hero-cta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:150px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-align:center;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:700;font-size:16px;padding:15px 22px;border-radius:13px;transition:transform .12s ease,background .15s ease;cursor:pointer;border:none}
 .btn:active{transform:scale(.98)}
 .btn:focus-visible{outline:3px solid var(--honey);outline-offset:2px}
-.btn-lime{background:var(--lime);color:var(--pine-deep)}
-.btn-lime:hover{background:#d7ff5f}
+.btn-lime{background:var(--go);color:#fff}
+.btn-lime:hover{background:#f05252}
 .btn-ghost{background:rgba(255,255,255,.06);color:#fff;border:1.5px solid rgba(255,255,255,.35)}
 .btn-ghost:hover{background:rgba(255,255,255,.14)}
 
@@ -154,22 +155,37 @@ body{
 .quote .av{width:36px;height:36px;border-radius:999px;background:var(--pine);color:var(--lime);display:flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px}
 .quote .who .nm{font-weight:700;font-size:14px}
 .quote .who .lo{font-family:'DM Mono',monospace;font-size:11px;color:var(--ink-soft)}
-.ph-note{text-align:center;font-family:'DM Mono',monospace;font-size:11px;color:#b7ac95;margin-top:14px}
+.ph-note{text-align:center;font-family:'DM Mono',monospace;font-size:11px;color:#9aa3b5;margin-top:14px}
+
+/* ── MISSION / WHY WE EXIST ──────────────────────────────── */
+.about{margin-top:52px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:44px 30px;text-align:center}
+.about .emblem{width:60px;height:60px;margin:0 auto 18px;display:block}
+.about .lbl{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--honey);margin-bottom:12px}
+.about h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(26px,5vw,38px);letter-spacing:-.7px;color:var(--pine);line-height:1.08;margin:0 auto 20px;max-width:18ch}
+.about .body{max-width:56ch;margin:0 auto}
+.about .body p{font-size:16px;color:var(--ink);line-height:1.7;margin-bottom:15px}
+.about blockquote{margin:24px auto;max-width:44ch;font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(19px,3.2vw,24px);line-height:1.3;color:var(--pine);letter-spacing:-.3px}
+.about blockquote span{color:var(--go)}
+.about .sig{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft);margin:20px 0 24px}
+.about .chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:24px}
+.about .chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--pine);background:var(--honey-soft);border:1px solid #d9e5f5;padding:6px 12px;border-radius:999px}
+.about .abtn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-weight:700;font-size:15px;color:#fff;background:var(--go);padding:13px 24px;border-radius:12px}
+.about .abtn:hover{background:var(--go-hover)}
 
 /* ── LEAD FORM ───────────────────────────────────────────── */
 .lead{margin-top:52px;background:var(--pine);border-radius:26px;padding:38px 26px;color:#fff;position:relative;overflow:hidden}
 .lead .lead-inner{position:relative;z-index:2;max-width:460px;margin:0 auto}
 .lead h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(24px,5vw,32px);letter-spacing:-.5px;text-align:center;margin-bottom:6px}
-.lead p.sub{color:#cfe7d6;text-align:center;margin-bottom:22px}
+.lead p.sub{color:#cfe0f5;text-align:center;margin-bottom:22px}
 .lead form{display:flex;flex-direction:column;gap:12px;text-align:left}
-.lead label{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#bfe6cb;margin-bottom:-6px}
+.lead label{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#a9c4e8;margin-bottom:-6px}
 .lead input,.lead select{font-family:inherit;font-size:16px;color:var(--ink);background:#fff;border:1.5px solid transparent;border-radius:12px;padding:14px;width:100%}
-.lead input:focus,.lead select:focus{outline:none;border-color:var(--lime)}
+.lead input:focus,.lead select:focus{outline:none;border-color:var(--go)}
 .lead .btn-lime{margin-top:6px;width:100%}
-.lead .form-note{font-family:'DM Mono',monospace;font-size:11px;color:#a9cdb4;text-align:center;margin-top:2px}
+.lead .form-note{font-family:'DM Mono',monospace;font-size:11px;color:#9fbce4;text-align:center;margin-top:2px}
 .lead .thanks{display:none;text-align:center;padding:14px 8px}
 .lead .thanks h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;color:#fff;margin-bottom:6px}
-.lead .thanks p{color:#cfe7d6}
+.lead .thanks p{color:#cfe0f5}
 .lead.sent form{display:none}
 .lead.sent .thanks{display:block}
 
@@ -177,7 +193,7 @@ body{
 .foot{margin:48px 0 34px;text-align:center;color:var(--ink-soft);font-size:13px;line-height:1.7}
 .foot .fb{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:18px;color:var(--pine);letter-spacing:-.4px;margin-bottom:4px}
 .foot .fcontact a{color:var(--pine);font-weight:600;text-decoration:none}
-.foot .legal{max-width:60ch;margin:12px auto 0;font-size:12px;color:#948b78}
+.foot .legal{max-width:60ch;margin:12px auto 0;font-size:12px;color:#8b93a3}
 /* <!-- COMPLIANCE: your RMLO / attorney's required disclosures go in the .legal block below before this page goes public --> */
 
 /* reveal motion */
@@ -193,11 +209,11 @@ body{
   <!-- TOP BAR -->
   <header class="topbar">
     <a class="brand" href="index.html" aria-label="Americas Best Home Solutions — home">
-      <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
-        <rect width="40" height="40" rx="10" fill="#14532d"/>
-        <path d="M9 20.5 20 11l11 9.5" stroke="#c8f542" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M11.5 19v10h17V19" stroke="#c8f542" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M17.5 29v-6h5v6" stroke="#c8f542" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <path d="M24 3 41 9V23C41 33 33 41 24 45 15 41 7 33 7 23V9Z" fill="#15315e"/>
+        <path d="M15 26 24 18 33 26Z" fill="#e23b3b"/>
+        <rect x="17.5" y="26" width="13" height="9" fill="#ffffff"/>
+        <rect x="22" y="30" width="4" height="5" fill="#15315e"/>
       </svg>
       <span class="bn">Americas Best Home Solutions<small>Owner Financing</small></span>
     </a>
@@ -216,12 +232,12 @@ body{
     <svg class="hero-art" viewBox="0 0 960 200" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
       <defs>
         <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#0e3b20" stop-opacity="0"/>
-          <stop offset="1" stop-color="#0b3019"/>
+          <stop offset="0" stop-color="#0f2444" stop-opacity="0"/>
+          <stop offset="1" stop-color="#0b1c38"/>
         </linearGradient>
       </defs>
-      <circle cx="815" cy="52" r="34" fill="#c8f542" opacity=".22"/>
-      <g stroke="#8fc4a1" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".55">
+      <circle cx="815" cy="52" r="34" fill="#ffffff" opacity=".22"/>
+      <g stroke="#8fb2dd" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".55">
         <!-- little houses along a street -->
         <path d="M60 170v-42l34-26 34 26v42"/><path d="M82 170v-22h24v22"/>
         <path d="M170 175v-34l28-22 28 22v34"/><path d="M188 175v-18h20v18"/>
@@ -238,10 +254,10 @@ body{
         <circle cx="820" cy="150" r="11"/><path d="M820 161v15"/>
       </g>
       <rect x="0" y="120" width="960" height="80" fill="url(#sky)"/>
-      <path d="M0 178h960" stroke="#8fc4a1" stroke-width="2" opacity=".4"/>
+      <path d="M0 178h960" stroke="#8fb2dd" stroke-width="2" opacity=".4"/>
     </svg>
     <div class="hero-inner">
-      <span class="eyebrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="#c8f542" aria-hidden="true"><path d="M12 2 3 7v6c0 5 3.8 8.4 9 11 5.2-2.6 9-6 9-11V7l-9-5z"/></svg> Owner Financing · No Bank Needed</span>
+      <span class="eyebrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M12 2 3 7v6c0 5 3.8 8.4 9 11 5.2-2.6 9-6 9-11V7l-9-5z"/></svg> Owner Financing · No Bank Needed</span>
       <h1>Own the home.<br><em>Skip the bank.</em></h1>
       <p class="lead">Owner-financed homes across Illinois, Missouri &amp; Michigan — a price locked the day you sign and a monthly payment close to rent.</p>
       <p class="reassure">Your past doesn't have to decide your future. If you've been turned away by banks, this was built for you.</p>
@@ -268,22 +284,22 @@ body{
     </div>
     <div class="trust">
       <div class="trust-card">
-        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg></div>
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e23b3b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg></div>
         <h3>You're buying, not renting</h3>
         <p>Your name is on the agreement from day one. You're the homeowner — not a tenant.</p>
       </div>
       <div class="trust-card">
-        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e23b3b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
         <h3>No bank, no mortgage maze</h3>
         <p>We finance the home to you directly. No mortgage application standing between you and the keys.</p>
       </div>
       <div class="trust-card">
-        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e23b3b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
         <h3>The price is locked</h3>
         <p>What you agree to today is what you pay. It won't go up while you pay it down.</p>
       </div>
       <div class="trust-card">
-        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e23b3b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
         <h3>A payment close to rent</h3>
         <p>Own a home for about what you'd pay a landlord — and every payment builds toward it being yours.</p>
       </div>
@@ -303,7 +319,7 @@ body{
       <div class="step"><div class="n">3</div><h3>Sign a simple agreement</h3><p>We finance it ourselves with a contract for deed — plain language, no surprises.</p></div>
       <div class="step"><div class="n">4</div><h3>Get the keys</h3><p>Make your move-in payment and the home is yours to live in from day one.</p></div>
     </div>
-    <p style="text-align:center;margin-top:18px"><a href="how-it-works.html" style="font-weight:700;color:var(--pine);text-decoration:none;border-bottom:2px solid var(--lime);padding-bottom:2px">See exactly how owner financing works →</a></p>
+    <p style="text-align:center;margin-top:18px"><a href="how-it-works.html" style="font-weight:700;color:var(--pine);text-decoration:none;border-bottom:2px solid var(--go);padding-bottom:2px">See exactly how owner financing works →</a></p>
   </section>
 
   <!-- LISTINGS -->
@@ -368,6 +384,36 @@ body{
     <p class="ph-note">Placeholder — swap in real buyer quotes before sharing publicly (see note in the code).</p>
   </section>
 
+  <!-- MISSION / WHY WE EXIST
+       This is the company's story — written in "we" (the company), not any one person.
+       Edit the words freely; keep it in the company's voice. -->
+  <section class="about reveal">
+    <svg class="emblem" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+      <path d="M24 3 41 9V23C41 33 33 41 24 45 15 41 7 33 7 23V9Z" fill="#15315e"/>
+      <path d="M15 26 24 18 33 26Z" fill="#e23b3b"/>
+      <rect x="17.5" y="26" width="13" height="9" fill="#ffffff"/>
+      <rect x="22" y="30" width="4" height="5" fill="#15315e"/>
+    </svg>
+    <div class="lbl">Why we exist</div>
+    <h2>We believe everyone deserves a place to call their own.</h2>
+    <div class="body">
+      <p>America's Best Home Solutions was built on a simple belief: owning a home shouldn't be out of reach for hardworking families. For generations, homeownership has been the heart of the American dream — and the surest path to building real, lasting wealth.</p>
+      <p>When you rent, every payment disappears into someone else's pocket. When you own, that same monthly payment builds something that's <em>yours</em> — a home that grows in value over the years, that you can pass down to your children, or one day hold as an investment. Renting buys you a place to stay. Owning buys you a future.</p>
+      <p>Across the markets we serve, we've found good, quality homes we can offer through owner financing — at a monthly payment comparable to rent. No bank. No mortgage maze. Just a real, honest path to the front door of a home that's truly your own.</p>
+      <blockquote>Why keep paying rent for a life you'll never own — when you could <span>own the home instead?</span></blockquote>
+    </div>
+    <div class="sig">— The team at America's Best Home Solutions</div>
+    <div class="chips">
+      <span class="chip">Payments comparable to rent</span>
+      <span class="chip">A price locked in writing</span>
+      <span class="chip">Homes in IL · MO · MI</span>
+    </div>
+    <a class="abtn" id="aboutText" href="#">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      Start your path to owning
+    </a>
+  </section>
+
   <!-- LEAD FORM / GET STARTED -->
   <section class="lead reveal" id="get-started">
     <div class="lead-inner">
@@ -420,8 +466,8 @@ body{
 
   // on-brand gradient palette; each city gets a stable one so the grid has gentle variety
   const FACES = [
-    ["#1c5234","#2e7d4f"],["#14532d","#256b41"],["#155e4a","#2f8f6d"],
-    ["#1d5b3a","#3a8a5c"],["#0e3b20","#256b41"],["#17604a","#2b8f68"]
+    ["#15315e","#2f5c96"],["#15315e","#24508a"],["#1a4675","#3a6bab"],
+    ["#1c3f70","#3f6db0"],["#0f2444","#24508a"],["#1c4a7a","#37639f"]
   ];
   const faceFor = s => {
     let h=0; for(const ch of (s||"")) h=(h*31+ch.charCodeAt(0))>>>0;
@@ -484,6 +530,7 @@ body{
   $("navCallText").textContent = pretty || "Call us";
   $("footCall").href = `sms:${tel}?&body=${smsBody}`;
   $("footCall").textContent = pretty ? `Call or text ${pretty}` : "Call or text us";
+  $("aboutText").href = `sms:${tel}?&body=${smsBody}`;
 
   // lead form → Formspree (email) + Make (Notion CRM)  [same wiring as the property page]
   (function(){

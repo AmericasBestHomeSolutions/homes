@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Own a Home — Owner Financing | Lonchando</title>
+<title>Own a Home — Owner Financing | Americas Best Home Solutions</title>
 <meta name="description" content="Own a home with owner financing. Locked price, a monthly payment close to rent, no bank needed."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- ════════════════════════════════════════════════════════════════════════
-     LONCHANDO PROPERTY PAGE (template — serves EVERY home)
+     AMERICAS BEST HOME SOLUTIONS — PROPERTY PAGE (template — serves EVERY home)
      Which home it shows comes from the web address:  home.html?home=st-louis-1
      To add or edit homes, edit ONLY the file  homes.js  — never this file.
      ════════════════════════════════════════════════════════════════════════ -->
@@ -18,62 +18,47 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --paper:#fbf8f1;        /* warm page background        */
-  --card:#ffffff;          /* card surface                */
-  --ink:#1c1b17;           /* main text                   */
-  --ink-soft:#5a5750;      /* secondary text              */
-  --line:#e7e2d6;          /* hairlines                   */
-  --pine:#14532d;          /* deep brand green            */
-  --pine-deep:#0e3b20;
-  --lime:#c8f542;          /* Lonchando highlight (sparing)*/
-  --honey:#f5a623;         /* warm accent                 */
-  --honey-soft:#fff3df;
-  --go:#1f7a3d;            /* CTA green                   */
-  --go-hover:#196332;
-  --radius:18px;
+  --paper:#fbf8f1; --card:#ffffff; --ink:#1c1b17; --ink-soft:#5a5750; --line:#e7e2d6;
+  --pine:#14532d; --pine-deep:#0e3b20; --lime:#c8f542; --honey:#f5a623; --honey-soft:#fff3df;
+  --go:#1f7a3d; --go-hover:#196332; --radius:18px;
 }
 html{scroll-behavior:smooth}
-body{
-  background:var(--paper);color:var(--ink);
-  font-family:'DM Sans',system-ui,sans-serif;font-size:17px;line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-}
+body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
 .wrap{max-width:680px;margin:0 auto;padding:0 20px}
 
 /* ── TOP BAR ─────────────────────────────────────────────── */
-.topbar{padding:18px 0;display:flex;align-items:center;justify-content:space-between}
-.brand{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.5px;color:var(--pine);text-decoration:none}
-.eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);border:1px solid var(--line);padding:5px 10px;border-radius:999px;background:var(--card)}
+.topbar{padding:16px 0;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none}
+.brand .mark{width:30px;height:30px;flex-shrink:0}
+.brand .bn{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:19px;letter-spacing:-.4px;color:var(--pine);line-height:1}
+.brand .bn small{display:block;font-family:'DM Mono',monospace;font-weight:400;font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);margin-top:2px}
+.topnav{display:flex;align-items:center;gap:8px}
+.topnav a{font-size:14px;font-weight:600;color:var(--ink-soft);text-decoration:none;padding:8px 10px;border-radius:10px}
+.topnav a:hover{color:var(--pine);background:#f2eee3}
+.topnav a.call{background:var(--pine);color:#fff;display:inline-flex;align-items:center;gap:6px}
+.topnav a.call:hover{background:var(--pine-deep);color:#fff}
+@media (max-width:520px){ .topnav a.nav-hide{display:none} }
+
+/* back link */
+.backlink{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--ink-soft);text-decoration:none;margin:2px 0 10px}
+.backlink:hover{color:var(--pine)}
 
 /* ── HERO ────────────────────────────────────────────────── */
-.hero{margin-top:6px}
-.hero-photo{
-  position:relative;width:100%;aspect-ratio:16/10;border-radius:var(--radius);
-  overflow:hidden;background:linear-gradient(135deg,#1c5234,#2e7d4f);
-  display:flex;align-items:center;justify-content:center;
-}
+.hero{margin-top:2px}
+.hero-photo{position:relative;width:100%;aspect-ratio:16/10;border-radius:var(--radius);overflow:hidden;background:linear-gradient(135deg,#1c5234,#2e7d4f);display:flex;align-items:center;justify-content:center}
 .hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
 .hero-photo img[hidden]{display:none}
 .hero-photo .fallback{opacity:.9}
-.status-tag{
-  position:absolute;top:14px;left:14px;z-index:2;
-  font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;
-  background:var(--lime);color:var(--pine-deep);padding:6px 11px;border-radius:999px;font-weight:500;
-}
-.headline{
-  font-family:'Bricolage Grotesque',sans-serif;font-weight:800;
-  font-size:clamp(30px,8vw,46px);line-height:1.05;letter-spacing:-1px;
-  margin:22px 0 8px;color:var(--ink);
-}
+.hero-photo .fcity{position:absolute;left:16px;bottom:14px;z-index:2;color:#fff}
+.hero-photo .fcity .c{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:26px;letter-spacing:-.5px;line-height:1}
+.hero-photo .fcity .s{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.85);margin-top:4px}
+.status-tag{position:absolute;top:14px;left:14px;z-index:2;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;background:var(--lime);color:var(--pine-deep);padding:6px 11px;border-radius:999px;font-weight:500}
+.headline{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(30px,8vw,46px);line-height:1.05;letter-spacing:-1px;margin:22px 0 8px;color:var(--ink)}
 .headline em{font-style:normal;color:var(--pine)}
 .subhead{font-size:18px;color:var(--ink-soft);max-width:32ch}
 
 /* ── DEAL STRIP ──────────────────────────────────────────── */
-.deal-strip{
-  display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;
-  background:var(--line);border:1px solid var(--line);border-radius:var(--radius);
-  overflow:hidden;margin:22px 0 8px;
-}
+.deal-strip{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin:22px 0 8px}
 .deal-cell{background:var(--card);padding:16px 14px;text-align:center}
 .deal-cell .num{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:clamp(20px,5.5vw,26px);color:var(--pine);line-height:1}
 .deal-cell .lab{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft);margin-top:7px}
@@ -83,11 +68,7 @@ body{
 
 /* ── CTA BUTTONS ─────────────────────────────────────────── */
 .cta-group{display:flex;gap:10px;margin:18px 0 6px;flex-wrap:wrap}
-.btn{
-  flex:1;min-width:150px;text-align:center;text-decoration:none;
-  font-family:'DM Sans',sans-serif;font-weight:600;font-size:17px;
-  padding:16px 18px;border-radius:14px;transition:transform .12s ease,background .15s ease;
-}
+.btn{flex:1;min-width:150px;text-align:center;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:700;font-size:17px;padding:16px 18px;border-radius:14px;transition:transform .12s ease,background .15s ease}
 .btn-primary{background:var(--go);color:#fff}
 .btn-primary:hover{background:var(--go-hover)}
 .btn-secondary{background:var(--card);color:var(--pine);border:1.5px solid var(--pine)}
@@ -98,14 +79,10 @@ body{
 
 /* ── SECTIONS ────────────────────────────────────────────── */
 .section{margin-top:46px}
-.sec-label{
-  font-family:'DM Mono',monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase;
-  color:var(--honey);margin-bottom:16px;display:flex;align-items:center;gap:10px;
-}
+.sec-label{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--honey);margin-bottom:16px;display:flex;align-items:center;gap:10px}
 .sec-label::after{content:'';flex:1;height:1px;background:var(--line)}
 .sec-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:28px;letter-spacing:-.5px;margin-bottom:6px}
 
-/* terms list */
 .terms{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
 .term-row{display:flex;justify-content:space-between;align-items:center;padding:15px 18px;border-bottom:1px solid var(--line);gap:16px}
 .term-row:last-child{border-bottom:none}
@@ -113,26 +90,22 @@ body{
 .term-row .v{font-family:'DM Mono',monospace;font-weight:500;font-size:17px;color:var(--ink);text-align:right}
 .term-row.big .v{font-size:20px;color:var(--pine);font-weight:500}
 
-/* steps */
 .steps{display:flex;flex-direction:column;gap:14px}
 .step{display:flex;gap:16px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
 .step .n{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;color:var(--lime);background:var(--pine);width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.step .body h3{font-family:'DM Sans',sans-serif;font-weight:600;font-size:18px;margin-bottom:2px}
+.step .body h3{font-family:'DM Sans',sans-serif;font-weight:700;font-size:18px;margin-bottom:2px}
 .step .body p{font-size:15px;color:var(--ink-soft)}
 
-/* why cards */
 .why{display:grid;gap:12px}
 .why-card{background:var(--honey-soft);border:1px solid #f3e3c5;border-radius:14px;padding:18px}
 .why-card h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:18px;margin-bottom:4px;color:var(--pine)}
 .why-card p{font-size:15px;color:#6b5836}
 
-/* gallery */
 .gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .gallery .tile{aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:#ece7da;display:flex;align-items:center;justify-content:center}
 .gallery .tile img{width:100%;height:100%;object-fit:cover;display:block}
 .gallery .ph{font-family:'DM Mono',monospace;font-size:11px;color:#a89f8a;letter-spacing:1px}
 
-/* closing CTA */
 .lead{margin-top:48px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px 22px;text-align:center}
 .lead h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(22px,5.5vw,28px);letter-spacing:-.5px;color:var(--pine);margin-bottom:6px}
 .lead p.sub{color:var(--ink-soft);margin-bottom:20px;max-width:38ch;margin-left:auto;margin-right:auto}
@@ -148,12 +121,8 @@ body{
 .lead.sent form{display:none}
 .lead.sent .thanks{display:block}
 
-/* "see other homes" link */
 .other-homes{margin-top:22px;text-align:center}
-.other-homes a{
-  font-family:'DM Sans',sans-serif;font-weight:600;font-size:16px;
-  color:var(--pine);text-decoration:none;border-bottom:2px solid var(--lime);padding-bottom:2px;
-}
+.other-homes a{font-family:'DM Sans',sans-serif;font-weight:700;font-size:16px;color:var(--pine);text-decoration:none;border-bottom:2px solid var(--lime);padding-bottom:2px}
 .other-homes a:hover{color:var(--pine-deep)}
 
 .closer{margin-top:48px;background:var(--pine);border-radius:var(--radius);padding:34px 24px;text-align:center;color:#fff}
@@ -164,21 +133,15 @@ body{
 .closer .btn-secondary{background:transparent;color:#fff;border-color:#4f8a64}
 .closer .btn-secondary:hover{background:rgba(255,255,255,.08)}
 
-/* footer */
-.foot{margin:40px 0 30px;text-align:center;color:var(--ink-soft);font-size:13px;line-height:1.7}
-.foot .fb{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:18px;color:var(--pine);letter-spacing:-.5px}
-/* <!-- COMPLIANCE: your RMLO / attorney's required disclosures go in the .foot block below before this page goes public --> */
+.foot{margin:48px 0 34px;text-align:center;color:var(--ink-soft);font-size:13px;line-height:1.7}
+.foot .fb{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:18px;color:var(--pine);letter-spacing:-.4px;margin-bottom:4px}
+.foot .fcontact a{color:var(--pine);font-weight:600;text-decoration:none}
+.foot .legal{max-width:60ch;margin:12px auto 0;font-size:12px;color:#948b78}
 
-/* reveal motion */
 .reveal{opacity:0;transform:translateY(16px)}
 .reveal.in{opacity:1;transform:none;transition:opacity .6s ease,transform .6s ease}
-@media (prefers-reduced-motion:reduce){
-  .reveal{opacity:1;transform:none;transition:none}
-  html{scroll-behavior:auto}
-}
-@media (min-width:560px){
-  body{font-size:18px}
-}
+@media (prefers-reduced-motion:reduce){ .reveal{opacity:1;transform:none;transition:none} html{scroll-behavior:auto} }
+@media (min-width:560px){ body{font-size:18px} }
 </style>
 </head>
 <body>
@@ -186,18 +149,39 @@ body{
 <div class="wrap">
 
   <header class="topbar">
-    <a class="brand" href="./">Lonchando</a>
-    <div class="eyebrow">Owner Financing</div>
+    <a class="brand" href="index.html" aria-label="Americas Best Home Solutions — home">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <rect width="40" height="40" rx="10" fill="#14532d"/>
+        <path d="M9 20.5 20 11l11 9.5" stroke="#c8f542" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M11.5 19v10h17V19" stroke="#c8f542" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M17.5 29v-6h5v6" stroke="#c8f542" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="bn">Americas Best Home Solutions<small>Owner Financing</small></span>
+    </a>
+    <nav class="topnav">
+      <a class="nav-hide" href="index.html">Homes</a>
+      <a class="nav-hide" href="how-it-works.html">How it works</a>
+      <a class="call" id="navCall" href="#">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span id="navCallText">Call us</span>
+      </a>
+    </nav>
   </header>
+
+  <a class="backlink" href="index.html">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="M12 19l-7-7 7-7"/></svg>
+    All homes
+  </a>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-photo">
+    <div class="hero-photo" id="heroFace">
       <span class="status-tag" id="statusTag">Available</span>
       <img id="heroImg" alt="" hidden>
       <svg class="fallback" id="heroFallback" width="92" height="92" viewBox="0 0 24 24" fill="none" stroke="#bfe6cb" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9h14v-9"/><path d="M10 19v-5h4v5"/>
       </svg>
+      <div class="fcity" id="heroCity"></div>
     </div>
 
     <h1 class="headline" id="headline"></h1>
@@ -283,7 +267,7 @@ body{
 
   <!-- SEE OTHER HOMES -->
   <p class="other-homes reveal">
-    <a href="./">This home isn't a fit? See our other homes →</a>
+    <a href="index.html">This home isn't a fit? See our other homes →</a>
   </p>
 
   <section class="closer reveal">
@@ -297,8 +281,9 @@ body{
 
   <!-- FOOTER -->
   <footer class="foot">
-    <div class="fb">Lonchando</div>
-    <p id="footLine"></p>
+    <div class="fb">Americas Best Home Solutions</div>
+    <p class="fcontact">Owner-financed homes · <a id="footCall" href="#">Call or text us</a></p>
+    <p class="legal" id="footLine"></p>
     <!-- ▼ COMPLIANCE: paste the disclosures your RMLO / attorney gives you here, before this page is shared publicly. ▲ -->
   </footer>
 
@@ -308,12 +293,11 @@ body{
 <script>
 /* ---------- render (don't edit — home data lives in homes.js) ---------- */
 (function(){
-  // which home? read the id from the web address: home.html?home=st-louis-1
   const wantedId = new URLSearchParams(location.search).get("home");
   const home = (typeof HOMES !== "undefined") ? HOMES.find(h => h.id === wantedId) : null;
   if (!home){
     // unknown or missing home → send the visitor to the browse page
-    location.replace("./");
+    location.replace("index.html");
     return;
   }
   const C = Object.assign({}, CONTACT, home);
@@ -321,36 +305,34 @@ body{
   const $ = id => document.getElementById(id);
   const money = n => "$" + Number(n||0).toLocaleString();
 
-  document.title = `Own a Home in ${C.city}, ${C.state} — Owner Financing | Lonchando`;
+  document.title = `Own a Home in ${C.city}, ${C.state} — Owner Financing | Americas Best Home Solutions`;
 
-  // headline + subhead
   $("headline").innerHTML = `Own a home in <em>${C.city}</em>.<br>No bank needed.`;
   $("subhead").textContent = "Owner financing with a locked price and a monthly payment close to rent.";
   $("closerTitle").textContent = "Want to see it in person?";
-  $("footLine").textContent = `Owner-financed homes in ${C.state}. Lonchando is not a bank or mortgage lender.`;
+  $("footLine").textContent = `Americas Best Home Solutions LLC is not a bank or mortgage lender. Homes are offered through owner financing (contract for deed) in ${C.state}. Prices and terms are subject to change.`;
 
-  // status tag
   $("statusTag").textContent = C.status || "Available";
+  $("heroCity").innerHTML = `<div class="c">${C.city}</div><div class="s">${C.state}</div>`;
 
-  // deal strip
-  $("dMonthly").textContent = money(C.monthlyPayment) ;
-  $("dMoveIn").textContent  = money(C.moveIn);
+  const moveInText = C.moveIn ? money(C.moveIn) : "Ask us";
+  $("dMonthly").textContent = money(C.monthlyPayment);
+  $("dMoveIn").textContent  = moveInText;
   $("dPrice").textContent   = money(C.lockedPrice);
 
-  // hero photo
+  // hero photo (falls back to the branded green face + city label if none/broken)
   if (C.heroPhoto){
     const img = $("heroImg");
     img.src = C.heroPhoto;
     img.alt = `Home for sale in ${C.city}, ${C.state}`;
     img.hidden = false;
-    img.onload = ()=>{ $("heroFallback").style.display = "none"; };
+    img.onload = ()=>{ $("heroFallback").style.display = "none"; $("heroCity").style.display="none"; };
     img.onerror = ()=>{ img.hidden = true; };
   }
 
-  // terms list
   const terms = [
     ["Your monthly payment", money(C.monthlyPayment), true],
-    ["Move-in payment", money(C.moveIn), false],
+    ["Move-in payment", moveInText, false],
     ["Locked purchase price", money(C.lockedPrice), false],
     ["Financing", C.termText, false],
     ["The home", `${C.beds} bd · ${C.baths} ba${C.sqft?` · ${Number(C.sqft).toLocaleString()} sqft`:""}`, false],
@@ -360,7 +342,6 @@ body{
     `<div class="term-row${big?" big":""}"><span class="k">${k}</span><span class="v">${v}</span></div>`
   ).join("");
 
-  // gallery
   const g = $("gallery");
   if (C.photos && C.photos.length){
     g.innerHTML = C.photos.map(src=>
@@ -372,12 +353,15 @@ body{
     ).join("");
   }
 
-  // contact buttons
   const tel = (C.phone||"").replace(/[^\d+]/g,"");
   const prettyPhone = tel.length===10 ? `(${tel.slice(0,3)}) ${tel.slice(3,6)}-${tel.slice(6)}` : C.phone;
   const smsBody = encodeURIComponent(`Hi ${C.contactName}, I saw the home in ${C.city} and I'd like to tour it.`);
   ["ctaCall","ctaCall2"].forEach(id=>$(id).href = `tel:${tel}`);
   ["ctaText","ctaText2"].forEach(id=>$(id).href = `sms:${tel}?&body=${smsBody}`);
+  $("navCall").href = `tel:${tel}`;
+  $("navCallText").textContent = prettyPhone || "Call us";
+  $("footCall").href = `sms:${tel}?&body=${smsBody}`;
+  $("footCall").textContent = prettyPhone ? `Call or text ${prettyPhone}` : "Call or text us";
   $("ctaNote").textContent = `Call or text ${prettyPhone} — we usually reply same day.`;
 
   // lead form → Formspree (email) + Make (Notion CRM)
@@ -391,35 +375,21 @@ body{
 
     form.addEventListener("submit", async (e)=>{
       e.preventDefault();
-      if (!id && !hook) {
-        note.textContent = "⚠ Form not connected yet — add a Formspree ID or Make webhook in homes.js.";
-        return;
-      }
+      if (!id && !hook) { note.textContent = "⚠ Form not connected yet — add a Formspree ID or Make webhook in homes.js."; return; }
       btn.disabled = true; btn.textContent = "Sending…";
-
-      // gather the lead, plus which home and where it came from
       const data = new FormData(form);
       data.append("property", `${C.city}, ${C.state}`);
       data.append("source", "Property page");
-
-      // send to both destinations; success if at least one accepts the lead
       const targets = [];
       if (id)   targets.push(fetch(`https://formspree.io/f/${id}`, { method:"POST", headers:{ "Accept":"application/json" }, body:data }));
       if (hook) targets.push(fetch(hook, { method:"POST", body:data }));
-
       const results = await Promise.allSettled(targets);
       const ok = results.some(r => r.status === "fulfilled" && r.value.ok);
-
-      if (ok) {
-        section.classList.add("sent");
-      } else {
-        btn.disabled = false; btn.textContent = "Send my info";
-        note.textContent = "Something went wrong — please call or text us instead.";
-      }
+      if (ok) { section.classList.add("sent"); }
+      else { btn.disabled = false; btn.textContent = "Send my info"; note.textContent = "Something went wrong — please call or text us instead."; }
     });
   })();
 
-  // scroll reveal (respects reduced-motion via CSS)
   if ("IntersectionObserver" in window){
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });

@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Owner-Financed Homes | Lonchando</title>
-<meta name="description" content="Browse our owner-financed homes. Locked prices, monthly payments close to rent, no bank needed."/>
+<title>Owner-Financed Homes | Americas Best Home Solutions</title>
+<meta name="description" content="Own a home without a bank. Owner financing across Illinois, Missouri and Michigan — a locked price and a monthly payment close to rent. Browse available homes."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- ════════════════════════════════════════════════════════════════════════
-     LONCHANDO — BROWSE ALL HOMES
-     This page builds itself from the list in  homes.js .
+     AMERICAS BEST HOME SOLUTIONS — BROWSE ALL HOMES (home page)
+     This page builds its listings from the list in  homes.js .
      To add or edit homes, edit ONLY  homes.js  — never this file.
      Each card links to  home.html?home=<id>  (the property page template).
      ════════════════════════════════════════════════════════════════════════ -->
@@ -19,14 +19,14 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --paper:#fbf8f1;        /* warm page background        */
+  --paper:#fbf8f1;         /* warm page background        */
   --card:#ffffff;          /* card surface                */
   --ink:#1c1b17;           /* main text                   */
   --ink-soft:#5a5750;      /* secondary text              */
   --line:#e7e2d6;          /* hairlines                   */
   --pine:#14532d;          /* deep brand green            */
   --pine-deep:#0e3b20;
-  --lime:#c8f542;          /* Lonchando highlight (sparing)*/
+  --lime:#c8f542;          /* highlight (used sparingly)  */
   --honey:#f5a623;         /* warm accent                 */
   --honey-soft:#fff3df;
   --go:#1f7a3d;            /* CTA green                   */
@@ -39,176 +39,374 @@ body{
   font-family:'DM Sans',system-ui,sans-serif;font-size:17px;line-height:1.6;
   -webkit-font-smoothing:antialiased;
 }
-.wrap{max-width:680px;margin:0 auto;padding:0 20px}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+.narrow{max-width:680px;margin-left:auto;margin-right:auto}
 
 /* ── TOP BAR ─────────────────────────────────────────────── */
-.topbar{padding:18px 0;display:flex;align-items:center;justify-content:space-between}
-.brand{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.5px;color:var(--pine)}
-.eyebrow{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);border:1px solid var(--line);padding:5px 10px;border-radius:999px;background:var(--card)}
+.topbar{padding:16px 0;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none}
+.brand .mark{width:30px;height:30px;flex-shrink:0}
+.brand .bn{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:19px;letter-spacing:-.4px;color:var(--pine);line-height:1}
+.brand .bn small{display:block;font-family:'DM Mono',monospace;font-weight:400;font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);margin-top:2px}
+.topnav{display:flex;align-items:center;gap:8px}
+.topnav a{font-size:14px;font-weight:600;color:var(--ink-soft);text-decoration:none;padding:8px 10px;border-radius:10px}
+.topnav a:hover{color:var(--pine);background:#f2eee3}
+.topnav a.call{background:var(--pine);color:#fff;display:inline-flex;align-items:center;gap:6px}
+.topnav a.call:hover{background:var(--pine-deep);color:#fff}
+@media (max-width:520px){ .topnav a.nav-hide{display:none} }
 
-/* ── INTRO ───────────────────────────────────────────────── */
-.headline{
-  font-family:'Bricolage Grotesque',sans-serif;font-weight:800;
-  font-size:clamp(30px,8vw,46px);line-height:1.05;letter-spacing:-1px;
-  margin:14px 0 8px;color:var(--ink);
-}
-.headline em{font-style:normal;color:var(--pine)}
-.subhead{font-size:18px;color:var(--ink-soft);max-width:38ch}
+/* ── HERO ────────────────────────────────────────────────── */
+.hero{position:relative;background:linear-gradient(160deg,#12492a 0%,#0e3b20 100%);color:#fff;border-radius:26px;overflow:hidden;margin-top:6px;padding:40px 28px 30px}
+.hero-art{position:absolute;left:0;right:0;bottom:0;width:100%;height:auto;display:block;opacity:.9;pointer-events:none}
+.hero-inner{position:relative;z-index:2;max-width:620px}
+.hero .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#bfe6cb;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);padding:6px 12px;border-radius:999px;margin-bottom:16px}
+.hero h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(32px,7vw,52px);line-height:1.03;letter-spacing:-1.2px;margin-bottom:14px}
+.hero h1 em{font-style:normal;color:var(--lime)}
+.hero p.lead{font-size:clamp(16px,2.3vw,19px);color:#dcefe1;max-width:44ch;margin-bottom:8px}
+.hero p.reassure{font-size:15px;color:#a9cdb4;max-width:44ch;margin-bottom:24px}
+.hero-cta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:150px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-align:center;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:700;font-size:16px;padding:15px 22px;border-radius:13px;transition:transform .12s ease,background .15s ease;cursor:pointer;border:none}
+.btn:active{transform:scale(.98)}
+.btn:focus-visible{outline:3px solid var(--honey);outline-offset:2px}
+.btn-lime{background:var(--lime);color:var(--pine-deep)}
+.btn-lime:hover{background:#d7ff5f}
+.btn-ghost{background:rgba(255,255,255,.06);color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+.btn-ghost:hover{background:rgba(255,255,255,.14)}
 
-/* ── FILTERS ─────────────────────────────────────────────── */
-.filters{
-  display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end;
-  margin:26px 0 8px;
-}
-.filter{flex:1;min-width:140px}
-.filter label{
-  display:block;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;
-  text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px;
-}
-.filter select{
-  width:100%;font-family:inherit;font-size:16px;color:var(--ink);
-  background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;
-  cursor:pointer;
-}
+/* trust stat strip under hero */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:-118px;position:relative;z-index:3}
+.stat{background:var(--card);padding:16px 12px;text-align:center}
+.stat .n{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(18px,4vw,24px);color:var(--pine);line-height:1}
+.stat .l{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.5px;text-transform:uppercase;color:var(--ink-soft);margin-top:6px}
+@media (max-width:600px){ .stats{grid-template-columns:1fr 1fr} .hero-cta{margin-bottom:120px} .stats{margin-top:-96px} }
+
+/* ── SECTION SCAFFOLD ────────────────────────────────────── */
+.section{margin-top:52px}
+.sec-head{text-align:center;max-width:36ch;margin:0 auto 26px}
+.sec-label{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--honey);margin-bottom:8px}
+.sec-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(26px,5vw,36px);letter-spacing:-.6px;line-height:1.08}
+.sec-sub{color:var(--ink-soft);margin-top:8px;font-size:16px}
+
+/* ── TRUST BAND ──────────────────────────────────────────── */
+.trust{display:grid;gap:14px;grid-template-columns:repeat(4,1fr)}
+@media (max-width:760px){ .trust{grid-template-columns:1fr 1fr} }
+@media (max-width:420px){ .trust{grid-template-columns:1fr} }
+.trust-card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px}
+.trust-card .ic{width:40px;height:40px;border-radius:11px;background:var(--honey-soft);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.trust-card h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:17px;color:var(--pine);margin-bottom:3px;letter-spacing:-.2px}
+.trust-card p{font-size:14px;color:var(--ink-soft);line-height:1.5}
+
+/* ── STEPS ───────────────────────────────────────────────── */
+.steps{display:grid;gap:14px;grid-template-columns:repeat(4,1fr)}
+@media (max-width:760px){ .steps{grid-template-columns:1fr 1fr} }
+@media (max-width:420px){ .steps{grid-template-columns:1fr} }
+.step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px}
+.step .n{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;color:var(--lime);background:var(--pine);width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.step h3{font-family:'DM Sans',sans-serif;font-weight:700;font-size:17px;margin-bottom:4px}
+.step p{font-size:14px;color:var(--ink-soft);line-height:1.5}
+
+/* ── FILTERS + LISTINGS ──────────────────────────────────── */
+.listings-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:6px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.filter{min-width:150px}
+.filter label{display:block;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px}
+.filter select{width:100%;font-family:inherit;font-size:16px;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer}
 .filter select:focus{outline:none;border-color:var(--pine)}
-.count{font-family:'DM Mono',monospace;font-size:12px;color:var(--ink-soft);margin:8px 0 0}
-.how-link{margin-top:10px}
-.how-link a{font-family:'DM Sans',sans-serif;font-weight:600;font-size:15px;color:var(--pine);text-decoration:none;border-bottom:2px solid var(--lime);padding-bottom:2px}
-.how-link a:hover{color:var(--pine-deep)}
+.count{font-family:'DM Mono',monospace;font-size:12px;color:var(--ink-soft);white-space:nowrap;padding-bottom:12px}
 
-/* ── HOME CARDS ──────────────────────────────────────────── */
-.cards{display:grid;gap:18px;margin-top:18px}
+.cards{display:grid;gap:18px;margin-top:20px;grid-template-columns:1fr}
 @media (min-width:560px){ .cards{grid-template-columns:1fr 1fr} }
-.card{
-  display:block;text-decoration:none;color:var(--ink);
-  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
-  overflow:hidden;transition:transform .15s ease,box-shadow .15s ease;
-}
-.card:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(28,27,23,.09)}
+@media (min-width:820px){ .cards{grid-template-columns:1fr 1fr 1fr} }
+.card{display:flex;flex-direction:column;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .15s ease,box-shadow .15s ease}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(28,27,23,.12)}
 .card:focus-visible{outline:3px solid var(--honey);outline-offset:2px}
-.card-photo{
-  position:relative;aspect-ratio:16/10;
-  background:linear-gradient(135deg,#1c5234,#2e7d4f);
-  display:flex;align-items:center;justify-content:center;overflow:hidden;
-}
-.card-photo img{width:100%;height:100%;object-fit:cover;display:block}
-.card-photo .fallback{opacity:.9}
-.card .status-tag{
-  position:absolute;top:12px;left:12px;z-index:2;
-  font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;
-  background:var(--lime);color:var(--pine-deep);padding:5px 10px;border-radius:999px;font-weight:500;
-}
-.card .status-tag.pending{background:var(--honey-soft);color:#8a6420}
-.card-body{padding:16px 16px 18px}
-.card-city{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:20px;letter-spacing:-.4px;color:var(--pine)}
-.card-specs{font-family:'DM Mono',monospace;font-size:12px;color:var(--ink-soft);margin-top:3px}
-.card-price{margin-top:10px;display:flex;align-items:baseline;gap:6px}
-.card-price .num{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;color:var(--ink)}
+.card-face{position:relative;aspect-ratio:16/10;display:flex;align-items:flex-end;padding:14px;overflow:hidden}
+.card-face .fmark{position:absolute;right:-14px;bottom:-18px;opacity:.16;color:#fff}
+.card-face .fcity{position:relative;z-index:2;color:#fff}
+.card-face .fcity .c{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.4px;line-height:1.05}
+.card-face .fcity .s{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.82);margin-top:3px}
+.status-tag{position:absolute;top:12px;left:12px;z-index:3;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;background:var(--lime);color:var(--pine-deep);padding:5px 10px;border-radius:999px;font-weight:500}
+.status-tag.pending{background:var(--honey-soft);color:#8a6420}
+.of-tag{position:absolute;top:12px;right:12px;z-index:3;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;background:rgba(0,0,0,.28);color:#fff;padding:5px 9px;border-radius:999px}
+.card-body{padding:16px 16px 18px;display:flex;flex-direction:column;flex:1}
+.card-price{display:flex;align-items:baseline;gap:6px}
+.card-price .num{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:27px;color:var(--ink);line-height:1}
 .card-price .per{font-family:'DM Mono',monospace;font-size:11px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:1px}
-.card-cta{
-  margin-top:12px;display:block;text-align:center;
-  font-weight:600;font-size:15px;color:#fff;background:var(--go);
-  border-radius:12px;padding:12px 14px;
-}
+.card-mini{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+.mini{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:8px 10px}
+.mini .k{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.5px;text-transform:uppercase;color:var(--ink-soft)}
+.mini .v{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:15px;color:var(--pine);margin-top:1px}
+.card-specs{font-family:'DM Mono',monospace;font-size:12px;color:var(--ink-soft);margin-bottom:12px}
+.card-cta{margin-top:auto;display:block;text-align:center;font-weight:700;font-size:15px;color:#fff;background:var(--go);border-radius:12px;padding:12px 14px}
 .card:hover .card-cta{background:var(--go-hover)}
 
-/* empty state */
-.empty{
-  display:none;background:var(--card);border:1px dashed var(--line);border-radius:var(--radius);
-  padding:36px 20px;text-align:center;margin-top:18px;
-}
+.empty{display:none;background:var(--card);border:1px dashed var(--line);border-radius:var(--radius);padding:36px 20px;text-align:center;margin-top:18px}
 .empty h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:20px;color:var(--pine);margin-bottom:4px}
 .empty p{font-size:15px;color:var(--ink-soft)}
 
-/* ── CLOSER ──────────────────────────────────────────────── */
-.closer{margin-top:48px;background:var(--pine);border-radius:var(--radius);padding:34px 24px;text-align:center;color:#fff}
-.closer h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(24px,6vw,32px);letter-spacing:-.5px;margin-bottom:8px}
-.closer p{color:#cfe7d6;margin-bottom:20px}
-.cta-group{display:flex;gap:10px;flex-wrap:wrap}
-.btn{
-  flex:1;min-width:150px;text-align:center;text-decoration:none;
-  font-family:'DM Sans',sans-serif;font-weight:600;font-size:17px;
-  padding:16px 18px;border-radius:14px;transition:transform .12s ease,background .15s ease;
-}
-.btn:active{transform:scale(.98)}
-.btn:focus-visible{outline:3px solid var(--honey);outline-offset:2px}
-.closer .btn-primary{background:var(--lime);color:var(--pine-deep)}
-.closer .btn-primary:hover{background:#d7ff5f}
-.closer .btn-secondary{background:transparent;color:#fff;border:1.5px solid #4f8a64}
-.closer .btn-secondary:hover{background:rgba(255,255,255,.08)}
+/* ── TESTIMONIALS ────────────────────────────────────────── */
+.quotes{display:grid;gap:16px;grid-template-columns:repeat(3,1fr)}
+@media (max-width:760px){ .quotes{grid-template-columns:1fr} }
+.quote{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px 20px}
+.quote .stars{color:var(--honey);font-size:15px;letter-spacing:2px;margin-bottom:10px}
+.quote p{font-size:15px;color:var(--ink);line-height:1.55;margin-bottom:14px}
+.quote .who{display:flex;align-items:center;gap:10px}
+.quote .av{width:36px;height:36px;border-radius:999px;background:var(--pine);color:var(--lime);display:flex;align-items:center;justify-content:center;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px}
+.quote .who .nm{font-weight:700;font-size:14px}
+.quote .who .lo{font-family:'DM Mono',monospace;font-size:11px;color:var(--ink-soft)}
+.ph-note{text-align:center;font-family:'DM Mono',monospace;font-size:11px;color:#b7ac95;margin-top:14px}
 
-/* footer */
-.foot{margin:40px 0 30px;text-align:center;color:var(--ink-soft);font-size:13px;line-height:1.7}
-.foot .fb{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:18px;color:var(--pine);letter-spacing:-.5px}
-/* <!-- COMPLIANCE: your RMLO / attorney's required disclosures go in the .foot block below before this page goes public --> */
+/* ── LEAD FORM ───────────────────────────────────────────── */
+.lead{margin-top:52px;background:var(--pine);border-radius:26px;padding:38px 26px;color:#fff;position:relative;overflow:hidden}
+.lead .lead-inner{position:relative;z-index:2;max-width:460px;margin:0 auto}
+.lead h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(24px,5vw,32px);letter-spacing:-.5px;text-align:center;margin-bottom:6px}
+.lead p.sub{color:#cfe7d6;text-align:center;margin-bottom:22px}
+.lead form{display:flex;flex-direction:column;gap:12px;text-align:left}
+.lead label{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#bfe6cb;margin-bottom:-6px}
+.lead input,.lead select{font-family:inherit;font-size:16px;color:var(--ink);background:#fff;border:1.5px solid transparent;border-radius:12px;padding:14px;width:100%}
+.lead input:focus,.lead select:focus{outline:none;border-color:var(--lime)}
+.lead .btn-lime{margin-top:6px;width:100%}
+.lead .form-note{font-family:'DM Mono',monospace;font-size:11px;color:#a9cdb4;text-align:center;margin-top:2px}
+.lead .thanks{display:none;text-align:center;padding:14px 8px}
+.lead .thanks h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;color:#fff;margin-bottom:6px}
+.lead .thanks p{color:#cfe7d6}
+.lead.sent form{display:none}
+.lead.sent .thanks{display:block}
+
+/* ── FOOTER ──────────────────────────────────────────────── */
+.foot{margin:48px 0 34px;text-align:center;color:var(--ink-soft);font-size:13px;line-height:1.7}
+.foot .fb{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:18px;color:var(--pine);letter-spacing:-.4px;margin-bottom:4px}
+.foot .fcontact a{color:var(--pine);font-weight:600;text-decoration:none}
+.foot .legal{max-width:60ch;margin:12px auto 0;font-size:12px;color:#948b78}
+/* <!-- COMPLIANCE: your RMLO / attorney's required disclosures go in the .legal block below before this page goes public --> */
 
 /* reveal motion */
 .reveal{opacity:0;transform:translateY(16px)}
 .reveal.in{opacity:1;transform:none;transition:opacity .6s ease,transform .6s ease}
-@media (prefers-reduced-motion:reduce){
-  .reveal{opacity:1;transform:none;transition:none}
-  html{scroll-behavior:auto}
-}
-@media (min-width:560px){
-  body{font-size:18px}
-}
+@media (prefers-reduced-motion:reduce){ .reveal{opacity:1;transform:none;transition:none} html{scroll-behavior:auto} }
 </style>
 </head>
 <body>
 
 <div class="wrap">
 
+  <!-- TOP BAR -->
   <header class="topbar">
-    <div class="brand">Lonchando</div>
-    <div class="eyebrow">Owner Financing</div>
+    <a class="brand" href="index.html" aria-label="Americas Best Home Solutions — home">
+      <svg class="mark" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+        <rect width="40" height="40" rx="10" fill="#14532d"/>
+        <path d="M9 20.5 20 11l11 9.5" stroke="#c8f542" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M11.5 19v10h17V19" stroke="#c8f542" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M17.5 29v-6h5v6" stroke="#c8f542" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <span class="bn">Americas Best Home Solutions<small>Owner Financing</small></span>
+    </a>
+    <nav class="topnav">
+      <a class="nav-hide" href="index.html">Homes</a>
+      <a class="nav-hide" href="how-it-works.html">How it works</a>
+      <a class="call" id="navCall" href="#">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span id="navCallText">Call us</span>
+      </a>
+    </nav>
   </header>
 
-  <!-- INTRO -->
-  <h1 class="headline">Own a home. <em>No bank needed.</em></h1>
-  <p class="subhead">Every home below comes with owner financing — a locked price and a monthly payment close to rent.</p>
-  <p class="how-link"><a href="how-it-works.html">New to owner financing? See how it works →</a></p>
-
-  <!-- FILTERS -->
-  <div class="filters">
-    <div class="filter">
-      <label for="fCity">City</label>
-      <select id="fCity"><option value="">All cities</option></select>
+  <!-- HERO -->
+  <section class="hero">
+    <svg class="hero-art" viewBox="0 0 960 200" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#0e3b20" stop-opacity="0"/>
+          <stop offset="1" stop-color="#0b3019"/>
+        </linearGradient>
+      </defs>
+      <circle cx="815" cy="52" r="34" fill="#c8f542" opacity=".22"/>
+      <g stroke="#8fc4a1" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".55">
+        <!-- little houses along a street -->
+        <path d="M60 170v-42l34-26 34 26v42"/><path d="M82 170v-22h24v22"/>
+        <path d="M170 175v-34l28-22 28 22v34"/><path d="M188 175v-18h20v18"/>
+        <path d="M280 172v-46l36-28 36 28v46"/><path d="M304 172v-24h24v24"/>
+        <path d="M404 176v-32l26-20 26 20v32"/><path d="M420 176v-16h20v16"/>
+        <path d="M520 170v-44l34-26 34 26v44"/><path d="M542 170v-22h24v22"/>
+        <path d="M632 175v-34l28-22 28 22v34"/><path d="M650 175v-18h20v18"/>
+        <path d="M736 172v-42l34-26 34 26v42"/><path d="M758 172v-22h24v22"/>
+        <path d="M860 176v-30l24-18 24 18v30"/><path d="M876 176v-15h18v15"/>
+        <!-- trees -->
+        <circle cx="138" cy="150" r="12"/><path d="M138 162v14"/>
+        <circle cx="372" cy="152" r="11"/><path d="M372 163v13"/>
+        <circle cx="600" cy="150" r="12"/><path d="M600 162v14"/>
+        <circle cx="820" cy="150" r="11"/><path d="M820 161v15"/>
+      </g>
+      <rect x="0" y="120" width="960" height="80" fill="url(#sky)"/>
+      <path d="M0 178h960" stroke="#8fc4a1" stroke-width="2" opacity=".4"/>
+    </svg>
+    <div class="hero-inner">
+      <span class="eyebrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="#c8f542" aria-hidden="true"><path d="M12 2 3 7v6c0 5 3.8 8.4 9 11 5.2-2.6 9-6 9-11V7l-9-5z"/></svg> Owner Financing · No Bank Needed</span>
+      <h1>Own the home.<br><em>Skip the bank.</em></h1>
+      <p class="lead">Owner-financed homes across Illinois, Missouri &amp; Michigan — a price locked the day you sign and a monthly payment close to rent.</p>
+      <p class="reassure">Your past doesn't have to decide your future. If you've been turned away by banks, this was built for you.</p>
+      <div class="hero-cta">
+        <a class="btn btn-lime" href="#get-started">Get started today</a>
+        <a class="btn btn-ghost" href="#listings">Browse homes</a>
+      </div>
     </div>
-    <div class="filter">
-      <label for="fBeds">Bedrooms</label>
-      <select id="fBeds">
-        <option value="">Any</option>
-        <option value="2">2+ bedrooms</option>
-        <option value="3">3+ bedrooms</option>
-        <option value="4">4+ bedrooms</option>
-      </select>
+  </section>
+
+  <!-- TRUST STAT STRIP -->
+  <div class="stats">
+    <div class="stat"><div class="n" id="statHomes">—</div><div class="l">Homes available</div></div>
+    <div class="stat"><div class="n">No bank</div><div class="l">No mortgage app</div></div>
+    <div class="stat"><div class="n">Locked</div><div class="l">Price never rises</div></div>
+    <div class="stat"><div class="n" id="statCities">—</div><div class="l">Cities &amp; towns</div></div>
+  </div>
+
+  <!-- TRUST BAND -->
+  <section class="section reveal">
+    <div class="sec-head">
+      <div class="sec-label">Why people choose us</div>
+      <h2 class="sec-title">A real path to owning — <br>without the bank in the way</h2>
     </div>
-  </div>
-  <p class="count" id="count"></p>
+    <div class="trust">
+      <div class="trust-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg></div>
+        <h3>You're buying, not renting</h3>
+        <p>Your name is on the agreement from day one. You're the homeowner — not a tenant.</p>
+      </div>
+      <div class="trust-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3>No bank, no mortgage maze</h3>
+        <p>We finance the home to you directly. No mortgage application standing between you and the keys.</p>
+      </div>
+      <div class="trust-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <h3>The price is locked</h3>
+        <p>What you agree to today is what you pay. It won't go up while you pay it down.</p>
+      </div>
+      <div class="trust-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#f5a623" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h3>A payment close to rent</h3>
+        <p>Own a home for about what you'd pay a landlord — and every payment builds toward it being yours.</p>
+      </div>
+    </div>
+  </section>
 
-  <!-- CARDS -->
-  <div class="cards" id="cards"></div>
+  <!-- 4 STEPS -->
+  <section class="section reveal">
+    <div class="sec-head">
+      <div class="sec-label">Simple from start to keys</div>
+      <h2 class="sec-title">Own your home in 4 steps</h2>
+      <p class="sec-sub">No long approvals. No runaround. Here's the whole path.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Reach out</h3><p>Call or text us, or send your info below. Tell us what you're looking for.</p></div>
+      <div class="step"><div class="n">2</div><h3>Tour a home</h3><p>Pick a home you like and we'll set up a time to walk through it together.</p></div>
+      <div class="step"><div class="n">3</div><h3>Sign a simple agreement</h3><p>We finance it ourselves with a contract for deed — plain language, no surprises.</p></div>
+      <div class="step"><div class="n">4</div><h3>Get the keys</h3><p>Make your move-in payment and the home is yours to live in from day one.</p></div>
+    </div>
+    <p style="text-align:center;margin-top:18px"><a href="how-it-works.html" style="font-weight:700;color:var(--pine);text-decoration:none;border-bottom:2px solid var(--lime);padding-bottom:2px">See exactly how owner financing works →</a></p>
+  </section>
 
-  <div class="empty" id="empty">
-    <h3>No homes match those filters</h3>
-    <p>Try "All cities" or "Any" bedrooms — or call us and tell us what you're looking for.</p>
-  </div>
+  <!-- LISTINGS -->
+  <section class="section reveal" id="listings">
+    <div class="sec-head">
+      <div class="sec-label">Available now</div>
+      <h2 class="sec-title">Find your home</h2>
+    </div>
+    <div class="listings-head narrow" style="max-width:100%">
+      <div class="filters">
+        <div class="filter">
+          <label for="fCity">City</label>
+          <select id="fCity"><option value="">All cities</option></select>
+        </div>
+        <div class="filter">
+          <label for="fBeds">Bedrooms</label>
+          <select id="fBeds">
+            <option value="">Any</option>
+            <option value="2">2+ bedrooms</option>
+            <option value="3">3+ bedrooms</option>
+            <option value="4">4+ bedrooms</option>
+          </select>
+        </div>
+      </div>
+      <p class="count" id="count"></p>
+    </div>
 
-  <!-- CLOSER -->
-  <section class="closer reveal">
-    <h2>Don't see the right home?</h2>
-    <p>Call or text us and tell us what you need — new homes come up all the time.</p>
-    <div class="cta-group" style="max-width:400px;margin:0 auto">
-      <a class="btn btn-primary" id="ctaCall" href="#">Call us</a>
-      <a class="btn btn-secondary" id="ctaText" href="#">Text us</a>
+    <div class="cards" id="cards"></div>
+
+    <div class="empty" id="empty">
+      <h3>No homes match those filters</h3>
+      <p>Try "All cities" or "Any" bedrooms — or call us and tell us what you're looking for.</p>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <!-- ▼▼▼ TESTIMONIALS: replace the placeholder quotes below with REAL ones from your
+       buyers (their words, first name + city). Delete a .quote block to show fewer.
+       Keep it honest — these are the most powerful trust builder on the page. ▲▲▲ -->
+  <section class="section reveal">
+    <div class="sec-head">
+      <div class="sec-label">In their words</div>
+      <h2 class="sec-title">Families we've helped home</h2>
+    </div>
+    <div class="quotes">
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>“[ Add a real quote from one of your buyers here — what owning through you meant to their family. ]”</p>
+        <div class="who"><span class="av">A</span><div><div class="nm">First name</div><div class="lo">City, ST</div></div></div>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>“[ Add a real quote here — e.g. how simple the process felt compared to dealing with a bank. ]”</p>
+        <div class="who"><span class="av">B</span><div><div class="nm">First name</div><div class="lo">City, ST</div></div></div>
+      </div>
+      <div class="quote">
+        <div class="stars">★★★★★</div>
+        <p>“[ Add a real quote here — the moment they got the keys, or how the payment compares to rent. ]”</p>
+        <div class="who"><span class="av">C</span><div><div class="nm">First name</div><div class="lo">City, ST</div></div></div>
+      </div>
+    </div>
+    <p class="ph-note">Placeholder — swap in real buyer quotes before sharing publicly (see note in the code).</p>
+  </section>
+
+  <!-- LEAD FORM / GET STARTED -->
+  <section class="lead reveal" id="get-started">
+    <div class="lead-inner">
+      <h2>Ready to own? Let's talk.</h2>
+      <p class="sub">Send your info and we'll reach out to help you find a home and set up a tour. No bank, no pressure.</p>
+      <form id="leadForm">
+        <label for="lfName">Name</label>
+        <input id="lfName" name="name" type="text" autocomplete="name" required>
+        <label for="lfPhone">Phone</label>
+        <input id="lfPhone" name="phone" type="tel" autocomplete="tel" required>
+        <label for="lfEmail">Email</label>
+        <input id="lfEmail" name="email" type="email" autocomplete="email" required>
+        <label for="lfWhere">What area are you looking in?</label>
+        <input id="lfWhere" name="area" type="text" placeholder="e.g. Decatur, IL — or “open to anywhere”">
+        <label for="lfMoveIn">How soon do you want to move in?</label>
+        <select id="lfMoveIn" name="move_in" required>
+          <option value="" disabled selected>Choose one…</option>
+          <option value="ASAP">As soon as possible</option>
+          <option value="1-3 months">1–3 months</option>
+          <option value="Just looking">Just looking for now</option>
+        </select>
+        <button type="submit" class="btn btn-lime" id="lfSubmit">Send my info</button>
+        <p class="form-note" id="lfNote"></p>
+      </form>
+      <div class="thanks">
+        <h3>Got it — thank you!</h3>
+        <p>We'll reach out shortly. In the meantime, feel free to call or text us below.</p>
+      </div>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="foot">
-    <div class="fb">Lonchando</div>
-    <p id="footLine">Owner-financed homes. Lonchando is not a bank or mortgage lender.</p>
-    <!-- ▼ COMPLIANCE: paste the disclosures your RMLO / attorney gives you here, before this page is shared publicly. ▲ -->
+    <div class="fb">Americas Best Home Solutions</div>
+    <p class="fcontact">Owner-financed homes · <a id="footCall" href="#">Call or text us</a></p>
+    <p class="legal" id="legalLine">
+      Americas Best Home Solutions LLC is not a bank or mortgage lender. Homes are offered through owner financing (contract for deed). Availability, prices, and terms are subject to change.
+      <!-- ▼ COMPLIANCE: paste the disclosures your RMLO / attorney gives you here, before this page is shared publicly. ▲ -->
+    </p>
   </footer>
 
 </div>
@@ -220,28 +418,45 @@ body{
   const $ = id => document.getElementById(id);
   const money = n => "$" + Number(n||0).toLocaleString();
 
-  const fallbackSVG = `<svg class="fallback" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#bfe6cb" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9h14v-9"/><path d="M10 19v-5h4v5"/></svg>`;
+  // on-brand gradient palette; each city gets a stable one so the grid has gentle variety
+  const FACES = [
+    ["#1c5234","#2e7d4f"],["#14532d","#256b41"],["#155e4a","#2f8f6d"],
+    ["#1d5b3a","#3a8a5c"],["#0e3b20","#256b41"],["#17604a","#2b8f68"]
+  ];
+  const faceFor = s => {
+    let h=0; for(const ch of (s||"")) h=(h*31+ch.charCodeAt(0))>>>0;
+    return FACES[h % FACES.length];
+  };
+  const houseMark = `<svg class="fmark" width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9h14v-9"/><path d="M10 19v-5h4v5"/></svg>`;
 
   // city filter options — built from whatever cities are in homes.js
   const cities = [...new Set(HOMES.map(h => h.city))].sort();
   $("fCity").insertAdjacentHTML("beforeend",
     cities.map(c => `<option value="${c}">${c}</option>`).join(""));
 
+  // hero stats
+  $("statHomes").textContent = HOMES.length;
+  $("statCities").textContent = cities.length;
+
   function cardHTML(h){
-    const photo = h.heroPhoto
-      ? `<img src="${h.heroPhoto}" alt="Home in ${h.city}, ${h.state}" loading="lazy" onerror="this.remove()">`
-      : fallbackSVG;
+    const [a,b] = faceFor(h.city + h.state);
     const pending = (h.status||"").toLowerCase()==="pending" ? " pending" : "";
+    const specs = `${h.beds} bd · ${h.baths} ba${h.sqft?` · ${Number(h.sqft).toLocaleString()} sqft`:""}`;
     return `
     <a class="card" href="home.html?home=${encodeURIComponent(h.id)}">
-      <div class="card-photo">
+      <div class="card-face" style="background:linear-gradient(135deg,${a},${b})">
         <span class="status-tag${pending}">${h.status||"Available"}</span>
-        ${photo}
+        <span class="of-tag">Owner financing</span>
+        ${houseMark}
+        <div class="fcity"><div class="c">${h.city}</div><div class="s">${h.state}</div></div>
       </div>
       <div class="card-body">
-        <div class="card-city">${h.city}, ${h.state}</div>
-        <div class="card-specs">${h.beds} bd · ${h.baths} ba${h.sqft?` · ${Number(h.sqft).toLocaleString()} sqft`:""}</div>
         <div class="card-price"><span class="num">${money(h.monthlyPayment)}</span><span class="per">/ month</span></div>
+        <div class="card-mini">
+          <div class="mini"><div class="k">To move in</div><div class="v">${h.moveIn ? money(h.moveIn) : "Ask us"}</div></div>
+          <div class="mini"><div class="k">Locked price</div><div class="v">${money(h.lockedPrice)}</div></div>
+        </div>
+        <div class="card-specs">${specs}</div>
         <span class="card-cta">View this home →</span>
       </div>
     </a>`;
@@ -261,17 +476,43 @@ body{
   $("fBeds").addEventListener("change", render);
   render();
 
-  // contact buttons (shared CONTACT settings from homes.js)
+  // contact links (shared CONTACT settings from homes.js)
   const tel = (CONTACT.phone||"").replace(/[^\d+]/g,"");
+  const pretty = tel.length===10 ? `(${tel.slice(0,3)}) ${tel.slice(3,6)}-${tel.slice(6)}` : (CONTACT.phone||"");
   const smsBody = encodeURIComponent(`Hi ${CONTACT.contactName}, I'm looking for an owner-financed home.`);
-  $("ctaCall").href = `tel:${tel}`;
-  $("ctaText").href = `sms:${tel}?&body=${smsBody}`;
+  $("navCall").href = `tel:${tel}`;
+  $("navCallText").textContent = pretty || "Call us";
+  $("footCall").href = `sms:${tel}?&body=${smsBody}`;
+  $("footCall").textContent = pretty ? `Call or text ${pretty}` : "Call or text us";
+
+  // lead form → Formspree (email) + Make (Notion CRM)  [same wiring as the property page]
+  (function(){
+    const form = $("leadForm"), note = $("lfNote"), btn = $("lfSubmit"), section = $("get-started");
+    const id = (CONTACT.formspreeId||"").trim();
+    const hook = (CONTACT.makeWebhook||"").trim();
+    note.textContent = (id || hook) ? "We usually reply the same day." :
+      "⚠ Form not connected yet — add a Formspree ID or Make webhook in homes.js.";
+    form.addEventListener("submit", async (e)=>{
+      e.preventDefault();
+      if (!id && !hook){ note.textContent = "⚠ Form not connected yet — add a Formspree ID or Make webhook in homes.js."; return; }
+      btn.disabled = true; btn.textContent = "Sending…";
+      const data = new FormData(form);
+      data.append("source", "Home page — Get started");
+      const targets = [];
+      if (id)   targets.push(fetch(`https://formspree.io/f/${id}`, { method:"POST", headers:{ "Accept":"application/json" }, body:data }));
+      if (hook) targets.push(fetch(hook, { method:"POST", body:data }));
+      const results = await Promise.allSettled(targets);
+      const ok = results.some(r => r.status === "fulfilled" && r.value.ok);
+      if (ok){ section.classList.add("sent"); }
+      else { btn.disabled = false; btn.textContent = "Send my info"; note.textContent = "Something went wrong — please call or text us instead."; }
+    });
+  })();
 
   // scroll reveal (respects reduced-motion via CSS)
   if ("IntersectionObserver" in window){
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} });
-    },{threshold:.12});
+    },{threshold:.10});
     document.querySelectorAll(".reveal").forEach(el=>io.observe(el));
   } else {
     document.querySelectorAll(".reveal").forEach(el=>el.classList.add("in"));

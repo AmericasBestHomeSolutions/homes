@@ -19,7 +19,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",  // Make.com webhook → saves lead to Notion CRM
 };
 
-/* --- the homes (145 live, imported from master sheet) --- */
+/* --- the homes (155 live, imported from master sheet — published 2026-07-04) --- */
 const HOMES = [
   {
     id: "birmingham-al-208-carol",
@@ -67,23 +67,6 @@ const HOMES = [
     monthlyPayment: 525,
     moveIn:         1000,
     lockedPrice:    49000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
-  },
-  {
-    id: "assumption-il-113-poplar",
-    city:  "Assumption",
-    state: "IL",
-    beds:  2,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 895,
-    moveIn:         2500,
-    lockedPrice:    79000,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
@@ -141,23 +124,6 @@ const HOMES = [
     photos:    [],
   },
   {
-    id: "cahokia-il-12-agnes",
-    city:  "Cahokia",
-    state: "IL",
-    beds:  2,
-    baths: 1,
-    sqft:  720,
-    status: "Available",
-
-    monthlyPayment: 995,
-    moveIn:         3500,
-    lockedPrice:    89000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
-  },
-  {
     id: "cahokia-il-500-saint",
     city:  "Cahokia",
     state: "IL",
@@ -166,9 +132,9 @@ const HOMES = [
     sqft:  "",
     status: "Available",
 
-    monthlyPayment: 950,
+    monthlyPayment: 850,
     moveIn:         2000,
-    lockedPrice:    94000,
+    lockedPrice:    79000,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
@@ -515,23 +481,6 @@ const HOMES = [
     photos:    [],
   },
   {
-    id: "decatur-il-1612-hunt",
-    city:  "Decatur",
-    state: "IL",
-    beds:  2,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 995,
-    moveIn:         3000,
-    lockedPrice:    96000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
-  },
-  {
     id: "decatur-il-1652-hickory",
     city:  "Decatur",
     state: "IL",
@@ -668,23 +617,6 @@ const HOMES = [
     photos:    [],
   },
   {
-    id: "decatur-il-1911-jasper",
-    city:  "Decatur",
-    state: "IL",
-    beds:  4,
-    baths: 2,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 950,
-    moveIn:         2500,
-    lockedPrice:    99900,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
-  },
-  {
     id: "decatur-il-1975-st",
     city:  "Decatur",
     state: "IL",
@@ -713,6 +645,23 @@ const HOMES = [
     monthlyPayment: 1300,
     moveIn:         3500,
     lockedPrice:    119000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "decatur-il-2148-church",
+    city:  "Decatur",
+    state: "IL",
+    beds:  3,
+    baths: 1,
+    sqft:  936,
+    status: "Available",
+
+    monthlyPayment: 1050,
+    moveIn:         3000,
+    lockedPrice:    95500,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
@@ -821,6 +770,23 @@ const HOMES = [
     photos:    [],
   },
   {
+    id: "decatur-il-305-maffit",
+    city:  "Decatur",
+    state: "IL",
+    beds:  4,
+    baths: 3,
+    sqft:  2020,
+    status: "Available",
+
+    monthlyPayment: 1295,
+    moveIn:         3500,
+    lockedPrice:    125000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
     id: "decatur-il-327-stuart",
     city:  "Decatur",
     state: "IL",
@@ -832,23 +798,6 @@ const HOMES = [
     monthlyPayment: 875,
     moveIn:         2000,
     lockedPrice:    89900,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
-  },
-  {
-    id: "decatur-il-328-18th",
-    city:  "Decatur",
-    state: "IL",
-    beds:  2,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 725,
-    moveIn:         2000,
-    lockedPrice:    59000,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
@@ -962,11 +911,11 @@ const HOMES = [
     state: "IL",
     beds:  3,
     baths: 1.5,
-    sqft:  "",
+    sqft:  1170,
     status: "Available",
 
-    monthlyPayment: 950,
-    moveIn:         2500,
+    monthlyPayment: 925,
+    moveIn:         2000,
     lockedPrice:    88000,
     termText:       "30-year owner financing (contract for deed)",
 
@@ -1586,23 +1535,6 @@ const HOMES = [
     photos:    [],
   },
   {
-    id: "peoria-il-3112-latrobe",
-    city:  "Peoria",
-    state: "IL",
-    beds:  1,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 695,
-    moveIn:         1750,
-    lockedPrice:    65900,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
-  },
-  {
     id: "peoria-il-422-louisa",
     city:  "Peoria",
     state: "IL",
@@ -1614,6 +1546,40 @@ const HOMES = [
     monthlyPayment: 515,
     moveIn:         1000,
     lockedPrice:    43000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "peoria-il-609-tracy",
+    city:  "Peoria",
+    state: "IL",
+    beds:  4,
+    baths: 2,
+    sqft:  1344,
+    status: "Available",
+
+    monthlyPayment: 612.88,
+    moveIn:         2000,
+    lockedPrice:    69000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "peoria-il-715-thrush",
+    city:  "Peoria",
+    state: "IL",
+    beds:  2,
+    baths: 1,
+    sqft:  804,
+    status: "Available",
+
+    monthlyPayment: 650,
+    moveIn:         2000,
+    lockedPrice:    59000,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
@@ -1688,6 +1654,57 @@ const HOMES = [
     photos:    [],
   },
   {
+    id: "sauget-il-1320-williams",
+    city:  "Sauget",
+    state: "IL",
+    beds:  3,
+    baths: 1,
+    sqft:  936,
+    status: "Available",
+
+    monthlyPayment: 625,
+    moveIn:         1500,
+    lockedPrice:    49900,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "sauget-il-17-cahokia",
+    city:  "Sauget",
+    state: "IL",
+    beds:  2,
+    baths: 1,
+    sqft:  1187,
+    status: "Available",
+
+    monthlyPayment: 450,
+    moveIn:         1000,
+    lockedPrice:    29000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "sauget-il-26-leonard",
+    city:  "Sauget",
+    state: "IL",
+    beds:  3,
+    baths: 1,
+    sqft:  936,
+    status: "Available",
+
+    monthlyPayment: 875,
+    moveIn:         2500,
+    lockedPrice:    72000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
     id: "sauget-il-306-isabell",
     city:  "Sauget",
     state: "IL",
@@ -1699,6 +1716,57 @@ const HOMES = [
     monthlyPayment: 750,
     moveIn:         1500,
     lockedPrice:    59000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "sauget-il-523-saint",
+    city:  "Sauget",
+    state: "IL",
+    beds:  3,
+    baths: 1,
+    sqft:  925,
+    status: "Available",
+
+    monthlyPayment: 895,
+    moveIn:         2500,
+    lockedPrice:    76000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "sauget-il-722-saint",
+    city:  "Sauget",
+    state: "IL",
+    beds:  3,
+    baths: 1,
+    sqft:  896,
+    status: "Available",
+
+    monthlyPayment: 925,
+    moveIn:         2500,
+    lockedPrice:    79000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "sauget-il-8-helen",
+    city:  "Sauget",
+    state: "IL",
+    beds:  2,
+    baths: 1,
+    sqft:  720,
+    status: "Available",
+
+    monthlyPayment: 795,
+    moveIn:         2500,
+    lockedPrice:    69000,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
@@ -1750,6 +1818,23 @@ const HOMES = [
     monthlyPayment: 850,
     moveIn:         2500,
     lockedPrice:    69000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "woodriver-il-830-wood",
+    city:  "Wood River",
+    state: "IL",
+    beds:  2,
+    baths: 1,
+    sqft:  1120,
+    status: "Available",
+
+    monthlyPayment: 850,
+    moveIn:         2000,
+    lockedPrice:    79000,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
@@ -1835,6 +1920,23 @@ const HOMES = [
     monthlyPayment: 795,
     moveIn:         2000,
     lockedPrice:    64000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "flint-mi-1802-woodlin",
+    city:  "Flint",
+    state: "MI",
+    beds:  2,
+    baths: 1,
+    sqft:  947,
+    status: "Available",
+
+    monthlyPayment: 875,
+    moveIn:         3000,
+    lockedPrice:    90000,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
@@ -2062,6 +2164,57 @@ const HOMES = [
     photos:    [],
   },
   {
+    id: "stlouis-mo-10187-count",
+    city:  "St. Louis",
+    state: "MO",
+    beds:  3,
+    baths: 2,
+    sqft:  936,
+    status: "Available",
+
+    monthlyPayment: 989.31,
+    moveIn:         4000,
+    lockedPrice:    99999,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "stlouis-mo-10249-earl",
+    city:  "St. Louis",
+    state: "MO",
+    beds:  3,
+    baths: 1,
+    sqft:  737,
+    status: "Available",
+
+    monthlyPayment: 832.69,
+    moveIn:         4000,
+    lockedPrice:    89999,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "stlouis-mo-10869-spring",
+    city:  "St. Louis",
+    state: "MO",
+    beds:  3,
+    baths: 1,
+    sqft:  927,
+    status: "Available",
+
+    monthlyPayment: 750,
+    moveIn:         1450,
+    lockedPrice:    69000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
     id: "stlouis-mo-2028-prairei",
     city:  "St. Louis",
     state: "MO",
@@ -2101,12 +2254,12 @@ const HOMES = [
     state: "MO",
     beds:  2,
     baths: 1,
-    sqft:  "",
+    sqft:  800,
     status: "Available",
 
-    monthlyPayment: 775,
-    moveIn:         2000,
-    lockedPrice:    75000,
+    monthlyPayment: 750,
+    moveIn:         1500,
+    lockedPrice:    73000,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
@@ -2124,6 +2277,23 @@ const HOMES = [
     monthlyPayment: 775,
     moveIn:         2000,
     lockedPrice:    80000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "stlouis-mo-3738-sylvan",
+    city:  "St. Louis",
+    state: "MO",
+    beds:  2,
+    baths: 1,
+    sqft:  1000,
+    status: "Available",
+
+    monthlyPayment: 895,
+    moveIn:         2500,
+    lockedPrice:    99000,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
@@ -2215,23 +2385,6 @@ const HOMES = [
     photos:    [],
   },
   {
-    id: "stlouis-mo-4922-davison",
-    city:  "St. Louis",
-    state: "MO",
-    beds:  2,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 495,
-    moveIn:         2000,
-    lockedPrice:    54000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
-  },
-  {
     id: "stlouis-mo-4931-plover",
     city:  "St. Louis",
     state: "MO",
@@ -2294,6 +2447,23 @@ const HOMES = [
     monthlyPayment: 1095,
     moveIn:         4000,
     lockedPrice:    99000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "stlouis-mo-5619-janet",
+    city:  "St. Louis",
+    state: "MO",
+    beds:  2,
+    baths: 1,
+    sqft:  931,
+    status: "Available",
+
+    monthlyPayment: 575,
+    moveIn:         1000,
+    lockedPrice:    44000,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",

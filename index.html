@@ -122,8 +122,10 @@ body{
 .card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(28,27,23,.12)}
 .card:focus-visible{outline:3px solid var(--honey);outline-offset:2px}
 .card-face{position:relative;aspect-ratio:16/10;display:flex;align-items:flex-end;padding:14px;overflow:hidden}
-.card-face .fmark{position:absolute;right:-14px;bottom:-18px;opacity:.16;color:#fff}
-.card-face .fcity{position:relative;z-index:2;color:#fff}
+.card-face .fmark{position:absolute;right:-14px;bottom:-18px;opacity:.16;color:#fff;z-index:0}
+.card-face img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;display:block}
+.card-face .scrim{position:absolute;inset:0;z-index:2;background:linear-gradient(to top,rgba(11,20,40,.55),rgba(11,20,40,0) 55%);pointer-events:none}
+.card-face .fcity{position:relative;z-index:3;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.4)}
 .card-face .fcity .c{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.4px;line-height:1.05}
 .card-face .fcity .s{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.82);margin-top:3px}
 .status-tag{position:absolute;top:12px;left:12px;z-index:3;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;background:var(--lime);color:var(--pine-deep);padding:5px 10px;border-radius:999px;font-weight:500}
@@ -171,6 +173,14 @@ body{
 .about .chip{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;color:var(--pine);background:var(--honey-soft);border:1px solid #d9e5f5;padding:6px 12px;border-radius:999px}
 .about .abtn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-weight:700;font-size:15px;color:#fff;background:var(--go);padding:13px 24px;border-radius:12px}
 .about .abtn:hover{background:var(--go-hover)}
+
+/* ── LEGITIMACY STRIP ─────────────────────────────────────── */
+.legit{margin-top:40px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media (max-width:760px){ .legit{grid-template-columns:1fr 1fr} }
+@media (max-width:440px){ .legit{grid-template-columns:1fr} }
+.legit-item{display:flex;align-items:center;gap:11px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:15px 16px}
+.legit-item .lic{flex-shrink:0;width:36px;height:36px;border-radius:10px;background:var(--honey-soft);display:flex;align-items:center;justify-content:center;color:var(--pine)}
+.legit-item p{font-size:13px;font-weight:600;color:var(--ink);line-height:1.35}
 
 /* ── LEAD FORM ───────────────────────────────────────────── */
 .lead{margin-top:52px;background:var(--pine);border-radius:26px;padding:38px 26px;color:#fff;position:relative;overflow:hidden}
@@ -443,13 +453,35 @@ body{
     </div>
   </section>
 
+  <!-- LEGITIMACY STRIP -->
+  <section class="legit reveal">
+    <div class="legit-item">
+      <span class="lic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
+      <p>Americas Best Home Solutions LLC — a registered business</p>
+    </div>
+    <div class="legit-item">
+      <span class="lic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9h14v-9"/></svg></span>
+      <p>Hundreds of homes sold to families</p>
+    </div>
+    <div class="legit-item">
+      <span class="lic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+      <p>A real person answers your call or text</p>
+    </div>
+    <div class="legit-item">
+      <span class="lic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></span>
+      <p>See any home in person before you decide</p>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer class="foot">
     <div class="fb">Americas Best Home Solutions</div>
     <p class="fcontact">Owner-financed homes · <a id="footCall" href="#">Call or text us</a></p>
     <p class="legal" id="legalLine">
-      Americas Best Home Solutions LLC is not a bank or mortgage lender. Homes are offered through owner financing (contract for deed). Availability, prices, and terms are subject to change.
-      <!-- ▼ COMPLIANCE: paste the disclosures your RMLO / attorney gives you here, before this page is shared publicly. ▲ -->
+      <!-- ▼ COMPLIANCE — GOOD-FAITH DRAFT ONLY. Owner financing to people who will live
+           in the home can trigger Dodd-Frank / SAFE Act rules. Have your RMLO or attorney
+           review and replace this language before you run ads or promote the site. ▲ -->
+      © 2026 Americas Best Home Solutions LLC. Americas Best Home Solutions LLC is a real estate company — not a bank, mortgage lender, or licensed mortgage broker. Homes are offered through owner financing (contract for deed), with all terms set out in a written agreement you can review before you sign. All information is believed reliable but is not guaranteed and may change without notice; homes are subject to prior sale and availability. Nothing here is an offer or commitment to lend, or legal, tax, or financial advice. Equal Housing Opportunity.
     </p>
   </footer>
 
@@ -486,9 +518,12 @@ body{
     const [a,b] = faceFor(h.city + h.state);
     const pending = (h.status||"").toLowerCase()==="pending" ? " pending" : "";
     const specs = `${h.beds} bd · ${h.baths} ba${h.sqft?` · ${Number(h.sqft).toLocaleString()} sqft`:""}`;
+    const photoSrc = h.heroPhoto || `images/${h.id}.jpg`;   // drop images/<id>.jpg in and it shows automatically
     return `
     <a class="card" href="home.html?home=${encodeURIComponent(h.id)}">
       <div class="card-face" style="background:linear-gradient(135deg,${a},${b})">
+        <img src="${photoSrc}" alt="Home in ${h.city}, ${h.state}" loading="lazy" style="opacity:0;transition:opacity .3s ease" onload="this.style.opacity=1" onerror="this.remove()">
+        <span class="scrim"></span>
         <span class="status-tag${pending}">${h.status||"Available"}</span>
         <span class="of-tag">Owner financing</span>
         ${houseMark}

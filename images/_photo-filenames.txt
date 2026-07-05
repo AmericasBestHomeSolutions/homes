@@ -1,0 +1,172 @@
+PHOTO FILENAME CHECKLIST — main photo per home (drop into this images/ folder)
+Generated 2026-07-05 · 155 homes
+
+=== AL (2) ===
+  Birmingham       $887/mo   ->  images/birmingham-al-208-carol.jpg
+  Birmingham       $795/mo   ->  images/birmingham-al-519-avenue.jpg
+
+=== IL (105) ===
+  Alton            $525/mo   ->  images/alton-il-3024-glenwood.jpg
+  Bartonville      $975/mo   ->  images/bartonville-il-5817-adams.jpg
+  Belleville       $825/mo   ->  images/belleville-il-528-belvedere.jpg
+  Bethalto         $895/mo   ->  images/bethalto-il-319-corbin.jpg
+  Cahokia          $850/mo   ->  images/cahokia-il-500-saint.jpg
+  Carbondale       $925/mo   ->  images/carbondale-il-615-almond.jpg
+  Centralia        $1025/mo   ->  images/centralia-il-227-hickory.jpg
+  Centralia        $795/mo   ->  images/centralia-il-805-hickory.jpg
+  Decatur          $865/mo   ->  images/decatur-il-1035-elmurst.jpg
+  Decatur          $995/mo   ->  images/decatur-il-1073-packard.jpg
+  Decatur          $675/mo   ->  images/decatur-il-1103-prairie.jpg
+  Decatur          $950/mo   ->  images/decatur-il-1105-jasper.jpg
+  Decatur          $850/mo   ->  images/decatur-il-1112-garfield.jpg
+  Decatur          $850/mo   ->  images/decatur-il-1258-division.jpg
+  Decatur          $800/mo   ->  images/decatur-il-1259-whitmer.jpg
+  Decatur          $995/mo   ->  images/decatur-il-1263-green.jpg
+  Decatur          $895/mo   ->  images/decatur-il-1286-vanderhoof.jpg
+  Decatur          $850/mo   ->  images/decatur-il-1303-whitmer.jpg
+  Decatur          $875/mo   ->  images/decatur-il-132-23rd.jpg
+  Decatur          $950/mo   ->  images/decatur-il-1329-riverside.jpg
+  Decatur          $870/mo   ->  images/decatur-il-1344-condit.jpg
+  Decatur          $865/mo   ->  images/decatur-il-1365-walnut.jpg
+  Decatur          $865/mo   ->  images/decatur-il-1455-whitmer.jpg
+  Decatur          $750/mo   ->  images/decatur-il-1505-walnut.jpg
+  Decatur          $875/mo   ->  images/decatur-il-1553-hickory.jpg
+  Decatur          $825/mo   ->  images/decatur-il-1652-hickory.jpg
+  Decatur          $625/mo   ->  images/decatur-il-1700-grand.jpg
+  Decatur          $775/mo   ->  images/decatur-il-1729-woodford.jpg
+  Decatur          $800/mo   ->  images/decatur-il-1755-monroe.jpg
+  Decatur          $775/mo   ->  images/decatur-il-1764-johns.jpg
+  Decatur          $900/mo   ->  images/decatur-il-1818-clay.jpg
+  Decatur          $900/mo   ->  images/decatur-il-1830-lowber.jpg
+  Decatur          $799/mo   ->  images/decatur-il-1908-union.jpg
+  Decatur          $1200/mo   ->  images/decatur-il-1975-st.jpg
+  Decatur          $1300/mo   ->  images/decatur-il-2061-college.jpg
+  Decatur          $1050/mo   ->  images/decatur-il-2148-church.jpg
+  Decatur          $825/mo   ->  images/decatur-il-238-peoria.jpg
+  Decatur          $900/mo   ->  images/decatur-il-2448-wood.jpg
+  Decatur          $835/mo   ->  images/decatur-il-254-peoria.jpg
+  Decatur          $850/mo   ->  images/decatur-il-2550-main.jpg
+  Decatur          $630/mo   ->  images/decatur-il-2618-garfield.jpg
+  Decatur          $250/mo   ->  images/decatur-il-2827-hickory.jpg
+  Decatur          $1295/mo   ->  images/decatur-il-305-maffit.jpg
+  Decatur          $875/mo   ->  images/decatur-il-327-stuart.jpg
+  Decatur          $845/mo   ->  images/decatur-il-347-stone.jpg
+  Decatur          $840/mo   ->  images/decatur-il-415-division.jpg
+  Decatur          $875/mo   ->  images/decatur-il-450-22nd.jpg
+  Decatur          $975/mo   ->  images/decatur-il-462-leafland.jpg
+  Decatur          $825/mo   ->  images/decatur-il-515-boyd.jpg
+  Decatur          $975/mo   ->  images/decatur-il-722-16th.jpg
+  Decatur          $925/mo   ->  images/decatur-il-767-whitmer.jpg
+  Decatur          $500/mo   ->  images/decatur-il-780-cushing.jpg
+  Decatur          $749/mo   ->  images/decatur-il-821-oakland.jpg
+  Decatur          $845/mo   ->  images/decatur-il-835-whitmer.jpg
+  Decatur          $900/mo   ->  images/decatur-il-927-street.jpg
+  Decatur          $950/mo   ->  images/decatur-il-968-view.jpg
+  East Alton       $695/mo   ->  images/eastalton-il-140-illinois.jpg
+  East Carondelet  $695/mo   ->  images/eastcarondelet-il-2949-adams.jpg
+  East St. Louis   $450/mo   ->  images/eaststlouis-il-1311-51st.jpg
+  East St. Louis   $995/mo   ->  images/eaststlouis-il-3511-converse.jpg
+  East St. Louis   $900/mo   ->  images/eaststlouis-il-3720-walnut.jpg
+  East St. Louis   $890/mo   ->  images/eaststlouis-il-5538-avon.jpg
+  East St. Louis   $790/mo   ->  images/eaststlouis-il-5617-warren.jpg
+  East St. Louis   $850/mo   ->  images/eaststlouis-il-563-24th.jpg
+  East St. Louis   $845/mo   ->  images/eaststlouis-il-59-jarvis.jpg
+  Fairfield        $875/mo   ->  images/fairfield-il-1200-6th.jpg
+  Fulton           $965/mo   ->  images/fulton-il-602-18th.jpg
+  Granite City     $750/mo   ->  images/granitecity-il-2317-grand.jpg
+  Granite City     $495/mo   ->  images/granitecity-il-2512-24th.jpg
+  Harrisburg       $600/mo   ->  images/harrisburg-il-410-shaw.jpg
+  Herrin           $950/mo   ->  images/herrin-il-11-b.jpg
+  Herrin           $950/mo   ->  images/herrin-il-905-monroe.jpg
+  New Athens       $650/mo   ->  images/newathens-il-106-benton.jpg
+  Nokomis          $575/mo   ->  images/nokomis-il-304-spruce.jpg
+  Nokomis          $675/mo   ->  images/nokomis-il-416-griffin.jpg
+  Peoria           $490/mo   ->  images/peoria-il-1104-smith.jpg
+  Peoria           $850/mo   ->  images/peoria-il-1117-glendale.jpg
+  Peoria           $800/mo   ->  images/peoria-il-1220-john.jpg
+  Peoria           $850/mo   ->  images/peoria-il-1610-lydia.jpg
+  Peoria           $695/mo   ->  images/peoria-il-1615-arago.jpg
+  Peoria           $849/mo   ->  images/peoria-il-1714-livingston.jpg
+  Peoria           $195/mo   ->  images/peoria-il-1714-lydia.jpg
+  Peoria           $705/mo   ->  images/peoria-il-1715-bourland.jpg
+  Peoria           $795/mo   ->  images/peoria-il-1829-stanley.jpg
+  Peoria           $750/mo   ->  images/peoria-il-2313-wiswall.jpg
+  Peoria           $195/mo   ->  images/peoria-il-2601-latrobe.jpg
+  Peoria           $225/mo   ->  images/peoria-il-2710-antoinette.jpg
+  Peoria           $515/mo   ->  images/peoria-il-422-louisa.jpg
+  Peoria           $613/mo   ->  images/peoria-il-609-tracy.jpg
+  Peoria           $650/mo   ->  images/peoria-il-715-thrush.jpg
+  Peoria           $825/mo   ->  images/peoria-il-721-matthew.jpg
+  Peoria           $749/mo   ->  images/peoria-il-812-macqueen.jpg
+  Peoria           $750/mo   ->  images/peoria-il-911-hurlburt.jpg
+  Quincy           $505/mo   ->  images/quincy-il-706-cedar.jpg
+  Sauget           $625/mo   ->  images/sauget-il-1320-williams.jpg
+  Sauget           $450/mo   ->  images/sauget-il-17-cahokia.jpg
+  Sauget           $875/mo   ->  images/sauget-il-26-leonard.jpg
+  Sauget           $750/mo   ->  images/sauget-il-306-isabell.jpg
+  Sauget           $895/mo   ->  images/sauget-il-523-saint.jpg
+  Sauget           $925/mo   ->  images/sauget-il-722-saint.jpg
+  Sauget           $795/mo   ->  images/sauget-il-8-helen.jpg
+  Springfield      $645/mo   ->  images/springfield-il-2228-brown.jpg
+  Witt             $675/mo   ->  images/witt-il-529-2nd.jpg
+  Wood River       $850/mo   ->  images/woodriver-il-329-park.jpg
+  Wood River       $850/mo   ->  images/woodriver-il-830-wood.jpg
+
+=== IN (2) ===
+  Edwardsport      $925/mo   ->  images/edwardsport-in-108-shipping.jpg
+  Muncie           $850/mo   ->  images/muncie-in-319-10th.jpg
+
+=== MI (17) ===
+  Detroit          $1195/mo   ->  images/detroit-mi-13218-greiner.jpg
+  Flint            $845/mo   ->  images/flint-mi-1101-alvord.jpg
+  Flint            $795/mo   ->  images/flint-mi-1218-pinehurst.jpg
+  Flint            $875/mo   ->  images/flint-mi-1802-woodlin.jpg
+  Flint            $925/mo   ->  images/flint-mi-2023-cadillac.jpg
+  Flint            $825/mo   ->  images/flint-mi-2433-pennsylvania.jpg
+  Flint            $795/mo   ->  images/flint-mi-246-york.jpg
+  Flint            $745/mo   ->  images/flint-mi-2621-churchhill.jpg
+  Flint            $875/mo   ->  images/flint-mi-345-baltimore.jpg
+  Flint            $775/mo   ->  images/flint-mi-3501-milbourne.jpg
+  Flint            $950/mo   ->  images/flint-mi-3618-branch.jpg
+  Flint            $895/mo   ->  images/flint-mi-3918-trumbull.jpg
+  Flint            $999/mo   ->  images/flint-mi-411-marengo.jpg
+  Flint            $848/mo   ->  images/flint-mi-5210-dupont.jpg
+  Flint            $800/mo   ->  images/flint-mi-834-remington.jpg
+  Highland Park    $1100/mo   ->  images/highlandpark-mi-376-highland.jpg
+  Saginaw          $885/mo   ->  images/saginaw-mi-1007-oakley.jpg
+
+=== MO (24) ===
+  St. Louis        $989/mo   ->  images/stlouis-mo-10187-count.jpg
+  St. Louis        $833/mo   ->  images/stlouis-mo-10249-earl.jpg
+  St. Louis        $750/mo   ->  images/stlouis-mo-10869-spring.jpg
+  St. Louis        $635/mo   ->  images/stlouis-mo-2028-prairei.jpg
+  St. Louis        $800/mo   ->  images/stlouis-mo-2603-belle.jpg
+  St. Louis        $750/mo   ->  images/stlouis-mo-2617-hord.jpg
+  St. Louis        $775/mo   ->  images/stlouis-mo-32-connoly.jpg
+  St. Louis        $895/mo   ->  images/stlouis-mo-3738-sylvan.jpg
+  St. Louis        $725/mo   ->  images/stlouis-mo-3819-kossuth.jpg
+  St. Louis        $895/mo   ->  images/stlouis-mo-3912-beachwood.jpg
+  St. Louis        $775/mo   ->  images/stlouis-mo-4627-maffit.jpg
+  St. Louis        $995/mo   ->  images/stlouis-mo-4719-plover.jpg
+  St. Louis        $700/mo   ->  images/stlouis-mo-4919-thelka.jpg
+  St. Louis        $700/mo   ->  images/stlouis-mo-4931-plover.jpg
+  St. Louis        $705/mo   ->  images/stlouis-mo-4935-alcott.jpg
+  St. Louis        $795/mo   ->  images/stlouis-mo-5446-hodiamont.jpg
+  St. Louis        $1095/mo   ->  images/stlouis-mo-5600-gatesworth.jpg
+  St. Louis        $575/mo   ->  images/stlouis-mo-5619-janet.jpg
+  St. Louis        $950/mo   ->  images/stlouis-mo-5811-helen.jpg
+  St. Louis        $875/mo   ->  images/stlouis-mo-5851-ferris.jpg
+  St. Louis        $915/mo   ->  images/stlouis-mo-6069-harney.jpg
+  St. Louis        $892/mo   ->  images/stlouis-mo-6342-lena.jpg
+  St. Louis        $995/mo   ->  images/stlouis-mo-6998-edison.jpg
+  St. Louis        $900/mo   ->  images/stlouis-mo-8116-pelham.jpg
+
+=== MS (4) ===
+  Jackson          $950/mo   ->  images/jackson-ms-1546-david.jpg
+  Jackson          $875/mo   ->  images/jackson-ms-3875-slayton.jpg
+  Jackson          $819/mo   ->  images/jackson-ms-533-stillwood.jpg
+  Jackson          $1098/mo   ->  images/jackson-ms-740-valencia.jpg
+
+=== OH (1) ===
+  Toledo           $975/mo   ->  images/toledo-oh-329-mettler.jpg
+

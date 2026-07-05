@@ -311,7 +311,7 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
   $("headline").innerHTML = `Own a home in <em>${C.city}</em>.<br>No bank needed.`;
   $("subhead").textContent = "Owner financing with a locked price and a monthly payment close to rent.";
   $("closerTitle").textContent = "Want to see it in person?";
-  $("footLine").textContent = `Americas Best Home Solutions LLC is not a bank or mortgage lender. Homes are offered through owner financing (contract for deed) in ${C.state}. Prices and terms are subject to change.`;
+  $("footLine").textContent = `© 2026 Americas Best Home Solutions LLC. Americas Best Home Solutions LLC is a real estate company — not a bank, mortgage lender, or licensed mortgage broker. Homes are offered through owner financing (contract for deed), with all terms set out in a written agreement you can review before you sign. All information is believed reliable but is not guaranteed and may change without notice; homes are subject to prior sale and availability. Nothing here is an offer or commitment to lend, or legal, tax, or financial advice. Equal Housing Opportunity.`;
 
   $("statusTag").textContent = C.status || "Available";
   $("heroCity").innerHTML = `<div class="c">${C.city}</div><div class="s">${C.state}</div>`;
@@ -321,15 +321,16 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
   $("dMoveIn").textContent  = moveInText;
   $("dPrice").textContent   = money(C.lockedPrice);
 
-  // hero photo (falls back to the branded green face + city label if none/broken)
-  if (C.heroPhoto){
+  // hero photo — uses heroPhoto if set, otherwise auto-tries images/<id>.jpg;
+  // falls back to the branded navy face + city label if there's no photo.
+  (function(){
     const img = $("heroImg");
-    img.src = C.heroPhoto;
+    img.src = C.heroPhoto || `images/${C.id}.jpg`;
     img.alt = `Home for sale in ${C.city}, ${C.state}`;
     img.hidden = false;
     img.onload = ()=>{ $("heroFallback").style.display = "none"; $("heroCity").style.display="none"; };
     img.onerror = ()=>{ img.hidden = true; };
-  }
+  })();
 
   const terms = [
     ["Your monthly payment", money(C.monthlyPayment), true],
@@ -343,16 +344,15 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
     `<div class="term-row${big?" big":""}"><span class="k">${k}</span><span class="v">${v}</span></div>`
   ).join("");
 
+  // gallery — uses photos[] if set, otherwise auto-tries images/<id>-1.jpg … -4.jpg;
+  // any that don't exist quietly show a "Photo coming soon" tile.
   const g = $("gallery");
-  if (C.photos && C.photos.length){
-    g.innerHTML = C.photos.map(src=>
-      `<div class="tile"><img src="${src}" alt="Photo of the home" loading="lazy" onerror="this.parentNode.innerHTML='<span class=&quot;ph&quot;>Photo</span>'"></div>`
-    ).join("");
-  } else {
-    g.innerHTML = Array.from({length:4}).map(()=>
-      `<div class="tile"><span class="ph">Photo coming soon</span></div>`
-    ).join("");
-  }
+  const gphotos = (C.photos && C.photos.length)
+    ? C.photos
+    : [1,2,3,4].map(i=>`images/${C.id}-${i}.jpg`);
+  g.innerHTML = gphotos.map(src=>
+    `<div class="tile"><img src="${src}" alt="Photo of the home in ${C.city}, ${C.state}" loading="lazy" onerror="this.parentNode.innerHTML='<span class=&quot;ph&quot;>Photo coming soon</span>'"></div>`
+  ).join("");
 
   const tel = (C.phone||"").replace(/[^\d+]/g,"");
   const prettyPhone = tel.length===10 ? `(${tel.slice(0,3)}) ${tel.slice(3,6)}-${tel.slice(6)}` : C.phone;

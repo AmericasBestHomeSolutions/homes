@@ -9,6 +9,8 @@
 
    TO MARK A HOME PENDING: change its  status  to "Pending".
    TO REMOVE A HOME: delete its whole { ... } block.
+   TO ADD A PHOTO: no editing here — just drop  images/<id>.jpg  into the images
+   folder (e.g. images/decatur-il-1830-lowber.jpg). See images/README.md.
    ═══════════════════════════════════════════════════════════════════════════════════ */
 
 /* --- who to contact — set ONCE, used by every home's page --- */
@@ -355,7 +357,7 @@ const HOMES = [
 
     monthlyPayment: 850,
     moveIn:         1500,
-    lockedPrice:    73867.45,
+    lockedPrice:    73867,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
@@ -389,7 +391,7 @@ const HOMES = [
 
     monthlyPayment: 950,
     moveIn:         3000,
-    lockedPrice:    88926.66,
+    lockedPrice:    88927,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
@@ -848,7 +850,7 @@ const HOMES = [
 
     monthlyPayment: 875,
     moveIn:         3000,
-    lockedPrice:    83672.2,
+    lockedPrice:    83672,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
@@ -882,7 +884,7 @@ const HOMES = [
 
     monthlyPayment: 825,
     moveIn:         1500,
-    lockedPrice:    76542.93,
+    lockedPrice:    76543,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
@@ -1424,7 +1426,7 @@ const HOMES = [
     sqft:  "",
     status: "Available",
 
-    monthlyPayment: 849.26,
+    monthlyPayment: 849,
     moveIn:         2500,
     lockedPrice:    86000,
     termText:       "30-year owner financing (contract for deed)",
@@ -1560,7 +1562,7 @@ const HOMES = [
     sqft:  1344,
     status: "Available",
 
-    monthlyPayment: 612.88,
+    monthlyPayment: 613,
     moveIn:         2000,
     lockedPrice:    69000,
     termText:       "30-year owner financing (contract for deed)",
@@ -2172,7 +2174,7 @@ const HOMES = [
     sqft:  936,
     status: "Available",
 
-    monthlyPayment: 989.31,
+    monthlyPayment: 989,
     moveIn:         4000,
     lockedPrice:    99999,
     termText:       "30-year owner financing (contract for deed)",
@@ -2189,7 +2191,7 @@ const HOMES = [
     sqft:  737,
     status: "Available",
 
-    monthlyPayment: 832.69,
+    monthlyPayment: 833,
     moveIn:         4000,
     lockedPrice:    89999,
     termText:       "30-year owner financing (contract for deed)",
@@ -2529,7 +2531,7 @@ const HOMES = [
     sqft:  "",
     status: "Available",
 
-    monthlyPayment: 891.76,
+    monthlyPayment: 892,
     moveIn:         3000,
     lockedPrice:    72500,
     termText:       "30-year owner financing (contract for deed)",
@@ -2614,7 +2616,7 @@ const HOMES = [
     sqft:  "",
     status: "Available",
 
-    monthlyPayment: 819.48,
+    monthlyPayment: 819,
     moveIn:         2000,
     lockedPrice:    69000,
     termText:       "30-year owner financing (contract for deed)",
@@ -2631,7 +2633,7 @@ const HOMES = [
     sqft:  "",
     status: "Available",
 
-    monthlyPayment: 1098.02,
+    monthlyPayment: 1098,
     moveIn:         2000,
     lockedPrice:    89250,
     termText:       "30-year owner financing (contract for deed)",

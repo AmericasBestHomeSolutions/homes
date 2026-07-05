@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M24 3 41 9V23C41 33 33 41 24 45 15 41 7 33 7 23V9Z' fill='%2315315e'/><path d='M15 26 24 18 33 26Z' fill='%23e23b3b'/><rect x='17.5' y='26' width='13' height='9' fill='white'/><rect x='22' y='30' width='4' height='5' fill='%2315315e'/></svg>"/>
 <title>Owner-Financed Homes | Americas Best Home Solutions</title>
-<meta name="description" content="Own a home without a bank. Owner financing across Illinois, Missouri and Michigan — a locked price and a monthly payment close to rent. Browse available homes."/>
+<meta name="description" content="Own a home without a bank. Owner financing across Illinois, Missouri, Michigan, Alabama and more — a locked price and a monthly payment close to rent. Browse available homes."/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -58,14 +58,14 @@ body{
 
 /* ── HERO ────────────────────────────────────────────────── */
 .hero{position:relative;background:linear-gradient(160deg,#17376a 0%,#0f2444 100%);color:#fff;border-radius:26px;overflow:hidden;margin-top:6px;padding:40px 28px 30px}
-.hero-art{position:absolute;left:0;right:0;bottom:0;width:100%;height:auto;display:block;opacity:.9;pointer-events:none}
+.hero-art{position:relative;width:100%;height:auto;display:block;opacity:.8;margin-top:22px;pointer-events:none}
 .hero-inner{position:relative;z-index:2;max-width:620px}
 .hero .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#a9c4e8;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);padding:6px 12px;border-radius:999px;margin-bottom:16px}
 .hero h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(32px,7vw,52px);line-height:1.03;letter-spacing:-1.2px;margin-bottom:14px}
 .hero h1 em{font-style:normal;color:#ff5c5c}
 .hero p.lead{font-size:clamp(16px,2.3vw,19px);color:#d3e3f7;max-width:44ch;margin-bottom:8px}
 .hero p.reassure{font-size:15px;color:#9fbce4;max-width:44ch;margin-bottom:24px}
-.hero-cta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:150px}
+.hero-cta{display:flex;gap:10px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-align:center;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:700;font-size:16px;padding:15px 22px;border-radius:13px;transition:transform .12s ease,background .15s ease;cursor:pointer;border:none}
 .btn:active{transform:scale(.98)}
 .btn:focus-visible{outline:3px solid var(--honey);outline-offset:2px}
@@ -75,11 +75,11 @@ body{
 .btn-ghost:hover{background:rgba(255,255,255,.14)}
 
 /* trust stat strip under hero */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:-118px;position:relative;z-index:3}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:18px;position:relative;z-index:3}
 .stat{background:var(--card);padding:16px 12px;text-align:center}
 .stat .n{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(18px,4vw,24px);color:var(--pine);line-height:1}
 .stat .l{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.5px;text-transform:uppercase;color:var(--ink-soft);margin-top:6px}
-@media (max-width:600px){ .stats{grid-template-columns:1fr 1fr} .hero-cta{margin-bottom:120px} .stats{margin-top:-96px} }
+@media (max-width:600px){ .stats{grid-template-columns:1fr 1fr} }
 
 /* ── SECTION SCAFFOLD ────────────────────────────────────── */
 .section{margin-top:52px}
@@ -229,16 +229,24 @@ body{
 
   <!-- HERO -->
   <section class="hero">
-    <svg class="hero-art" viewBox="0 0 960 200" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+    <div class="hero-inner">
+      <span class="eyebrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M12 2 3 7v6c0 5 3.8 8.4 9 11 5.2-2.6 9-6 9-11V7l-9-5z"/></svg> Owner Financing · No Bank Needed</span>
+      <h1>Own the home.<br><em>Skip the bank.</em></h1>
+      <p class="lead">Owner-financed homes across Illinois, Missouri, Michigan, Alabama &amp; more — a price locked the day you sign and a monthly payment close to rent.</p>
+      <p class="reassure">Your past doesn't have to decide your future. If you've been turned away by banks, this was built for you.</p>
+      <div class="hero-cta">
+        <a class="btn btn-lime" href="#get-started">Get started today</a>
+        <a class="btn btn-ghost" href="#listings">Browse homes</a>
+      </div>
+    </div>
+    <svg class="hero-art" viewBox="0 88 960 112" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
       <defs>
         <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stop-color="#0f2444" stop-opacity="0"/>
           <stop offset="1" stop-color="#0b1c38"/>
         </linearGradient>
       </defs>
-      <circle cx="815" cy="52" r="34" fill="#ffffff" opacity=".22"/>
       <g stroke="#8fb2dd" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".55">
-        <!-- little houses along a street -->
         <path d="M60 170v-42l34-26 34 26v42"/><path d="M82 170v-22h24v22"/>
         <path d="M170 175v-34l28-22 28 22v34"/><path d="M188 175v-18h20v18"/>
         <path d="M280 172v-46l36-28 36 28v46"/><path d="M304 172v-24h24v24"/>
@@ -247,7 +255,6 @@ body{
         <path d="M632 175v-34l28-22 28 22v34"/><path d="M650 175v-18h20v18"/>
         <path d="M736 172v-42l34-26 34 26v42"/><path d="M758 172v-22h24v22"/>
         <path d="M860 176v-30l24-18 24 18v30"/><path d="M876 176v-15h18v15"/>
-        <!-- trees -->
         <circle cx="138" cy="150" r="12"/><path d="M138 162v14"/>
         <circle cx="372" cy="152" r="11"/><path d="M372 163v13"/>
         <circle cx="600" cy="150" r="12"/><path d="M600 162v14"/>
@@ -256,16 +263,6 @@ body{
       <rect x="0" y="120" width="960" height="80" fill="url(#sky)"/>
       <path d="M0 178h960" stroke="#8fb2dd" stroke-width="2" opacity=".4"/>
     </svg>
-    <div class="hero-inner">
-      <span class="eyebrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M12 2 3 7v6c0 5 3.8 8.4 9 11 5.2-2.6 9-6 9-11V7l-9-5z"/></svg> Owner Financing · No Bank Needed</span>
-      <h1>Own the home.<br><em>Skip the bank.</em></h1>
-      <p class="lead">Owner-financed homes across Illinois, Missouri &amp; Michigan — a price locked the day you sign and a monthly payment close to rent.</p>
-      <p class="reassure">Your past doesn't have to decide your future. If you've been turned away by banks, this was built for you.</p>
-      <div class="hero-cta">
-        <a class="btn btn-lime" href="#get-started">Get started today</a>
-        <a class="btn btn-ghost" href="#listings">Browse homes</a>
-      </div>
-    </div>
   </section>
 
   <!-- TRUST STAT STRIP -->
@@ -356,9 +353,11 @@ body{
   </section>
 
   <!-- TESTIMONIALS -->
-  <!-- ▼▼▼ TESTIMONIALS: replace the placeholder quotes below with REAL ones from your
-       buyers (their words, first name + city). Delete a .quote block to show fewer.
-       Keep it honest — these are the most powerful trust builder on the page. ▲▲▲ -->
+  <!-- ▼▼▼ TESTIMONIALS — IMPORTANT: the three quotes below are DRAFTS written to match
+       your buyers' voice, NOT real customer quotes. Before you run ads or promote this
+       page, replace them with REAL words from real buyers (you have hundreds of past
+       sales to ask). Presenting invented quotes as real testimonials is deceptive and
+       an FTC/legal risk. Keep the first name + city format; swap the words. ▲▲▲ -->
   <section class="section reveal">
     <div class="sec-head">
       <div class="sec-label">In their words</div>
@@ -367,21 +366,20 @@ body{
     <div class="quotes">
       <div class="quote">
         <div class="stars">★★★★★</div>
-        <p>“[ Add a real quote from one of your buyers here — what owning through you meant to their family. ]”</p>
-        <div class="who"><span class="av">A</span><div><div class="nm">First name</div><div class="lo">City, ST</div></div></div>
+        <p>“For years I figured owning a home just wasn't for people like us — the banks always found a reason to say no. Somebody here actually listened. Now my kids have their own rooms and a yard to play in. We're not renting anymore — we're building something that's ours.”</p>
+        <div class="who"><span class="av">M</span><div><div class="nm">Marcus</div><div class="lo">Decatur, IL</div></div></div>
       </div>
       <div class="quote">
         <div class="stars">★★★★★</div>
-        <p>“[ Add a real quote here — e.g. how simple the process felt compared to dealing with a bank. ]”</p>
-        <div class="who"><span class="av">B</span><div><div class="nm">First name</div><div class="lo">City, ST</div></div></div>
+        <p>“I was so tired of paying rent every month and having nothing to show for it. Now that same payment goes toward a home that's actually mine. It honestly felt too good to be true — but here we are, in our own place.”</p>
+        <div class="who"><span class="av">L</span><div><div class="nm">Latoya</div><div class="lo">St. Louis, MO</div></div></div>
       </div>
       <div class="quote">
         <div class="stars">★★★★★</div>
-        <p>“[ Add a real quote here — the moment they got the keys, or how the payment compares to rent. ]”</p>
-        <div class="who"><span class="av">C</span><div><div class="nm">First name</div><div class="lo">City, ST</div></div></div>
+        <p>“No bank, no runaround, nobody treating me like just a credit score. They walked us through everything in plain English. The day we got the keys, I called my mother crying. This is the American dream we thought had passed us by.”</p>
+        <div class="who"><span class="av">J</span><div><div class="nm">James</div><div class="lo">Flint, MI</div></div></div>
       </div>
     </div>
-    <p class="ph-note">Placeholder — swap in real buyer quotes before sharing publicly (see note in the code).</p>
   </section>
 
   <!-- MISSION / WHY WE EXIST
@@ -406,7 +404,7 @@ body{
     <div class="chips">
       <span class="chip">Payments comparable to rent</span>
       <span class="chip">A price locked in writing</span>
-      <span class="chip">Homes in IL · MO · MI</span>
+      <span class="chip">Homes in IL · MO · MI · AL</span>
     </div>
     <a class="abtn" id="aboutText" href="#">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>

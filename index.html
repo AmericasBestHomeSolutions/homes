@@ -174,6 +174,32 @@ body{
 .about .abtn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;font-weight:700;font-size:15px;color:#fff;background:var(--go);padding:13px 24px;border-radius:12px}
 .about .abtn:hover{background:var(--go-hover)}
 
+/* ── THE OPPORTUNITY (rent vs own) ───────────────────────── */
+.opp-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:640px){ .opp-grid{grid-template-columns:1fr} }
+.opp-card{border-radius:18px;padding:24px 22px}
+.opp-card h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;letter-spacing:-.3px;margin-bottom:14px}
+.opp-card ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+.opp-card li{display:flex;gap:10px;align-items:flex-start;font-size:15px;line-height:1.45}
+.opp-card li .m{flex-shrink:0;width:20px;height:20px;border-radius:6px;display:flex;align-items:center;justify-content:center;margin-top:1px;font-weight:800;font-size:12px}
+.opp-rent{background:var(--card);border:1px solid var(--line)}
+.opp-rent h3{color:var(--ink-soft)}
+.opp-rent li{color:var(--ink-soft)}
+.opp-rent li .m{background:#f3d9d9;color:#a32d2d}
+.opp-own{background:var(--pine);color:#fff}
+.opp-own h3{color:#fff}
+.opp-own li{color:#dbe7f6}
+.opp-own li .m{background:rgba(255,255,255,.15);color:#7ee8a2}
+.opp-own li strong{color:#fff}
+.opp-story{margin-top:14px;background:var(--honey-soft);border:1px solid #d9e5f5;border-radius:18px;padding:26px 24px}
+.opp-story h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:21px;letter-spacing:-.3px;color:var(--pine);margin-bottom:10px}
+.opp-story p{font-size:15.5px;color:var(--ink);line-height:1.65;margin-bottom:12px}
+.opp-story p:last-of-type{margin-bottom:0}
+.opp-story .fine{font-size:12.5px;color:var(--ink-soft)}
+.opp-cta{text-align:center;margin-top:20px}
+.opp-cta a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;font-size:16px;color:#fff;background:var(--go);padding:15px 26px;border-radius:13px}
+.opp-cta a:hover{background:var(--go-hover)}
+
 /* ── LEGITIMACY STRIP ─────────────────────────────────────── */
 .legit{margin-top:40px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 @media (max-width:760px){ .legit{grid-template-columns:1fr 1fr} }
@@ -392,6 +418,46 @@ body{
     </div>
   </section>
 
+  <!-- THE OPPORTUNITY — rent vs own + the market story -->
+  <section class="section reveal" id="opportunity">
+    <div class="sec-head">
+      <div class="sec-label">Do the math</div>
+      <h2 class="sec-title">Every month, you're paying for a home.<br>The only question is whose.</h2>
+    </div>
+    <div class="opp-grid">
+      <div class="opp-card opp-rent">
+        <h3>When you rent</h3>
+        <ul>
+          <li><span class="m">✕</span>Your money is gone on the 1st — you'll never see it again</li>
+          <li><span class="m">✕</span>You're paying off the <em>landlord's</em> property, not yours</li>
+          <li><span class="m">✕</span>Rent goes up, and you can't stop it</li>
+          <li><span class="m">✕</span>After 10, 20, 30 years — nothing to show for it</li>
+          <li><span class="m">✕</span>Nothing to pass down to your kids</li>
+        </ul>
+      </div>
+      <div class="opp-card opp-own">
+        <h3>When you own</h3>
+        <ul>
+          <li><span class="m">✓</span>Every payment pulls toward a home that's <strong>yours</strong></li>
+          <li><span class="m">✓</span>Your price is <strong>locked in writing</strong> — it never goes up on you</li>
+          <li><span class="m">✓</span>Paint it, fix it, make it yours — it's your property</li>
+          <li><span class="m">✓</span>An asset — a <strong>legacy</strong> you can pass to your children</li>
+          <li><span class="m">✓</span>If your neighborhood rises in value, that upside is <strong>yours</strong></li>
+        </ul>
+      </div>
+    </div>
+    <div class="opp-story">
+      <h3>The part nobody tells you</h3>
+      <p>Here's what we've watched happen, market after market: the neighborhoods where we offer these homes don't stay down forever. Over the years, many of them turn around. Banks that once said "no" to the area start lending there again. And the families who stuck with it — who kept making that monthly payment — are the ones holding a home at a price they locked years earlier, in a neighborhood now worth more. Some have refinanced. Some have sold and walked away ahead. Every one of them owned something real.</p>
+      <p>That's why we treat this as a golden opportunity — and why we don't offer it to just anyone. We take on a limited number of buyers at a time, and we look for serious people: families who understand the responsibility that comes with the keys, and want the reward that comes with it.</p>
+      <p>Nobody can promise you the future. But one thing is certain: <strong>rent never pays you back.</strong></p>
+      <p class="fine">Every home and market is different — past experiences aren't a guarantee of future value. What's guaranteed is what's in your written agreement: your locked price and your terms.</p>
+    </div>
+    <div class="opp-cta">
+      <a href="#get-started">I'm serious — let's talk →</a>
+    </div>
+  </section>
+
   <!-- MISSION / WHY WE EXIST
        This is the company's story — written in "we" (the company), not any one person.
        Edit the words freely; keep it in the company's voice. -->
@@ -425,8 +491,8 @@ body{
   <!-- LEAD FORM / GET STARTED -->
   <section class="lead reveal" id="get-started">
     <div class="lead-inner">
-      <h2>Ready to own? Let's talk.</h2>
-      <p class="sub">Send your info and we'll reach out to help you find a home and set up a tour. No bank, no pressure.</p>
+      <h2>This isn't for everyone.</h2>
+      <p class="sub">We take on a limited number of buyers at a time — and we look for serious ones. If you're ready to stop renting and start owning, apply below and we'll reach out.</p>
       <form id="leadForm">
         <label for="lfName">Name</label>
         <input id="lfName" name="name" type="text" autocomplete="name" required>
@@ -443,12 +509,12 @@ body{
           <option value="1-3 months">1–3 months</option>
           <option value="Just looking">Just looking for now</option>
         </select>
-        <button type="submit" class="btn btn-lime" id="lfSubmit">Send my info</button>
+        <button type="submit" class="btn btn-lime" id="lfSubmit">Apply now — it takes 1 minute</button>
         <p class="form-note" id="lfNote"></p>
       </form>
       <div class="thanks">
-        <h3>Got it — thank you!</h3>
-        <p>We'll reach out shortly. In the meantime, feel free to call or text us below.</p>
+        <h3>Application received — nice move.</h3>
+        <p>You just did what most people only talk about. We'll reach out shortly — in the meantime, feel free to call or text us below.</p>
       </div>
     </div>
   </section>
@@ -584,7 +650,7 @@ body{
       const results = await Promise.allSettled(targets);
       const ok = results.some(r => r.status === "fulfilled" && r.value.ok);
       if (ok){ section.classList.add("sent"); }
-      else { btn.disabled = false; btn.textContent = "Send my info"; note.textContent = "Something went wrong — please call or text us instead."; }
+      else { btn.disabled = false; btn.textContent = "Apply now — it takes 1 minute"; note.textContent = "Something went wrong — please call or text us instead."; }
     });
   })();
 

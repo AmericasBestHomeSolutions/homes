@@ -186,6 +186,7 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
     </div>
 
     <h1 class="headline" id="headline"></h1>
+    <p class="prop-addr" id="propAddr" style="font-weight:600;font-size:17px;color:var(--pine,#15315e);margin:2px 0 6px"></p>
     <p class="subhead" id="subhead"></p>
 
     <div class="deal-strip">
@@ -206,6 +207,22 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
     <div class="sec-label">Here's the deal</div>
     <h2 class="sec-title">Simple, honest numbers</h2>
     <div class="terms" id="termsList"></div>
+  </section>
+
+  <!-- ABOUT THIS HOME -->
+  <section class="section reveal" id="aboutHomeSec" hidden>
+    <div class="sec-label">About this home</div>
+    <h2 class="sec-title">What you're getting</h2>
+    <p class="about-desc" id="aboutDesc" style="font-size:16px;line-height:1.7;color:var(--ink,#1c1b17);margin-bottom:20px"></p>
+    <div class="asis-badges" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px">
+      <span style="font-size:13px;font-weight:600;color:var(--pine,#15315e);background:var(--honey-soft,#eaf1fb);border-radius:999px;padding:7px 14px">Sold as-is</span>
+      <span style="font-size:13px;font-weight:600;color:var(--pine,#15315e);background:var(--honey-soft,#eaf1fb);border-radius:999px;padding:7px 14px">Owner financed</span>
+      <span style="font-size:13px;font-weight:600;color:var(--pine,#15315e);background:var(--honey-soft,#eaf1fb);border-radius:999px;padding:7px 14px">No credit check</span>
+      <span style="font-size:13px;font-weight:600;color:var(--pine,#15315e);background:var(--honey-soft,#eaf1fb);border-radius:999px;padding:7px 14px">Down payment + ID to move in</span>
+    </div>
+    <p style="font-size:15px;line-height:1.65;color:var(--ink-soft,#5b6472);background:var(--honey-soft,#eaf1fb);border-radius:14px;padding:16px 18px">
+      <strong style="color:var(--pine,#15315e)">An honest heads-up:</strong> this is an older home that needs some work — the photos show it exactly as it is. That's <em>why</em> the price is low and the payment is close to rent; a bank won't finance a home like this, so families who'd make great owners get turned away. From the day you move in, it's yours to fix up your way, on your timeline — and every improvement builds your equity, not a landlord's. We recommend you walk the home and look it over before you sign.
+    </p>
   </section>
 
   <!-- HOW IT WORKS -->
@@ -310,6 +327,8 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
 
   $("headline").innerHTML = `Own a home in <em>${C.city}</em>.<br>No bank needed.`;
   $("subhead").textContent = "Owner financing with a locked price and a monthly payment close to rent.";
+  $("propAddr").textContent = [C.address, `${C.city}, ${C.state}${C.zip?" "+C.zip:""}`].filter(Boolean).join(", ");
+  if (C.description) { $("aboutDesc").textContent = C.description; $("aboutHomeSec").hidden = false; }
   $("closerTitle").textContent = "Want to see it in person?";
   $("footLine").textContent = `© 2026 Americas Best Home Solutions LLC. Americas Best Home Solutions LLC is a real estate company — not a bank, mortgage lender, or licensed mortgage broker. Homes are offered through owner financing (contract for deed), with all terms set out in a written agreement you can review before you sign. All information is believed reliable but is not guaranteed and may change without notice; homes are subject to prior sale and availability. Nothing here is an offer or commitment to lend, or legal, tax, or financial advice. Equal Housing Opportunity.`;
 
@@ -338,7 +357,7 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
     ["Locked purchase price", money(C.lockedPrice), false],
     ["Financing", C.termText, false],
     ["The home", `${C.beds} bd · ${C.baths} ba${C.sqft?` · ${Number(C.sqft).toLocaleString()} sqft`:""}`, false],
-    ["Location", `${C.city}, ${C.state}`, false],
+    ["Location", `${C.address?C.address+", ":""}${C.city}, ${C.state}${C.zip?" "+C.zip:""}`, false],
   ];
   $("termsList").innerHTML = terms.map(([k,v,big])=>
     `<div class="term-row${big?" big":""}"><span class="k">${k}</span><span class="v">${v}</span></div>`

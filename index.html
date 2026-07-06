@@ -602,6 +602,7 @@ body{
           <div class="mini"><div class="k">Locked price</div><div class="v">${money(h.lockedPrice)}</div></div>
         </div>
         <div class="card-specs">${specs}</div>
+        ${h.address ? `<div class="card-addr" style="font-size:13px;color:var(--ink-soft);margin-bottom:12px;font-family:'DM Mono',monospace">${h.address}, ${h.city}, ${h.state}${h.zip?` ${h.zip}`:""}</div>` : ""}
         <span class="card-cta">View this home →</span>
       </div>
     </a>`;

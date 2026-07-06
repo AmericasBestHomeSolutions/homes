@@ -25,6 +25,9 @@ const CONTACT = {
 const HOMES = [
   {
     id: "birmingham-al-208-carol",
+    address:     "208 Carol Drive",
+    zip:         "35215",
+    description: "The property is 1,335 sq ft. The lot size is 10,296. The property was built in 1954. There is no fence. Unknown if systems are working. The utilities have been off for a long period. There is no basement. There is no lockbox. The back door is unsecured",
     city:  "Birmingham",
     state: "AL",
     beds:  3,
@@ -59,6 +62,9 @@ const HOMES = [
   },
   {
     id: "alton-il-3024-glenwood",
+    address:     "3024 Glenwood Ave",
+    zip:         "62002",
+    description: "Handyman Special",
     city:  "Alton",
     state: "IL",
     beds:  2,
@@ -76,6 +82,9 @@ const HOMES = [
   },
   {
     id: "bartonville-il-5817-adams",
+    address:     "5817 South Adams St",
+    zip:         "61607",
+    description: "768",
     city:  "Bartonville",
     state: "IL",
     beds:  2,
@@ -93,6 +102,9 @@ const HOMES = [
   },
   {
     id: "belleville-il-528-belvedere",
+    address:     "528 Belvedere Dr.",
+    zip:         "62223",
+    description: "864 Sqft. 1 car garage, Higher end Neighborhood. Plumbers Special main water line needs to be connected. Disconnected where it enters under the house",
     city:  "Belleville",
     state: "IL",
     beds:  3,
@@ -110,6 +122,9 @@ const HOMES = [
   },
   {
     id: "bethalto-il-319-corbin",
+    address:     "319 West Corbin St",
+    zip:         "62010",
+    description: "Detached one car garage, detached storage shed. Power is not on. Selling AS IS",
     city:  "Bethalto",
     state: "IL",
     beds:  2,
@@ -127,6 +142,9 @@ const HOMES = [
   },
   {
     id: "cahokia-il-500-saint",
+    address:     "500 Saint Thomas Ln",
+    zip:         "62206",
+    description: "Lowering price to get it sold! The punch list from the city needs to be completed to pass occupancy inspection and have the water tuned back on. **Will need to pass occupancy inspection. **Report from the city of what needs to be done is attached in the Google Drive folder. Previous buyers just moved out. House and yard have been cleaned out. Mechanicals Operational. All utilities actively running. Roof 12 years old according to the seller. No active leaks. Small kitchen ceiling stain from loose fascia board. Furnace good working condition. Hot Water Heater newer. NO BASEMENT OR CRAWL SPACE! LESS MAINTENANCE MEANS GREAT FOUNDATION Central AC Unit available and operational \u201cIt's a better part of Cahokia. It's overall a quiet area\u201d- From Sandra BOG Built in 1956 Inspection Information Permit #: 7026 Permit Date: 12/19/2025 Inspection Date: 01/06/2026 Permit Type: pre-walk through electrical Inspection Type: 1st Housing Inspection Requested By: Contact Info: Scheduled Date: Scheduled Time: 00:00 Completed Date: Description: On January 06, 2026; the property at 500 St Thomas; was failed by KW#21 Inspection Status: Failed Assigned To: Keenan Wren Time In: 00:00 Time Out: 00:00 Hours: 0.0 Notes 01/06/2026 On January 06, 2025; the 1st (exterior/interior) inspection, was failed by KW#21 01/06/2026 THE EXTERIOR/INTERIOR OF 500 ST THOMAS: ON THE FRONT OF THE HOUSE: 1). Replace; the globe on the light fixture. 2). Scrape/Paint; all the wooden components of the over hang on the front porch. 3). Replace; the pane in the picture window, also replace the screen in the same window. and fill-in the gaps around the picture window, then paint. 4). Properly attach; the downspout to the wall on the right front corner. 5). clean; the gutters/downspouts on the house. 6). Repair; the holes in the sidewalk. 7). Repair; the soffit. 8). Replace; the elbow on the downspout, right front corner of the house. ON THE LEFT SIDE OF THE HOUSE: 1). Repair/Replace-(ANY ROTTEN/MISSING WOOD)/Scrape/Paint. (ON THE CARPORT) a). Scrape/Paint, (three-3) wooden post. and the beam across the front. b). the decking. rafter tails, fascia, soffit and roofing. c). replace the back 2x4 wall. d). remove the soffit panel in the ceiling of the carport. 2). Scrape/Paint; the soffit on the house. 3). Replace; the handle, safety chain and closer, on the storm door. ON THE REAR OF THE HOUSE: 1). Clean; a). all of the debris from the property. b). the fence lines,(clean all of the overgrown weeds/trees on your side of the fence. 3). Scrape/Paint; the aluminum siding on the house. 4). Install; a screen in the window, next to the right rear corner of the house. 5). Repair/Replace; the screen in the window next to the meter. 6). replace; the elbow on the downspout, on the right rear corner. THE INTERIOR OF THE HOUSE: REPAIR/SCRAPE/PAINT; A). ALL HOES IN THE WALLS AND CEILING, AS NEEDED IN THE HOUSE. IN THE KITCHEN; 1). Install; a cap/plug on the gas line for the stove. 2). Replace; the globe on the ceiling light. 3). repair; the drain on the sink. 4). Scrape/Paint; all the components of the entry door. IN BEDROOM #1: (right rear corner) 1). Repair/Replace; the entry door. paint as needed. 2). Install; a closet rod in the closet. 3). Scrape/Paint; the bare wood, on the back window. IN THE LONG HALLWAY: 1). Replace; the the carbon detector. not working. 2). Install; door stop on the closet door, (for the furnace/water heater in it) 3). Install; an expansion tank of the water heater. IN THE SHORT HALLWAY: 1). Scrape/Paint; the ceiling. 2). Install; a). closet door. b). a closet rod in the closet",
     city:  "Cahokia",
     state: "IL",
     beds:  3,
@@ -144,6 +162,9 @@ const HOMES = [
   },
   {
     id: "carbondale-il-615-almond",
+    address:     "615 N Almond St",
+    zip:         "62901",
+    description: "900 soft, no basement, all systems were working, tenant moved. It has a new kitchen sink and cabinets and new bathroom vanity & sink. **Please verify income to be 3-4 times the monthly payment and ask buyer to provide proof of monthly income by providing a paycheck stub or bank statements. Thank you**",
     city:  "Carbondale",
     state: "IL",
     beds:  2,
@@ -161,6 +182,9 @@ const HOMES = [
   },
   {
     id: "centralia-il-227-hickory",
+    address:     "227 N Hickory St",
+    zip:         "62801",
+    description: "1450 sqft",
     city:  "Centralia",
     state: "IL",
     beds:  5,
@@ -178,6 +202,9 @@ const HOMES = [
   },
   {
     id: "centralia-il-805-hickory",
+    address:     "805 S Hickory St.",
+    zip:         "62801",
+    description: "1,690 sqft The water in the basement is already pumped out",
     city:  "Centralia",
     state: "IL",
     beds:  3,
@@ -195,6 +222,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-1035-elmurst",
+    address:     "1035 Elmurst Avenue",
+    zip:         "62526",
+    description: "616 Square Feet, fenced in backyard, hardwood floors, newer furnace, move in ready",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -212,6 +242,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-1073-packard",
+    address:     "1073 W Packard St",
+    zip:         "62522",
+    description: "804 sq ft 3 Beds and 2 Baths with a Jacuzzi",
     city:  "Decatur",
     state: "IL",
     beds:  3,
@@ -229,6 +262,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-1103-prairie",
+    address:     "1103 E Prairie",
+    zip:         "62521",
+    description: "This property is a duplex with 2/1 on each side. Investor special and in need of cosmetic repairs. Unknown if utilities are working. Recently came back to me",
     city:  "Decatur",
     state: "IL",
     beds:  4,
@@ -246,6 +282,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-1105-jasper",
+    address:     "1105 S. Jasper St",
+    zip:         "62521",
+    description: "Details: 2 Beds | 1 Bath | 887 sq ft Terms: $950/mo | $3,000 Down | $85,000 Purchase Price This home offers a beautifully updated interior with solid mechanical upgrades. While the exterior shows wear, the inside has been thoughtfully refreshed and is move\u2011in ready. A minor roof repair is scheduled in the coming days, and there are currently no known active leaks. Please market the property accordingly. Key Features: \u2022 New water heater \u2022 New furnace \u2022 Updated interior throughout \u2022 New flooring throughout the house \u2022 Fresh interior paint throughout \u2022 New front door \u2022 New lower kitchen cabinets \u2022 Upper kitchen cabinets freshly painted \u2022 New bathtub sealant \u2022 New sump pump installed in basement",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -263,6 +302,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-1112-garfield",
+    address:     "1112 E. Garfield  Ave.",
+    zip:         "62526",
+    description: "NO bank statements No Hassle! Proof of Income required Tour the home- Photo ID required at showing Owner Financing on a Contract for Deed 2 bedrooms, 1 bath 694sqft cozy cottage Spacious kitchen with a corner samll appliance \"garage\" Partially fenced spacious yard Front Porch Put your DIY skills to the task and make this cosmetic fixer home your own! Overall cleanout is needed at buyer's expense. Sold As-Is, Where Is! Previous Occupant Abandoned goods to include: *Some gently used flooring was left behind for the next owner to use *Kitchen wares of pots n pans, bowls, drinkware etc *Kitchen table & chairs, bookcases TERMS: $2000 Down Payment $850/mo includes taxes $150 in closing costs- notary and recording Photo ID required at showing. APPLY NOW! Utilities off OFF MARKET NOTES: Note to Fillers: CFD must include a clause that if insurance is not obtained, then the lender will provide coverage for an additional $75/mo to include insurance monthly premium and servicing fee.  $925 **FILLER GETS $1500 IF THEY COLLECT THE FULL $2000 DOWN AND COLLECTS THE CLOSING COSTS!",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -280,6 +322,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-1258-division",
+    address:     "1258 E Division St",
+    zip:         "62526",
+    description: "988 sq ft, large driveway with fenced yard and shed in the back. More than likely, there is some furniture and items that were left behind but shouldn't be a major clean out. All systems should be working",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -297,6 +342,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-1259-whitmer",
+    address:     "1259 E Whitmer St",
+    zip:         "62526",
+    description: "890 sq ft. All systems work as far as we know. There was a sewer backup in the basement. It's been fixed but basement needs cleaning. Previous TB left trash throughout but majority in basement. New roof installed in 2025. Power and Water is turned off",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -314,6 +362,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-1263-green",
+    address:     "1263 W Green St",
+    zip:         "62522",
+    description: "\ud83c\udfe11263 W Green St, Decatur, IL 62522 Move in ready - great area - huge lot 3 bedroom / 1 bath - 1344 sqft - 17000 sqft lot Seller has their own paperwork \u23f0 tenant just moved out. All working well. \u23f2\ufe0f newer hot water tank. New breaker box \u26e9\ufe0f Decent Roof. Nice shed for storage \ud83d\udee0\ufe0f all mechanicals work great \ud83c\udf33 huge triple lot. Over 17,000 sqft \ud83d\udd25 New Lennox Elite brand furnace - new ducts \u26e9\ufe0f Good roof, foundation & Structure \ud83e\uddf1 clean basement. Good foundation. \ud83d\udec0 remodeled bathroom with brand new vanity \ud83d\ude98 Large driveway for safer, off street parking. \ud83c\udfe5 2 minutes from Millikin university. Minutes from McArthur school, playground & the lake. Terms for Tenant Buyer. Become a homeowner: \ud83d\udcb5 $3500 down \ud83d\udcb5 $1095 per month \ud83d\udcb0 $110,500 \u2705 No credit or background check \ud83d\udcf8 Photos / Listing:<https://photos.app.goo.gl/xHBNUqqteiAiY5kq9> \ud83d\udd10Lockbox code is 0522",
     city:  "Decatur",
     state: "IL",
     beds:  3,
@@ -331,6 +382,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-1286-vanderhoof",
+    address:     "1286 East Vanderhoof St",
+    zip:         "62521",
+    description: "871 sq. ft. 6,098 sq. ft. lot New back roof Partially finished basement Wood floors",
     city:  "Decatur",
     state: "IL",
     beds:  3,
@@ -348,6 +402,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-1303-whitmer",
+    address:     "1303 E. WHITMER ST",
+    zip:         "62521",
+    description: "This property is suitable for a contractor, plumber- Handyman Special 950 SQ FT. BASEMENT where the furnace and water heater are housed-Room for storage. 3 bedroom ranch just needs some TLC\u2026basement, front porch, vinyl siding. Partially fenced yard in the good sized back yard. Large eat in kitchen. **Repair Notice: Gas company cited a violation due to gas leak from water heater plumming. WH needs replacing plus gas leak repairs. MUST DISCLOSE TO TB. Estimate coming. *Photo ID required prior to showing *CFD must have statement that buyer is responsible for paying the insurance deductible before making a claim. *Power is off",
     city:  "Decatur",
     state: "IL",
     beds:  3,
@@ -365,6 +422,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-132-23rd",
+    address:     "132 N 23rd Place",
+    zip:         "62521",
+    description: "704 sq ft. As far as we know all mechanicals work. previous TB recently left out. It has a detached garage and a basement. Please screen buyers for evictions and operator atlas",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -382,6 +442,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-1329-riverside",
+    address:     "1329 E Riverside Ave",
+    zip:         "62521",
+    description: "2 bed and 1 bath  Int.rate: 11.51%",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -399,6 +462,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-1344-condit",
+    address:     "1344 E Condit St",
+    zip:         "62521",
+    description: "1344 E Condit St Decatur IL 3 bedroom / 1 bath Turn key. Move in ready. 980 square feet. 6000 sq lot. Parcel #: 04-12-11-430-015 \u23f0 Well maintained house till the last minute. \u23f2\ufe0f newer hot water tank \ud83d\udd25 good furnace. Payne brand. \ud83d\udee0\ufe0f all mechanicals good \ud83c\udf33 green neighborhood. Lots of trees. \ud83e\udeb5 new floors in some rooms \u26e9\ufe0f Good roof, foundation & Structure \ud83e\uddf1 clean basement \ud83d\ude98 has a long driveway for safer off street parking. \ud83c\udfe5 6 minutes to Decatur memorial hospital & the lake. Terms for Tenant Buyer. Become a homeowner: \ud83d\udcb5 $3000 down \ud83d\udcb5 $870 per month PIT (includes property tax. excludes insurance) \ud83d\udcb0 $83,000 - 11.91% Property tax $637 \u2705 No credit or background check \ud83d\udcf8 Photos / <https://photos.app.goo.gl/YJD4RkvJiQgkEsCG7> \ud83d\udd10Lockbox code is 1083",
     city:  "Decatur",
     state: "IL",
     beds:  3,
@@ -416,6 +482,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-1365-walnut",
+    address:     "1365 E Walnut St",
+    zip:         "62526",
+    description: "\ud83c\udfe1 1365 E Walnut St, Decatur, IL 62526 Charming 2 Bedroom Starter Home \u2013 Affordable Opportunity! 2 bedroom / 1 bath \u2013 900 sqft | 4,356 sqft lot \ud83c\udfd5\ufe0f Quiet, established neighborhood with mature trees and friendly streets \ud83d\uded6 Solid traditional-style home with main-level primary bedroom \ud83e\udeb5 Appliances stay (oven, refrigerator) \u23f0 Well-maintained and ready for its next chapter Key Features: \u2705 Central Air \u2705 Gas Water Heater \u2705 New Kitchen Cabinets \u2705 Bathroom Remodeled \u2705 Full Unfinished Basement (great for storage or future finish) \u2705 Shingle Roof \u2705 Aluminum Siding \u2705 Level Lot with Backyard Space This is a solid, low-maintenance brick of a house in a convenient Decatur location. Perfect for a handy buyer or someone looking to build sweat equity while living in the home. Tenant Buyer / Lease Purchase Terms \u2013 Become a Homeowner: \ud83d\udcb5 $1,800 Down \ud83d\udcb5 $865 per month (includes taxes) \u2705 No credit check \u2705 No background check \ud83d\udcc3 3 months Proof of Income only Great opportunity for a responsible buyer who wants to own instead of rent forever. This home is priced to move quickly!",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -433,6 +502,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-1455-whitmer",
+    address:     "1455 E Whitmer St",
+    zip:         "62521",
+    description: "1050 sf \u2022 \ud83d\udea8 Highlights: \u2022 Wood Floors \u2022 Large detached 2 car Garage \u2022 Currently vacant, cleaned out and move-in ready \u2022 Lights are on \u2022 Mechanicals in good working order \u2022 Roof is good, no leaks BOTG says the house may Need Gutters Ceiling in Closet needs repair A couple of holes in the wall need repair Front porch bottom step needs repair Tax=116.00 a month Lockbox: 8008 Phone Number: 978-241-2079",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -450,6 +522,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-1505-walnut",
+    address:     "1505 E Walnut St",
+    zip:         "62526",
+    description: "768 sq ft. unfinished basement. power is off",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -467,6 +542,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-1553-hickory",
+    address:     "1553 E HICKORY ST",
+    zip:         "62526",
+    description: "672 SQ FT SFH WOOD FLOORS NEEDS LITTLE FINISHING TOUCHES",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -484,6 +562,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-1652-hickory",
+    address:     "1652 E Hickory St.",
+    zip:         "62526",
+    description: "There is a detached garage Please get any feedback if possible Please call with any offers or questions 757-816-2862",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -501,6 +582,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-1700-grand",
+    address:     "1700 W Grand Ave",
+    zip:         "62522",
+    description: "Property Details: \ud83c\udfe0 1 Bedroom \ud83c\udfe0 1 Bathroom \ud83c\udfe0 418 Sq Ft \ud83c\udfe0 Vacant \ud83c\udfe0 Ready for Immediate Occupancy",
     city:  "Decatur",
     state: "IL",
     beds:  1,
@@ -518,6 +602,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-1729-woodford",
+    address:     "1729 N Woodford St.",
+    zip:         "62526",
+    description: "728 Sqft, New Metal roof, just turned back in, Mechanicals all working",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -535,6 +622,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-1755-monroe",
+    address:     "1755 N Monroe St",
+    zip:         "62526",
+    description: "1152 SF, Large yard , new roof, new exterior doors and some new windows in Jan 2026. Needs a furnace and some work on the porch, a permit for the porch is required",
     city:  "Decatur",
     state: "IL",
     beds:  3,
@@ -552,6 +642,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-1764-johns",
+    address:     "1764 E Johns Ave",
+    zip:         "62521",
+    description: "Not sure square footage, but it's small. All systems working. Kitchen drain needs hooked up. Missing one light fixture. Payment should cover , taxes are $480/yr, insurance is $800/yr. I'm looking for $750-800 per month Phone number for TB would be (574) 285-8330 My phone, for filling team, would be 606-280-3817",
     city:  "Decatur",
     state: "IL",
     beds:  1,
@@ -569,6 +662,8 @@ const HOMES = [
   },
   {
     id: "decatur-il-1818-clay",
+    address:     "1818 E Clay St",
+    description: "3/1 1520 SF/ Basement Missing water Heater, we will install a new one when we have a buyer",
     city:  "Decatur",
     state: "IL",
     beds:  3,
@@ -586,6 +681,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-1830-lowber",
+    address:     "1830 N Lowber St",
+    zip:         "62526",
+    description: "Detached garage (door missing). 2nd bathroom in basement. New roof in 2025. Hardwood floors",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -603,6 +701,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-1908-union",
+    address:     "1908 N Union St",
+    zip:         "62526",
+    description: "1302 sq ft (Zillow is wrong), full brick construction, 2 story, full basement  TB PRE-APPROVAL REQUIREMENTS (see below) $55 application for each adult over 18 on Avail. Full criminal and renal background check, credit checked but there is no requirement.Once approved, I will do a phone interview to make sure they have all the purchase details right and review the application notes.Then, $500 non-refundable retainer is collected as part of the agreed down payment, and holds the property for up to 10 days",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -620,6 +721,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-1975-st",
+    address:     "1975 E North St",
+    zip:         "62521",
+    description: "This Duplex's two units, both are 1/1 on separate meters, 1,258 sq.ft. Key Highlights: Bottom unit is a bit larger - 658 sq.ft, upper unit is around 600 sq.ft Conveniently located only a few minutes from Decatur lake and Nelson Park. Comps in the area $1,400 - $1,600 (Next door Identical duplex is being rented for $1,500 total, $750 per unit, same layout duplex a street over at 1963 E Williams is on a CFD for $1,500/mo) New large water heater and plumbing Furnace looks good Electrical works - two separate panels Newer roof Our trusted BOG Sam Becker said she wish she would buy it herself :)",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -637,6 +741,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-2061-college",
+    address:     "2061 N College St",
+    zip:         "62526",
+    description: "3 Bd/2 Ba, 1,250 sq.ft plus a detached garage and central A/C. Move in ready, rehab just completed, all mechanics are up and running ! \ud83c\udfe1 2061 N College St, Decatur, IL 62526 Key Highlights: Just completed a light rehab, all systems works and move-in ready! Cozy 1250 sq ft single-family home, 3 bed, 2 bath with full basement, central air, detached garage, and large 7,016 sq ft lot Water heater and plumbing works great. Furnace looks good Electrical works ! Roof - no leaks Prime north Decatur location \u2014 just minutes from Decatur Memorial Hospital, ideal for healthcare professionals, doctors, and nurses with convenient shift access Walking distance to Monroe Park \u2014 enjoy nearby green space, playgrounds, and outdoor recreation right around the corner Close to churches and community spots in a quiet, established residential neighborhood",
     city:  "Decatur",
     state: "IL",
     beds:  3,
@@ -654,6 +761,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-2148-church",
+    address:     "2148 N Church St.",
+    zip:         "62526",
+    description: "936sf bungalow on nice lot with 3BB, 1BA and a classic single-story layout. Oversized 1-car detached garage with workbench area. Long-term owner has taken good care of it, all systems working, needs refresh and renew but nothing urgent. Videos are pre-cleanout, pics are as-is. Roof issue mentioned in video has been repaired as of 7/2/26 plus interior patched",
     city:  "Decatur",
     state: "IL",
     beds:  3,
@@ -671,6 +781,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-238-peoria",
+    address:     "238 W Peoria",
+    zip:         "62526",
+    description: "2 bedroom 1 bathroom, new water heater and ready to fill",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -688,6 +801,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-2448-wood",
+    address:     "2448 East Wood Street",
+    zip:         "62521",
+    description: "We are offering a $500 filling bonus through the end of the month.(June) Square Feet: 800 New Roof New Floors All systems working",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -705,6 +821,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-254-peoria",
+    address:     "254 W Peoria Ave",
+    zip:         "62526",
+    description: "1,017 sq ft. Everything worked when last tenant moved out!",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -722,6 +841,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-2550-main",
+    address:     "2550 East Main Street",
+    zip:         "62521",
+    description: "950 sqft. Large yard. Large Garage. Basement. Great neighborhood. Please disqualify registered sex offenders. Total price & total payment is flexible, but interest rate must be below 9%. **I will have Sabrina Gordon or Cheyenne Brothers do the paperwork when buyer found. Trying to keep all my paperwork standardized",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -739,6 +861,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-2618-garfield",
+    address:     "2618 E Garfield Ave",
+    zip:         "62526",
+    description: "1170 sq ft. partially fenced side lot. unfinished basement",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -756,6 +881,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-2827-hickory",
+    address:     "2827 E Hickory St",
+    zip:         "62526",
+    description: "528 sq ft. Contractor special. Will need lots of work. Probably going to need new roof, electrical, plumbing, dry wall, kitchen and bath",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -773,6 +901,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-305-maffit",
+    address:     "305 S Maffit St",
+    zip:         "62521",
+    description: "\ud83c\udfe1 305 S Maffit St. Decatur, IL 62521 Large Solid 4 bed 3 bath - 2020 square feet \ud83c\udfd5\ufe0f Privacy of a single family home. \u23f2\ufe0f newer large hot water tank. \ud83d\udee0\ufe0f all mechanicals good. Newer electric panel \ud83d\udd25 Newer 100,000 BTR 95% efficient furnace - brand new ducts \ud83e\ude9c separate exterior staircase access to the second floor. \ud83d\uded6 Shed in the backyard \u26f2 New PEX plumbing throughout the house \u26e9\ufe0f Good roof, foundation & Structure \ud83d\udebd new vanity, toilet & shower stall \ud83d\ude98 has a driveway for safer off street parking. \ud83c\udfe5 5 minutes to st. Marys hospital, Decatur park district & the lake. Adjacent to johns hill school & st. James Church Terms for Tenant Buyer. Become a homeowner: \ud83d\udcb5 $3500 down \ud83d\udcb5 $1295 per month PIT (includes tax excludes insurance) \ud83d\udcb0 $125,000 - 11.91% \ud83d\udcb4 property tax $641 \u2705 No credit or background check. No income verification. \ud83d\udcf8 Photos / Listing:<https://photos.app.goo.gl/xSBUwdY7ZmjemBSN8> \ud83d\udd10Lockbox code is 0702",
     city:  "Decatur",
     state: "IL",
     beds:  4,
@@ -790,6 +921,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-327-stuart",
+    address:     "327 E Stuart Ave",
+    zip:         "62526",
+    description: "1318 sqft",
     city:  "Decatur",
     state: "IL",
     beds:  3,
@@ -807,6 +941,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-347-stone",
+    address:     "347 N Stone St.",
+    zip:         "62521",
+    description: "Seller is asking for all offers. Seller is very flexible. \u2022 Power on (water currently shut off after tenant move-out) \u2022 Roof ~10 years old \u2014 no leaks noted \u2022 Furnace working - but might need a new ignitor - (older unit ~15\u201320 yrs) \u2022 Water heater is working (~ 5 yrs) \u2022 Foundation checked by BOG \u2014 no concerns reported I think it is about 850 square feet",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -824,6 +961,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-415-division",
+    address:     "415 E Division St.",
+    zip:         "62526",
+    description: "Move in ready - well maintained - very clean 2 bedroom / 2.5 bath - 989 sqft 4356 lot Previous owner just moved out. \u23f0 Well maintained house till the last minute. \u23f2\ufe0f newer hot water tank \ud83d\udd25 Good furnace \ud83d\udebd two bathrooms main level, one in the basement. \u26e9\ufe0f Relatively new roof \ud83d\udee0\ufe0f all mechanicals good \ud83e\uddf1 clean basement. some walls with wood panels \u26a1News electric panel and wiring \ud83c\udfe5 less than 7 minutes to the main hospital, the lake, & Millikin University. \u2705 No credit or background check \ud83d\udcc3 3 month Proof of income only",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -841,6 +981,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-450-22nd",
+    address:     "450 S 22nd St",
+    zip:         "62521",
+    description: "These are generally the buyer qualifications we look for: 1. No recent evictions within the last 3 years 2. Verifiable employment or business income that supports approximately a 3.5x gross income multiplier relative to the monthly payment 3. Buyer understands the condition of the property and that some homes may require minor repairs or improvements  4. Int.rate: 11.35%",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -858,6 +1001,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-462-leafland",
+    address:     "462 W Leafland Ave",
+    zip:         "62522",
+    description: "Recently owner-occupied (now vacant) Previous owner left a few pieces of furniture All systems should be working",
     city:  "Decatur",
     state: "IL",
     beds:  3,
@@ -875,6 +1021,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-515-boyd",
+    address:     "515 S. Boyd St",
+    zip:         "62522",
+    description: "FILLER INCENTIVE:KEEP $1000 of the down payment. Let's get it filled!(notes update7/1/2026) HANDYMAN SPECIAL! 2 bedroom 1 bath 716 SQFT home Nice large backyard. Onsite parking. Cosmetic updates needed Covered Porch Roof needs repairing Porch entry boards need repairing from weather damage Low Down payment: $1500 Monthly payment: $825 includes taxes **USE CAUTION WHEN ENTERING ONTO THE PORCH- LOOSE BOARDS",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -892,6 +1041,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-722-16th",
+    address:     "722 S 16th Street",
+    zip:         "62521",
+    description: "700 square feet with a very large 2 car garage. This house is in great shape - a slow flip gem. Roof is a few years old. Most windows have been replaced. Central HVAC All systems are working",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -909,6 +1061,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-767-whitmer",
+    address:     "767 E Whitmer St.",
+    zip:         "62521",
+    description: "1170 sq ft, 2 story house with unfinished basement.  +note fee",
     city:  "Decatur",
     state: "IL",
     beds:  3,
@@ -926,6 +1081,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-780-cushing",
+    address:     "780 W Cushing St.",
+    zip:         "62526",
+    description: "1050 sqft",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -943,6 +1101,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-821-oakland",
+    address:     "821 N. Oakland Ave",
+    zip:         "62514",
+    description: "840 sqft detached garage",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -960,6 +1121,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-835-whitmer",
+    address:     "835 E WHITMER ST",
+    zip:         "62521",
+    description: "Repairs have been done to the house\u2026 including fixing the roof, drywall issue, cleaning the inside",
     city:  "Decatur",
     state: "IL",
     beds:  3,
@@ -977,6 +1141,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-927-street",
+    address:     "927 West North Street",
+    zip:         "62522",
+    description: "$300 filling bonus Square feet: 858 Yes, it has a basement All systems are working as far as the owner knows",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -994,6 +1161,9 @@ const HOMES = [
   },
   {
     id: "decatur-il-968-view",
+    address:     "968 W View St",
+    zip:         "62522",
+    description: "1,044 square feet. Garage - Detached, Off-street. Partially finished basement. all systems working",
     city:  "Decatur",
     state: "IL",
     beds:  3,
@@ -1011,6 +1181,9 @@ const HOMES = [
   },
   {
     id: "eastalton-il-140-illinois",
+    address:     "140 Illinois St.",
+    zip:         "62024",
+    description: "960 sqft New water lines New electrics New siding New furnace New water heater Still needs work",
     city:  "East Alton",
     state: "IL",
     beds:  2,
@@ -1028,6 +1201,9 @@ const HOMES = [
   },
   {
     id: "eastcarondelet-il-2949-adams",
+    address:     "2949 Adams Ave",
+    zip:         "62240",
+    description: "$500 bonus for filler 625 sqft, handyman special",
     city:  "East Carondelet",
     state: "IL",
     beds:  2,
@@ -1045,6 +1221,9 @@ const HOMES = [
   },
   {
     id: "eaststlouis-il-1311-51st",
+    address:     "1311 N. 51st St",
+    zip:         "62204",
+    description: "\u201c Handyman special\u201c 700 ft.\u00b2 Needs furnace, water heater, and clean out No down payment.Will pay filler $600 for finding a buyer",
     city:  "East St. Louis",
     state: "IL",
     beds:  1,
@@ -1062,6 +1241,9 @@ const HOMES = [
   },
   {
     id: "eaststlouis-il-3511-converse",
+    address:     "3511 Converse Ave",
+    zip:         "62207",
+    description: "3 Bedrooms, 1 Bath, 698 Sq. ft All utilities on",
     city:  "East St. Louis",
     state: "IL",
     beds:  3,
@@ -1079,6 +1261,9 @@ const HOMES = [
   },
   {
     id: "eaststlouis-il-3720-walnut",
+    address:     "3720 Walnut Ave",
+    zip:         "62207",
+    description: "900 square feet. Handy man special on 3 lots. Quiet street. New floors. New heating duct and will have new kitchen sink and cupboard by EOW. All systems working. Tenant will need to get occ inspection permit prior to move in",
     city:  "East St. Louis",
     state: "IL",
     beds:  2,
@@ -1096,6 +1281,9 @@ const HOMES = [
   },
   {
     id: "eaststlouis-il-5538-avon",
+    address:     "5538 Avon Pl",
+    zip:         "62204",
+    description: "816 sqft. There is a hole in the roof",
     city:  "East St. Louis",
     state: "IL",
     beds:  3,
@@ -1113,6 +1301,9 @@ const HOMES = [
   },
   {
     id: "eaststlouis-il-5617-warren",
+    address:     "5617 Warren Ave.",
+    zip:         "62204",
+    description: "2/1 with a basement. 780 Square Ft. Power and Water currently turned off. Plumbing and electrical in place",
     city:  "East St. Louis",
     state: "IL",
     beds:  2,
@@ -1130,6 +1321,9 @@ const HOMES = [
   },
   {
     id: "eaststlouis-il-563-24th",
+    address:     "563 N 24th St",
+    zip:         "62205",
+    description: "2070SF",
     city:  "East St. Louis",
     state: "IL",
     beds:  4,
@@ -1147,6 +1341,9 @@ const HOMES = [
   },
   {
     id: "eaststlouis-il-59-jarvis",
+    address:     "59 Jarvis Pl.",
+    zip:         "62207",
+    description: "Move in ready - Safe & peaceful area - 1/4 acre lot 2 bedroom / 1 bath - 780 sqft sqft 10400 sqft lot \ud83c\udfd5\ufe0f Quiet neighborhood - houses with huge lots \ud83e\udeb5 tenant just moved out. Everything working. \u23f0 Well maintained house till the last minute. \u23f2\ufe0f newer, performance hot water tank \ud83d\udd25 furnace working. \u26e9\ufe0f Decent Roof",
     city:  "East St. Louis",
     state: "IL",
     beds:  2,
@@ -1164,6 +1361,9 @@ const HOMES = [
   },
   {
     id: "fairfield-il-1200-6th",
+    address:     "1200 Sw 6th St",
+    zip:         "62837",
+    description: "900 square feet (approximate), carport, covered front patio, basement. Applicants to submit an application on Avail: [www.avail.com/apply/-2tewtc](http://www.avail.com/apply/-2tewtc)",
     city:  "Fairfield",
     state: "IL",
     beds:  2,
@@ -1181,6 +1381,9 @@ const HOMES = [
   },
   {
     id: "fulton-il-602-18th",
+    address:     "602 18th Ave.",
+    zip:         "61252",
+    description: "Bedrooms: 2 Bedrooms Possible: 3 Primary Bedroom Dimensions: 10' X 13' Bedroom 2 Dimensions: 7' X 10' Primary Bedroom Level: Second Bedroom 2 Level: Second Total Bathrooms: 2 Full Bathrooms: 1 1/2 Bathrooms: 1 Other Rooms Laundry Level: Basement Living Room Dimensions: 11' X 12' Basement Living Room Level: Main Heating and Cooling Cooling Features: Central Air Heating Features: Natural Gas, Forced Air Heating: Yes Kitchen and Dining Dining Room Dimensions: 10' X 11' Dining Room Level: Main Kitchen Dimensions: 13' X 11' Kitchen Level: Main Interior Features Flooring: Carpet, Hardwood, Laminate Detached garage",
     city:  "Fulton",
     state: "IL",
     beds:  2,
@@ -1198,6 +1401,9 @@ const HOMES = [
   },
   {
     id: "granitecity-il-2317-grand",
+    address:     "2317 Grand Ave",
+    zip:         "62040",
+    description: "1,124 sq ft home with a detached garage. The property is currently red-tagged, but we are actively working to have it cleared",
     city:  "Granite City",
     state: "IL",
     beds:  2,
@@ -1215,6 +1421,9 @@ const HOMES = [
   },
   {
     id: "granitecity-il-2512-24th",
+    address:     "2512 W 24th St",
+    zip:         "62040",
+    description: "650 sqft Fire damaged. Get offers",
     city:  "Granite City",
     state: "IL",
     beds:  1,
@@ -1232,6 +1441,9 @@ const HOMES = [
   },
   {
     id: "harrisburg-il-410-shaw",
+    address:     "410 S Shaw St",
+    zip:         "62946",
+    description: "1016 sqft Has a shed also",
     city:  "Harrisburg",
     state: "IL",
     beds:  2,
@@ -1249,6 +1461,9 @@ const HOMES = [
   },
   {
     id: "herrin-il-11-b",
+    address:     "11 B Lane",
+    zip:         "62948",
+    description: "3 Bedrooms | 1 Bathroom - 961 sq ft \u2714\ufe0f Newer metal roof \u2714\ufe0f Some updated electrical work \u2714\ufe0f Newer main-floor windows \u2714\ufe0f Vinyl siding exterior \u2714\ufe0f Covered front porch \u2714\ufe0f Gas heat with window unit cooling \u2714\ufe0f Public water & sewer \u2714\ufe0f Range/oven included \u2714\ufe0f Hardwood, laminate, and carpet flooring throughout",
     city:  "Herrin",
     state: "IL",
     beds:  3,
@@ -1266,6 +1481,9 @@ const HOMES = [
   },
   {
     id: "herrin-il-905-monroe",
+    address:     "905 West Monroe Street",
+    zip:         "62948",
+    description: "Large lot, two-car detached garage, all systems in place",
     city:  "Herrin",
     state: "IL",
     beds:  3,
@@ -1283,6 +1501,9 @@ const HOMES = [
   },
   {
     id: "newathens-il-106-benton",
+    address:     "106 S Benton",
+    zip:         "62264",
+    description: "900 square feet. Not working tub/shower. All systems in place. Last tenant just moved out",
     city:  "New Athens",
     state: "IL",
     beds:  3,
@@ -1300,6 +1521,9 @@ const HOMES = [
   },
   {
     id: "nokomis-il-304-spruce",
+    address:     "304 N Spruce St",
+    zip:         "62075",
+    description: "Zillow: 3 bd / 1 ba / 1,000 sqft Filler keeps entire DP Or 15k cash and filler gets paid 1k",
     city:  "Nokomis",
     state: "IL",
     beds:  3,
@@ -1317,6 +1541,9 @@ const HOMES = [
   },
   {
     id: "nokomis-il-416-griffin",
+    address:     "416 Griffin St",
+    zip:         "62075",
+    description: "560 sqft Filler keeps entire DP Or 19k cash and filler gets paid 1k",
     city:  "Nokomis",
     state: "IL",
     beds:  1,
@@ -1334,6 +1561,9 @@ const HOMES = [
   },
   {
     id: "peoria-il-1104-smith",
+    address:     "1104 W Smith St.",
+    zip:         "61605",
+    description: "1104 W Smith St has been price improved for Memorial Day weekend. Updated terms are: Purchase price: $49,000 Down payment: $2,500 Monthly payment: $490/month Taxes and insurance are separate and not included in the $490/month payment. This remains a value-add / handyman property and is not move-in ready. It needs repairs and updates, including electrical work. Extra parcel at 203 S Charlton St is included. Please update any filling notes, buyer-facing terms, and marketing references to remove the prior $79,000 purchase price and ~$795/month payment. This is NOT a rental and NOT bank financing. Down payment required before possession Property is now being positioned clearly as a project opportunity. \u2022 4BR with extra lot included \u2022 Vacant \u2022 Seller financing available Condition: This is not a move-in ready property. Electrical work is needed along with additional interior updates (kitchen, flooring, etc.). Best suited for: Contractor, handyman, or buyer with a clear plan for repairs.Goal is to attract a buyer who understands the scope and is prepared to take on the project. Contact Jason Elkins with any questions. 803-597-2274",
     city:  "Peoria",
     state: "IL",
     beds:  4,
@@ -1351,6 +1581,9 @@ const HOMES = [
   },
   {
     id: "peoria-il-1117-glendale",
+    address:     "1117 NE Glendale",
+    zip:         "61603",
+    description: "**Roofer Special!-1117 NE Glendale Ave, Peoria, IL Ready to be filled! A tree fell on the house last year damaging the roof. Its still solid but several areas need attention. Perfect house for a roofer or handy man. A big tarp is covering the roof keeping it dry inside. Local trusted roofer quoted $7000 to fix everything. 3 bed 1 bath 1500 SF Garage Vacant The neighborhood looks good",
     city:  "Peoria",
     state: "IL",
     beds:  3,
@@ -1368,6 +1601,9 @@ const HOMES = [
   },
   {
     id: "peoria-il-1220-john",
+    address:     "1220 W John H Gwynn Jr Ave",
+    zip:         "61605",
+    description: "800 sqft",
     city:  "Peoria",
     state: "IL",
     beds:  2,
@@ -1385,6 +1621,9 @@ const HOMES = [
   },
   {
     id: "peoria-il-1610-lydia",
+    address:     "1610 S Lydia Ave",
+    zip:         "61605",
+    description: "900 sqft  Seller will fix electicals with full down payment and signed agreement",
     city:  "Peoria",
     state: "IL",
     beds:  4,
@@ -1402,6 +1641,8 @@ const HOMES = [
   },
   {
     id: "peoria-il-1615-arago",
+    address:     "1615 S Arago St",
+    zip:         "61605",
     city:  "Peoria",
     state: "IL",
     beds:  1,
@@ -1419,6 +1660,9 @@ const HOMES = [
   },
   {
     id: "peoria-il-1714-livingston",
+    address:     "1714 S Livingston St.",
+    zip:         "61605",
+    description: "Built in 1900, approximately 1050 sq/ft. The home features low-maintenance vinyl siding, a newer roof, an updated electrical panel, and operational furnace and water heater. No garage, power is on but gas is OFF. Fenced in yard, exterior and interior have been cleaned out since becoming vacant. PLEASE NOTE: To make things easier for the TB/s, we have created a simple intake form to collect name, phone number, email, and ability to upload their driver's license. Link to form: <https://docs.google.com/forms/d/e/1FAIpQLSdBfSn02GPmjntY3JPOTNdVfZMv38N8tj4OqPk2Vyvxsl7K5A/viewform?usp=publish-editor>",
     city:  "Peoria",
     state: "IL",
     beds:  3,
@@ -1436,6 +1680,9 @@ const HOMES = [
   },
   {
     id: "peoria-il-1714-lydia",
+    address:     "1714 S Lydia Ave",
+    zip:         "61605",
+    description: "Available again Seller has their own paperwork 10 year term Monthly payment includes taxes. Contractor Special-Solid bones 888 sq ft",
     city:  "Peoria",
     state: "IL",
     beds:  2,
@@ -1453,6 +1700,8 @@ const HOMES = [
   },
   {
     id: "peoria-il-1715-bourland",
+    address:     "1715 N Bourland Ave",
+    zip:         "61604",
     city:  "Peoria",
     state: "IL",
     beds:  2,
@@ -1470,6 +1719,9 @@ const HOMES = [
   },
   {
     id: "peoria-il-1829-stanley",
+    address:     "1829 S Stanley St.",
+    zip:         "61605",
+    description: "800 ft. Back door screwed shut. Front door access. Tenant just moved out",
     city:  "Peoria",
     state: "IL",
     beds:  2,
@@ -1487,6 +1739,9 @@ const HOMES = [
   },
   {
     id: "peoria-il-2313-wiswall",
+    address:     "2313 W Wiswall St",
+    zip:         "61605",
+    description: "759 square feet",
     city:  "Peoria",
     state: "IL",
     beds:  2,
@@ -1521,6 +1776,9 @@ const HOMES = [
   },
   {
     id: "peoria-il-2710-antoinette",
+    address:     "2710 W Antoinette St",
+    zip:         "61605",
+    description: "Available again Seller has their own paperwork Contractor Special-Solid bones 664 sq ft 10 year term Monthly payment includes taxes",
     city:  "Peoria",
     state: "IL",
     beds:  1,
@@ -1538,6 +1796,9 @@ const HOMES = [
   },
   {
     id: "peoria-il-422-louisa",
+    address:     "422 S Louisa St.",
+    zip:         "61605",
+    description: "Boarded up, lockbox 3693 access at door. City notes exterior work needed, will disclose notice to buyer. Get an offer - it will be accepted 928 sqft,Electrician/plumber special. Needs some plumbing and electrical and water heater. Broken windows",
     city:  "Peoria",
     state: "IL",
     beds:  2,
@@ -1555,6 +1816,9 @@ const HOMES = [
   },
   {
     id: "peoria-il-609-tracy",
+    address:     "609 Tracy St",
+    zip:         "61603",
+    description: "The basement has a damp area. The basement looks as though it might have been an apartment in the past. The roof looks on the older side",
     city:  "Peoria",
     state: "IL",
     beds:  4,
@@ -1572,6 +1836,9 @@ const HOMES = [
   },
   {
     id: "peoria-il-715-thrush",
+    address:     "715 W Thrush Ave",
+    zip:         "61604",
+    description: "Handyman Special - Solid Bones Monthly payment includes taxes",
     city:  "Peoria",
     state: "IL",
     beds:  2,
@@ -1589,6 +1856,9 @@ const HOMES = [
   },
   {
     id: "peoria-il-721-matthew",
+    address:     "721 S Matthew St",
+    zip:         "61605",
+    description: "Unsure of the square footage - have looked at many property records",
     city:  "Peoria",
     state: "IL",
     beds:  3,
@@ -1606,6 +1876,9 @@ const HOMES = [
   },
   {
     id: "peoria-il-812-macqueen",
+    address:     "812 W Macqueen Ave",
+    zip:         "61604",
+    description: "822 sqft",
     city:  "Peoria",
     state: "IL",
     beds:  2,
@@ -1623,6 +1896,8 @@ const HOMES = [
   },
   {
     id: "peoria-il-911-hurlburt",
+    address:     "911 W Hurlburt St",
+    zip:         "61605",
     city:  "Peoria",
     state: "IL",
     beds:  2,
@@ -1640,6 +1915,9 @@ const HOMES = [
   },
   {
     id: "quincy-il-706-cedar",
+    address:     "706 Cedar St.",
+    zip:         "62301",
+    description: "880 sqft",
     city:  "Quincy",
     state: "IL",
     beds:  2,
@@ -1657,6 +1935,9 @@ const HOMES = [
   },
   {
     id: "sauget-il-1320-williams",
+    address:     "1320 Williams St",
+    zip:         "62206",
+    description: "Handyman Special - Solid Bones Monthly payment includes taxes",
     city:  "Sauget",
     state: "IL",
     beds:  3,
@@ -1674,6 +1955,9 @@ const HOMES = [
   },
   {
     id: "sauget-il-17-cahokia",
+    address:     "17 Cahokia St",
+    zip:         "62206",
+    description: "New Property Seller has their own paperwork Handyman Special - Solid Bones Monthly payment includes taxes",
     city:  "Sauget",
     state: "IL",
     beds:  2,
@@ -1691,6 +1975,9 @@ const HOMES = [
   },
   {
     id: "sauget-il-26-leonard",
+    address:     "26 Leonard Dr",
+    zip:         "62206",
+    description: "New Property Seller has their own paperwork Big move-in ready house Monthly payment includes taxes",
     city:  "Sauget",
     state: "IL",
     beds:  3,
@@ -1708,6 +1995,9 @@ const HOMES = [
   },
   {
     id: "sauget-il-306-isabell",
+    address:     "306 Isabell St",
+    zip:         "62206",
+    description: "306 Isabell St, Sauget, IL 62206 Handyman Special-Solid Bones 2 bed 1 bath 720 sq ft Monthly payment includes taxes",
     city:  "Sauget",
     state: "IL",
     beds:  2,
@@ -1725,6 +2015,9 @@ const HOMES = [
   },
   {
     id: "sauget-il-523-saint",
+    address:     "523 Saint Paul Dr",
+    zip:         "62206",
+    description: "New Property Seller has their own paperwork Recently Renovated- Move-in ready Monthly payment includes taxes",
     city:  "Sauget",
     state: "IL",
     beds:  3,
@@ -1742,6 +2035,9 @@ const HOMES = [
   },
   {
     id: "sauget-il-722-saint",
+    address:     "722 Saint Paul Dr",
+    zip:         "62206",
+    description: "Recently Renovated-New Roof Monthly payment includes taxes",
     city:  "Sauget",
     state: "IL",
     beds:  3,
@@ -1759,6 +2055,9 @@ const HOMES = [
   },
   {
     id: "sauget-il-8-helen",
+    address:     "8 Helen Ct",
+    zip:         "62206",
+    description: "New Property Seller has their own paperwork Recently Renovated-New Roof Monthly payment includes taxes",
     city:  "Sauget",
     state: "IL",
     beds:  2,
@@ -1776,6 +2075,9 @@ const HOMES = [
   },
   {
     id: "springfield-il-2228-brown",
+    address:     "2228 E Brown St",
+    zip:         "62703",
+    description: "If negotiations call for needing to give the Buyer a few months at a reduced price to do rehab that can be negotiated. Needs electrical and plumbing",
     city:  "Springfield",
     state: "IL",
     beds:  2,
@@ -1793,6 +2095,9 @@ const HOMES = [
   },
   {
     id: "witt-il-529-2nd",
+    address:     "529 N 2nd St",
+    zip:         "62094",
+    description: "Zillow: 2 bd / 1 ba / 765 sqft Filler keeps entire DP Or 19k cask and filler gets paid 1k",
     city:  "Witt",
     state: "IL",
     beds:  2,
@@ -1810,6 +2115,9 @@ const HOMES = [
   },
   {
     id: "woodriver-il-329-park",
+    address:     "329 Park lane",
+    zip:         "62095",
+    description: "900.sq st all systems working",
     city:  "Wood River",
     state: "IL",
     beds:  2,
@@ -1827,6 +2135,9 @@ const HOMES = [
   },
   {
     id: "woodriver-il-830-wood",
+    address:     "830 N Wood River Ave",
+    zip:         "62095",
+    description: "Available again Seller has their own paperwork 830 N Wood River Ave, Wood River, IL 62095 Great Condition-Bonus Rear Structure Ready for Your Vision! Recently Cleaned out",
     city:  "Wood River",
     state: "IL",
     beds:  2,
@@ -1844,6 +2155,9 @@ const HOMES = [
   },
   {
     id: "edwardsport-in-108-shipping",
+    address:     "108 E Shipping St",
+    zip:         "47528",
+    description: "1235 sq ft, detached 2-car garage. Full basement. Please have applications submit an application on Avail: [www.avail.com/apply/a-sQbS8](http://www.avail.com/apply/a-sQbS8). We require 3x monthly payment in income, any credit OK, no major criminal felonies, no multiple evictions",
     city:  "Edwardsport",
     state: "IN",
     beds:  2,
@@ -1861,6 +2175,9 @@ const HOMES = [
   },
   {
     id: "muncie-in-319-10th",
+    address:     "319 W 10th St",
+    zip:         "47302",
+    description: "869 sq ft, full basement  TB PRE-APPROVAL REQUIREMENTS (see below) $55 application for each adult over 18 on Avail. Full criminal and renal background check, credit checked but there is no requirement. Once approved, I will do a phone interview to make sure they have all the purchase details right and review the application notes. Then, $500 non-refundable retainer is collected as part of the agreed down payment, and holds the property for up to 10 days",
     city:  "Muncie",
     state: "IN",
     beds:  2,
@@ -1878,6 +2195,9 @@ const HOMES = [
   },
   {
     id: "detroit-mi-13218-greiner",
+    address:     "13218 Greiner St",
+    zip:         "48205",
+    description: "1162 square feet 2nd lot included",
     city:  "Detroit",
     state: "MI",
     beds:  3,
@@ -1895,6 +2215,9 @@ const HOMES = [
   },
   {
     id: "flint-mi-1101-alvord",
+    address:     "1101 Alvord Ave",
+    zip:         "48507",
+    description: "690sqft - Good Roof - Newer Water Heater - Furnace in Good Condition - Paved driveway - Fenced Backyard - Back Deck - Detached Shed - Recently Occupied - Utilities On",
     city:  "Flint",
     state: "MI",
     beds:  2,
@@ -1912,6 +2235,9 @@ const HOMES = [
   },
   {
     id: "flint-mi-1218-pinehurst",
+    address:     "1218 Pinehurst Ave",
+    zip:         "48507",
+    description: "2 BD, 1 BA, 660 SqFt Recently occupied: Functional utilities. Mechanicals Operational. Roof is middle aged. New Water tank. Panel in working order. PEX Plumbing in basement. Foundation in good condition. Bones are solid",
     city:  "Flint",
     state: "MI",
     beds:  2,
@@ -1929,6 +2255,9 @@ const HOMES = [
   },
   {
     id: "flint-mi-1802-woodlin",
+    address:     "1802 Woodlin Dr",
+    zip:         "48504",
+    description: "Newer Water Heater -Fenced Backyard- One car attached garage- Washer & dryer- Furniture included",
     city:  "Flint",
     state: "MI",
     beds:  2,
@@ -1946,6 +2275,9 @@ const HOMES = [
   },
   {
     id: "flint-mi-2023-cadillac",
+    address:     "2023 Cadillac St",
+    zip:         "48504",
+    description: "968 SF, all systems working, great shape 3 x payment required in income, no evictions or bankruptcies in last 2 years $89,900 $2500 DP  $925/mo renter's insurance required for Buyer possessions and liability Can use our property ins - $5k deductible",
     city:  "Flint",
     state: "MI",
     beds:  2,
@@ -1963,6 +2295,9 @@ const HOMES = [
   },
   {
     id: "flint-mi-2433-pennsylvania",
+    address:     "2433 Pennsylvania Ave",
+    zip:         "48506",
+    description: "960 sqft, recently occupied. All systems working: electricity, gas, water. Detached Garage-needs repair/to be removed. Half basement. Fenced yard",
     city:  "Flint",
     state: "MI",
     beds:  2,
@@ -1980,6 +2315,9 @@ const HOMES = [
   },
   {
     id: "flint-mi-246-york",
+    address:     "246 E York Ave",
+    zip:         "48505",
+    description: "800 sqft. Crawl space, fenced back yard",
     city:  "Flint",
     state: "MI",
     beds:  2,
@@ -1997,6 +2335,9 @@ const HOMES = [
   },
   {
     id: "flint-mi-2621-churchhill",
+    address:     "2621 Churchhill Ave",
+    zip:         "48506",
+    description: "2 BD | 1 BA | 736 SqFt Property Status: Condition: New remodel in progress with new kitchen cabinets on-site (ready for installation). Recently occupied. Mechanicals: All systems operational. Located in the first-floor utility room. Structure: Single-story ranch on a solid foundation. No basement. Roof: Good condition; verified leak-free during active rain. Electrical: Breaker box in working order. Needs: Requires a back door and final cosmetic finishing touches",
     city:  "Flint",
     state: "MI",
     beds:  2,
@@ -2014,6 +2355,9 @@ const HOMES = [
   },
   {
     id: "flint-mi-345-baltimore",
+    address:     "345 E Baltimore Blvd.",
+    zip:         "48505",
+    description: "1496 square feet; All systems working",
     city:  "Flint",
     state: "MI",
     beds:  2,
@@ -2031,6 +2375,9 @@ const HOMES = [
   },
   {
     id: "flint-mi-3501-milbourne",
+    address:     "3501 Milbourne Avenue",
+    zip:         "48504",
+    description: "752 square feet",
     city:  "Flint",
     state: "MI",
     beds:  2,
@@ -2048,6 +2395,9 @@ const HOMES = [
   },
   {
     id: "flint-mi-3618-branch",
+    address:     "3618 Branch Rd",
+    zip:         "48506",
+    description: "~950 SQF COSMETICS ARE GORGEOUS Modern kitchen cabinets, flooring, etc. Utilities are running",
     city:  "Flint",
     state: "MI",
     beds:  2,
@@ -2065,6 +2415,9 @@ const HOMES = [
   },
   {
     id: "flint-mi-3918-trumbull",
+    address:     "3918 Trumbull Ave",
+    zip:         "48504",
+    description: "887 Sq. Feet Roof replaced in 2022 Electrical Panel updated in 2022 Extra fenced in lot included Cleaned out and ready to go",
     city:  "Flint",
     state: "MI",
     beds:  2,
@@ -2082,6 +2435,9 @@ const HOMES = [
   },
   {
     id: "flint-mi-411-marengo",
+    address:     "411 W. Marengo",
+    zip:         "48505",
+    description: "Property Features: \u2022 Located on Flint\u2019s desirable north side near Mount Morris, this area is known for stronger residential pockets, well-kept neighborhoods, and consistent demand compared to many other parts of Flint. \u2022 Built in 1949 \u2022 Approximately 1,350 SF \u2022 3 bedrooms, 1 bathroom \u2022 Large attached double garage \u2022 Functional bungalow layout with 2 bedrooms on the main floor and a spacious upstairs bedroom \u2022 Attractive kitchen cabinetry and strong curb appeal \u2022 Some fresh interior paint already completed \u2022 New carpet in the downstairs bedrooms and some interior paint is all the TB may want to do Seller has their own paperwork",
     city:  "Flint",
     state: "MI",
     beds:  3,
@@ -2099,6 +2455,9 @@ const HOMES = [
   },
   {
     id: "flint-mi-5210-dupont",
+    address:     "5210 Dupont St",
+    zip:         "48505",
+    description: "693 square feet. Full-size basement. Applicants to apply via Avail link ($55 per adult): [www.avail.com/apply/zbB0qPs](http://www.avail.com/apply/zbB0qPs)[ ](http://www.avail.com/apply/zbB0qPs)",
     city:  "Flint",
     state: "MI",
     beds:  2,
@@ -2116,6 +2475,9 @@ const HOMES = [
   },
   {
     id: "flint-mi-834-remington",
+    address:     "834 Remington Ave",
+    zip:         "48507",
+    description: "726 square feet",
     city:  "Flint",
     state: "MI",
     beds:  2,
@@ -2133,6 +2495,9 @@ const HOMES = [
   },
   {
     id: "highlandpark-mi-376-highland",
+    address:     "376 Highland St",
+    zip:         "48203",
+    description: "3 bedroom 1 bathroom 1247 sq. ft. Unlock instant equity in this fixer-upper featuring beautiful original hardwood floors waiting to be revealed right under the carpet. The home boasts a massive bathroom, a large back deck, and a fully fenced-in yard. The exterior is low-maintenance with vinyl siding and storm windows already in place. Inside, you'll find a washer, dryer, and utility sink included. The property does need some cosmetic drywall repair, and while the furnace appears to be working, it will need some HVAC sheet metal replaced",
     city:  "Highland Park",
     state: "MI",
     beds:  3,
@@ -2150,6 +2515,9 @@ const HOMES = [
   },
   {
     id: "saginaw-mi-1007-oakley",
+    address:     "1007 N Oakley St",
+    zip:         "48602",
+    description: "New roof installed May 2026, new sheetrock all around interior",
     city:  "Saginaw",
     state: "MI",
     beds:  4,
@@ -2167,6 +2535,9 @@ const HOMES = [
   },
   {
     id: "stlouis-mo-10187-count",
+    address:     "10187  Count Dr",
+    zip:         "63136",
+    description: "3 bedroom 2 bathroom 936 square foot 1965 Full basement home was recently vacated fenced backyard. No early payoff penalty, refi anytime, no credit checks. Buyer carries own insurance",
     city:  "St. Louis",
     state: "MO",
     beds:  3,
@@ -2184,6 +2555,9 @@ const HOMES = [
   },
   {
     id: "stlouis-mo-10249-earl",
+    address:     "10249 Earl Dr",
+    zip:         "63136",
+    description: "Three bedrooms one bath 1953 build 737 square feet fenced backyard",
     city:  "St. Louis",
     state: "MO",
     beds:  3,
@@ -2201,6 +2575,8 @@ const HOMES = [
   },
   {
     id: "stlouis-mo-10869-spring",
+    address:     "10869 Spring Garden Dr",
+    description: "New electrical box",
     city:  "St. Louis",
     state: "MO",
     beds:  3,
@@ -2218,6 +2594,9 @@ const HOMES = [
   },
   {
     id: "stlouis-mo-2028-prairei",
+    address:     "2028 E Prairei Ave",
+    zip:         "63107",
+    description: "1 BD | 1 BA | 1297 SqFt Bring all offers. Property Status: Condition: Recently occupied and solid. Nearly 1,300 sq. ft. of living space. Mechanicals: Furnace, water heater, breaker box, refrigerator, stovetop all present. Structure: Sturdy brick exterior with a large basement for extra storage or a workshop. Unique interior historic arched doorways that add immediate character and charm to the layout. Solid foundation. Needs: A clean-out of remaining debris, and final cosmetic finishing touches to make it beautiful",
     city:  "St. Louis",
     state: "MO",
     beds:  1,
@@ -2235,6 +2614,8 @@ const HOMES = [
   },
   {
     id: "stlouis-mo-2603-belle",
+    address:     "2603 Belle Glade Ave",
+    zip:         "63113",
     city:  "St. Louis",
     state: "MO",
     beds:  2,
@@ -2252,6 +2633,9 @@ const HOMES = [
   },
   {
     id: "stlouis-mo-2617-hord",
+    address:     "2617 Hord Ave",
+    zip:         "63136",
+    description: "Built in 1966 LOT 3,541 Brick home Driveway Nice neighborhood and location Needs work to bring up to occupancy code Rehab was started by previous tenant and not completed. The flooring, tile, sink, toilet and misc. items are already purchased and in the house. It is a fixer upper that would make a great addition to your rental portfolio",
     city:  "St. Louis",
     state: "MO",
     beds:  2,
@@ -2269,6 +2653,9 @@ const HOMES = [
   },
   {
     id: "stlouis-mo-32-connoly",
+    address:     "32 Connoly Dr",
+    zip:         "63135",
+    description: "3 bed 1 bath 864 Sq Ft The house is in a very good area. It needs some cosmetic work but there is lots of upside. Previously filled 2 years ago for $3k down and $875 per month",
     city:  "St. Louis",
     state: "MO",
     beds:  3,
@@ -2286,6 +2673,9 @@ const HOMES = [
   },
   {
     id: "stlouis-mo-3738-sylvan",
+    address:     "3738 Sylvan Pl",
+    zip:         "63121",
+    description: "2 bed 1 bath, GREAT Shape ready for your personal touches",
     city:  "St. Louis",
     state: "MO",
     beds:  2,
@@ -2303,6 +2693,9 @@ const HOMES = [
   },
   {
     id: "stlouis-mo-3819-kossuth",
+    address:     "3819 Kossuth Ave",
+    zip:         "63107",
+    description: "816 sq foot. 2nd bathroom started in basemant. Potential to turn in to 2 bedroom. Systems working. Newer windows. Large back yard",
     city:  "St. Louis",
     state: "MO",
     beds:  1,
@@ -2320,6 +2713,9 @@ const HOMES = [
   },
   {
     id: "stlouis-mo-3912-beachwood",
+    address:     "3912 Beachwood Ave",
+    zip:         "63121",
+    description: "1,254 sqft",
     city:  "St. Louis",
     state: "MO",
     beds:  4,
@@ -2337,6 +2733,9 @@ const HOMES = [
   },
   {
     id: "stlouis-mo-4627-maffit",
+    address:     "4627 Maffit Ave",
+    zip:         "63113",
+    description: "$1500 down",
     city:  "St. Louis",
     state: "MO",
     beds:  2,
@@ -2354,6 +2753,9 @@ const HOMES = [
   },
   {
     id: "stlouis-mo-4719-plover",
+    address:     "4719 Plover Ave.",
+    zip:         "63120",
+    description: "744 square ft",
     city:  "St. Louis",
     state: "MO",
     beds:  2,
@@ -2371,6 +2773,9 @@ const HOMES = [
   },
   {
     id: "stlouis-mo-4919-thelka",
+    address:     "4919 Thelka Ave",
+    zip:         "63115",
+    description: "The house needs some work, but nothing too major. It just needs a lot of minor cosmetic work. Electrical, plumbing, water heater, & furnace look decent. There is an additional area in the basement that looks like it was used as a bedroom/sleeping area. No roof leaks",
     city:  "St. Louis",
     state: "MO",
     beds:  2,
@@ -2388,6 +2793,9 @@ const HOMES = [
   },
   {
     id: "stlouis-mo-4931-plover",
+    address:     "4931 Plover Ave.",
+    zip:         "63120",
+    description: "912 Sqft",
     city:  "St. Louis",
     state: "MO",
     beds:  2,
@@ -2405,6 +2813,8 @@ const HOMES = [
   },
   {
     id: "stlouis-mo-4935-alcott",
+    address:     "4935 Alcott Ave",
+    zip:         "63120",
     city:  "St. Louis",
     state: "MO",
     beds:  3,
@@ -2422,6 +2832,8 @@ const HOMES = [
   },
   {
     id: "stlouis-mo-5446-hodiamont",
+    address:     "5446 Hodiamont Ave",
+    zip:         "63136",
     city:  "St. Louis",
     state: "MO",
     beds:  3,
@@ -2439,6 +2851,9 @@ const HOMES = [
   },
   {
     id: "stlouis-mo-5600-gatesworth",
+    address:     "5600 Gatesworth Ave",
+    zip:         "63136",
+    description: "Built in 1941 672 sq Driveway in rear 2 spaces Corner lot 4,095sq ft Full basement with laundry hook ups PVC plumbing and updated service panel Fenced in back yard Updating was started but needs some work",
     city:  "St. Louis",
     state: "MO",
     beds:  2,
@@ -2456,6 +2871,9 @@ const HOMES = [
   },
   {
     id: "stlouis-mo-5619-janet",
+    address:     "5619 Janet Ave",
+    zip:         "63136",
+    description: "Handyman Special - Solid Bones Monthly payment includes taxes. <https://drive.google.com/drive/folders/17NwoVRhWAtjT3k-c1fwFf_cToWhg0cqh?usp=sharing>",
     city:  "St. Louis",
     state: "MO",
     beds:  2,
@@ -2473,6 +2891,8 @@ const HOMES = [
   },
   {
     id: "stlouis-mo-5811-helen",
+    address:     "5811 Helen Ave.",
+    zip:         "63136",
     city:  "St. Louis",
     state: "MO",
     beds:  3,
@@ -2490,6 +2910,8 @@ const HOMES = [
   },
   {
     id: "stlouis-mo-5851-ferris",
+    address:     "5851 Ferris Ave",
+    zip:         "63210",
     city:  "St. Louis",
     state: "MO",
     beds:  2,
@@ -2507,6 +2929,8 @@ const HOMES = [
   },
   {
     id: "stlouis-mo-6069-harney",
+    address:     "6069 Harney Ave",
+    zip:         "63136",
     city:  "St. Louis",
     state: "MO",
     beds:  2,
@@ -2524,6 +2948,9 @@ const HOMES = [
   },
   {
     id: "stlouis-mo-6342-lena",
+    address:     "6342 Lena Avenue",
+    zip:         "63136",
+    description: "678 square feet bungalow. wood deck, finished basement, all systems working, power/water off",
     city:  "St. Louis",
     state: "MO",
     beds:  2,
@@ -2541,6 +2968,9 @@ const HOMES = [
   },
   {
     id: "stlouis-mo-6998-edison",
+    address:     "6998 Edison Ave.",
+    zip:         "63121",
+    description: "House: 840 sq ft. Lot: 4,826sq ft corner lot Built : 1959 Brick house Fenced in back yard Full basement partially finished",
     city:  "St. Louis",
     state: "MO",
     beds:  2,
@@ -2558,6 +2988,9 @@ const HOMES = [
   },
   {
     id: "stlouis-mo-8116-pelham",
+    address:     "8116 Pelham Ave",
+    zip:         "63147",
+    description: "2500 square feet, fenced in yard, electric is one",
     city:  "St. Louis",
     state: "MO",
     beds:  4,
@@ -2575,6 +3008,9 @@ const HOMES = [
   },
   {
     id: "jackson-ms-1546-david",
+    address:     "1546 David Drive",
+    zip:         "39209",
+    description: "984 sqft , large yard, shed, above ground pool in backyard",
     city:  "Jackson",
     state: "MS",
     beds:  3,
@@ -2592,6 +3028,9 @@ const HOMES = [
   },
   {
     id: "jackson-ms-3875-slayton",
+    address:     "3875 Slayton Ave",
+    zip:         "39213",
+    description: "935 square feet. All system working. It says online 2 bedrooms but it's 3ish (you need to pass/walk through one if the bedrooms in order to get to that 3rd separate room). Handicap accessible (with a ramp)",
     city:  "Jackson",
     state: "MS",
     beds:  3,
@@ -2609,6 +3048,9 @@ const HOMES = [
   },
   {
     id: "jackson-ms-533-stillwood",
+    address:     "533 Stillwood Dr",
+    zip:         "39206",
+    description: "906 sqft  Total Monthly Cost: $819.48 Monthly Cost Breakdown (P & I: $689.17) (Taxes: $66.68) ( Insurance: $63.63) Interest rate ;12% Tenant/buyer is responsible for the 5k deductible if an insurance claim ever needs to be made",
     city:  "Jackson",
     state: "MS",
     beds:  2,
@@ -2626,6 +3068,9 @@ const HOMES = [
   },
   {
     id: "jackson-ms-740-valencia",
+    address:     "740 Valencia St.",
+    zip:         "39204",
+    description: "1333",
     city:  "Jackson",
     state: "MS",
     beds:  3,
@@ -2643,6 +3088,9 @@ const HOMES = [
   },
   {
     id: "toledo-oh-329-mettler",
+    address:     "329 Mettler St",
+    zip:         "43608",
+    description: "908 sqf hardwood floor new sink in kitchen completely cleaned out all utilities are running Replacing water heater at signing garage in the back great exterior",
     city:  "Toledo",
     state: "OH",
     beds:  2,

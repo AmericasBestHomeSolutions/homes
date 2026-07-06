@@ -367,7 +367,7 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
     img.alt = `Home for sale in ${C.city}, ${C.state}`;
     img.hidden = false;
     img.onload = ()=>{ $("heroFallback").style.display = "none"; $("heroCity").style.display="none"; };
-    img.onerror = ()=>{ img.hidden = true; };
+    img.onerror = ()=>{ if(!img.dataset.ph){ img.dataset.ph=1; img.src="images/_placeholder-home.svg"; } else { img.hidden = true; } };
   })();
 
   const terms = [

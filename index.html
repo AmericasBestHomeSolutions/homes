@@ -384,10 +384,11 @@ body{
           <label for="fPay">Monthly payment</label>
           <select id="fPay">
             <option value="">Any payment</option>
-            <option value="700">Under $700/mo</option>
-            <option value="850">Under $850/mo</option>
-            <option value="1000">Under $1,000/mo</option>
-            <option value="1200">Under $1,200/mo</option>
+            <option value="max:700">Under $700/mo</option>
+            <option value="max:900">Under $900/mo</option>
+            <option value="max:1100">Under $1,100/mo</option>
+            <option value="max:1300">Under $1,300/mo</option>
+            <option value="min:1200">$1,200/mo &amp; up</option>
           </select>
         </div>
       </div>
@@ -616,7 +617,7 @@ body{
     return `
     <a class="card" href="${encodeURIComponent(h.id)}.html">
       <div class="card-face" style="background:linear-gradient(135deg,${a},${b})">
-        <img src="${photoSrc}" alt="Home in ${h.city}, ${h.state}" loading="lazy" style="opacity:0;transition:opacity .3s ease" onload="this.style.opacity=1" onerror="this.remove()">
+        <img src="${photoSrc}" alt="Home in ${h.city}, ${h.state}" loading="lazy" style="opacity:0;transition:opacity .3s ease" onload="this.style.opacity=1" onerror="if(!this.dataset.ph){this.dataset.ph=1;this.src='images/_placeholder-home.svg';}else{this.remove();}">
         <span class="scrim"></span>
         <span class="status-tag${pending}">${h.status||"Available"}</span>
         <span class="of-tag">Owner financing</span>
@@ -645,12 +646,18 @@ body{
     const state = $("fState").value;
     const city = $("fCity").value;
     const minBeds = Number($("fBeds").value) || 0;
-    const maxPay = Number($("fPay").value) || 0;
+    const payVal = $("fPay").value;   // "", "max:700", "min:1200"
+    const payMatch = h => {
+      if (!payVal) return true;
+      const p = Number(h.monthlyPayment) || 0;
+      const [kind, amt] = payVal.split(":");
+      return kind === "min" ? p >= Number(amt) : p <= Number(amt);
+    };
     const list = HOMES.filter(h =>
       (!state || h.state === state) &&
       (!city || h.city === city) &&
       (Number(h.beds)||0) >= minBeds &&
-      (!maxPay || (Number(h.monthlyPayment)||0) <= maxPay)
+      payMatch(h)
     );
     // complete listings first: has a photo, then has an address, otherwise keep order
     list.sort((a,b) =>

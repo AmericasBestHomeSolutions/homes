@@ -614,7 +614,7 @@ body{
     const specs = `${h.beds} bd · ${h.baths} ba${h.sqft?` · ${Number(h.sqft).toLocaleString()} sqft`:""}`;
     const photoSrc = h.heroPhoto || `images/${h.id}.jpg`;   // drop images/<id>.jpg in and it shows automatically
     return `
-    <a class="card" href="home.html?home=${encodeURIComponent(h.id)}">
+    <a class="card" href="${encodeURIComponent(h.id)}.html">
       <div class="card-face" style="background:linear-gradient(135deg,${a},${b})">
         <img src="${photoSrc}" alt="Home in ${h.city}, ${h.state}" loading="lazy" style="opacity:0;transition:opacity .3s ease" onload="this.style.opacity=1" onerror="this.remove()">
         <span class="scrim"></span>

@@ -608,11 +608,18 @@ body{
     </a>`;
   }
 
+  // homes that actually have a cover photo load into this set, then sort to the top
+  const photoReady = new Set();
   function render(){
     const city = $("fCity").value;
     const minBeds = Number($("fBeds").value) || 0;
     const shown = HOMES.filter(h =>
       (!city || h.city === city) && (Number(h.beds)||0) >= minBeds
+    );
+    // complete listings first: has a photo, then has an address, otherwise keep order
+    shown.sort((a,b) =>
+      (photoReady.has(b.id) - photoReady.has(a.id)) ||
+      ((b.address?1:0) - (a.address?1:0))
     );
     $("cards").innerHTML = shown.map(cardHTML).join("");
     $("empty").style.display = shown.length ? "none" : "block";
@@ -621,6 +628,14 @@ body{
   $("fCity").addEventListener("change", render);
   $("fBeds").addEventListener("change", render);
   render();
+  // detect which homes have a real cover photo (no homes.js editing needed — just
+  // drop images/<id>.jpg and it auto-prioritizes), then re-sort photo homes to the top
+  Promise.allSettled(HOMES.map(h => new Promise(res => {
+    const im = new Image();
+    im.onload  = () => { if (im.naturalWidth > 1) photoReady.add(h.id); res(); };
+    im.onerror = () => res();
+    im.src = h.heroPhoto || `images/${h.id}.jpg`;
+  }))).then(render);
 
   // contact links (shared CONTACT settings from homes.js)
   const tel = (CONTACT.phone||"").replace(/[^\d+]/g,"");

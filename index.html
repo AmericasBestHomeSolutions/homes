@@ -391,6 +391,26 @@ body{
             <option value="min:1200">$1,200/mo &amp; up</option>
           </select>
         </div>
+        <div class="filter">
+          <label for="fDown">Cash to move in</label>
+          <select id="fDown">
+            <option value="">Any amount</option>
+            <option value="max:1500">Under $1,500</option>
+            <option value="max:2000">Under $2,000</option>
+            <option value="max:2500">Under $2,500</option>
+            <option value="max:3000">Under $3,000</option>
+            <option value="max:4000">Under $4,000</option>
+          </select>
+        </div>
+        <div class="filter">
+          <label for="fSort">Sort by</label>
+          <select id="fSort">
+            <option value="">Featured</option>
+            <option value="monthly-asc">Lowest monthly payment</option>
+            <option value="down-asc">Lowest cash to move in</option>
+            <option value="price-asc">Lowest total price</option>
+          </select>
+        </div>
       </div>
       <p class="count" id="count"></p>
     </div>
@@ -646,21 +666,26 @@ body{
     const state = $("fState").value;
     const city = $("fCity").value;
     const minBeds = Number($("fBeds").value) || 0;
-    const payVal = $("fPay").value;   // "", "max:700", "min:1200"
-    const payMatch = h => {
-      if (!payVal) return true;
-      const p = Number(h.monthlyPayment) || 0;
-      const [kind, amt] = payVal.split(":");
-      return kind === "min" ? p >= Number(amt) : p <= Number(amt);
+    const payVal = $("fPay").value;    // "", "max:700", "min:1200"
+    const downVal = $("fDown").value;  // "", "max:1500"…
+    const sort = $("fSort").value;
+    const rangeMatch = (val, n) => {
+      if (!val) return true;
+      const [kind, amt] = val.split(":");
+      return kind === "min" ? n >= Number(amt) : n <= Number(amt);
     };
     const list = HOMES.filter(h =>
       (!state || h.state === state) &&
       (!city || h.city === city) &&
       (Number(h.beds)||0) >= minBeds &&
-      payMatch(h)
+      rangeMatch(payVal, Number(h.monthlyPayment)||0) &&
+      rangeMatch(downVal, Number(h.moveIn)||0)
     );
-    // complete listings first: has a photo, then has an address, otherwise keep order
-    list.sort((a,b) =>
+    const num = (v, fallback=0) => Number(v) || fallback;
+    if (sort === "monthly-asc")   list.sort((a,b) => num(a.monthlyPayment,Infinity) - num(b.monthlyPayment,Infinity));
+    else if (sort === "down-asc") list.sort((a,b) => num(a.moveIn,Infinity) - num(b.moveIn,Infinity));  // "Ask us" ($0) sorts last
+    else if (sort === "price-asc")list.sort((a,b) => num(a.lockedPrice,Infinity) - num(b.lockedPrice,Infinity));
+    else list.sort((a,b) =>  // Featured: complete listings first (photo, then address)
       (photoReady.has(b.id) - photoReady.has(a.id)) ||
       ((b.address?1:0) - (a.address?1:0))
     );
@@ -708,7 +733,7 @@ body{
       b.addEventListener("click", () => { const p = Number(b.dataset.p); if (p>=1 && p<=pages){ page = p; render(true); } }));
   }
 
-  ["fState","fCity","fBeds","fPay"].forEach(id => $(id).addEventListener("change", () => {
+  ["fState","fCity","fBeds","fPay","fDown","fSort"].forEach(id => $(id).addEventListener("change", () => {
     if (id === "fState") fillCities();
     page = 1; render(true);
   }));

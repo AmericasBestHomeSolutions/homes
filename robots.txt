@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+# home.html is a template that duplicates the per-home pages — keep crawlers on the canonical <id>.html pages
+Disallow: /home.html
+
+Sitemap: https://getownerfinancedhomes.com/sitemap.xml

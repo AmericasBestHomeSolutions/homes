@@ -6,6 +6,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M24 3 41 9V23C41 33 33 41 24 45 15 41 7 33 7 23V9Z' fill='%2315315e'/><path d='M15 26 24 18 33 26Z' fill='%23e23b3b'/><rect x='17.5' y='26' width='13' height='9' fill='white'/><rect x='22' y='30' width='4' height='5' fill='%2315315e'/></svg>"/>
 <title>Owner-Financed Homes | Americas Best Home Solutions</title>
 <meta name="description" content="Own a home without a bank. Owner financing across Illinois, Missouri, Michigan, Alabama and more — a locked price and a monthly payment close to rent. Browse available homes."/>
+<link rel="canonical" href="https://getownerfinancedhomes.com/"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -52,9 +53,9 @@ body{
 .topnav{display:flex;align-items:center;gap:8px}
 .topnav a{font-size:14px;font-weight:600;color:var(--ink-soft);text-decoration:none;padding:8px 10px;border-radius:10px}
 .topnav a:hover{color:var(--pine);background:#eef2f9}
-.topnav a.call{background:var(--pine);color:#fff;display:inline-flex;align-items:center;gap:6px}
+.topnav a.call{background:var(--pine);color:#fff;display:inline-flex;align-items:center;gap:6px;padding:11px 14px}
 .topnav a.call:hover{background:var(--pine-deep);color:#fff}
-@media (max-width:520px){ .topnav a.nav-hide{display:none} }
+@media (max-width:520px){ .topnav{flex-wrap:wrap} .topnav a{font-size:13px;padding:10px 8px} .topnav a.call{padding:11px 12px} }
 
 /* ── HERO ────────────────────────────────────────────────── */
 .hero{position:relative;background:linear-gradient(160deg,#17376a 0%,#0f2444 100%);color:#fff;border-radius:26px;overflow:hidden;margin-top:6px;padding:40px 28px 30px}
@@ -715,7 +716,7 @@ body{
     pager.style.display = "flex";
     const btn = (label, p, opts={}) =>
       `<button class="page-btn${opts.active?" active":""}" ${opts.disabled?"disabled":""} data-p="${p}"
-        style="font-family:'DM Mono',monospace;font-size:14px;min-width:40px;padding:9px 13px;border-radius:10px;cursor:${opts.disabled?"default":"pointer"};
+        style="font-family:'DM Mono',monospace;font-size:14px;min-width:44px;padding:12px 14px;border-radius:10px;cursor:${opts.disabled?"default":"pointer"};
         border:1px solid ${opts.active?"var(--pine,#15315e)":"var(--line,#dfe4ec)"};
         background:${opts.active?"var(--pine,#15315e)":"#fff"};color:${opts.active?"#fff":"var(--ink,#1c1b17)"};${opts.disabled?"opacity:.4":""}">${label}</button>`;
     let html = btn("‹ Prev", page-1, {disabled: page===1});

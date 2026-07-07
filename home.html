@@ -36,9 +36,9 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
 .topnav{display:flex;align-items:center;gap:8px}
 .topnav a{font-size:14px;font-weight:600;color:var(--ink-soft);text-decoration:none;padding:8px 10px;border-radius:10px}
 .topnav a:hover{color:var(--pine);background:#eef2f9}
-.topnav a.call{background:var(--pine);color:#fff;display:inline-flex;align-items:center;gap:6px}
+.topnav a.call{background:var(--pine);color:#fff;display:inline-flex;align-items:center;gap:6px;padding:11px 14px}
 .topnav a.call:hover{background:var(--pine-deep);color:#fff}
-@media (max-width:520px){ .topnav a.nav-hide{display:none} }
+@media (max-width:520px){ .topnav{flex-wrap:wrap} .topnav a{font-size:13px;padding:10px 8px} .topnav a.call{padding:11px 12px} }
 
 /* back link */
 .backlink{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--ink-soft);text-decoration:none;margin:2px 0 10px}

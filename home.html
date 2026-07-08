@@ -372,15 +372,28 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
     `<div class="term-row${big?" big":""}"><span class="k">${k}</span><span class="v">${v}</span></div>`
   ).join("");
 
-  // gallery — uses photos[] if set, otherwise auto-tries images/<id>-1.jpg … -4.jpg;
-  // any that don't exist quietly show a "Photo coming soon" tile.
+  // gallery — uses photos[] if set, otherwise auto-tries images/<id>-1.jpg … -4.jpg
+  // (any that don't exist quietly show a "Photo coming soon" tile), THEN keeps
+  // probing higher numbers (-5, -6, ... up to MAX_GALLERY) in case more photos
+  // get added later — those extra probes just disappear silently if missing,
+  // so adding images/<id>-5.jpg (etc.) to the folder is all it takes to show it.
+  const MAX_GALLERY = 16;
   const g = $("gallery");
-  const gphotos = (C.photos && C.photos.length)
-    ? C.photos
-    : [1,2,3,4].map(i=>`images/${C.id}-${i}.jpg`);
-  g.innerHTML = gphotos.map(src=>
-    `<div class="tile"><img src="${src}" alt="Photo of the home in ${C.city}, ${C.state}" loading="lazy" onerror="this.parentNode.innerHTML='<span class=&quot;ph&quot;>Photo coming soon</span>'"></div>`
-  ).join("");
+  const tile = (src, showComingSoon) => {
+    const onerr = showComingSoon
+      ? `this.parentNode.innerHTML='<span class=&quot;ph&quot;>Photo coming soon</span>'`
+      : `this.parentNode.remove()`;
+    return `<div class="tile"><img src="${src}" alt="Photo of the home in ${C.city}, ${C.state}" loading="lazy" onerror="${onerr}"></div>`;
+  };
+  if (C.photos && C.photos.length){
+    g.innerHTML = C.photos.map(src=>tile(src, true)).join("");
+  } else {
+    g.innerHTML = [1,2,3,4].map(i=>tile(`images/${C.id}-${i}.jpg`, true)).join("");
+    for (let i=5;i<=MAX_GALLERY;i++){
+      const src = `images/${C.id}-${i}.jpg`;
+      g.insertAdjacentHTML("beforeend", tile(src, false));
+    }
+  }
 
   const tel = (C.phone||"").replace(/[^\d+]/g,"");
   const prettyPhone = tel.length===10 ? `(${tel.slice(0,3)}) ${tel.slice(3,6)}-${tel.slice(6)}` : C.phone;

@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (157 live, rebuilt from master published 2026-07-08) --- */
+/* --- the homes (157 live, rebuilt from master published 2026-07-10) --- */
 const HOMES = [
   {
     id: "evansville-in-731-florida",

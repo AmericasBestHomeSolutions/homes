@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (158 live, rebuilt from master published 2026-07-13) --- */
+/* --- the homes (158 live, rebuilt from master published 2026-07-15) --- */
 const HOMES = [
   {
     id: "madison-il-2017-mccasland",

@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (162 live, rebuilt from master published 2026-07-15) --- */
+/* --- the homes (162 live, rebuilt from master published 2026-07-16) --- */
 const HOMES = [
   {
     id: "stlouis-mo-5051-thrush",

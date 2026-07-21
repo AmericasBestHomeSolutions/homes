@@ -384,12 +384,12 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
     `<div class="term-row${big?" big":""}"><span class="k">${k}</span><span class="v">${v}</span></div>`
   ).join("");
 
-  // gallery — uses photos[] if set, otherwise auto-tries images/<id>-1.jpg … -4.jpg
-  // (any that don't exist quietly show a "Photo coming soon" tile), THEN keeps
-  // probing higher numbers (-5, -6, ... up to MAX_GALLERY) in case more photos
-  // get added later — those extra probes just disappear silently if missing,
-  // so adding images/<id>-5.jpg (etc.) to the folder is all it takes to show it.
-  const MAX_GALLERY = 16;
+  // gallery — uses photos[] (the exact list, baked in by refresh_listings.py from
+  // what's really on disk — no cap) if set. Otherwise (e.g. a photo was just dropped
+  // in by hand and homes.js hasn't been regenerated yet) falls back to auto-trying
+  // images/<id>-1.jpg … -4.jpg then probing a bit further as a courtesy — any that
+  // don't exist quietly disappear, so this is just a stopgap until the next refresh.
+  const MAX_GALLERY = 20;
   const g = $("gallery");
   const tile = (src, showComingSoon) => {
     const onerr = showComingSoon

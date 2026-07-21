@@ -32,6 +32,7 @@ const HOMES = [
     lockedPrice:    76000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { storage_shed: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -72,6 +73,7 @@ const HOMES = [
     lockedPrice:    89000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { garage: "yes", off_street_parking: "yes", central_air: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -132,6 +134,7 @@ const HOMES = [
     lockedPrice:    89000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { basement: "no", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -230,6 +233,7 @@ const HOMES = [
     lockedPrice:    69500,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { backyard: "yes", basement: "no", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -270,6 +274,7 @@ const HOMES = [
     lockedPrice:    99000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { backyard: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -290,6 +295,7 @@ const HOMES = [
     lockedPrice:    105000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { backyard: "yes", garage: "yes", off_street_parking: "yes", central_air: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -330,6 +336,7 @@ const HOMES = [
     lockedPrice:    89000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -350,6 +357,7 @@ const HOMES = [
     lockedPrice:    89000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { basement: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -428,6 +436,7 @@ const HOMES = [
     lockedPrice:    46000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -448,6 +457,7 @@ const HOMES = [
     lockedPrice:    89995,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { basement: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -468,6 +478,7 @@ const HOMES = [
     lockedPrice:    69000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -488,6 +499,7 @@ const HOMES = [
     lockedPrice:    79000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { basement: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -508,6 +520,7 @@ const HOMES = [
     lockedPrice:    82500,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { backyard: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -548,6 +561,7 @@ const HOMES = [
     lockedPrice:    86000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { backyard: "yes", basement: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -568,6 +582,7 @@ const HOMES = [
     lockedPrice:    276000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { backyard: "yes", fenced_yard: "yes", storage_shed: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -627,6 +642,7 @@ const HOMES = [
     lockedPrice:    80000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { basement: "yes", garage: "yes", off_street_parking: "yes", attic: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -667,6 +683,7 @@ const HOMES = [
     lockedPrice:    74900,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -687,6 +704,7 @@ const HOMES = [
     lockedPrice:    97000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { storage_shed: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -727,6 +745,7 @@ const HOMES = [
     lockedPrice:    95500,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { backyard: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -767,6 +786,7 @@ const HOMES = [
     lockedPrice:    57000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { backyard: "yes", storage_shed: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -787,6 +807,7 @@ const HOMES = [
     lockedPrice:    89999,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { backyard: "yes", fenced_yard: "yes" },
     heroPhoto: "",
     photos:    ["images/stlouis-mo-10249-earl-1.jpg", "images/stlouis-mo-10249-earl-2.jpg", "images/stlouis-mo-10249-earl-3.jpg", "images/stlouis-mo-10249-earl-4.jpg"],
   },
@@ -807,6 +828,7 @@ const HOMES = [
     lockedPrice:    69000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { basement: "yes" },
     heroPhoto: "",
     photos:    ["images/peoria-il-609-tracy-1.jpg", "images/peoria-il-609-tracy-2.jpg", "images/peoria-il-609-tracy-3.jpg", "images/peoria-il-609-tracy-4.jpg", "images/peoria-il-609-tracy-5.jpg", "images/peoria-il-609-tracy-6.jpg", "images/peoria-il-609-tracy-7.jpg", "images/peoria-il-609-tracy-8.jpg", "images/peoria-il-609-tracy-9.jpg", "images/peoria-il-609-tracy-10.jpg", "images/peoria-il-609-tracy-11.jpg", "images/peoria-il-609-tracy-12.jpg", "images/peoria-il-609-tracy-13.jpg", "images/peoria-il-609-tracy-14.jpg", "images/peoria-il-609-tracy-15.jpg", "images/peoria-il-609-tracy-16.jpg", "images/peoria-il-609-tracy-17.jpg", "images/peoria-il-609-tracy-18.jpg"],
   },
@@ -827,6 +849,7 @@ const HOMES = [
     lockedPrice:    125000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { backyard: "yes", off_street_parking: "yes", storage_shed: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -967,6 +990,7 @@ const HOMES = [
     lockedPrice:    79000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { backyard: "yes", storage_shed: "yes" },
     heroPhoto: "",
     photos:    ["images/woodriver-il-830-wood-1.jpg", "images/woodriver-il-830-wood-2.jpg", "images/woodriver-il-830-wood-3.jpg", "images/woodriver-il-830-wood-4.jpg", "images/woodriver-il-830-wood-5.jpg", "images/woodriver-il-830-wood-6.jpg", "images/woodriver-il-830-wood-7.jpg", "images/woodriver-il-830-wood-8.jpg", "images/woodriver-il-830-wood-9.jpg", "images/woodriver-il-830-wood-10.jpg"],
   },
@@ -987,6 +1011,7 @@ const HOMES = [
     lockedPrice:    78280,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-1830-lowber-1.jpg", "images/decatur-il-1830-lowber-2.jpg", "images/decatur-il-1830-lowber-3.jpg", "images/decatur-il-1830-lowber-4.jpg"],
   },
@@ -1066,6 +1091,7 @@ const HOMES = [
     lockedPrice:    82500,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { basement: "no" },
     heroPhoto: "",
     photos:    ["images/carbondale-il-615-almond-1.jpg", "images/carbondale-il-615-almond-2.jpg", "images/carbondale-il-615-almond-3.jpg", "images/carbondale-il-615-almond-4.jpg", "images/carbondale-il-615-almond-5.jpg", "images/carbondale-il-615-almond-6.jpg", "images/carbondale-il-615-almond-7.jpg", "images/carbondale-il-615-almond-8.jpg", "images/carbondale-il-615-almond-9.jpg", "images/carbondale-il-615-almond-10.jpg", "images/carbondale-il-615-almond-11.jpg", "images/carbondale-il-615-almond-12.jpg", "images/carbondale-il-615-almond-13.jpg"],
   },
@@ -1086,6 +1112,7 @@ const HOMES = [
     lockedPrice:    119000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { backyard: "yes", basement: "yes", garage: "yes", off_street_parking: "yes", central_air: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-2061-college-1.jpg", "images/decatur-il-2061-college-2.jpg", "images/decatur-il-2061-college-3.jpg", "images/decatur-il-2061-college-4.jpg", "images/decatur-il-2061-college-5.jpg", "images/decatur-il-2061-college-6.jpg", "images/decatur-il-2061-college-7.jpg", "images/decatur-il-2061-college-8.jpg", "images/decatur-il-2061-college-9.jpg", "images/decatur-il-2061-college-10.jpg", "images/decatur-il-2061-college-11.jpg", "images/decatur-il-2061-college-12.jpg", "images/decatur-il-2061-college-13.jpg", "images/decatur-il-2061-college-14.jpg", "images/decatur-il-2061-college-15.jpg", "images/decatur-il-2061-college-16.jpg", "images/decatur-il-2061-college-17.jpg", "images/decatur-il-2061-college-18.jpg", "images/decatur-il-2061-college-19.jpg", "images/decatur-il-2061-college-20.jpg", "images/decatur-il-2061-college-21.jpg", "images/decatur-il-2061-college-22.jpg", "images/decatur-il-2061-college-23.jpg", "images/decatur-il-2061-college-24.jpg", "images/decatur-il-2061-college-25.jpg", "images/decatur-il-2061-college-26.jpg", "images/decatur-il-2061-college-27.jpg", "images/decatur-il-2061-college-28.jpg", "images/decatur-il-2061-college-29.jpg"],
   },
@@ -1106,6 +1133,7 @@ const HOMES = [
     lockedPrice:    83000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { backyard: "yes", basement: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -1126,6 +1154,7 @@ const HOMES = [
     lockedPrice:    83000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { backyard: "yes", fenced_yard: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -1186,6 +1215,7 @@ const HOMES = [
     lockedPrice:    59000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { backyard: "yes", basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -1206,6 +1236,7 @@ const HOMES = [
     lockedPrice:    89000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { backyard: "yes", basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-2550-main-1.jpg", "images/decatur-il-2550-main-2.jpg", "images/decatur-il-2550-main-3.jpg", "images/decatur-il-2550-main-4.jpg", "images/decatur-il-2550-main-5.jpg", "images/decatur-il-2550-main-6.jpg", "images/decatur-il-2550-main-7.jpg", "images/decatur-il-2550-main-8.jpg", "images/decatur-il-2550-main-9.jpg", "images/decatur-il-2550-main-10.jpg", "images/decatur-il-2550-main-11.jpg", "images/decatur-il-2550-main-12.jpg", "images/decatur-il-2550-main-13.jpg", "images/decatur-il-2550-main-14.jpg", "images/decatur-il-2550-main-15.jpg", "images/decatur-il-2550-main-16.jpg", "images/decatur-il-2550-main-17.jpg", "images/decatur-il-2550-main-18.jpg", "images/decatur-il-2550-main-19.jpg", "images/decatur-il-2550-main-20.jpg", "images/decatur-il-2550-main-21.jpg", "images/decatur-il-2550-main-22.jpg", "images/decatur-il-2550-main-23.jpg", "images/decatur-il-2550-main-24.jpg", "images/decatur-il-2550-main-25.jpg"],
   },
@@ -1226,6 +1257,7 @@ const HOMES = [
     lockedPrice:    93500,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { backyard: "yes", fenced_yard: "yes" },
     heroPhoto: "",
     photos:    ["images/highlandpark-mi-376-highland-1.jpg", "images/highlandpark-mi-376-highland-2.jpg", "images/highlandpark-mi-376-highland-3.jpg", "images/highlandpark-mi-376-highland-4.jpg"],
   },
@@ -1246,6 +1278,7 @@ const HOMES = [
     lockedPrice:    99000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { garage: "yes", off_street_parking: "yes", storage_shed: "yes" },
     heroPhoto: "",
     photos:    ["images/bethalto-il-319-corbin-1.jpg", "images/bethalto-il-319-corbin-2.jpg", "images/bethalto-il-319-corbin-3.jpg", "images/bethalto-il-319-corbin-4.jpg", "images/bethalto-il-319-corbin-5.jpg", "images/bethalto-il-319-corbin-6.jpg", "images/bethalto-il-319-corbin-7.jpg", "images/bethalto-il-319-corbin-8.jpg", "images/bethalto-il-319-corbin-9.jpg", "images/bethalto-il-319-corbin-10.jpg"],
   },
@@ -1286,6 +1319,7 @@ const HOMES = [
     lockedPrice:    89000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { backyard: "yes", fenced_yard: "no", basement: "no" },
     heroPhoto: "",
     photos:    ["images/birmingham-al-208-carol-1.jpg", "images/birmingham-al-208-carol-2.jpg", "images/birmingham-al-208-carol-3.jpg", "images/birmingham-al-208-carol-4.jpg", "images/birmingham-al-208-carol-5.jpg", "images/birmingham-al-208-carol-6.jpg", "images/birmingham-al-208-carol-7.jpg", "images/birmingham-al-208-carol-8.jpg", "images/birmingham-al-208-carol-9.jpg", "images/birmingham-al-208-carol-10.jpg", "images/birmingham-al-208-carol-11.jpg", "images/birmingham-al-208-carol-12.jpg", "images/birmingham-al-208-carol-13.jpg", "images/birmingham-al-208-carol-14.jpg", "images/birmingham-al-208-carol-15.jpg", "images/birmingham-al-208-carol-16.jpg", "images/birmingham-al-208-carol-17.jpg", "images/birmingham-al-208-carol-18.jpg", "images/birmingham-al-208-carol-19.jpg", "images/birmingham-al-208-carol-20.jpg", "images/birmingham-al-208-carol-21.jpg", "images/birmingham-al-208-carol-22.jpg", "images/birmingham-al-208-carol-23.jpg", "images/birmingham-al-208-carol-24.jpg", "images/birmingham-al-208-carol-25.jpg", "images/birmingham-al-208-carol-26.jpg", "images/birmingham-al-208-carol-27.jpg", "images/birmingham-al-208-carol-28.jpg", "images/birmingham-al-208-carol-29.jpg"],
   },
@@ -1306,6 +1340,7 @@ const HOMES = [
     lockedPrice:    99500,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { garage: "yes", off_street_parking: "yes", central_air: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -1366,6 +1401,7 @@ const HOMES = [
     lockedPrice:    89000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { backyard: "yes", basement: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-1286-vanderhoof-1.jpg", "images/decatur-il-1286-vanderhoof-2.jpg", "images/decatur-il-1286-vanderhoof-3.jpg", "images/decatur-il-1286-vanderhoof-4.jpg"],
   },
@@ -1386,6 +1422,7 @@ const HOMES = [
     lockedPrice:    79000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { backyard: "yes", fenced_yard: "yes", garage: "no" },
     heroPhoto: "",
     photos:    ["images/peoria-il-1714-livingston-1.jpg", "images/peoria-il-1714-livingston-2.jpg", "images/peoria-il-1714-livingston-3.jpg", "images/peoria-il-1714-livingston-4.jpg"],
   },
@@ -1406,6 +1443,7 @@ const HOMES = [
     lockedPrice:    77000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -1426,6 +1464,7 @@ const HOMES = [
     lockedPrice:    89000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { backyard: "yes", fenced_yard: "yes", off_street_parking: "yes", storage_shed: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-1258-division-1.jpg", "images/decatur-il-1258-division-2.jpg", "images/decatur-il-1258-division-3.jpg", "images/decatur-il-1258-division-4.jpg"],
   },
@@ -1466,6 +1505,7 @@ const HOMES = [
     lockedPrice:    77710,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-132-23rd-1.jpg", "images/decatur-il-132-23rd-2.jpg", "images/decatur-il-132-23rd-3.jpg", "images/decatur-il-132-23rd-4.jpg"],
   },
@@ -1526,6 +1566,7 @@ const HOMES = [
     lockedPrice:    69680,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { basement: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-1259-whitmer-1.jpg", "images/decatur-il-1259-whitmer-2.jpg", "images/decatur-il-1259-whitmer-3.jpg", "images/decatur-il-1259-whitmer-4.jpg"],
   },
@@ -1586,6 +1627,7 @@ const HOMES = [
     lockedPrice:    72000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { basement: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -1724,6 +1766,7 @@ const HOMES = [
     lockedPrice:    84998,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { basement: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -1744,6 +1787,7 @@ const HOMES = [
     lockedPrice:    79995,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { backyard: "yes", basement: "yes", central_air: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-1365-walnut-1.jpg", "images/decatur-il-1365-walnut-2.jpg", "images/decatur-il-1365-walnut-3.jpg", "images/decatur-il-1365-walnut-4.jpg", "images/decatur-il-1365-walnut-5.jpg", "images/decatur-il-1365-walnut-6.jpg", "images/decatur-il-1365-walnut-7.jpg", "images/decatur-il-1365-walnut-8.jpg", "images/decatur-il-1365-walnut-9.jpg", "images/decatur-il-1365-walnut-10.jpg", "images/decatur-il-1365-walnut-11.jpg", "images/decatur-il-1365-walnut-12.jpg", "images/decatur-il-1365-walnut-13.jpg", "images/decatur-il-1365-walnut-14.jpg", "images/decatur-il-1365-walnut-15.jpg", "images/decatur-il-1365-walnut-16.jpg", "images/decatur-il-1365-walnut-17.jpg", "images/decatur-il-1365-walnut-18.jpg", "images/decatur-il-1365-walnut-19.jpg", "images/decatur-il-1365-walnut-20.jpg", "images/decatur-il-1365-walnut-21.jpg", "images/decatur-il-1365-walnut-22.jpg", "images/decatur-il-1365-walnut-23.jpg", "images/decatur-il-1365-walnut-24.jpg", "images/decatur-il-1365-walnut-25.jpg", "images/decatur-il-1365-walnut-26.jpg", "images/decatur-il-1365-walnut-27.jpg", "images/decatur-il-1365-walnut-28.jpg", "images/decatur-il-1365-walnut-29.jpg", "images/decatur-il-1365-walnut-30.jpg", "images/decatur-il-1365-walnut-31.jpg", "images/decatur-il-1365-walnut-32.jpg", "images/decatur-il-1365-walnut-33.jpg", "images/decatur-il-1365-walnut-34.jpg", "images/decatur-il-1365-walnut-35.jpg", "images/decatur-il-1365-walnut-36.jpg"],
   },
@@ -1784,6 +1828,7 @@ const HOMES = [
     lockedPrice:    78993,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-821-oakland-1.jpg", "images/decatur-il-821-oakland-2.jpg", "images/decatur-il-821-oakland-3.jpg", "images/decatur-il-821-oakland-4.jpg", "images/decatur-il-821-oakland-5.jpg", "images/decatur-il-821-oakland-6.jpg", "images/decatur-il-821-oakland-7.jpg", "images/decatur-il-821-oakland-8.jpg", "images/decatur-il-821-oakland-9.jpg", "images/decatur-il-821-oakland-10.jpg", "images/decatur-il-821-oakland-11.jpg", "images/decatur-il-821-oakland-12.jpg", "images/decatur-il-821-oakland-13.jpg", "images/decatur-il-821-oakland-14.jpg", "images/decatur-il-821-oakland-15.jpg", "images/decatur-il-821-oakland-16.jpg", "images/decatur-il-821-oakland-17.jpg", "images/decatur-il-821-oakland-18.jpg"],
   },
@@ -1824,6 +1869,7 @@ const HOMES = [
     lockedPrice:    89000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -1884,6 +1930,7 @@ const HOMES = [
     lockedPrice:    79000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { basement: "yes", garage: "yes", off_street_parking: "yes", central_air: "yes" },
     heroPhoto: "",
     photos:    ["images/fulton-il-602-18th-1.jpg", "images/fulton-il-602-18th-2.jpg", "images/fulton-il-602-18th-3.jpg", "images/fulton-il-602-18th-4.jpg", "images/fulton-il-602-18th-5.jpg", "images/fulton-il-602-18th-6.jpg", "images/fulton-il-602-18th-7.jpg", "images/fulton-il-602-18th-8.jpg", "images/fulton-il-602-18th-9.jpg", "images/fulton-il-602-18th-10.jpg", "images/fulton-il-602-18th-11.jpg", "images/fulton-il-602-18th-12.jpg", "images/fulton-il-602-18th-13.jpg", "images/fulton-il-602-18th-14.jpg", "images/fulton-il-602-18th-15.jpg", "images/fulton-il-602-18th-16.jpg", "images/fulton-il-602-18th-17.jpg", "images/fulton-il-602-18th-18.jpg", "images/fulton-il-602-18th-19.jpg", "images/fulton-il-602-18th-20.jpg", "images/fulton-il-602-18th-21.jpg", "images/fulton-il-602-18th-22.jpg", "images/fulton-il-602-18th-23.jpg", "images/fulton-il-602-18th-24.jpg", "images/fulton-il-602-18th-25.jpg", "images/fulton-il-602-18th-26.jpg", "images/fulton-il-602-18th-27.jpg", "images/fulton-il-602-18th-28.jpg", "images/fulton-il-602-18th-29.jpg"],
   },
@@ -1904,6 +1951,7 @@ const HOMES = [
     lockedPrice:    64999,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { backyard: "yes", fenced_yard: "yes", basement: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-2618-garfield-1.jpg", "images/decatur-il-2618-garfield-2.jpg", "images/decatur-il-2618-garfield-3.jpg", "images/decatur-il-2618-garfield-4.jpg", "images/decatur-il-2618-garfield-5.jpg", "images/decatur-il-2618-garfield-6.jpg", "images/decatur-il-2618-garfield-7.jpg", "images/decatur-il-2618-garfield-8.jpg", "images/decatur-il-2618-garfield-9.jpg", "images/decatur-il-2618-garfield-10.jpg", "images/decatur-il-2618-garfield-11.jpg", "images/decatur-il-2618-garfield-12.jpg", "images/decatur-il-2618-garfield-13.jpg", "images/decatur-il-2618-garfield-14.jpg", "images/decatur-il-2618-garfield-15.jpg", "images/decatur-il-2618-garfield-16.jpg", "images/decatur-il-2618-garfield-17.jpg", "images/decatur-il-2618-garfield-18.jpg", "images/decatur-il-2618-garfield-19.jpg", "images/decatur-il-2618-garfield-20.jpg", "images/decatur-il-2618-garfield-21.jpg", "images/decatur-il-2618-garfield-22.jpg", "images/decatur-il-2618-garfield-23.jpg", "images/decatur-il-2618-garfield-24.jpg", "images/decatur-il-2618-garfield-25.jpg", "images/decatur-il-2618-garfield-26.jpg", "images/decatur-il-2618-garfield-27.jpg", "images/decatur-il-2618-garfield-28.jpg", "images/decatur-il-2618-garfield-29.jpg"],
   },
@@ -1924,6 +1972,7 @@ const HOMES = [
     lockedPrice:    73000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { off_street_parking: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -2063,6 +2112,7 @@ const HOMES = [
     lockedPrice:    74500,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { backyard: "yes", fenced_yard: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -2103,6 +2153,7 @@ const HOMES = [
     lockedPrice:    49000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { storage_shed: "yes" },
     heroPhoto: "",
     photos:    ["images/harrisburg-il-410-shaw-1.jpg", "images/harrisburg-il-410-shaw-2.jpg", "images/harrisburg-il-410-shaw-3.jpg", "images/harrisburg-il-410-shaw-4.jpg"],
   },
@@ -2183,6 +2234,7 @@ const HOMES = [
     lockedPrice:    75000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { basement: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-1505-walnut-1.jpg", "images/decatur-il-1505-walnut-2.jpg", "images/decatur-il-1505-walnut-3.jpg", "images/decatur-il-1505-walnut-4.jpg", "images/decatur-il-1505-walnut-5.jpg", "images/decatur-il-1505-walnut-6.jpg", "images/decatur-il-1505-walnut-7.jpg", "images/decatur-il-1505-walnut-8.jpg", "images/decatur-il-1505-walnut-9.jpg"],
   },
@@ -2243,6 +2295,7 @@ const HOMES = [
     lockedPrice:    77500,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { basement: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -2263,6 +2316,7 @@ const HOMES = [
     lockedPrice:    79000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { basement: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -2283,6 +2337,7 @@ const HOMES = [
     lockedPrice:    80000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { backyard: "yes", storage_shed: "yes" },
     heroPhoto: "",
     photos:    ["images/jackson-ms-1546-david-1.jpg", "images/jackson-ms-1546-david-2.jpg", "images/jackson-ms-1546-david-3.jpg", "images/jackson-ms-1546-david-4.jpg"],
   },
@@ -2322,6 +2377,7 @@ const HOMES = [
     lockedPrice:    106500,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { basement: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -2342,6 +2398,7 @@ const HOMES = [
     lockedPrice:    99000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { backyard: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -2362,6 +2419,7 @@ const HOMES = [
     lockedPrice:    85000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { backyard: "yes", fenced_yard: "yes", basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/flint-mi-2433-pennsylvania-1.jpg", "images/flint-mi-2433-pennsylvania-2.jpg", "images/flint-mi-2433-pennsylvania-3.jpg", "images/flint-mi-2433-pennsylvania-4.jpg"],
   },
@@ -2462,6 +2520,7 @@ const HOMES = [
     lockedPrice:    64000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { basement: "yes" },
     heroPhoto: "",
     photos:    ["images/flint-mi-1218-pinehurst-1.jpg", "images/flint-mi-1218-pinehurst-2.jpg", "images/flint-mi-1218-pinehurst-3.jpg", "images/flint-mi-1218-pinehurst-4.jpg", "images/flint-mi-1218-pinehurst-5.jpg", "images/flint-mi-1218-pinehurst-6.jpg", "images/flint-mi-1218-pinehurst-7.jpg", "images/flint-mi-1218-pinehurst-8.jpg", "images/flint-mi-1218-pinehurst-9.jpg", "images/flint-mi-1218-pinehurst-10.jpg", "images/flint-mi-1218-pinehurst-11.jpg", "images/flint-mi-1218-pinehurst-12.jpg", "images/flint-mi-1218-pinehurst-13.jpg", "images/flint-mi-1218-pinehurst-14.jpg", "images/flint-mi-1218-pinehurst-15.jpg", "images/flint-mi-1218-pinehurst-16.jpg", "images/flint-mi-1218-pinehurst-17.jpg", "images/flint-mi-1218-pinehurst-18.jpg", "images/flint-mi-1218-pinehurst-19.jpg", "images/flint-mi-1218-pinehurst-20.jpg", "images/flint-mi-1218-pinehurst-21.jpg", "images/flint-mi-1218-pinehurst-22.jpg", "images/flint-mi-1218-pinehurst-23.jpg", "images/flint-mi-1218-pinehurst-24.jpg", "images/flint-mi-1218-pinehurst-25.jpg", "images/flint-mi-1218-pinehurst-26.jpg", "images/flint-mi-1218-pinehurst-27.jpg", "images/flint-mi-1218-pinehurst-28.jpg", "images/flint-mi-1218-pinehurst-29.jpg"],
   },
@@ -2522,6 +2581,7 @@ const HOMES = [
     lockedPrice:    99000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -2542,6 +2602,7 @@ const HOMES = [
     lockedPrice:    87000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -2582,6 +2643,7 @@ const HOMES = [
     lockedPrice:    89000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { basement: "yes" },
     heroPhoto: "",
     photos:    ["images/centralia-il-805-hickory-1.jpg", "images/centralia-il-805-hickory-2.jpg", "images/centralia-il-805-hickory-3.jpg", "images/centralia-il-805-hickory-4.jpg", "images/centralia-il-805-hickory-5.jpg", "images/centralia-il-805-hickory-6.jpg", "images/centralia-il-805-hickory-7.jpg", "images/centralia-il-805-hickory-8.jpg", "images/centralia-il-805-hickory-9.jpg", "images/centralia-il-805-hickory-10.jpg", "images/centralia-il-805-hickory-11.jpg", "images/centralia-il-805-hickory-12.jpg", "images/centralia-il-805-hickory-13.jpg", "images/centralia-il-805-hickory-14.jpg", "images/centralia-il-805-hickory-15.jpg", "images/centralia-il-805-hickory-16.jpg", "images/centralia-il-805-hickory-17.jpg", "images/centralia-il-805-hickory-18.jpg", "images/centralia-il-805-hickory-19.jpg", "images/centralia-il-805-hickory-20.jpg", "images/centralia-il-805-hickory-21.jpg", "images/centralia-il-805-hickory-22.jpg"],
   },
@@ -2621,6 +2683,7 @@ const HOMES = [
     lockedPrice:    99500,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { basement: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-1818-clay-1.jpg", "images/decatur-il-1818-clay-2.jpg", "images/decatur-il-1818-clay-3.jpg", "images/decatur-il-1818-clay-4.jpg", "images/decatur-il-1818-clay-5.jpg", "images/decatur-il-1818-clay-6.jpg", "images/decatur-il-1818-clay-7.jpg", "images/decatur-il-1818-clay-8.jpg", "images/decatur-il-1818-clay-9.jpg", "images/decatur-il-1818-clay-10.jpg", "images/decatur-il-1818-clay-11.jpg", "images/decatur-il-1818-clay-12.jpg", "images/decatur-il-1818-clay-13.jpg", "images/decatur-il-1818-clay-14.jpg", "images/decatur-il-1818-clay-15.jpg", "images/decatur-il-1818-clay-16.jpg", "images/decatur-il-1818-clay-17.jpg", "images/decatur-il-1818-clay-18.jpg", "images/decatur-il-1818-clay-19.jpg", "images/decatur-il-1818-clay-20.jpg", "images/decatur-il-1818-clay-21.jpg", "images/decatur-il-1818-clay-22.jpg", "images/decatur-il-1818-clay-23.jpg", "images/decatur-il-1818-clay-24.jpg", "images/decatur-il-1818-clay-25.jpg", "images/decatur-il-1818-clay-26.jpg", "images/decatur-il-1818-clay-27.jpg", "images/decatur-il-1818-clay-28.jpg", "images/decatur-il-1818-clay-29.jpg", "images/decatur-il-1818-clay-30.jpg", "images/decatur-il-1818-clay-31.jpg", "images/decatur-il-1818-clay-32.jpg", "images/decatur-il-1818-clay-33.jpg", "images/decatur-il-1818-clay-34.jpg", "images/decatur-il-1818-clay-35.jpg", "images/decatur-il-1818-clay-36.jpg", "images/decatur-il-1818-clay-37.jpg", "images/decatur-il-1818-clay-38.jpg", "images/decatur-il-1818-clay-39.jpg", "images/decatur-il-1818-clay-40.jpg", "images/decatur-il-1818-clay-41.jpg", "images/decatur-il-1818-clay-42.jpg", "images/decatur-il-1818-clay-43.jpg", "images/decatur-il-1818-clay-44.jpg", "images/decatur-il-1818-clay-45.jpg", "images/decatur-il-1818-clay-46.jpg", "images/decatur-il-1818-clay-47.jpg", "images/decatur-il-1818-clay-48.jpg", "images/decatur-il-1818-clay-49.jpg", "images/decatur-il-1818-clay-50.jpg", "images/decatur-il-1818-clay-51.jpg", "images/decatur-il-1818-clay-52.jpg", "images/decatur-il-1818-clay-53.jpg", "images/decatur-il-1818-clay-54.jpg", "images/decatur-il-1818-clay-55.jpg", "images/decatur-il-1818-clay-56.jpg", "images/decatur-il-1818-clay-57.jpg", "images/decatur-il-1818-clay-58.jpg", "images/decatur-il-1818-clay-59.jpg"],
   },
@@ -2641,6 +2704,7 @@ const HOMES = [
     lockedPrice:    88000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { basement: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-767-whitmer-1.jpg", "images/decatur-il-767-whitmer-2.jpg", "images/decatur-il-767-whitmer-3.jpg", "images/decatur-il-767-whitmer-4.jpg", "images/decatur-il-767-whitmer-5.jpg", "images/decatur-il-767-whitmer-6.jpg", "images/decatur-il-767-whitmer-7.jpg", "images/decatur-il-767-whitmer-8.jpg", "images/decatur-il-767-whitmer-9.jpg", "images/decatur-il-767-whitmer-10.jpg", "images/decatur-il-767-whitmer-11.jpg", "images/decatur-il-767-whitmer-12.jpg", "images/decatur-il-767-whitmer-13.jpg", "images/decatur-il-767-whitmer-14.jpg", "images/decatur-il-767-whitmer-15.jpg", "images/decatur-il-767-whitmer-16.jpg", "images/decatur-il-767-whitmer-17.jpg", "images/decatur-il-767-whitmer-18.jpg", "images/decatur-il-767-whitmer-19.jpg", "images/decatur-il-767-whitmer-20.jpg", "images/decatur-il-767-whitmer-21.jpg", "images/decatur-il-767-whitmer-22.jpg", "images/decatur-il-767-whitmer-23.jpg", "images/decatur-il-767-whitmer-24.jpg", "images/decatur-il-767-whitmer-25.jpg", "images/decatur-il-767-whitmer-26.jpg", "images/decatur-il-767-whitmer-27.jpg", "images/decatur-il-767-whitmer-28.jpg", "images/decatur-il-767-whitmer-29.jpg"],
   },
@@ -2701,6 +2765,7 @@ const HOMES = [
     lockedPrice:    79000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/granitecity-il-2317-grand-1.jpg", "images/granitecity-il-2317-grand-2.jpg", "images/granitecity-il-2317-grand-3.jpg", "images/granitecity-il-2317-grand-4.jpg"],
   },
@@ -2740,6 +2805,7 @@ const HOMES = [
     lockedPrice:    69500,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { basement: "no" },
     heroPhoto: "",
     photos:    ["images/flint-mi-2621-churchhill-1.jpg", "images/flint-mi-2621-churchhill-2.jpg", "images/flint-mi-2621-churchhill-3.jpg", "images/flint-mi-2621-churchhill-4.jpg"],
   },
@@ -2760,6 +2826,7 @@ const HOMES = [
     lockedPrice:    57000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { basement: "yes" },
     heroPhoto: "",
     photos:    ["images/stlouis-mo-2028-prairei-1.jpg", "images/stlouis-mo-2028-prairei-2.jpg", "images/stlouis-mo-2028-prairei-3.jpg", "images/stlouis-mo-2028-prairei-4.jpg", "images/stlouis-mo-2028-prairei-5.jpg", "images/stlouis-mo-2028-prairei-6.jpg", "images/stlouis-mo-2028-prairei-7.jpg", "images/stlouis-mo-2028-prairei-8.jpg", "images/stlouis-mo-2028-prairei-9.jpg", "images/stlouis-mo-2028-prairei-10.jpg", "images/stlouis-mo-2028-prairei-11.jpg", "images/stlouis-mo-2028-prairei-12.jpg", "images/stlouis-mo-2028-prairei-13.jpg", "images/stlouis-mo-2028-prairei-14.jpg", "images/stlouis-mo-2028-prairei-15.jpg", "images/stlouis-mo-2028-prairei-16.jpg", "images/stlouis-mo-2028-prairei-17.jpg", "images/stlouis-mo-2028-prairei-18.jpg", "images/stlouis-mo-2028-prairei-19.jpg", "images/stlouis-mo-2028-prairei-20.jpg", "images/stlouis-mo-2028-prairei-21.jpg", "images/stlouis-mo-2028-prairei-22.jpg", "images/stlouis-mo-2028-prairei-23.jpg", "images/stlouis-mo-2028-prairei-24.jpg", "images/stlouis-mo-2028-prairei-25.jpg", "images/stlouis-mo-2028-prairei-26.jpg", "images/stlouis-mo-2028-prairei-27.jpg", "images/stlouis-mo-2028-prairei-28.jpg", "images/stlouis-mo-2028-prairei-29.jpg"],
   },
@@ -2819,6 +2886,7 @@ const HOMES = [
     lockedPrice:    79900,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { basement: "yes" },
     heroPhoto: "",
     photos:    ["images/stlouis-mo-4919-thelka-1.jpg", "images/stlouis-mo-4919-thelka-2.jpg", "images/stlouis-mo-4919-thelka-3.jpg", "images/stlouis-mo-4919-thelka-4.jpg", "images/stlouis-mo-4919-thelka-5.jpg", "images/stlouis-mo-4919-thelka-6.jpg", "images/stlouis-mo-4919-thelka-7.jpg", "images/stlouis-mo-4919-thelka-8.jpg", "images/stlouis-mo-4919-thelka-9.jpg", "images/stlouis-mo-4919-thelka-10.jpg", "images/stlouis-mo-4919-thelka-11.jpg", "images/stlouis-mo-4919-thelka-12.jpg", "images/stlouis-mo-4919-thelka-13.jpg", "images/stlouis-mo-4919-thelka-14.jpg", "images/stlouis-mo-4919-thelka-15.jpg", "images/stlouis-mo-4919-thelka-16.jpg", "images/stlouis-mo-4919-thelka-17.jpg", "images/stlouis-mo-4919-thelka-18.jpg", "images/stlouis-mo-4919-thelka-19.jpg", "images/stlouis-mo-4919-thelka-20.jpg", "images/stlouis-mo-4919-thelka-21.jpg", "images/stlouis-mo-4919-thelka-22.jpg", "images/stlouis-mo-4919-thelka-23.jpg", "images/stlouis-mo-4919-thelka-24.jpg", "images/stlouis-mo-4919-thelka-25.jpg", "images/stlouis-mo-4919-thelka-26.jpg", "images/stlouis-mo-4919-thelka-27.jpg", "images/stlouis-mo-4919-thelka-28.jpg", "images/stlouis-mo-4919-thelka-29.jpg"],
   },
@@ -2839,6 +2907,7 @@ const HOMES = [
     lockedPrice:    89000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-968-view-1.jpg", "images/decatur-il-968-view-2.jpg", "images/decatur-il-968-view-3.jpg", "images/decatur-il-968-view-4.jpg", "images/decatur-il-968-view-5.jpg", "images/decatur-il-968-view-6.jpg", "images/decatur-il-968-view-7.jpg", "images/decatur-il-968-view-8.jpg", "images/decatur-il-968-view-9.jpg", "images/decatur-il-968-view-10.jpg", "images/decatur-il-968-view-11.jpg", "images/decatur-il-968-view-12.jpg", "images/decatur-il-968-view-13.jpg", "images/decatur-il-968-view-14.jpg", "images/decatur-il-968-view-15.jpg", "images/decatur-il-968-view-16.jpg", "images/decatur-il-968-view-17.jpg", "images/decatur-il-968-view-18.jpg", "images/decatur-il-968-view-19.jpg", "images/decatur-il-968-view-20.jpg", "images/decatur-il-968-view-21.jpg", "images/decatur-il-968-view-22.jpg", "images/decatur-il-968-view-23.jpg", "images/decatur-il-968-view-24.jpg", "images/decatur-il-968-view-25.jpg", "images/decatur-il-968-view-26.jpg", "images/decatur-il-968-view-27.jpg", "images/decatur-il-968-view-28.jpg", "images/decatur-il-968-view-29.jpg", "images/decatur-il-968-view-30.jpg", "images/decatur-il-968-view-31.jpg", "images/decatur-il-968-view-32.jpg", "images/decatur-il-968-view-33.jpg", "images/decatur-il-968-view-34.jpg", "images/decatur-il-968-view-35.jpg", "images/decatur-il-968-view-36.jpg", "images/decatur-il-968-view-37.jpg", "images/decatur-il-968-view-38.jpg", "images/decatur-il-968-view-39.jpg", "images/decatur-il-968-view-40.jpg", "images/decatur-il-968-view-41.jpg", "images/decatur-il-968-view-42.jpg", "images/decatur-il-968-view-43.jpg", "images/decatur-il-968-view-44.jpg", "images/decatur-il-968-view-45.jpg", "images/decatur-il-968-view-46.jpg", "images/decatur-il-968-view-47.jpg", "images/decatur-il-968-view-48.jpg", "images/decatur-il-968-view-49.jpg", "images/decatur-il-968-view-50.jpg", "images/decatur-il-968-view-51.jpg", "images/decatur-il-968-view-52.jpg", "images/decatur-il-968-view-53.jpg", "images/decatur-il-968-view-54.jpg", "images/decatur-il-968-view-55.jpg", "images/decatur-il-968-view-56.jpg", "images/decatur-il-968-view-57.jpg", "images/decatur-il-968-view-58.jpg", "images/decatur-il-968-view-59.jpg"],
   },
@@ -2956,6 +3025,7 @@ const HOMES = [
     lockedPrice:    89000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { backyard: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-1755-monroe-1.jpg", "images/decatur-il-1755-monroe-2.jpg", "images/decatur-il-1755-monroe-3.jpg", "images/decatur-il-1755-monroe-4.jpg", "images/decatur-il-1755-monroe-5.jpg", "images/decatur-il-1755-monroe-6.jpg", "images/decatur-il-1755-monroe-7.jpg", "images/decatur-il-1755-monroe-8.jpg", "images/decatur-il-1755-monroe-9.jpg", "images/decatur-il-1755-monroe-10.jpg", "images/decatur-il-1755-monroe-11.jpg", "images/decatur-il-1755-monroe-12.jpg", "images/decatur-il-1755-monroe-13.jpg", "images/decatur-il-1755-monroe-14.jpg", "images/decatur-il-1755-monroe-15.jpg", "images/decatur-il-1755-monroe-16.jpg", "images/decatur-il-1755-monroe-17.jpg", "images/decatur-il-1755-monroe-18.jpg", "images/decatur-il-1755-monroe-19.jpg", "images/decatur-il-1755-monroe-20.jpg", "images/decatur-il-1755-monroe-21.jpg", "images/decatur-il-1755-monroe-22.jpg", "images/decatur-il-1755-monroe-23.jpg", "images/decatur-il-1755-monroe-24.jpg", "images/decatur-il-1755-monroe-25.jpg", "images/decatur-il-1755-monroe-26.jpg", "images/decatur-il-1755-monroe-27.jpg"],
   },
@@ -3035,6 +3105,7 @@ const HOMES = [
     lockedPrice:    59000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { basement: "yes" },
     heroPhoto: "",
     photos:    ["images/eaststlouis-il-5617-warren-1.jpg", "images/eaststlouis-il-5617-warren-2.jpg", "images/eaststlouis-il-5617-warren-3.jpg", "images/eaststlouis-il-5617-warren-4.jpg", "images/eaststlouis-il-5617-warren-5.jpg", "images/eaststlouis-il-5617-warren-6.jpg", "images/eaststlouis-il-5617-warren-7.jpg", "images/eaststlouis-il-5617-warren-8.jpg", "images/eaststlouis-il-5617-warren-9.jpg", "images/eaststlouis-il-5617-warren-10.jpg", "images/eaststlouis-il-5617-warren-11.jpg", "images/eaststlouis-il-5617-warren-12.jpg", "images/eaststlouis-il-5617-warren-13.jpg", "images/eaststlouis-il-5617-warren-14.jpg", "images/eaststlouis-il-5617-warren-15.jpg", "images/eaststlouis-il-5617-warren-16.jpg", "images/eaststlouis-il-5617-warren-17.jpg", "images/eaststlouis-il-5617-warren-18.jpg", "images/eaststlouis-il-5617-warren-19.jpg", "images/eaststlouis-il-5617-warren-20.jpg", "images/eaststlouis-il-5617-warren-21.jpg", "images/eaststlouis-il-5617-warren-22.jpg", "images/eaststlouis-il-5617-warren-23.jpg", "images/eaststlouis-il-5617-warren-24.jpg", "images/eaststlouis-il-5617-warren-25.jpg", "images/eaststlouis-il-5617-warren-26.jpg", "images/eaststlouis-il-5617-warren-27.jpg", "images/eaststlouis-il-5617-warren-28.jpg", "images/eaststlouis-il-5617-warren-29.jpg", "images/eaststlouis-il-5617-warren-30.jpg", "images/eaststlouis-il-5617-warren-31.jpg", "images/eaststlouis-il-5617-warren-32.jpg", "images/eaststlouis-il-5617-warren-33.jpg", "images/eaststlouis-il-5617-warren-34.jpg", "images/eaststlouis-il-5617-warren-35.jpg", "images/eaststlouis-il-5617-warren-36.jpg", "images/eaststlouis-il-5617-warren-37.jpg", "images/eaststlouis-il-5617-warren-38.jpg", "images/eaststlouis-il-5617-warren-39.jpg", "images/eaststlouis-il-5617-warren-40.jpg", "images/eaststlouis-il-5617-warren-41.jpg", "images/eaststlouis-il-5617-warren-42.jpg"],
   },
@@ -3135,6 +3206,7 @@ const HOMES = [
     lockedPrice:    82000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    [],
   },

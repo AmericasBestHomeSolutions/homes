@@ -95,6 +95,15 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
 .sec-label::after{content:'';flex:1;height:1px;background:var(--line)}
 .sec-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:28px;letter-spacing:-.5px;margin-bottom:6px}
 
+/* ── PROPERTY FEATURES ───────────────────────────────────── */
+.features{display:flex;flex-wrap:wrap;gap:9px;margin:16px 0 14px}
+.feat{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:600;border-radius:999px;padding:8px 15px;border:1px solid transparent}
+.feat svg{width:15px;height:15px;flex-shrink:0}
+.feat.yes{color:var(--pine);background:var(--honey-soft);border-color:#d9e5f5}
+.feat.no{color:#8b93a3;background:#f1f3f7;border-color:#e4e8ef}
+.feat.no .lab{text-decoration:line-through}
+.feat-note{font-size:13px;line-height:1.6;color:var(--ink-soft);font-style:italic}
+
 .terms{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
 .term-row{display:flex;justify-content:space-between;align-items:center;padding:15px 18px;border-bottom:1px solid var(--line);gap:16px}
 .term-row:last-child{border-bottom:none}
@@ -236,6 +245,14 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
     </p>
   </section>
 
+  <!-- PROPERTY FEATURES -->
+  <section class="section reveal" id="featuresSec" hidden>
+    <div class="sec-label">Property features</div>
+    <h2 class="sec-title">What the listing mentions</h2>
+    <div class="features" id="featuresList"></div>
+    <p class="feat-note" id="featuresNote"></p>
+  </section>
+
   <!-- HOW IT WORKS -->
   <section class="section reveal">
     <div class="sec-label">How it works</div>
@@ -350,6 +367,30 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
     $("propAddr").innerHTML = `${addrText} <a href="https://www.google.com/maps/search/?api=1&query=${mapQ}" target="_blank" rel="noopener" style="font-weight:500;font-size:14px;color:var(--go,#e23b3b);text-decoration:none;white-space:nowrap;margin-left:6px">View on map &#8599;</a>`;
   })();
   if (C.description) { $("aboutDesc").textContent = C.description; $("aboutHomeSec").hidden = false; }
+
+  // Property features — yes/no flags pulled from the listing notes (unknown omitted).
+  // Honest framing: these come from the written description, not a verified inspection.
+  (function(){
+    const LABELS = {
+      backyard:"Backyard", fenced_yard:"Fenced yard", basement:"Basement",
+      garage:"Garage", off_street_parking:"Off-street parking",
+      central_air:"Central air / HVAC", storage_shed:"Storage shed", attic:"Attic"
+    };
+    const ORDER = ["backyard","fenced_yard","basement","garage","off_street_parking","central_air","storage_shed","attic"];
+    const f = C.features || {};
+    const check = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
+    const cross = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>';
+    const chips = ORDER.filter(k => f[k] === "yes" || f[k] === "no").map(k => {
+      const yes = f[k] === "yes";
+      return `<span class="feat ${yes?"yes":"no"}">${yes?check:cross}<span class="lab">${LABELS[k]}</span></span>`;
+    });
+    if (chips.length){
+      $("featuresList").innerHTML = chips.join("");
+      $("featuresNote").textContent = "We haven't visited or inspected these homes ourselves — these details come straight from the property listing we were given, so some may be incomplete or not exactly right. Please walk through the home and check everything for yourself before you sign.";
+      $("featuresSec").hidden = false;
+    }
+  })();
+
   $("closerTitle").textContent = "Want to see it in person?";
   $("footLine").textContent = `© 2026 Americas Best Home Solutions LLC. Americas Best Home Solutions LLC is a real estate company — not a bank, mortgage lender, or licensed mortgage broker. Homes are offered through owner financing (contract for deed), with all terms set out in a written agreement you can review before you sign. All information is believed reliable but is not guaranteed and may change without notice; homes are subject to prior sale and availability. Nothing here is an offer or commitment to lend, or legal, tax, or financial advice. Equal Housing Opportunity.`;
 

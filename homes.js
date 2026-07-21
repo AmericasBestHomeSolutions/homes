@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (164 live, rebuilt from master published 2026-07-20) --- */
+/* --- the homes (164 live, rebuilt from master published 2026-07-21) --- */
 const HOMES = [
   {
     id: "clinton-in-533-higgins",

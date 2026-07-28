@@ -126,6 +126,8 @@ body{
 .card-face .fmark{position:absolute;right:-14px;bottom:-18px;opacity:.16;color:#fff;z-index:0}
 .card-face img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;display:block}
 .card-face .scrim{position:absolute;inset:0;z-index:2;background:linear-gradient(to top,rgba(11,20,40,.55),rgba(11,20,40,0) 55%);pointer-events:none}
+.card-face .sv-badge{position:absolute;top:12px;right:12px;z-index:3;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.5px;background:rgba(11,20,40,.62);color:#fff;padding:4px 8px;border-radius:999px;pointer-events:none}
+.card-face .sv-badge[hidden]{display:none}
 .card-face .fcity{position:relative;z-index:3;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.4)}
 .card-face .fcity .c{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.4px;line-height:1.05}
 .card-face .fcity .s{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.82);margin-top:3px}
@@ -413,7 +415,10 @@ body{
           </select>
         </div>
       </div>
-      <p class="count" id="count"></p>
+      <div class="count-row" style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:8px">
+        <p class="count" id="count" style="margin:0"></p>
+        <button id="copyLink" type="button" style="display:none;font-family:'DM Mono',monospace;font-size:13px;padding:8px 14px;border-radius:10px;border:1.5px solid var(--line);background:var(--card);color:var(--pine,#15315e);cursor:pointer;white-space:nowrap">🔗 Copy link to these results</button>
+      </div>
     </div>
 
     <div class="cards" id="cards"></div>
@@ -603,6 +608,18 @@ body{
   const $ = id => document.getElementById(id);
   const money = n => "$" + Number(n||0).toLocaleString();
 
+  // image fallback chain: real seller photo → Google Street View curb shot
+  // (labeled) → branded gradient card. Street View is only ever shown with its
+  // "Street view · © Google" badge, never passed off as a real listing photo.
+  window.__svFallback = function(img){
+    const sv = img.getAttribute("data-sv");
+    if (sv && !img.dataset.svTried){
+      img.dataset.svTried = 1;
+      img.onload = function(){ img.style.opacity = 1; const b = img.parentNode.querySelector(".sv-badge"); if (b) b.hidden = false; };
+      img.src = sv;
+    } else { img.remove(); }   // no photo, no street view → gradient face shows
+  };
+
   // on-brand gradient palette; each city gets a stable one so the grid has gentle variety
   const FACES = [
     ["#15315e","#2f5c96"],["#15315e","#24508a"],["#1a4675","#3a6bab"],
@@ -639,7 +656,8 @@ body{
     return `
     <a class="card" href="${encodeURIComponent(h.id)}.html">
       <div class="card-face" style="background:linear-gradient(135deg,${a},${b})">
-        <img src="${photoSrc}" alt="Home in ${h.city}, ${h.state}" loading="lazy" style="opacity:0;transition:opacity .3s ease" onload="this.style.opacity=1" onerror="if(!this.dataset.ph){this.dataset.ph=1;this.src='images/_placeholder-home.svg';}else{this.remove();}">
+        <img src="${photoSrc}" alt="Home in ${h.city}, ${h.state}" loading="lazy" data-sv="images/sv/${h.id}.jpg" style="opacity:0;transition:opacity .3s ease" onload="this.style.opacity=1" onerror="window.__svFallback(this)">
+        <span class="sv-badge" hidden>Street view · © Google</span>
         <span class="scrim"></span>
         <span class="status-tag${pending}">${h.status||"Available"}</span>
         <span class="of-tag">Owner financing</span>
@@ -735,10 +753,46 @@ body{
       b.addEventListener("click", () => { const p = Number(b.dataset.p); if (p>=1 && p<=pages){ page = p; render(true); } }));
   }
 
+  // ── shareable search links ────────────────────────────────────────────
+  // filters ⇄ URL query string, so a search (e.g. Flint, MI) can be sent as a
+  // link that opens pre-filtered. Param names are short + human-readable.
+  const URL_KEYS = { fState:"state", fCity:"city", fBeds:"beds", fPay:"pay", fDown:"down", fSort:"sort" };
+  function applyURL(){
+    const p = new URLSearchParams(location.search);
+    if (p.get("state")) $("fState").value = p.get("state");
+    fillCities();                                  // city options depend on the chosen state
+    ["fCity","fBeds","fPay","fDown","fSort"].forEach(id => {
+      const v = p.get(URL_KEYS[id]);
+      if (v != null){ $(id).value = v; if ($(id).value !== v) $(id).value = ""; }  // ignore stale/unknown values
+    });
+  }
+  function syncURL(){
+    const p = new URLSearchParams();
+    Object.entries(URL_KEYS).forEach(([id,key]) => { const v = $(id).value; if (v) p.set(key, v); });
+    const qs = p.toString();
+    history.replaceState(null, "", qs ? "?" + qs : location.pathname);
+  }
+
   ["fState","fCity","fBeds","fPay","fDown","fSort"].forEach(id => $(id).addEventListener("change", () => {
     if (id === "fState") fillCities();
-    page = 1; render(true);
+    page = 1; render(true); syncURL();
   }));
+
+  // "Copy link to these results" — search for a lead, tap, paste into a text
+  (function(){
+    const btn = $("copyLink"); if (!btn) return;
+    btn.style.display = "inline-block";
+    const label = btn.textContent;
+    btn.addEventListener("click", async () => {
+      syncURL();
+      try { await navigator.clipboard.writeText(location.href); }
+      catch(e){ const t=document.createElement("textarea"); t.value=location.href; document.body.appendChild(t); t.select(); document.execCommand("copy"); t.remove(); }
+      btn.textContent = "✓ Link copied — paste it in your message";
+      setTimeout(() => { btn.textContent = label; }, 2600);
+    });
+  })();
+
+  applyURL();
   render();
   // detect which homes have a real cover photo (no homes.js editing needed — just
   // drop images/<id>.jpg and it auto-prioritizes), then re-sort photo homes to the top

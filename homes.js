@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (168 live, rebuilt from master published 2026-07-27) --- */
+/* --- the homes (167 live, rebuilt from master published 2026-07-28) --- */
 const HOMES = [
   {
     id: "decatur-il-1828-main",
@@ -1060,27 +1060,6 @@ const HOMES = [
     photos:    [],
   },
   {
-    id: "decatur-il-2148-church",
-    address:     "2148 N Church St.",
-    zip:         "62526",
-    description: "936sf bungalow on nice lot with 3BB, 1BA and a classic single-story layout. Oversized 1-car detached garage with workbench area. Long-term owner has taken good care of it, all systems working, needs refresh and renew but nothing urgent. Videos are pre-cleanout, pics are as-is. Roof issue mentioned in video has been repaired as of 7/2/26 plus interior patched",
-    city:  "Decatur",
-    state: "IL",
-    beds:  3,
-    baths: 1,
-    sqft:  "936.0",
-    status: "Available",
-
-    monthlyPayment: 1025,
-    moveIn:         3000,
-    lockedPrice:    93000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { backyard: "yes", garage: "yes", off_street_parking: "yes" },
-    heroPhoto: "",
-    photos:    [],
-  },
-  {
     id: "stlouis-mo-3738-sylvan",
     address:     "3738 Sylvan Pl",
     zip:         "63121",
@@ -1092,9 +1071,9 @@ const HOMES = [
     sqft:  "1000.0",
     status: "Available",
 
-    monthlyPayment: 895,
-    moveIn:         2500,
-    lockedPrice:    99000,
+    monthlyPayment: 1025,
+    moveIn:         3000,
+    lockedPrice:    93000,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",

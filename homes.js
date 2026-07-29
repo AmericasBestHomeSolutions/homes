@@ -13,8 +13,111 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (167 live, rebuilt from master published 2026-07-28) --- */
+/* --- the homes (167 live, rebuilt from master published 2026-07-29) --- */
 const HOMES = [
+  {
+    id: "hartfordcity-in-822-franklin",
+    address:     "822 W Franklin St",
+    zip:         "47348.0",
+    description: "1568 Sq Feet. Sits on a desirable corner lot with a large yard. The property features a newer AC unit, a spacious floor plan, and a large front patio perfect for relaxing outdoors or entertaining guests.. With plenty of room to add value and make it your own, this home is full of possibilities. Soft floors in some areas of the home will require plywood to solidify. Water and Electricity are on and functional",
+    city:  "Hartford City",
+    state: "IN",
+    beds:  4,
+    baths: 1.5,
+    sqft:  "1568.0",
+    status: "Available",
+
+    monthlyPayment: 1075,
+    moveIn:         3000,
+    lockedPrice:    89000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { backyard: "yes", central_air: "yes" },
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "eaststlouis-il-1311-51st",
+    address:     "1311 N 51st St.",
+    zip:         "62204.0",
+    description: "1 bed. 1 bath. 700 sq. ft.. Average 1/1 rent in the area is $895/month (lots of room for an investor to profit). / Recently cleaned out. Needs water heater, and furnace. \\+ Will have to have utility companies put electric and gas meters back on the house",
+    city:  "East St. Louis",
+    state: "IL",
+    beds:  1,
+    baths: 1,
+    sqft:  "700.0",
+    status: "Available",
+
+    monthlyPayment: 400,
+    moveIn:         400,
+    lockedPrice:    40000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "benton-il-428-central",
+    address:     "428 S. Central St.",
+    zip:         "62812.0",
+    description: "1450 SF; detached 1-car garage (without roof); large yard. Cleaned out and ready to live in. Washer/Dryer included, although can't guarantee they work. Water is ON; power is OFF. Nice, quiet neighborhood. You can walk to Walmart and McDonald's",
+    city:  "Benton",
+    state: "IL",
+    beds:  3,
+    baths: 1,
+    sqft:  "1450.0",
+    status: "Available",
+
+    monthlyPayment: 950,
+    moveIn:         3000,
+    lockedPrice:    87000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { backyard: "yes", garage: "yes", off_street_parking: "yes" },
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "flint-mi-612-neubert",
+    address:     "612 Neubert Ave",
+    zip:         "48507.0",
+    description: "612 Neubert Ave, Flint MI. 3 Bed /1 bath 943 Sqft 3,485 sqft lot. Great curb appeal, solid house with New roof!. Newer furnace and water heater. Electricity tested to work and water tested to run. One window upstairs needs to be replaced. A little bit of water in the basement from gutters. A new toilet bowl has been installed in the 1 bath. Clutter in the house left by the previous owner",
+    city:  "Flint",
+    state: "MI",
+    beds:  3,
+    baths: 1,
+    sqft:  "943.0",
+    status: "Available",
+
+    monthlyPayment: 918,
+    moveIn:         2500,
+    lockedPrice:    79600,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { basement: "yes" },
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "decatur-il-1439-jasper",
+    address:     "1439 N Jasper",
+    zip:         "62526.0",
+    description: "Needs a bathroom, and ceiling drywall needs to be repaired",
+    city:  "Decatur",
+    state: "IL",
+    beds:  2,
+    baths: 1,
+    sqft:  "780.0",
+    status: "Available",
+
+    monthlyPayment: 850,
+    moveIn:         2500,
+    lockedPrice:    89000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
   {
     id: "decatur-il-1828-main",
     address:     "1828 E Main St",
@@ -32,27 +135,6 @@ const HOMES = [
     lockedPrice:    69000,
     termText:       "30-year owner financing (contract for deed)",
 
-    heroPhoto: "",
-    photos:    [],
-  },
-  {
-    id: "stlouis-mo-4146-labadie",
-    address:     "4146 Labadie Ave",
-    zip:         "63115.0",
-    description: "2500 square feet, fenced in yard, live in the upstairs and updated the downstairs. Power is on, new hot water heater, two furnaces",
-    city:  "St. Louis",
-    state: "MO",
-    beds:  4,
-    baths: 2,
-    sqft:  "2500.0",
-    status: "Available",
-
-    monthlyPayment: 795,
-    moveIn:         2000,
-    lockedPrice:    69000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { backyard: "yes", fenced_yard: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -202,48 +284,6 @@ const HOMES = [
     photos:    [],
   },
   {
-    id: "stlouis-mo-227-midlothian",
-    address:     "227 Midlothian Rd",
-    zip:         "63137.0",
-    description: "854 sq ft house 3 bd 1 bath. 6,011 sq ft lot. Built in 1953. Driveway. Fenced back yard. Updated kitchen",
-    city:  "St. Louis",
-    state: "MO",
-    beds:  3,
-    baths: 1,
-    sqft:  "854.0",
-    status: "Available",
-
-    monthlyPayment: 995,
-    moveIn:         4000,
-    lockedPrice:    89000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { backyard: "yes", fenced_yard: "yes", off_street_parking: "yes" },
-    heroPhoto: "",
-    photos:    [],
-  },
-  {
-    id: "marion-in-417-nelson",
-    address:     "417 W Nelson St",
-    zip:         "46952.0",
-    description: "1846 Sq Feet. 3 Bed / 1 Bath. 2 Stories. Newer Roof. Quiet Neighborhood. Walkable to Downtown. Plumber Special. House needs refreshed piping in various areas of the home. Sewer line in the basement that leads out to the city line needs repair. Someone with plumbing experience can turn this house around",
-    city:  "Marion",
-    state: "IN",
-    beds:  3,
-    baths: 1,
-    sqft:  "1846.0",
-    status: "Available",
-
-    monthlyPayment: 975,
-    moveIn:         3000,
-    lockedPrice:    89000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { basement: "yes" },
-    heroPhoto: "",
-    photos:    [],
-  },
-  {
     id: "flint-mi-501-marengo",
     address:     "501 E Marengo Ave.",
     zip:         "48505.0",
@@ -379,9 +419,9 @@ const HOMES = [
     sqft:  "",
     status: "Available",
 
-    monthlyPayment: 995,
-    moveIn:         3000,
-    lockedPrice:    99000,
+    monthlyPayment: 950,
+    moveIn:         2500,
+    lockedPrice:    88000,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
@@ -1040,22 +1080,23 @@ const HOMES = [
     photos:    [],
   },
   {
-    id: "highlandpark-mi-227-grand",
-    address:     "227 W Grand Street",
-    zip:         "48203.0",
-    description: "1314 square feet",
-    city:  "Highland Park",
-    state: "MI",
+    id: "decatur-il-2148-church",
+    address:     "2148 N Church St.",
+    zip:         "62526.0",
+    description: "936sf bungalow on nice lot with 3BB, 1BA and a classic single-story layout. Oversized 1-car detached garage with workbench area. Long-term owner has taken good care of it, all systems working, needs refresh and renew but nothing urgent. Videos are pre-cleanout, pics are as-is. Roof issue mentioned in video has been repaired as of 7/2/26 plus interior patched",
+    city:  "Decatur",
+    state: "IL",
     beds:  3,
     baths: 1,
-    sqft:  "1314.0",
+    sqft:  "936.0",
     status: "Available",
 
-    monthlyPayment: 1149,
+    monthlyPayment: 1025,
     moveIn:         3000,
-    lockedPrice:    109900,
+    lockedPrice:    93000,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { backyard: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -1071,9 +1112,9 @@ const HOMES = [
     sqft:  "1000.0",
     status: "Available",
 
-    monthlyPayment: 1025,
-    moveIn:         3000,
-    lockedPrice:    93000,
+    monthlyPayment: 895,
+    moveIn:         2500,
+    lockedPrice:    99000,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
@@ -1221,27 +1262,6 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/sauget-il-1320-williams-1.jpg", "images/sauget-il-1320-williams-2.jpg", "images/sauget-il-1320-williams-3.jpg", "images/sauget-il-1320-williams-4.jpg", "images/sauget-il-1320-williams-5.jpg", "images/sauget-il-1320-williams-6.jpg", "images/sauget-il-1320-williams-7.jpg", "images/sauget-il-1320-williams-8.jpg", "images/sauget-il-1320-williams-9.jpg", "images/sauget-il-1320-williams-10.jpg", "images/sauget-il-1320-williams-11.jpg", "images/sauget-il-1320-williams-12.jpg", "images/sauget-il-1320-williams-13.jpg", "images/sauget-il-1320-williams-14.jpg", "images/sauget-il-1320-williams-15.jpg", "images/sauget-il-1320-williams-16.jpg", "images/sauget-il-1320-williams-17.jpg", "images/sauget-il-1320-williams-18.jpg", "images/sauget-il-1320-williams-19.jpg", "images/sauget-il-1320-williams-20.jpg"],
-  },
-  {
-    id: "woodriver-il-830-wood",
-    address:     "830 N Wood River Ave",
-    zip:         "62095",
-    description: "830 N Wood River Ave, Wood River, IL 62095. Great Condition-Bonus Rear Structure Ready for Your Vision!. Recently Cleaned out",
-    city:  "Wood River",
-    state: "IL",
-    beds:  2,
-    baths: 1,
-    sqft:  "1120.0",
-    status: "Available",
-
-    monthlyPayment: 850,
-    moveIn:         2000,
-    lockedPrice:    79000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { backyard: "yes", storage_shed: "yes" },
-    heroPhoto: "",
-    photos:    ["images/woodriver-il-830-wood-1.jpg", "images/woodriver-il-830-wood-2.jpg", "images/woodriver-il-830-wood-3.jpg", "images/woodriver-il-830-wood-4.jpg", "images/woodriver-il-830-wood-5.jpg", "images/woodriver-il-830-wood-6.jpg", "images/woodriver-il-830-wood-7.jpg", "images/woodriver-il-830-wood-8.jpg", "images/woodriver-il-830-wood-9.jpg", "images/woodriver-il-830-wood-10.jpg"],
   },
   {
     id: "decatur-il-1830-lowber",
@@ -1545,9 +1565,9 @@ const HOMES = [
     sqft:  "700.0",
     status: "Available",
 
-    monthlyPayment: 950,
+    monthlyPayment: 925,
     moveIn:         2000,
-    lockedPrice:    99500,
+    lockedPrice:    93500,
     termText:       "30-year owner financing (contract for deed)",
 
     features: { garage: "yes", off_street_parking: "yes", central_air: "yes" },
@@ -1566,9 +1586,9 @@ const HOMES = [
     sqft:  "",
     status: "Available",
 
-    monthlyPayment: 815,
-    moveIn:         2000,
-    lockedPrice:    82000,
+    monthlyPayment: 795,
+    moveIn:         1800,
+    lockedPrice:    83000,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
@@ -1619,7 +1639,7 @@ const HOMES = [
     id: "peoria-il-1714-livingston",
     address:     "1714 S Livingston St.",
     zip:         "61605",
-    description: "Built in 1900, approximately 1050 sq/ft. The home features low-maintenance vinyl siding, a newer roof, an updated electrical panel, and operational furnace and water heater. No garage, power is on but gas is OFF. Fenced in yard, exterior and interior have been cleaned out since becoming vacant.. PLEASE NOTE: To make things easier for the TB/s, we have created a simple intake form to collect name, phone number, email, and ability to upload their driver's license.. Link to form: <https://docs.google.com/forms/d/e/1FAIpQLSdBfSn02GPmjntY3JPOTNdVfZMv38N8tj4OqPk2Vyvxsl7K5A/viewform?usp=publish-editor>",
+    description: "Property now has a SimpliSafe security system. Please notify us at (618) 515-5070 prior to ANY showings so we can disarm the system... Built in 1900, approximately 1050 sq/ft. The home features low-maintenance vinyl siding, a newer roof, an updated electrical panel, and operational furnace and water heater. No garage, power is on but gas is OFF. Fenced in yard, exterior and interior have been cleaned out since becoming vacant.. PLEASE NOTE: To make things easier for the TB/s, we have created a simple intake form to collect name, phone number, email, and ability to upload their driver's license.. Link to form: <https://docs.google.com/forms/d/e/1FAIpQLSdBfSn02GPmjntY3JPOTNdVfZMv38N8tj4OqPk2Vyvxsl7K5A/viewform?usp=publish-editor>",
     city:  "Peoria",
     state: "IL",
     beds:  3,
@@ -1873,9 +1893,9 @@ const HOMES = [
     sqft:  "",
     status: "Available",
 
-    monthlyPayment: 625,
+    monthlyPayment: 595,
     moveIn:         2000,
-    lockedPrice:    64995,
+    lockedPrice:    59995,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
@@ -2014,8 +2034,8 @@ const HOMES = [
     sqft:  "1318.0",
     status: "Available",
 
-    monthlyPayment: 850,
-    moveIn:         1750,
+    monthlyPayment: 825,
+    moveIn:         1700,
     lockedPrice:    89899,
     termText:       "30-year owner financing (contract for deed)",
 
@@ -2154,9 +2174,9 @@ const HOMES = [
     sqft:  "",
     status: "Available",
 
-    monthlyPayment: 975,
-    moveIn:         3000,
-    lockedPrice:    88500,
+    monthlyPayment: 895,
+    moveIn:         2000,
+    lockedPrice:    87000,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
@@ -2488,27 +2508,6 @@ const HOMES = [
     features: { backyard: "yes" },
     heroPhoto: "",
     photos:    [],
-  },
-  {
-    id: "flint-mi-2433-pennsylvania",
-    address:     "2433 Pennsylvania Ave",
-    zip:         "48506",
-    description: "960 sqft, recently occupied. All systems working: electricity, gas, water. Detached Garage-needs repair/to be removed. Half basement. Fenced yard",
-    city:  "Flint",
-    state: "MI",
-    beds:  2,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 825,
-    moveIn:         2500,
-    lockedPrice:    85000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { backyard: "yes", fenced_yard: "yes", basement: "yes", garage: "yes", off_street_parking: "yes" },
-    heroPhoto: "",
-    photos:    ["images/flint-mi-2433-pennsylvania-1.jpg", "images/flint-mi-2433-pennsylvania-2.jpg", "images/flint-mi-2433-pennsylvania-3.jpg", "images/flint-mi-2433-pennsylvania-4.jpg"],
   },
   {
     id: "decatur-il-835-whitmer",
@@ -2846,7 +2845,7 @@ const HOMES = [
     sqft:  "816.0",
     status: "Available",
 
-    monthlyPayment: 875,
+    monthlyPayment: 860,
     moveIn:         1500,
     lockedPrice:    84000,
     termText:       "30-year owner financing (contract for deed)",
@@ -2886,9 +2885,9 @@ const HOMES = [
     sqft:  "",
     status: "Available",
 
-    monthlyPayment: 750,
+    monthlyPayment: 700,
     moveIn:         1500,
-    lockedPrice:    70500,
+    lockedPrice:    69000,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
@@ -2946,7 +2945,7 @@ const HOMES = [
     sqft:  "",
     status: "Available",
 
-    monthlyPayment: 780,
+    monthlyPayment: 765,
     moveIn:         1000,
     lockedPrice:    80000,
     termText:       "30-year owner financing (contract for deed)",
@@ -3047,8 +3046,8 @@ const HOMES = [
     sqft:  "672.0",
     status: "Available",
 
-    monthlyPayment: 750,
-    moveIn:         1500,
+    monthlyPayment: 700,
+    moveIn:         1000,
     lockedPrice:    69000,
     termText:       "30-year owner financing (contract for deed)",
 
@@ -3287,7 +3286,7 @@ const HOMES = [
     sqft:  "",
     status: "Available",
 
-    monthlyPayment: 635,
+    monthlyPayment: 620,
     moveIn:         1000,
     lockedPrice:    65000,
     termText:       "30-year owner financing (contract for deed)",
@@ -3367,7 +3366,7 @@ const HOMES = [
     sqft:  "880.0",
     status: "Available",
 
-    monthlyPayment: 490,
+    monthlyPayment: 475,
     moveIn:         1000,
     lockedPrice:    40000,
     termText:       "30-year owner financing (contract for deed)",
@@ -3387,7 +3386,7 @@ const HOMES = [
     sqft:  "",
     status: "Available",
 
-    monthlyPayment: 500,
+    monthlyPayment: 485,
     moveIn:         1000,
     lockedPrice:    40000,
     termText:       "30-year owner financing (contract for deed)",

@@ -126,7 +126,7 @@ body{
 .card-face .fmark{position:absolute;right:-14px;bottom:-18px;opacity:.16;color:#fff;z-index:0}
 .card-face img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;display:block}
 .card-face .scrim{position:absolute;inset:0;z-index:2;background:linear-gradient(to top,rgba(11,20,40,.55),rgba(11,20,40,0) 55%);pointer-events:none}
-.card-face .sv-badge{position:absolute;top:12px;right:12px;z-index:3;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.5px;background:rgba(11,20,40,.62);color:#fff;padding:4px 8px;border-radius:999px;pointer-events:none}
+.card-face .sv-badge{position:absolute;bottom:12px;right:12px;z-index:3;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.5px;background:rgba(11,20,40,.62);color:#fff;padding:4px 8px;border-radius:999px;pointer-events:none}
 .card-face .sv-badge[hidden]{display:none}
 .card-face .fcity{position:relative;z-index:3;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.4)}
 .card-face .fcity .c{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.4px;line-height:1.05}
@@ -794,6 +794,21 @@ body{
 
   applyURL();
   render();
+
+  // arriving from a shared search link? make it obvious the search was applied:
+  // relabel the section and jump straight to the filtered results (not the hero).
+  (function(){
+    if (!new URLSearchParams(location.search).toString()) return;
+    const sec = $("listings");
+    sec.querySelectorAll(".reveal").forEach(el => el.classList.add("in"));
+    sec.classList.add("in");
+    const st = $("fState").value, ci = $("fCity").value;
+    if (st || ci){
+      const h = sec.querySelector(".sec-title");
+      if (h) h.textContent = ci ? `Homes in ${ci}, ${st}` : `Homes in ${st}`;
+    }
+    requestAnimationFrame(() => sec.scrollIntoView({ block: "start" }));
+  })();
   // detect which homes have a real cover photo (no homes.js editing needed — just
   // drop images/<id>.jpg and it auto-prioritizes), then re-sort photo homes to the top
   Promise.allSettled(HOMES.map(h => new Promise(res => {

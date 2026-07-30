@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (166 live, rebuilt from master published 2026-07-29) --- */
+/* --- the homes (164 live, rebuilt from master published 2026-07-29) --- */
 const HOMES = [
   {
     id: "hartfordcity-in-822-franklin",
@@ -383,27 +383,6 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     features: { backyard: "yes", fenced_yard: "yes" },
-    heroPhoto: "",
-    photos:    [],
-  },
-  {
-    id: "peoria-il-107-archer",
-    address:     "107 E Archer Ave",
-    zip:         "61603.0",
-    description: "Seller has their own paperwprk. Hardwood floors (easy maintenance and timeless appeal). * A large living room and sunporch (extra space for relaxing or working from home). * A flexible layout with 2 bedrooms on the main floor and 2 upstairs (perfect for families or added privacy) * All-brick construction (durable and low maintenance). * A 2-car garage (extra storage and protection)",
-    city:  "Peoria",
-    state: "IL",
-    beds:  4,
-    baths: 1.5,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 1394,
-    moveIn:         2500,
-    lockedPrice:    119000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { garage: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -2832,27 +2811,6 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    [],
-  },
-  {
-    id: "granitecity-il-2317-grand",
-    address:     "2317 Grand Ave",
-    zip:         "62040.0",
-    description: "1,124 sq ft home with a detached garage. The property is currently red-tagged, but we are actively working to have it cleared",
-    city:  "Granite City",
-    state: "IL",
-    beds:  2,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 750,
-    moveIn:         2000,
-    lockedPrice:    79000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { garage: "yes", off_street_parking: "yes" },
-    heroPhoto: "",
-    photos:    ["images/granitecity-il-2317-grand-1.jpg", "images/granitecity-il-2317-grand-2.jpg", "images/granitecity-il-2317-grand-3.jpg", "images/granitecity-il-2317-grand-4.jpg"],
   },
   {
     id: "peoria-il-911-hurlburt",

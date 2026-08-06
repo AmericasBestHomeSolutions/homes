@@ -3055,7 +3055,7 @@ const HOMES = [
     city:  "Virginia Beach",
     state: "VA",
     beds:  2,
-    baths: 1.5,
+    baths: 2,
     sqft:  "1,088",
     status: "Available",
 
@@ -3263,7 +3263,7 @@ const HOMES = [
     city:  "Montgomery",
     state: "AL",
     beds:  4,
-    baths: 1.5,
+    baths: 2,
     sqft:  "",
     status: "Available",
 
@@ -3344,7 +3344,7 @@ const HOMES = [
     city:  "Flint",
     state: "MI",
     beds:  4,
-    baths: 1.5,
+    baths: 2,
     sqft:  "",
     status: "Available",
 
@@ -3941,7 +3941,7 @@ const HOMES = [
     city:  "St. Louis",
     state: "MO",
     beds:  3,
-    baths: 1.5,
+    baths: 2,
     sqft:  "",
     status: "Available",
 
@@ -4777,7 +4777,7 @@ const HOMES = [
     city:  "Selma",
     state: "AL",
     beds:  3,
-    baths: 1.5,
+    baths: 2,
     sqft:  "",
     status: "Available",
 
@@ -5892,8 +5892,7 @@ const HOMES = [
     city:  "St. Louis",
     state: "MO",
     beds:  1,
-    baths: 1
-816 sqft,
+    baths: "",
     sqft:  "",
     status: "Available",
 
@@ -6158,7 +6157,7 @@ const HOMES = [
     city:  "Decatur",
     state: "IL",
     beds:  3,
-    baths: 1.5,
+    baths: 2,
     sqft:  "",
     status: "Available",
 
@@ -6542,7 +6541,7 @@ const HOMES = [
     city:  "Decatur",
     state: "IL",
     beds:  2,
-    baths: 1.5,
+    baths: 2,
     sqft:  "",
     status: "Available",
 
@@ -6741,7 +6740,7 @@ const HOMES = [
     city:  "Peoria",
     state: "IL",
     beds:  2,
-    baths: 1.5,
+    baths: 2,
     sqft:  "1337",
     status: "Available",
 
@@ -6922,7 +6921,7 @@ const HOMES = [
     city:  "St. Louis",
     state: "MO",
     beds:  1,
-    baths: 1.5,
+    baths: 2,
     sqft:  "",
     status: "Available",
 

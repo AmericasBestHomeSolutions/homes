@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M24 3 41 9V23C41 33 33 41 24 45 15 41 7 33 7 23V9Z' fill='%2315315e'/><path d='M15 26 24 18 33 26Z' fill='%23e23b3b'/><rect x='17.5' y='26' width='13' height='9' fill='white'/><rect x='22' y='30' width='4' height='5' fill='%2315315e'/></svg>"/>
+<title>Contact Us | Americas Best Home Solutions</title>
+<meta name="description" content="Reach Americas Best Home Solutions LLC by phone, email, or the inquiry form — for buyers looking at an owner-financed home and for owners and agents with a property to sell."/>
+<link rel="canonical" href="https://getownerfinancedhomes.com/contact"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/pages.css">
+</head>
+<body>
+<div class="wrap">
+
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Americas Best Home Solutions — home">
+      <svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <path d="M24 3 41 9V23C41 33 33 41 24 45 15 41 7 33 7 23V9Z" fill="#15315e"/>
+        <path d="M15 26 24 18 33 26Z" fill="#e23b3b"/>
+        <rect x="17.5" y="26" width="13" height="9" fill="#ffffff"/>
+        <rect x="22" y="30" width="4" height="5" fill="#15315e"/>
+      </svg>
+      <span class="bn">Americas Best Home Solutions<small>Owner Financing</small></span>
+    </a>
+    <nav class="topnav">
+      <a href="/">Homes</a>
+      <a href="/how-it-works">How it works</a>
+      <a href="/about">About</a>
+      <a href="/contact" aria-current="page">Contact</a>
+      <a class="call" href="tel:+15515509906">(551) 550-9906</a>
+    </nav>
+  </header>
+
+  <section class="phead">
+    <span class="eyebrow">Contact</span>
+    <h1>Talk to a real person.</h1>
+    <p class="lead">Whether you're looking at one of our homes or you have a property you'd like us to buy, here's how to reach us. Calls and texts go to our team, not a phone tree.</p>
+  </section>
+
+  <div class="facts">
+    <div class="fact">
+      <div class="k">Phone &amp; text</div>
+      <div class="v"><a href="tel:+15515509906">(551) 550-9906</a></div>
+      <div class="note">Monday–Saturday, 9:00am–7:00pm Eastern. Texting is usually fastest.</div>
+    </div>
+    <div class="fact">
+      <div class="k">Email</div>
+      <div class="v"><a href="mailto:admin@americasbesthomesolutions.com">admin@americasbesthomesolutions.com</a></div>
+      <div class="note">We answer email the same business day in most cases.</div>
+    </div>
+    <div class="fact">
+      <div class="k">Mailing address</div>
+      <div class="v"><address>Americas Best Home Solutions LLC<br>30 N Gould St, Ste R<br>Sheridan, WY 82801</address></div>
+      <div class="note">Registered office of the company. Homes are shown on site by appointment.</div>
+    </div>
+    <div class="fact">
+      <div class="k">Company</div>
+      <div class="v">Americas Best Home Solutions LLC</div>
+      <div class="note">A Wyoming limited liability company. This site, getownerfinancedhomes.com, is operated by it.</div>
+    </div>
+  </div>
+
+  <section class="formcard" id="inquiry">
+    <h2>Send us a message</h2>
+    <p class="sub">Tell us what you're looking for — or what you're selling — and we'll come back to you with a straight answer.</p>
+
+    <form id="leadForm" novalidate>
+      <label for="lfName">Name</label>
+      <input id="lfName" name="name" type="text" autocomplete="name" required>
+
+      <label for="lfEmail">Email</label>
+      <input id="lfEmail" name="email" type="email" autocomplete="email" required>
+
+      <label for="lfPhone">Phone</label>
+      <input id="lfPhone" name="phone" type="tel" autocomplete="tel" required>
+
+      <!-- ══════════════════════════════════════════════════════════════════
+           A2P 10DLC CONSENT CHECKBOX — do not change without reading this.
+           Carriers require that this box be (1) directly under the phone
+           field, (2) unchecked by default, (3) the ONLY thing this checkbox
+           consents to, and (4) NOT required to submit the form. It therefore
+           has no `checked` and no `required` attribute — leave it that way.
+           If you edit the wording, bump CONSENT_TEXT and CONSENT_TEXT_VERSION
+           in consent.js to match, so stored records stay accurate.
+           ══════════════════════════════════════════════════════════════════ -->
+      <label class="consent" for="lfSms">
+        <input id="lfSms" name="sms_consent" type="checkbox" value="Yes">
+        <span>I agree to receive text messages from Americas Best Home Solutions LLC about property listings, showings, offers, and follow-up. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe or HELP for help. See our <a href="/privacy-policy">Privacy Policy</a> and <a href="/messaging-terms">Messaging Terms</a>.</span>
+      </label>
+      <p class="optional">Optional — you can submit this form without checking the box.</p>
+
+      <label for="lfProperty">Property of interest</label>
+      <input id="lfProperty" name="property_of_interest" type="text" placeholder="Address or city — or “selling a property”">
+
+      <label for="lfMessage">Message</label>
+      <textarea id="lfMessage" name="message" placeholder="What you're looking for, what you're selling, or any question you have."></textarea>
+
+      <button type="submit" class="btn btn-go" id="lfSubmit">Send message</button>
+      <p class="form-note" id="lfNote"></p>
+    </form>
+
+    <div class="thanks">
+      <h3>Message received.</h3>
+      <p>Thanks — we'll get back to you shortly. If it's urgent, call or text us at (551) 550-9906.</p>
+    </div>
+  </section>
+
+  <div class="prose">
+    <h2>What to expect after you write to us</h2>
+    <ul>
+      <li><strong>Buyers.</strong> We'll confirm whether the home you're asking about is still available, go over the down payment and monthly amount, and set up a time for you to walk through it.</li>
+      <li><strong>Sellers and agents.</strong> We'll ask for the address, condition, and what you need to net, and come back with a straight yes or no. See <a href="/how-it-works#sellers">how we buy</a> for the full process.</li>
+      <li><strong>Everyone.</strong> If we're not the right fit, we'll tell you that instead of stringing you along.</li>
+    </ul>
+    <p>Checking the text-message box is entirely optional and is never a condition of buying, selling, or getting a response from us. You can opt out at any time by replying STOP. Full details are in our <a href="/messaging-terms">Messaging Terms</a>.</p>
+  </div>
+
+  <footer class="foot">
+    <div class="fb">Americas Best Home Solutions</div>
+    <p class="fcontact fentity">getownerfinancedhomes.com is operated by Americas Best Home Solutions LLC</p>
+    <address class="fcontact faddr">
+      30 N Gould St, Ste R, Sheridan, WY 82801<br>
+      <a href="tel:+15515509906">(551) 550-9906</a> · <a href="mailto:admin@americasbesthomesolutions.com">admin@americasbesthomesolutions.com</a>
+    </address>
+    <p class="fcontact flinks">
+      <a href="/">Homes</a> · <a href="/how-it-works">How it works</a> · <a href="/about">About</a> · <a href="/contact">Contact</a> · <a href="/privacy-policy">Privacy Policy</a> · <a href="/messaging-terms">Messaging Terms</a>
+    </p>
+    <p class="legal">
+      © 2026 Americas Best Home Solutions LLC. Americas Best Home Solutions LLC is a real estate company — not a bank, mortgage lender, or licensed mortgage broker. Homes are offered through owner financing (contract for deed), with all terms set out in a written agreement you can review before you sign. All information is believed reliable but is not guaranteed and may change without notice; homes are subject to prior sale and availability. Nothing here is an offer or commitment to lend, or legal, tax, or financial advice. Equal Housing Opportunity.
+    </p>
+  </footer>
+
+</div>
+
+<!-- homes.js is loaded for its CONTACT block (Formspree id + Make webhook) so
+     the form endpoints stay in one place; consent.js adds the 10DLC record. -->
+<script src="/homes.js"></script>
+<script src="/consent.js"></script>
+<script>
+(function(){
+  const $ = (id) => document.getElementById(id);
+  const form = $("leadForm"), note = $("lfNote"), btn = $("lfSubmit"), card = form.closest(".formcard");
+  const id   = (CONTACT.formspreeId || "").trim();
+  const hook = (CONTACT.makeWebhook || "").trim();
+
+  note.textContent = (id || hook) ? "We usually reply the same day."
+    : "⚠ Form not connected yet — add a Formspree ID or Make webhook in homes.js.";
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // Validate by hand so the optional consent box can never block submission.
+    const missing = ["lfName","lfEmail","lfPhone"].find(f => !$(f).value.trim());
+    if (missing) { $(missing).focus(); note.textContent = "Please fill in your name, email, and phone."; return; }
+    if (!id && !hook) { note.textContent = "⚠ Form not connected yet — add a Formspree ID or Make webhook in homes.js."; return; }
+
+    btn.disabled = true; btn.textContent = "Sending…";
+    const data = new FormData(form);
+    data.append("source", "Contact page");
+    await addConsentRecord(data, form);
+
+    const targets = [];
+    if (id)   targets.push(fetch(`https://formspree.io/f/${id}`, { method:"POST", headers:{ "Accept":"application/json" }, body:data }));
+    if (hook) targets.push(fetch(hook, { method:"POST", body:data }));
+    const results = await Promise.allSettled(targets);
+
+    if (results.some(r => r.status === "fulfilled" && r.value.ok)) { card.classList.add("sent"); }
+    else { btn.disabled = false; btn.textContent = "Send message"; note.textContent = "Something went wrong — please call or text us at (551) 550-9906 instead."; }
+  });
+})();
+</script>
+</body>
+</html>

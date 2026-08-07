@@ -10,12 +10,12 @@
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="Americas Best Home Solutions"/>
 <meta property="og:title" content="3 bed 1 bath in East St. Louis, IL — $1,400/mo"/>
-<meta property="og:description" content="8303 Bluff Ave. · $4,000 to move in · $1,400/month · $137,100 locked price. Owner financing — no bank, no credit check."/>
+<meta property="og:description" content="8303 Bluff Ave. · $4,000 to move in · $1,400/month · $137,100 locked price. Owner financing — no bank, no mortgage application."/>
 <meta property="og:image" content="https://getownerfinancedhomes.com/images/_share-default.jpg"/>
 <meta property="og:url" content="https://getownerfinancedhomes.com/eaststlouis-il-8303-bluff.html"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="3 bed 1 bath in East St. Louis, IL — $1,400/mo"/>
-<meta name="twitter:description" content="8303 Bluff Ave. · $4,000 to move in · $1,400/month · $137,100 locked price. Owner financing — no bank, no credit check."/>
+<meta name="twitter:description" content="8303 Bluff Ave. · $4,000 to move in · $1,400/month · $137,100 locked price. Owner financing — no bank, no mortgage application."/>
 <meta name="twitter:image" content="https://getownerfinancedhomes.com/images/_share-default.jpg"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -184,6 +184,8 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
     <nav class="topnav">
       <a class="nav-hide" href="index.html">Homes</a>
       <a class="nav-hide" href="how-it-works.html">How it works</a>
+      <a class="nav-hide" href="/about">About</a>
+      <a class="nav-hide" href="/contact">Contact</a>
       <a class="call" id="navCall" href="#">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         <span id="navCallText">Call us</span>
@@ -240,7 +242,7 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
     <div class="asis-badges" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px">
       <span style="font-size:13px;font-weight:600;color:var(--pine,#15315e);background:var(--honey-soft,#eaf1fb);border-radius:999px;padding:7px 14px">Sold as-is</span>
       <span style="font-size:13px;font-weight:600;color:var(--pine,#15315e);background:var(--honey-soft,#eaf1fb);border-radius:999px;padding:7px 14px">Owner financed</span>
-      <span style="font-size:13px;font-weight:600;color:var(--pine,#15315e);background:var(--honey-soft,#eaf1fb);border-radius:999px;padding:7px 14px">No credit check</span>
+      <span style="font-size:13px;font-weight:600;color:var(--pine,#15315e);background:var(--honey-soft,#eaf1fb);border-radius:999px;padding:7px 14px">No mortgage application</span>
       <span style="font-size:13px;font-weight:600;color:var(--pine,#15315e);background:var(--honey-soft,#eaf1fb);border-radius:999px;padding:7px 14px">Down payment + ID to move in</span>
     </div>
     <p style="font-size:15px;line-height:1.65;color:var(--ink-soft,#5b6472);background:var(--honey-soft,#eaf1fb);border-radius:14px;padding:16px 18px">
@@ -305,10 +307,19 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
         <option value="1-3 months">1–3 months</option>
         <option value="Just looking">Just looking for now</option>
       </select>
-      <label style="display:flex;gap:10px;align-items:flex-start;font-size:12.5px;line-height:1.45;color:#dbe7fb;font-weight:400;cursor:pointer;margin:4px 0 2px">
-        <input id="lfSms" name="sms_consent" type="checkbox" value="Yes" required style="margin-top:3px;width:16px;height:16px;flex-shrink:0">
-        <span>Yes, text me about this home. By checking this box I agree to receive text messages from Americas Best Home Solutions at the number I provided. Msg &amp; data rates may apply, message frequency varies, reply STOP to opt out or HELP for help. Consent is not a condition of any purchase.</span>
+      <!-- ══════════════════════════════════════════════════════════════════
+           A2P 10DLC CONSENT CHECKBOX — do not change without reading this.
+           Carriers require that this box be unchecked by default, be the ONLY
+           thing it consents to, and NOT be required to submit the form. It
+           therefore has no `checked` and no `required` attribute — leave it
+           that way. If you edit the wording, bump CONSENT_TEXT and
+           CONSENT_TEXT_VERSION in consent.js so stored records stay accurate.
+           ══════════════════════════════════════════════════════════════════ -->
+      <label style="display:flex;gap:11px;align-items:flex-start;font-size:12.5px;line-height:1.5;color:#dbe7fb;font-weight:400;cursor:pointer;margin:12px 0 2px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.22);border-radius:12px;padding:13px 14px">
+        <input id="lfSms" name="sms_consent" type="checkbox" value="Yes" style="margin-top:3px;width:16px;height:16px;flex-shrink:0">
+        <span>I agree to receive text messages from Americas Best Home Solutions LLC about property listings, showings, offers, and follow-up. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe or HELP for help. See our <a href="/privacy-policy" style="color:#fff;font-weight:600">Privacy Policy</a> and <a href="/messaging-terms" style="color:#fff;font-weight:600">Messaging Terms</a>.</span>
       </label>
+      <p style="font-family:'DM Mono',monospace;font-size:12px;color:#a9bedd;margin:7px 0 0;letter-spacing:.3px">Optional — you can submit this form without checking the box.</p>
       <button type="submit" class="btn btn-primary" id="lfSubmit">Send my info</button>
       <p class="form-note" id="lfNote"></p>
     </form>
@@ -334,17 +345,28 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
 
   <!-- FOOTER -->
   <footer class="foot">
+    <!-- The entity attribution, address, phone and email below are STATIC on
+         purpose. A2P 10DLC reviewers may read the raw HTML rather than the
+         rendered page, so none of this may be injected by JavaScript. -->
     <div class="fb">Americas Best Home Solutions</div>
-    <p class="fcontact" style="opacity:.72;margin-top:2px">GetOwnerFinancedHomes.com is a service of Americas Best Home Solutions LLC</p>
-    <p class="fcontact">Owner-financed homes · <a id="footCall" href="#">Call or text us</a></p>
-    <p class="legal" id="footLine"></p>
-    <!-- ▼ COMPLIANCE: paste the disclosures your RMLO / attorney gives you here, before this page is shared publicly. ▲ -->
+    <p class="fcontact" style="opacity:.78;margin-top:2px">getownerfinancedhomes.com is operated by Americas Best Home Solutions LLC</p>
+    <address class="fcontact" style="font-style:normal;margin-top:8px">
+      30 N Gould St, Ste R, Sheridan, WY 82801<br>
+      <a href="tel:+15515509906">(551) 550-9906</a> · <a href="mailto:admin@americasbesthomesolutions.com">admin@americasbesthomesolutions.com</a>
+    </address>
+    <p class="fcontact" style="margin-top:10px">
+      <a href="/">Homes</a> · <a href="/how-it-works">How it works</a> · <a href="/about">About</a> · <a href="/contact">Contact</a> · <a href="/privacy-policy">Privacy Policy</a> · <a href="/messaging-terms">Messaging Terms</a>
+    </p>
+    <p class="legal">
+      © 2026 Americas Best Home Solutions LLC. Americas Best Home Solutions LLC is a real estate company — not a bank, mortgage lender, or licensed mortgage broker. Homes are offered through owner financing (contract for deed), with all terms set out in a written agreement you can review before you sign. All information is believed reliable but is not guaranteed and may change without notice; homes are subject to prior sale and availability. Nothing here is an offer or commitment to lend, or legal, tax, or financial advice. Equal Housing Opportunity.
+    </p>
   </footer>
 
 </div>
 
 <script>window.__HOME_ID__="eaststlouis-il-8303-bluff";</script>
 <script src="homes.js"></script>
+<script src="/consent.js"></script>
 <script>
 /* ---------- render (don't edit — home data lives in homes.js) ---------- */
 (function(){
@@ -395,7 +417,8 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
   })();
 
   $("closerTitle").textContent = "Want to see it in person?";
-  $("footLine").textContent = `© 2026 Americas Best Home Solutions LLC. Americas Best Home Solutions LLC is a real estate company — not a bank, mortgage lender, or licensed mortgage broker. Homes are offered through owner financing (contract for deed), with all terms set out in a written agreement you can review before you sign. All information is believed reliable but is not guaranteed and may change without notice; homes are subject to prior sale and availability. Nothing here is an offer or commitment to lend, or legal, tax, or financial advice. Equal Housing Opportunity.`;
+  // (the footer's entity line, address, contact details and legal disclosure
+  //  are now static HTML — see the note in the <footer> block)
 
   $("statusTag").textContent = C.status || "Available";
   $("heroCity").innerHTML = `<div class="c">${C.city}</div><div class="s">${C.state}</div>`;
@@ -466,8 +489,6 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
   ["ctaText","ctaText2"].forEach(id=>$(id).href = `sms:${tel}?&body=${smsBody}`);
   $("navCall").href = `tel:${tel}`;
   $("navCallText").textContent = prettyPhone || "Call us";
-  $("footCall").href = `sms:${tel}?&body=${smsBody}`;
-  $("footCall").textContent = prettyPhone ? `Call or text ${prettyPhone}` : "Call or text us";
   $("ctaNote").textContent = `Call or text ${prettyPhone} — we usually reply same day.`;
 
   // lead form → Formspree (email) + Make (Notion CRM)
@@ -486,6 +507,7 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
       const data = new FormData(form);
       data.append("property", `${C.city}, ${C.state}`);
       data.append("source", "Property page");
+      await addConsentRecord(data, form);   // 10DLC opt-in evidence — see consent.js
       const targets = [];
       if (id)   targets.push(fetch(`https://formspree.io/f/${id}`, { method:"POST", headers:{ "Accept":"application/json" }, body:data }));
       if (hook) targets.push(fetch(hook, { method:"POST", body:data }));

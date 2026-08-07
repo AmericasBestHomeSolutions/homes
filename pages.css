@@ -1,0 +1,137 @@
+/* ══════════════════════════════════════════════════════════════════════════
+   AMERICA'S BEST HOME SOLUTIONS — shared styles for the content pages
+   (about, contact, privacy-policy, messaging-terms)
+
+   index.html / home.html / how-it-works.html keep their own inline <style>
+   blocks — this file exists so the four newer pages don't duplicate them.
+   Design tokens below are copied from index.html; keep them in sync.
+   ══════════════════════════════════════════════════════════════════════════ */
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --paper:#f4f7fc;
+  --card:#ffffff;
+  --ink:#16213a;
+  --ink-soft:#5b6577;
+  --line:#e2e8f2;
+  --pine:#15315e;
+  --pine-deep:#0f2444;
+  --honey:#e23b3b;
+  --honey-soft:#eaf1fb;
+  --go:#e23b3b;
+  --go-hover:#c92f2f;
+  --radius:18px;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:'DM Sans',system-ui,sans-serif;font-size:17px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+.narrow{max-width:680px;margin-left:auto;margin-right:auto}
+
+/* ── TOP BAR ─────────────────────────────────────────────── */
+.topbar{padding:16px 0;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:9px;text-decoration:none}
+.brand .mark{width:30px;height:30px;flex-shrink:0}
+.brand .bn{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:19px;letter-spacing:-.4px;color:var(--pine);line-height:1}
+.brand .bn small{display:block;font-family:'DM Mono',monospace;font-weight:400;font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-soft);margin-top:2px}
+.topnav{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.topnav a{font-size:14px;font-weight:600;color:var(--ink-soft);text-decoration:none;padding:8px 10px;border-radius:10px}
+.topnav a:hover{color:var(--pine);background:#eef2f9}
+.topnav a[aria-current="page"]{color:var(--pine);background:#eef2f9}
+.topnav a.call{background:var(--pine);color:#fff;display:inline-flex;align-items:center;gap:6px;padding:11px 14px}
+.topnav a.call:hover{background:var(--pine-deep);color:#fff}
+@media (max-width:520px){ .topnav a{font-size:13px;padding:9px 8px} .topnav a.call{padding:11px 12px} }
+
+/* ── PAGE HEAD ───────────────────────────────────────────── */
+.phead{padding:34px 0 6px}
+.phead .eyebrow{display:inline-flex;align-items:center;gap:6px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:var(--honey);font-weight:500}
+.phead h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(30px,5.5vw,46px);line-height:1.08;letter-spacing:-1px;color:var(--pine);margin:10px 0 12px}
+.phead .lead{font-size:18px;color:var(--ink-soft);max-width:62ch}
+.phead .updated{font-family:'DM Mono',monospace;font-size:12px;color:var(--ink-soft);margin-top:14px}
+
+/* ── PROSE ───────────────────────────────────────────────── */
+.prose{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px 32px;margin:26px 0}
+.prose h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:23px;letter-spacing:-.5px;color:var(--pine);margin:30px 0 10px}
+.prose h2:first-child{margin-top:0}
+.prose h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:17.5px;color:var(--pine);margin:22px 0 6px}
+.prose p{margin:0 0 13px}
+.prose ul,.prose ol{margin:0 0 14px 21px}
+.prose li{margin:0 0 7px}
+.prose a{color:var(--pine);font-weight:600}
+.prose strong{font-weight:700;color:var(--ink)}
+.prose .callout{background:var(--honey-soft);border-left:3px solid var(--pine);border-radius:0 10px 10px 0;padding:14px 18px;margin:16px 0}
+.prose .callout p:last-child{margin-bottom:0}
+@media (max-width:560px){ .prose{padding:22px 20px} }
+
+/* ── STEPS ───────────────────────────────────────────────── */
+.steps{list-style:none;margin:0;padding:0;counter-reset:s}
+.steps li{counter-increment:s;position:relative;padding:0 0 0 46px;margin:0 0 20px}
+.steps li::before{
+  content:counter(s);position:absolute;left:0;top:1px;
+  width:31px;height:31px;border-radius:50%;background:var(--pine);color:#fff;
+  font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;
+  display:flex;align-items:center;justify-content:center;
+}
+.steps li h3{margin:2px 0 5px}
+.steps li p{margin:0;color:var(--ink-soft);font-size:16px}
+
+/* ── FACT GRID (contact details) ─────────────────────────── */
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:22px 0}
+.fact{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+.fact .k{font-family:'DM Mono',monospace;font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:var(--honey);font-weight:500}
+/* long email addresses must wrap rather than run out of the card */
+.fact .v{margin-top:6px;font-size:16.5px;font-weight:600;color:var(--ink);line-height:1.45;overflow-wrap:anywhere}
+.fact .v a{color:var(--pine);text-decoration:none}
+.fact .v a:hover{text-decoration:underline}
+.fact .note{margin-top:5px;font-size:13.5px;color:var(--ink-soft);font-weight:400}
+.fact address{font-style:normal}
+
+/* ── FORM ────────────────────────────────────────────────── */
+.formcard{background:var(--pine);color:#fff;border-radius:var(--radius);padding:32px;margin:26px 0}
+.formcard h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:25px;letter-spacing:-.6px;color:#fff;margin:0 0 6px}
+.formcard .sub{color:#c7d6ee;font-size:16px;margin:0 0 20px}
+.formcard label{display:block;font-size:13.5px;font-weight:600;color:#dbe7fb;margin:15px 0 5px}
+.formcard input[type=text],.formcard input[type=tel],.formcard input[type=email],.formcard select,.formcard textarea{
+  width:100%;font-family:'DM Sans',sans-serif;font-size:16px;color:var(--ink);
+  background:#fff;border:1px solid transparent;border-radius:11px;padding:13px 14px;
+}
+.formcard textarea{min-height:104px;resize:vertical}
+.formcard input:focus,.formcard select:focus,.formcard textarea:focus{outline:2px solid var(--honey);outline-offset:1px}
+
+/* the SMS consent block — deliberately its own bordered box so a reviewer can
+   see at a glance that it is separate, unchecked, and optional */
+.consent{
+  display:flex;gap:11px;align-items:flex-start;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.22);
+  border-radius:12px;padding:14px 15px;margin:16px 0 4px;cursor:pointer;
+}
+.consent input[type=checkbox]{margin-top:2px;width:17px;height:17px;flex-shrink:0;cursor:pointer}
+.consent span{font-size:13px;line-height:1.5;color:#dbe7fb;font-weight:400}
+.consent a{color:#fff;font-weight:600;text-decoration:underline}
+.optional{font-size:12px;color:#a9bedd;margin:7px 0 0;font-family:'DM Mono',monospace;letter-spacing:.3px}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-align:center;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:700;font-size:16px;padding:15px 22px;border-radius:13px;transition:transform .12s ease,background .15s ease;cursor:pointer;border:none}
+.btn-go{background:var(--go);color:#fff;width:100%;margin-top:18px}
+.btn-go:hover{background:var(--go-hover)}
+.btn-go:disabled{opacity:.65;cursor:default}
+.form-note{font-size:13px;color:#c7d6ee;margin-top:11px;min-height:19px}
+.formcard .thanks{display:none}
+.formcard.sent form,.formcard.sent .sub{display:none}
+.formcard.sent .thanks{display:block}
+.formcard .thanks h3{font-family:'Bricolage Grotesque',sans-serif;font-size:22px;color:#fff;margin-bottom:8px}
+.formcard .thanks p{color:#c7d6ee}
+@media (max-width:560px){ .formcard{padding:24px 20px} }
+
+/* ── FOOTER ──────────────────────────────────────────────── */
+.foot{margin:48px 0 34px;text-align:center;color:var(--ink-soft);font-size:13px;line-height:1.7}
+.foot .fb{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:18px;color:var(--pine);letter-spacing:-.4px;margin-bottom:4px}
+.foot .fcontact a{color:var(--pine);font-weight:600;text-decoration:none}
+.foot .fcontact a:hover{text-decoration:underline}
+.foot .fentity{opacity:.78;margin-top:2px}
+.foot .faddr{font-style:normal;margin-top:8px}
+.foot .flinks{margin-top:10px}
+.foot .flinks a{margin:0 2px}
+.foot .legal{max-width:60ch;margin:14px auto 0;font-size:12px;color:#8b93a3}

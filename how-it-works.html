@@ -175,6 +175,9 @@ body{
     </a>
     <nav class="topnav">
       <a class="nav-hide" href="index.html">Homes</a>
+      <a class="nav-hide" href="#sellers">Sell to us</a>
+      <a class="nav-hide" href="/about">About</a>
+      <a class="nav-hide" href="/contact">Contact</a>
       <a class="call" id="navCall" href="#">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         <span id="navCallText">Call us</span>
@@ -274,8 +277,8 @@ body{
         <div class="ans">It's a fair question, and we'd rather you ask it. Americas Best Home Solutions LLC is a registered business that has sold hundreds of homes to real families. Here's how you protect yourself with us — and with anyone: you visit the home in person before you commit, you get every number and every term in a written agreement you can read (and have someone you trust review) before you sign, and you always talk to a real person. We will never ask you to wire money to "hold" a house you haven't seen, and we'll never rush you. If anything ever feels off, slow down and call us directly at the number on this site.</div>
       </details>
       <details>
-        <summary>Do I need good credit or a bank?</summary>
-        <div class="ans">No bank and no mortgage application. Because we finance the home ourselves, this isn't a bank credit approval. Call us and we'll talk through your situation honestly.</div>
+        <summary>Do I need a bank to buy one of these homes?</summary>
+        <div class="ans">No — there's no bank and no mortgage application. We're the seller, so the purchase is agreed directly between you and us in a written contract. Call us and we'll talk through your situation honestly.</div>
       </details>
       <details>
         <summary>Is this the same as renting?</summary>
@@ -300,6 +303,39 @@ body{
     </div>
   </section>
 
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       FOR SELLERS & AGENTS — the other half of the business. Buyers get
+       everything above; this section is for people bringing us a property.
+       ═══════════════════════════════════════════════════════════════════════ -->
+  <section class="section reveal" id="sellers">
+    <div class="sec-label">For sellers &amp; agents</div>
+    <h2 class="sec-title">Have a property to sell? We buy.</h2>
+    <p style="max-width:64ch;margin-bottom:6px">Everything above is written for buyers. The other half of what we do is acquisition — we buy single-family homes directly from owners, and we work with listing agents whose sellers need a clean, certain close rather than the highest theoretical number.</p>
+
+    <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-size:19px;margin:26px 0 10px">What we're looking for</h3>
+    <ul style="max-width:64ch;margin:0 0 8px 20px">
+      <li>Single-family houses in <strong>Illinois, Missouri, Michigan, Alabama, Indiana, Mississippi, Virginia, Ohio, Georgia, and Pennsylvania</strong>.</li>
+      <li>Homes that need work. Dated kitchens, deferred maintenance, and tenant damage are normal for us, not deal-breakers.</li>
+      <li>Occupied, vacant, or inherited property. We handle each differently and will tell you which upfront.</li>
+      <li>Owners who want a defined timeline more than they want a bidding war.</li>
+    </ul>
+
+    <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-size:19px;margin:26px 0 10px">How selling to us works</h3>
+    <div class="steps">
+      <div class="step"><div class="n">01</div><div class="body"><h3>Send us the address</h3><p>Call, text, or use the contact form. We need the address, roughly what condition it's in, and what you need to walk away with.</p></div></div>
+      <div class="step"><div class="n">02</div><div class="body"><h3>We review it</h3><p>We look at the property, the neighborhood, and what it would take to get the home ready for a buyer. Usually a day or two.</p></div></div>
+      <div class="step"><div class="n">03</div><div class="body"><h3>You get a straight answer</h3><p>A number and the terms behind it — or a clear no. We don't tie properties up while we shop them around.</p></div></div>
+      <div class="step"><div class="n">04</div><div class="body"><h3>Close on your timeline</h3><p>We close through a title company or closing attorney. If you need three weeks, we work to three weeks; if you need three months, we can wait.</p></div></div>
+    </div>
+
+    <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-size:19px;margin:26px 0 10px">Working with listing agents</h3>
+    <p style="max-width:64ch">We work with agents regularly and we respect the relationship. If you bring us a property, your commission is accounted for in the deal — we'll confirm that in writing before you take anything to your seller. We're a reliable place to send the listing that has sat too long, the estate sale nobody wants to manage, or the house that keeps failing buyer financing.</p>
+
+    <div class="cta-group" style="max-width:400px;margin:26px auto 0">
+      <a class="btn btn-primary" href="/contact">Tell us about your property</a>
+    </div>
+  </section>
+
   <!-- CLOSER -->
   <section class="closer reveal">
     <h2>Ready to find your home?</h2>
@@ -313,8 +349,14 @@ body{
   <!-- FOOTER -->
   <footer class="foot">
     <div class="fb">Americas Best Home Solutions</div>
-    <p class="fcontact" style="opacity:.72;margin-top:2px">GetOwnerFinancedHomes.com is a service of Americas Best Home Solutions LLC</p>
-    <p class="fcontact">Owner-financed homes · <a id="footCall" href="#">Call or text us</a></p>
+    <p class="fcontact" style="opacity:.78;margin-top:2px">getownerfinancedhomes.com is operated by Americas Best Home Solutions LLC</p>
+    <address class="fcontact" style="font-style:normal;margin-top:8px">
+      30 N Gould St, Ste R, Sheridan, WY 82801<br>
+      <a href="tel:+15515509906">(551) 550-9906</a> · <a href="mailto:admin@americasbesthomesolutions.com">admin@americasbesthomesolutions.com</a>
+    </address>
+    <p class="fcontact" style="margin-top:10px">
+      <a href="/">Homes</a> · <a href="/how-it-works">How it works</a> · <a href="/about">About</a> · <a href="/contact">Contact</a> · <a href="/privacy-policy">Privacy Policy</a> · <a href="/messaging-terms">Messaging Terms</a>
+    </p>
     <p class="legal">
       <!-- ▼ COMPLIANCE — GOOD-FAITH DRAFT ONLY. Have your RMLO / attorney review and
            replace this language before you run ads or promote the site. ▲ -->
@@ -353,8 +395,7 @@ const VIDEO_EMBED_URL = "";
     $("ctaCall").href = `sms:${tel}?&body=${smsBody}`;
     $("navCall").href = `tel:${tel}`;
     $("navCallText").textContent = pretty || "Call us";
-    $("footCall").href = `sms:${tel}?&body=${smsBody}`;
-    $("footCall").textContent = pretty ? `Call or text ${pretty}` : "Call or text us";
+    // (the footer prints the number and address literally now — nothing to wire)
   }
 
   // scroll reveal (respects reduced-motion via CSS)

@@ -2989,7 +2989,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-1303-hickory-1.jpg", "images/decatur-il-1303-hickory-2.jpg", "images/decatur-il-1303-hickory-3.jpg", "images/decatur-il-1303-hickory-4.jpg"],
   },
   {
     id: "springfield-il-905-wesley",
@@ -3010,6 +3010,6 @@ const HOMES = [
 
     features: { backyard: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/springfield-il-905-wesley-1.jpg", "images/springfield-il-905-wesley-2.jpg", "images/springfield-il-905-wesley-3.jpg", "images/springfield-il-905-wesley-4.jpg"],
   },
 ];

@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (147 live, rebuilt from master published 2026-08-08) --- */
+/* --- the homes (147 live, rebuilt from master published 2026-08-09) --- */
 const HOMES = [
   {
     id: "flint-mi-3210-brownell",
@@ -2972,6 +2972,27 @@ const HOMES = [
     photos:    ["images/stlouis-mo-6069-harney-1.jpg", "images/stlouis-mo-6069-harney-2.jpg", "images/stlouis-mo-6069-harney-3.jpg", "images/stlouis-mo-6069-harney-4.jpg", "images/stlouis-mo-6069-harney-5.jpg", "images/stlouis-mo-6069-harney-6.jpg", "images/stlouis-mo-6069-harney-7.jpg", "images/stlouis-mo-6069-harney-8.jpg", "images/stlouis-mo-6069-harney-9.jpg", "images/stlouis-mo-6069-harney-10.jpg", "images/stlouis-mo-6069-harney-11.jpg", "images/stlouis-mo-6069-harney-12.jpg", "images/stlouis-mo-6069-harney-13.jpg", "images/stlouis-mo-6069-harney-14.jpg", "images/stlouis-mo-6069-harney-15.jpg", "images/stlouis-mo-6069-harney-16.jpg", "images/stlouis-mo-6069-harney-17.jpg", "images/stlouis-mo-6069-harney-18.jpg"],
   },
   {
+    id: "springfield-il-905-wesley",
+    address:     "905 N Wesley St",
+    zip:         "62702",
+    description: "2 Bd/1 Ba, 700 sq.ft plus a detached garage.. Move in ready, rehab just completed, all mechanics are up and running !. 905 N Wesley St, Springfield, IL 62702",
+    city:  "Springfield",
+    state: "IL",
+    beds:  2,
+    baths: 1,
+    sqft:  "700",
+    status: "Available",
+
+    monthlyPayment: 995,
+    moveIn:         3000,
+    lockedPrice:    99000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { garage: "yes", off_street_parking: "yes" },
+    heroPhoto: "",
+    photos:    ["images/springfield-il-905-wesley-1.jpg", "images/springfield-il-905-wesley-2.jpg", "images/springfield-il-905-wesley-3.jpg", "images/springfield-il-905-wesley-4.jpg"],
+  },
+  {
     id: "decatur-il-1303-hickory",
     address:     "1303 E. Hickory St.",
     zip:         "62526",
@@ -2990,26 +3011,5 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1303-hickory-1.jpg", "images/decatur-il-1303-hickory-2.jpg", "images/decatur-il-1303-hickory-3.jpg", "images/decatur-il-1303-hickory-4.jpg"],
-  },
-  {
-    id: "springfield-il-905-wesley",
-    address:     "905 N Wesley St",
-    zip:         "62702",
-    description: "Light rehab just completed, all systems working and move-in ready. Single-family home with a detached garage on a 4,860 sq ft lot. Furnace in good condition. Electrical just updated. Brand new flooring installed. Roof with no leaks. Recently cleaned throughout",
-    city:  "Springfield",
-    state: "IL",
-    beds:  2,
-    baths: 1,
-    sqft:  "700",
-    status: "Available",
-
-    monthlyPayment: 995,
-    moveIn:         3000,
-    lockedPrice:    99000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { backyard: "yes", garage: "yes", off_street_parking: "yes" },
-    heroPhoto: "",
-    photos:    ["images/springfield-il-905-wesley-1.jpg", "images/springfield-il-905-wesley-2.jpg", "images/springfield-il-905-wesley-3.jpg", "images/springfield-il-905-wesley-4.jpg"],
   },
 ];

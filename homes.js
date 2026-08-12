@@ -260,7 +260,7 @@ const HOMES = [
 
     features: { backyard: "yes", fenced_yard: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/augusta-ga-1903-heckle-1.jpg", "images/augusta-ga-1903-heckle-2.jpg", "images/augusta-ga-1903-heckle-3.jpg", "images/augusta-ga-1903-heckle-4.jpg", "images/augusta-ga-1903-heckle-5.jpg", "images/augusta-ga-1903-heckle-6.jpg", "images/augusta-ga-1903-heckle-7.jpg", "images/augusta-ga-1903-heckle-8.jpg", "images/augusta-ga-1903-heckle-9.jpg", "images/augusta-ga-1903-heckle-10.jpg", "images/augusta-ga-1903-heckle-11.jpg", "images/augusta-ga-1903-heckle-12.jpg", "images/augusta-ga-1903-heckle-13.jpg", "images/augusta-ga-1903-heckle-14.jpg", "images/augusta-ga-1903-heckle-15.jpg", "images/augusta-ga-1903-heckle-16.jpg", "images/augusta-ga-1903-heckle-17.jpg", "images/augusta-ga-1903-heckle-18.jpg", "images/augusta-ga-1903-heckle-19.jpg", "images/augusta-ga-1903-heckle-20.jpg"],
   },
   {
     id: "peoria-il-517-vine",
@@ -691,7 +691,7 @@ const HOMES = [
 
     features: { garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/akron-oh-1380-moore-1.jpg", "images/akron-oh-1380-moore-2.jpg", "images/akron-oh-1380-moore-3.jpg", "images/akron-oh-1380-moore-4.jpg", "images/akron-oh-1380-moore-5.jpg", "images/akron-oh-1380-moore-6.jpg", "images/akron-oh-1380-moore-7.jpg", "images/akron-oh-1380-moore-8.jpg", "images/akron-oh-1380-moore-9.jpg", "images/akron-oh-1380-moore-10.jpg", "images/akron-oh-1380-moore-11.jpg", "images/akron-oh-1380-moore-12.jpg", "images/akron-oh-1380-moore-13.jpg", "images/akron-oh-1380-moore-14.jpg", "images/akron-oh-1380-moore-15.jpg", "images/akron-oh-1380-moore-16.jpg", "images/akron-oh-1380-moore-17.jpg", "images/akron-oh-1380-moore-18.jpg", "images/akron-oh-1380-moore-19.jpg", "images/akron-oh-1380-moore-20.jpg", "images/akron-oh-1380-moore-21.jpg", "images/akron-oh-1380-moore-22.jpg", "images/akron-oh-1380-moore-23.jpg", "images/akron-oh-1380-moore-24.jpg"],
   },
   {
     id: "decatur-il-1421-sedgwick",
@@ -3022,7 +3022,7 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
-    status: "Available",
+    status: "Pending",
 
     monthlyPayment: 915,
     moveIn:         2500,

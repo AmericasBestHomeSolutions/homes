@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (149 live, rebuilt from master published 2026-08-12) --- */
+/* --- the homes (149 live, rebuilt from master published 2026-08-13) --- */
 const HOMES = [
   {
     id: "decatur-il-2067-maple",

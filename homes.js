@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (149 live, rebuilt from master published 2026-08-13) --- */
+/* --- the homes (150 live, rebuilt from master published 2026-08-13) --- */
 const HOMES = [
   {
     id: "decatur-il-2067-maple",
@@ -1908,9 +1908,9 @@ const HOMES = [
     sqft:  "",
     status: "Available",
 
-    monthlyPayment: 865,
+    monthlyPayment: 795,
     moveIn:         1800,
-    lockedPrice:    79995,
+    lockedPrice:    72999,
     termText:       "30-year owner financing (contract for deed)",
 
     features: { backyard: "yes", basement: "yes", central_air: "yes" },
@@ -3036,12 +3036,12 @@ const HOMES = [
     id: "decatur-il-1303-hickory",
     address:     "1303 E. Hickory St.",
     zip:         "62526",
-    description: "Nice front porch that has been recently repaired and painted. Original hardwood trim and doors. Updated kitchen and bathroom. Recent deep cleaning completed",
+    description: "3 Bed / 1Bath | 1064 Sq Ft. Nice front porch that has been recently repaired and painted. Original hardwood trim and doors. Updated Kitchen and Bathroom. Recent deep cleaning completed. $3K Down. $88,500",
     city:  "Decatur",
     state: "IL",
     beds:  3,
     baths: 1,
-    sqft:  "1064",
+    sqft:  "1,064",
     status: "Available",
 
     monthlyPayment: 950,
@@ -3051,5 +3051,26 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1303-hickory-1.jpg", "images/decatur-il-1303-hickory-2.jpg", "images/decatur-il-1303-hickory-3.jpg", "images/decatur-il-1303-hickory-4.jpg"],
+  },
+  {
+    id: "saginaw-mi-2236-king",
+    address:     "2236 King St",
+    zip:         "48602",
+    description: "2 bed, 1 bath, nice partially fenced backyard, basement, 806 sq ft",
+    city:  "Saginaw",
+    state: "MI",
+    beds:  2,
+    baths: 1,
+    sqft:  "806",
+    status: "Available",
+
+    monthlyPayment: 850,
+    moveIn:         3000,
+    lockedPrice:    79000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { backyard: "yes", fenced_yard: "yes", basement: "yes" },
+    heroPhoto: "",
+    photos:    [],
   },
 ];

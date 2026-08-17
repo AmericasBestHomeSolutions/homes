@@ -555,7 +555,7 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "877.0",
-    status: "Available",
+    status: "Pending",
 
     monthlyPayment: 995,
     moveIn:         3000,
@@ -865,7 +865,7 @@ const HOMES = [
     sqft:  "1107.0",
     status: "Available",
 
-    monthlyPayment: 975,
+    monthlyPayment: 900,
     moveIn:         3000,
     lockedPrice:    88000,
     termText:       "30-year owner financing (contract for deed)",
@@ -2838,7 +2838,7 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "",
-    status: "Available",
+    status: "Pending",
 
     monthlyPayment: 800,
     moveIn:         2000,

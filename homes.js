@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (148 live, rebuilt from master published 2026-08-17) --- */
+/* --- the homes (155 live, rebuilt from master published 2026-08-17) --- */
 const HOMES = [
   {
     id: "decatur-il-1739-gulick",
@@ -865,7 +865,7 @@ const HOMES = [
     sqft:  "1107.0",
     status: "Available",
 
-    monthlyPayment: 900,
+    monthlyPayment: 775,
     moveIn:         3000,
     lockedPrice:    88000,
     termText:       "30-year owner financing (contract for deed)",
@@ -2494,7 +2494,7 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
-    status: "Available",
+    status: "Pending",
 
     monthlyPayment: 950,
     moveIn:         3000,
@@ -2637,7 +2637,7 @@ const HOMES = [
     sqft:  "",
     status: "Available",
 
-    monthlyPayment: 900,
+    monthlyPayment: 899,
     moveIn:         2500,
     lockedPrice:    99500,
     termText:       "30-year owner financing (contract for deed)",
@@ -2920,9 +2920,9 @@ const HOMES = [
     sqft:  "780.0",
     status: "Available",
 
-    monthlyPayment: 760,
+    monthlyPayment: 750,
     moveIn:         1500,
-    lockedPrice:    59000,
+    lockedPrice:    75000,
     termText:       "30-year owner financing (contract for deed)",
 
     features: { basement: "yes" },
@@ -3029,5 +3029,149 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/peoria-il-422-louisa-1.jpg", "images/peoria-il-422-louisa-2.jpg", "images/peoria-il-422-louisa-3.jpg", "images/peoria-il-422-louisa-4.jpg", "images/peoria-il-422-louisa-5.jpg", "images/peoria-il-422-louisa-6.jpg", "images/peoria-il-422-louisa-7.jpg", "images/peoria-il-422-louisa-8.jpg", "images/peoria-il-422-louisa-9.jpg", "images/peoria-il-422-louisa-10.jpg", "images/peoria-il-422-louisa-11.jpg", "images/peoria-il-422-louisa-12.jpg", "images/peoria-il-422-louisa-13.jpg", "images/peoria-il-422-louisa-14.jpg", "images/peoria-il-422-louisa-15.jpg", "images/peoria-il-422-louisa-16.jpg", "images/peoria-il-422-louisa-17.jpg", "images/peoria-il-422-louisa-18.jpg", "images/peoria-il-422-louisa-19.jpg", "images/peoria-il-422-louisa-20.jpg", "images/peoria-il-422-louisa-21.jpg", "images/peoria-il-422-louisa-22.jpg", "images/peoria-il-422-louisa-23.jpg", "images/peoria-il-422-louisa-24.jpg"],
+  },
+  {
+    id: "springfield-il-2949-foxbridge",
+    address:     "2949 Foxbridge Rd",
+    zip:         "62703",
+    city:  "Springfield",
+    state: "IL",
+    beds:  2,
+    baths: 1,
+    sqft:  "",
+    status: "Available",
+
+    monthlyPayment: 892,
+    moveIn:         3000,
+    lockedPrice:    90000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "flint-mi-628-home",
+    address:     "628 W Home Ave",
+    zip:         "48505",
+    description: "2 bed, 1 bath, 714 sq ft, full driveway and backyard parking",
+    city:  "Flint",
+    state: "MI",
+    beds:  2,
+    baths: 1,
+    sqft:  "714",
+    status: "Available",
+
+    monthlyPayment: 850,
+    moveIn:         3000,
+    lockedPrice:    89000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { backyard: "yes", off_street_parking: "yes" },
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "eaststlouis-il-740-22nd",
+    address:     "740 N 22nd Street",
+    zip:         "62205",
+    description: "800 sq. ft. 3 bedroom 1.5 bath. basement is used as a 4th bedroom",
+    city:  "East St. Louis",
+    state: "IL",
+    beds:  4,
+    baths: 2,
+    sqft:  "800",
+    status: "Available",
+
+    monthlyPayment: 975,
+    moveIn:         3000,
+    lockedPrice:    101500,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { basement: "yes" },
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "stlouis-mo-2810-norwood",
+    address:     "2810 Norwood Ave",
+    zip:         "63115",
+    description: "734 SF. All stystems working. Power and water both on. New electrical panels and water supply lines. Furnace and AC scheduled for repair.. Beautiful hardwood and brick interior",
+    city:  "St. Louis",
+    state: "MO",
+    beds:  2,
+    baths: 1,
+    sqft:  "734",
+    status: "Available",
+
+    monthlyPayment: 1000,
+    moveIn:         3000,
+    lockedPrice:    109000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { central_air: "yes" },
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "decatur-il-830-rodgers",
+    address:     "830 East Rodgers Avenue",
+    zip:         "62521",
+    description: "624 square feet, finished basement, new furnace and hot water heater, covered porch",
+    city:  "Decatur",
+    state: "IL",
+    beds:  3,
+    baths: 1,
+    sqft:  "624",
+    status: "Available",
+
+    monthlyPayment: 788,
+    moveIn:         2500,
+    lockedPrice:    63500,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { basement: "yes" },
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "westfield-il-330-madison",
+    address:     "330 S Madison St",
+    zip:         "62474",
+    description: "2 year old rood, all PEX plumbing, updated electrical panel, 4 yr old furnace, 2 car detached garage",
+    city:  "Westfield",
+    state: "IL",
+    beds:  5,
+    baths: 2,
+    sqft:  "",
+    status: "Available",
+
+    monthlyPayment: 900,
+    moveIn:         2000,
+    lockedPrice:    89000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { garage: "yes", off_street_parking: "yes" },
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "eaststlouis-il-225-63rd",
+    address:     "225 N 63rd St",
+    zip:         "62203",
+    description: "1,338 sqft. Built 1951. Brick single-family, 0.28-acre lot",
+    city:  "East St. Louis",
+    state: "IL",
+    beds:  3,
+    baths: 2,
+    sqft:  "1,338",
+    status: "Available",
+
+    monthlyPayment: 595,
+    moveIn:         1995,
+    lockedPrice:    49995,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
   },
 ];

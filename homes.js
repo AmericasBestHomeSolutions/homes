@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (155 live, rebuilt from master published 2026-08-19) --- */
+/* --- the homes (158 live, rebuilt from master published 2026-08-19) --- */
 const HOMES = [
   {
     id: "decatur-il-1739-gulick",
@@ -485,26 +485,6 @@ const HOMES = [
     photos:    ["images/granitecity-il-2410-sheridan-1.jpg", "images/granitecity-il-2410-sheridan-2.jpg", "images/granitecity-il-2410-sheridan-3.jpg", "images/granitecity-il-2410-sheridan-4.jpg", "images/granitecity-il-2410-sheridan-5.jpg", "images/granitecity-il-2410-sheridan-6.jpg", "images/granitecity-il-2410-sheridan-7.jpg", "images/granitecity-il-2410-sheridan-8.jpg", "images/granitecity-il-2410-sheridan-9.jpg", "images/granitecity-il-2410-sheridan-10.jpg", "images/granitecity-il-2410-sheridan-11.jpg", "images/granitecity-il-2410-sheridan-12.jpg", "images/granitecity-il-2410-sheridan-13.jpg", "images/granitecity-il-2410-sheridan-14.jpg", "images/granitecity-il-2410-sheridan-15.jpg", "images/granitecity-il-2410-sheridan-16.jpg", "images/granitecity-il-2410-sheridan-17.jpg", "images/granitecity-il-2410-sheridan-18.jpg", "images/granitecity-il-2410-sheridan-19.jpg", "images/granitecity-il-2410-sheridan-20.jpg", "images/granitecity-il-2410-sheridan-21.jpg", "images/granitecity-il-2410-sheridan-22.jpg", "images/granitecity-il-2410-sheridan-23.jpg", "images/granitecity-il-2410-sheridan-24.jpg"],
   },
   {
-    id: "cahokia-il-1617-parklane",
-    address:     "1617 Parklane Dr",
-    zip:         "62206.0",
-    description: "This property needs a full complete rehab",
-    city:  "Cahokia",
-    state: "IL",
-    beds:  3,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 375,
-    moveIn:         1000,
-    lockedPrice:    45000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    ["images/cahokia-il-1617-parklane-1.jpg", "images/cahokia-il-1617-parklane-2.jpg", "images/cahokia-il-1617-parklane-3.jpg", "images/cahokia-il-1617-parklane-4.jpg", "images/cahokia-il-1617-parklane-5.jpg", "images/cahokia-il-1617-parklane-6.jpg", "images/cahokia-il-1617-parklane-7.jpg", "images/cahokia-il-1617-parklane-8.jpg", "images/cahokia-il-1617-parklane-9.jpg", "images/cahokia-il-1617-parklane-10.jpg", "images/cahokia-il-1617-parklane-11.jpg", "images/cahokia-il-1617-parklane-12.jpg", "images/cahokia-il-1617-parklane-13.jpg", "images/cahokia-il-1617-parklane-14.jpg", "images/cahokia-il-1617-parklane-15.jpg", "images/cahokia-il-1617-parklane-16.jpg", "images/cahokia-il-1617-parklane-17.jpg", "images/cahokia-il-1617-parklane-18.jpg", "images/cahokia-il-1617-parklane-19.jpg", "images/cahokia-il-1617-parklane-20.jpg", "images/cahokia-il-1617-parklane-21.jpg", "images/cahokia-il-1617-parklane-22.jpg", "images/cahokia-il-1617-parklane-23.jpg", "images/cahokia-il-1617-parklane-24.jpg"],
-  },
-  {
     id: "stlouis-mo-32-connolly",
     address:     "32 Connolly Dr",
     zip:         "63135.0",
@@ -954,26 +934,6 @@ const HOMES = [
     features: { garage: "yes", off_street_parking: "yes", central_air: "yes" },
     heroPhoto: "",
     photos:    ["images/hartfordcity-in-612-cherry-1.jpg", "images/hartfordcity-in-612-cherry-2.jpg", "images/hartfordcity-in-612-cherry-3.jpg", "images/hartfordcity-in-612-cherry-4.jpg", "images/hartfordcity-in-612-cherry-5.jpg", "images/hartfordcity-in-612-cherry-6.jpg", "images/hartfordcity-in-612-cherry-7.jpg", "images/hartfordcity-in-612-cherry-8.jpg", "images/hartfordcity-in-612-cherry-9.jpg", "images/hartfordcity-in-612-cherry-10.jpg"],
-  },
-  {
-    id: "johnstown-pa-648650-linden",
-    address:     "648–650 Linden Ave",
-    zip:         "15902.0",
-    description: "Property Features:. Duplex with 2 separate units. 2 bedrooms & 1 bathroom per unit (4 beds, 2 baths total). $1,150/month!. $3,000 down payment",
-    city:  "Johnstown",
-    state: "PA",
-    beds:  4,
-    baths: 2,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 1150,
-    moveIn:         3000,
-    lockedPrice:    114710.37,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    ["images/johnstown-pa-648650-linden-1.jpg", "images/johnstown-pa-648650-linden-2.jpg", "images/johnstown-pa-648650-linden-3.jpg", "images/johnstown-pa-648650-linden-4.jpg", "images/johnstown-pa-648650-linden-5.jpg", "images/johnstown-pa-648650-linden-6.jpg", "images/johnstown-pa-648650-linden-7.jpg", "images/johnstown-pa-648650-linden-8.jpg", "images/johnstown-pa-648650-linden-9.jpg", "images/johnstown-pa-648650-linden-10.jpg", "images/johnstown-pa-648650-linden-11.jpg", "images/johnstown-pa-648650-linden-12.jpg", "images/johnstown-pa-648650-linden-13.jpg", "images/johnstown-pa-648650-linden-14.jpg", "images/johnstown-pa-648650-linden-15.jpg", "images/johnstown-pa-648650-linden-16.jpg", "images/johnstown-pa-648650-linden-17.jpg", "images/johnstown-pa-648650-linden-18.jpg", "images/johnstown-pa-648650-linden-19.jpg"],
   },
   {
     id: "springfield-il-2109-martin",
@@ -1867,7 +1827,7 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "672.0",
-    status: "Available",
+    status: "Pending",
 
     monthlyPayment: 895,
     moveIn:         2500,
@@ -3071,6 +3031,27 @@ const HOMES = [
     photos:    [],
   },
   {
+    id: "decatur-il-989-packard",
+    address:     "989 W. Packard Street",
+    zip:         "62522",
+    description: "Two story 890 Sq. Ft. home on a 7,120 SF lot. Covered front porch, stone fireplace, ceiling fans, basement, carpet, tile, and hardwood flooring, detacted garage",
+    city:  "Decatur",
+    state: "IL",
+    beds:  3,
+    baths: 2,
+    sqft:  "",
+    status: "Available",
+
+    monthlyPayment: 918,
+    moveIn:         3000,
+    lockedPrice:    83500,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { backyard: "yes", basement: "yes", garage: "yes", off_street_parking: "yes" },
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
     id: "eaststlouis-il-740-22nd",
     address:     "740 N 22nd Street",
     zip:         "62205",
@@ -3113,6 +3094,27 @@ const HOMES = [
     photos:    [],
   },
   {
+    id: "detroit-mi-12094-littlefield",
+    address:     "12094 Littlefield Street",
+    zip:         "48227",
+    description: "926 square feet. Roof from 2022. Newly updated panel. New windows. New fence all around",
+    city:  "Detroit",
+    state: "MI",
+    beds:  4,
+    baths: 1,
+    sqft:  "926",
+    status: "Available",
+
+    monthlyPayment: 1179,
+    moveIn:         3000,
+    lockedPrice:    109897,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { fenced_yard: "yes" },
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
     id: "decatur-il-830-rodgers",
     address:     "830 East Rodgers Avenue",
     zip:         "62521",
@@ -3130,6 +3132,26 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     features: { basement: "yes" },
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "johnstown-pa-650-linden",
+    address:     "650 Linden Ave",
+    zip:         "15902",
+    description: "These are generally the buyer qualifications we look for:. No recent evictions within the last 3 years. Verifiable employment or business income that supports approximately a 3.5x gross income multiplier relative to the monthly payment. Buyer understands the condition of the property and that some homes may require minor repairs or improvements",
+    city:  "Johnstown",
+    state: "PA",
+    beds:  2,
+    baths: 1,
+    sqft:  "",
+    status: "Available",
+
+    monthlyPayment: 797,
+    moveIn:         2000,
+    lockedPrice:    77604,
+    termText:       "30-year owner financing (contract for deed)",
+
     heroPhoto: "",
     photos:    [],
   },
@@ -3155,6 +3177,26 @@ const HOMES = [
     photos:    [],
   },
   {
+    id: "johnstown-pa-648-linden",
+    address:     "648 Linden Ave",
+    zip:         "15902",
+    description: "These are generally the buyer qualifications we look for:. No recent evictions within the last 3 years. Verifiable employment or business income that supports approximately a 3.5x gross income multiplier relative to the monthly payment. Buyer understands the condition of the property and that some homes may require minor repairs or improvementsmore or schedule a showing!",
+    city:  "Johnstown",
+    state: "PA",
+    beds:  2,
+    baths: 1,
+    sqft:  "",
+    status: "Available",
+
+    monthlyPayment: 799,
+    moveIn:         2000,
+    lockedPrice:    77638,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
     id: "eaststlouis-il-225-63rd",
     address:     "225 N 63rd St",
     zip:         "62203",
@@ -3169,6 +3211,26 @@ const HOMES = [
     monthlyPayment: 595,
     moveIn:         1995,
     lockedPrice:    49995,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "peoria-il-1521-westmoreland",
+    address:     "1521 S Westmoreland",
+    zip:         "61605",
+    description: "Handyman special. 968 sqft",
+    city:  "Peoria",
+    state: "IL",
+    beds:  2,
+    baths: 1,
+    sqft:  "968",
+    status: "Available",
+
+    monthlyPayment: 595,
+    moveIn:         1500,
+    lockedPrice:    62000,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",

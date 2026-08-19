@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (155 live, rebuilt from master published 2026-08-17) --- */
+/* --- the homes (155 live, rebuilt from master published 2026-08-19) --- */
 const HOMES = [
   {
     id: "decatur-il-1739-gulick",

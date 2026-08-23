@@ -399,7 +399,7 @@ const HOMES = [
 
     features: { central_air: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/cahokia-il-505-chaudet-1.jpg", "images/cahokia-il-505-chaudet-2.jpg", "images/cahokia-il-505-chaudet-3.jpg", "images/cahokia-il-505-chaudet-4.jpg", "images/cahokia-il-505-chaudet-5.jpg"],
   },
   {
     id: "decatur-il-1143-cleveland",
@@ -1033,7 +1033,7 @@ const HOMES = [
 
     features: { garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
-    photos:    ["images/decatur-il-785-cantrell-1.jpg", "images/decatur-il-785-cantrell-2.jpg", "images/decatur-il-785-cantrell-3.jpg", "images/decatur-il-785-cantrell-4.jpg", "images/decatur-il-785-cantrell-5.jpg", "images/decatur-il-785-cantrell-6.jpg", "images/decatur-il-785-cantrell-7.jpg", "images/decatur-il-785-cantrell-8.jpg", "images/decatur-il-785-cantrell-9.jpg", "images/decatur-il-785-cantrell-10.jpg", "images/decatur-il-785-cantrell-11.jpg", "images/decatur-il-785-cantrell-12.jpg", "images/decatur-il-785-cantrell-13.jpg", "images/decatur-il-785-cantrell-14.jpg", "images/decatur-il-785-cantrell-15.jpg", "images/decatur-il-785-cantrell-16.jpg", "images/decatur-il-785-cantrell-17.jpg", "images/decatur-il-785-cantrell-18.jpg", "images/decatur-il-785-cantrell-19.jpg", "images/decatur-il-785-cantrell-20.jpg", "images/decatur-il-785-cantrell-21.jpg", "images/decatur-il-785-cantrell-22.jpg", "images/decatur-il-785-cantrell-23.jpg", "images/decatur-il-785-cantrell-24.jpg", "images/decatur-il-785-cantrell-25.jpg"],
+    photos:    ["images/decatur-il-785-cantrell-1.jpg", "images/decatur-il-785-cantrell-2.jpg", "images/decatur-il-785-cantrell-3.jpg", "images/decatur-il-785-cantrell-4.jpg", "images/decatur-il-785-cantrell-5.jpg", "images/decatur-il-785-cantrell-6.jpg", "images/decatur-il-785-cantrell-7.jpg", "images/decatur-il-785-cantrell-8.jpg", "images/decatur-il-785-cantrell-9.jpg", "images/decatur-il-785-cantrell-10.jpg", "images/decatur-il-785-cantrell-11.jpg", "images/decatur-il-785-cantrell-12.jpg", "images/decatur-il-785-cantrell-13.jpg", "images/decatur-il-785-cantrell-14.jpg", "images/decatur-il-785-cantrell-15.jpg", "images/decatur-il-785-cantrell-16.jpg", "images/decatur-il-785-cantrell-17.jpg", "images/decatur-il-785-cantrell-18.jpg", "images/decatur-il-785-cantrell-19.jpg", "images/decatur-il-785-cantrell-20.jpg", "images/decatur-il-785-cantrell-21.jpg", "images/decatur-il-785-cantrell-22.jpg", "images/decatur-il-785-cantrell-23.jpg", "images/decatur-il-785-cantrell-24.jpg"],
   },
   {
     id: "cahokia-il-709-st",
@@ -1505,7 +1505,7 @@ const HOMES = [
 
     features: { backyard: "yes", storage_shed: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/nokomis-il-435-cedar-1.jpg", "images/nokomis-il-435-cedar-2.jpg", "images/nokomis-il-435-cedar-3.jpg", "images/nokomis-il-435-cedar-4.jpg", "images/nokomis-il-435-cedar-5.jpg"],
   },
   {
     id: "peoria-il-715-thrush",

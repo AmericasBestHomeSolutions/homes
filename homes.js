@@ -18,13 +18,13 @@ const HOMES = [
   {
     id: "stlouis-mo-5461-hamilton",
     address:     "5461 Hamilton Avenue",
-    zip:         "63136.0",
+    zip:         "63136",
     description: "1,066 SF Home, located on a 3,200 SF lot. Asphalt driveway, ceiling fans",
     city:  "St. Louis",
     state: "MO",
     beds:  2,
     baths: 1,
-    sqft:  "1066.0",
+    sqft:  "1066",
     status: "Available",
 
     monthlyPayment: 750,
@@ -39,7 +39,7 @@ const HOMES = [
   {
     id: "stlouis-mo-5816-hodiamont",
     address:     "5816 Hodiamont Ave",
-    zip:         "63136.0",
+    zip:         "63136",
     city:  "St. Louis",
     state: "MO",
     beds:  4,
@@ -58,7 +58,7 @@ const HOMES = [
   {
     id: "stlouis-mo-1830-kienlen",
     address:     "1830 Kienlen Ave",
-    zip:         "63133.0",
+    zip:         "63133",
     city:  "St. Louis",
     state: "MO",
     beds:  2,
@@ -77,12 +77,12 @@ const HOMES = [
   {
     id: "eaststlouis-il-1847-56th",
     address:     "1847 N 56th St",
-    zip:         "62204.0",
+    zip:         "62204",
     city:  "East St. Louis",
     state: "IL",
     beds:  1,
     baths: 1,
-    sqft:  "480.0",
+    sqft:  "480",
     status: "Available",
 
     monthlyPayment: 650,
@@ -96,13 +96,13 @@ const HOMES = [
   {
     id: "alton-il-212-21st",
     address:     "212 E 21st St",
-    zip:         "62002.0",
+    zip:         "62002",
     description: "1384 sqft. Last tenant left about a month ago. They had started some repairs.. Ken’s notes: This isn’t a bad house. Structurally it’s solid. It has a little roof damage that has been allowing water to mess up the inside wall a little. It is my opinion that a tree limb fell and put a small hole in the roof and it went un fixed for a while. It’s an easy fix to the roof and to the inside. Power was on not long ago. The house needs a major clean out. It doesn’t smell but there’s a lot of “stuff” in it",
     city:  "Alton",
     state: "IL",
     beds:  3,
     baths: 2,
-    sqft:  "1384.0",
+    sqft:  "1384",
     status: "Available",
 
     monthlyPayment: 700,
@@ -183,7 +183,7 @@ const HOMES = [
     state: "MI",
     beds:  4,
     baths: 1,
-    sqft:  "926.0",
+    sqft:  "926",
     status: "Available",
 
     monthlyPayment: 1179,
@@ -204,7 +204,7 @@ const HOMES = [
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "968.0",
+    sqft:  "968",
     status: "Available",
 
     monthlyPayment: 595,
@@ -237,7 +237,7 @@ const HOMES = [
   {
     id: "decatur-il-1818-clay",
     address:     "1818 E Clay St",
-    zip:         "62521.0",
+    zip:         "62521",
     description: "Large home with a basememt, large back yard, 1520 sf, all systems are working, replacing the water heater",
     city:  "Decatur",
     state: "IL",
@@ -285,7 +285,7 @@ const HOMES = [
     state: "IL",
     beds:  4,
     baths: 1.5,
-    sqft:  "800.0",
+    sqft:  "800",
     status: "Available",
 
     monthlyPayment: 975.44,
@@ -306,7 +306,7 @@ const HOMES = [
     state: "IL",
     beds:  3,
     baths: 2,
-    sqft:  "1338.0",
+    sqft:  "1338",
     status: "Available",
 
     monthlyPayment: 595,
@@ -326,7 +326,7 @@ const HOMES = [
     state: "IL",
     beds:  3,
     baths: 1,
-    sqft:  "624.0",
+    sqft:  "624",
     status: "Available",
 
     monthlyPayment: 788,
@@ -347,7 +347,7 @@ const HOMES = [
     state: "MO",
     beds:  2,
     baths: 1,
-    sqft:  "734.0",
+    sqft:  "734",
     status: "Available",
 
     monthlyPayment: 1000,
@@ -368,7 +368,7 @@ const HOMES = [
     state: "MI",
     beds:  2,
     baths: 1,
-    sqft:  "714.0",
+    sqft:  "714",
     status: "Available",
 
     monthlyPayment: 850,
@@ -383,13 +383,13 @@ const HOMES = [
   {
     id: "cahokia-il-505-chaudet",
     address:     "505 Chaudet Ave",
-    zip:         "62206.0",
+    zip:         "62206",
     description: "The property is approx. 780 sq ft., and includes a newer furnace and air conditioning unit, all systems are working as far as we are aware",
     city:  "Cahokia",
     state: "IL",
     beds:  3,
     baths: 1,
-    sqft:  "780.0",
+    sqft:  "780",
     status: "Available",
 
     monthlyPayment: 975.22,
@@ -404,7 +404,7 @@ const HOMES = [
   {
     id: "decatur-il-1143-cleveland",
     address:     "1143 E CLEVELAND AVE",
-    zip:         "62521.0",
+    zip:         "62521",
     description: "Recently passed all city inspection after much needed repairs",
     city:  "Decatur",
     state: "IL",
@@ -424,13 +424,13 @@ const HOMES = [
   {
     id: "peoria-il-2410-ellis",
     address:     "2410 N Ellis St",
-    zip:         "61604.0",
+    zip:         "61604",
     description: "4BR/1BA single-family home in Auburndale neighborhood",
     city:  "Peoria",
     state: "IL",
     beds:  4,
     baths: 1,
-    sqft:  "1202.0",
+    sqft:  "1202",
     status: "Available",
 
     monthlyPayment: 915,
@@ -444,7 +444,7 @@ const HOMES = [
   {
     id: "stlouis-mo-5828-ferris",
     address:     "5828 Ferris Ave.",
-    zip:         "63120.0",
+    zip:         "63120",
     city:  "St. Louis",
     state: "MO",
     beds:  2,
@@ -469,7 +469,7 @@ const HOMES = [
     state: "MI",
     beds:  2,
     baths: 1,
-    sqft:  "806.0",
+    sqft:  "806",
     status: "Available",
 
     monthlyPayment: 850,
@@ -490,7 +490,7 @@ const HOMES = [
     state: "IL",
     beds:  3,
     baths: 1,
-    sqft:  "1064.0",
+    sqft:  "1064",
     status: "Available",
 
     monthlyPayment: 950,
@@ -504,12 +504,12 @@ const HOMES = [
   {
     id: "decatur-il-2067-maple",
     address:     "2067 N Maple Ave",
-    zip:         "62526.0",
+    zip:         "62526",
     city:  "Decatur",
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "840.0",
+    sqft:  "840",
     status: "Available",
 
     monthlyPayment: 975,
@@ -523,13 +523,13 @@ const HOMES = [
   {
     id: "cahokia-il-107-judith",
     address:     "107 Judith Ln",
-    zip:         "62206.0",
+    zip:         "62206",
     description: "Back on the market. 1453 sqft. Garage has been converted into a bedroom. Utilities might be on. Possible plumbing issues. Tub and bathroom sink are not draining",
     city:  "Cahokia",
     state: "IL",
     beds:  3,
     baths: 2,
-    sqft:  "1453.0",
+    sqft:  "1453",
     status: "Available",
 
     monthlyPayment: 950,
@@ -544,12 +544,12 @@ const HOMES = [
   {
     id: "granitecity-il-1734-spruce",
     address:     "1734 Spruce St",
-    zip:         "62040.0",
+    zip:         "62040",
     city:  "Granite City",
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "720.0",
+    sqft:  "720",
     status: "Available",
 
     monthlyPayment: 745,
@@ -563,13 +563,13 @@ const HOMES = [
   {
     id: "danville-il-417-anderson",
     address:     "417 N Anderson St",
-    zip:         "61832.0",
+    zip:         "61832",
     description: "1082 sq ft, Basement, no major issues, cosmetic",
     city:  "Danville",
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "1082.0",
+    sqft:  "1082",
     status: "Available",
 
     monthlyPayment: 725,
@@ -590,7 +590,7 @@ const HOMES = [
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "700.0",
+    sqft:  "700",
     status: "Available",
 
     monthlyPayment: 995,
@@ -605,13 +605,13 @@ const HOMES = [
   {
     id: "moweaqua-il-221-cherry",
     address:     "221 E Cherry St",
-    zip:         "62550.0",
+    zip:         "62550",
     description: "221 E Cherry St. Moweaqua, IL 62550. Clean 3 bedroom 2 bath.. 1030sqft on a 6098 sqft lot.. Privacy of a single family home in a big lot.. prime location. Quiet neighborhood. Well maintained house. Good mechanicals.. newer water heater.. metal roof. in great condition.. Great foundation & Structure.. Central A&M School district. current property tax $441. 3x the monthly payments",
     city:  "Moweaqua",
     state: "IL",
     beds:  3,
     baths: 2,
-    sqft:  "1030.0",
+    sqft:  "1030",
     status: "Available",
 
     monthlyPayment: 1395,
@@ -632,7 +632,7 @@ const HOMES = [
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "1639.0",
+    sqft:  "1639",
     status: "Available",
 
     monthlyPayment: 1085,
@@ -653,7 +653,7 @@ const HOMES = [
     state: "GA",
     beds:  2,
     baths: 1,
-    sqft:  "1364.0",
+    sqft:  "1364",
     status: "Available",
 
     monthlyPayment: 887.58,
@@ -674,7 +674,7 @@ const HOMES = [
     state: "GA",
     beds:  2,
     baths: 1,
-    sqft:  "1036.0",
+    sqft:  "1036",
     status: "Available",
 
     monthlyPayment: 918.94,
@@ -695,7 +695,7 @@ const HOMES = [
     state: "GA",
     beds:  2,
     baths: 1,
-    sqft:  "1335.0",
+    sqft:  "1335",
     status: "Available",
 
     monthlyPayment: 953.58,
@@ -716,7 +716,7 @@ const HOMES = [
     state: "IL",
     beds:  2,
     baths: 1.5,
-    sqft:  "1337.0",
+    sqft:  "1337",
     status: "Available",
 
     monthlyPayment: 600,
@@ -730,13 +730,13 @@ const HOMES = [
   {
     id: "decatur-il-1553-walnut",
     address:     "1553 E Walnut St",
-    zip:         "62526.0",
+    zip:         "62526",
     description: "Two Garages. 960 sq ft. Enclosed Front Porch. 2025 Updates: New Water Lines, New Windows, New Flooring, New Stove/Fridge. Water, Electric & Gas On. All Systems Working. Proof of Income of 2.5 times the Monthly Payment (or Min of $1987.50/month)",
     city:  "Decatur",
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "960.0",
+    sqft:  "960",
     status: "Available",
 
     monthlyPayment: 795,
@@ -751,13 +751,13 @@ const HOMES = [
   {
     id: "peoria-il-1034-tonti",
     address:     "1034 S Tonti Cir.",
-    zip:         "61605.0",
+    zip:         "61605",
     description: "600 Sqft. Large Yard. Hardwood Floors. Vinyl Siding",
     city:  "Peoria",
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "600.0",
+    sqft:  "600",
     status: "Available",
 
     monthlyPayment: 750,
@@ -772,7 +772,7 @@ const HOMES = [
   {
     id: "decatur-il-1746-woodford",
     address:     "1746 N Woodford St, Decatur, IL 62526",
-    zip:         "62526.0",
+    zip:         "62526",
     description: "previously filled 2k down, 89k, 895 per month. please market for higher if FEASIBLE otherwise, OK with whatever pricing as long as monthly payment is equal to or greater than previous. recently vacated, mechanicals good, furnace less than 1 year old",
     city:  "Decatur",
     state: "IL",
@@ -792,13 +792,13 @@ const HOMES = [
   {
     id: "granitecity-il-2410-sheridan",
     address:     "2410 Sheridan Ave",
-    zip:         "62040.0",
+    zip:         "62040",
     description: "990 Sq Ft",
     city:  "Granite City",
     state: "IL",
     beds:  3,
     baths: 1,
-    sqft:  "990.0",
+    sqft:  "990",
     status: "Available",
 
     monthlyPayment: 700,
@@ -812,7 +812,7 @@ const HOMES = [
   {
     id: "stlouis-mo-32-connolly",
     address:     "32 Connolly Dr",
-    zip:         "63135.0",
+    zip:         "63135",
     description: "The house is in a very good area. It needs some cosmetic work but there is lots of upside. All utilities should be working",
     city:  "St. Louis",
     state: "MO",
@@ -832,7 +832,7 @@ const HOMES = [
   {
     id: "stlouis-mo-4919-thekla",
     address:     "4919 Thekla Ave",
-    zip:         "63115.0",
+    zip:         "63115",
     description: "The house needs some work, but nothing too major. It just needs a lot of minor cosmetic work. Electrical, plumbing, water heater, & furnace look decent. There is an additional area in the basement that looks like it was used as a bedroom/sleeping area. No roof leaks",
     city:  "St. Louis",
     state: "MO",
@@ -859,7 +859,7 @@ const HOMES = [
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "877.0",
+    sqft:  "877",
     status: "Pending",
 
     monthlyPayment: 995,
@@ -879,7 +879,7 @@ const HOMES = [
     state: "AL",
     beds:  3,
     baths: 1,
-    sqft:  "801.0",
+    sqft:  "801",
     status: "Available",
 
     monthlyPayment: 595,
@@ -900,7 +900,7 @@ const HOMES = [
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "624.0",
+    sqft:  "624",
     status: "Available",
 
     monthlyPayment: 595,
@@ -915,13 +915,13 @@ const HOMES = [
   {
     id: "hartfordcity-in-822-franklin",
     address:     "822 W Franklin St",
-    zip:         "47348.0",
+    zip:         "47348",
     description: "1568 Sq Feet. Sits on a desirable corner lot with a large yard. The property features a newer AC unit, a spacious floor plan, and a large front patio perfect for relaxing outdoors or entertaining guests.. With plenty of room to add value and make it your own, this home is full of possibilities. Soft floors in some areas of the home will require plywood to solidify. Water and Electricity are on and functional",
     city:  "Hartford City",
     state: "IN",
     beds:  4,
     baths: 1.5,
-    sqft:  "1568.0",
+    sqft:  "1568",
     status: "Available",
 
     monthlyPayment: 1075,
@@ -936,13 +936,13 @@ const HOMES = [
   {
     id: "eaststlouis-il-1311-51st",
     address:     "1311 N 51st St.",
-    zip:         "62204.0",
+    zip:         "62204",
     description: "1 bed. 1 bath. 700 sq. ft.. Average 1/1 rent in the area is $895/month (lots of room for an investor to profit). / Recently cleaned out. Needs water heater, and furnace. \\+ Will have to have utility companies put electric and gas meters back on the house",
     city:  "East St. Louis",
     state: "IL",
     beds:  1,
     baths: 1,
-    sqft:  "700.0",
+    sqft:  "700",
     status: "Available",
 
     monthlyPayment: 400,
@@ -956,13 +956,13 @@ const HOMES = [
   {
     id: "decatur-il-1439-jasper",
     address:     "1439 N Jasper",
-    zip:         "62526.0",
+    zip:         "62526",
     description: "Needs a bathroom, and ceiling drywall needs to be repaired",
     city:  "Decatur",
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "780.0",
+    sqft:  "780",
     status: "Available",
 
     monthlyPayment: 850,
@@ -976,13 +976,13 @@ const HOMES = [
   {
     id: "decatur-il-1828-main",
     address:     "1828 E Main St",
-    zip:         "62521.0",
+    zip:         "62521",
     description: "1050 sf. Its listed as 2 bed but I think there could be a 3rd bedroom",
     city:  "Decatur",
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "1050.0",
+    sqft:  "1050",
     status: "Available",
 
     monthlyPayment: 895,
@@ -996,13 +996,13 @@ const HOMES = [
   {
     id: "harvel-il-303-cedar",
     address:     "303 Cedar St.",
-    zip:         "62538.0",
+    zip:         "62538",
     description: "Sq. Ft: 1,745. Lot size: 0.52 acres.. Handyman special! Huge property needing some TLC",
     city:  "Harvel",
     state: "IL",
     beds:  4,
     baths: 2,
-    sqft:  "1745.0",
+    sqft:  "1745",
     status: "Available",
 
     monthlyPayment: 795,
@@ -1017,13 +1017,13 @@ const HOMES = [
   {
     id: "decatur-il-785-cantrell",
     address:     "785 E Cantrell St",
-    zip:         "62521.0",
+    zip:         "62521",
     description: "720 sqft.Detached garage a.ll systems are working vacant",
     city:  "Decatur",
     state: "IL",
     beds:  2,
     baths: 2,
-    sqft:  "720.0",
+    sqft:  "720",
     status: "Available",
 
     monthlyPayment: 895,
@@ -1038,7 +1038,7 @@ const HOMES = [
   {
     id: "cahokia-il-709-st",
     address:     "709 St. Paul Dr.",
-    zip:         "62206.0",
+    zip:         "62206",
     description: "Has a garage. House was renovated in 2024. Previous tenant left a mess so it will need a cleanout",
     city:  "Cahokia",
     state: "IL",
@@ -1059,13 +1059,13 @@ const HOMES = [
   {
     id: "decatur-il-1421-sedgwick",
     address:     "1421 Sedgwick St",
-    zip:         "62521.0",
+    zip:         "62521",
     description: "1421 Sedgwick St, Decatur, Il 62521. Clean 2bd/1ba + garage. 2 bedroom / 1 bathroom - 950 square feet / 6,700 sqft lot. All mechanicals good. Clean basement.. Detached Garage – Convenient parking and extra storage space.. Roof in decent shape. Newly Stained cabinets.. Nice size lot with a long driveway for safer off-street parking.. Properly tax $361 a year. – close to jobs. less than 10 minutes to Johns Hill Magnet school & Hill park, Decatur lake, to 2 major hospitals, Millikin University and Caterpillar factory... No occupancy inspection needed.. Photos from B.O.G. Sam Becker:",
     city:  "Decatur",
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "950.0",
+    sqft:  "950",
     status: "Available",
 
     monthlyPayment: 725,
@@ -1080,13 +1080,13 @@ const HOMES = [
   {
     id: "decatur-il-1811-morgan",
     address:     "1811 N Morgan St",
-    zip:         "62526.0",
+    zip:         "62526",
     description: "882 sq ft. this house was recently rehabbed, new roof 2025, new furnace and water heater 2026. a buyer moved in for 3 months and left trash. It needs a clean up and will be great again. the front window glass needs to be replaced",
     city:  "Decatur",
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "882.0",
+    sqft:  "882",
     status: "Available",
 
     monthlyPayment: 875,
@@ -1100,13 +1100,13 @@ const HOMES = [
   {
     id: "eaststlouis-il-838-23rd",
     address:     "838 N 23rd Street",
-    zip:         "62205.0",
+    zip:         "62205",
     description: "Just had new doors and new stoved installed by Kelly Hart. The yard cleaned up from the items that had been there( 8/17/2026)",
     city:  "East St. Louis",
     state: "IL",
     beds:  3,
     baths: 1,
-    sqft:  "1107.0",
+    sqft:  "1107",
     status: "Available",
 
     monthlyPayment: 775,
@@ -1121,13 +1121,13 @@ const HOMES = [
   {
     id: "decatur-il-1705-st",
     address:     "1705 E North St",
-    zip:         "62521.0",
+    zip:         "62521",
     description: "900 Sq Ft. nice corner house, large yard. Please tell buyers they need 3x monthly mortgage in income",
     city:  "Decatur",
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "900.0",
+    sqft:  "900",
     status: "Available",
 
     monthlyPayment: 850,
@@ -1142,7 +1142,7 @@ const HOMES = [
   {
     id: "stlouis-mo-5363-arlington",
     address:     "5363 Arlington Ave",
-    zip:         "63120.0",
+    zip:         "63120",
     description: "5363 Arlington Ave, St Louis, MO 63120. 2 bed / 1 bath. $2,500 down. $850/month. $79,000 purchase price. Seller: White Oak Construction & Design, LLC. Pictures:",
     city:  "St. Louis",
     state: "MO",
@@ -1162,13 +1162,13 @@ const HOMES = [
   {
     id: "decatur-il-1252-whitmer",
     address:     "1252 E Whitmer St",
-    zip:         "62521.0",
+    zip:         "62521",
     description: "1252 E Whitmer St, Decatur, IL 62521. 2 Beds | 1 Bath | 861 Sq. Ft.. SOLD AS IS. Features and Disclosures:. Solid foundation with good bones. All Mechanicals in great condition. Updated Electrical Panel and Circuit Breakers. Newer Windows and Water Heater. Located minutes from Decatur Lake, near Hill Park and Hill Magnet School. Newer Windows and Water Heater. Application Process to qualify",
     city:  "Decatur",
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "861.0",
+    sqft:  "861",
     status: "Available",
 
     monthlyPayment: 975,
@@ -1182,13 +1182,13 @@ const HOMES = [
   {
     id: "hartfordcity-in-612-cherry",
     address:     "612 N Cherry St",
-    zip:         "47348.0",
+    zip:         "47348",
     description: "HANDYMAN SPECIAL — HARTFORD CITY. 3 bed / 1.5 bath • 1,592 sqft • ALL ONE LEVEL. Detached garage + workshop • Central air • City utilities. Needs work. OWNER FINANCING — no bank needed. Sold as-is. Handy buyers, this is your shot at ownership.. Electricity and Water are both on",
     city:  "Hartford City",
     state: "IN",
     beds:  3,
     baths: 1.5,
-    sqft:  "1592.0",
+    sqft:  "1592",
     status: "Available",
 
     monthlyPayment: 875,
@@ -1203,13 +1203,13 @@ const HOMES = [
   {
     id: "springfield-il-2109-martin",
     address:     "2109 S Martin Luther King Jr. Dr",
-    zip:         "62703.0",
+    zip:         "62703",
     description: "750 sqft/7000 sqft lot, no basement, tenant just moved out, everything is working. Well maintained house, all mechanical good, foundation is in great condition. Fresh paint/newly refinished cabinets, has a driveway.. 6 minutes to Springfield lake and 3 different parks.. Safe and peaceful area of Springfield",
     city:  "Springfield",
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "750.0",
+    sqft:  "750",
     status: "Available",
 
     monthlyPayment: 950,
@@ -1224,7 +1224,7 @@ const HOMES = [
   {
     id: "decatur-il-715-cushing",
     address:     "715 W Cushing St,",
-    zip:         "62526.0",
+    zip:         "62526",
     city:  "Decatur",
     state: "IL",
     beds:  3,
@@ -1243,13 +1243,13 @@ const HOMES = [
   {
     id: "eaststlouis-il-516-84th",
     address:     "516 N 84th street",
-    zip:         "62203.0",
+    zip:         "62203",
     description: "800 square ft",
     city:  "East St. Louis",
     state: "IL",
     beds:  3,
     baths: 1,
-    sqft:  "800.0",
+    sqft:  "800",
     status: "Available",
 
     monthlyPayment: 725,
@@ -1263,13 +1263,13 @@ const HOMES = [
   {
     id: "madison-il-2021-edwardsville",
     address:     "2021 Edwardsville, Rd.",
-    zip:         "62060.0",
+    zip:         "62060",
     description: "This house is sold AS-IS. 2beds upstairs, 1 bath. 1053 sqft. The living room and dining room have original hardwood floors, lots of natural light and are good size. The kitchen has plenty of cabinets and counters to take advantage of the space. There is a mudroom for your laundry. Large backyard. Plenty of parking on side of house. This property is on 3 lots. No basement. This home can be lived in while you work at your own pace to update it and make it your own.. If an investor buys it, they get their own dwelling insurance",
     city:  "Madison",
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "1053.0",
+    sqft:  "1053",
     status: "Available",
 
     monthlyPayment: 900,
@@ -1284,13 +1284,13 @@ const HOMES = [
   {
     id: "peoria-il-1319-aiken",
     address:     "1319 W. Aiken Ave",
-    zip:         "61605.0",
+    zip:         "61605",
     description: "768 sqft",
     city:  "Peoria",
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "768.0",
+    sqft:  "768",
     status: "Available",
 
     monthlyPayment: 850,
@@ -1304,13 +1304,13 @@ const HOMES = [
   {
     id: "belleville-il-718-church",
     address:     "718 South Church Street",
-    zip:         "62220.0",
+    zip:         "62220",
     description: "850 square feet Full basement",
     city:  "Belleville",
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "850.0",
+    sqft:  "850",
     status: "Available",
 
     monthlyPayment: 725,
@@ -1325,13 +1325,13 @@ const HOMES = [
   {
     id: "stlouis-mo-5346-janet",
     address:     "5346 Janet Avenue",
-    zip:         "63136.0",
+    zip:         "63136",
     description: "720 square feet",
     city:  "St. Louis",
     state: "MO",
     beds:  2,
     baths: 1,
-    sqft:  "720.0",
+    sqft:  "720",
     status: "Available",
 
     monthlyPayment: 895,
@@ -1345,13 +1345,13 @@ const HOMES = [
   {
     id: "decatur-il-1180-mueller",
     address:     "1180 E Mueller Ave",
-    zip:         "62526.0",
+    zip:         "62526",
     description: "768 Sqft. Unfinished basement, recently vacated",
     city:  "Decatur",
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "768.0",
+    sqft:  "768",
     status: "Available",
 
     monthlyPayment: 750,
@@ -1366,7 +1366,7 @@ const HOMES = [
   {
     id: "decatur-il-2081-college",
     address:     "2081 N College St",
-    zip:         "62526.0",
+    zip:         "62526",
     description: "Roof is NICE. No shingles missing. No leaks!. Foundation is NEW. Basement extremely DRY. Mechanicals in GREAT shape",
     city:  "Decatur",
     state: "IL",
@@ -1387,13 +1387,13 @@ const HOMES = [
   {
     id: "rossville-il-304-gilbert",
     address:     "304 Gilbert St.",
-    zip:         "60963.0",
+    zip:         "60963",
     description: "2 bed, 1 bath home offering approximately 950 sq. ft. on a huge lot in a desirable neighborhood with an excellent school district. The home features vinyl siding, a newer metal roof, and is in excellent exterior condition. Located in a great town, this property offers plenty of outdoor space and strong curb appeal, making it an excellent opportunity for an owner-occupant or investor",
     city:  "Rossville",
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "950.0",
+    sqft:  "950",
     status: "Available",
 
     monthlyPayment: 875,
@@ -1408,13 +1408,13 @@ const HOMES = [
   {
     id: "evansville-in-731-florida",
     address:     "731 E Florida St,",
-    zip:         "47711.0",
+    zip:         "47711",
     description: "NEW PICTURES! AND 3D WALKTHROUGH ON ZILLOW",
     city:  "Evansville",
     state: "IN",
     beds:  3,
     baths: 2,
-    sqft:  "1035.0",
+    sqft:  "1035",
     status: "Available",
 
     monthlyPayment: 875,
@@ -1428,13 +1428,13 @@ const HOMES = [
   {
     id: "evansville-in-1404-cody",
     address:     "1404 Cody St,",
-    zip:         "47710.0",
+    zip:         "47710",
     description: "NEW PICTURES! AND 3D WALKTHROUGH ON ZILLOW",
     city:  "Evansville",
     state: "IN",
     beds:  2,
     baths: 1,
-    sqft:  "658.0",
+    sqft:  "658",
     status: "Available",
 
     monthlyPayment: 850,
@@ -1448,13 +1448,13 @@ const HOMES = [
   {
     id: "westfrankfort-il-205-st",
     address:     "205 East St. Louis Street",
-    zip:         "62896.0",
+    zip:         "62896",
     description: "2 Bedrooms | 1 Bathroom | 1,135 Sq. Ft. | 7,840 Sq. Ft. Lot | Detached Garage. Needs toilet. Needs plumbing connected in basement. Estimated at about $2500.. Property Value: $74,900.00. Down Payment: $2,000.00. Principal & Interest Payment: $713.19. Annual Tax: $2,539.00. Monthly Tax: $211.58. Monthly Expense #1: $30.00. Total Monthly Expenses: $241.58. Total Monthly Payment: $954.77",
     city:  "West Frankfort",
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "1135.0",
+    sqft:  "1135",
     status: "Available",
 
     monthlyPayment: 954.77,
@@ -1475,7 +1475,7 @@ const HOMES = [
     state: "MO",
     beds:  2,
     baths: 1,
-    sqft:  "1000.0",
+    sqft:  "1000",
     status: "Available",
 
     monthlyPayment: 895,
@@ -1489,13 +1489,13 @@ const HOMES = [
   {
     id: "nokomis-il-435-cedar",
     address:     "435 S Cedar Street",
-    zip:         "62075.0",
+    zip:         "62075",
     description: "Single story residence Built in 1910, this 962 sq ft home offers a perfect blend of historic charm and practical living.. Key Features: Bedrooms and full bathroom on single level for ease of access. Small utility / Wet room just off the kitchen. Large yard with included storage shed.. Functional Layout: Includes a sizable kitchen with abundant cabinetry, and a versatile front living room area",
     city:  "Nokomis",
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "962.0",
+    sqft:  "962",
     status: "Available",
 
     monthlyPayment: 709.28,
@@ -1516,7 +1516,7 @@ const HOMES = [
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "804.0",
+    sqft:  "804",
     status: "Available",
 
     monthlyPayment: 650,
@@ -1536,7 +1536,7 @@ const HOMES = [
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "1187.0",
+    sqft:  "1187",
     status: "Available",
 
     monthlyPayment: 450,
@@ -1556,7 +1556,7 @@ const HOMES = [
     state: "IL",
     beds:  3,
     baths: 1,
-    sqft:  "936.0",
+    sqft:  "936",
     status: "Available",
 
     monthlyPayment: 625,
@@ -1576,7 +1576,7 @@ const HOMES = [
     state: "IL",
     beds:  2,
     baths: 2,
-    sqft:  "864.0",
+    sqft:  "864",
     status: "Available",
 
     monthlyPayment: 825,
@@ -1597,7 +1597,7 @@ const HOMES = [
     state: "IL",
     beds:  5,
     baths: 3,
-    sqft:  "1450.0",
+    sqft:  "1450",
     status: "Available",
 
     monthlyPayment: 1025,
@@ -1617,7 +1617,7 @@ const HOMES = [
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "900.0",
+    sqft:  "900",
     status: "Available",
 
     monthlyPayment: 925,
@@ -1659,7 +1659,7 @@ const HOMES = [
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "800.0",
+    sqft:  "800",
     status: "Available",
 
     monthlyPayment: 720,
@@ -1735,7 +1735,7 @@ const HOMES = [
   {
     id: "decatur-il-238-peoria",
     address:     "238 W Peoria Ave.",
-    zip:         "62526.0",
+    zip:         "62526",
     description: "2 bedroom 1 bathroom, new water heater and ready to fill. I will give the",
     city:  "Decatur",
     state: "IL",
@@ -1844,7 +1844,7 @@ const HOMES = [
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "988.0",
+    sqft:  "988",
     status: "Available",
 
     monthlyPayment: 815,
@@ -1885,7 +1885,7 @@ const HOMES = [
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "704.0",
+    sqft:  "704",
     status: "Available",
 
     monthlyPayment: 825,
@@ -1946,7 +1946,7 @@ const HOMES = [
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "890.0",
+    sqft:  "890",
     status: "Available",
 
     monthlyPayment: 775,
@@ -1981,7 +1981,7 @@ const HOMES = [
   {
     id: "flint-mi-5210-dupont",
     address:     "5210 Dupont St,",
-    zip:         "48505.0",
+    zip:         "48505",
     description: "693 square feet. Full-size basement",
     city:  "Flint",
     state: "MI",
@@ -2108,7 +2108,7 @@ const HOMES = [
     state: "IL",
     beds:  3,
     baths: 1,
-    sqft:  "1318.0",
+    sqft:  "1318",
     status: "Available",
 
     monthlyPayment: 825,
@@ -2128,7 +2128,7 @@ const HOMES = [
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "900.0",
+    sqft:  "900",
     status: "Available",
 
     monthlyPayment: 900,
@@ -2270,7 +2270,7 @@ const HOMES = [
     state: "IL",
     beds:  3,
     baths: 1,
-    sqft:  "950.0",
+    sqft:  "950",
     status: "Available",
 
     monthlyPayment: 825,
@@ -2311,7 +2311,7 @@ const HOMES = [
     state: "MS",
     beds:  3,
     baths: 1,
-    sqft:  "984.0",
+    sqft:  "984",
     status: "Available",
 
     monthlyPayment: 945,
@@ -2453,7 +2453,7 @@ const HOMES = [
     state: "IL",
     beds:  3,
     baths: 1,
-    sqft:  "698.0",
+    sqft:  "698",
     status: "Available",
 
     monthlyPayment: 945,
@@ -2507,7 +2507,7 @@ const HOMES = [
   {
     id: "duquesne-pa-951-high",
     address:     "951 High St",
-    zip:         "15110.0",
+    zip:         "15110",
     description: "Power on, new furnace 2022",
     city:  "Duquesne",
     state: "PA",
@@ -2634,7 +2634,7 @@ const HOMES = [
     state: "IL",
     beds:  3,
     baths: 1,
-    sqft:  "816.0",
+    sqft:  "816",
     status: "Available",
 
     monthlyPayment: 845,
@@ -2648,13 +2648,13 @@ const HOMES = [
   {
     id: "decatur-il-1045-monroe",
     address:     "1045 N Monroe St",
-    zip:         "62522.0",
+    zip:         "62522",
     description: "1094 sq ft; Large property with huge fenced yard and detached garage",
     city:  "Decatur",
     state: "IL",
     beds:  3,
     baths: 2,
-    sqft:  "1094.0",
+    sqft:  "1094",
     status: "Available",
 
     monthlyPayment: 1000,
@@ -2715,7 +2715,7 @@ const HOMES = [
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "800.0",
+    sqft:  "800",
     status: "Available",
 
     monthlyPayment: 750,
@@ -2770,7 +2770,7 @@ const HOMES = [
   {
     id: "cahokiaheights-il-907-frontenac",
     address:     "907 Frontenac St.",
-    zip:         "62206.0",
+    zip:         "62206",
     description: "1092 sq ft",
     city:  "Cahokia Heights",
     state: "IL",
@@ -2831,7 +2831,7 @@ const HOMES = [
   {
     id: "stlouis-mo-8315-eton",
     address:     "8315 Eton Pl St",
-    zip:         "63136.0",
+    zip:         "63136",
     city:  "St. Louis",
     state: "MO",
     beds:  2,
@@ -2856,7 +2856,7 @@ const HOMES = [
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "780.0",
+    sqft:  "780",
     status: "Available",
 
     monthlyPayment: 750,
@@ -2938,7 +2938,7 @@ const HOMES = [
     state: "IL",
     beds:  2,
     baths: 1,
-    sqft:  "880.0",
+    sqft:  "880",
     status: "Available",
 
     monthlyPayment: 460,

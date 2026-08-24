@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (147 live, rebuilt from master published 2026-08-24) --- */
+/* --- the homes (146 live, rebuilt from master published 2026-08-24) --- */
 const HOMES = [
   {
     id: "stlouis-mo-5349-janet",
@@ -889,27 +889,6 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-32-connolly-1.jpg", "images/stlouis-mo-32-connolly-2.jpg", "images/stlouis-mo-32-connolly-3.jpg", "images/stlouis-mo-32-connolly-4.jpg", "images/stlouis-mo-32-connolly-5.jpg", "images/stlouis-mo-32-connolly-6.jpg", "images/stlouis-mo-32-connolly-7.jpg", "images/stlouis-mo-32-connolly-8.jpg", "images/stlouis-mo-32-connolly-9.jpg", "images/stlouis-mo-32-connolly-10.jpg", "images/stlouis-mo-32-connolly-11.jpg", "images/stlouis-mo-32-connolly-12.jpg", "images/stlouis-mo-32-connolly-13.jpg", "images/stlouis-mo-32-connolly-14.jpg", "images/stlouis-mo-32-connolly-15.jpg", "images/stlouis-mo-32-connolly-16.jpg", "images/stlouis-mo-32-connolly-17.jpg", "images/stlouis-mo-32-connolly-18.jpg", "images/stlouis-mo-32-connolly-19.jpg", "images/stlouis-mo-32-connolly-20.jpg", "images/stlouis-mo-32-connolly-21.jpg", "images/stlouis-mo-32-connolly-22.jpg", "images/stlouis-mo-32-connolly-23.jpg", "images/stlouis-mo-32-connolly-24.jpg"],
-  },
-  {
-    id: "stlouis-mo-4919-thekla",
-    address:     "4919 Thekla Ave",
-    zip:         "63115",
-    description: "The house needs some work, but nothing too major. It just needs a lot of minor cosmetic work. Electrical, plumbing, water heater, & furnace look decent. There is an additional area in the basement that looks like it was used as a bedroom/sleeping area. No roof leaks",
-    city:  "St. Louis",
-    state: "MO",
-    beds:  2,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 600,
-    moveIn:         1500,
-    lockedPrice:    60000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { basement: "yes" },
-    heroPhoto: "",
-    photos:    ["images/stlouis-mo-4919-thekla-1.jpg", "images/stlouis-mo-4919-thekla-2.jpg", "images/stlouis-mo-4919-thekla-3.jpg", "images/stlouis-mo-4919-thekla-4.jpg", "images/stlouis-mo-4919-thekla-5.jpg", "images/stlouis-mo-4919-thekla-6.jpg", "images/stlouis-mo-4919-thekla-7.jpg", "images/stlouis-mo-4919-thekla-8.jpg", "images/stlouis-mo-4919-thekla-9.jpg", "images/stlouis-mo-4919-thekla-10.jpg", "images/stlouis-mo-4919-thekla-11.jpg", "images/stlouis-mo-4919-thekla-12.jpg", "images/stlouis-mo-4919-thekla-13.jpg", "images/stlouis-mo-4919-thekla-14.jpg", "images/stlouis-mo-4919-thekla-15.jpg", "images/stlouis-mo-4919-thekla-16.jpg", "images/stlouis-mo-4919-thekla-17.jpg", "images/stlouis-mo-4919-thekla-18.jpg", "images/stlouis-mo-4919-thekla-19.jpg", "images/stlouis-mo-4919-thekla-20.jpg", "images/stlouis-mo-4919-thekla-21.jpg", "images/stlouis-mo-4919-thekla-22.jpg", "images/stlouis-mo-4919-thekla-23.jpg", "images/stlouis-mo-4919-thekla-24.jpg"],
   },
   {
     id: "hammond-il-809-don",

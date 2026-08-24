@@ -53,7 +53,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/centralia-il-514-walnut-1.jpg", "images/centralia-il-514-walnut-2.jpg", "images/centralia-il-514-walnut-3.jpg", "images/centralia-il-514-walnut-4.jpg", "images/centralia-il-514-walnut-5.jpg", "images/centralia-il-514-walnut-6.jpg", "images/centralia-il-514-walnut-7.jpg", "images/centralia-il-514-walnut-8.jpg", "images/centralia-il-514-walnut-9.jpg"],
   },
   {
     id: "montgomery-al-3120-lower",
@@ -116,7 +116,7 @@ const HOMES = [
 
     features: { backyard: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/eaststlouis-il-5050-hallows-1.jpg", "images/eaststlouis-il-5050-hallows-2.jpg", "images/eaststlouis-il-5050-hallows-3.jpg", "images/eaststlouis-il-5050-hallows-4.jpg", "images/eaststlouis-il-5050-hallows-5.jpg", "images/eaststlouis-il-5050-hallows-6.jpg", "images/eaststlouis-il-5050-hallows-7.jpg", "images/eaststlouis-il-5050-hallows-8.jpg", "images/eaststlouis-il-5050-hallows-9.jpg", "images/eaststlouis-il-5050-hallows-10.jpg", "images/eaststlouis-il-5050-hallows-11.jpg", "images/eaststlouis-il-5050-hallows-12.jpg", "images/eaststlouis-il-5050-hallows-13.jpg", "images/eaststlouis-il-5050-hallows-14.jpg", "images/eaststlouis-il-5050-hallows-15.jpg", "images/eaststlouis-il-5050-hallows-16.jpg", "images/eaststlouis-il-5050-hallows-17.jpg", "images/eaststlouis-il-5050-hallows-18.jpg", "images/eaststlouis-il-5050-hallows-19.jpg", "images/eaststlouis-il-5050-hallows-20.jpg", "images/eaststlouis-il-5050-hallows-21.jpg", "images/eaststlouis-il-5050-hallows-22.jpg", "images/eaststlouis-il-5050-hallows-23.jpg", "images/eaststlouis-il-5050-hallows-24.jpg", "images/eaststlouis-il-5050-hallows-25.jpg", "images/eaststlouis-il-5050-hallows-26.jpg", "images/eaststlouis-il-5050-hallows-27.jpg", "images/eaststlouis-il-5050-hallows-28.jpg", "images/eaststlouis-il-5050-hallows-29.jpg"],
   },
   {
     id: "stlouis-mo-5816-hodiamont",
@@ -173,7 +173,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/eaststlouis-il-1847-56th-1.jpg", "images/eaststlouis-il-1847-56th-2.jpg", "images/eaststlouis-il-1847-56th-3.jpg", "images/eaststlouis-il-1847-56th-4.jpg", "images/eaststlouis-il-1847-56th-5.jpg", "images/eaststlouis-il-1847-56th-6.jpg", "images/eaststlouis-il-1847-56th-7.jpg", "images/eaststlouis-il-1847-56th-8.jpg", "images/eaststlouis-il-1847-56th-9.jpg", "images/eaststlouis-il-1847-56th-10.jpg", "images/eaststlouis-il-1847-56th-11.jpg", "images/eaststlouis-il-1847-56th-12.jpg", "images/eaststlouis-il-1847-56th-13.jpg", "images/eaststlouis-il-1847-56th-14.jpg", "images/eaststlouis-il-1847-56th-15.jpg", "images/eaststlouis-il-1847-56th-16.jpg", "images/eaststlouis-il-1847-56th-17.jpg", "images/eaststlouis-il-1847-56th-18.jpg", "images/eaststlouis-il-1847-56th-19.jpg", "images/eaststlouis-il-1847-56th-20.jpg", "images/eaststlouis-il-1847-56th-21.jpg", "images/eaststlouis-il-1847-56th-22.jpg", "images/eaststlouis-il-1847-56th-23.jpg", "images/eaststlouis-il-1847-56th-24.jpg", "images/eaststlouis-il-1847-56th-25.jpg", "images/eaststlouis-il-1847-56th-26.jpg", "images/eaststlouis-il-1847-56th-27.jpg", "images/eaststlouis-il-1847-56th-28.jpg", "images/eaststlouis-il-1847-56th-29.jpg"],
   },
   {
     id: "alton-il-212-21st",
@@ -193,7 +193,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/alton-il-212-21st-1.jpg", "images/alton-il-212-21st-2.jpg", "images/alton-il-212-21st-3.jpg", "images/alton-il-212-21st-4.jpg", "images/alton-il-212-21st-5.jpg", "images/alton-il-212-21st-6.jpg", "images/alton-il-212-21st-7.jpg", "images/alton-il-212-21st-8.jpg", "images/alton-il-212-21st-9.jpg", "images/alton-il-212-21st-10.jpg", "images/alton-il-212-21st-11.jpg", "images/alton-il-212-21st-12.jpg", "images/alton-il-212-21st-13.jpg", "images/alton-il-212-21st-14.jpg", "images/alton-il-212-21st-15.jpg", "images/alton-il-212-21st-16.jpg", "images/alton-il-212-21st-17.jpg", "images/alton-il-212-21st-18.jpg", "images/alton-il-212-21st-19.jpg", "images/alton-il-212-21st-20.jpg", "images/alton-il-212-21st-21.jpg", "images/alton-il-212-21st-22.jpg", "images/alton-il-212-21st-23.jpg", "images/alton-il-212-21st-24.jpg", "images/alton-il-212-21st-25.jpg", "images/alton-il-212-21st-26.jpg", "images/alton-il-212-21st-27.jpg", "images/alton-il-212-21st-28.jpg", "images/alton-il-212-21st-29.jpg", "images/alton-il-212-21st-30.jpg", "images/alton-il-212-21st-31.jpg", "images/alton-il-212-21st-32.jpg", "images/alton-il-212-21st-33.jpg", "images/alton-il-212-21st-34.jpg", "images/alton-il-212-21st-35.jpg", "images/alton-il-212-21st-36.jpg", "images/alton-il-212-21st-37.jpg", "images/alton-il-212-21st-38.jpg", "images/alton-il-212-21st-39.jpg", "images/alton-il-212-21st-40.jpg"],
   },
   {
     id: "johnstown-pa-650-linden",
@@ -233,7 +233,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/johnstown-pa-648-linden-1.jpg", "images/johnstown-pa-648-linden-2.jpg", "images/johnstown-pa-648-linden-3.jpg", "images/johnstown-pa-648-linden-4.jpg", "images/johnstown-pa-648-linden-5.jpg", "images/johnstown-pa-648-linden-6.jpg", "images/johnstown-pa-648-linden-7.jpg", "images/johnstown-pa-648-linden-8.jpg", "images/johnstown-pa-648-linden-9.jpg", "images/johnstown-pa-648-linden-10.jpg", "images/johnstown-pa-648-linden-11.jpg", "images/johnstown-pa-648-linden-12.jpg", "images/johnstown-pa-648-linden-13.jpg", "images/johnstown-pa-648-linden-14.jpg", "images/johnstown-pa-648-linden-15.jpg", "images/johnstown-pa-648-linden-16.jpg", "images/johnstown-pa-648-linden-17.jpg", "images/johnstown-pa-648-linden-18.jpg", "images/johnstown-pa-648-linden-19.jpg"],
   },
   {
     id: "decatur-il-989-packard",
@@ -254,7 +254,7 @@ const HOMES = [
 
     features: { backyard: "yes", basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-989-packard-1.jpg", "images/decatur-il-989-packard-2.jpg", "images/decatur-il-989-packard-3.jpg", "images/decatur-il-989-packard-4.jpg", "images/decatur-il-989-packard-5.jpg", "images/decatur-il-989-packard-6.jpg", "images/decatur-il-989-packard-7.jpg", "images/decatur-il-989-packard-8.jpg", "images/decatur-il-989-packard-9.jpg", "images/decatur-il-989-packard-10.jpg", "images/decatur-il-989-packard-11.jpg", "images/decatur-il-989-packard-12.jpg", "images/decatur-il-989-packard-13.jpg", "images/decatur-il-989-packard-14.jpg", "images/decatur-il-989-packard-15.jpg", "images/decatur-il-989-packard-16.jpg", "images/decatur-il-989-packard-17.jpg", "images/decatur-il-989-packard-18.jpg", "images/decatur-il-989-packard-19.jpg"],
   },
   {
     id: "detroit-mi-12094-littlefield",
@@ -275,7 +275,7 @@ const HOMES = [
 
     features: { fenced_yard: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/detroit-mi-12094-littlefield-1.jpg", "images/detroit-mi-12094-littlefield-2.jpg", "images/detroit-mi-12094-littlefield-3.jpg", "images/detroit-mi-12094-littlefield-4.jpg", "images/detroit-mi-12094-littlefield-5.jpg", "images/detroit-mi-12094-littlefield-6.jpg", "images/detroit-mi-12094-littlefield-7.jpg", "images/detroit-mi-12094-littlefield-8.jpg", "images/detroit-mi-12094-littlefield-9.jpg", "images/detroit-mi-12094-littlefield-10.jpg", "images/detroit-mi-12094-littlefield-11.jpg", "images/detroit-mi-12094-littlefield-12.jpg", "images/detroit-mi-12094-littlefield-13.jpg", "images/detroit-mi-12094-littlefield-14.jpg", "images/detroit-mi-12094-littlefield-15.jpg", "images/detroit-mi-12094-littlefield-16.jpg", "images/detroit-mi-12094-littlefield-17.jpg", "images/detroit-mi-12094-littlefield-18.jpg", "images/detroit-mi-12094-littlefield-19.jpg", "images/detroit-mi-12094-littlefield-20.jpg", "images/detroit-mi-12094-littlefield-21.jpg", "images/detroit-mi-12094-littlefield-22.jpg", "images/detroit-mi-12094-littlefield-23.jpg", "images/detroit-mi-12094-littlefield-24.jpg", "images/detroit-mi-12094-littlefield-25.jpg", "images/detroit-mi-12094-littlefield-26.jpg", "images/detroit-mi-12094-littlefield-27.jpg", "images/detroit-mi-12094-littlefield-28.jpg", "images/detroit-mi-12094-littlefield-29.jpg", "images/detroit-mi-12094-littlefield-30.jpg", "images/detroit-mi-12094-littlefield-31.jpg", "images/detroit-mi-12094-littlefield-32.jpg", "images/detroit-mi-12094-littlefield-33.jpg", "images/detroit-mi-12094-littlefield-34.jpg", "images/detroit-mi-12094-littlefield-35.jpg", "images/detroit-mi-12094-littlefield-36.jpg", "images/detroit-mi-12094-littlefield-37.jpg"],
   },
   {
     id: "peoria-il-1521-westmoreland",
@@ -356,7 +356,7 @@ const HOMES = [
 
     features: { basement: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/eaststlouis-il-740-22nd-1.jpg", "images/eaststlouis-il-740-22nd-2.jpg", "images/eaststlouis-il-740-22nd-3.jpg", "images/eaststlouis-il-740-22nd-4.jpg", "images/eaststlouis-il-740-22nd-5.jpg", "images/eaststlouis-il-740-22nd-6.jpg", "images/eaststlouis-il-740-22nd-7.jpg", "images/eaststlouis-il-740-22nd-8.jpg", "images/eaststlouis-il-740-22nd-9.jpg", "images/eaststlouis-il-740-22nd-10.jpg", "images/eaststlouis-il-740-22nd-11.jpg", "images/eaststlouis-il-740-22nd-12.jpg", "images/eaststlouis-il-740-22nd-13.jpg", "images/eaststlouis-il-740-22nd-14.jpg", "images/eaststlouis-il-740-22nd-15.jpg", "images/eaststlouis-il-740-22nd-16.jpg", "images/eaststlouis-il-740-22nd-17.jpg", "images/eaststlouis-il-740-22nd-18.jpg", "images/eaststlouis-il-740-22nd-19.jpg", "images/eaststlouis-il-740-22nd-20.jpg", "images/eaststlouis-il-740-22nd-21.jpg", "images/eaststlouis-il-740-22nd-22.jpg", "images/eaststlouis-il-740-22nd-23.jpg", "images/eaststlouis-il-740-22nd-24.jpg", "images/eaststlouis-il-740-22nd-25.jpg", "images/eaststlouis-il-740-22nd-26.jpg", "images/eaststlouis-il-740-22nd-27.jpg", "images/eaststlouis-il-740-22nd-28.jpg", "images/eaststlouis-il-740-22nd-29.jpg"],
   },
   {
     id: "eaststlouis-il-225-63rd",
@@ -376,7 +376,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/eaststlouis-il-225-63rd-1.jpg", "images/eaststlouis-il-225-63rd-2.jpg", "images/eaststlouis-il-225-63rd-3.jpg", "images/eaststlouis-il-225-63rd-4.jpg", "images/eaststlouis-il-225-63rd-5.jpg", "images/eaststlouis-il-225-63rd-6.jpg", "images/eaststlouis-il-225-63rd-7.jpg", "images/eaststlouis-il-225-63rd-8.jpg", "images/eaststlouis-il-225-63rd-9.jpg", "images/eaststlouis-il-225-63rd-10.jpg", "images/eaststlouis-il-225-63rd-11.jpg", "images/eaststlouis-il-225-63rd-12.jpg", "images/eaststlouis-il-225-63rd-13.jpg", "images/eaststlouis-il-225-63rd-14.jpg", "images/eaststlouis-il-225-63rd-15.jpg", "images/eaststlouis-il-225-63rd-16.jpg", "images/eaststlouis-il-225-63rd-17.jpg", "images/eaststlouis-il-225-63rd-18.jpg", "images/eaststlouis-il-225-63rd-19.jpg", "images/eaststlouis-il-225-63rd-20.jpg", "images/eaststlouis-il-225-63rd-21.jpg", "images/eaststlouis-il-225-63rd-22.jpg", "images/eaststlouis-il-225-63rd-23.jpg", "images/eaststlouis-il-225-63rd-24.jpg", "images/eaststlouis-il-225-63rd-25.jpg", "images/eaststlouis-il-225-63rd-26.jpg", "images/eaststlouis-il-225-63rd-27.jpg", "images/eaststlouis-il-225-63rd-28.jpg", "images/eaststlouis-il-225-63rd-29.jpg"],
   },
   {
     id: "decatur-il-830-rodgers",
@@ -397,7 +397,7 @@ const HOMES = [
 
     features: { basement: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-830-rodgers-1.jpg", "images/decatur-il-830-rodgers-2.jpg", "images/decatur-il-830-rodgers-3.jpg", "images/decatur-il-830-rodgers-4.jpg", "images/decatur-il-830-rodgers-5.jpg", "images/decatur-il-830-rodgers-6.jpg", "images/decatur-il-830-rodgers-7.jpg", "images/decatur-il-830-rodgers-8.jpg", "images/decatur-il-830-rodgers-9.jpg", "images/decatur-il-830-rodgers-10.jpg", "images/decatur-il-830-rodgers-11.jpg", "images/decatur-il-830-rodgers-12.jpg", "images/decatur-il-830-rodgers-13.jpg", "images/decatur-il-830-rodgers-14.jpg", "images/decatur-il-830-rodgers-15.jpg", "images/decatur-il-830-rodgers-16.jpg", "images/decatur-il-830-rodgers-17.jpg", "images/decatur-il-830-rodgers-18.jpg", "images/decatur-il-830-rodgers-19.jpg", "images/decatur-il-830-rodgers-20.jpg", "images/decatur-il-830-rodgers-21.jpg", "images/decatur-il-830-rodgers-22.jpg", "images/decatur-il-830-rodgers-23.jpg", "images/decatur-il-830-rodgers-24.jpg", "images/decatur-il-830-rodgers-25.jpg"],
   },
   {
     id: "stlouis-mo-2810-norwood",
@@ -439,7 +439,7 @@ const HOMES = [
 
     features: { backyard: "yes", off_street_parking: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/flint-mi-628-home-1.jpg", "images/flint-mi-628-home-2.jpg", "images/flint-mi-628-home-3.jpg", "images/flint-mi-628-home-4.jpg", "images/flint-mi-628-home-5.jpg", "images/flint-mi-628-home-6.jpg", "images/flint-mi-628-home-7.jpg", "images/flint-mi-628-home-8.jpg", "images/flint-mi-628-home-9.jpg", "images/flint-mi-628-home-10.jpg", "images/flint-mi-628-home-11.jpg", "images/flint-mi-628-home-12.jpg", "images/flint-mi-628-home-13.jpg", "images/flint-mi-628-home-14.jpg", "images/flint-mi-628-home-15.jpg", "images/flint-mi-628-home-16.jpg", "images/flint-mi-628-home-17.jpg", "images/flint-mi-628-home-18.jpg", "images/flint-mi-628-home-19.jpg", "images/flint-mi-628-home-20.jpg", "images/flint-mi-628-home-21.jpg", "images/flint-mi-628-home-22.jpg"],
   },
   {
     id: "cahokia-il-505-chaudet",
@@ -480,7 +480,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-1143-cleveland-1.jpg", "images/decatur-il-1143-cleveland-2.jpg", "images/decatur-il-1143-cleveland-3.jpg", "images/decatur-il-1143-cleveland-4.jpg", "images/decatur-il-1143-cleveland-5.jpg", "images/decatur-il-1143-cleveland-6.jpg", "images/decatur-il-1143-cleveland-7.jpg", "images/decatur-il-1143-cleveland-8.jpg", "images/decatur-il-1143-cleveland-9.jpg", "images/decatur-il-1143-cleveland-10.jpg", "images/decatur-il-1143-cleveland-11.jpg", "images/decatur-il-1143-cleveland-12.jpg", "images/decatur-il-1143-cleveland-13.jpg", "images/decatur-il-1143-cleveland-14.jpg", "images/decatur-il-1143-cleveland-15.jpg", "images/decatur-il-1143-cleveland-16.jpg", "images/decatur-il-1143-cleveland-17.jpg", "images/decatur-il-1143-cleveland-18.jpg", "images/decatur-il-1143-cleveland-19.jpg", "images/decatur-il-1143-cleveland-20.jpg", "images/decatur-il-1143-cleveland-21.jpg", "images/decatur-il-1143-cleveland-22.jpg", "images/decatur-il-1143-cleveland-23.jpg", "images/decatur-il-1143-cleveland-24.jpg", "images/decatur-il-1143-cleveland-25.jpg", "images/decatur-il-1143-cleveland-26.jpg", "images/decatur-il-1143-cleveland-27.jpg", "images/decatur-il-1143-cleveland-28.jpg", "images/decatur-il-1143-cleveland-29.jpg"],
   },
   {
     id: "peoria-il-2410-ellis",
@@ -579,7 +579,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-2067-maple-1.jpg", "images/decatur-il-2067-maple-2.jpg", "images/decatur-il-2067-maple-3.jpg", "images/decatur-il-2067-maple-4.jpg", "images/decatur-il-2067-maple-5.jpg", "images/decatur-il-2067-maple-6.jpg", "images/decatur-il-2067-maple-7.jpg", "images/decatur-il-2067-maple-8.jpg", "images/decatur-il-2067-maple-9.jpg", "images/decatur-il-2067-maple-10.jpg", "images/decatur-il-2067-maple-11.jpg", "images/decatur-il-2067-maple-12.jpg", "images/decatur-il-2067-maple-13.jpg", "images/decatur-il-2067-maple-14.jpg", "images/decatur-il-2067-maple-15.jpg", "images/decatur-il-2067-maple-16.jpg", "images/decatur-il-2067-maple-17.jpg", "images/decatur-il-2067-maple-18.jpg", "images/decatur-il-2067-maple-19.jpg", "images/decatur-il-2067-maple-20.jpg", "images/decatur-il-2067-maple-21.jpg", "images/decatur-il-2067-maple-22.jpg", "images/decatur-il-2067-maple-23.jpg", "images/decatur-il-2067-maple-24.jpg"],
   },
   {
     id: "cahokia-il-107-judith",
@@ -991,7 +991,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/eaststlouis-il-1311-51st-1.jpg", "images/eaststlouis-il-1311-51st-2.jpg", "images/eaststlouis-il-1311-51st-3.jpg", "images/eaststlouis-il-1311-51st-4.jpg", "images/eaststlouis-il-1311-51st-5.jpg"],
   },
   {
     id: "decatur-il-1439-jasper",
@@ -1380,7 +1380,7 @@ const HOMES = [
 
     features: { basement: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-1180-mueller-1.jpg", "images/decatur-il-1180-mueller-2.jpg", "images/decatur-il-1180-mueller-3.jpg", "images/decatur-il-1180-mueller-4.jpg", "images/decatur-il-1180-mueller-5.jpg", "images/decatur-il-1180-mueller-6.jpg", "images/decatur-il-1180-mueller-7.jpg", "images/decatur-il-1180-mueller-8.jpg", "images/decatur-il-1180-mueller-9.jpg", "images/decatur-il-1180-mueller-10.jpg", "images/decatur-il-1180-mueller-11.jpg", "images/decatur-il-1180-mueller-12.jpg", "images/decatur-il-1180-mueller-13.jpg", "images/decatur-il-1180-mueller-14.jpg", "images/decatur-il-1180-mueller-15.jpg", "images/decatur-il-1180-mueller-16.jpg", "images/decatur-il-1180-mueller-17.jpg", "images/decatur-il-1180-mueller-18.jpg", "images/decatur-il-1180-mueller-19.jpg", "images/decatur-il-1180-mueller-20.jpg", "images/decatur-il-1180-mueller-21.jpg", "images/decatur-il-1180-mueller-22.jpg", "images/decatur-il-1180-mueller-23.jpg", "images/decatur-il-1180-mueller-24.jpg", "images/decatur-il-1180-mueller-25.jpg", "images/decatur-il-1180-mueller-26.jpg", "images/decatur-il-1180-mueller-27.jpg", "images/decatur-il-1180-mueller-28.jpg", "images/decatur-il-1180-mueller-29.jpg", "images/decatur-il-1180-mueller-30.jpg", "images/decatur-il-1180-mueller-31.jpg", "images/decatur-il-1180-mueller-32.jpg", "images/decatur-il-1180-mueller-33.jpg", "images/decatur-il-1180-mueller-34.jpg", "images/decatur-il-1180-mueller-35.jpg", "images/decatur-il-1180-mueller-36.jpg", "images/decatur-il-1180-mueller-37.jpg", "images/decatur-il-1180-mueller-38.jpg", "images/decatur-il-1180-mueller-39.jpg", "images/decatur-il-1180-mueller-40.jpg", "images/decatur-il-1180-mueller-41.jpg", "images/decatur-il-1180-mueller-42.jpg", "images/decatur-il-1180-mueller-43.jpg"],
   },
   {
     id: "decatur-il-2081-college",
@@ -1831,7 +1831,7 @@ const HOMES = [
 
     features: { basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/edwardsport-in-108-shipping-1.jpg", "images/edwardsport-in-108-shipping-2.jpg", "images/edwardsport-in-108-shipping-3.jpg", "images/edwardsport-in-108-shipping-4.jpg", "images/edwardsport-in-108-shipping-5.jpg", "images/edwardsport-in-108-shipping-6.jpg", "images/edwardsport-in-108-shipping-7.jpg", "images/edwardsport-in-108-shipping-8.jpg", "images/edwardsport-in-108-shipping-9.jpg", "images/edwardsport-in-108-shipping-10.jpg", "images/edwardsport-in-108-shipping-11.jpg", "images/edwardsport-in-108-shipping-12.jpg", "images/edwardsport-in-108-shipping-13.jpg", "images/edwardsport-in-108-shipping-14.jpg", "images/edwardsport-in-108-shipping-15.jpg", "images/edwardsport-in-108-shipping-16.jpg", "images/edwardsport-in-108-shipping-17.jpg", "images/edwardsport-in-108-shipping-18.jpg", "images/edwardsport-in-108-shipping-19.jpg", "images/edwardsport-in-108-shipping-20.jpg", "images/edwardsport-in-108-shipping-21.jpg", "images/edwardsport-in-108-shipping-22.jpg", "images/edwardsport-in-108-shipping-23.jpg", "images/edwardsport-in-108-shipping-24.jpg", "images/edwardsport-in-108-shipping-25.jpg", "images/edwardsport-in-108-shipping-26.jpg", "images/edwardsport-in-108-shipping-27.jpg", "images/edwardsport-in-108-shipping-28.jpg", "images/edwardsport-in-108-shipping-29.jpg", "images/edwardsport-in-108-shipping-30.jpg", "images/edwardsport-in-108-shipping-31.jpg", "images/edwardsport-in-108-shipping-32.jpg", "images/edwardsport-in-108-shipping-33.jpg", "images/edwardsport-in-108-shipping-34.jpg", "images/edwardsport-in-108-shipping-35.jpg", "images/edwardsport-in-108-shipping-36.jpg"],
   },
   {
     id: "decatur-il-1258-division",
@@ -2016,7 +2016,7 @@ const HOMES = [
 
     features: { basement: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/flint-mi-5210-dupont-1.jpg", "images/flint-mi-5210-dupont-2.jpg", "images/flint-mi-5210-dupont-3.jpg", "images/flint-mi-5210-dupont-4.jpg", "images/flint-mi-5210-dupont-5.jpg", "images/flint-mi-5210-dupont-6.jpg", "images/flint-mi-5210-dupont-7.jpg", "images/flint-mi-5210-dupont-8.jpg", "images/flint-mi-5210-dupont-9.jpg", "images/flint-mi-5210-dupont-10.jpg", "images/flint-mi-5210-dupont-11.jpg", "images/flint-mi-5210-dupont-12.jpg"],
   },
   {
     id: "stlouis-mo-5811-helen",
@@ -2298,7 +2298,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-1303-whitmer-1.jpg", "images/decatur-il-1303-whitmer-2.jpg", "images/decatur-il-1303-whitmer-3.jpg", "images/decatur-il-1303-whitmer-4.jpg", "images/decatur-il-1303-whitmer-5.jpg", "images/decatur-il-1303-whitmer-6.jpg", "images/decatur-il-1303-whitmer-7.jpg", "images/decatur-il-1303-whitmer-8.jpg", "images/decatur-il-1303-whitmer-9.jpg", "images/decatur-il-1303-whitmer-10.jpg", "images/decatur-il-1303-whitmer-11.jpg", "images/decatur-il-1303-whitmer-12.jpg", "images/decatur-il-1303-whitmer-13.jpg", "images/decatur-il-1303-whitmer-14.jpg", "images/decatur-il-1303-whitmer-15.jpg"],
   },
   {
     id: "decatur-il-1908-union",

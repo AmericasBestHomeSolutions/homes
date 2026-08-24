@@ -33,7 +33,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/stlouis-mo-5349-janet-1.jpg", "images/stlouis-mo-5349-janet-2.jpg", "images/stlouis-mo-5349-janet-3.jpg", "images/stlouis-mo-5349-janet-4.jpg", "images/stlouis-mo-5349-janet-5.jpg", "images/stlouis-mo-5349-janet-6.jpg", "images/stlouis-mo-5349-janet-7.jpg", "images/stlouis-mo-5349-janet-8.jpg", "images/stlouis-mo-5349-janet-9.jpg", "images/stlouis-mo-5349-janet-10.jpg", "images/stlouis-mo-5349-janet-11.jpg", "images/stlouis-mo-5349-janet-12.jpg", "images/stlouis-mo-5349-janet-13.jpg", "images/stlouis-mo-5349-janet-14.jpg", "images/stlouis-mo-5349-janet-15.jpg", "images/stlouis-mo-5349-janet-16.jpg", "images/stlouis-mo-5349-janet-17.jpg", "images/stlouis-mo-5349-janet-18.jpg", "images/stlouis-mo-5349-janet-19.jpg", "images/stlouis-mo-5349-janet-20.jpg", "images/stlouis-mo-5349-janet-21.jpg", "images/stlouis-mo-5349-janet-22.jpg", "images/stlouis-mo-5349-janet-23.jpg", "images/stlouis-mo-5349-janet-24.jpg"],
   },
   {
     id: "centralia-il-514-walnut",
@@ -74,7 +74,7 @@ const HOMES = [
 
     features: { basement: "no" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/montgomery-al-3120-lower-1.jpg", "images/montgomery-al-3120-lower-2.jpg", "images/montgomery-al-3120-lower-3.jpg", "images/montgomery-al-3120-lower-4.jpg", "images/montgomery-al-3120-lower-5.jpg", "images/montgomery-al-3120-lower-6.jpg", "images/montgomery-al-3120-lower-7.jpg", "images/montgomery-al-3120-lower-8.jpg", "images/montgomery-al-3120-lower-9.jpg", "images/montgomery-al-3120-lower-10.jpg", "images/montgomery-al-3120-lower-11.jpg", "images/montgomery-al-3120-lower-12.jpg", "images/montgomery-al-3120-lower-13.jpg", "images/montgomery-al-3120-lower-14.jpg", "images/montgomery-al-3120-lower-15.jpg", "images/montgomery-al-3120-lower-16.jpg", "images/montgomery-al-3120-lower-17.jpg", "images/montgomery-al-3120-lower-18.jpg", "images/montgomery-al-3120-lower-19.jpg", "images/montgomery-al-3120-lower-20.jpg", "images/montgomery-al-3120-lower-21.jpg", "images/montgomery-al-3120-lower-22.jpg", "images/montgomery-al-3120-lower-23.jpg", "images/montgomery-al-3120-lower-24.jpg"],
   },
   {
     id: "stlouis-mo-5461-hamilton",
@@ -95,7 +95,7 @@ const HOMES = [
 
     features: { backyard: "yes", off_street_parking: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/stlouis-mo-5461-hamilton-1.jpg", "images/stlouis-mo-5461-hamilton-2.jpg", "images/stlouis-mo-5461-hamilton-3.jpg", "images/stlouis-mo-5461-hamilton-4.jpg", "images/stlouis-mo-5461-hamilton-5.jpg", "images/stlouis-mo-5461-hamilton-6.jpg", "images/stlouis-mo-5461-hamilton-7.jpg"],
   },
   {
     id: "eaststlouis-il-5050-hallows",
@@ -116,7 +116,7 @@ const HOMES = [
 
     features: { backyard: "yes" },
     heroPhoto: "",
-    photos:    ["images/eaststlouis-il-5050-hallows-1.jpg", "images/eaststlouis-il-5050-hallows-2.jpg", "images/eaststlouis-il-5050-hallows-3.jpg", "images/eaststlouis-il-5050-hallows-4.jpg", "images/eaststlouis-il-5050-hallows-5.jpg", "images/eaststlouis-il-5050-hallows-6.jpg", "images/eaststlouis-il-5050-hallows-7.jpg", "images/eaststlouis-il-5050-hallows-8.jpg", "images/eaststlouis-il-5050-hallows-9.jpg", "images/eaststlouis-il-5050-hallows-10.jpg", "images/eaststlouis-il-5050-hallows-11.jpg", "images/eaststlouis-il-5050-hallows-12.jpg", "images/eaststlouis-il-5050-hallows-13.jpg", "images/eaststlouis-il-5050-hallows-14.jpg", "images/eaststlouis-il-5050-hallows-15.jpg", "images/eaststlouis-il-5050-hallows-16.jpg", "images/eaststlouis-il-5050-hallows-17.jpg", "images/eaststlouis-il-5050-hallows-18.jpg", "images/eaststlouis-il-5050-hallows-19.jpg", "images/eaststlouis-il-5050-hallows-20.jpg", "images/eaststlouis-il-5050-hallows-21.jpg", "images/eaststlouis-il-5050-hallows-22.jpg", "images/eaststlouis-il-5050-hallows-23.jpg", "images/eaststlouis-il-5050-hallows-24.jpg", "images/eaststlouis-il-5050-hallows-25.jpg", "images/eaststlouis-il-5050-hallows-26.jpg", "images/eaststlouis-il-5050-hallows-27.jpg", "images/eaststlouis-il-5050-hallows-28.jpg", "images/eaststlouis-il-5050-hallows-29.jpg"],
+    photos:    ["images/eaststlouis-il-5050-hallows-1.jpg", "images/eaststlouis-il-5050-hallows-2.jpg", "images/eaststlouis-il-5050-hallows-3.jpg", "images/eaststlouis-il-5050-hallows-4.jpg", "images/eaststlouis-il-5050-hallows-5.jpg", "images/eaststlouis-il-5050-hallows-6.jpg", "images/eaststlouis-il-5050-hallows-7.jpg", "images/eaststlouis-il-5050-hallows-8.jpg", "images/eaststlouis-il-5050-hallows-9.jpg", "images/eaststlouis-il-5050-hallows-10.jpg", "images/eaststlouis-il-5050-hallows-11.jpg", "images/eaststlouis-il-5050-hallows-12.jpg", "images/eaststlouis-il-5050-hallows-13.jpg", "images/eaststlouis-il-5050-hallows-14.jpg", "images/eaststlouis-il-5050-hallows-15.jpg", "images/eaststlouis-il-5050-hallows-16.jpg", "images/eaststlouis-il-5050-hallows-17.jpg", "images/eaststlouis-il-5050-hallows-18.jpg", "images/eaststlouis-il-5050-hallows-19.jpg", "images/eaststlouis-il-5050-hallows-20.jpg", "images/eaststlouis-il-5050-hallows-21.jpg", "images/eaststlouis-il-5050-hallows-22.jpg", "images/eaststlouis-il-5050-hallows-23.jpg", "images/eaststlouis-il-5050-hallows-24.jpg", "images/eaststlouis-il-5050-hallows-25.jpg", "images/eaststlouis-il-5050-hallows-26.jpg", "images/eaststlouis-il-5050-hallows-27.jpg", "images/eaststlouis-il-5050-hallows-28.jpg"],
   },
   {
     id: "stlouis-mo-5816-hodiamont",
@@ -135,7 +135,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/stlouis-mo-5816-hodiamont-1.jpg", "images/stlouis-mo-5816-hodiamont-2.jpg", "images/stlouis-mo-5816-hodiamont-3.jpg", "images/stlouis-mo-5816-hodiamont-4.jpg", "images/stlouis-mo-5816-hodiamont-5.jpg", "images/stlouis-mo-5816-hodiamont-6.jpg", "images/stlouis-mo-5816-hodiamont-7.jpg", "images/stlouis-mo-5816-hodiamont-8.jpg", "images/stlouis-mo-5816-hodiamont-9.jpg", "images/stlouis-mo-5816-hodiamont-10.jpg", "images/stlouis-mo-5816-hodiamont-11.jpg", "images/stlouis-mo-5816-hodiamont-12.jpg", "images/stlouis-mo-5816-hodiamont-13.jpg", "images/stlouis-mo-5816-hodiamont-14.jpg", "images/stlouis-mo-5816-hodiamont-15.jpg", "images/stlouis-mo-5816-hodiamont-16.jpg", "images/stlouis-mo-5816-hodiamont-17.jpg", "images/stlouis-mo-5816-hodiamont-18.jpg"],
   },
   {
     id: "stlouis-mo-1830-kienlen",
@@ -154,7 +154,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/stlouis-mo-1830-kienlen-1.jpg", "images/stlouis-mo-1830-kienlen-2.jpg", "images/stlouis-mo-1830-kienlen-3.jpg", "images/stlouis-mo-1830-kienlen-4.jpg", "images/stlouis-mo-1830-kienlen-5.jpg", "images/stlouis-mo-1830-kienlen-6.jpg", "images/stlouis-mo-1830-kienlen-7.jpg", "images/stlouis-mo-1830-kienlen-8.jpg", "images/stlouis-mo-1830-kienlen-9.jpg", "images/stlouis-mo-1830-kienlen-10.jpg", "images/stlouis-mo-1830-kienlen-11.jpg"],
   },
   {
     id: "eaststlouis-il-1847-56th",
@@ -193,7 +193,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    ["images/alton-il-212-21st-1.jpg", "images/alton-il-212-21st-2.jpg", "images/alton-il-212-21st-3.jpg", "images/alton-il-212-21st-4.jpg", "images/alton-il-212-21st-5.jpg", "images/alton-il-212-21st-6.jpg", "images/alton-il-212-21st-7.jpg", "images/alton-il-212-21st-8.jpg", "images/alton-il-212-21st-9.jpg", "images/alton-il-212-21st-10.jpg", "images/alton-il-212-21st-11.jpg", "images/alton-il-212-21st-12.jpg", "images/alton-il-212-21st-13.jpg", "images/alton-il-212-21st-14.jpg", "images/alton-il-212-21st-15.jpg", "images/alton-il-212-21st-16.jpg", "images/alton-il-212-21st-17.jpg", "images/alton-il-212-21st-18.jpg", "images/alton-il-212-21st-19.jpg", "images/alton-il-212-21st-20.jpg", "images/alton-il-212-21st-21.jpg", "images/alton-il-212-21st-22.jpg", "images/alton-il-212-21st-23.jpg", "images/alton-il-212-21st-24.jpg", "images/alton-il-212-21st-25.jpg", "images/alton-il-212-21st-26.jpg", "images/alton-il-212-21st-27.jpg", "images/alton-il-212-21st-28.jpg", "images/alton-il-212-21st-29.jpg", "images/alton-il-212-21st-30.jpg", "images/alton-il-212-21st-31.jpg", "images/alton-il-212-21st-32.jpg", "images/alton-il-212-21st-33.jpg", "images/alton-il-212-21st-34.jpg", "images/alton-il-212-21st-35.jpg", "images/alton-il-212-21st-36.jpg", "images/alton-il-212-21st-37.jpg", "images/alton-il-212-21st-38.jpg", "images/alton-il-212-21st-39.jpg", "images/alton-il-212-21st-40.jpg"],
+    photos:    ["images/alton-il-212-21st-1.jpg", "images/alton-il-212-21st-2.jpg", "images/alton-il-212-21st-3.jpg", "images/alton-il-212-21st-4.jpg", "images/alton-il-212-21st-5.jpg", "images/alton-il-212-21st-6.jpg", "images/alton-il-212-21st-7.jpg", "images/alton-il-212-21st-8.jpg", "images/alton-il-212-21st-9.jpg", "images/alton-il-212-21st-10.jpg", "images/alton-il-212-21st-11.jpg", "images/alton-il-212-21st-12.jpg", "images/alton-il-212-21st-13.jpg", "images/alton-il-212-21st-14.jpg", "images/alton-il-212-21st-15.jpg", "images/alton-il-212-21st-16.jpg", "images/alton-il-212-21st-17.jpg", "images/alton-il-212-21st-18.jpg", "images/alton-il-212-21st-19.jpg", "images/alton-il-212-21st-20.jpg", "images/alton-il-212-21st-21.jpg", "images/alton-il-212-21st-22.jpg", "images/alton-il-212-21st-23.jpg", "images/alton-il-212-21st-24.jpg", "images/alton-il-212-21st-25.jpg", "images/alton-il-212-21st-26.jpg", "images/alton-il-212-21st-27.jpg", "images/alton-il-212-21st-28.jpg", "images/alton-il-212-21st-29.jpg", "images/alton-il-212-21st-30.jpg", "images/alton-il-212-21st-31.jpg", "images/alton-il-212-21st-32.jpg", "images/alton-il-212-21st-33.jpg", "images/alton-il-212-21st-34.jpg", "images/alton-il-212-21st-35.jpg", "images/alton-il-212-21st-36.jpg", "images/alton-il-212-21st-37.jpg"],
   },
   {
     id: "johnstown-pa-650-linden",
@@ -213,7 +213,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/johnstown-pa-650-linden-1.jpg", "images/johnstown-pa-650-linden-2.jpg", "images/johnstown-pa-650-linden-3.jpg", "images/johnstown-pa-650-linden-4.jpg", "images/johnstown-pa-650-linden-5.jpg", "images/johnstown-pa-650-linden-6.jpg", "images/johnstown-pa-650-linden-7.jpg", "images/johnstown-pa-650-linden-8.jpg", "images/johnstown-pa-650-linden-9.jpg", "images/johnstown-pa-650-linden-10.jpg"],
   },
   {
     id: "johnstown-pa-648-linden",
@@ -295,7 +295,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/peoria-il-1521-westmoreland-1.jpg", "images/peoria-il-1521-westmoreland-2.jpg", "images/peoria-il-1521-westmoreland-3.jpg", "images/peoria-il-1521-westmoreland-4.jpg", "images/peoria-il-1521-westmoreland-5.jpg", "images/peoria-il-1521-westmoreland-6.jpg", "images/peoria-il-1521-westmoreland-7.jpg", "images/peoria-il-1521-westmoreland-8.jpg", "images/peoria-il-1521-westmoreland-9.jpg", "images/peoria-il-1521-westmoreland-10.jpg", "images/peoria-il-1521-westmoreland-11.jpg", "images/peoria-il-1521-westmoreland-12.jpg", "images/peoria-il-1521-westmoreland-13.jpg", "images/peoria-il-1521-westmoreland-14.jpg", "images/peoria-il-1521-westmoreland-15.jpg", "images/peoria-il-1521-westmoreland-16.jpg", "images/peoria-il-1521-westmoreland-17.jpg"],
   },
   {
     id: "springfield-il-2949-foxbridge",
@@ -314,7 +314,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/springfield-il-2949-foxbridge-1.jpg", "images/springfield-il-2949-foxbridge-2.jpg", "images/springfield-il-2949-foxbridge-3.jpg", "images/springfield-il-2949-foxbridge-4.jpg", "images/springfield-il-2949-foxbridge-5.jpg", "images/springfield-il-2949-foxbridge-6.jpg", "images/springfield-il-2949-foxbridge-7.jpg", "images/springfield-il-2949-foxbridge-8.jpg", "images/springfield-il-2949-foxbridge-9.jpg", "images/springfield-il-2949-foxbridge-10.jpg", "images/springfield-il-2949-foxbridge-11.jpg", "images/springfield-il-2949-foxbridge-12.jpg", "images/springfield-il-2949-foxbridge-13.jpg", "images/springfield-il-2949-foxbridge-14.jpg", "images/springfield-il-2949-foxbridge-15.jpg", "images/springfield-il-2949-foxbridge-16.jpg", "images/springfield-il-2949-foxbridge-17.jpg", "images/springfield-il-2949-foxbridge-18.jpg"],
   },
   {
     id: "decatur-il-1818-clay",
@@ -397,7 +397,7 @@ const HOMES = [
 
     features: { basement: "yes" },
     heroPhoto: "",
-    photos:    ["images/decatur-il-830-rodgers-1.jpg", "images/decatur-il-830-rodgers-2.jpg", "images/decatur-il-830-rodgers-3.jpg", "images/decatur-il-830-rodgers-4.jpg", "images/decatur-il-830-rodgers-5.jpg", "images/decatur-il-830-rodgers-6.jpg", "images/decatur-il-830-rodgers-7.jpg", "images/decatur-il-830-rodgers-8.jpg", "images/decatur-il-830-rodgers-9.jpg", "images/decatur-il-830-rodgers-10.jpg", "images/decatur-il-830-rodgers-11.jpg", "images/decatur-il-830-rodgers-12.jpg", "images/decatur-il-830-rodgers-13.jpg", "images/decatur-il-830-rodgers-14.jpg", "images/decatur-il-830-rodgers-15.jpg", "images/decatur-il-830-rodgers-16.jpg", "images/decatur-il-830-rodgers-17.jpg", "images/decatur-il-830-rodgers-18.jpg", "images/decatur-il-830-rodgers-19.jpg", "images/decatur-il-830-rodgers-20.jpg", "images/decatur-il-830-rodgers-21.jpg", "images/decatur-il-830-rodgers-22.jpg", "images/decatur-il-830-rodgers-23.jpg", "images/decatur-il-830-rodgers-24.jpg", "images/decatur-il-830-rodgers-25.jpg"],
+    photos:    ["images/decatur-il-830-rodgers-1.jpg", "images/decatur-il-830-rodgers-2.jpg", "images/decatur-il-830-rodgers-3.jpg", "images/decatur-il-830-rodgers-4.jpg", "images/decatur-il-830-rodgers-5.jpg", "images/decatur-il-830-rodgers-6.jpg", "images/decatur-il-830-rodgers-7.jpg", "images/decatur-il-830-rodgers-8.jpg", "images/decatur-il-830-rodgers-9.jpg", "images/decatur-il-830-rodgers-10.jpg", "images/decatur-il-830-rodgers-11.jpg", "images/decatur-il-830-rodgers-12.jpg", "images/decatur-il-830-rodgers-13.jpg", "images/decatur-il-830-rodgers-14.jpg", "images/decatur-il-830-rodgers-15.jpg", "images/decatur-il-830-rodgers-16.jpg", "images/decatur-il-830-rodgers-17.jpg", "images/decatur-il-830-rodgers-18.jpg", "images/decatur-il-830-rodgers-19.jpg", "images/decatur-il-830-rodgers-20.jpg", "images/decatur-il-830-rodgers-21.jpg", "images/decatur-il-830-rodgers-22.jpg", "images/decatur-il-830-rodgers-23.jpg", "images/decatur-il-830-rodgers-24.jpg"],
   },
   {
     id: "stlouis-mo-2810-norwood",
@@ -418,7 +418,7 @@ const HOMES = [
 
     features: { central_air: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/stlouis-mo-2810-norwood-1.jpg", "images/stlouis-mo-2810-norwood-2.jpg", "images/stlouis-mo-2810-norwood-3.jpg", "images/stlouis-mo-2810-norwood-4.jpg", "images/stlouis-mo-2810-norwood-5.jpg", "images/stlouis-mo-2810-norwood-6.jpg", "images/stlouis-mo-2810-norwood-7.jpg", "images/stlouis-mo-2810-norwood-8.jpg", "images/stlouis-mo-2810-norwood-9.jpg", "images/stlouis-mo-2810-norwood-10.jpg", "images/stlouis-mo-2810-norwood-11.jpg", "images/stlouis-mo-2810-norwood-12.jpg", "images/stlouis-mo-2810-norwood-13.jpg", "images/stlouis-mo-2810-norwood-14.jpg", "images/stlouis-mo-2810-norwood-15.jpg", "images/stlouis-mo-2810-norwood-16.jpg", "images/stlouis-mo-2810-norwood-17.jpg", "images/stlouis-mo-2810-norwood-18.jpg", "images/stlouis-mo-2810-norwood-19.jpg", "images/stlouis-mo-2810-norwood-20.jpg", "images/stlouis-mo-2810-norwood-21.jpg", "images/stlouis-mo-2810-norwood-22.jpg", "images/stlouis-mo-2810-norwood-23.jpg", "images/stlouis-mo-2810-norwood-24.jpg"],
   },
   {
     id: "flint-mi-628-home",
@@ -480,7 +480,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    ["images/decatur-il-1143-cleveland-1.jpg", "images/decatur-il-1143-cleveland-2.jpg", "images/decatur-il-1143-cleveland-3.jpg", "images/decatur-il-1143-cleveland-4.jpg", "images/decatur-il-1143-cleveland-5.jpg", "images/decatur-il-1143-cleveland-6.jpg", "images/decatur-il-1143-cleveland-7.jpg", "images/decatur-il-1143-cleveland-8.jpg", "images/decatur-il-1143-cleveland-9.jpg", "images/decatur-il-1143-cleveland-10.jpg", "images/decatur-il-1143-cleveland-11.jpg", "images/decatur-il-1143-cleveland-12.jpg", "images/decatur-il-1143-cleveland-13.jpg", "images/decatur-il-1143-cleveland-14.jpg", "images/decatur-il-1143-cleveland-15.jpg", "images/decatur-il-1143-cleveland-16.jpg", "images/decatur-il-1143-cleveland-17.jpg", "images/decatur-il-1143-cleveland-18.jpg", "images/decatur-il-1143-cleveland-19.jpg", "images/decatur-il-1143-cleveland-20.jpg", "images/decatur-il-1143-cleveland-21.jpg", "images/decatur-il-1143-cleveland-22.jpg", "images/decatur-il-1143-cleveland-23.jpg", "images/decatur-il-1143-cleveland-24.jpg", "images/decatur-il-1143-cleveland-25.jpg", "images/decatur-il-1143-cleveland-26.jpg", "images/decatur-il-1143-cleveland-27.jpg", "images/decatur-il-1143-cleveland-28.jpg", "images/decatur-il-1143-cleveland-29.jpg"],
+    photos:    ["images/decatur-il-1143-cleveland-1.jpg", "images/decatur-il-1143-cleveland-2.jpg", "images/decatur-il-1143-cleveland-3.jpg", "images/decatur-il-1143-cleveland-4.jpg", "images/decatur-il-1143-cleveland-5.jpg", "images/decatur-il-1143-cleveland-6.jpg", "images/decatur-il-1143-cleveland-7.jpg", "images/decatur-il-1143-cleveland-8.jpg", "images/decatur-il-1143-cleveland-9.jpg", "images/decatur-il-1143-cleveland-10.jpg", "images/decatur-il-1143-cleveland-11.jpg", "images/decatur-il-1143-cleveland-12.jpg", "images/decatur-il-1143-cleveland-13.jpg", "images/decatur-il-1143-cleveland-14.jpg", "images/decatur-il-1143-cleveland-15.jpg", "images/decatur-il-1143-cleveland-16.jpg", "images/decatur-il-1143-cleveland-17.jpg", "images/decatur-il-1143-cleveland-18.jpg", "images/decatur-il-1143-cleveland-19.jpg", "images/decatur-il-1143-cleveland-20.jpg", "images/decatur-il-1143-cleveland-21.jpg", "images/decatur-il-1143-cleveland-22.jpg", "images/decatur-il-1143-cleveland-23.jpg", "images/decatur-il-1143-cleveland-24.jpg"],
   },
   {
     id: "peoria-il-2410-ellis",
@@ -500,7 +500,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/peoria-il-2410-ellis-1.jpg", "images/peoria-il-2410-ellis-2.jpg", "images/peoria-il-2410-ellis-3.jpg", "images/peoria-il-2410-ellis-4.jpg", "images/peoria-il-2410-ellis-5.jpg", "images/peoria-il-2410-ellis-6.jpg", "images/peoria-il-2410-ellis-7.jpg", "images/peoria-il-2410-ellis-8.jpg", "images/peoria-il-2410-ellis-9.jpg", "images/peoria-il-2410-ellis-10.jpg", "images/peoria-il-2410-ellis-11.jpg"],
   },
   {
     id: "stlouis-mo-5828-ferris",
@@ -519,7 +519,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/stlouis-mo-5828-ferris-1.jpg", "images/stlouis-mo-5828-ferris-2.jpg", "images/stlouis-mo-5828-ferris-3.jpg", "images/stlouis-mo-5828-ferris-4.jpg", "images/stlouis-mo-5828-ferris-5.jpg", "images/stlouis-mo-5828-ferris-6.jpg", "images/stlouis-mo-5828-ferris-7.jpg", "images/stlouis-mo-5828-ferris-8.jpg", "images/stlouis-mo-5828-ferris-9.jpg", "images/stlouis-mo-5828-ferris-10.jpg", "images/stlouis-mo-5828-ferris-11.jpg", "images/stlouis-mo-5828-ferris-12.jpg", "images/stlouis-mo-5828-ferris-13.jpg", "images/stlouis-mo-5828-ferris-14.jpg", "images/stlouis-mo-5828-ferris-15.jpg", "images/stlouis-mo-5828-ferris-16.jpg", "images/stlouis-mo-5828-ferris-17.jpg", "images/stlouis-mo-5828-ferris-18.jpg", "images/stlouis-mo-5828-ferris-19.jpg", "images/stlouis-mo-5828-ferris-20.jpg", "images/stlouis-mo-5828-ferris-21.jpg", "images/stlouis-mo-5828-ferris-22.jpg", "images/stlouis-mo-5828-ferris-23.jpg", "images/stlouis-mo-5828-ferris-24.jpg"],
   },
   {
     id: "saginaw-mi-2236-king",
@@ -540,7 +540,7 @@ const HOMES = [
 
     features: { backyard: "yes", fenced_yard: "yes", basement: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/saginaw-mi-2236-king-1.jpg", "images/saginaw-mi-2236-king-2.jpg", "images/saginaw-mi-2236-king-3.jpg", "images/saginaw-mi-2236-king-4.jpg", "images/saginaw-mi-2236-king-5.jpg", "images/saginaw-mi-2236-king-6.jpg", "images/saginaw-mi-2236-king-7.jpg", "images/saginaw-mi-2236-king-8.jpg", "images/saginaw-mi-2236-king-9.jpg", "images/saginaw-mi-2236-king-10.jpg", "images/saginaw-mi-2236-king-11.jpg", "images/saginaw-mi-2236-king-12.jpg", "images/saginaw-mi-2236-king-13.jpg", "images/saginaw-mi-2236-king-14.jpg", "images/saginaw-mi-2236-king-15.jpg", "images/saginaw-mi-2236-king-16.jpg", "images/saginaw-mi-2236-king-17.jpg", "images/saginaw-mi-2236-king-18.jpg", "images/saginaw-mi-2236-king-19.jpg"],
   },
   {
     id: "decatur-il-1303-hickory",
@@ -929,7 +929,7 @@ const HOMES = [
 
     features: { backyard: "yes", fenced_yard: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/montgomery-al-3355-lunceford-1.jpg", "images/montgomery-al-3355-lunceford-2.jpg", "images/montgomery-al-3355-lunceford-3.jpg", "images/montgomery-al-3355-lunceford-4.jpg", "images/montgomery-al-3355-lunceford-5.jpg", "images/montgomery-al-3355-lunceford-6.jpg", "images/montgomery-al-3355-lunceford-7.jpg", "images/montgomery-al-3355-lunceford-8.jpg", "images/montgomery-al-3355-lunceford-9.jpg", "images/montgomery-al-3355-lunceford-10.jpg", "images/montgomery-al-3355-lunceford-11.jpg", "images/montgomery-al-3355-lunceford-12.jpg", "images/montgomery-al-3355-lunceford-13.jpg", "images/montgomery-al-3355-lunceford-14.jpg", "images/montgomery-al-3355-lunceford-15.jpg", "images/montgomery-al-3355-lunceford-16.jpg", "images/montgomery-al-3355-lunceford-17.jpg", "images/montgomery-al-3355-lunceford-18.jpg", "images/montgomery-al-3355-lunceford-19.jpg", "images/montgomery-al-3355-lunceford-20.jpg", "images/montgomery-al-3355-lunceford-21.jpg", "images/montgomery-al-3355-lunceford-22.jpg", "images/montgomery-al-3355-lunceford-23.jpg", "images/montgomery-al-3355-lunceford-24.jpg"],
   },
   {
     id: "decatur-il-1923-church",
@@ -1380,7 +1380,7 @@ const HOMES = [
 
     features: { basement: "yes" },
     heroPhoto: "",
-    photos:    ["images/decatur-il-1180-mueller-1.jpg", "images/decatur-il-1180-mueller-2.jpg", "images/decatur-il-1180-mueller-3.jpg", "images/decatur-il-1180-mueller-4.jpg", "images/decatur-il-1180-mueller-5.jpg", "images/decatur-il-1180-mueller-6.jpg", "images/decatur-il-1180-mueller-7.jpg", "images/decatur-il-1180-mueller-8.jpg", "images/decatur-il-1180-mueller-9.jpg", "images/decatur-il-1180-mueller-10.jpg", "images/decatur-il-1180-mueller-11.jpg", "images/decatur-il-1180-mueller-12.jpg", "images/decatur-il-1180-mueller-13.jpg", "images/decatur-il-1180-mueller-14.jpg", "images/decatur-il-1180-mueller-15.jpg", "images/decatur-il-1180-mueller-16.jpg", "images/decatur-il-1180-mueller-17.jpg", "images/decatur-il-1180-mueller-18.jpg", "images/decatur-il-1180-mueller-19.jpg", "images/decatur-il-1180-mueller-20.jpg", "images/decatur-il-1180-mueller-21.jpg", "images/decatur-il-1180-mueller-22.jpg", "images/decatur-il-1180-mueller-23.jpg", "images/decatur-il-1180-mueller-24.jpg", "images/decatur-il-1180-mueller-25.jpg", "images/decatur-il-1180-mueller-26.jpg", "images/decatur-il-1180-mueller-27.jpg", "images/decatur-il-1180-mueller-28.jpg", "images/decatur-il-1180-mueller-29.jpg", "images/decatur-il-1180-mueller-30.jpg", "images/decatur-il-1180-mueller-31.jpg", "images/decatur-il-1180-mueller-32.jpg", "images/decatur-il-1180-mueller-33.jpg", "images/decatur-il-1180-mueller-34.jpg", "images/decatur-il-1180-mueller-35.jpg", "images/decatur-il-1180-mueller-36.jpg", "images/decatur-il-1180-mueller-37.jpg", "images/decatur-il-1180-mueller-38.jpg", "images/decatur-il-1180-mueller-39.jpg", "images/decatur-il-1180-mueller-40.jpg", "images/decatur-il-1180-mueller-41.jpg", "images/decatur-il-1180-mueller-42.jpg", "images/decatur-il-1180-mueller-43.jpg"],
+    photos:    ["images/decatur-il-1180-mueller-1.jpg", "images/decatur-il-1180-mueller-2.jpg", "images/decatur-il-1180-mueller-3.jpg", "images/decatur-il-1180-mueller-4.jpg", "images/decatur-il-1180-mueller-5.jpg", "images/decatur-il-1180-mueller-6.jpg", "images/decatur-il-1180-mueller-7.jpg", "images/decatur-il-1180-mueller-8.jpg", "images/decatur-il-1180-mueller-9.jpg", "images/decatur-il-1180-mueller-10.jpg", "images/decatur-il-1180-mueller-11.jpg", "images/decatur-il-1180-mueller-12.jpg", "images/decatur-il-1180-mueller-13.jpg", "images/decatur-il-1180-mueller-14.jpg", "images/decatur-il-1180-mueller-15.jpg", "images/decatur-il-1180-mueller-16.jpg", "images/decatur-il-1180-mueller-17.jpg", "images/decatur-il-1180-mueller-18.jpg", "images/decatur-il-1180-mueller-19.jpg", "images/decatur-il-1180-mueller-20.jpg", "images/decatur-il-1180-mueller-21.jpg", "images/decatur-il-1180-mueller-22.jpg", "images/decatur-il-1180-mueller-23.jpg", "images/decatur-il-1180-mueller-24.jpg"],
   },
   {
     id: "decatur-il-2081-college",
@@ -1483,7 +1483,7 @@ const HOMES = [
 
     features: { basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/westfrankfort-il-205-st-1.jpg", "images/westfrankfort-il-205-st-2.jpg", "images/westfrankfort-il-205-st-3.jpg", "images/westfrankfort-il-205-st-4.jpg", "images/westfrankfort-il-205-st-5.jpg", "images/westfrankfort-il-205-st-6.jpg"],
   },
   {
     id: "stlouis-mo-3738-sylvan",
@@ -1995,7 +1995,7 @@ const HOMES = [
 
     features: { backyard: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/stlouis-mo-5600-gatesworth-1.jpg", "images/stlouis-mo-5600-gatesworth-2.jpg", "images/stlouis-mo-5600-gatesworth-3.jpg", "images/stlouis-mo-5600-gatesworth-4.jpg", "images/stlouis-mo-5600-gatesworth-5.jpg", "images/stlouis-mo-5600-gatesworth-6.jpg", "images/stlouis-mo-5600-gatesworth-7.jpg", "images/stlouis-mo-5600-gatesworth-8.jpg", "images/stlouis-mo-5600-gatesworth-9.jpg", "images/stlouis-mo-5600-gatesworth-10.jpg", "images/stlouis-mo-5600-gatesworth-11.jpg", "images/stlouis-mo-5600-gatesworth-12.jpg", "images/stlouis-mo-5600-gatesworth-13.jpg", "images/stlouis-mo-5600-gatesworth-14.jpg", "images/stlouis-mo-5600-gatesworth-15.jpg", "images/stlouis-mo-5600-gatesworth-16.jpg", "images/stlouis-mo-5600-gatesworth-17.jpg", "images/stlouis-mo-5600-gatesworth-18.jpg", "images/stlouis-mo-5600-gatesworth-19.jpg", "images/stlouis-mo-5600-gatesworth-20.jpg", "images/stlouis-mo-5600-gatesworth-21.jpg", "images/stlouis-mo-5600-gatesworth-22.jpg", "images/stlouis-mo-5600-gatesworth-23.jpg", "images/stlouis-mo-5600-gatesworth-24.jpg"],
   },
   {
     id: "flint-mi-5210-dupont",
@@ -2035,7 +2035,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/stlouis-mo-5811-helen-1.jpg", "images/stlouis-mo-5811-helen-2.jpg", "images/stlouis-mo-5811-helen-3.jpg", "images/stlouis-mo-5811-helen-4.jpg", "images/stlouis-mo-5811-helen-5.jpg", "images/stlouis-mo-5811-helen-6.jpg", "images/stlouis-mo-5811-helen-7.jpg", "images/stlouis-mo-5811-helen-8.jpg", "images/stlouis-mo-5811-helen-9.jpg", "images/stlouis-mo-5811-helen-10.jpg", "images/stlouis-mo-5811-helen-11.jpg", "images/stlouis-mo-5811-helen-12.jpg", "images/stlouis-mo-5811-helen-13.jpg", "images/stlouis-mo-5811-helen-14.jpg", "images/stlouis-mo-5811-helen-15.jpg", "images/stlouis-mo-5811-helen-16.jpg", "images/stlouis-mo-5811-helen-17.jpg", "images/stlouis-mo-5811-helen-18.jpg", "images/stlouis-mo-5811-helen-19.jpg", "images/stlouis-mo-5811-helen-20.jpg"],
   },
   {
     id: "flint-mi-3501-milbourne",
@@ -2074,7 +2074,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/stlouis-mo-5851-ferris-1.jpg", "images/stlouis-mo-5851-ferris-2.jpg", "images/stlouis-mo-5851-ferris-3.jpg", "images/stlouis-mo-5851-ferris-4.jpg", "images/stlouis-mo-5851-ferris-5.jpg", "images/stlouis-mo-5851-ferris-6.jpg", "images/stlouis-mo-5851-ferris-7.jpg", "images/stlouis-mo-5851-ferris-8.jpg", "images/stlouis-mo-5851-ferris-9.jpg", "images/stlouis-mo-5851-ferris-10.jpg", "images/stlouis-mo-5851-ferris-11.jpg", "images/stlouis-mo-5851-ferris-12.jpg", "images/stlouis-mo-5851-ferris-13.jpg", "images/stlouis-mo-5851-ferris-14.jpg", "images/stlouis-mo-5851-ferris-15.jpg", "images/stlouis-mo-5851-ferris-16.jpg", "images/stlouis-mo-5851-ferris-17.jpg", "images/stlouis-mo-5851-ferris-18.jpg", "images/stlouis-mo-5851-ferris-19.jpg", "images/stlouis-mo-5851-ferris-20.jpg", "images/stlouis-mo-5851-ferris-21.jpg", "images/stlouis-mo-5851-ferris-22.jpg", "images/stlouis-mo-5851-ferris-23.jpg", "images/stlouis-mo-5851-ferris-24.jpg"],
   },
   {
     id: "decatur-il-1365-walnut",
@@ -2864,7 +2864,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/stlouis-mo-8315-eton-1.jpg", "images/stlouis-mo-8315-eton-2.jpg", "images/stlouis-mo-8315-eton-3.jpg", "images/stlouis-mo-8315-eton-4.jpg", "images/stlouis-mo-8315-eton-5.jpg", "images/stlouis-mo-8315-eton-6.jpg", "images/stlouis-mo-8315-eton-7.jpg", "images/stlouis-mo-8315-eton-8.jpg", "images/stlouis-mo-8315-eton-9.jpg", "images/stlouis-mo-8315-eton-10.jpg", "images/stlouis-mo-8315-eton-11.jpg", "images/stlouis-mo-8315-eton-12.jpg", "images/stlouis-mo-8315-eton-13.jpg", "images/stlouis-mo-8315-eton-14.jpg", "images/stlouis-mo-8315-eton-15.jpg", "images/stlouis-mo-8315-eton-16.jpg", "images/stlouis-mo-8315-eton-17.jpg", "images/stlouis-mo-8315-eton-18.jpg", "images/stlouis-mo-8315-eton-19.jpg", "images/stlouis-mo-8315-eton-20.jpg", "images/stlouis-mo-8315-eton-21.jpg"],
   },
   {
     id: "eaststlouis-il-5617-warren",

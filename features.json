@@ -5388,5 +5388,35 @@
   "central_air": "unknown",
   "storage_shed": "unknown",
   "attic": "unknown"
+ },
+ "1c5f972044447474d461893dea6cad7838a79223": {
+  "backyard": "unknown",
+  "fenced_yard": "unknown",
+  "basement": "unknown",
+  "garage": "unknown",
+  "off_street_parking": "unknown",
+  "central_air": "unknown",
+  "storage_shed": "unknown",
+  "attic": "unknown"
+ },
+ "5f7577041d309458305c0375479f3dfbb9adc758": {
+  "backyard": "unknown",
+  "fenced_yard": "unknown",
+  "basement": "no",
+  "garage": "unknown",
+  "off_street_parking": "unknown",
+  "central_air": "unknown",
+  "storage_shed": "unknown",
+  "attic": "unknown"
+ },
+ "ca0394c684095bf5b70447e05f7ec483a9fd3e72": {
+  "backyard": "yes",
+  "fenced_yard": "unknown",
+  "basement": "unknown",
+  "garage": "unknown",
+  "off_street_parking": "unknown",
+  "central_air": "unknown",
+  "storage_shed": "unknown",
+  "attic": "unknown"
  }
 }

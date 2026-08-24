@@ -13,8 +13,69 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (147 live, rebuilt from master published 2026-08-21) --- */
+/* --- the homes (147 live, rebuilt from master published 2026-08-24) --- */
 const HOMES = [
+  {
+    id: "stlouis-mo-5349-janet",
+    address:     "5349 Janet Ave",
+    zip:         "63136",
+    description: "1,221 sqft",
+    city:  "St. Louis",
+    state: "MO",
+    beds:  3,
+    baths: 1,
+    sqft:  "1221",
+    status: "Available",
+
+    monthlyPayment: 925,
+    moveIn:         2499,
+    lockedPrice:    108000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "centralia-il-514-walnut",
+    address:     "514 N Walnut St",
+    zip:         "62801",
+    description: "1160 Sq Ft. 3x monthly is required with showing past pay stubs and no past evictions",
+    city:  "Centralia",
+    state: "IL",
+    beds:  3,
+    baths: 1,
+    sqft:  "1160",
+    status: "Available",
+
+    monthlyPayment: 950,
+    moveIn:         3000,
+    lockedPrice:    78700,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "montgomery-al-3120-lower",
+    address:     "3120 Lower Wetumpka Rd",
+    zip:         "36110",
+    description: "The property is 820 sq ft. There is no basement. The water and power have been off since July 2026. All systems were working before power was shut off",
+    city:  "Montgomery",
+    state: "AL",
+    beds:  2,
+    baths: 1,
+    sqft:  "820",
+    status: "Available",
+
+    monthlyPayment: 889,
+    moveIn:         4000,
+    lockedPrice:    89000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { basement: "no" },
+    heroPhoto: "",
+    photos:    [],
+  },
   {
     id: "stlouis-mo-5461-hamilton",
     address:     "5461 Hamilton Avenue",
@@ -33,6 +94,27 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     features: { backyard: "yes", off_street_parking: "yes" },
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "eaststlouis-il-5050-hallows",
+    address:     "5050 Hallows Avenue",
+    zip:         "62204",
+    description: "1,025 SF home located on a 10,243 SF lot",
+    city:  "East St. Louis",
+    state: "IL",
+    beds:  2,
+    baths: 2,
+    sqft:  "1025",
+    status: "Available",
+
+    monthlyPayment: 800,
+    moveIn:         3000,
+    lockedPrice:    76500,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { backyard: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -254,27 +336,6 @@ const HOMES = [
     features: { backyard: "yes", basement: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-1818-clay-1.jpg", "images/decatur-il-1818-clay-2.jpg", "images/decatur-il-1818-clay-3.jpg", "images/decatur-il-1818-clay-4.jpg", "images/decatur-il-1818-clay-5.jpg", "images/decatur-il-1818-clay-6.jpg", "images/decatur-il-1818-clay-7.jpg", "images/decatur-il-1818-clay-8.jpg", "images/decatur-il-1818-clay-9.jpg", "images/decatur-il-1818-clay-10.jpg", "images/decatur-il-1818-clay-11.jpg", "images/decatur-il-1818-clay-12.jpg", "images/decatur-il-1818-clay-13.jpg", "images/decatur-il-1818-clay-14.jpg", "images/decatur-il-1818-clay-15.jpg", "images/decatur-il-1818-clay-16.jpg", "images/decatur-il-1818-clay-17.jpg", "images/decatur-il-1818-clay-18.jpg", "images/decatur-il-1818-clay-19.jpg", "images/decatur-il-1818-clay-20.jpg", "images/decatur-il-1818-clay-21.jpg", "images/decatur-il-1818-clay-22.jpg", "images/decatur-il-1818-clay-23.jpg", "images/decatur-il-1818-clay-24.jpg", "images/decatur-il-1818-clay-25.jpg", "images/decatur-il-1818-clay-26.jpg", "images/decatur-il-1818-clay-27.jpg", "images/decatur-il-1818-clay-28.jpg", "images/decatur-il-1818-clay-29.jpg", "images/decatur-il-1818-clay-30.jpg", "images/decatur-il-1818-clay-31.jpg", "images/decatur-il-1818-clay-32.jpg", "images/decatur-il-1818-clay-33.jpg", "images/decatur-il-1818-clay-34.jpg", "images/decatur-il-1818-clay-35.jpg", "images/decatur-il-1818-clay-36.jpg", "images/decatur-il-1818-clay-37.jpg", "images/decatur-il-1818-clay-38.jpg", "images/decatur-il-1818-clay-39.jpg", "images/decatur-il-1818-clay-40.jpg", "images/decatur-il-1818-clay-41.jpg", "images/decatur-il-1818-clay-42.jpg", "images/decatur-il-1818-clay-43.jpg", "images/decatur-il-1818-clay-44.jpg", "images/decatur-il-1818-clay-45.jpg", "images/decatur-il-1818-clay-46.jpg", "images/decatur-il-1818-clay-47.jpg", "images/decatur-il-1818-clay-48.jpg", "images/decatur-il-1818-clay-49.jpg", "images/decatur-il-1818-clay-50.jpg", "images/decatur-il-1818-clay-51.jpg", "images/decatur-il-1818-clay-52.jpg", "images/decatur-il-1818-clay-53.jpg", "images/decatur-il-1818-clay-54.jpg", "images/decatur-il-1818-clay-55.jpg", "images/decatur-il-1818-clay-56.jpg", "images/decatur-il-1818-clay-57.jpg", "images/decatur-il-1818-clay-58.jpg", "images/decatur-il-1818-clay-59.jpg"],
-  },
-  {
-    id: "westfield-il-330-madison",
-    address:     "330 S Madison St",
-    zip:         "62474",
-    description: "2 year old rood, all PEX plumbing, updated electrical panel, 4 yr old furnace, 2 car detached garage",
-    city:  "Westfield",
-    state: "IL",
-    beds:  5,
-    baths: 2,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 900,
-    moveIn:         2000,
-    lockedPrice:    89000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { garage: "yes", off_street_parking: "yes" },
-    heroPhoto: "",
-    photos:    [],
   },
   {
     id: "eaststlouis-il-740-22nd",
@@ -1180,27 +1241,6 @@ const HOMES = [
     photos:    ["images/decatur-il-1252-whitmer-1.jpg", "images/decatur-il-1252-whitmer-2.jpg", "images/decatur-il-1252-whitmer-3.jpg", "images/decatur-il-1252-whitmer-4.jpg", "images/decatur-il-1252-whitmer-5.jpg", "images/decatur-il-1252-whitmer-6.jpg", "images/decatur-il-1252-whitmer-7.jpg", "images/decatur-il-1252-whitmer-8.jpg", "images/decatur-il-1252-whitmer-9.jpg", "images/decatur-il-1252-whitmer-10.jpg", "images/decatur-il-1252-whitmer-11.jpg"],
   },
   {
-    id: "hartfordcity-in-612-cherry",
-    address:     "612 N Cherry St",
-    zip:         "47348",
-    description: "HANDYMAN SPECIAL — HARTFORD CITY. 3 bed / 1.5 bath • 1,592 sqft • ALL ONE LEVEL. Detached garage + workshop • Central air • City utilities. Needs work. OWNER FINANCING — no bank needed. Sold as-is. Handy buyers, this is your shot at ownership.. Electricity and Water are both on",
-    city:  "Hartford City",
-    state: "IN",
-    beds:  3,
-    baths: 1.5,
-    sqft:  "1592",
-    status: "Available",
-
-    monthlyPayment: 875,
-    moveIn:         3000,
-    lockedPrice:    89000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { garage: "yes", off_street_parking: "yes", central_air: "yes" },
-    heroPhoto: "",
-    photos:    ["images/hartfordcity-in-612-cherry-1.jpg", "images/hartfordcity-in-612-cherry-2.jpg", "images/hartfordcity-in-612-cherry-3.jpg", "images/hartfordcity-in-612-cherry-4.jpg", "images/hartfordcity-in-612-cherry-5.jpg", "images/hartfordcity-in-612-cherry-6.jpg", "images/hartfordcity-in-612-cherry-7.jpg", "images/hartfordcity-in-612-cherry-8.jpg", "images/hartfordcity-in-612-cherry-9.jpg", "images/hartfordcity-in-612-cherry-10.jpg"],
-  },
-  {
     id: "springfield-il-2109-martin",
     address:     "2109 S Martin Luther King Jr. Dr",
     zip:         "62703",
@@ -1630,27 +1670,6 @@ const HOMES = [
     photos:    ["images/carbondale-il-615-almond-1.jpg", "images/carbondale-il-615-almond-2.jpg", "images/carbondale-il-615-almond-3.jpg", "images/carbondale-il-615-almond-4.jpg", "images/carbondale-il-615-almond-5.jpg", "images/carbondale-il-615-almond-6.jpg", "images/carbondale-il-615-almond-7.jpg", "images/carbondale-il-615-almond-8.jpg", "images/carbondale-il-615-almond-9.jpg", "images/carbondale-il-615-almond-10.jpg", "images/carbondale-il-615-almond-11.jpg", "images/carbondale-il-615-almond-12.jpg", "images/carbondale-il-615-almond-13.jpg"],
   },
   {
-    id: "decatur-il-1344-condit",
-    address:     "1344 E Condit St",
-    zip:         "62521",
-    description: "1344 E Condit St Decatur IL. 3 bedroom / 1 bath Turn key. Move in ready.. 980 square feet. 6000 sq lot.. Parcel #: 04-12-11-430-015. Well maintained house till the last minute.. newer hot water tank. good furnace. Payne brand.. all mechanicals good. green neighborhood. Lots of trees.. new floors in some rooms. Good roof, foundation & Structure. clean basement. has a long driveway for safer off street parking.. 6 minutes to Decatur memorial hospital & the lake.. Terms for Tenant Buyer. Become a homeowner:. $3000 down. $870 per month PIT (includes property tax. excludes insurance). Property tax $637",
-    city:  "Decatur",
-    state: "IL",
-    beds:  3,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 870,
-    moveIn:         3000,
-    lockedPrice:    83000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { backyard: "yes", basement: "yes", off_street_parking: "yes" },
-    heroPhoto: "",
-    photos:    ["images/decatur-il-1344-condit-1.jpg", "images/decatur-il-1344-condit-2.jpg", "images/decatur-il-1344-condit-3.jpg", "images/decatur-il-1344-condit-4.jpg", "images/decatur-il-1344-condit-5.jpg", "images/decatur-il-1344-condit-6.jpg", "images/decatur-il-1344-condit-7.jpg", "images/decatur-il-1344-condit-8.jpg", "images/decatur-il-1344-condit-9.jpg", "images/decatur-il-1344-condit-10.jpg", "images/decatur-il-1344-condit-11.jpg", "images/decatur-il-1344-condit-12.jpg", "images/decatur-il-1344-condit-13.jpg", "images/decatur-il-1344-condit-14.jpg", "images/decatur-il-1344-condit-15.jpg", "images/decatur-il-1344-condit-16.jpg"],
-  },
-  {
     id: "peoria-il-1220-john",
     address:     "1220 W John H Gwynn Jr Ave",
     zip:         "61605",
@@ -1847,8 +1866,8 @@ const HOMES = [
     sqft:  "988",
     status: "Available",
 
-    monthlyPayment: 815,
-    moveIn:         2500,
+    monthlyPayment: 795,
+    moveIn:         2000,
     lockedPrice:    86000,
     termText:       "30-year owner financing (contract for deed)",
 
@@ -1977,6 +1996,27 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/peoria-il-2710-antoinette-1.jpg", "images/peoria-il-2710-antoinette-2.jpg", "images/peoria-il-2710-antoinette-3.jpg", "images/peoria-il-2710-antoinette-4.jpg", "images/peoria-il-2710-antoinette-5.jpg", "images/peoria-il-2710-antoinette-6.jpg", "images/peoria-il-2710-antoinette-7.jpg", "images/peoria-il-2710-antoinette-8.jpg", "images/peoria-il-2710-antoinette-9.jpg"],
+  },
+  {
+    id: "stlouis-mo-5600-gatesworth",
+    address:     "5600 Gatesworth Ave",
+    zip:         "63136",
+    description: "Built in 1941. Needs to be listed as a Contractor special.Work needs to be done before you can apply for occupancy.Needs Plumbing that will go to the Hot water heater, a few boards on the back deck with the main items that need to be fixed, overall it’s a nice property and it’s right across the street from my golf course",
+    city:  "St. Louis",
+    state: "MO",
+    beds:  2,
+    baths: 1,
+    sqft:  "672",
+    status: "Available",
+
+    monthlyPayment: 895,
+    moveIn:         2500,
+    lockedPrice:    79000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { backyard: "yes" },
+    heroPhoto: "",
+    photos:    [],
   },
   {
     id: "flint-mi-5210-dupont",
@@ -2968,46 +3008,5 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/peoria-il-422-louisa-1.jpg", "images/peoria-il-422-louisa-2.jpg", "images/peoria-il-422-louisa-3.jpg", "images/peoria-il-422-louisa-4.jpg", "images/peoria-il-422-louisa-5.jpg", "images/peoria-il-422-louisa-6.jpg", "images/peoria-il-422-louisa-7.jpg", "images/peoria-il-422-louisa-8.jpg", "images/peoria-il-422-louisa-9.jpg", "images/peoria-il-422-louisa-10.jpg", "images/peoria-il-422-louisa-11.jpg", "images/peoria-il-422-louisa-12.jpg", "images/peoria-il-422-louisa-13.jpg", "images/peoria-il-422-louisa-14.jpg", "images/peoria-il-422-louisa-15.jpg", "images/peoria-il-422-louisa-16.jpg", "images/peoria-il-422-louisa-17.jpg", "images/peoria-il-422-louisa-18.jpg", "images/peoria-il-422-louisa-19.jpg", "images/peoria-il-422-louisa-20.jpg", "images/peoria-il-422-louisa-21.jpg", "images/peoria-il-422-louisa-22.jpg", "images/peoria-il-422-louisa-23.jpg", "images/peoria-il-422-louisa-24.jpg"],
-  },
-  {
-    id: "eaststlouis-il-5050-hallows",
-    address:     "5050 Hallows Avenue",
-    zip:         "62204",
-    description: "1,025 SF home located on a 10,243 SF lot",
-    city:  "East St. Louis",
-    state: "IL",
-    beds:  2,
-    baths: 2,
-    sqft:  "1,025",
-    status: "Available",
-
-    monthlyPayment: 800,
-    moveIn:         3000,
-    lockedPrice:    76500,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { backyard: "yes" },
-    heroPhoto: "",
-    photos:    [],
-  },
-  {
-    id: "centralia-il-514-walnut",
-    address:     "514 N Walnut St",
-    zip:         "62801",
-    description: "1160 Sq Ft. 3x monthly is required with showing past pay stubs and no past evictions",
-    city:  "Centralia",
-    state: "IL",
-    beds:  3,
-    baths: 1,
-    sqft:  "1,160",
-    status: "Available",
-
-    monthlyPayment: 950,
-    moveIn:         3000,
-    lockedPrice:    78700,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
   },
 ];

@@ -33,7 +33,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/eaststlouis-il-802-71st-1.jpg", "images/eaststlouis-il-802-71st-2.jpg", "images/eaststlouis-il-802-71st-3.jpg", "images/eaststlouis-il-802-71st-4.jpg", "images/eaststlouis-il-802-71st-5.jpg", "images/eaststlouis-il-802-71st-6.jpg", "images/eaststlouis-il-802-71st-7.jpg", "images/eaststlouis-il-802-71st-8.jpg", "images/eaststlouis-il-802-71st-9.jpg", "images/eaststlouis-il-802-71st-10.jpg", "images/eaststlouis-il-802-71st-11.jpg", "images/eaststlouis-il-802-71st-12.jpg", "images/eaststlouis-il-802-71st-13.jpg", "images/eaststlouis-il-802-71st-14.jpg", "images/eaststlouis-il-802-71st-15.jpg", "images/eaststlouis-il-802-71st-16.jpg", "images/eaststlouis-il-802-71st-17.jpg", "images/eaststlouis-il-802-71st-18.jpg", "images/eaststlouis-il-802-71st-19.jpg", "images/eaststlouis-il-802-71st-20.jpg", "images/eaststlouis-il-802-71st-21.jpg", "images/eaststlouis-il-802-71st-22.jpg", "images/eaststlouis-il-802-71st-23.jpg", "images/eaststlouis-il-802-71st-24.jpg"],
   },
   {
     id: "decatur-il-1818-maple",
@@ -53,7 +53,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-1818-maple-1.jpg", "images/decatur-il-1818-maple-2.jpg", "images/decatur-il-1818-maple-3.jpg", "images/decatur-il-1818-maple-4.jpg", "images/decatur-il-1818-maple-5.jpg", "images/decatur-il-1818-maple-6.jpg", "images/decatur-il-1818-maple-7.jpg", "images/decatur-il-1818-maple-8.jpg", "images/decatur-il-1818-maple-9.jpg", "images/decatur-il-1818-maple-10.jpg", "images/decatur-il-1818-maple-11.jpg", "images/decatur-il-1818-maple-12.jpg", "images/decatur-il-1818-maple-13.jpg", "images/decatur-il-1818-maple-14.jpg", "images/decatur-il-1818-maple-15.jpg", "images/decatur-il-1818-maple-16.jpg", "images/decatur-il-1818-maple-17.jpg", "images/decatur-il-1818-maple-18.jpg", "images/decatur-il-1818-maple-19.jpg", "images/decatur-il-1818-maple-20.jpg", "images/decatur-il-1818-maple-21.jpg", "images/decatur-il-1818-maple-22.jpg", "images/decatur-il-1818-maple-23.jpg", "images/decatur-il-1818-maple-24.jpg"],
   },
   {
     id: "flint-mi-3909-seneca",
@@ -74,7 +74,7 @@ const HOMES = [
 
     features: { basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/flint-mi-3909-seneca-1.jpg", "images/flint-mi-3909-seneca-2.jpg", "images/flint-mi-3909-seneca-3.jpg", "images/flint-mi-3909-seneca-4.jpg", "images/flint-mi-3909-seneca-5.jpg", "images/flint-mi-3909-seneca-6.jpg", "images/flint-mi-3909-seneca-7.jpg", "images/flint-mi-3909-seneca-8.jpg", "images/flint-mi-3909-seneca-9.jpg", "images/flint-mi-3909-seneca-10.jpg", "images/flint-mi-3909-seneca-11.jpg", "images/flint-mi-3909-seneca-12.jpg", "images/flint-mi-3909-seneca-13.jpg", "images/flint-mi-3909-seneca-14.jpg", "images/flint-mi-3909-seneca-15.jpg", "images/flint-mi-3909-seneca-16.jpg", "images/flint-mi-3909-seneca-17.jpg", "images/flint-mi-3909-seneca-18.jpg", "images/flint-mi-3909-seneca-19.jpg", "images/flint-mi-3909-seneca-20.jpg", "images/flint-mi-3909-seneca-21.jpg", "images/flint-mi-3909-seneca-22.jpg", "images/flint-mi-3909-seneca-23.jpg", "images/flint-mi-3909-seneca-24.jpg"],
   },
   {
     id: "flint-mi-2217-maryland",
@@ -95,7 +95,7 @@ const HOMES = [
 
     features: { garage: "yes", central_air: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/flint-mi-2217-maryland-1.jpg", "images/flint-mi-2217-maryland-2.jpg", "images/flint-mi-2217-maryland-3.jpg", "images/flint-mi-2217-maryland-4.jpg", "images/flint-mi-2217-maryland-5.jpg", "images/flint-mi-2217-maryland-6.jpg", "images/flint-mi-2217-maryland-7.jpg", "images/flint-mi-2217-maryland-8.jpg", "images/flint-mi-2217-maryland-9.jpg", "images/flint-mi-2217-maryland-10.jpg", "images/flint-mi-2217-maryland-11.jpg", "images/flint-mi-2217-maryland-12.jpg", "images/flint-mi-2217-maryland-13.jpg", "images/flint-mi-2217-maryland-14.jpg", "images/flint-mi-2217-maryland-15.jpg", "images/flint-mi-2217-maryland-16.jpg", "images/flint-mi-2217-maryland-17.jpg", "images/flint-mi-2217-maryland-18.jpg", "images/flint-mi-2217-maryland-19.jpg", "images/flint-mi-2217-maryland-20.jpg", "images/flint-mi-2217-maryland-21.jpg", "images/flint-mi-2217-maryland-22.jpg", "images/flint-mi-2217-maryland-23.jpg", "images/flint-mi-2217-maryland-24.jpg"],
   },
   {
     id: "decatur-il-1963-31st",
@@ -116,7 +116,7 @@ const HOMES = [
 
     features: { garage: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-1963-31st-1.jpg", "images/decatur-il-1963-31st-2.jpg", "images/decatur-il-1963-31st-3.jpg", "images/decatur-il-1963-31st-4.jpg", "images/decatur-il-1963-31st-5.jpg", "images/decatur-il-1963-31st-6.jpg", "images/decatur-il-1963-31st-7.jpg", "images/decatur-il-1963-31st-8.jpg", "images/decatur-il-1963-31st-9.jpg", "images/decatur-il-1963-31st-10.jpg", "images/decatur-il-1963-31st-11.jpg", "images/decatur-il-1963-31st-12.jpg", "images/decatur-il-1963-31st-13.jpg", "images/decatur-il-1963-31st-14.jpg", "images/decatur-il-1963-31st-15.jpg", "images/decatur-il-1963-31st-16.jpg", "images/decatur-il-1963-31st-17.jpg", "images/decatur-il-1963-31st-18.jpg", "images/decatur-il-1963-31st-19.jpg", "images/decatur-il-1963-31st-20.jpg", "images/decatur-il-1963-31st-21.jpg", "images/decatur-il-1963-31st-22.jpg", "images/decatur-il-1963-31st-23.jpg"],
   },
   {
     id: "stlouis-mo-5349-janet",
@@ -2240,7 +2240,7 @@ const HOMES = [
 
     features: { backyard: "yes", basement: "yes", off_street_parking: "yes", storage_shed: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-1263-green-1.jpg", "images/decatur-il-1263-green-2.jpg", "images/decatur-il-1263-green-3.jpg", "images/decatur-il-1263-green-4.jpg", "images/decatur-il-1263-green-5.jpg", "images/decatur-il-1263-green-6.jpg", "images/decatur-il-1263-green-7.jpg", "images/decatur-il-1263-green-8.jpg", "images/decatur-il-1263-green-9.jpg", "images/decatur-il-1263-green-10.jpg", "images/decatur-il-1263-green-11.jpg", "images/decatur-il-1263-green-12.jpg", "images/decatur-il-1263-green-13.jpg", "images/decatur-il-1263-green-14.jpg", "images/decatur-il-1263-green-15.jpg", "images/decatur-il-1263-green-16.jpg", "images/decatur-il-1263-green-17.jpg", "images/decatur-il-1263-green-18.jpg", "images/decatur-il-1263-green-19.jpg", "images/decatur-il-1263-green-20.jpg"],
   },
   {
     id: "decatur-il-462-leafland",

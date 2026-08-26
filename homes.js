@@ -13,8 +13,111 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (146 live, rebuilt from master published 2026-08-24) --- */
+/* --- the homes (147 live, rebuilt from master published 2026-08-26) --- */
 const HOMES = [
+  {
+    id: "eaststlouis-il-802-71st",
+    address:     "802 N 71st St",
+    zip:         "62203",
+    description: "All systems working, vacant as of 2 weeks ago",
+    city:  "East St. Louis",
+    state: "IL",
+    beds:  2,
+    baths: 1,
+    sqft:  "",
+    status: "Available",
+
+    monthlyPayment: 925,
+    moveIn:         3000,
+    lockedPrice:    85000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "decatur-il-1818-maple",
+    address:     "1818 N Maple Ave.",
+    zip:         "62526",
+    description: "842 sf. New roof, 2024",
+    city:  "Decatur",
+    state: "IL",
+    beds:  2,
+    baths: 1,
+    sqft:  "824",
+    status: "Available",
+
+    monthlyPayment: 794.36,
+    moveIn:         2000,
+    lockedPrice:    79000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "flint-mi-3909-seneca",
+    address:     "3909 Seneca St",
+    zip:         "48504",
+    description: "3909 Seneca St, Flint, MI. | Price: $99k, 3k down, monthly payments: $896.14 + taxes and insurance. 1351 SqFt, 2235 Sqft (with basement), recently vacated by non-paying TB.. Water, Electricity utilities are ON. Previous TB had reported plumbing issue and water backed up in the basement, but didn't properly dry it up. Basement now cleaned up and dried by handyman Scott. No new leaks.. Spacious 1,351 SqFt living area, 2235 Sqft (with basement) Large basement Basement looks to be fully finished at one point with a large living area, and also a second bathroom can be easily finished by TB(water supply line and drain line/toilet flange in place). The following were Completed around June/July last year:. · All new PEX plumbing. · New electrical panel, updated wiring & breakers (done by master electrician, city inspected). · City inspected-New water riser, water meter, and gas meter. · City inspections passed – No gas leaks with pressurization test. · New faucets & new toilet. Exterior Features. · Solid concrete driveway. · Oversized 2-car garage. Charming solid oak floors adds long-term value. · Quiet residential street, all homes look occupied.. More Photos and Videos taken Aug 2025, by community trusted BOTG Dametrice:",
+    city:  "Flint",
+    state: "MI",
+    beds:  3,
+    baths: 2,
+    sqft:  "1351",
+    status: "Available",
+
+    monthlyPayment: 896.14,
+    moveIn:         3000,
+    lockedPrice:    96000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { basement: "yes", garage: "yes", off_street_parking: "yes" },
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "flint-mi-2217-maryland",
+    address:     "2217 Maryland Ave.",
+    zip:         "48506",
+    description: "3 Bedroom / 1 Bathroom 1274 sq/ft with a big kitchen and oversized living room.. Updated bathroom. Kitchen cabinets/countertops in very good condition.. Newer roof. HVAC is in good working condition.. Brand new water heater!. Large detached garage. Clean property",
+    city:  "Flint",
+    state: "MI",
+    beds:  3,
+    baths: 1,
+    sqft:  "",
+    status: "Available",
+
+    monthlyPayment: 975,
+    moveIn:         3000,
+    lockedPrice:    99000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { garage: "yes", central_air: "yes" },
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "decatur-il-1963-31st",
+    address:     "1963 N 31st St",
+    zip:         "62526",
+    description: "512 Sq Ft. New roof 2024. Year Built: 1941, 1 Story, Const. Type: Wood Frame, Condition: Average, Quality: C, Finished: 512 SF. 576 Sq Ft DETACHED GARAGE- FRAME",
+    city:  "Decatur",
+    state: "IL",
+    beds:  2,
+    baths: 1,
+    sqft:  "512",
+    status: "Available",
+
+    monthlyPayment: 875,
+    moveIn:         2000,
+    lockedPrice:    79000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { garage: "yes" },
+    heroPhoto: "",
+    photos:    [],
+  },
   {
     id: "stlouis-mo-5349-janet",
     address:     "5349 Janet Ave",
@@ -561,25 +664,6 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1303-hickory-1.jpg", "images/decatur-il-1303-hickory-2.jpg", "images/decatur-il-1303-hickory-3.jpg", "images/decatur-il-1303-hickory-4.jpg"],
-  },
-  {
-    id: "decatur-il-2067-maple",
-    address:     "2067 N Maple Ave",
-    zip:         "62526",
-    city:  "Decatur",
-    state: "IL",
-    beds:  2,
-    baths: 1,
-    sqft:  "840",
-    status: "Available",
-
-    monthlyPayment: 975,
-    moveIn:         2500,
-    lockedPrice:    89956,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    ["images/decatur-il-2067-maple-1.jpg", "images/decatur-il-2067-maple-2.jpg", "images/decatur-il-2067-maple-3.jpg", "images/decatur-il-2067-maple-4.jpg", "images/decatur-il-2067-maple-5.jpg", "images/decatur-il-2067-maple-6.jpg", "images/decatur-il-2067-maple-7.jpg", "images/decatur-il-2067-maple-8.jpg", "images/decatur-il-2067-maple-9.jpg", "images/decatur-il-2067-maple-10.jpg", "images/decatur-il-2067-maple-11.jpg", "images/decatur-il-2067-maple-12.jpg", "images/decatur-il-2067-maple-13.jpg", "images/decatur-il-2067-maple-14.jpg", "images/decatur-il-2067-maple-15.jpg", "images/decatur-il-2067-maple-16.jpg", "images/decatur-il-2067-maple-17.jpg", "images/decatur-il-2067-maple-18.jpg", "images/decatur-il-2067-maple-19.jpg", "images/decatur-il-2067-maple-20.jpg", "images/decatur-il-2067-maple-21.jpg", "images/decatur-il-2067-maple-22.jpg", "images/decatur-il-2067-maple-23.jpg", "images/decatur-il-2067-maple-24.jpg"],
   },
   {
     id: "cahokia-il-107-judith",
@@ -1211,9 +1295,9 @@ const HOMES = [
     sqft:  "861",
     status: "Available",
 
-    monthlyPayment: 975,
+    monthlyPayment: 925,
     moveIn:         3500,
-    lockedPrice:    99500,
+    lockedPrice:    89000,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
@@ -1506,27 +1590,6 @@ const HOMES = [
     photos:    ["images/stlouis-mo-3738-sylvan-1.jpg", "images/stlouis-mo-3738-sylvan-2.jpg", "images/stlouis-mo-3738-sylvan-3.jpg", "images/stlouis-mo-3738-sylvan-4.jpg", "images/stlouis-mo-3738-sylvan-5.jpg", "images/stlouis-mo-3738-sylvan-6.jpg", "images/stlouis-mo-3738-sylvan-7.jpg", "images/stlouis-mo-3738-sylvan-8.jpg", "images/stlouis-mo-3738-sylvan-9.jpg"],
   },
   {
-    id: "nokomis-il-435-cedar",
-    address:     "435 S Cedar Street",
-    zip:         "62075",
-    description: "Single story residence Built in 1910, this 962 sq ft home offers a perfect blend of historic charm and practical living.. Key Features: Bedrooms and full bathroom on single level for ease of access. Small utility / Wet room just off the kitchen. Large yard with included storage shed.. Functional Layout: Includes a sizable kitchen with abundant cabinetry, and a versatile front living room area",
-    city:  "Nokomis",
-    state: "IL",
-    beds:  2,
-    baths: 1,
-    sqft:  "962",
-    status: "Available",
-
-    monthlyPayment: 709.28,
-    moveIn:         1000,
-    lockedPrice:    57000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { backyard: "yes", storage_shed: "yes" },
-    heroPhoto: "",
-    photos:    ["images/nokomis-il-435-cedar-1.jpg", "images/nokomis-il-435-cedar-2.jpg", "images/nokomis-il-435-cedar-3.jpg", "images/nokomis-il-435-cedar-4.jpg", "images/nokomis-il-435-cedar-5.jpg"],
-  },
-  {
     id: "peoria-il-715-thrush",
     address:     "715 W Thrush Ave",
     zip:         "61604",
@@ -1606,26 +1669,6 @@ const HOMES = [
     features: { basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-1830-lowber-1.jpg", "images/decatur-il-1830-lowber-2.jpg", "images/decatur-il-1830-lowber-3.jpg", "images/decatur-il-1830-lowber-4.jpg", "images/decatur-il-1830-lowber-5.jpg", "images/decatur-il-1830-lowber-6.jpg", "images/decatur-il-1830-lowber-7.jpg", "images/decatur-il-1830-lowber-8.jpg", "images/decatur-il-1830-lowber-9.jpg", "images/decatur-il-1830-lowber-10.jpg", "images/decatur-il-1830-lowber-11.jpg", "images/decatur-il-1830-lowber-12.jpg", "images/decatur-il-1830-lowber-13.jpg", "images/decatur-il-1830-lowber-14.jpg", "images/decatur-il-1830-lowber-15.jpg", "images/decatur-il-1830-lowber-16.jpg", "images/decatur-il-1830-lowber-17.jpg", "images/decatur-il-1830-lowber-18.jpg", "images/decatur-il-1830-lowber-19.jpg", "images/decatur-il-1830-lowber-20.jpg"],
-  },
-  {
-    id: "centralia-il-227-hickory",
-    address:     "227 N Hickory St",
-    zip:         "62801",
-    description: "1450 sqft",
-    city:  "Centralia",
-    state: "IL",
-    beds:  5,
-    baths: 3,
-    sqft:  "1450",
-    status: "Available",
-
-    monthlyPayment: 1025,
-    moveIn:         2500,
-    lockedPrice:    95000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    ["images/centralia-il-227-hickory-1.jpg", "images/centralia-il-227-hickory-2.jpg", "images/centralia-il-227-hickory-3.jpg", "images/centralia-il-227-hickory-4.jpg", "images/centralia-il-227-hickory-5.jpg", "images/centralia-il-227-hickory-6.jpg", "images/centralia-il-227-hickory-7.jpg"],
   },
   {
     id: "carbondale-il-615-almond",
@@ -1977,27 +2020,6 @@ const HOMES = [
     photos:    ["images/peoria-il-2710-antoinette-1.jpg", "images/peoria-il-2710-antoinette-2.jpg", "images/peoria-il-2710-antoinette-3.jpg", "images/peoria-il-2710-antoinette-4.jpg", "images/peoria-il-2710-antoinette-5.jpg", "images/peoria-il-2710-antoinette-6.jpg", "images/peoria-il-2710-antoinette-7.jpg", "images/peoria-il-2710-antoinette-8.jpg", "images/peoria-il-2710-antoinette-9.jpg"],
   },
   {
-    id: "stlouis-mo-5600-gatesworth",
-    address:     "5600 Gatesworth Ave",
-    zip:         "63136",
-    description: "Built in 1941. Needs to be listed as a Contractor special.Work needs to be done before you can apply for occupancy.Needs Plumbing that will go to the Hot water heater, a few boards on the back deck with the main items that need to be fixed, overall it’s a nice property and it’s right across the street from my golf course",
-    city:  "St. Louis",
-    state: "MO",
-    beds:  2,
-    baths: 1,
-    sqft:  "672",
-    status: "Available",
-
-    monthlyPayment: 895,
-    moveIn:         2500,
-    lockedPrice:    79000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { backyard: "yes" },
-    heroPhoto: "",
-    photos:    ["images/stlouis-mo-5600-gatesworth-1.jpg", "images/stlouis-mo-5600-gatesworth-2.jpg", "images/stlouis-mo-5600-gatesworth-3.jpg", "images/stlouis-mo-5600-gatesworth-4.jpg", "images/stlouis-mo-5600-gatesworth-5.jpg", "images/stlouis-mo-5600-gatesworth-6.jpg", "images/stlouis-mo-5600-gatesworth-7.jpg", "images/stlouis-mo-5600-gatesworth-8.jpg", "images/stlouis-mo-5600-gatesworth-9.jpg", "images/stlouis-mo-5600-gatesworth-10.jpg", "images/stlouis-mo-5600-gatesworth-11.jpg", "images/stlouis-mo-5600-gatesworth-12.jpg", "images/stlouis-mo-5600-gatesworth-13.jpg", "images/stlouis-mo-5600-gatesworth-14.jpg", "images/stlouis-mo-5600-gatesworth-15.jpg", "images/stlouis-mo-5600-gatesworth-16.jpg", "images/stlouis-mo-5600-gatesworth-17.jpg", "images/stlouis-mo-5600-gatesworth-18.jpg", "images/stlouis-mo-5600-gatesworth-19.jpg", "images/stlouis-mo-5600-gatesworth-20.jpg", "images/stlouis-mo-5600-gatesworth-21.jpg", "images/stlouis-mo-5600-gatesworth-22.jpg", "images/stlouis-mo-5600-gatesworth-23.jpg", "images/stlouis-mo-5600-gatesworth-24.jpg"],
-  },
-  {
     id: "flint-mi-5210-dupont",
     address:     "5210 Dupont St,",
     zip:         "48505",
@@ -2198,6 +2220,27 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-515-boyd-1.jpg", "images/decatur-il-515-boyd-2.jpg", "images/decatur-il-515-boyd-3.jpg", "images/decatur-il-515-boyd-4.jpg", "images/decatur-il-515-boyd-5.jpg", "images/decatur-il-515-boyd-6.jpg", "images/decatur-il-515-boyd-7.jpg", "images/decatur-il-515-boyd-8.jpg", "images/decatur-il-515-boyd-9.jpg", "images/decatur-il-515-boyd-10.jpg", "images/decatur-il-515-boyd-11.jpg", "images/decatur-il-515-boyd-12.jpg", "images/decatur-il-515-boyd-13.jpg", "images/decatur-il-515-boyd-14.jpg", "images/decatur-il-515-boyd-15.jpg", "images/decatur-il-515-boyd-16.jpg", "images/decatur-il-515-boyd-17.jpg", "images/decatur-il-515-boyd-18.jpg", "images/decatur-il-515-boyd-19.jpg"],
+  },
+  {
+    id: "decatur-il-1263-green",
+    address:     "1263 W Green St",
+    zip:         "62522",
+    description: "3 bedroom / 1 bath - 1344 sqft - 17000 sqft lot. tenant just moved out. All working well.. newer hot water tank. New breaker box. Decent Roof. Nice shed for storage. all mechanicals work great. huge triple lot. Over 17,000 sqft. New Lennox Elite brand furnace - new ducts. Good roof, foundation & Structure. clean basement. Good foundation.. remodeled bathroom with brand new vanity. Large driveway for safer, off street parking.. 2 minutes from Millikin university. Minutes from McArthur school, playground & the lake",
+    city:  "Decatur",
+    state: "IL",
+    beds:  3,
+    baths: 1,
+    sqft:  "1344",
+    status: "Available",
+
+    monthlyPayment: 1050,
+    moveIn:         3500,
+    lockedPrice:    110500,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { backyard: "yes", basement: "yes", off_street_parking: "yes", storage_shed: "yes" },
+    heroPhoto: "",
+    photos:    [],
   },
   {
     id: "decatur-il-462-leafland",
@@ -2522,26 +2565,6 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-2827-hickory-1.jpg", "images/decatur-il-2827-hickory-2.jpg", "images/decatur-il-2827-hickory-3.jpg", "images/decatur-il-2827-hickory-4.jpg", "images/decatur-il-2827-hickory-5.jpg", "images/decatur-il-2827-hickory-6.jpg", "images/decatur-il-2827-hickory-7.jpg", "images/decatur-il-2827-hickory-8.jpg", "images/decatur-il-2827-hickory-9.jpg", "images/decatur-il-2827-hickory-10.jpg", "images/decatur-il-2827-hickory-11.jpg", "images/decatur-il-2827-hickory-12.jpg", "images/decatur-il-2827-hickory-13.jpg", "images/decatur-il-2827-hickory-14.jpg", "images/decatur-il-2827-hickory-15.jpg", "images/decatur-il-2827-hickory-16.jpg", "images/decatur-il-2827-hickory-17.jpg", "images/decatur-il-2827-hickory-18.jpg", "images/decatur-il-2827-hickory-19.jpg", "images/decatur-il-2827-hickory-20.jpg", "images/decatur-il-2827-hickory-21.jpg", "images/decatur-il-2827-hickory-22.jpg", "images/decatur-il-2827-hickory-23.jpg"],
-  },
-  {
-    id: "duquesne-pa-951-high",
-    address:     "951 High St",
-    zip:         "15110",
-    description: "Power on, new furnace 2022",
-    city:  "Duquesne",
-    state: "PA",
-    beds:  3,
-    baths: 1.5,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 1075,
-    moveIn:         4000,
-    lockedPrice:    99000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    ["images/duquesne-pa-951-high-1.jpg", "images/duquesne-pa-951-high-2.jpg", "images/duquesne-pa-951-high-3.jpg", "images/duquesne-pa-951-high-4.jpg", "images/duquesne-pa-951-high-5.jpg", "images/duquesne-pa-951-high-6.jpg", "images/duquesne-pa-951-high-7.jpg", "images/duquesne-pa-951-high-8.jpg", "images/duquesne-pa-951-high-9.jpg", "images/duquesne-pa-951-high-10.jpg", "images/duquesne-pa-951-high-11.jpg", "images/duquesne-pa-951-high-12.jpg", "images/duquesne-pa-951-high-13.jpg", "images/duquesne-pa-951-high-14.jpg", "images/duquesne-pa-951-high-15.jpg", "images/duquesne-pa-951-high-16.jpg", "images/duquesne-pa-951-high-17.jpg", "images/duquesne-pa-951-high-18.jpg", "images/duquesne-pa-951-high-19.jpg", "images/duquesne-pa-951-high-20.jpg", "images/duquesne-pa-951-high-21.jpg", "images/duquesne-pa-951-high-22.jpg", "images/duquesne-pa-951-high-23.jpg", "images/duquesne-pa-951-high-24.jpg"],
   },
   {
     id: "decatur-il-803-whitmer",

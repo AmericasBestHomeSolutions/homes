@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (150 live, rebuilt from master published 2026-08-31) --- */
+/* --- the homes (155 live, rebuilt from master published 2026-08-31) --- */
 const HOMES = [
   {
     id: "stlouis-mo-5508-beacon",
@@ -33,7 +33,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/stlouis-mo-5508-beacon-1.jpg", "images/stlouis-mo-5508-beacon-2.jpg", "images/stlouis-mo-5508-beacon-3.jpg", "images/stlouis-mo-5508-beacon-4.jpg", "images/stlouis-mo-5508-beacon-5.jpg", "images/stlouis-mo-5508-beacon-6.jpg", "images/stlouis-mo-5508-beacon-7.jpg", "images/stlouis-mo-5508-beacon-8.jpg", "images/stlouis-mo-5508-beacon-9.jpg", "images/stlouis-mo-5508-beacon-10.jpg", "images/stlouis-mo-5508-beacon-11.jpg", "images/stlouis-mo-5508-beacon-12.jpg", "images/stlouis-mo-5508-beacon-13.jpg", "images/stlouis-mo-5508-beacon-14.jpg", "images/stlouis-mo-5508-beacon-15.jpg", "images/stlouis-mo-5508-beacon-16.jpg"],
   },
   {
     id: "barling-ar-2207-k",
@@ -54,7 +54,7 @@ const HOMES = [
 
     features: { garage: "yes", off_street_parking: "yes", central_air: "no" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/barling-ar-2207-k-1.jpg", "images/barling-ar-2207-k-2.jpg", "images/barling-ar-2207-k-3.jpg", "images/barling-ar-2207-k-4.jpg", "images/barling-ar-2207-k-5.jpg", "images/barling-ar-2207-k-6.jpg", "images/barling-ar-2207-k-7.jpg", "images/barling-ar-2207-k-8.jpg", "images/barling-ar-2207-k-9.jpg", "images/barling-ar-2207-k-10.jpg", "images/barling-ar-2207-k-11.jpg", "images/barling-ar-2207-k-12.jpg", "images/barling-ar-2207-k-13.jpg", "images/barling-ar-2207-k-14.jpg", "images/barling-ar-2207-k-15.jpg", "images/barling-ar-2207-k-16.jpg", "images/barling-ar-2207-k-17.jpg", "images/barling-ar-2207-k-18.jpg", "images/barling-ar-2207-k-19.jpg", "images/barling-ar-2207-k-20.jpg", "images/barling-ar-2207-k-21.jpg", "images/barling-ar-2207-k-22.jpg", "images/barling-ar-2207-k-23.jpg", "images/barling-ar-2207-k-24.jpg"],
   },
   {
     id: "stlouis-mo-5930-shulte",
@@ -73,7 +73,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/stlouis-mo-5930-shulte-1.jpg", "images/stlouis-mo-5930-shulte-2.jpg", "images/stlouis-mo-5930-shulte-3.jpg", "images/stlouis-mo-5930-shulte-4.jpg", "images/stlouis-mo-5930-shulte-5.jpg", "images/stlouis-mo-5930-shulte-6.jpg", "images/stlouis-mo-5930-shulte-7.jpg", "images/stlouis-mo-5930-shulte-8.jpg", "images/stlouis-mo-5930-shulte-9.jpg", "images/stlouis-mo-5930-shulte-10.jpg", "images/stlouis-mo-5930-shulte-11.jpg", "images/stlouis-mo-5930-shulte-12.jpg", "images/stlouis-mo-5930-shulte-13.jpg", "images/stlouis-mo-5930-shulte-14.jpg", "images/stlouis-mo-5930-shulte-15.jpg"],
   },
   {
     id: "bethalto-il-319-corbin",
@@ -115,7 +115,7 @@ const HOMES = [
 
     features: { basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/macomb-il-437-pierce-1.jpg", "images/macomb-il-437-pierce-2.jpg", "images/macomb-il-437-pierce-3.jpg", "images/macomb-il-437-pierce-4.jpg", "images/macomb-il-437-pierce-5.jpg", "images/macomb-il-437-pierce-6.jpg", "images/macomb-il-437-pierce-7.jpg", "images/macomb-il-437-pierce-8.jpg", "images/macomb-il-437-pierce-9.jpg", "images/macomb-il-437-pierce-10.jpg", "images/macomb-il-437-pierce-11.jpg", "images/macomb-il-437-pierce-12.jpg", "images/macomb-il-437-pierce-13.jpg", "images/macomb-il-437-pierce-14.jpg", "images/macomb-il-437-pierce-15.jpg", "images/macomb-il-437-pierce-16.jpg", "images/macomb-il-437-pierce-17.jpg", "images/macomb-il-437-pierce-18.jpg", "images/macomb-il-437-pierce-19.jpg", "images/macomb-il-437-pierce-20.jpg", "images/macomb-il-437-pierce-21.jpg", "images/macomb-il-437-pierce-22.jpg", "images/macomb-il-437-pierce-23.jpg", "images/macomb-il-437-pierce-24.jpg"],
   },
   {
     id: "eaststlouis-il-802-71st",
@@ -156,7 +156,7 @@ const HOMES = [
 
     features: { basement: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/flint-mi-605-stewart-1.jpg", "images/flint-mi-605-stewart-2.jpg", "images/flint-mi-605-stewart-3.jpg", "images/flint-mi-605-stewart-4.jpg", "images/flint-mi-605-stewart-5.jpg", "images/flint-mi-605-stewart-6.jpg", "images/flint-mi-605-stewart-7.jpg", "images/flint-mi-605-stewart-8.jpg", "images/flint-mi-605-stewart-9.jpg", "images/flint-mi-605-stewart-10.jpg", "images/flint-mi-605-stewart-11.jpg", "images/flint-mi-605-stewart-12.jpg", "images/flint-mi-605-stewart-13.jpg", "images/flint-mi-605-stewart-14.jpg", "images/flint-mi-605-stewart-15.jpg", "images/flint-mi-605-stewart-16.jpg", "images/flint-mi-605-stewart-17.jpg", "images/flint-mi-605-stewart-18.jpg", "images/flint-mi-605-stewart-19.jpg"],
   },
   {
     id: "decatur-il-1818-maple",
@@ -2887,7 +2887,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/cahokia-il-11-delores-1.jpg", "images/cahokia-il-11-delores-2.jpg", "images/cahokia-il-11-delores-3.jpg", "images/cahokia-il-11-delores-4.jpg", "images/cahokia-il-11-delores-5.jpg", "images/cahokia-il-11-delores-6.jpg", "images/cahokia-il-11-delores-7.jpg", "images/cahokia-il-11-delores-8.jpg", "images/cahokia-il-11-delores-9.jpg", "images/cahokia-il-11-delores-10.jpg", "images/cahokia-il-11-delores-11.jpg", "images/cahokia-il-11-delores-12.jpg", "images/cahokia-il-11-delores-13.jpg", "images/cahokia-il-11-delores-14.jpg", "images/cahokia-il-11-delores-15.jpg", "images/cahokia-il-11-delores-16.jpg", "images/cahokia-il-11-delores-17.jpg", "images/cahokia-il-11-delores-18.jpg", "images/cahokia-il-11-delores-19.jpg", "images/cahokia-il-11-delores-20.jpg", "images/cahokia-il-11-delores-21.jpg", "images/cahokia-il-11-delores-22.jpg", "images/cahokia-il-11-delores-23.jpg", "images/cahokia-il-11-delores-24.jpg"],
   },
   {
     id: "peoria-il-2313-wiswall",
@@ -3008,7 +3008,7 @@ const HOMES = [
 
     features: { backyard: "yes", fenced_yard: "yes", garage: "yes", off_street_parking: "yes", storage_shed: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-1527-decatur-1.jpg", "images/decatur-il-1527-decatur-2.jpg", "images/decatur-il-1527-decatur-3.jpg", "images/decatur-il-1527-decatur-4.jpg", "images/decatur-il-1527-decatur-5.jpg", "images/decatur-il-1527-decatur-6.jpg", "images/decatur-il-1527-decatur-7.jpg", "images/decatur-il-1527-decatur-8.jpg", "images/decatur-il-1527-decatur-9.jpg", "images/decatur-il-1527-decatur-10.jpg", "images/decatur-il-1527-decatur-11.jpg", "images/decatur-il-1527-decatur-12.jpg", "images/decatur-il-1527-decatur-13.jpg", "images/decatur-il-1527-decatur-14.jpg", "images/decatur-il-1527-decatur-15.jpg", "images/decatur-il-1527-decatur-16.jpg", "images/decatur-il-1527-decatur-17.jpg"],
   },
   {
     id: "decatur-il-1652-hickory",
@@ -3070,5 +3070,107 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/peoria-il-422-louisa-1.jpg", "images/peoria-il-422-louisa-2.jpg", "images/peoria-il-422-louisa-3.jpg", "images/peoria-il-422-louisa-4.jpg", "images/peoria-il-422-louisa-5.jpg", "images/peoria-il-422-louisa-6.jpg", "images/peoria-il-422-louisa-7.jpg", "images/peoria-il-422-louisa-8.jpg", "images/peoria-il-422-louisa-9.jpg", "images/peoria-il-422-louisa-10.jpg", "images/peoria-il-422-louisa-11.jpg", "images/peoria-il-422-louisa-12.jpg", "images/peoria-il-422-louisa-13.jpg", "images/peoria-il-422-louisa-14.jpg", "images/peoria-il-422-louisa-15.jpg", "images/peoria-il-422-louisa-16.jpg", "images/peoria-il-422-louisa-17.jpg", "images/peoria-il-422-louisa-18.jpg", "images/peoria-il-422-louisa-19.jpg", "images/peoria-il-422-louisa-20.jpg", "images/peoria-il-422-louisa-21.jpg", "images/peoria-il-422-louisa-22.jpg", "images/peoria-il-422-louisa-23.jpg", "images/peoria-il-422-louisa-24.jpg"],
+  },
+  {
+    id: "granitecity-il-1510-23rd",
+    address:     "1510 23rd St",
+    zip:         "62040",
+    description: "3/1 2 story in good location all systems work",
+    city:  "Granite City",
+    state: "IL",
+    beds:  3,
+    baths: 1,
+    sqft:  "",
+    status: "Available",
+
+    monthlyPayment: 1250,
+    moveIn:         3000,
+    lockedPrice:    112000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "decatur-il-909-maffit",
+    address:     "909 S Maffit St",
+    zip:         "62521",
+    description: "830 sqft, newer paint and floors",
+    city:  "Decatur",
+    state: "IL",
+    beds:  3,
+    baths: 1,
+    sqft:  "830",
+    status: "Available",
+
+    monthlyPayment: 895,
+    moveIn:         3000,
+    lockedPrice:    89000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "eaststlouis-il-541-27th",
+    address:     "541 North 27th Street",
+    zip:         "62205",
+    description: "1,066 Square Feet located on a 7,026 square foot lot. Brick fireplace in living room",
+    city:  "East St. Louis",
+    state: "IL",
+    beds:  2,
+    baths: 1,
+    sqft:  "1,066",
+    status: "Available",
+
+    monthlyPayment: 787,
+    moveIn:         3000,
+    lockedPrice:    79500,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { backyard: "yes" },
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "decatur-il-712-waggoner",
+    address:     "712 W Waggoner St",
+    zip:         "62526",
+    description: "This charming 2-bedroom, 1-bath home offers approximately 975 square feet of comfortable living space. It has been freshly updated, including an upgraded bathroom, and is ready for someone to make it their own",
+    city:  "Decatur",
+    state: "IL",
+    beds:  2,
+    baths: 1,
+    sqft:  "",
+    status: "Available",
+
+    monthlyPayment: 950,
+    moveIn:         3000,
+    lockedPrice:    88000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "decatur-il-830-rogers",
+    address:     "830 East Rogers Avenue",
+    zip:         "62521",
+    description: "624 square feet, finished basement, new furnace and hot water heater, covered porch",
+    city:  "Decatur",
+    state: "IL",
+    beds:  3,
+    baths: 1,
+    sqft:  "624",
+    status: "Available",
+
+    monthlyPayment: 788,
+    moveIn:         2500,
+    lockedPrice:    63500,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { basement: "yes" },
+    heroPhoto: "",
+    photos:    [],
   },
 ];

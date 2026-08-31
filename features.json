@@ -5478,5 +5478,85 @@
   "central_air": "unknown",
   "storage_shed": "yes",
   "attic": "unknown"
+ },
+ "7d3c0c09b6cec0b79f797618f3b69b4a0f74405b": {
+  "backyard": "unknown",
+  "fenced_yard": "unknown",
+  "basement": "unknown",
+  "garage": "unknown",
+  "off_street_parking": "unknown",
+  "central_air": "unknown",
+  "storage_shed": "unknown",
+  "attic": "unknown"
+ },
+ "6a842ee74e20c77e2f7b4b77262a3ac7e844affc": {
+  "backyard": "unknown",
+  "fenced_yard": "unknown",
+  "basement": "unknown",
+  "garage": "yes",
+  "off_street_parking": "yes",
+  "central_air": "no",
+  "storage_shed": "unknown",
+  "attic": "unknown"
+ },
+ "e70ef1a4c9a024df4ad6dfc54e93dfe3065eca67": {
+  "backyard": "unknown",
+  "fenced_yard": "unknown",
+  "basement": "yes",
+  "garage": "yes",
+  "off_street_parking": "yes",
+  "central_air": "unknown",
+  "storage_shed": "unknown",
+  "attic": "unknown"
+ },
+ "b610d1cd2664741437495048322b02e24961d733": {
+  "backyard": "unknown",
+  "fenced_yard": "unknown",
+  "basement": "yes",
+  "garage": "yes",
+  "off_street_parking": "yes",
+  "central_air": "unknown",
+  "storage_shed": "unknown",
+  "attic": "unknown"
+ },
+ "73a9001625e07dc9775fd48b2334e27aa171dfbc": {
+  "backyard": "unknown",
+  "fenced_yard": "unknown",
+  "basement": "yes",
+  "garage": "unknown",
+  "off_street_parking": "unknown",
+  "central_air": "unknown",
+  "storage_shed": "unknown",
+  "attic": "unknown"
+ },
+ "02c22e38d62f696151ff2178277f8b838c0b9f25": {
+  "backyard": "unknown",
+  "fenced_yard": "unknown",
+  "basement": "unknown",
+  "garage": "unknown",
+  "off_street_parking": "unknown",
+  "central_air": "unknown",
+  "storage_shed": "unknown",
+  "attic": "unknown"
+ },
+ "d76ca8b40df1bccf6b1eb58568843e7cd6ab314d": {
+  "backyard": "unknown",
+  "fenced_yard": "unknown",
+  "basement": "unknown",
+  "garage": "unknown",
+  "off_street_parking": "unknown",
+  "central_air": "unknown",
+  "storage_shed": "unknown",
+  "attic": "unknown"
+ },
+ "c7e0316a32fd34615456e3b33e867ff23ca0d212": {
+  "backyard": "yes",
+  "fenced_yard": "yes",
+  "basement": "unknown",
+  "garage": "yes",
+  "off_street_parking": "yes",
+  "central_air": "unknown",
+  "storage_shed": "yes",
+  "attic": "unknown"
  }
 }

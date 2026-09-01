@@ -13,8 +13,109 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (155 live, rebuilt from master published 2026-08-31) --- */
+/* --- the homes (149 live, rebuilt from master published 2026-09-01) --- */
 const HOMES = [
+  {
+    id: "decatur-il-909-maffit",
+    address:     "909 S Maffit St",
+    zip:         "62521",
+    description: "830 sqft, newer paint and floors",
+    city:  "Decatur",
+    state: "IL",
+    beds:  3,
+    baths: 1,
+    sqft:  "830",
+    status: "Available",
+
+    monthlyPayment: 895,
+    moveIn:         3000,
+    lockedPrice:    89000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    ["images/decatur-il-909-maffit-1.jpg", "images/decatur-il-909-maffit-2.jpg", "images/decatur-il-909-maffit-3.jpg", "images/decatur-il-909-maffit-4.jpg", "images/decatur-il-909-maffit-5.jpg", "images/decatur-il-909-maffit-6.jpg", "images/decatur-il-909-maffit-7.jpg", "images/decatur-il-909-maffit-8.jpg", "images/decatur-il-909-maffit-9.jpg", "images/decatur-il-909-maffit-10.jpg", "images/decatur-il-909-maffit-11.jpg", "images/decatur-il-909-maffit-12.jpg", "images/decatur-il-909-maffit-13.jpg", "images/decatur-il-909-maffit-14.jpg", "images/decatur-il-909-maffit-15.jpg", "images/decatur-il-909-maffit-16.jpg", "images/decatur-il-909-maffit-17.jpg", "images/decatur-il-909-maffit-18.jpg", "images/decatur-il-909-maffit-19.jpg", "images/decatur-il-909-maffit-20.jpg", "images/decatur-il-909-maffit-21.jpg", "images/decatur-il-909-maffit-22.jpg"],
+  },
+  {
+    id: "eaststlouis-il-305-7th",
+    address:     "305 W 7th Street",
+    zip:         "62201",
+    description: "728 Sq Feet on a 8,276 square foot lot. New flooring, FAU and Hot Water heater",
+    city:  "East St. Louis",
+    state: "IL",
+    beds:  2,
+    baths: 1.5,
+    sqft:  "728",
+    status: "Available",
+
+    monthlyPayment: 917.6,
+    moveIn:         3000,
+    lockedPrice:    83500,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "eaststlouis-il-541-27th",
+    address:     "541 North 27th Street",
+    zip:         "62205",
+    description: "1,066 Square Feet located on a 7,026 square foot lot. Brick fireplace in living room",
+    city:  "East St. Louis",
+    state: "IL",
+    beds:  2,
+    baths: 1,
+    sqft:  "1066",
+    status: "Available",
+
+    monthlyPayment: 787.17,
+    moveIn:         3000,
+    lockedPrice:    79500,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { backyard: "yes" },
+    heroPhoto: "",
+    photos:    ["images/eaststlouis-il-541-27th-1.jpg", "images/eaststlouis-il-541-27th-2.jpg", "images/eaststlouis-il-541-27th-3.jpg", "images/eaststlouis-il-541-27th-4.jpg", "images/eaststlouis-il-541-27th-5.jpg", "images/eaststlouis-il-541-27th-6.jpg", "images/eaststlouis-il-541-27th-7.jpg"],
+  },
+  {
+    id: "decatur-il-712-waggoner",
+    address:     "712 W Waggoner St",
+    zip:         "62526",
+    description: "This charming 2-bedroom, 1-bath home offers approximately 975 square feet of comfortable living space. It has been freshly updated, including an upgraded bathroom, and is ready for someone to make it their own",
+    city:  "Decatur",
+    state: "IL",
+    beds:  2,
+    baths: 1,
+    sqft:  "975",
+    status: "Available",
+
+    monthlyPayment: 950,
+    moveIn:         3000,
+    lockedPrice:    88000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    ["images/decatur-il-712-waggoner-1.jpg", "images/decatur-il-712-waggoner-2.jpg", "images/decatur-il-712-waggoner-3.jpg", "images/decatur-il-712-waggoner-4.jpg", "images/decatur-il-712-waggoner-5.jpg", "images/decatur-il-712-waggoner-6.jpg", "images/decatur-il-712-waggoner-7.jpg", "images/decatur-il-712-waggoner-8.jpg", "images/decatur-il-712-waggoner-9.jpg", "images/decatur-il-712-waggoner-10.jpg", "images/decatur-il-712-waggoner-11.jpg", "images/decatur-il-712-waggoner-12.jpg", "images/decatur-il-712-waggoner-13.jpg", "images/decatur-il-712-waggoner-14.jpg", "images/decatur-il-712-waggoner-15.jpg", "images/decatur-il-712-waggoner-16.jpg", "images/decatur-il-712-waggoner-17.jpg", "images/decatur-il-712-waggoner-18.jpg", "images/decatur-il-712-waggoner-19.jpg", "images/decatur-il-712-waggoner-20.jpg", "images/decatur-il-712-waggoner-21.jpg", "images/decatur-il-712-waggoner-22.jpg", "images/decatur-il-712-waggoner-23.jpg", "images/decatur-il-712-waggoner-24.jpg"],
+  },
+  {
+    id: "granitecity-il-1510-23rd",
+    address:     "1510 23rd St",
+    zip:         "62040",
+    description: "3/1 2 story in good location all systems work",
+    city:  "Granite City",
+    state: "IL",
+    beds:  3,
+    baths: 1,
+    sqft:  "",
+    status: "Available",
+
+    monthlyPayment: 1250,
+    moveIn:         3000,
+    lockedPrice:    112000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    ["images/granitecity-il-1510-23rd-1.jpg", "images/granitecity-il-1510-23rd-2.jpg", "images/granitecity-il-1510-23rd-3.jpg", "images/granitecity-il-1510-23rd-4.jpg", "images/granitecity-il-1510-23rd-5.jpg", "images/granitecity-il-1510-23rd-6.jpg", "images/granitecity-il-1510-23rd-7.jpg", "images/granitecity-il-1510-23rd-8.jpg", "images/granitecity-il-1510-23rd-9.jpg", "images/granitecity-il-1510-23rd-10.jpg", "images/granitecity-il-1510-23rd-11.jpg", "images/granitecity-il-1510-23rd-12.jpg", "images/granitecity-il-1510-23rd-13.jpg", "images/granitecity-il-1510-23rd-14.jpg", "images/granitecity-il-1510-23rd-15.jpg", "images/granitecity-il-1510-23rd-16.jpg", "images/granitecity-il-1510-23rd-17.jpg", "images/granitecity-il-1510-23rd-18.jpg", "images/granitecity-il-1510-23rd-19.jpg", "images/granitecity-il-1510-23rd-20.jpg", "images/granitecity-il-1510-23rd-21.jpg", "images/granitecity-il-1510-23rd-22.jpg", "images/granitecity-il-1510-23rd-23.jpg", "images/granitecity-il-1510-23rd-24.jpg"],
+  },
   {
     id: "stlouis-mo-5508-beacon",
     address:     "5508 Beacon Ave",
@@ -383,26 +484,6 @@ const HOMES = [
     photos:    ["images/eaststlouis-il-1847-56th-1.jpg", "images/eaststlouis-il-1847-56th-2.jpg", "images/eaststlouis-il-1847-56th-3.jpg", "images/eaststlouis-il-1847-56th-4.jpg", "images/eaststlouis-il-1847-56th-5.jpg", "images/eaststlouis-il-1847-56th-6.jpg", "images/eaststlouis-il-1847-56th-7.jpg", "images/eaststlouis-il-1847-56th-8.jpg", "images/eaststlouis-il-1847-56th-9.jpg", "images/eaststlouis-il-1847-56th-10.jpg", "images/eaststlouis-il-1847-56th-11.jpg", "images/eaststlouis-il-1847-56th-12.jpg", "images/eaststlouis-il-1847-56th-13.jpg", "images/eaststlouis-il-1847-56th-14.jpg", "images/eaststlouis-il-1847-56th-15.jpg", "images/eaststlouis-il-1847-56th-16.jpg", "images/eaststlouis-il-1847-56th-17.jpg", "images/eaststlouis-il-1847-56th-18.jpg", "images/eaststlouis-il-1847-56th-19.jpg", "images/eaststlouis-il-1847-56th-20.jpg", "images/eaststlouis-il-1847-56th-21.jpg", "images/eaststlouis-il-1847-56th-22.jpg", "images/eaststlouis-il-1847-56th-23.jpg", "images/eaststlouis-il-1847-56th-24.jpg", "images/eaststlouis-il-1847-56th-25.jpg", "images/eaststlouis-il-1847-56th-26.jpg", "images/eaststlouis-il-1847-56th-27.jpg", "images/eaststlouis-il-1847-56th-28.jpg", "images/eaststlouis-il-1847-56th-29.jpg"],
   },
   {
-    id: "johnstown-pa-650-linden",
-    address:     "650 Linden Ave",
-    zip:         "15902",
-    description: "These are generally the buyer qualifications we look for:. 1. No recent evictions within the last 3 years. 2. Verifiable employment or business income that supports approximately a 3.5x gross income multiplier relative to the monthly payment. 3. Buyer understands the condition of the property and that some homes may require minor repairs or improvements",
-    city:  "Johnstown",
-    state: "PA",
-    beds:  2,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 797,
-    moveIn:         2000,
-    lockedPrice:    77603.65,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    ["images/johnstown-pa-650-linden-1.jpg", "images/johnstown-pa-650-linden-2.jpg", "images/johnstown-pa-650-linden-3.jpg", "images/johnstown-pa-650-linden-4.jpg", "images/johnstown-pa-650-linden-5.jpg", "images/johnstown-pa-650-linden-6.jpg", "images/johnstown-pa-650-linden-7.jpg", "images/johnstown-pa-650-linden-8.jpg", "images/johnstown-pa-650-linden-9.jpg", "images/johnstown-pa-650-linden-10.jpg"],
-  },
-  {
     id: "johnstown-pa-648-linden",
     address:     "648 Linden Ave",
     zip:         "15902",
@@ -566,8 +647,8 @@ const HOMES = [
     photos:    ["images/eaststlouis-il-225-63rd-1.jpg", "images/eaststlouis-il-225-63rd-2.jpg", "images/eaststlouis-il-225-63rd-3.jpg", "images/eaststlouis-il-225-63rd-4.jpg", "images/eaststlouis-il-225-63rd-5.jpg", "images/eaststlouis-il-225-63rd-6.jpg", "images/eaststlouis-il-225-63rd-7.jpg", "images/eaststlouis-il-225-63rd-8.jpg", "images/eaststlouis-il-225-63rd-9.jpg", "images/eaststlouis-il-225-63rd-10.jpg", "images/eaststlouis-il-225-63rd-11.jpg", "images/eaststlouis-il-225-63rd-12.jpg", "images/eaststlouis-il-225-63rd-13.jpg", "images/eaststlouis-il-225-63rd-14.jpg", "images/eaststlouis-il-225-63rd-15.jpg", "images/eaststlouis-il-225-63rd-16.jpg", "images/eaststlouis-il-225-63rd-17.jpg", "images/eaststlouis-il-225-63rd-18.jpg", "images/eaststlouis-il-225-63rd-19.jpg", "images/eaststlouis-il-225-63rd-20.jpg", "images/eaststlouis-il-225-63rd-21.jpg", "images/eaststlouis-il-225-63rd-22.jpg", "images/eaststlouis-il-225-63rd-23.jpg", "images/eaststlouis-il-225-63rd-24.jpg", "images/eaststlouis-il-225-63rd-25.jpg", "images/eaststlouis-il-225-63rd-26.jpg", "images/eaststlouis-il-225-63rd-27.jpg", "images/eaststlouis-il-225-63rd-28.jpg", "images/eaststlouis-il-225-63rd-29.jpg"],
   },
   {
-    id: "decatur-il-830-rodgers",
-    address:     "830 East Rodgers Avenue",
+    id: "decatur-il-830-rogers",
+    address:     "830 East Rogers Avenue",
     zip:         "62521",
     description: "624 square feet, finished basement, new furnace and hot water heater, covered porch",
     city:  "Decatur",
@@ -584,7 +665,7 @@ const HOMES = [
 
     features: { basement: "yes" },
     heroPhoto: "",
-    photos:    ["images/decatur-il-830-rodgers-1.jpg", "images/decatur-il-830-rodgers-2.jpg", "images/decatur-il-830-rodgers-3.jpg", "images/decatur-il-830-rodgers-4.jpg", "images/decatur-il-830-rodgers-5.jpg", "images/decatur-il-830-rodgers-6.jpg", "images/decatur-il-830-rodgers-7.jpg", "images/decatur-il-830-rodgers-8.jpg", "images/decatur-il-830-rodgers-9.jpg", "images/decatur-il-830-rodgers-10.jpg", "images/decatur-il-830-rodgers-11.jpg", "images/decatur-il-830-rodgers-12.jpg", "images/decatur-il-830-rodgers-13.jpg", "images/decatur-il-830-rodgers-14.jpg", "images/decatur-il-830-rodgers-15.jpg", "images/decatur-il-830-rodgers-16.jpg", "images/decatur-il-830-rodgers-17.jpg", "images/decatur-il-830-rodgers-18.jpg", "images/decatur-il-830-rodgers-19.jpg", "images/decatur-il-830-rodgers-20.jpg", "images/decatur-il-830-rodgers-21.jpg", "images/decatur-il-830-rodgers-22.jpg", "images/decatur-il-830-rodgers-23.jpg", "images/decatur-il-830-rodgers-24.jpg"],
+    photos:    ["images/decatur-il-830-rogers-1.jpg", "images/decatur-il-830-rogers-2.jpg", "images/decatur-il-830-rogers-3.jpg", "images/decatur-il-830-rogers-4.jpg", "images/decatur-il-830-rogers-5.jpg", "images/decatur-il-830-rogers-6.jpg", "images/decatur-il-830-rogers-7.jpg", "images/decatur-il-830-rogers-8.jpg", "images/decatur-il-830-rogers-9.jpg", "images/decatur-il-830-rogers-10.jpg", "images/decatur-il-830-rogers-11.jpg", "images/decatur-il-830-rogers-12.jpg", "images/decatur-il-830-rogers-13.jpg", "images/decatur-il-830-rogers-14.jpg", "images/decatur-il-830-rogers-15.jpg", "images/decatur-il-830-rogers-16.jpg", "images/decatur-il-830-rogers-17.jpg", "images/decatur-il-830-rogers-18.jpg", "images/decatur-il-830-rogers-19.jpg", "images/decatur-il-830-rogers-20.jpg", "images/decatur-il-830-rogers-21.jpg", "images/decatur-il-830-rogers-22.jpg", "images/decatur-il-830-rogers-23.jpg", "images/decatur-il-830-rogers-24.jpg"],
   },
   {
     id: "stlouis-mo-2810-norwood",
@@ -653,7 +734,7 @@ const HOMES = [
     id: "decatur-il-1143-cleveland",
     address:     "1143 E CLEVELAND AVE",
     zip:         "62521",
-    description: "Recently passed all city inspection after much needed repairs",
+    description: "Cleaned out appliances that were not functioning. Fixed roof and several drywall. Some renovations in bathroom and kitchen. Replaced water heater.. Recently passed all city inspection after much needed repairs",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -662,7 +743,7 @@ const HOMES = [
     status: "Available",
 
     monthlyPayment: 865,
-    moveIn:         2000,
+    moveIn:         1500,
     lockedPrice:    89000,
     termText:       "30-year owner financing (contract for deed)",
 
@@ -1019,26 +1100,6 @@ const HOMES = [
     photos:    ["images/decatur-il-1746-woodford-1.jpg", "images/decatur-il-1746-woodford-2.jpg", "images/decatur-il-1746-woodford-3.jpg", "images/decatur-il-1746-woodford-4.jpg", "images/decatur-il-1746-woodford-5.jpg", "images/decatur-il-1746-woodford-6.jpg", "images/decatur-il-1746-woodford-7.jpg", "images/decatur-il-1746-woodford-8.jpg", "images/decatur-il-1746-woodford-9.jpg", "images/decatur-il-1746-woodford-10.jpg", "images/decatur-il-1746-woodford-11.jpg", "images/decatur-il-1746-woodford-12.jpg", "images/decatur-il-1746-woodford-13.jpg", "images/decatur-il-1746-woodford-14.jpg", "images/decatur-il-1746-woodford-15.jpg", "images/decatur-il-1746-woodford-16.jpg", "images/decatur-il-1746-woodford-17.jpg", "images/decatur-il-1746-woodford-18.jpg", "images/decatur-il-1746-woodford-19.jpg", "images/decatur-il-1746-woodford-20.jpg", "images/decatur-il-1746-woodford-21.jpg", "images/decatur-il-1746-woodford-22.jpg", "images/decatur-il-1746-woodford-23.jpg", "images/decatur-il-1746-woodford-24.jpg"],
   },
   {
-    id: "granitecity-il-2410-sheridan",
-    address:     "2410 Sheridan Ave",
-    zip:         "62040",
-    description: "990 Sq Ft",
-    city:  "Granite City",
-    state: "IL",
-    beds:  3,
-    baths: 1,
-    sqft:  "990",
-    status: "Available",
-
-    monthlyPayment: 700,
-    moveIn:         2000,
-    lockedPrice:    59500,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    ["images/granitecity-il-2410-sheridan-1.jpg", "images/granitecity-il-2410-sheridan-2.jpg", "images/granitecity-il-2410-sheridan-3.jpg", "images/granitecity-il-2410-sheridan-4.jpg", "images/granitecity-il-2410-sheridan-5.jpg", "images/granitecity-il-2410-sheridan-6.jpg", "images/granitecity-il-2410-sheridan-7.jpg", "images/granitecity-il-2410-sheridan-8.jpg", "images/granitecity-il-2410-sheridan-9.jpg", "images/granitecity-il-2410-sheridan-10.jpg", "images/granitecity-il-2410-sheridan-11.jpg", "images/granitecity-il-2410-sheridan-12.jpg", "images/granitecity-il-2410-sheridan-13.jpg", "images/granitecity-il-2410-sheridan-14.jpg", "images/granitecity-il-2410-sheridan-15.jpg", "images/granitecity-il-2410-sheridan-16.jpg", "images/granitecity-il-2410-sheridan-17.jpg", "images/granitecity-il-2410-sheridan-18.jpg", "images/granitecity-il-2410-sheridan-19.jpg", "images/granitecity-il-2410-sheridan-20.jpg", "images/granitecity-il-2410-sheridan-21.jpg", "images/granitecity-il-2410-sheridan-22.jpg", "images/granitecity-il-2410-sheridan-23.jpg", "images/granitecity-il-2410-sheridan-24.jpg"],
-  },
-  {
     id: "stlouis-mo-32-connolly",
     address:     "32 Connolly Dr",
     zip:         "63135",
@@ -1338,8 +1399,8 @@ const HOMES = [
     sqft:  "",
     status: "Available",
 
-    monthlyPayment: 850,
-    moveIn:         2500,
+    monthlyPayment: 835,
+    moveIn:         2300,
     lockedPrice:    79000,
     termText:       "30-year owner financing (contract for deed)",
 
@@ -1365,27 +1426,6 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1252-whitmer-1.jpg", "images/decatur-il-1252-whitmer-2.jpg", "images/decatur-il-1252-whitmer-3.jpg", "images/decatur-il-1252-whitmer-4.jpg", "images/decatur-il-1252-whitmer-5.jpg", "images/decatur-il-1252-whitmer-6.jpg", "images/decatur-il-1252-whitmer-7.jpg", "images/decatur-il-1252-whitmer-8.jpg", "images/decatur-il-1252-whitmer-9.jpg", "images/decatur-il-1252-whitmer-10.jpg", "images/decatur-il-1252-whitmer-11.jpg"],
-  },
-  {
-    id: "springfield-il-2109-martin",
-    address:     "2109 S Martin Luther King Jr. Dr",
-    zip:         "62703",
-    description: "750 sqft/7000 sqft lot, no basement, tenant just moved out, everything is working. Well maintained house, all mechanical good, foundation is in great condition. Fresh paint/newly refinished cabinets, has a driveway.. 6 minutes to Springfield lake and 3 different parks.. Safe and peaceful area of Springfield",
-    city:  "Springfield",
-    state: "IL",
-    beds:  2,
-    baths: 1,
-    sqft:  "750",
-    status: "Available",
-
-    monthlyPayment: 950,
-    moveIn:         3000,
-    lockedPrice:    89000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { basement: "no", off_street_parking: "yes" },
-    heroPhoto: "",
-    photos:    ["images/springfield-il-2109-martin-1.jpg", "images/springfield-il-2109-martin-2.jpg", "images/springfield-il-2109-martin-3.jpg", "images/springfield-il-2109-martin-4.jpg", "images/springfield-il-2109-martin-5.jpg", "images/springfield-il-2109-martin-6.jpg", "images/springfield-il-2109-martin-7.jpg", "images/springfield-il-2109-martin-8.jpg", "images/springfield-il-2109-martin-9.jpg", "images/springfield-il-2109-martin-10.jpg", "images/springfield-il-2109-martin-11.jpg", "images/springfield-il-2109-martin-12.jpg", "images/springfield-il-2109-martin-13.jpg", "images/springfield-il-2109-martin-14.jpg", "images/springfield-il-2109-martin-15.jpg", "images/springfield-il-2109-martin-16.jpg", "images/springfield-il-2109-martin-17.jpg", "images/springfield-il-2109-martin-18.jpg"],
   },
   {
     id: "decatur-il-715-cushing",
@@ -1439,7 +1479,7 @@ const HOMES = [
     status: "Available",
 
     monthlyPayment: 900,
-    moveIn:         1500,
+    moveIn:         1000,
     lockedPrice:    69500,
     termText:       "30-year owner financing (contract for deed)",
 
@@ -1583,8 +1623,8 @@ const HOMES = [
     sqft:  "1035",
     status: "Available",
 
-    monthlyPayment: 875,
-    moveIn:         3000,
+    monthlyPayment: 855,
+    moveIn:         2700,
     lockedPrice:    83000,
     termText:       "30-year owner financing (contract for deed)",
 
@@ -1603,9 +1643,9 @@ const HOMES = [
     sqft:  "658",
     status: "Available",
 
-    monthlyPayment: 850,
-    moveIn:         3000,
-    lockedPrice:    80001,
+    monthlyPayment: 699,
+    moveIn:         2700,
+    lockedPrice:    65500,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
@@ -1796,47 +1836,6 @@ const HOMES = [
     photos:    ["images/fairfield-il-1200-6th-1.jpg", "images/fairfield-il-1200-6th-2.jpg", "images/fairfield-il-1200-6th-3.jpg", "images/fairfield-il-1200-6th-4.jpg", "images/fairfield-il-1200-6th-5.jpg", "images/fairfield-il-1200-6th-6.jpg", "images/fairfield-il-1200-6th-7.jpg", "images/fairfield-il-1200-6th-8.jpg", "images/fairfield-il-1200-6th-9.jpg", "images/fairfield-il-1200-6th-10.jpg", "images/fairfield-il-1200-6th-11.jpg", "images/fairfield-il-1200-6th-12.jpg", "images/fairfield-il-1200-6th-13.jpg", "images/fairfield-il-1200-6th-14.jpg", "images/fairfield-il-1200-6th-15.jpg", "images/fairfield-il-1200-6th-16.jpg", "images/fairfield-il-1200-6th-17.jpg", "images/fairfield-il-1200-6th-18.jpg", "images/fairfield-il-1200-6th-19.jpg", "images/fairfield-il-1200-6th-20.jpg", "images/fairfield-il-1200-6th-21.jpg", "images/fairfield-il-1200-6th-22.jpg", "images/fairfield-il-1200-6th-23.jpg"],
   },
   {
-    id: "saginaw-mi-1007-oakley",
-    address:     "1007 N Oakley St",
-    zip:         "48602",
-    description: "$2500 price cut, $20 less per month. NEW PICTURES! AND 3D WALKTHROUGH ON ZILLOW. New roof installed May 2026, new sheetrock all around interior",
-    city:  "Saginaw",
-    state: "MI",
-    beds:  4,
-    baths: 2,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 865,
-    moveIn:         3000,
-    lockedPrice:    72500,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
-  },
-  {
-    id: "birmingham-al-208-carol",
-    address:     "208 Carol Drive",
-    zip:         "35215",
-    description: "The property is 1,335 sq ft. The lot size is 10,296. The property was built in 1954. There is no fence. Unknown if systems are working. The utilities have been off for a long period. There is no basement. The back door is unsecured",
-    city:  "Birmingham",
-    state: "AL",
-    beds:  3,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 887,
-    moveIn:         4000,
-    lockedPrice:    89000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { backyard: "yes", fenced_yard: "no", basement: "no" },
-    heroPhoto: "",
-    photos:    ["images/birmingham-al-208-carol-1.jpg", "images/birmingham-al-208-carol-2.jpg", "images/birmingham-al-208-carol-3.jpg", "images/birmingham-al-208-carol-4.jpg", "images/birmingham-al-208-carol-5.jpg", "images/birmingham-al-208-carol-6.jpg", "images/birmingham-al-208-carol-7.jpg", "images/birmingham-al-208-carol-8.jpg", "images/birmingham-al-208-carol-9.jpg", "images/birmingham-al-208-carol-10.jpg", "images/birmingham-al-208-carol-11.jpg", "images/birmingham-al-208-carol-12.jpg", "images/birmingham-al-208-carol-13.jpg", "images/birmingham-al-208-carol-14.jpg", "images/birmingham-al-208-carol-15.jpg", "images/birmingham-al-208-carol-16.jpg", "images/birmingham-al-208-carol-17.jpg", "images/birmingham-al-208-carol-18.jpg", "images/birmingham-al-208-carol-19.jpg", "images/birmingham-al-208-carol-20.jpg", "images/birmingham-al-208-carol-21.jpg", "images/birmingham-al-208-carol-22.jpg", "images/birmingham-al-208-carol-23.jpg", "images/birmingham-al-208-carol-24.jpg", "images/birmingham-al-208-carol-25.jpg", "images/birmingham-al-208-carol-26.jpg", "images/birmingham-al-208-carol-27.jpg", "images/birmingham-al-208-carol-28.jpg", "images/birmingham-al-208-carol-29.jpg"],
-  },
-  {
     id: "decatur-il-238-peoria",
     address:     "238 W Peoria Ave.",
     zip:         "62526",
@@ -1930,8 +1929,8 @@ const HOMES = [
     sqft:  "",
     status: "Available",
 
-    monthlyPayment: 857,
-    moveIn:         3000,
+    monthlyPayment: 842,
+    moveIn:         2700,
     lockedPrice:    72500,
     termText:       "30-year owner financing (contract for deed)",
 
@@ -1972,8 +1971,8 @@ const HOMES = [
     sqft:  "",
     status: "Available",
 
-    monthlyPayment: 675,
-    moveIn:         2000,
+    monthlyPayment: 650,
+    moveIn:         1800,
     lockedPrice:    59000,
     termText:       "30-year owner financing (contract for deed)",
 
@@ -2013,8 +2012,8 @@ const HOMES = [
     sqft:  "",
     status: "Available",
 
-    monthlyPayment: 995,
-    moveIn:         2500,
+    monthlyPayment: 950,
+    moveIn:         2200,
     lockedPrice:    89000,
     termText:       "30-year owner financing (contract for deed)",
 
@@ -2134,8 +2133,8 @@ const HOMES = [
     sqft:  "",
     status: "Available",
 
-    monthlyPayment: 750,
-    moveIn:         2200,
+    monthlyPayment: 725,
+    moveIn:         1875,
     lockedPrice:    77200,
     termText:       "30-year owner financing (contract for deed)",
 
@@ -2247,7 +2246,7 @@ const HOMES = [
     id: "decatur-il-515-boyd",
     address:     "515 S. Boyd St",
     zip:         "62522",
-    description: "Seller wants proof of income- latest Pay stub",
+    description: "Porch is being repaired. Seller wants proof of income- latest Pay stub",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -2255,8 +2254,8 @@ const HOMES = [
     sqft:  "",
     status: "Available",
 
-    monthlyPayment: 825,
-    moveIn:         1500,
+    monthlyPayment: 800,
+    moveIn:         1000,
     lockedPrice:    76542.93,
     termText:       "30-year owner financing (contract for deed)",
 
@@ -2367,7 +2366,7 @@ const HOMES = [
     id: "decatur-il-1303-whitmer",
     address:     "1303 E. WHITMER ST",
     zip:         "62521",
-    description: "Please make sure the PTB is aware of the gas leak repairs needed for the water heater. City has tagged and will need to inspect after repairs",
+    description: "Please make sure the PTB is aware of the gas leak repairs needed for the water heater. City has tagged and will need to inspect after repairs.. * This property is suitable for a contractor, plumber- Handyman Special. 950 SQ FT.. BASEMENT where the furnace and water heater are housed-Room for storage.. 3 bedroom ranch just needs some TLC…basement, front porch, vinyl siding. Partially fenced yard in the good sized back yard. Large eat in kitchen",
     city:  "Decatur",
     state: "IL",
     beds:  3,
@@ -2376,10 +2375,11 @@ const HOMES = [
     status: "Available",
 
     monthlyPayment: 825,
-    moveIn:         1500,
+    moveIn:         1000,
     lockedPrice:    71846,
     termText:       "30-year owner financing (contract for deed)",
 
+    features: { backyard: "yes", fenced_yard: "yes", basement: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-1303-whitmer-1.jpg", "images/decatur-il-1303-whitmer-2.jpg", "images/decatur-il-1303-whitmer-3.jpg", "images/decatur-il-1303-whitmer-4.jpg", "images/decatur-il-1303-whitmer-5.jpg", "images/decatur-il-1303-whitmer-6.jpg", "images/decatur-il-1303-whitmer-7.jpg", "images/decatur-il-1303-whitmer-8.jpg", "images/decatur-il-1303-whitmer-9.jpg", "images/decatur-il-1303-whitmer-10.jpg", "images/decatur-il-1303-whitmer-11.jpg", "images/decatur-il-1303-whitmer-12.jpg", "images/decatur-il-1303-whitmer-13.jpg", "images/decatur-il-1303-whitmer-14.jpg", "images/decatur-il-1303-whitmer-15.jpg"],
   },
@@ -2443,27 +2443,6 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/peoria-il-1117-glendale-1.jpg", "images/peoria-il-1117-glendale-2.jpg", "images/peoria-il-1117-glendale-3.jpg", "images/peoria-il-1117-glendale-4.jpg", "images/peoria-il-1117-glendale-5.jpg", "images/peoria-il-1117-glendale-6.jpg", "images/peoria-il-1117-glendale-7.jpg", "images/peoria-il-1117-glendale-8.jpg", "images/peoria-il-1117-glendale-9.jpg", "images/peoria-il-1117-glendale-10.jpg", "images/peoria-il-1117-glendale-11.jpg", "images/peoria-il-1117-glendale-12.jpg", "images/peoria-il-1117-glendale-13.jpg", "images/peoria-il-1117-glendale-14.jpg", "images/peoria-il-1117-glendale-15.jpg", "images/peoria-il-1117-glendale-16.jpg", "images/peoria-il-1117-glendale-17.jpg", "images/peoria-il-1117-glendale-18.jpg", "images/peoria-il-1117-glendale-19.jpg", "images/peoria-il-1117-glendale-20.jpg", "images/peoria-il-1117-glendale-21.jpg", "images/peoria-il-1117-glendale-22.jpg", "images/peoria-il-1117-glendale-23.jpg", "images/peoria-il-1117-glendale-24.jpg"],
-  },
-  {
-    id: "decatur-il-415-division",
-    address:     "415 E Division St.",
-    zip:         "62526",
-    description: "Move in ready - well maintained - very clean. 2 bedroom / 2.5 bath - 989 sqft 4356 lot. Previous owner just moved out.. Well maintained house till the last minute.. newer hot water tank. Good furnace. two bathrooms main level, one in the basement.. Relatively new roof. all mechanicals good. clean basement. some walls with wood panels. News electric panel and wiring. less than 7 minutes to the main hospital, the lake, & Millikin University.. 3 month Proof of income only. $500",
-    city:  "Decatur",
-    state: "IL",
-    beds:  2,
-    baths: 2.5,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 775,
-    moveIn:         2000,
-    lockedPrice:    106500,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { basement: "yes" },
-    heroPhoto: "",
-    photos:    ["images/decatur-il-415-division-1.jpg", "images/decatur-il-415-division-2.jpg", "images/decatur-il-415-division-3.jpg", "images/decatur-il-415-division-4.jpg", "images/decatur-il-415-division-5.jpg", "images/decatur-il-415-division-6.jpg", "images/decatur-il-415-division-7.jpg", "images/decatur-il-415-division-8.jpg", "images/decatur-il-415-division-9.jpg", "images/decatur-il-415-division-10.jpg", "images/decatur-il-415-division-11.jpg", "images/decatur-il-415-division-12.jpg", "images/decatur-il-415-division-13.jpg", "images/decatur-il-415-division-14.jpg", "images/decatur-il-415-division-15.jpg", "images/decatur-il-415-division-16.jpg", "images/decatur-il-415-division-17.jpg", "images/decatur-il-415-division-18.jpg", "images/decatur-il-415-division-19.jpg"],
   },
   {
     id: "eaststlouis-il-59-jarvis",
@@ -2558,7 +2537,7 @@ const HOMES = [
     status: "Available",
 
     monthlyPayment: 945,
-    moveIn:         2000,
+    moveIn:         1800,
     lockedPrice:    76500,
     termText:       "30-year owner financing (contract for deed)",
 
@@ -2597,8 +2576,8 @@ const HOMES = [
     sqft:  "",
     status: "Available",
 
-    monthlyPayment: 250,
-    moveIn:         1000,
+    monthlyPayment: 235,
+    moveIn:         900,
     lockedPrice:    15000,
     termText:       "30-year owner financing (contract for deed)",
 
@@ -2628,7 +2607,6 @@ const HOMES = [
     id: "decatur-il-1455-whitmer",
     address:     "1455 E Whitmer St",
     zip:         "62521",
-    description: "1050 sf • Highlights:. • Wood Floors. • Large detached 2 car Garage. • Currently vacant, cleaned out and move-in ready. • Lights are on. • Mechanicals in good working order. • Roof is good, no leaks. BOTG says the house may Need Gutters. Ceiling in Closet needs repair. A couple of holes in the wall need repair. Front porch bottom step needs repair. Tax=116.00 a month. Phone Number: 978-241-2079",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -2636,12 +2614,11 @@ const HOMES = [
     sqft:  "",
     status: "Available",
 
-    monthlyPayment: 865,
-    moveIn:         2250,
+    monthlyPayment: 840,
+    moveIn:         1900,
     lockedPrice:    87000,
     termText:       "30-year owner financing (contract for deed)",
 
-    features: { garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-1455-whitmer-1.jpg", "images/decatur-il-1455-whitmer-2.jpg", "images/decatur-il-1455-whitmer-3.jpg", "images/decatur-il-1455-whitmer-4.jpg", "images/decatur-il-1455-whitmer-5.jpg", "images/decatur-il-1455-whitmer-6.jpg", "images/decatur-il-1455-whitmer-7.jpg", "images/decatur-il-1455-whitmer-8.jpg", "images/decatur-il-1455-whitmer-9.jpg", "images/decatur-il-1455-whitmer-10.jpg", "images/decatur-il-1455-whitmer-11.jpg", "images/decatur-il-1455-whitmer-12.jpg", "images/decatur-il-1455-whitmer-13.jpg", "images/decatur-il-1455-whitmer-14.jpg", "images/decatur-il-1455-whitmer-15.jpg", "images/decatur-il-1455-whitmer-16.jpg", "images/decatur-il-1455-whitmer-17.jpg", "images/decatur-il-1455-whitmer-18.jpg", "images/decatur-il-1455-whitmer-19.jpg", "images/decatur-il-1455-whitmer-20.jpg", "images/decatur-il-1455-whitmer-21.jpg", "images/decatur-il-1455-whitmer-22.jpg", "images/decatur-il-1455-whitmer-23.jpg", "images/decatur-il-1455-whitmer-24.jpg"],
   },
@@ -2677,9 +2654,9 @@ const HOMES = [
     sqft:  "",
     status: "Available",
 
-    monthlyPayment: 795,
-    moveIn:         3000,
-    lockedPrice:    89000,
+    monthlyPayment: 780,
+    moveIn:         2500,
+    lockedPrice:    79000,
     termText:       "30-year owner financing (contract for deed)",
 
     features: { basement: "yes" },
@@ -2698,8 +2675,8 @@ const HOMES = [
     sqft:  "",
     status: "Available",
 
-    monthlyPayment: 520,
-    moveIn:         1000,
+    monthlyPayment: 510,
+    moveIn:         900,
     lockedPrice:    49000,
     termText:       "30-year owner financing (contract for deed)",
 
@@ -2779,7 +2756,7 @@ const HOMES = [
     status: "Available",
 
     monthlyPayment: 635,
-    moveIn:         2000,
+    moveIn:         1800,
     lockedPrice:    57000,
     termText:       "30-year owner financing (contract for deed)",
 
@@ -2819,8 +2796,8 @@ const HOMES = [
     sqft:  "",
     status: "Available",
 
-    monthlyPayment: 950,
-    moveIn:         3000,
+    monthlyPayment: 925,
+    moveIn:         2500,
     lockedPrice:    89000,
     termText:       "30-year owner financing (contract for deed)",
 
@@ -2961,9 +2938,9 @@ const HOMES = [
     sqft:  "",
     status: "Available",
 
-    monthlyPayment: 550,
+    monthlyPayment: 525,
     moveIn:         1000,
-    lockedPrice:    38000,
+    lockedPrice:    37000,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
@@ -2981,9 +2958,9 @@ const HOMES = [
     sqft:  "",
     status: "Available",
 
-    monthlyPayment: 625,
+    monthlyPayment: 600,
     moveIn:         1000,
-    lockedPrice:    45000,
+    lockedPrice:    43000,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
@@ -3070,107 +3047,5 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/peoria-il-422-louisa-1.jpg", "images/peoria-il-422-louisa-2.jpg", "images/peoria-il-422-louisa-3.jpg", "images/peoria-il-422-louisa-4.jpg", "images/peoria-il-422-louisa-5.jpg", "images/peoria-il-422-louisa-6.jpg", "images/peoria-il-422-louisa-7.jpg", "images/peoria-il-422-louisa-8.jpg", "images/peoria-il-422-louisa-9.jpg", "images/peoria-il-422-louisa-10.jpg", "images/peoria-il-422-louisa-11.jpg", "images/peoria-il-422-louisa-12.jpg", "images/peoria-il-422-louisa-13.jpg", "images/peoria-il-422-louisa-14.jpg", "images/peoria-il-422-louisa-15.jpg", "images/peoria-il-422-louisa-16.jpg", "images/peoria-il-422-louisa-17.jpg", "images/peoria-il-422-louisa-18.jpg", "images/peoria-il-422-louisa-19.jpg", "images/peoria-il-422-louisa-20.jpg", "images/peoria-il-422-louisa-21.jpg", "images/peoria-il-422-louisa-22.jpg", "images/peoria-il-422-louisa-23.jpg", "images/peoria-il-422-louisa-24.jpg"],
-  },
-  {
-    id: "granitecity-il-1510-23rd",
-    address:     "1510 23rd St",
-    zip:         "62040",
-    description: "3/1 2 story in good location all systems work",
-    city:  "Granite City",
-    state: "IL",
-    beds:  3,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 1250,
-    moveIn:         3000,
-    lockedPrice:    112000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
-  },
-  {
-    id: "decatur-il-909-maffit",
-    address:     "909 S Maffit St",
-    zip:         "62521",
-    description: "830 sqft, newer paint and floors",
-    city:  "Decatur",
-    state: "IL",
-    beds:  3,
-    baths: 1,
-    sqft:  "830",
-    status: "Available",
-
-    monthlyPayment: 895,
-    moveIn:         3000,
-    lockedPrice:    89000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
-  },
-  {
-    id: "eaststlouis-il-541-27th",
-    address:     "541 North 27th Street",
-    zip:         "62205",
-    description: "1,066 Square Feet located on a 7,026 square foot lot. Brick fireplace in living room",
-    city:  "East St. Louis",
-    state: "IL",
-    beds:  2,
-    baths: 1,
-    sqft:  "1,066",
-    status: "Available",
-
-    monthlyPayment: 787,
-    moveIn:         3000,
-    lockedPrice:    79500,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { backyard: "yes" },
-    heroPhoto: "",
-    photos:    [],
-  },
-  {
-    id: "decatur-il-712-waggoner",
-    address:     "712 W Waggoner St",
-    zip:         "62526",
-    description: "This charming 2-bedroom, 1-bath home offers approximately 975 square feet of comfortable living space. It has been freshly updated, including an upgraded bathroom, and is ready for someone to make it their own",
-    city:  "Decatur",
-    state: "IL",
-    beds:  2,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 950,
-    moveIn:         3000,
-    lockedPrice:    88000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
-  },
-  {
-    id: "decatur-il-830-rogers",
-    address:     "830 East Rogers Avenue",
-    zip:         "62521",
-    description: "624 square feet, finished basement, new furnace and hot water heater, covered porch",
-    city:  "Decatur",
-    state: "IL",
-    beds:  3,
-    baths: 1,
-    sqft:  "624",
-    status: "Available",
-
-    monthlyPayment: 788,
-    moveIn:         2500,
-    lockedPrice:    63500,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { basement: "yes" },
-    heroPhoto: "",
-    photos:    [],
   },
 ];

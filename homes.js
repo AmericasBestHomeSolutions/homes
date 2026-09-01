@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (149 live, rebuilt from master published 2026-09-01) --- */
+/* --- the homes (150 live, rebuilt from master published 2026-09-01) --- */
 const HOMES = [
   {
     id: "decatur-il-909-maffit",
@@ -53,7 +53,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/eaststlouis-il-305-7th-1.jpg", "images/eaststlouis-il-305-7th-2.jpg", "images/eaststlouis-il-305-7th-3.jpg", "images/eaststlouis-il-305-7th-4.jpg", "images/eaststlouis-il-305-7th-5.jpg", "images/eaststlouis-il-305-7th-6.jpg", "images/eaststlouis-il-305-7th-7.jpg", "images/eaststlouis-il-305-7th-8.jpg", "images/eaststlouis-il-305-7th-9.jpg", "images/eaststlouis-il-305-7th-10.jpg", "images/eaststlouis-il-305-7th-11.jpg"],
   },
   {
     id: "eaststlouis-il-541-27th",
@@ -822,8 +822,8 @@ const HOMES = [
     sqft:  "1064",
     status: "Available",
 
-    monthlyPayment: 950,
-    moveIn:         3000,
+    monthlyPayment: 925,
+    moveIn:         2500,
     lockedPrice:    88500,
     termText:       "30-year owner financing (contract for deed)",
 
@@ -3047,5 +3047,26 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/peoria-il-422-louisa-1.jpg", "images/peoria-il-422-louisa-2.jpg", "images/peoria-il-422-louisa-3.jpg", "images/peoria-il-422-louisa-4.jpg", "images/peoria-il-422-louisa-5.jpg", "images/peoria-il-422-louisa-6.jpg", "images/peoria-il-422-louisa-7.jpg", "images/peoria-il-422-louisa-8.jpg", "images/peoria-il-422-louisa-9.jpg", "images/peoria-il-422-louisa-10.jpg", "images/peoria-il-422-louisa-11.jpg", "images/peoria-il-422-louisa-12.jpg", "images/peoria-il-422-louisa-13.jpg", "images/peoria-il-422-louisa-14.jpg", "images/peoria-il-422-louisa-15.jpg", "images/peoria-il-422-louisa-16.jpg", "images/peoria-il-422-louisa-17.jpg", "images/peoria-il-422-louisa-18.jpg", "images/peoria-il-422-louisa-19.jpg", "images/peoria-il-422-louisa-20.jpg", "images/peoria-il-422-louisa-21.jpg", "images/peoria-il-422-louisa-22.jpg", "images/peoria-il-422-louisa-23.jpg", "images/peoria-il-422-louisa-24.jpg"],
+  },
+  {
+    id: "jackson-ms-293-cameron",
+    address:     "293 Cameron St",
+    zip:         "39212",
+    description: "Vacant and ready to be filled. Single-family residence with a large yard and a spacious layout. The monthly payment includes principal and interest, property taxes and insurance",
+    city:  "Jackson",
+    state: "MS",
+    beds:  3,
+    baths: 1,
+    sqft:  "1172",
+    status: "Available",
+
+    monthlyPayment: 1038,
+    moveIn:         1500,
+    lockedPrice:    91500,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { backyard: "yes" },
+    heroPhoto: "",
+    photos:    ["images/jackson-ms-293-cameron-1.jpg", "images/jackson-ms-293-cameron-2.jpg", "images/jackson-ms-293-cameron-3.jpg", "images/jackson-ms-293-cameron-4.jpg", "images/jackson-ms-293-cameron-5.jpg", "images/jackson-ms-293-cameron-6.jpg"],
   },
 ];

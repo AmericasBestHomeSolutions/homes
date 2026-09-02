@@ -13,8 +13,46 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (149 live, rebuilt from master published 2026-09-02) --- */
+/* --- the homes (147 live, rebuilt from master published 2026-09-02) --- */
 const HOMES = [
+  {
+    id: "jackson-ms-434-mason",
+    address:     "434 Mason Blvd,",
+    zip:         "39212",
+    city:  "Jackson",
+    state: "MS",
+    beds:  2,
+    baths: 1,
+    sqft:  "733",
+    status: "Available",
+
+    monthlyPayment: 853.31,
+    moveIn:         2000,
+    lockedPrice:    72500,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "jackson-ms-293-cameron",
+    address:     "293 Cameron St",
+    zip:         "39212",
+    city:  "Jackson",
+    state: "MS",
+    beds:  3,
+    baths: 1,
+    sqft:  "",
+    status: "Available",
+
+    monthlyPayment: 1038.43,
+    moveIn:         2000,
+    lockedPrice:    89500,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    ["images/jackson-ms-293-cameron-1.jpg", "images/jackson-ms-293-cameron-2.jpg", "images/jackson-ms-293-cameron-3.jpg", "images/jackson-ms-293-cameron-4.jpg", "images/jackson-ms-293-cameron-5.jpg", "images/jackson-ms-293-cameron-6.jpg"],
+  },
   {
     id: "decatur-il-909-maffit",
     address:     "909 S Maffit St",
@@ -375,7 +413,7 @@ const HOMES = [
     status: "Available",
 
     monthlyPayment: 950,
-    moveIn:         3000,
+    moveIn:         2500,
     lockedPrice:    78700,
     termText:       "30-year owner financing (contract for deed)",
 
@@ -444,25 +482,6 @@ const HOMES = [
     features: { backyard: "yes" },
     heroPhoto: "",
     photos:    ["images/eaststlouis-il-5050-hallows-1.jpg", "images/eaststlouis-il-5050-hallows-2.jpg", "images/eaststlouis-il-5050-hallows-3.jpg", "images/eaststlouis-il-5050-hallows-4.jpg", "images/eaststlouis-il-5050-hallows-5.jpg", "images/eaststlouis-il-5050-hallows-6.jpg", "images/eaststlouis-il-5050-hallows-7.jpg", "images/eaststlouis-il-5050-hallows-8.jpg", "images/eaststlouis-il-5050-hallows-9.jpg", "images/eaststlouis-il-5050-hallows-10.jpg", "images/eaststlouis-il-5050-hallows-11.jpg", "images/eaststlouis-il-5050-hallows-12.jpg", "images/eaststlouis-il-5050-hallows-13.jpg", "images/eaststlouis-il-5050-hallows-14.jpg", "images/eaststlouis-il-5050-hallows-15.jpg", "images/eaststlouis-il-5050-hallows-16.jpg", "images/eaststlouis-il-5050-hallows-17.jpg", "images/eaststlouis-il-5050-hallows-18.jpg", "images/eaststlouis-il-5050-hallows-19.jpg", "images/eaststlouis-il-5050-hallows-20.jpg", "images/eaststlouis-il-5050-hallows-21.jpg", "images/eaststlouis-il-5050-hallows-22.jpg", "images/eaststlouis-il-5050-hallows-23.jpg", "images/eaststlouis-il-5050-hallows-24.jpg", "images/eaststlouis-il-5050-hallows-25.jpg", "images/eaststlouis-il-5050-hallows-26.jpg", "images/eaststlouis-il-5050-hallows-27.jpg", "images/eaststlouis-il-5050-hallows-28.jpg"],
-  },
-  {
-    id: "stlouis-mo-5816-hodiamont",
-    address:     "5816 Hodiamont Ave",
-    zip:         "63136",
-    city:  "St. Louis",
-    state: "MO",
-    beds:  4,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 980,
-    moveIn:         3000,
-    lockedPrice:    99000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    ["images/stlouis-mo-5816-hodiamont-1.jpg", "images/stlouis-mo-5816-hodiamont-2.jpg", "images/stlouis-mo-5816-hodiamont-3.jpg", "images/stlouis-mo-5816-hodiamont-4.jpg", "images/stlouis-mo-5816-hodiamont-5.jpg", "images/stlouis-mo-5816-hodiamont-6.jpg", "images/stlouis-mo-5816-hodiamont-7.jpg", "images/stlouis-mo-5816-hodiamont-8.jpg", "images/stlouis-mo-5816-hodiamont-9.jpg", "images/stlouis-mo-5816-hodiamont-10.jpg", "images/stlouis-mo-5816-hodiamont-11.jpg", "images/stlouis-mo-5816-hodiamont-12.jpg", "images/stlouis-mo-5816-hodiamont-13.jpg", "images/stlouis-mo-5816-hodiamont-14.jpg", "images/stlouis-mo-5816-hodiamont-15.jpg", "images/stlouis-mo-5816-hodiamont-16.jpg", "images/stlouis-mo-5816-hodiamont-17.jpg", "images/stlouis-mo-5816-hodiamont-18.jpg"],
   },
   {
     id: "eaststlouis-il-1847-56th",
@@ -583,27 +602,6 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/springfield-il-2949-foxbridge-1.jpg", "images/springfield-il-2949-foxbridge-2.jpg", "images/springfield-il-2949-foxbridge-3.jpg", "images/springfield-il-2949-foxbridge-4.jpg", "images/springfield-il-2949-foxbridge-5.jpg", "images/springfield-il-2949-foxbridge-6.jpg", "images/springfield-il-2949-foxbridge-7.jpg", "images/springfield-il-2949-foxbridge-8.jpg", "images/springfield-il-2949-foxbridge-9.jpg", "images/springfield-il-2949-foxbridge-10.jpg", "images/springfield-il-2949-foxbridge-11.jpg", "images/springfield-il-2949-foxbridge-12.jpg", "images/springfield-il-2949-foxbridge-13.jpg", "images/springfield-il-2949-foxbridge-14.jpg", "images/springfield-il-2949-foxbridge-15.jpg", "images/springfield-il-2949-foxbridge-16.jpg", "images/springfield-il-2949-foxbridge-17.jpg", "images/springfield-il-2949-foxbridge-18.jpg"],
-  },
-  {
-    id: "decatur-il-1818-clay",
-    address:     "1818 E Clay St",
-    zip:         "62521",
-    description: "Large home with a basememt, large back yard, 1520 sf, all systems are working, replacing the water heater",
-    city:  "Decatur",
-    state: "IL",
-    beds:  3,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 899,
-    moveIn:         2500,
-    lockedPrice:    99500,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { backyard: "yes", basement: "yes" },
-    heroPhoto: "",
-    photos:    ["images/decatur-il-1818-clay-1.jpg", "images/decatur-il-1818-clay-2.jpg", "images/decatur-il-1818-clay-3.jpg", "images/decatur-il-1818-clay-4.jpg", "images/decatur-il-1818-clay-5.jpg", "images/decatur-il-1818-clay-6.jpg", "images/decatur-il-1818-clay-7.jpg", "images/decatur-il-1818-clay-8.jpg", "images/decatur-il-1818-clay-9.jpg", "images/decatur-il-1818-clay-10.jpg", "images/decatur-il-1818-clay-11.jpg", "images/decatur-il-1818-clay-12.jpg", "images/decatur-il-1818-clay-13.jpg", "images/decatur-il-1818-clay-14.jpg", "images/decatur-il-1818-clay-15.jpg", "images/decatur-il-1818-clay-16.jpg", "images/decatur-il-1818-clay-17.jpg", "images/decatur-il-1818-clay-18.jpg", "images/decatur-il-1818-clay-19.jpg", "images/decatur-il-1818-clay-20.jpg", "images/decatur-il-1818-clay-21.jpg", "images/decatur-il-1818-clay-22.jpg", "images/decatur-il-1818-clay-23.jpg", "images/decatur-il-1818-clay-24.jpg", "images/decatur-il-1818-clay-25.jpg", "images/decatur-il-1818-clay-26.jpg", "images/decatur-il-1818-clay-27.jpg", "images/decatur-il-1818-clay-28.jpg", "images/decatur-il-1818-clay-29.jpg", "images/decatur-il-1818-clay-30.jpg", "images/decatur-il-1818-clay-31.jpg", "images/decatur-il-1818-clay-32.jpg", "images/decatur-il-1818-clay-33.jpg", "images/decatur-il-1818-clay-34.jpg", "images/decatur-il-1818-clay-35.jpg", "images/decatur-il-1818-clay-36.jpg", "images/decatur-il-1818-clay-37.jpg", "images/decatur-il-1818-clay-38.jpg", "images/decatur-il-1818-clay-39.jpg", "images/decatur-il-1818-clay-40.jpg", "images/decatur-il-1818-clay-41.jpg", "images/decatur-il-1818-clay-42.jpg", "images/decatur-il-1818-clay-43.jpg", "images/decatur-il-1818-clay-44.jpg", "images/decatur-il-1818-clay-45.jpg", "images/decatur-il-1818-clay-46.jpg", "images/decatur-il-1818-clay-47.jpg", "images/decatur-il-1818-clay-48.jpg", "images/decatur-il-1818-clay-49.jpg", "images/decatur-il-1818-clay-50.jpg", "images/decatur-il-1818-clay-51.jpg", "images/decatur-il-1818-clay-52.jpg", "images/decatur-il-1818-clay-53.jpg", "images/decatur-il-1818-clay-54.jpg", "images/decatur-il-1818-clay-55.jpg", "images/decatur-il-1818-clay-56.jpg", "images/decatur-il-1818-clay-57.jpg", "images/decatur-il-1818-clay-58.jpg", "images/decatur-il-1818-clay-59.jpg"],
   },
   {
     id: "eaststlouis-il-740-22nd",
@@ -1214,7 +1212,7 @@ const HOMES = [
     sqft:  "700",
     status: "Available",
 
-    monthlyPayment: 400,
+    monthlyPayment: 375,
     moveIn:         400,
     lockedPrice:    40000,
     termText:       "30-year owner financing (contract for deed)",
@@ -2162,27 +2160,6 @@ const HOMES = [
     photos:    ["images/decatur-il-1365-walnut-1.jpg", "images/decatur-il-1365-walnut-2.jpg", "images/decatur-il-1365-walnut-3.jpg", "images/decatur-il-1365-walnut-4.jpg", "images/decatur-il-1365-walnut-5.jpg", "images/decatur-il-1365-walnut-6.jpg", "images/decatur-il-1365-walnut-7.jpg", "images/decatur-il-1365-walnut-8.jpg", "images/decatur-il-1365-walnut-9.jpg", "images/decatur-il-1365-walnut-10.jpg", "images/decatur-il-1365-walnut-11.jpg", "images/decatur-il-1365-walnut-12.jpg", "images/decatur-il-1365-walnut-13.jpg", "images/decatur-il-1365-walnut-14.jpg", "images/decatur-il-1365-walnut-15.jpg", "images/decatur-il-1365-walnut-16.jpg", "images/decatur-il-1365-walnut-17.jpg", "images/decatur-il-1365-walnut-18.jpg", "images/decatur-il-1365-walnut-19.jpg", "images/decatur-il-1365-walnut-20.jpg", "images/decatur-il-1365-walnut-21.jpg", "images/decatur-il-1365-walnut-22.jpg", "images/decatur-il-1365-walnut-23.jpg", "images/decatur-il-1365-walnut-24.jpg", "images/decatur-il-1365-walnut-25.jpg", "images/decatur-il-1365-walnut-26.jpg", "images/decatur-il-1365-walnut-27.jpg", "images/decatur-il-1365-walnut-28.jpg", "images/decatur-il-1365-walnut-29.jpg", "images/decatur-il-1365-walnut-30.jpg", "images/decatur-il-1365-walnut-31.jpg", "images/decatur-il-1365-walnut-32.jpg", "images/decatur-il-1365-walnut-33.jpg", "images/decatur-il-1365-walnut-34.jpg", "images/decatur-il-1365-walnut-35.jpg", "images/decatur-il-1365-walnut-36.jpg"],
   },
   {
-    id: "decatur-il-821-oakland",
-    address:     "821 N. Oakland Ave",
-    zip:         "62514",
-    description: "840 sqft. detached garage",
-    city:  "Decatur",
-    state: "IL",
-    beds:  2,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 749,
-    moveIn:         2000,
-    lockedPrice:    78993,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { garage: "yes", off_street_parking: "yes" },
-    heroPhoto: "",
-    photos:    ["images/decatur-il-821-oakland-1.jpg", "images/decatur-il-821-oakland-2.jpg", "images/decatur-il-821-oakland-3.jpg", "images/decatur-il-821-oakland-4.jpg", "images/decatur-il-821-oakland-5.jpg", "images/decatur-il-821-oakland-6.jpg", "images/decatur-il-821-oakland-7.jpg", "images/decatur-il-821-oakland-8.jpg", "images/decatur-il-821-oakland-9.jpg", "images/decatur-il-821-oakland-10.jpg", "images/decatur-il-821-oakland-11.jpg", "images/decatur-il-821-oakland-12.jpg", "images/decatur-il-821-oakland-13.jpg", "images/decatur-il-821-oakland-14.jpg", "images/decatur-il-821-oakland-15.jpg", "images/decatur-il-821-oakland-16.jpg", "images/decatur-il-821-oakland-17.jpg", "images/decatur-il-821-oakland-18.jpg"],
-  },
-  {
     id: "decatur-il-327-stuart",
     address:     "327 E Stuart Ave",
     zip:         "62526",
@@ -2226,7 +2203,7 @@ const HOMES = [
     id: "decatur-il-515-boyd",
     address:     "515 S. Boyd St",
     zip:         "62522",
-    description: "Porch is being repaired. Seller wants proof of income- latest Pay stub",
+    description: "Newly repaired porch. Seller wants proof of income- latest Pay stub",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -3027,26 +3004,5 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/peoria-il-422-louisa-1.jpg", "images/peoria-il-422-louisa-2.jpg", "images/peoria-il-422-louisa-3.jpg", "images/peoria-il-422-louisa-4.jpg", "images/peoria-il-422-louisa-5.jpg", "images/peoria-il-422-louisa-6.jpg", "images/peoria-il-422-louisa-7.jpg", "images/peoria-il-422-louisa-8.jpg", "images/peoria-il-422-louisa-9.jpg", "images/peoria-il-422-louisa-10.jpg", "images/peoria-il-422-louisa-11.jpg", "images/peoria-il-422-louisa-12.jpg", "images/peoria-il-422-louisa-13.jpg", "images/peoria-il-422-louisa-14.jpg", "images/peoria-il-422-louisa-15.jpg", "images/peoria-il-422-louisa-16.jpg", "images/peoria-il-422-louisa-17.jpg", "images/peoria-il-422-louisa-18.jpg", "images/peoria-il-422-louisa-19.jpg", "images/peoria-il-422-louisa-20.jpg", "images/peoria-il-422-louisa-21.jpg", "images/peoria-il-422-louisa-22.jpg", "images/peoria-il-422-louisa-23.jpg", "images/peoria-il-422-louisa-24.jpg"],
-  },
-  {
-    id: "jackson-ms-293-cameron",
-    address:     "293 Cameron St",
-    zip:         "39212",
-    description: "Vacant and ready to be filled. Single-family residence with a large yard and a spacious layout. The monthly payment includes principal and interest, property taxes and insurance",
-    city:  "Jackson",
-    state: "MS",
-    beds:  3,
-    baths: 1,
-    sqft:  "1172",
-    status: "Available",
-
-    monthlyPayment: 1038,
-    moveIn:         1500,
-    lockedPrice:    91500,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { backyard: "yes" },
-    heroPhoto: "",
-    photos:    ["images/jackson-ms-293-cameron-1.jpg", "images/jackson-ms-293-cameron-2.jpg", "images/jackson-ms-293-cameron-3.jpg", "images/jackson-ms-293-cameron-4.jpg", "images/jackson-ms-293-cameron-5.jpg", "images/jackson-ms-293-cameron-6.jpg"],
   },
 ];

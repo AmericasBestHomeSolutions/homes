@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (147 live, rebuilt from master published 2026-09-02) --- */
+/* --- the homes (146 live, rebuilt from master published 2026-09-02) --- */
 const HOMES = [
   {
     id: "jackson-ms-434-mason",
@@ -32,7 +32,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/jackson-ms-434-mason-1.jpg", "images/jackson-ms-434-mason-2.jpg", "images/jackson-ms-434-mason-3.jpg", "images/jackson-ms-434-mason-4.jpg"],
   },
   {
     id: "jackson-ms-293-cameron",
@@ -888,27 +888,6 @@ const HOMES = [
     features: { basement: "yes" },
     heroPhoto: "",
     photos:    ["images/danville-il-417-anderson-1.jpg", "images/danville-il-417-anderson-2.jpg", "images/danville-il-417-anderson-3.jpg", "images/danville-il-417-anderson-4.jpg", "images/danville-il-417-anderson-5.jpg", "images/danville-il-417-anderson-6.jpg", "images/danville-il-417-anderson-7.jpg", "images/danville-il-417-anderson-8.jpg", "images/danville-il-417-anderson-9.jpg", "images/danville-il-417-anderson-10.jpg", "images/danville-il-417-anderson-11.jpg", "images/danville-il-417-anderson-12.jpg", "images/danville-il-417-anderson-13.jpg", "images/danville-il-417-anderson-14.jpg"],
-  },
-  {
-    id: "springfield-il-905-wesley",
-    address:     "905 N Wesley St",
-    zip:         "62702",
-    description: "2 Bd/1 Ba, 700 sq.ft plus a detached garage.. Move in ready, rehab just completed, all mechanics are up and running !. 905 N Wesley St, Springfield, IL 62702. Key Highlights:. Just completed a light rehab, all systems works and move-in ready!. Cozy 700 sq ft single-family home, 2 bed, 1 bath, detached garage, and a 4,860 sq.ft lot. Furnace looks good. Electrical just updated !. Brand new flooring installed. Roof - no leaks!. Recently cleaned throughout. Located in a highly sought-after area in north Springfield.. Almost no rentals available in the area under $1,200/month",
-    city:  "Springfield",
-    state: "IL",
-    beds:  2,
-    baths: 1,
-    sqft:  "700",
-    status: "Available",
-
-    monthlyPayment: 995,
-    moveIn:         3000,
-    lockedPrice:    99000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { backyard: "yes", garage: "yes", off_street_parking: "yes" },
-    heroPhoto: "",
-    photos:    ["images/springfield-il-905-wesley-1.jpg", "images/springfield-il-905-wesley-2.jpg", "images/springfield-il-905-wesley-3.jpg", "images/springfield-il-905-wesley-4.jpg", "images/springfield-il-905-wesley-5.jpg", "images/springfield-il-905-wesley-6.jpg", "images/springfield-il-905-wesley-7.jpg", "images/springfield-il-905-wesley-8.jpg", "images/springfield-il-905-wesley-9.jpg", "images/springfield-il-905-wesley-10.jpg", "images/springfield-il-905-wesley-11.jpg", "images/springfield-il-905-wesley-12.jpg", "images/springfield-il-905-wesley-13.jpg", "images/springfield-il-905-wesley-14.jpg", "images/springfield-il-905-wesley-15.jpg", "images/springfield-il-905-wesley-16.jpg", "images/springfield-il-905-wesley-17.jpg", "images/springfield-il-905-wesley-18.jpg", "images/springfield-il-905-wesley-19.jpg"],
   },
   {
     id: "moweaqua-il-221-cherry",
@@ -2652,7 +2631,7 @@ const HOMES = [
     sqft:  "816",
     status: "Available",
 
-    monthlyPayment: 830,
+    monthlyPayment: 845,
     moveIn:         1000,
     lockedPrice:    82000,
     termText:       "30-year owner financing (contract for deed)",

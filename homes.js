@@ -2982,7 +2982,7 @@ const HOMES = [
 
     features: { backyard: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/eaststlouis-il-517-31st-1.jpg", "images/eaststlouis-il-517-31st-2.jpg", "images/eaststlouis-il-517-31st-3.jpg", "images/eaststlouis-il-517-31st-4.jpg", "images/eaststlouis-il-517-31st-5.jpg", "images/eaststlouis-il-517-31st-6.jpg", "images/eaststlouis-il-517-31st-7.jpg", "images/eaststlouis-il-517-31st-8.jpg", "images/eaststlouis-il-517-31st-9.jpg", "images/eaststlouis-il-517-31st-10.jpg", "images/eaststlouis-il-517-31st-11.jpg", "images/eaststlouis-il-517-31st-12.jpg", "images/eaststlouis-il-517-31st-13.jpg", "images/eaststlouis-il-517-31st-14.jpg", "images/eaststlouis-il-517-31st-15.jpg", "images/eaststlouis-il-517-31st-16.jpg", "images/eaststlouis-il-517-31st-17.jpg", "images/eaststlouis-il-517-31st-18.jpg", "images/eaststlouis-il-517-31st-19.jpg", "images/eaststlouis-il-517-31st-20.jpg", "images/eaststlouis-il-517-31st-21.jpg", "images/eaststlouis-il-517-31st-22.jpg", "images/eaststlouis-il-517-31st-23.jpg", "images/eaststlouis-il-517-31st-24.jpg"],
   },
   {
     id: "flint-mi-3002-arizona",
@@ -3003,7 +3003,7 @@ const HOMES = [
 
     features: { backyard: "yes", fenced_yard: "yes", basement: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/flint-mi-3002-arizona-1.jpg", "images/flint-mi-3002-arizona-2.jpg", "images/flint-mi-3002-arizona-3.jpg", "images/flint-mi-3002-arizona-4.jpg", "images/flint-mi-3002-arizona-5.jpg", "images/flint-mi-3002-arizona-6.jpg", "images/flint-mi-3002-arizona-7.jpg", "images/flint-mi-3002-arizona-8.jpg", "images/flint-mi-3002-arizona-9.jpg", "images/flint-mi-3002-arizona-10.jpg", "images/flint-mi-3002-arizona-11.jpg", "images/flint-mi-3002-arizona-12.jpg", "images/flint-mi-3002-arizona-13.jpg", "images/flint-mi-3002-arizona-14.jpg", "images/flint-mi-3002-arizona-15.jpg", "images/flint-mi-3002-arizona-16.jpg", "images/flint-mi-3002-arizona-17.jpg", "images/flint-mi-3002-arizona-18.jpg", "images/flint-mi-3002-arizona-19.jpg", "images/flint-mi-3002-arizona-20.jpg", "images/flint-mi-3002-arizona-21.jpg", "images/flint-mi-3002-arizona-22.jpg", "images/flint-mi-3002-arizona-23.jpg", "images/flint-mi-3002-arizona-24.jpg"],
   },
   {
     id: "decatur-il-1174-king",
@@ -3023,7 +3023,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-1174-king-1.jpg", "images/decatur-il-1174-king-2.jpg", "images/decatur-il-1174-king-3.jpg", "images/decatur-il-1174-king-4.jpg", "images/decatur-il-1174-king-5.jpg", "images/decatur-il-1174-king-6.jpg", "images/decatur-il-1174-king-7.jpg", "images/decatur-il-1174-king-8.jpg", "images/decatur-il-1174-king-9.jpg", "images/decatur-il-1174-king-10.jpg", "images/decatur-il-1174-king-11.jpg", "images/decatur-il-1174-king-12.jpg", "images/decatur-il-1174-king-13.jpg", "images/decatur-il-1174-king-14.jpg", "images/decatur-il-1174-king-15.jpg", "images/decatur-il-1174-king-16.jpg", "images/decatur-il-1174-king-17.jpg", "images/decatur-il-1174-king-18.jpg", "images/decatur-il-1174-king-19.jpg", "images/decatur-il-1174-king-20.jpg", "images/decatur-il-1174-king-21.jpg", "images/decatur-il-1174-king-22.jpg", "images/decatur-il-1174-king-23.jpg", "images/decatur-il-1174-king-24.jpg"],
   },
   {
     id: "decatur-il-801-21st",
@@ -3042,7 +3042,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-801-21st-1.jpg", "images/decatur-il-801-21st-2.jpg", "images/decatur-il-801-21st-3.jpg", "images/decatur-il-801-21st-4.jpg", "images/decatur-il-801-21st-5.jpg", "images/decatur-il-801-21st-6.jpg", "images/decatur-il-801-21st-7.jpg", "images/decatur-il-801-21st-8.jpg", "images/decatur-il-801-21st-9.jpg", "images/decatur-il-801-21st-10.jpg", "images/decatur-il-801-21st-11.jpg", "images/decatur-il-801-21st-12.jpg", "images/decatur-il-801-21st-13.jpg", "images/decatur-il-801-21st-14.jpg", "images/decatur-il-801-21st-15.jpg", "images/decatur-il-801-21st-16.jpg", "images/decatur-il-801-21st-17.jpg", "images/decatur-il-801-21st-18.jpg", "images/decatur-il-801-21st-19.jpg", "images/decatur-il-801-21st-20.jpg", "images/decatur-il-801-21st-21.jpg", "images/decatur-il-801-21st-22.jpg", "images/decatur-il-801-21st-23.jpg", "images/decatur-il-801-21st-24.jpg"],
   },
   {
     id: "saginaw-mi-1223-harrison",
@@ -3063,7 +3063,7 @@ const HOMES = [
 
     features: { backyard: "yes", fenced_yard: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/saginaw-mi-1223-harrison-1.jpg", "images/saginaw-mi-1223-harrison-2.jpg", "images/saginaw-mi-1223-harrison-3.jpg", "images/saginaw-mi-1223-harrison-4.jpg", "images/saginaw-mi-1223-harrison-5.jpg", "images/saginaw-mi-1223-harrison-6.jpg", "images/saginaw-mi-1223-harrison-7.jpg"],
   },
   {
     id: "springfield-il-2640-5th",
@@ -3084,7 +3084,7 @@ const HOMES = [
 
     features: { garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/springfield-il-2640-5th-1.jpg", "images/springfield-il-2640-5th-2.jpg", "images/springfield-il-2640-5th-3.jpg", "images/springfield-il-2640-5th-4.jpg", "images/springfield-il-2640-5th-5.jpg", "images/springfield-il-2640-5th-6.jpg", "images/springfield-il-2640-5th-7.jpg", "images/springfield-il-2640-5th-8.jpg", "images/springfield-il-2640-5th-9.jpg", "images/springfield-il-2640-5th-10.jpg", "images/springfield-il-2640-5th-11.jpg", "images/springfield-il-2640-5th-12.jpg", "images/springfield-il-2640-5th-13.jpg"],
   },
   {
     id: "decatur-il-1272-king",
@@ -3105,7 +3105,7 @@ const HOMES = [
 
     features: { backyard: "yes", basement: "yes", central_air: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-1272-king-1.jpg", "images/decatur-il-1272-king-2.jpg", "images/decatur-il-1272-king-3.jpg", "images/decatur-il-1272-king-4.jpg", "images/decatur-il-1272-king-5.jpg"],
   },
   {
     id: "decatur-il-4547-rosewood",
@@ -3126,6 +3126,6 @@ const HOMES = [
 
     features: { backyard: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-4547-rosewood-1.jpg", "images/decatur-il-4547-rosewood-2.jpg", "images/decatur-il-4547-rosewood-3.jpg", "images/decatur-il-4547-rosewood-4.jpg", "images/decatur-il-4547-rosewood-5.jpg", "images/decatur-il-4547-rosewood-6.jpg", "images/decatur-il-4547-rosewood-7.jpg", "images/decatur-il-4547-rosewood-8.jpg", "images/decatur-il-4547-rosewood-9.jpg", "images/decatur-il-4547-rosewood-10.jpg", "images/decatur-il-4547-rosewood-11.jpg", "images/decatur-il-4547-rosewood-12.jpg"],
   },
 ];

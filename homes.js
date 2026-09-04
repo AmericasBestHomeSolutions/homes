@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (146 live, rebuilt from master published 2026-09-02) --- */
+/* --- the homes (146 live, rebuilt from master published 2026-09-03) --- */
 const HOMES = [
   {
     id: "jackson-ms-434-mason",

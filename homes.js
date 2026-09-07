@@ -32,7 +32,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/granitecity-il-2820-ralph-1.jpg", "images/granitecity-il-2820-ralph-2.jpg", "images/granitecity-il-2820-ralph-3.jpg", "images/granitecity-il-2820-ralph-4.jpg", "images/granitecity-il-2820-ralph-5.jpg", "images/granitecity-il-2820-ralph-6.jpg", "images/granitecity-il-2820-ralph-7.jpg", "images/granitecity-il-2820-ralph-8.jpg", "images/granitecity-il-2820-ralph-9.jpg", "images/granitecity-il-2820-ralph-10.jpg", "images/granitecity-il-2820-ralph-11.jpg", "images/granitecity-il-2820-ralph-12.jpg", "images/granitecity-il-2820-ralph-13.jpg", "images/granitecity-il-2820-ralph-14.jpg", "images/granitecity-il-2820-ralph-15.jpg", "images/granitecity-il-2820-ralph-16.jpg", "images/granitecity-il-2820-ralph-17.jpg", "images/granitecity-il-2820-ralph-18.jpg", "images/granitecity-il-2820-ralph-19.jpg", "images/granitecity-il-2820-ralph-20.jpg", "images/granitecity-il-2820-ralph-21.jpg", "images/granitecity-il-2820-ralph-22.jpg", "images/granitecity-il-2820-ralph-23.jpg", "images/granitecity-il-2820-ralph-24.jpg"],
   },
   {
     id: "eaststlouis-il-556-wimmer",
@@ -53,7 +53,7 @@ const HOMES = [
 
     features: { basement: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/eaststlouis-il-556-wimmer-1.jpg", "images/eaststlouis-il-556-wimmer-2.jpg", "images/eaststlouis-il-556-wimmer-3.jpg", "images/eaststlouis-il-556-wimmer-4.jpg", "images/eaststlouis-il-556-wimmer-5.jpg", "images/eaststlouis-il-556-wimmer-6.jpg", "images/eaststlouis-il-556-wimmer-7.jpg", "images/eaststlouis-il-556-wimmer-8.jpg", "images/eaststlouis-il-556-wimmer-9.jpg", "images/eaststlouis-il-556-wimmer-10.jpg", "images/eaststlouis-il-556-wimmer-11.jpg", "images/eaststlouis-il-556-wimmer-12.jpg", "images/eaststlouis-il-556-wimmer-13.jpg", "images/eaststlouis-il-556-wimmer-14.jpg", "images/eaststlouis-il-556-wimmer-15.jpg", "images/eaststlouis-il-556-wimmer-16.jpg", "images/eaststlouis-il-556-wimmer-17.jpg", "images/eaststlouis-il-556-wimmer-18.jpg", "images/eaststlouis-il-556-wimmer-19.jpg", "images/eaststlouis-il-556-wimmer-20.jpg"],
   },
   {
     id: "westfrankfort-il-503-poplar",
@@ -73,7 +73,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/westfrankfort-il-503-poplar-1.jpg", "images/westfrankfort-il-503-poplar-2.jpg", "images/westfrankfort-il-503-poplar-3.jpg", "images/westfrankfort-il-503-poplar-4.jpg", "images/westfrankfort-il-503-poplar-5.jpg", "images/westfrankfort-il-503-poplar-6.jpg", "images/westfrankfort-il-503-poplar-7.jpg", "images/westfrankfort-il-503-poplar-8.jpg", "images/westfrankfort-il-503-poplar-9.jpg", "images/westfrankfort-il-503-poplar-10.jpg", "images/westfrankfort-il-503-poplar-11.jpg", "images/westfrankfort-il-503-poplar-12.jpg", "images/westfrankfort-il-503-poplar-13.jpg", "images/westfrankfort-il-503-poplar-14.jpg", "images/westfrankfort-il-503-poplar-15.jpg", "images/westfrankfort-il-503-poplar-16.jpg", "images/westfrankfort-il-503-poplar-17.jpg", "images/westfrankfort-il-503-poplar-18.jpg", "images/westfrankfort-il-503-poplar-19.jpg", "images/westfrankfort-il-503-poplar-20.jpg", "images/westfrankfort-il-503-poplar-21.jpg", "images/westfrankfort-il-503-poplar-22.jpg", "images/westfrankfort-il-503-poplar-23.jpg", "images/westfrankfort-il-503-poplar-24.jpg"],
   },
   {
     id: "stdavid-il-209-central",
@@ -94,7 +94,7 @@ const HOMES = [
 
     features: { backyard: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/stdavid-il-209-central-1.jpg", "images/stdavid-il-209-central-2.jpg", "images/stdavid-il-209-central-3.jpg", "images/stdavid-il-209-central-4.jpg", "images/stdavid-il-209-central-5.jpg", "images/stdavid-il-209-central-6.jpg", "images/stdavid-il-209-central-7.jpg", "images/stdavid-il-209-central-8.jpg", "images/stdavid-il-209-central-9.jpg", "images/stdavid-il-209-central-10.jpg", "images/stdavid-il-209-central-11.jpg", "images/stdavid-il-209-central-12.jpg", "images/stdavid-il-209-central-13.jpg", "images/stdavid-il-209-central-14.jpg", "images/stdavid-il-209-central-15.jpg", "images/stdavid-il-209-central-16.jpg", "images/stdavid-il-209-central-17.jpg", "images/stdavid-il-209-central-18.jpg", "images/stdavid-il-209-central-19.jpg", "images/stdavid-il-209-central-20.jpg", "images/stdavid-il-209-central-21.jpg", "images/stdavid-il-209-central-22.jpg", "images/stdavid-il-209-central-23.jpg"],
   },
   {
     id: "hartfordcity-in-612-cherry",
@@ -136,7 +136,7 @@ const HOMES = [
 
     features: { backyard: "yes", fenced_yard: "yes", basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/stlouis-mo-10135-baron-1.jpg", "images/stlouis-mo-10135-baron-2.jpg", "images/stlouis-mo-10135-baron-3.jpg", "images/stlouis-mo-10135-baron-4.jpg", "images/stlouis-mo-10135-baron-5.jpg", "images/stlouis-mo-10135-baron-6.jpg", "images/stlouis-mo-10135-baron-7.jpg", "images/stlouis-mo-10135-baron-8.jpg", "images/stlouis-mo-10135-baron-9.jpg", "images/stlouis-mo-10135-baron-10.jpg", "images/stlouis-mo-10135-baron-11.jpg", "images/stlouis-mo-10135-baron-12.jpg", "images/stlouis-mo-10135-baron-13.jpg", "images/stlouis-mo-10135-baron-14.jpg", "images/stlouis-mo-10135-baron-15.jpg", "images/stlouis-mo-10135-baron-16.jpg", "images/stlouis-mo-10135-baron-17.jpg", "images/stlouis-mo-10135-baron-18.jpg", "images/stlouis-mo-10135-baron-19.jpg", "images/stlouis-mo-10135-baron-20.jpg", "images/stlouis-mo-10135-baron-21.jpg", "images/stlouis-mo-10135-baron-22.jpg", "images/stlouis-mo-10135-baron-23.jpg", "images/stlouis-mo-10135-baron-24.jpg"],
   },
   {
     id: "decatur-il-957-view",
@@ -157,7 +157,7 @@ const HOMES = [
 
     features: { backyard: "yes", basement: "yes", garage: "yes", off_street_parking: "yes", central_air: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-957-view-1.jpg", "images/decatur-il-957-view-2.jpg", "images/decatur-il-957-view-3.jpg", "images/decatur-il-957-view-4.jpg", "images/decatur-il-957-view-5.jpg", "images/decatur-il-957-view-6.jpg", "images/decatur-il-957-view-7.jpg", "images/decatur-il-957-view-8.jpg", "images/decatur-il-957-view-9.jpg", "images/decatur-il-957-view-10.jpg", "images/decatur-il-957-view-11.jpg", "images/decatur-il-957-view-12.jpg", "images/decatur-il-957-view-13.jpg", "images/decatur-il-957-view-14.jpg", "images/decatur-il-957-view-15.jpg", "images/decatur-il-957-view-16.jpg", "images/decatur-il-957-view-17.jpg", "images/decatur-il-957-view-18.jpg", "images/decatur-il-957-view-19.jpg", "images/decatur-il-957-view-20.jpg"],
   },
   {
     id: "decatur-il-923-king",
@@ -178,7 +178,7 @@ const HOMES = [
 
     features: { backyard: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-923-king-1.jpg", "images/decatur-il-923-king-2.jpg", "images/decatur-il-923-king-3.jpg", "images/decatur-il-923-king-4.jpg", "images/decatur-il-923-king-5.jpg", "images/decatur-il-923-king-6.jpg", "images/decatur-il-923-king-7.jpg", "images/decatur-il-923-king-8.jpg", "images/decatur-il-923-king-9.jpg", "images/decatur-il-923-king-10.jpg", "images/decatur-il-923-king-11.jpg", "images/decatur-il-923-king-12.jpg", "images/decatur-il-923-king-13.jpg", "images/decatur-il-923-king-14.jpg", "images/decatur-il-923-king-15.jpg", "images/decatur-il-923-king-16.jpg", "images/decatur-il-923-king-17.jpg", "images/decatur-il-923-king-18.jpg", "images/decatur-il-923-king-19.jpg"],
   },
   {
     id: "flint-mi-3002-arizona",
@@ -380,7 +380,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/carbondale-il-521-davis-1.jpg", "images/carbondale-il-521-davis-2.jpg", "images/carbondale-il-521-davis-3.jpg", "images/carbondale-il-521-davis-4.jpg", "images/carbondale-il-521-davis-5.jpg", "images/carbondale-il-521-davis-6.jpg"],
   },
   {
     id: "decatur-il-909-maffit",
@@ -971,7 +971,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-1739-gulick-1.jpg", "images/decatur-il-1739-gulick-2.jpg", "images/decatur-il-1739-gulick-3.jpg", "images/decatur-il-1739-gulick-4.jpg", "images/decatur-il-1739-gulick-5.jpg", "images/decatur-il-1739-gulick-6.jpg", "images/decatur-il-1739-gulick-7.jpg", "images/decatur-il-1739-gulick-8.jpg", "images/decatur-il-1739-gulick-9.jpg", "images/decatur-il-1739-gulick-10.jpg", "images/decatur-il-1739-gulick-11.jpg", "images/decatur-il-1739-gulick-12.jpg", "images/decatur-il-1739-gulick-13.jpg", "images/decatur-il-1739-gulick-14.jpg", "images/decatur-il-1739-gulick-15.jpg", "images/decatur-il-1739-gulick-16.jpg", "images/decatur-il-1739-gulick-17.jpg", "images/decatur-il-1739-gulick-18.jpg", "images/decatur-il-1739-gulick-19.jpg", "images/decatur-il-1739-gulick-20.jpg", "images/decatur-il-1739-gulick-21.jpg", "images/decatur-il-1739-gulick-22.jpg", "images/decatur-il-1739-gulick-23.jpg", "images/decatur-il-1739-gulick-24.jpg"],
   },
   {
     id: "cahokia-il-505-chaudet",

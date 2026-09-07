@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (149 live, rebuilt from master published 2026-09-07) --- */
+/* --- the homes (150 live, rebuilt from master published 2026-09-07) --- */
 const HOMES = [
   {
     id: "granitecity-il-2820-ralph",
@@ -3029,24 +3029,45 @@ const HOMES = [
     photos:    ["images/peoria-il-422-louisa-1.jpg", "images/peoria-il-422-louisa-2.jpg", "images/peoria-il-422-louisa-3.jpg", "images/peoria-il-422-louisa-4.jpg", "images/peoria-il-422-louisa-5.jpg", "images/peoria-il-422-louisa-6.jpg", "images/peoria-il-422-louisa-7.jpg", "images/peoria-il-422-louisa-8.jpg", "images/peoria-il-422-louisa-9.jpg", "images/peoria-il-422-louisa-10.jpg", "images/peoria-il-422-louisa-11.jpg", "images/peoria-il-422-louisa-12.jpg", "images/peoria-il-422-louisa-13.jpg", "images/peoria-il-422-louisa-14.jpg", "images/peoria-il-422-louisa-15.jpg", "images/peoria-il-422-louisa-16.jpg", "images/peoria-il-422-louisa-17.jpg", "images/peoria-il-422-louisa-18.jpg", "images/peoria-il-422-louisa-19.jpg", "images/peoria-il-422-louisa-20.jpg", "images/peoria-il-422-louisa-21.jpg", "images/peoria-il-422-louisa-22.jpg", "images/peoria-il-422-louisa-23.jpg", "images/peoria-il-422-louisa-24.jpg"],
   },
   {
-    id: "springfield-il-2640-5th",
-    address:     "2640 S 5th St",
-    zip:         "62703",
-    description: "Detached garage, close to Downtown, livable",
-    city:  "Springfield",
-    state: "IL",
+    id: "montgomery-al-973-parkwood",
+    address:     "973 Parkwood Court",
+    zip:         "36109",
+    description: "1827 sq feet with a big front yard. Back yard is fenced in and has a shed. All systems working and power is on. There is a current month-to-month tenant in living in the property but will vacate once buyer is found",
+    city:  "Montgomery",
+    state: "AL",
     beds:  3,
-    baths: 1,
-    sqft:  "975",
+    baths: 2,
+    sqft:  "1,827",
     status: "Available",
 
-    monthlyPayment: 995,
-    moveIn:         2500,
-    lockedPrice:    93000,
+    monthlyPayment: 1101,
+    moveIn:         7000,
+    lockedPrice:    150000,
     termText:       "30-year owner financing (contract for deed)",
 
-    features: { garage: "yes", off_street_parking: "yes" },
+    features: { backyard: "yes", fenced_yard: "yes", storage_shed: "yes" },
     heroPhoto: "",
-    photos:    ["images/springfield-il-2640-5th-1.jpg", "images/springfield-il-2640-5th-2.jpg", "images/springfield-il-2640-5th-3.jpg", "images/springfield-il-2640-5th-4.jpg", "images/springfield-il-2640-5th-5.jpg", "images/springfield-il-2640-5th-6.jpg", "images/springfield-il-2640-5th-7.jpg", "images/springfield-il-2640-5th-8.jpg", "images/springfield-il-2640-5th-9.jpg", "images/springfield-il-2640-5th-10.jpg", "images/springfield-il-2640-5th-11.jpg", "images/springfield-il-2640-5th-12.jpg", "images/springfield-il-2640-5th-13.jpg"],
+    photos:    [],
+  },
+  {
+    id: "david-il-209-central",
+    address:     "209 Central Ave St",
+    zip:         "61563",
+    description: "872 sq ft. Big yard",
+    city:  "David",
+    state: "IL",
+    beds:  2,
+    baths: 1,
+    sqft:  "872",
+    status: "Available",
+
+    monthlyPayment: 800,
+    moveIn:         2500,
+    lockedPrice:    70000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { backyard: "yes" },
+    heroPhoto: "",
+    photos:    [],
   },
 ];

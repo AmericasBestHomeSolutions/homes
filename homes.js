@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (150 live, rebuilt from master published 2026-09-07) --- */
+/* --- the homes (153 live, rebuilt from master published 2026-09-07) --- */
 const HOMES = [
   {
     id: "granitecity-il-2820-ralph",
@@ -3050,6 +3050,27 @@ const HOMES = [
     photos:    [],
   },
   {
+    id: "eastalton-il-136-illinois",
+    address:     "136 Illinois St",
+    zip:         "62024",
+    description: "The home features a spacious living room, dining room, kitchen, enclosed back porch, and a full unfinished basement providing abundant storage space. Outside, you'll find a nice yard and a detached one-car garage. Conveniently located near shopping, restaurants, schools, parks, and major roadways",
+    city:  "East Alton",
+    state: "IL",
+    beds:  2,
+    baths: 1,
+    sqft:  "",
+    status: "Available",
+
+    monthlyPayment: 1150,
+    moveIn:         2500,
+    lockedPrice:    89981,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { backyard: "yes", basement: "yes", garage: "yes", off_street_parking: "yes" },
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
     id: "david-il-209-central",
     address:     "209 Central Ave St",
     zip:         "61563",
@@ -3069,5 +3090,47 @@ const HOMES = [
     features: { backyard: "yes" },
     heroPhoto: "",
     photos:    ["images/david-il-209-central-1.jpg", "images/david-il-209-central-2.jpg", "images/david-il-209-central-3.jpg", "images/david-il-209-central-4.jpg", "images/david-il-209-central-5.jpg", "images/david-il-209-central-6.jpg", "images/david-il-209-central-7.jpg", "images/david-il-209-central-8.jpg", "images/david-il-209-central-9.jpg", "images/david-il-209-central-10.jpg", "images/david-il-209-central-11.jpg", "images/david-il-209-central-12.jpg", "images/david-il-209-central-13.jpg", "images/david-il-209-central-14.jpg", "images/david-il-209-central-15.jpg", "images/david-il-209-central-16.jpg", "images/david-il-209-central-17.jpg", "images/david-il-209-central-18.jpg", "images/david-il-209-central-19.jpg", "images/david-il-209-central-20.jpg", "images/david-il-209-central-21.jpg", "images/david-il-209-central-22.jpg", "images/david-il-209-central-23.jpg"],
+  },
+  {
+    id: "woodriver-il-46-eckhard",
+    address:     "46 Eckhard Ave",
+    zip:         "62095",
+    description: "Newer windows and siding. Updated electrical and plumbing. Roof replaced 3-4 years ago. Fenced in backyard. Good schools. Cleaned out and ready for a new owner",
+    city:  "Wood River",
+    state: "IL",
+    beds:  2,
+    baths: 1,
+    sqft:  "",
+    status: "Available",
+
+    monthlyPayment: 875,
+    moveIn:         2500,
+    lockedPrice:    79000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { backyard: "yes", fenced_yard: "yes" },
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "peoria-il-1709-faraday",
+    address:     "1709 S Faraday",
+    zip:         "61605",
+    description: "1268 sq ft, detached garage",
+    city:  "Peoria",
+    state: "IL",
+    beds:  3,
+    baths: 2,
+    sqft:  "1,268",
+    status: "Available",
+
+    monthlyPayment: 695,
+    moveIn:         2000,
+    lockedPrice:    69000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { garage: "yes", off_street_parking: "yes" },
+    heroPhoto: "",
+    photos:    [],
   },
 ];

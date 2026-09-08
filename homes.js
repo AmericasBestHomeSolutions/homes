@@ -3068,6 +3068,6 @@ const HOMES = [
 
     features: { backyard: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/david-il-209-central-1.jpg", "images/david-il-209-central-2.jpg", "images/david-il-209-central-3.jpg", "images/david-il-209-central-4.jpg", "images/david-il-209-central-5.jpg", "images/david-il-209-central-6.jpg", "images/david-il-209-central-7.jpg", "images/david-il-209-central-8.jpg", "images/david-il-209-central-9.jpg", "images/david-il-209-central-10.jpg", "images/david-il-209-central-11.jpg", "images/david-il-209-central-12.jpg", "images/david-il-209-central-13.jpg", "images/david-il-209-central-14.jpg", "images/david-il-209-central-15.jpg", "images/david-il-209-central-16.jpg", "images/david-il-209-central-17.jpg", "images/david-il-209-central-18.jpg", "images/david-il-209-central-19.jpg", "images/david-il-209-central-20.jpg", "images/david-il-209-central-21.jpg", "images/david-il-209-central-22.jpg", "images/david-il-209-central-23.jpg"],
   },
 ];

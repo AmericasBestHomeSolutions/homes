@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (149 live, rebuilt from master published 2026-09-09) --- */
+/* --- the homes (151 live, rebuilt from master published 2026-09-09) --- */
 const HOMES = [
   {
     id: "woodriver-il-46-eckhard",
@@ -1960,26 +1960,6 @@ const HOMES = [
     photos:    ["images/fairfield-il-1200-6th-1.jpg", "images/fairfield-il-1200-6th-2.jpg", "images/fairfield-il-1200-6th-3.jpg", "images/fairfield-il-1200-6th-4.jpg", "images/fairfield-il-1200-6th-5.jpg", "images/fairfield-il-1200-6th-6.jpg", "images/fairfield-il-1200-6th-7.jpg", "images/fairfield-il-1200-6th-8.jpg", "images/fairfield-il-1200-6th-9.jpg", "images/fairfield-il-1200-6th-10.jpg", "images/fairfield-il-1200-6th-11.jpg", "images/fairfield-il-1200-6th-12.jpg", "images/fairfield-il-1200-6th-13.jpg", "images/fairfield-il-1200-6th-14.jpg", "images/fairfield-il-1200-6th-15.jpg", "images/fairfield-il-1200-6th-16.jpg", "images/fairfield-il-1200-6th-17.jpg", "images/fairfield-il-1200-6th-18.jpg", "images/fairfield-il-1200-6th-19.jpg", "images/fairfield-il-1200-6th-20.jpg", "images/fairfield-il-1200-6th-21.jpg", "images/fairfield-il-1200-6th-22.jpg", "images/fairfield-il-1200-6th-23.jpg"],
   },
   {
-    id: "decatur-il-238-peoria",
-    address:     "238 W Peoria Ave.",
-    zip:         "62526",
-    description: "2 bedroom 1 bathroom, new water heater and ready to fill. I will give the",
-    city:  "Decatur",
-    state: "IL",
-    beds:  2,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 795,
-    moveIn:         1800,
-    lockedPrice:    83000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    ["images/decatur-il-238-peoria-1.jpg", "images/decatur-il-238-peoria-2.jpg", "images/decatur-il-238-peoria-3.jpg", "images/decatur-il-238-peoria-4.jpg", "images/decatur-il-238-peoria-5.jpg", "images/decatur-il-238-peoria-6.jpg", "images/decatur-il-238-peoria-7.jpg", "images/decatur-il-238-peoria-8.jpg", "images/decatur-il-238-peoria-9.jpg", "images/decatur-il-238-peoria-10.jpg", "images/decatur-il-238-peoria-11.jpg", "images/decatur-il-238-peoria-12.jpg", "images/decatur-il-238-peoria-13.jpg", "images/decatur-il-238-peoria-14.jpg", "images/decatur-il-238-peoria-15.jpg", "images/decatur-il-238-peoria-16.jpg", "images/decatur-il-238-peoria-17.jpg", "images/decatur-il-238-peoria-18.jpg", "images/decatur-il-238-peoria-19.jpg", "images/decatur-il-238-peoria-20.jpg", "images/decatur-il-238-peoria-21.jpg", "images/decatur-il-238-peoria-22.jpg", "images/decatur-il-238-peoria-23.jpg", "images/decatur-il-238-peoria-24.jpg", "images/decatur-il-238-peoria-25.jpg", "images/decatur-il-238-peoria-26.jpg", "images/decatur-il-238-peoria-27.jpg"],
-  },
-  {
     id: "decatur-il-1975-st",
     address:     "1975 E North St",
     zip:         "62521",
@@ -3031,6 +3011,66 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/peoria-il-422-louisa-1.jpg", "images/peoria-il-422-louisa-2.jpg", "images/peoria-il-422-louisa-3.jpg", "images/peoria-il-422-louisa-4.jpg", "images/peoria-il-422-louisa-5.jpg", "images/peoria-il-422-louisa-6.jpg", "images/peoria-il-422-louisa-7.jpg", "images/peoria-il-422-louisa-8.jpg", "images/peoria-il-422-louisa-9.jpg", "images/peoria-il-422-louisa-10.jpg", "images/peoria-il-422-louisa-11.jpg", "images/peoria-il-422-louisa-12.jpg", "images/peoria-il-422-louisa-13.jpg", "images/peoria-il-422-louisa-14.jpg", "images/peoria-il-422-louisa-15.jpg", "images/peoria-il-422-louisa-16.jpg", "images/peoria-il-422-louisa-17.jpg", "images/peoria-il-422-louisa-18.jpg", "images/peoria-il-422-louisa-19.jpg", "images/peoria-il-422-louisa-20.jpg", "images/peoria-il-422-louisa-21.jpg", "images/peoria-il-422-louisa-22.jpg", "images/peoria-il-422-louisa-23.jpg", "images/peoria-il-422-louisa-24.jpg"],
+  },
+  {
+    id: "decatur-il-1749-college",
+    address:     "1749 N College St",
+    zip:         "62526",
+    description: "Move in ready",
+    city:  "Decatur",
+    state: "IL",
+    beds:  2,
+    baths: 1,
+    sqft:  "672",
+    status: "Available",
+
+    monthlyPayment: 950,
+    moveIn:         3000,
+    lockedPrice:    95000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "decatur-il-231-grand",
+    address:     "231 W Grand St",
+    zip:         "62522",
+    description: "1,189 sq ft, All systems should be working (power and water are off). Recently had massive foundation repair completed and now in very solid condition. Will need a small railing added to porch and gutter on side where wall was replaced to get Occupancy per the city of Decatur",
+    city:  "Decatur",
+    state: "IL",
+    beds:  3,
+    baths: 1,
+    sqft:  "1,189",
+    status: "Available",
+
+    monthlyPayment: 950,
+    moveIn:         3000,
+    lockedPrice:    100000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "peoria-il-2210-wiswall",
+    address:     "2210 W Wiswall St",
+    zip:         "61605",
+    description: "Vacant property in Peoria. Recent walkthrough completed. Property will need some repairs/updates before final placement. Photos and video available. Seller financing available to qualified buyer. 20-year term. Buyer may have a Good Standing Surrender option after at least 12 months, with 120 days’ written notice, subject to the terms of the Agreement for Deed",
+    city:  "Peoria",
+    state: "IL",
+    beds:  3,
+    baths: 1,
+    sqft:  "",
+    status: "Available",
+
+    monthlyPayment: 895,
+    moveIn:         2685,
+    lockedPrice:    84900,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
   },
   {
     id: "david-il-209-central",

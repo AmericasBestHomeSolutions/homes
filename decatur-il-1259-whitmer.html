@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M24 3 41 9V23C41 33 33 41 24 45 15 41 7 33 7 23V9Z' fill='%2315315e'/><path d='M15 26 24 18 33 26Z' fill='%23e23b3b'/><rect x='17.5' y='26' width='13' height='9' fill='white'/><rect x='22' y='30' width='4' height='5' fill='%2315315e'/></svg>"/>
 <title>Own a Home — Owner Financing | Americas Best Home Solutions</title>
-<meta name="description" content="Own a home with owner financing. Locked price, a monthly payment close to rent, no bank needed."/>
+<meta name="description" content="Own a home with owner financing — a monthly payment close to rent, no bank needed."/>
 <link rel="canonical" href="https://getownerfinancedhomes.com/decatur-il-1259-whitmer.html"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="Americas Best Home Solutions"/>
 <meta property="og:title" content="2 bed 1 bath in Decatur, IL — $775/mo"/>
-<meta property="og:description" content="1259 E Whitmer St. · $775/month · $1,000 to move in · $69,680 locked price. Owner financing — no bank, no mortgage application."/>
+<meta property="og:description" content="1259 E Whitmer St. · $775/month · $1,000 to move in · $69,680 purchase price. Owner financing — no bank, no mortgage application."/>
 <meta property="og:image" content="https://getownerfinancedhomes.com/images/decatur-il-1259-whitmer.jpg"/>
 <meta property="og:url" content="https://getownerfinancedhomes.com/decatur-il-1259-whitmer.html"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:title" content="2 bed 1 bath in Decatur, IL — $775/mo"/>
-<meta name="twitter:description" content="1259 E Whitmer St. · $775/month · $1,000 to move in · $69,680 locked price. Owner financing — no bank, no mortgage application."/>
+<meta name="twitter:description" content="1259 E Whitmer St. · $775/month · $1,000 to move in · $69,680 purchase price. Owner financing — no bank, no mortgage application."/>
 <meta name="twitter:image" content="https://getownerfinancedhomes.com/images/decatur-il-1259-whitmer.jpg"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -217,7 +217,7 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
     <div class="deal-strip">
       <div class="deal-cell hero-cell"><div class="num" id="dMonthly"></div><div class="lab">per month</div></div>
       <div class="deal-cell"><div class="num" id="dMoveIn"></div><div class="lab">to move in</div></div>
-      <div class="deal-cell"><div class="num" id="dPrice"></div><div class="lab">locked price</div></div>
+      <div class="deal-cell"><div class="num" id="dPrice"></div><div class="lab">price</div></div>
     </div>
 
     <div class="cta-group">
@@ -266,7 +266,7 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
       <div class="step"><div class="n">01</div><div class="body"><h3>Tour the home</h3><p>Call or text us and we'll set up a time for you to walk through it.</p></div></div>
       <div class="step"><div class="n">02</div><div class="body"><h3>Sign a simple agreement</h3><p>We finance it ourselves with a contract for deed — no bank, no mortgage application.</p></div></div>
       <div class="step"><div class="n">03</div><div class="body"><h3>Get the keys</h3><p>Make your move-in payment and the home is yours to live in.</p></div></div>
-      <div class="step"><div class="n">04</div><div class="body"><h3>Build ownership</h3><p>Every monthly payment goes toward the home you're buying — at a price locked the day you sign.</p></div></div>
+      <div class="step"><div class="n">04</div><div class="body"><h3>Build ownership</h3><p>Every monthly payment goes toward the home you're buying — at the price you agreed to when you signed.</p></div></div>
     </div>
     <p class="other-homes" style="margin-top:16px"><a href="how-it-works.html">Want the full rundown? See how owner financing works →</a></p>
   </section>
@@ -277,7 +277,7 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
     <h2 class="sec-title">It's not renting</h2>
     <div class="why">
       <div class="why-card"><h3>You're buying, not renting</h3><p>Your name is on the agreement from day one. You're the homeowner.</p></div>
-      <div class="why-card"><h3>The price is locked</h3><p>It won't go up while you pay it down. What you agree to today is what you pay.</p></div>
+      <div class="why-card"><h3>The price doesn't change</h3><p>It won't go up while you pay it down. What you agree to today is what you pay.</p></div>
       <div class="why-card"><h3>A payment close to rent</h3><p>Own a home for about what you'd pay a landlord — without a bank approval in the way.</p></div>
     </div>
   </section>
@@ -385,7 +385,7 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
   document.title = `Own a Home in ${C.city}, ${C.state} — Owner Financing | Americas Best Home Solutions`;
 
   $("headline").innerHTML = `Own a home in <em>${C.city}</em>.<br>No bank needed.`;
-  $("subhead").textContent = "Owner financing with a locked price and a monthly payment close to rent.";
+  $("subhead").textContent = "Owner financing with a monthly payment close to rent.";
   (function(){
     const addrText = [C.address, `${C.city}, ${C.state}${C.zip?" "+C.zip:""}`].filter(Boolean).join(", ");
     const mapQ = encodeURIComponent(addrText);
@@ -450,7 +450,7 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
   const terms = [
     ["Your monthly payment", money(C.monthlyPayment), true],
     ["Move-in payment", moveInText, false],
-    ["Locked purchase price", money(C.lockedPrice), false],
+    ["Purchase price", money(C.lockedPrice), false],
     ["Financing", C.termText, false],
     ["The home", `${C.beds} bd · ${C.baths} ba${C.sqft?` · ${Number(C.sqft).toLocaleString()} sqft`:""}`, false],
     ["Location", `${C.address?C.address+", ":""}${C.city}, ${C.state}${C.zip?" "+C.zip:""}`, false],

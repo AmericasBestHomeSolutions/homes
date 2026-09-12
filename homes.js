@@ -32,7 +32,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/stlouis-mo-4627-korte-1.jpg", "images/stlouis-mo-4627-korte-2.jpg", "images/stlouis-mo-4627-korte-3.jpg", "images/stlouis-mo-4627-korte-4.jpg", "images/stlouis-mo-4627-korte-5.jpg", "images/stlouis-mo-4627-korte-6.jpg", "images/stlouis-mo-4627-korte-7.jpg", "images/stlouis-mo-4627-korte-8.jpg", "images/stlouis-mo-4627-korte-9.jpg", "images/stlouis-mo-4627-korte-10.jpg", "images/stlouis-mo-4627-korte-11.jpg", "images/stlouis-mo-4627-korte-12.jpg", "images/stlouis-mo-4627-korte-13.jpg", "images/stlouis-mo-4627-korte-14.jpg", "images/stlouis-mo-4627-korte-15.jpg", "images/stlouis-mo-4627-korte-16.jpg", "images/stlouis-mo-4627-korte-17.jpg", "images/stlouis-mo-4627-korte-18.jpg", "images/stlouis-mo-4627-korte-19.jpg", "images/stlouis-mo-4627-korte-20.jpg", "images/stlouis-mo-4627-korte-21.jpg", "images/stlouis-mo-4627-korte-22.jpg", "images/stlouis-mo-4627-korte-23.jpg", "images/stlouis-mo-4627-korte-24.jpg"],
   },
   {
     id: "sparta-il-617-1st",
@@ -53,7 +53,7 @@ const HOMES = [
 
     features: { backyard: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/sparta-il-617-1st-1.jpg", "images/sparta-il-617-1st-2.jpg", "images/sparta-il-617-1st-3.jpg", "images/sparta-il-617-1st-4.jpg", "images/sparta-il-617-1st-5.jpg", "images/sparta-il-617-1st-6.jpg", "images/sparta-il-617-1st-7.jpg", "images/sparta-il-617-1st-8.jpg", "images/sparta-il-617-1st-9.jpg", "images/sparta-il-617-1st-10.jpg", "images/sparta-il-617-1st-11.jpg", "images/sparta-il-617-1st-12.jpg", "images/sparta-il-617-1st-13.jpg", "images/sparta-il-617-1st-14.jpg", "images/sparta-il-617-1st-15.jpg", "images/sparta-il-617-1st-16.jpg", "images/sparta-il-617-1st-17.jpg", "images/sparta-il-617-1st-18.jpg", "images/sparta-il-617-1st-19.jpg", "images/sparta-il-617-1st-20.jpg", "images/sparta-il-617-1st-21.jpg", "images/sparta-il-617-1st-22.jpg", "images/sparta-il-617-1st-23.jpg", "images/sparta-il-617-1st-24.jpg"],
   },
   {
     id: "eaststlouis-il-835-74th",
@@ -74,7 +74,7 @@ const HOMES = [
 
     features: { garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/eaststlouis-il-835-74th-1.jpg", "images/eaststlouis-il-835-74th-2.jpg", "images/eaststlouis-il-835-74th-3.jpg", "images/eaststlouis-il-835-74th-4.jpg", "images/eaststlouis-il-835-74th-5.jpg", "images/eaststlouis-il-835-74th-6.jpg", "images/eaststlouis-il-835-74th-7.jpg", "images/eaststlouis-il-835-74th-8.jpg", "images/eaststlouis-il-835-74th-9.jpg", "images/eaststlouis-il-835-74th-10.jpg", "images/eaststlouis-il-835-74th-11.jpg", "images/eaststlouis-il-835-74th-12.jpg", "images/eaststlouis-il-835-74th-13.jpg", "images/eaststlouis-il-835-74th-14.jpg", "images/eaststlouis-il-835-74th-15.jpg", "images/eaststlouis-il-835-74th-16.jpg", "images/eaststlouis-il-835-74th-17.jpg", "images/eaststlouis-il-835-74th-18.jpg", "images/eaststlouis-il-835-74th-19.jpg", "images/eaststlouis-il-835-74th-20.jpg", "images/eaststlouis-il-835-74th-21.jpg", "images/eaststlouis-il-835-74th-22.jpg", "images/eaststlouis-il-835-74th-23.jpg", "images/eaststlouis-il-835-74th-24.jpg"],
   },
   {
     id: "decatur-il-1729-woodford",
@@ -94,7 +94,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    ["images/decatur-il-1729-woodford-1.jpg", "images/decatur-il-1729-woodford-2.jpg", "images/decatur-il-1729-woodford-3.jpg", "images/decatur-il-1729-woodford-4.jpg"],
+    photos:    ["images/decatur-il-1729-woodford-1.jpg", "images/decatur-il-1729-woodford-2.jpg", "images/decatur-il-1729-woodford-3.jpg", "images/decatur-il-1729-woodford-4.jpg", "images/decatur-il-1729-woodford-5.jpg", "images/decatur-il-1729-woodford-6.jpg", "images/decatur-il-1729-woodford-7.jpg", "images/decatur-il-1729-woodford-8.jpg", "images/decatur-il-1729-woodford-9.jpg", "images/decatur-il-1729-woodford-10.jpg", "images/decatur-il-1729-woodford-11.jpg", "images/decatur-il-1729-woodford-12.jpg", "images/decatur-il-1729-woodford-13.jpg", "images/decatur-il-1729-woodford-14.jpg", "images/decatur-il-1729-woodford-15.jpg", "images/decatur-il-1729-woodford-16.jpg", "images/decatur-il-1729-woodford-17.jpg", "images/decatur-il-1729-woodford-18.jpg", "images/decatur-il-1729-woodford-19.jpg", "images/decatur-il-1729-woodford-20.jpg", "images/decatur-il-1729-woodford-21.jpg", "images/decatur-il-1729-woodford-22.jpg", "images/decatur-il-1729-woodford-23.jpg", "images/decatur-il-1729-woodford-24.jpg"],
   },
   {
     id: "eaststlouis-il-225-63rd",
@@ -136,7 +136,7 @@ const HOMES = [
 
     features: { backyard: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/jackson-ms-1753-mcgee-1.jpg", "images/jackson-ms-1753-mcgee-2.jpg", "images/jackson-ms-1753-mcgee-3.jpg", "images/jackson-ms-1753-mcgee-4.jpg", "images/jackson-ms-1753-mcgee-5.jpg", "images/jackson-ms-1753-mcgee-6.jpg", "images/jackson-ms-1753-mcgee-7.jpg", "images/jackson-ms-1753-mcgee-8.jpg", "images/jackson-ms-1753-mcgee-9.jpg", "images/jackson-ms-1753-mcgee-10.jpg", "images/jackson-ms-1753-mcgee-11.jpg", "images/jackson-ms-1753-mcgee-12.jpg", "images/jackson-ms-1753-mcgee-13.jpg", "images/jackson-ms-1753-mcgee-14.jpg", "images/jackson-ms-1753-mcgee-15.jpg", "images/jackson-ms-1753-mcgee-16.jpg", "images/jackson-ms-1753-mcgee-17.jpg", "images/jackson-ms-1753-mcgee-18.jpg", "images/jackson-ms-1753-mcgee-19.jpg", "images/jackson-ms-1753-mcgee-20.jpg", "images/jackson-ms-1753-mcgee-21.jpg", "images/jackson-ms-1753-mcgee-22.jpg", "images/jackson-ms-1753-mcgee-23.jpg", "images/jackson-ms-1753-mcgee-24.jpg"],
   },
   {
     id: "stlouis-mo-7310-jenwood",
@@ -177,7 +177,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/peoria-il-512-fairholm-1.jpg", "images/peoria-il-512-fairholm-2.jpg", "images/peoria-il-512-fairholm-3.jpg", "images/peoria-il-512-fairholm-4.jpg", "images/peoria-il-512-fairholm-5.jpg", "images/peoria-il-512-fairholm-6.jpg", "images/peoria-il-512-fairholm-7.jpg", "images/peoria-il-512-fairholm-8.jpg", "images/peoria-il-512-fairholm-9.jpg", "images/peoria-il-512-fairholm-10.jpg", "images/peoria-il-512-fairholm-11.jpg", "images/peoria-il-512-fairholm-12.jpg", "images/peoria-il-512-fairholm-13.jpg", "images/peoria-il-512-fairholm-14.jpg", "images/peoria-il-512-fairholm-15.jpg", "images/peoria-il-512-fairholm-16.jpg", "images/peoria-il-512-fairholm-17.jpg", "images/peoria-il-512-fairholm-18.jpg", "images/peoria-il-512-fairholm-19.jpg", "images/peoria-il-512-fairholm-20.jpg", "images/peoria-il-512-fairholm-21.jpg", "images/peoria-il-512-fairholm-22.jpg", "images/peoria-il-512-fairholm-23.jpg", "images/peoria-il-512-fairholm-24.jpg"],
   },
   {
     id: "decatur-il-1484-clay",
@@ -198,7 +198,7 @@ const HOMES = [
 
     features: { backyard: "yes", fenced_yard: "yes", central_air: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-1484-clay-1.jpg", "images/decatur-il-1484-clay-2.jpg", "images/decatur-il-1484-clay-3.jpg", "images/decatur-il-1484-clay-4.jpg", "images/decatur-il-1484-clay-5.jpg", "images/decatur-il-1484-clay-6.jpg", "images/decatur-il-1484-clay-7.jpg", "images/decatur-il-1484-clay-8.jpg", "images/decatur-il-1484-clay-9.jpg", "images/decatur-il-1484-clay-10.jpg", "images/decatur-il-1484-clay-11.jpg", "images/decatur-il-1484-clay-12.jpg", "images/decatur-il-1484-clay-13.jpg", "images/decatur-il-1484-clay-14.jpg", "images/decatur-il-1484-clay-15.jpg", "images/decatur-il-1484-clay-16.jpg", "images/decatur-il-1484-clay-17.jpg", "images/decatur-il-1484-clay-18.jpg"],
   },
   {
     id: "peoria-il-601-homestead",
@@ -218,7 +218,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/peoria-il-601-homestead-1.jpg", "images/peoria-il-601-homestead-2.jpg", "images/peoria-il-601-homestead-3.jpg", "images/peoria-il-601-homestead-4.jpg", "images/peoria-il-601-homestead-5.jpg", "images/peoria-il-601-homestead-6.jpg", "images/peoria-il-601-homestead-7.jpg", "images/peoria-il-601-homestead-8.jpg", "images/peoria-il-601-homestead-9.jpg", "images/peoria-il-601-homestead-10.jpg", "images/peoria-il-601-homestead-11.jpg", "images/peoria-il-601-homestead-12.jpg", "images/peoria-il-601-homestead-13.jpg", "images/peoria-il-601-homestead-14.jpg", "images/peoria-il-601-homestead-15.jpg", "images/peoria-il-601-homestead-16.jpg", "images/peoria-il-601-homestead-17.jpg", "images/peoria-il-601-homestead-18.jpg", "images/peoria-il-601-homestead-19.jpg", "images/peoria-il-601-homestead-20.jpg", "images/peoria-il-601-homestead-21.jpg", "images/peoria-il-601-homestead-22.jpg", "images/peoria-il-601-homestead-23.jpg", "images/peoria-il-601-homestead-24.jpg"],
   },
   {
     id: "decatur-il-231-grand",
@@ -444,7 +444,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-1315-decatur-1.jpg", "images/decatur-il-1315-decatur-2.jpg", "images/decatur-il-1315-decatur-3.jpg", "images/decatur-il-1315-decatur-4.jpg", "images/decatur-il-1315-decatur-5.jpg", "images/decatur-il-1315-decatur-6.jpg", "images/decatur-il-1315-decatur-7.jpg", "images/decatur-il-1315-decatur-8.jpg"],
   },
   {
     id: "decatur-il-1749-college",
@@ -752,7 +752,7 @@ const HOMES = [
     id: "stlouis-mo-5508-beacon",
     address:     "5508 Beacon Ave",
     zip:         "63120",
-    description: "• 1 Bedroom. • 1 Bathroom. • Approx",
+    description: "1 bedroom, 1 bath, approx. 616 sq ft. Hardwood floors throughout, newer electrical panel, older water heater. PLUMBER'S SPECIAL / FIXER-UPPER: this home needs a new water service line installed from the house to the water supply (licensed contractor required), and it's currently under a building condemnation pending an occupancy inspection. A great opportunity for a buyer who's comfortable taking on the repairs. Sold as-is, owner financing, no bank needed.",
     city:  "St. Louis",
     state: "MO",
     beds:  1,

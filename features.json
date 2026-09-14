@@ -6028,5 +6028,25 @@
   "central_air": "unknown",
   "storage_shed": "unknown",
   "attic": "unknown"
+ },
+ "2c1a376b4de8857a463be77f18d4d4cf2272b9a7": {
+  "backyard": "yes",
+  "fenced_yard": "yes",
+  "basement": "unknown",
+  "garage": "unknown",
+  "off_street_parking": "unknown",
+  "central_air": "unknown",
+  "storage_shed": "unknown",
+  "attic": "unknown"
+ },
+ "479b1ca45eaa1a0897feab4acb07606070b491e1": {
+  "backyard": "yes",
+  "fenced_yard": "unknown",
+  "basement": "yes",
+  "garage": "yes",
+  "off_street_parking": "yes",
+  "central_air": "unknown",
+  "storage_shed": "unknown",
+  "attic": "unknown"
  }
 }

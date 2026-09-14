@@ -13,8 +13,69 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (156 live, rebuilt from master published 2026-09-12) --- */
+/* --- the homes (156 live, rebuilt from master published 2026-09-14) --- */
 const HOMES = [
+  {
+    id: "cahokia-il-731-saint",
+    address:     "731 Saint Norbert Drive",
+    zip:         "62206",
+    city:  "Cahokia",
+    state: "IL",
+    beds:  3,
+    baths: 1,
+    sqft:  "",
+    status: "Available",
+
+    monthlyPayment: 900,
+    moveIn:         3000,
+    lockedPrice:    80000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "eaststlouis-il-826-82nd",
+    address:     "826 North 82nd Street",
+    zip:         "62203",
+    description: "3 bed/1 bath, big yard, fenced yard",
+    city:  "East St. Louis",
+    state: "IL",
+    beds:  3,
+    baths: 1,
+    sqft:  "",
+    status: "Available",
+
+    monthlyPayment: 900,
+    moveIn:         3000,
+    lockedPrice:    80000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { backyard: "yes", fenced_yard: "yes" },
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "flint-mi-920-huron",
+    address:     "920 Huron St.",
+    zip:         "48507",
+    description: "NOTE - was owned by an investor - monthly taxes currently $146.48, expected to reduce once PRE is filed by Tenant Buyer, monthly pmt will reduce accordingly. 920 Huron St – Flint. Excellent Condition – Spacious 2BR/2BA with Garage & Large Lot!. This one is a standout! 920 Huron St is in excellent condition and offers 2 bedrooms, 2 full baths and 1,141 sq. ft. of living space.. Plenty of room inside and out, with a large lot, back deck, detached 2-car garage, and basement for additional storage.. 2 Bedrooms / 2 Bathrooms. 1,141 sq. ft.. Excellent condition. Large lot. Back deck. Detached 2-car garage. Basement. Affordable path to homeownership — no traditional bank financing needed.. 3X monthly pmt income requ'd. No evictions or bankruptcies within 2 years",
+    city:  "Flint",
+    state: "MI",
+    beds:  2,
+    baths: 2,
+    sqft:  "1141",
+    status: "Available",
+
+    monthlyPayment: 1085,
+    moveIn:         3000,
+    lockedPrice:    98400,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { backyard: "yes", basement: "yes", garage: "yes", off_street_parking: "yes" },
+    heroPhoto: "",
+    photos:    [],
+  },
   {
     id: "stlouis-mo-4627-korte",
     address:     "4627 Korte Ave",
@@ -157,7 +218,7 @@ const HOMES = [
 
     features: { attic: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/stlouis-mo-7310-jenwood-1.jpg", "images/stlouis-mo-7310-jenwood-2.jpg", "images/stlouis-mo-7310-jenwood-3.jpg", "images/stlouis-mo-7310-jenwood-4.jpg", "images/stlouis-mo-7310-jenwood-5.jpg", "images/stlouis-mo-7310-jenwood-6.jpg", "images/stlouis-mo-7310-jenwood-7.jpg", "images/stlouis-mo-7310-jenwood-8.jpg", "images/stlouis-mo-7310-jenwood-9.jpg", "images/stlouis-mo-7310-jenwood-10.jpg", "images/stlouis-mo-7310-jenwood-11.jpg", "images/stlouis-mo-7310-jenwood-12.jpg", "images/stlouis-mo-7310-jenwood-13.jpg", "images/stlouis-mo-7310-jenwood-14.jpg", "images/stlouis-mo-7310-jenwood-15.jpg", "images/stlouis-mo-7310-jenwood-16.jpg", "images/stlouis-mo-7310-jenwood-17.jpg", "images/stlouis-mo-7310-jenwood-18.jpg", "images/stlouis-mo-7310-jenwood-19.jpg", "images/stlouis-mo-7310-jenwood-20.jpg", "images/stlouis-mo-7310-jenwood-21.jpg", "images/stlouis-mo-7310-jenwood-22.jpg", "images/stlouis-mo-7310-jenwood-23.jpg", "images/stlouis-mo-7310-jenwood-24.jpg"],
   },
   {
     id: "peoria-il-512-fairholm",
@@ -178,27 +239,6 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/peoria-il-512-fairholm-1.jpg", "images/peoria-il-512-fairholm-2.jpg", "images/peoria-il-512-fairholm-3.jpg", "images/peoria-il-512-fairholm-4.jpg", "images/peoria-il-512-fairholm-5.jpg", "images/peoria-il-512-fairholm-6.jpg", "images/peoria-il-512-fairholm-7.jpg", "images/peoria-il-512-fairholm-8.jpg", "images/peoria-il-512-fairholm-9.jpg", "images/peoria-il-512-fairholm-10.jpg", "images/peoria-il-512-fairholm-11.jpg", "images/peoria-il-512-fairholm-12.jpg", "images/peoria-il-512-fairholm-13.jpg", "images/peoria-il-512-fairholm-14.jpg", "images/peoria-il-512-fairholm-15.jpg", "images/peoria-il-512-fairholm-16.jpg", "images/peoria-il-512-fairholm-17.jpg", "images/peoria-il-512-fairholm-18.jpg", "images/peoria-il-512-fairholm-19.jpg", "images/peoria-il-512-fairholm-20.jpg", "images/peoria-il-512-fairholm-21.jpg", "images/peoria-il-512-fairholm-22.jpg", "images/peoria-il-512-fairholm-23.jpg", "images/peoria-il-512-fairholm-24.jpg"],
-  },
-  {
-    id: "decatur-il-1484-clay",
-    address:     "1484 E Clay Street",
-    zip:         "62521",
-    description: "Originally listed for $4k down and $1,100/mo but that my minimum for this property. I would prefer $1,200/mo. Open to offers in between those two monthly amounts.. Move-in ready 3+1 home on a nice street won't last long! Great layout that maximizes space, master features built-in storage, a bright kitchen opens to the patio, plenty of natural sunlight.. Appliances included: refrigerator, stove, microwave, dishwasher. Large front yard, fenced backyard. New vinyl windows, LVP flooring, a 6-year-old metal roof, newer water heater and an AC unit. Plus, a poured slab is ready for a future ADU or garage. Too many updates to list",
-    city:  "Decatur",
-    state: "IL",
-    beds:  3,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 1200,
-    moveIn:         4000,
-    lockedPrice:    106500,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { backyard: "yes", fenced_yard: "yes", central_air: "yes" },
-    heroPhoto: "",
-    photos:    ["images/decatur-il-1484-clay-1.jpg", "images/decatur-il-1484-clay-2.jpg", "images/decatur-il-1484-clay-3.jpg", "images/decatur-il-1484-clay-4.jpg", "images/decatur-il-1484-clay-5.jpg", "images/decatur-il-1484-clay-6.jpg", "images/decatur-il-1484-clay-7.jpg", "images/decatur-il-1484-clay-8.jpg", "images/decatur-il-1484-clay-9.jpg", "images/decatur-il-1484-clay-10.jpg", "images/decatur-il-1484-clay-11.jpg", "images/decatur-il-1484-clay-12.jpg", "images/decatur-il-1484-clay-13.jpg", "images/decatur-il-1484-clay-14.jpg", "images/decatur-il-1484-clay-15.jpg", "images/decatur-il-1484-clay-16.jpg", "images/decatur-il-1484-clay-17.jpg", "images/decatur-il-1484-clay-18.jpg"],
   },
   {
     id: "peoria-il-601-homestead",
@@ -1427,26 +1467,6 @@ const HOMES = [
     photos:    ["images/augusta-ga-1903-heckle-1.jpg", "images/augusta-ga-1903-heckle-2.jpg", "images/augusta-ga-1903-heckle-3.jpg", "images/augusta-ga-1903-heckle-4.jpg", "images/augusta-ga-1903-heckle-5.jpg", "images/augusta-ga-1903-heckle-6.jpg", "images/augusta-ga-1903-heckle-7.jpg", "images/augusta-ga-1903-heckle-8.jpg", "images/augusta-ga-1903-heckle-9.jpg", "images/augusta-ga-1903-heckle-10.jpg", "images/augusta-ga-1903-heckle-11.jpg", "images/augusta-ga-1903-heckle-12.jpg", "images/augusta-ga-1903-heckle-13.jpg", "images/augusta-ga-1903-heckle-14.jpg", "images/augusta-ga-1903-heckle-15.jpg", "images/augusta-ga-1903-heckle-16.jpg", "images/augusta-ga-1903-heckle-17.jpg", "images/augusta-ga-1903-heckle-18.jpg", "images/augusta-ga-1903-heckle-19.jpg", "images/augusta-ga-1903-heckle-20.jpg", "images/augusta-ga-1903-heckle-21.jpg", "images/augusta-ga-1903-heckle-22.jpg", "images/augusta-ga-1903-heckle-23.jpg", "images/augusta-ga-1903-heckle-24.jpg"],
   },
   {
-    id: "peoria-il-517-vine",
-    address:     "517 Vine St",
-    zip:         "61603",
-    description: "All details of the pricing and photos are here along with a facebook listing ready to post",
-    city:  "Peoria",
-    state: "IL",
-    beds:  2,
-    baths: 1.5,
-    sqft:  "1337",
-    status: "Available",
-
-    monthlyPayment: 600,
-    moveIn:         1000,
-    lockedPrice:    54000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    ["images/peoria-il-517-vine-1.jpg", "images/peoria-il-517-vine-2.jpg", "images/peoria-il-517-vine-3.jpg", "images/peoria-il-517-vine-4.jpg", "images/peoria-il-517-vine-5.jpg", "images/peoria-il-517-vine-6.jpg", "images/peoria-il-517-vine-7.jpg", "images/peoria-il-517-vine-8.jpg", "images/peoria-il-517-vine-9.jpg", "images/peoria-il-517-vine-10.jpg", "images/peoria-il-517-vine-11.jpg", "images/peoria-il-517-vine-12.jpg", "images/peoria-il-517-vine-13.jpg"],
-  },
-  {
     id: "decatur-il-1746-woodford",
     address:     "1746 N Woodford St, Decatur, IL 62526",
     zip:         "62526",
@@ -1812,26 +1832,6 @@ const HOMES = [
     features: { backyard: "yes", basement: "no", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    [],
-  },
-  {
-    id: "peoria-il-1319-aiken",
-    address:     "1319 W. Aiken Ave",
-    zip:         "61605",
-    description: "768 sqft",
-    city:  "Peoria",
-    state: "IL",
-    beds:  2,
-    baths: 1,
-    sqft:  "768",
-    status: "Available",
-
-    monthlyPayment: 800,
-    moveIn:         1500,
-    lockedPrice:    74500,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    ["images/peoria-il-1319-aiken-1.jpg", "images/peoria-il-1319-aiken-2.jpg", "images/peoria-il-1319-aiken-3.jpg", "images/peoria-il-1319-aiken-4.jpg", "images/peoria-il-1319-aiken-5.jpg", "images/peoria-il-1319-aiken-6.jpg", "images/peoria-il-1319-aiken-7.jpg", "images/peoria-il-1319-aiken-8.jpg", "images/peoria-il-1319-aiken-9.jpg", "images/peoria-il-1319-aiken-10.jpg", "images/peoria-il-1319-aiken-11.jpg", "images/peoria-il-1319-aiken-12.jpg", "images/peoria-il-1319-aiken-13.jpg", "images/peoria-il-1319-aiken-14.jpg", "images/peoria-il-1319-aiken-15.jpg", "images/peoria-il-1319-aiken-16.jpg", "images/peoria-il-1319-aiken-17.jpg", "images/peoria-il-1319-aiken-18.jpg", "images/peoria-il-1319-aiken-19.jpg", "images/peoria-il-1319-aiken-20.jpg", "images/peoria-il-1319-aiken-21.jpg", "images/peoria-il-1319-aiken-22.jpg", "images/peoria-il-1319-aiken-23.jpg", "images/peoria-il-1319-aiken-24.jpg"],
   },
   {
     id: "belleville-il-718-church",

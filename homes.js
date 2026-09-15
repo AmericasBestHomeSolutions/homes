@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (155 live, rebuilt from master published 2026-09-15) --- */
+/* --- the homes (158 live, rebuilt from master published 2026-09-15) --- */
 const HOMES = [
   {
     id: "cahokia-il-731-saint",
@@ -80,6 +80,7 @@ const HOMES = [
     id: "stlouis-mo-4627-korte",
     address:     "4627 Korte Ave",
     zip:         "63115",
+    description: "Handyman opportunity — this one needs some love, with a sagging roofline/gutter and a worn interior. Sold as-is: if you've got the tools or the vision, this is a chance to build sweat equity into a home you own.",
     city:  "St. Louis",
     state: "MO",
     beds:  3,
@@ -3154,6 +3155,26 @@ const HOMES = [
     photos:    ["images/peoria-il-422-louisa-1.jpg", "images/peoria-il-422-louisa-2.jpg", "images/peoria-il-422-louisa-3.jpg", "images/peoria-il-422-louisa-4.jpg", "images/peoria-il-422-louisa-5.jpg", "images/peoria-il-422-louisa-6.jpg", "images/peoria-il-422-louisa-7.jpg", "images/peoria-il-422-louisa-8.jpg", "images/peoria-il-422-louisa-9.jpg", "images/peoria-il-422-louisa-10.jpg", "images/peoria-il-422-louisa-11.jpg", "images/peoria-il-422-louisa-12.jpg", "images/peoria-il-422-louisa-13.jpg", "images/peoria-il-422-louisa-14.jpg", "images/peoria-il-422-louisa-15.jpg", "images/peoria-il-422-louisa-16.jpg", "images/peoria-il-422-louisa-17.jpg", "images/peoria-il-422-louisa-18.jpg", "images/peoria-il-422-louisa-19.jpg", "images/peoria-il-422-louisa-20.jpg", "images/peoria-il-422-louisa-21.jpg", "images/peoria-il-422-louisa-22.jpg", "images/peoria-il-422-louisa-23.jpg", "images/peoria-il-422-louisa-24.jpg"],
   },
   {
+    id: "detroit-mi-15871-fairmount",
+    address:     "15871 Fairmount Drive",
+    zip:         "48205",
+    description: "Cleaned out",
+    city:  "Detroit",
+    state: "MI",
+    beds:  3,
+    baths: 1,
+    sqft:  "",
+    status: "Available",
+
+    monthlyPayment: 1225,
+    moveIn:         3000,
+    lockedPrice:    129000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
     id: "david-il-209-central",
     address:     "209 Central Ave St",
     zip:         "61563",
@@ -3173,5 +3194,45 @@ const HOMES = [
     features: { backyard: "yes" },
     heroPhoto: "",
     photos:    ["images/david-il-209-central-1.jpg", "images/david-il-209-central-2.jpg", "images/david-il-209-central-3.jpg", "images/david-il-209-central-4.jpg", "images/david-il-209-central-5.jpg", "images/david-il-209-central-6.jpg", "images/david-il-209-central-7.jpg", "images/david-il-209-central-8.jpg", "images/david-il-209-central-9.jpg", "images/david-il-209-central-10.jpg", "images/david-il-209-central-11.jpg", "images/david-il-209-central-12.jpg", "images/david-il-209-central-13.jpg", "images/david-il-209-central-14.jpg", "images/david-il-209-central-15.jpg", "images/david-il-209-central-16.jpg", "images/david-il-209-central-17.jpg", "images/david-il-209-central-18.jpg", "images/david-il-209-central-19.jpg", "images/david-il-209-central-20.jpg", "images/david-il-209-central-21.jpg", "images/david-il-209-central-22.jpg", "images/david-il-209-central-23.jpg"],
+  },
+  {
+    id: "westfrankfort-il-1310-poplar",
+    address:     "1310 E Poplar St",
+    zip:         "62896",
+    description: "everything working",
+    city:  "West Frankfort",
+    state: "IL",
+    beds:  "",
+    baths: 1,
+    sqft:  "1350",
+    status: "Available",
+
+    monthlyPayment: 1100,
+    moveIn:         2500,
+    lockedPrice:    98000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "stlouis-mo-1027-garth",
+    address:     "1027 Garth Ave",
+    zip:         "63147",
+    description: "was a beautiful home but last CFD buyers left it much worse than they found it",
+    city:  "St. Louis",
+    state: "MO",
+    beds:  3,
+    baths: 1,
+    sqft:  "Unknown",
+    status: "Available",
+
+    monthlyPayment: 900,
+    moveIn:         2000,
+    lockedPrice:    80000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
   },
 ];

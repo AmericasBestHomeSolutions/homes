@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (163 live, rebuilt from master published 2026-09-16) --- */
+/* --- the homes (162 live, rebuilt from master published 2026-09-16) --- */
 const HOMES = [
   {
     id: "decatur-il-2055-church",
@@ -75,7 +75,7 @@ const HOMES = [
 
     features: { basement: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/stlouis-mo-4103-beachwood-1.jpg", "images/stlouis-mo-4103-beachwood-2.jpg", "images/stlouis-mo-4103-beachwood-3.jpg", "images/stlouis-mo-4103-beachwood-4.jpg", "images/stlouis-mo-4103-beachwood-5.jpg", "images/stlouis-mo-4103-beachwood-6.jpg", "images/stlouis-mo-4103-beachwood-7.jpg", "images/stlouis-mo-4103-beachwood-8.jpg", "images/stlouis-mo-4103-beachwood-9.jpg", "images/stlouis-mo-4103-beachwood-10.jpg", "images/stlouis-mo-4103-beachwood-11.jpg", "images/stlouis-mo-4103-beachwood-12.jpg", "images/stlouis-mo-4103-beachwood-13.jpg", "images/stlouis-mo-4103-beachwood-14.jpg", "images/stlouis-mo-4103-beachwood-15.jpg", "images/stlouis-mo-4103-beachwood-16.jpg", "images/stlouis-mo-4103-beachwood-17.jpg", "images/stlouis-mo-4103-beachwood-18.jpg", "images/stlouis-mo-4103-beachwood-19.jpg", "images/stlouis-mo-4103-beachwood-20.jpg", "images/stlouis-mo-4103-beachwood-21.jpg", "images/stlouis-mo-4103-beachwood-22.jpg"],
   },
   {
     id: "evansville-in-2317-fulton",
@@ -192,7 +192,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decarut-il-1353-morgan-1.jpg", "images/decarut-il-1353-morgan-2.jpg", "images/decarut-il-1353-morgan-3.jpg", "images/decarut-il-1353-morgan-4.jpg", "images/decarut-il-1353-morgan-5.jpg", "images/decarut-il-1353-morgan-6.jpg", "images/decarut-il-1353-morgan-7.jpg", "images/decarut-il-1353-morgan-8.jpg", "images/decarut-il-1353-morgan-9.jpg", "images/decarut-il-1353-morgan-10.jpg", "images/decarut-il-1353-morgan-11.jpg", "images/decarut-il-1353-morgan-12.jpg", "images/decarut-il-1353-morgan-13.jpg", "images/decarut-il-1353-morgan-14.jpg", "images/decarut-il-1353-morgan-15.jpg", "images/decarut-il-1353-morgan-16.jpg", "images/decarut-il-1353-morgan-17.jpg"],
   },
   {
     id: "decatur-il-1435-woodford",
@@ -213,7 +213,7 @@ const HOMES = [
 
     features: { garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-1435-woodford-1.jpg", "images/decatur-il-1435-woodford-2.jpg", "images/decatur-il-1435-woodford-3.jpg", "images/decatur-il-1435-woodford-4.jpg", "images/decatur-il-1435-woodford-5.jpg", "images/decatur-il-1435-woodford-6.jpg", "images/decatur-il-1435-woodford-7.jpg", "images/decatur-il-1435-woodford-8.jpg", "images/decatur-il-1435-woodford-9.jpg", "images/decatur-il-1435-woodford-10.jpg", "images/decatur-il-1435-woodford-11.jpg", "images/decatur-il-1435-woodford-12.jpg", "images/decatur-il-1435-woodford-13.jpg", "images/decatur-il-1435-woodford-14.jpg", "images/decatur-il-1435-woodford-15.jpg", "images/decatur-il-1435-woodford-16.jpg", "images/decatur-il-1435-woodford-17.jpg"],
   },
   {
     id: "cahokia-il-731-saint",
@@ -808,25 +808,6 @@ const HOMES = [
     features: { backyard: "yes" },
     heroPhoto: "",
     photos:    ["images/eaststlouis-il-517-31st-1.jpg", "images/eaststlouis-il-517-31st-2.jpg", "images/eaststlouis-il-517-31st-3.jpg", "images/eaststlouis-il-517-31st-4.jpg", "images/eaststlouis-il-517-31st-5.jpg", "images/eaststlouis-il-517-31st-6.jpg", "images/eaststlouis-il-517-31st-7.jpg", "images/eaststlouis-il-517-31st-8.jpg", "images/eaststlouis-il-517-31st-9.jpg", "images/eaststlouis-il-517-31st-10.jpg", "images/eaststlouis-il-517-31st-11.jpg", "images/eaststlouis-il-517-31st-12.jpg", "images/eaststlouis-il-517-31st-13.jpg", "images/eaststlouis-il-517-31st-14.jpg", "images/eaststlouis-il-517-31st-15.jpg", "images/eaststlouis-il-517-31st-16.jpg", "images/eaststlouis-il-517-31st-17.jpg", "images/eaststlouis-il-517-31st-18.jpg", "images/eaststlouis-il-517-31st-19.jpg", "images/eaststlouis-il-517-31st-20.jpg", "images/eaststlouis-il-517-31st-21.jpg", "images/eaststlouis-il-517-31st-22.jpg", "images/eaststlouis-il-517-31st-23.jpg", "images/eaststlouis-il-517-31st-24.jpg"],
-  },
-  {
-    id: "jackson-ms-434-mason",
-    address:     "434 Mason Blvd,",
-    zip:         "39212",
-    city:  "Jackson",
-    state: "MS",
-    beds:  2,
-    baths: 1,
-    sqft:  "733",
-    status: "Available",
-
-    monthlyPayment: 853.31,
-    moveIn:         2000,
-    lockedPrice:    72500,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    ["images/jackson-ms-434-mason-1.jpg", "images/jackson-ms-434-mason-2.jpg", "images/jackson-ms-434-mason-3.jpg", "images/jackson-ms-434-mason-4.jpg"],
   },
   {
     id: "carbondale-il-521-davis",
@@ -3148,7 +3129,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-1509-william-1.jpg", "images/decatur-il-1509-william-2.jpg", "images/decatur-il-1509-william-3.jpg", "images/decatur-il-1509-william-4.jpg", "images/decatur-il-1509-william-5.jpg", "images/decatur-il-1509-william-6.jpg", "images/decatur-il-1509-william-7.jpg", "images/decatur-il-1509-william-8.jpg", "images/decatur-il-1509-william-9.jpg", "images/decatur-il-1509-william-10.jpg", "images/decatur-il-1509-william-11.jpg", "images/decatur-il-1509-william-12.jpg", "images/decatur-il-1509-william-13.jpg", "images/decatur-il-1509-william-14.jpg", "images/decatur-il-1509-william-15.jpg", "images/decatur-il-1509-william-16.jpg", "images/decatur-il-1509-william-17.jpg", "images/decatur-il-1509-william-18.jpg", "images/decatur-il-1509-william-19.jpg", "images/decatur-il-1509-william-20.jpg", "images/decatur-il-1509-william-21.jpg", "images/decatur-il-1509-william-22.jpg", "images/decatur-il-1509-william-23.jpg", "images/decatur-il-1509-william-24.jpg"],
   },
   {
     id: "eaststlouis-il-5617-warren",

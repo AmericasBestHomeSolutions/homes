@@ -64,7 +64,7 @@ body{
 .hero .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#a9c4e8;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);padding:6px 12px;border-radius:999px;margin-bottom:16px}
 .hero h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(32px,7vw,52px);line-height:1.03;letter-spacing:-1.2px;margin-bottom:14px}
 .hero h1 em{font-style:normal;color:#ff5c5c}
-.hero p.lead{font-size:clamp(16px,2.3vw,19px);color:#d3e3f7;max-width:44ch;margin-bottom:8px}
+.hero p.hero-lead{font-size:clamp(16px,2.3vw,19px);color:#d3e3f7;max-width:44ch;margin-bottom:8px}
 .hero p.reassure{font-size:15px;color:#9fbce4;max-width:44ch;margin-bottom:24px}
 .hero-cta{display:flex;gap:10px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-align:center;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:700;font-size:16px;padding:15px 22px;border-radius:13px;transition:transform .12s ease,background .15s ease;cursor:pointer;border:none}
@@ -89,6 +89,15 @@ body{
 .sec-title{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(26px,5vw,36px);letter-spacing:-.6px;line-height:1.08}
 .sec-sub{color:var(--ink-soft);margin-top:8px;font-size:16px}
 
+/* ── ONE TEAM, ONE NUMBER ────────────────────────────────── */
+.oneteam{margin-top:44px;background:var(--pine);color:#fff;border-radius:22px;padding:34px 26px}
+.oneteam-inner{max-width:620px;margin:0 auto}
+.oneteam h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(22px,4.6vw,30px);letter-spacing:-.5px;line-height:1.12;margin-bottom:18px}
+.oneteam ul{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:22px}
+.oneteam li{display:flex;gap:10px;align-items:flex-start;font-size:15.5px;line-height:1.5;color:#dbe7f6}
+.oneteam li strong{color:#fff}
+.oneteam li .m{flex-shrink:0;width:20px;height:20px;border-radius:6px;background:rgba(255,255,255,.15);color:#7ee8a2;display:flex;align-items:center;justify-content:center;margin-top:2px;font-weight:800;font-size:12px}
+
 /* ── TRUST BAND ──────────────────────────────────────────── */
 .trust{display:grid;gap:14px;grid-template-columns:repeat(4,1fr)}
 @media (max-width:760px){ .trust{grid-template-columns:1fr 1fr} }
@@ -111,6 +120,7 @@ body{
 .listings-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:6px}
 .filters{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
 .filter{min-width:150px}
+@media (max-width:560px){ .filters{display:grid;grid-template-columns:1fr 1fr;gap:8px 10px} .filter{min-width:0} }
 .filter label{display:block;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px}
 .filter select{width:100%;font-family:inherit;font-size:16px;color:var(--ink);background:var(--card);border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer}
 .filter select:focus{outline:none;border-color:var(--pine)}
@@ -139,10 +149,12 @@ body{
 .card-price .num{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:27px;color:var(--ink);line-height:1}
 .card-price .per{font-family:'DM Mono',monospace;font-size:11px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:1px}
 .card-mini{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+.card-specs{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:var(--ink);margin-bottom:6px;display:flex;gap:10px;flex-wrap:wrap}
+.card-specs span{display:inline-flex;align-items:center;gap:5px}
+.card-specs .dot{color:var(--line)}
 .mini{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:8px 10px}
 .mini .k{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.5px;text-transform:uppercase;color:var(--ink-soft)}
 .mini .v{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:15px;color:var(--pine);margin-top:1px}
-.card-specs{font-family:'DM Mono',monospace;font-size:12px;color:var(--ink-soft);margin-bottom:12px}
 .card-cta{margin-top:auto;display:block;text-align:center;font-weight:700;font-size:15px;color:#fff;background:var(--go);border-radius:12px;padding:12px 14px}
 .card:hover .card-cta{background:var(--go-hover)}
 
@@ -273,11 +285,11 @@ body{
     <div class="hero-inner">
       <span class="eyebrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M12 2 3 7v6c0 5 3.8 8.4 9 11 5.2-2.6 9-6 9-11V7l-9-5z"/></svg> Owner Financing · No Bank Needed</span>
       <h1>Own the home.<br><em>Skip the bank.</em></h1>
-      <p class="lead">Owner-financed homes across Illinois, Missouri, Michigan, Alabama &amp; more — a monthly payment close to rent, and a price that doesn't change once you sign.</p>
+      <p class="hero-lead">Owner-financed homes across Illinois, Missouri, Michigan, Alabama &amp; more — a monthly payment close to rent, and a price that doesn't change once you sign.</p>
       <p class="reassure">Your past doesn't have to decide your future. If you've been turned away by banks, this was built for you.</p>
       <div class="hero-cta">
-        <a class="btn btn-lime" href="#get-started">Get started today</a>
-        <a class="btn btn-ghost" href="#listings">Browse homes</a>
+        <a class="btn btn-lime" href="#listings">See the homes</a>
+        <a class="btn btn-ghost" href="#get-started">Get started today</a>
       </div>
     </div>
     <svg class="hero-art" viewBox="0 88 960 112" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
@@ -314,54 +326,8 @@ body{
     <div class="stat"><div class="n" id="statCities">—</div><div class="l">Cities &amp; towns</div></div>
   </div>
 
-  <!-- TRUST BAND -->
-  <section class="section reveal">
-    <div class="sec-head">
-      <div class="sec-label">Why people choose us</div>
-      <h2 class="sec-title">A real path to owning — <br>without the bank in the way</h2>
-    </div>
-    <div class="trust">
-      <div class="trust-card">
-        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e23b3b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg></div>
-        <h3>You're buying, not renting</h3>
-        <p>Your name is on the agreement from day one. You're the homeowner — not a tenant.</p>
-      </div>
-      <div class="trust-card">
-        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e23b3b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-        <h3>No bank, no mortgage maze</h3>
-        <p>We finance the home to you directly. No mortgage application standing between you and the keys.</p>
-      </div>
-      <div class="trust-card">
-        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e23b3b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-        <h3>The price doesn't change</h3>
-        <p>What you agree to today is what you pay. It won't go up while you pay it down.</p>
-      </div>
-      <div class="trust-card">
-        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e23b3b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
-        <h3>A payment close to rent</h3>
-        <p>Own a home for about what you'd pay a landlord — and every payment builds toward it being yours.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 4 STEPS -->
-  <section class="section reveal">
-    <div class="sec-head">
-      <div class="sec-label">Simple from start to keys</div>
-      <h2 class="sec-title">Own your home in 4 steps</h2>
-      <p class="sec-sub">No long approvals. No runaround. Here's the whole path.</p>
-    </div>
-    <div class="steps">
-      <div class="step"><div class="n">1</div><h3>Reach out</h3><p>Call or text us, or send your info below. Tell us what you're looking for.</p></div>
-      <div class="step"><div class="n">2</div><h3>Tour a home</h3><p>Pick a home you like and we'll set up a time to walk through it together.</p></div>
-      <div class="step"><div class="n">3</div><h3>Sign a simple agreement</h3><p>We finance it ourselves with a contract for deed — plain language, no surprises.</p></div>
-      <div class="step"><div class="n">4</div><h3>Get the keys</h3><p>Make your move-in payment and the home is yours to live in from day one.</p></div>
-    </div>
-    <p style="text-align:center;margin-top:18px"><a href="how-it-works.html" style="font-weight:700;color:var(--pine);text-decoration:none;border-bottom:2px solid var(--go);padding-bottom:2px">See exactly how owner financing works →</a></p>
-  </section>
-
   <!-- LISTINGS -->
-  <section class="section reveal" id="listings">
+  <section class="section reveal" id="listings" style="margin-top:40px">
     <div class="sec-head">
       <div class="sec-label">Available now</div>
       <h2 class="sec-title">Find your home</h2>
@@ -380,8 +346,9 @@ body{
           <label for="fBeds">Bedrooms</label>
           <select id="fBeds">
             <option value="">Any</option>
-            <option value="2">2+ bedrooms</option>
-            <option value="3">3+ bedrooms</option>
+            <option value="1">1 bedroom</option>
+            <option value="2">2 bedrooms</option>
+            <option value="3">3 bedrooms</option>
             <option value="4">4+ bedrooms</option>
           </select>
         </div>
@@ -419,7 +386,7 @@ body{
       </div>
       <div class="count-row" style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:8px">
         <p class="count" id="count" style="margin:0"></p>
-        <button id="copyLink" type="button" style="display:none;font-family:'DM Mono',monospace;font-size:13px;padding:8px 14px;border-radius:10px;border:1.5px solid var(--line);background:var(--card);color:var(--pine,#15315e);cursor:pointer;white-space:nowrap">🔗 Copy link to these results</button>
+        <button id="copyLink" type="button" style="display:none;font-family:'DM Mono',monospace;font-size:13px;padding:8px 14px;border-radius:10px;border:1.5px solid var(--line);background:var(--card);color:var(--pine,#15315e);cursor:pointer;white-space:nowrap">🔗 Share this search</button>
       </div>
     </div>
 
@@ -428,9 +395,74 @@ body{
     <nav class="pager" id="pager" style="display:none;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap;margin-top:28px"></nav>
 
     <div class="empty" id="empty">
-      <h3>No homes match those filters</h3>
-      <p>Try "All states" or "Any" — or call us and tell us what you're looking for.</p>
+      <h3>Nothing matches those filters — yet</h3>
+      <p>New homes come in every week. Loosen a filter, or text us what you need and we'll send you the matches as they land.</p>
+      <p style="margin-top:14px"><a id="emptyText" href="#" class="btn btn-lime" style="font-size:15px;padding:12px 18px">Text us what you're looking for</a></p>
     </div>
+  </section>
+
+  <!-- ONE TEAM, ONE NUMBER — these homes get posted in a few places; here they're all
+       in one, with one team who answers. Numbers below are filled from homes.js. -->
+  <section class="oneteam reveal">
+    <div class="oneteam-inner">
+      <div class="sec-label" style="color:#ffb3b3">One number for every home</div>
+      <h2>You may see these homes posted in a few places. Here, they're all together — with one team who answers.</h2>
+      <ul>
+        <li><span class="m">✓</span><span><strong>A real person, same day.</strong> Call or text one number and you reach the people who actually show the homes.</span></li>
+        <li><span class="m">✓</span><span><strong>You walk every home in person</strong> before you decide. We'll never ask for money to "hold" a home you haven't seen.</span></li>
+        <li><span class="m">✓</span><span><strong>If the one you wanted sells, we already have the next one</strong> — <span id="otHomes">—</span> homes across <span id="otCities">—</span> towns, refreshed every week.</span></li>
+      </ul>
+      <div class="hero-cta">
+        <a class="btn btn-lime" id="oneteamText" href="#">Text us what you're looking for</a>
+        <a class="btn btn-ghost" id="oneteamCall" href="#">Call <span id="oneteamPhone"></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST BAND -->
+  <section class="section reveal">
+    <div class="sec-head">
+      <div class="sec-label">Why people choose us</div>
+      <h2 class="sec-title">A real path to owning — <br>without the bank in the way</h2>
+    </div>
+    <div class="trust">
+      <div class="trust-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e23b3b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 21v-6h6v6"/></svg></div>
+        <h3>You're buying, not renting</h3>
+        <p>Your name is on the purchase agreement from day one. You're the buyer — not a tenant — and every payment builds toward owning it outright.</p>
+      </div>
+      <div class="trust-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e23b3b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3>No bank, no mortgage maze</h3>
+        <p>We finance the home to you directly. No mortgage application standing between you and the keys.</p>
+      </div>
+      <div class="trust-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e23b3b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <h3>The price doesn't change</h3>
+        <p>What you agree to today is what you pay. It won't go up while you pay it down.</p>
+      </div>
+      <div class="trust-card">
+        <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e23b3b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+        <h3>A payment close to rent</h3>
+        <p>Own a home for about what you'd pay a landlord — and every payment builds toward it being yours.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 STEPS -->
+  <section class="section reveal">
+    <div class="sec-head">
+      <div class="sec-label">Simple from start to keys</div>
+      <h2 class="sec-title">Own your home in 4 steps</h2>
+      <p class="sec-sub">No long approvals. No runaround. Here's the whole path.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Reach out</h3><p>Call or text us, or send your info below. Tell us what you're looking for.</p></div>
+      <div class="step"><div class="n">2</div><h3>Tour a home</h3><p>Pick a home you like and we'll set up a time to walk through it together.</p></div>
+      <div class="step"><div class="n">3</div><h3>Sign a simple agreement</h3><p>We finance it ourselves with a contract for deed — plain language, no surprises.</p></div>
+      <div class="step"><div class="n">4</div><h3>Get the keys</h3><p>Make your move-in payment and the home is yours to live in from day one.</p></div>
+    </div>
+    <p style="text-align:center;margin-top:18px"><a href="how-it-works.html" style="font-weight:700;color:var(--pine);text-decoration:none;border-bottom:2px solid var(--go);padding-bottom:2px">See exactly how owner financing works →</a></p>
   </section>
 
   <!-- TESTIMONIALS -->
@@ -562,7 +594,7 @@ body{
              that way. If you edit the wording, bump CONSENT_TEXT and
              CONSENT_TEXT_VERSION in consent.js so stored records stay accurate.
              ══════════════════════════════════════════════════════════════════ -->
-        <label style="display:flex;gap:11px;align-items:flex-start;font-size:12.5px;line-height:1.5;color:#dbe7fb;font-weight:400;cursor:pointer;margin:12px 0 2px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.22);border-radius:12px;padding:13px 14px">
+        <label style="display:flex;gap:11px;align-items:flex-start;font-family:'DM Sans',system-ui,sans-serif;text-transform:none;letter-spacing:0;font-size:13px;line-height:1.5;color:#dbe7fb;font-weight:400;cursor:pointer;margin:12px 0 2px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.22);border-radius:12px;padding:13px 14px">
           <input id="lfSms" name="sms_consent" type="checkbox" value="Yes" style="margin-top:3px;width:16px;height:16px;flex-shrink:0">
           <span>I agree to receive text messages from Americas Best Home Solutions LLC about property listings, showings, offers, and follow-up. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe or HELP for help. See our <a href="/privacy-policy" style="color:#fff;font-weight:600">Privacy Policy</a> and <a href="/messaging-terms" style="color:#fff;font-weight:600">Messaging Terms</a>.</span>
         </label>
@@ -624,7 +656,7 @@ body{
 /* ---------- render (don't edit — home data lives in homes.js) ---------- */
 (function(){
   const $ = id => document.getElementById(id);
-  const money = n => "$" + Number(n||0).toLocaleString();
+  const money = n => "$" + Math.round(Number(n||0)).toLocaleString();
 
   // image fallback chain: real seller photo → Google Street View curb shot
   // (labeled) → branded gradient card. Street View is only ever shown with its
@@ -662,14 +694,20 @@ body{
   }
   fillCities();
 
-  // hero stats
+  // hero stats (+ the same numbers in the one-team band)
   $("statHomes").textContent = HOMES.length;
   $("statCities").textContent = allCities.length;
+  $("otHomes").textContent = HOMES.length;
+  $("otCities").textContent = allCities.length;
 
   function cardHTML(h){
     const [a,b] = faceFor(h.city + h.state);
     const pending = (h.status||"").toLowerCase()==="pending" ? " pending" : "";
-    const specs = `${h.beds} bd · ${h.baths} ba${h.sqft?` · ${Number(h.sqft).toLocaleString()} sqft`:""}`;
+    const specs = [
+      h.beds ? `<span>${h.beds} bed${Number(h.beds)===1?"":"s"}</span>` : "",
+      h.baths ? `<span>${h.baths} bath${Number(h.baths)===1?"":"s"}</span>` : "",
+      h.sqft ? `<span style="font-weight:500;color:var(--ink-soft)">${Number(h.sqft).toLocaleString()} sqft</span>` : ""
+    ].filter(Boolean).join(`<span class="dot">·</span>`);
     const photoSrc = h.heroPhoto || `images/${h.id}.jpg`;   // drop images/<id>.jpg in and it shows automatically
     return `
     <a class="card" href="${encodeURIComponent(h.id)}.html">
@@ -689,7 +727,7 @@ body{
           <div class="mini"><div class="k">Price</div><div class="v">${money(h.lockedPrice)}</div></div>
         </div>
         <div class="card-specs">${specs}</div>
-        ${h.address ? `<div class="card-addr" style="font-size:13px;color:var(--ink-soft);margin-bottom:12px;font-family:'DM Mono',monospace">${h.address}, ${h.city}, ${h.state}${h.zip?` ${h.zip}`:""}</div>` : ""}
+        ${h.address ? `<div class="card-addr" style="font-size:13.5px;color:var(--ink-soft);margin-bottom:12px">${h.address}, ${h.city}, ${h.state}${h.zip?` ${h.zip}`:""}</div>` : ""}
         <span class="card-cta">View this home →</span>
       </div>
     </a>`;
@@ -703,7 +741,7 @@ body{
   function filtered(){
     const state = $("fState").value;
     const city = $("fCity").value;
-    const minBeds = Number($("fBeds").value) || 0;
+    const bedsVal = Number($("fBeds").value) || 0;   // exact match; 4 means "4 or more"
     const payVal = $("fPay").value;    // "", "max:700", "min:1200"
     const downVal = $("fDown").value;  // "", "max:1500"…
     const sort = $("fSort").value;
@@ -715,7 +753,7 @@ body{
     const list = HOMES.filter(h =>
       (!state || h.state === state) &&
       (!city || h.city === city) &&
-      (Number(h.beds)||0) >= minBeds &&
+      (!bedsVal || (bedsVal >= 4 ? (Number(h.beds)||0) >= 4 : (Number(h.beds)||0) === bedsVal)) &&
       rangeMatch(payVal, Number(h.monthlyPayment)||0) &&
       rangeMatch(downVal, Number(h.moveIn)||0)
     );
@@ -805,7 +843,7 @@ body{
       syncURL();
       try { await navigator.clipboard.writeText(location.href); }
       catch(e){ const t=document.createElement("textarea"); t.value=location.href; document.body.appendChild(t); t.select(); document.execCommand("copy"); t.remove(); }
-      btn.textContent = "✓ Link copied — paste it in your message";
+      btn.textContent = "✓ Link copied — send it to whoever's deciding with you";
       setTimeout(() => { btn.textContent = label; }, 2600);
     });
   })();
@@ -845,6 +883,20 @@ body{
   // (the footer now prints the number and address literally, for carrier
   //  vetting — there's no footCall link left to wire up here)
   $("aboutText").href = `sms:${tel}?&body=${smsBody}`;
+  $("oneteamText").href = `sms:${tel}?&body=${smsBody}`;
+  $("oneteamCall").href = `tel:${tel}`;
+  $("oneteamPhone").textContent = pretty;
+  // empty-state text is pre-filled with whatever they just searched for, so the first
+  // message already tells us the town + bedrooms + budget
+  $("emptyText").addEventListener("click", e => {
+    const want = [
+      $("fBeds").value ? `${$("fBeds").value}${$("fBeds").value==="4"?"+":""} bedroom` : "",
+      $("fCity").value || $("fState").value || "",
+      $("fPay").selectedIndex ? $("fPay").options[$("fPay").selectedIndex].text.toLowerCase() : "",
+      $("fDown").selectedIndex ? $("fDown").options[$("fDown").selectedIndex].text.toLowerCase() + " to move in" : ""
+    ].filter(Boolean).join(", ");
+    e.currentTarget.href = `sms:${tel}?&body=${encodeURIComponent(`Hi, I'm looking for an owner-financed home${want?" — "+want:""}. Can you send me what you have?`)}`;
+  });
 
   // lead form → Formspree (email) + Make (Notion CRM)  [same wiring as the property page]
   (function(){

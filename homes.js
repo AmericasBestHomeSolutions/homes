@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (162 live, rebuilt from master published 2026-09-16) --- */
+/* --- the homes (165 live, rebuilt from master published 2026-09-16) --- */
 const HOMES = [
   {
     id: "decatur-il-2055-church",
@@ -3255,6 +3255,27 @@ const HOMES = [
     photos:    ["images/peoria-il-422-louisa-1.jpg", "images/peoria-il-422-louisa-2.jpg", "images/peoria-il-422-louisa-3.jpg", "images/peoria-il-422-louisa-4.jpg", "images/peoria-il-422-louisa-5.jpg", "images/peoria-il-422-louisa-6.jpg", "images/peoria-il-422-louisa-7.jpg", "images/peoria-il-422-louisa-8.jpg", "images/peoria-il-422-louisa-9.jpg", "images/peoria-il-422-louisa-10.jpg", "images/peoria-il-422-louisa-11.jpg", "images/peoria-il-422-louisa-12.jpg", "images/peoria-il-422-louisa-13.jpg", "images/peoria-il-422-louisa-14.jpg", "images/peoria-il-422-louisa-15.jpg", "images/peoria-il-422-louisa-16.jpg", "images/peoria-il-422-louisa-17.jpg", "images/peoria-il-422-louisa-18.jpg", "images/peoria-il-422-louisa-19.jpg", "images/peoria-il-422-louisa-20.jpg", "images/peoria-il-422-louisa-21.jpg", "images/peoria-il-422-louisa-22.jpg", "images/peoria-il-422-louisa-23.jpg", "images/peoria-il-422-louisa-24.jpg"],
   },
   {
+    id: "stlouis-mo-4021-green",
+    address:     "4021 Green Lea Place",
+    zip:         "63107",
+    description: "858 SF.. Much of the heavy lifting has already been done. All brick bungalow with updated luxury vinyl plank flooring, fresh neutral paint, an updated bathroom, and a kitchen featuring newer cabinetry already in place. Unfinished basement with ample storage and additional possibilities",
+    city:  "St. Louis",
+    state: "MO",
+    beds:  2,
+    baths: 1,
+    sqft:  "858",
+    status: "Available",
+
+    monthlyPayment: 1000,
+    moveIn:         2500,
+    lockedPrice:    89000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { basement: "yes" },
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
     id: "david-il-209-central",
     address:     "209 Central Ave St",
     zip:         "61563",
@@ -3294,6 +3315,48 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/westfrankfort-il-1310-poplar-1.jpg", "images/westfrankfort-il-1310-poplar-2.jpg", "images/westfrankfort-il-1310-poplar-3.jpg", "images/westfrankfort-il-1310-poplar-4.jpg", "images/westfrankfort-il-1310-poplar-5.jpg", "images/westfrankfort-il-1310-poplar-6.jpg", "images/westfrankfort-il-1310-poplar-7.jpg", "images/westfrankfort-il-1310-poplar-8.jpg", "images/westfrankfort-il-1310-poplar-9.jpg", "images/westfrankfort-il-1310-poplar-10.jpg", "images/westfrankfort-il-1310-poplar-11.jpg", "images/westfrankfort-il-1310-poplar-12.jpg", "images/westfrankfort-il-1310-poplar-13.jpg", "images/westfrankfort-il-1310-poplar-14.jpg", "images/westfrankfort-il-1310-poplar-15.jpg", "images/westfrankfort-il-1310-poplar-16.jpg", "images/westfrankfort-il-1310-poplar-17.jpg", "images/westfrankfort-il-1310-poplar-18.jpg", "images/westfrankfort-il-1310-poplar-19.jpg", "images/westfrankfort-il-1310-poplar-20.jpg", "images/westfrankfort-il-1310-poplar-21.jpg", "images/westfrankfort-il-1310-poplar-22.jpg", "images/westfrankfort-il-1310-poplar-23.jpg", "images/westfrankfort-il-1310-poplar-24.jpg"],
+  },
+  {
+    id: "eaststlouis-il-1127-45th",
+    address:     "1127 N 45th St",
+    zip:         "62204",
+    description: "Large basement, Was recently vacant",
+    city:  "East St. Louis",
+    state: "IL",
+    beds:  2,
+    baths: 1,
+    sqft:  "",
+    status: "Available",
+
+    monthlyPayment: 950,
+    moveIn:         2500,
+    lockedPrice:    80000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { basement: "yes" },
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "decatur-il-1204-jordan",
+    address:     "1204 N Jordan St",
+    zip:         "62521",
+    description: "Detached garage, recently cleaned, needs new carpet in bedrooms",
+    city:  "Decatur",
+    state: "IL",
+    beds:  3,
+    baths: 1,
+    sqft:  "",
+    status: "Available",
+
+    monthlyPayment: 895,
+    moveIn:         2500,
+    lockedPrice:    80000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { garage: "yes", off_street_parking: "yes" },
+    heroPhoto: "",
+    photos:    [],
   },
   {
     id: "stlouis-mo-1027-garth",

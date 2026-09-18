@@ -3273,7 +3273,7 @@ const HOMES = [
 
     features: { basement: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/stlouis-mo-4021-green-1.jpg", "images/stlouis-mo-4021-green-2.jpg", "images/stlouis-mo-4021-green-3.jpg", "images/stlouis-mo-4021-green-4.jpg", "images/stlouis-mo-4021-green-5.jpg", "images/stlouis-mo-4021-green-6.jpg", "images/stlouis-mo-4021-green-7.jpg", "images/stlouis-mo-4021-green-8.jpg", "images/stlouis-mo-4021-green-9.jpg", "images/stlouis-mo-4021-green-10.jpg", "images/stlouis-mo-4021-green-11.jpg", "images/stlouis-mo-4021-green-12.jpg", "images/stlouis-mo-4021-green-13.jpg", "images/stlouis-mo-4021-green-14.jpg", "images/stlouis-mo-4021-green-15.jpg", "images/stlouis-mo-4021-green-16.jpg", "images/stlouis-mo-4021-green-17.jpg", "images/stlouis-mo-4021-green-18.jpg", "images/stlouis-mo-4021-green-19.jpg", "images/stlouis-mo-4021-green-20.jpg", "images/stlouis-mo-4021-green-21.jpg", "images/stlouis-mo-4021-green-22.jpg", "images/stlouis-mo-4021-green-23.jpg"],
   },
   {
     id: "david-il-209-central",
@@ -3335,7 +3335,7 @@ const HOMES = [
 
     features: { basement: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/eaststlouis-il-1127-45th-1.jpg", "images/eaststlouis-il-1127-45th-2.jpg", "images/eaststlouis-il-1127-45th-3.jpg", "images/eaststlouis-il-1127-45th-4.jpg", "images/eaststlouis-il-1127-45th-5.jpg", "images/eaststlouis-il-1127-45th-6.jpg", "images/eaststlouis-il-1127-45th-7.jpg", "images/eaststlouis-il-1127-45th-8.jpg", "images/eaststlouis-il-1127-45th-9.jpg", "images/eaststlouis-il-1127-45th-10.jpg", "images/eaststlouis-il-1127-45th-11.jpg", "images/eaststlouis-il-1127-45th-12.jpg", "images/eaststlouis-il-1127-45th-13.jpg", "images/eaststlouis-il-1127-45th-14.jpg", "images/eaststlouis-il-1127-45th-15.jpg", "images/eaststlouis-il-1127-45th-16.jpg", "images/eaststlouis-il-1127-45th-17.jpg", "images/eaststlouis-il-1127-45th-18.jpg", "images/eaststlouis-il-1127-45th-19.jpg", "images/eaststlouis-il-1127-45th-20.jpg", "images/eaststlouis-il-1127-45th-21.jpg", "images/eaststlouis-il-1127-45th-22.jpg", "images/eaststlouis-il-1127-45th-23.jpg", "images/eaststlouis-il-1127-45th-24.jpg"],
   },
   {
     id: "decatur-il-1204-jordan",
@@ -3356,7 +3356,7 @@ const HOMES = [
 
     features: { garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-1204-jordan-1.jpg", "images/decatur-il-1204-jordan-2.jpg", "images/decatur-il-1204-jordan-3.jpg", "images/decatur-il-1204-jordan-4.jpg", "images/decatur-il-1204-jordan-5.jpg", "images/decatur-il-1204-jordan-6.jpg", "images/decatur-il-1204-jordan-7.jpg", "images/decatur-il-1204-jordan-8.jpg", "images/decatur-il-1204-jordan-9.jpg", "images/decatur-il-1204-jordan-10.jpg", "images/decatur-il-1204-jordan-11.jpg", "images/decatur-il-1204-jordan-12.jpg", "images/decatur-il-1204-jordan-13.jpg", "images/decatur-il-1204-jordan-14.jpg", "images/decatur-il-1204-jordan-15.jpg", "images/decatur-il-1204-jordan-16.jpg", "images/decatur-il-1204-jordan-17.jpg", "images/decatur-il-1204-jordan-18.jpg", "images/decatur-il-1204-jordan-19.jpg", "images/decatur-il-1204-jordan-20.jpg", "images/decatur-il-1204-jordan-21.jpg", "images/decatur-il-1204-jordan-22.jpg", "images/decatur-il-1204-jordan-23.jpg", "images/decatur-il-1204-jordan-24.jpg"],
   },
   {
     id: "stlouis-mo-1027-garth",

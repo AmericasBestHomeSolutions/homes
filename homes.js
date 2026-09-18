@@ -34,7 +34,7 @@ const HOMES = [
 
     features: { backyard: "yes", basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-2055-church-1.jpg", "images/decatur-il-2055-church-2.jpg", "images/decatur-il-2055-church-3.jpg", "images/decatur-il-2055-church-4.jpg", "images/decatur-il-2055-church-5.jpg", "images/decatur-il-2055-church-6.jpg", "images/decatur-il-2055-church-7.jpg", "images/decatur-il-2055-church-8.jpg", "images/decatur-il-2055-church-9.jpg", "images/decatur-il-2055-church-10.jpg", "images/decatur-il-2055-church-11.jpg", "images/decatur-il-2055-church-12.jpg", "images/decatur-il-2055-church-13.jpg", "images/decatur-il-2055-church-14.jpg", "images/decatur-il-2055-church-15.jpg", "images/decatur-il-2055-church-16.jpg", "images/decatur-il-2055-church-17.jpg", "images/decatur-il-2055-church-18.jpg", "images/decatur-il-2055-church-19.jpg", "images/decatur-il-2055-church-20.jpg", "images/decatur-il-2055-church-21.jpg", "images/decatur-il-2055-church-22.jpg", "images/decatur-il-2055-church-23.jpg", "images/decatur-il-2055-church-24.jpg"],
   },
   {
     id: "oblong-il-807-illinois",
@@ -174,11 +174,11 @@ const HOMES = [
     photos:    ["images/eaststlouis-il-2120-st-1.jpg", "images/eaststlouis-il-2120-st-2.jpg", "images/eaststlouis-il-2120-st-3.jpg", "images/eaststlouis-il-2120-st-4.jpg"],
   },
   {
-    id: "decarut-il-1353-morgan",
+    id: "decatur-il-1353-morgan",
     address:     "1353 N. Morgan",
     zip:         "62526",
     description: "2 bed. 1 bath. 804 sqft/.. Highlight:. New water heater",
-    city:  "Decarut",
+    city:  "Decatur",
     state: "IL",
     beds:  2,
     baths: 1,
@@ -191,13 +191,13 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    ["images/decarut-il-1353-morgan-1.jpg", "images/decarut-il-1353-morgan-2.jpg", "images/decarut-il-1353-morgan-3.jpg", "images/decarut-il-1353-morgan-4.jpg", "images/decarut-il-1353-morgan-5.jpg", "images/decarut-il-1353-morgan-6.jpg", "images/decarut-il-1353-morgan-7.jpg", "images/decarut-il-1353-morgan-8.jpg", "images/decarut-il-1353-morgan-9.jpg", "images/decarut-il-1353-morgan-10.jpg", "images/decarut-il-1353-morgan-11.jpg", "images/decarut-il-1353-morgan-12.jpg", "images/decarut-il-1353-morgan-13.jpg", "images/decarut-il-1353-morgan-14.jpg", "images/decarut-il-1353-morgan-15.jpg", "images/decarut-il-1353-morgan-16.jpg", "images/decarut-il-1353-morgan-17.jpg"],
+    photos:    ["images/decatur-il-1353-morgan-1.jpg", "images/decatur-il-1353-morgan-2.jpg", "images/decatur-il-1353-morgan-3.jpg", "images/decatur-il-1353-morgan-4.jpg", "images/decatur-il-1353-morgan-5.jpg", "images/decatur-il-1353-morgan-6.jpg", "images/decatur-il-1353-morgan-7.jpg", "images/decatur-il-1353-morgan-8.jpg", "images/decatur-il-1353-morgan-9.jpg", "images/decatur-il-1353-morgan-10.jpg", "images/decatur-il-1353-morgan-11.jpg", "images/decatur-il-1353-morgan-12.jpg", "images/decatur-il-1353-morgan-13.jpg", "images/decatur-il-1353-morgan-14.jpg", "images/decatur-il-1353-morgan-15.jpg", "images/decatur-il-1353-morgan-16.jpg", "images/decatur-il-1353-morgan-17.jpg"],
   },
   {
     id: "decatur-il-1435-woodford",
     address:     "1435 North Woodford Street",
     zip:         "62526",
-    description: "2 bed. 1 bath. 884 s/f, 1 car garage. Highlight:. 1 car garage",
+    description: "2 bed, 1 bath, 884 sq ft with a 1-car garage. The upstairs is intact — living room, kitchen with cabinets and a double sink, bathroom with tub/shower. The basement has visible fire/smoke damage to the ceiling framing and will need work; the garage interior is also stripped. Sold as-is — come see it in person and bring your own inspector. Owner financing, no bank needed.",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -210,7 +210,7 @@ const HOMES = [
     lockedPrice:    69000,
     termText:       "30-year owner financing (contract for deed)",
 
-    features: { garage: "yes", off_street_parking: "yes" },
+    features: { basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-1435-woodford-1.jpg", "images/decatur-il-1435-woodford-2.jpg", "images/decatur-il-1435-woodford-3.jpg", "images/decatur-il-1435-woodford-4.jpg", "images/decatur-il-1435-woodford-5.jpg", "images/decatur-il-1435-woodford-6.jpg", "images/decatur-il-1435-woodford-7.jpg", "images/decatur-il-1435-woodford-8.jpg", "images/decatur-il-1435-woodford-9.jpg", "images/decatur-il-1435-woodford-10.jpg", "images/decatur-il-1435-woodford-11.jpg", "images/decatur-il-1435-woodford-12.jpg", "images/decatur-il-1435-woodford-13.jpg", "images/decatur-il-1435-woodford-14.jpg", "images/decatur-il-1435-woodford-15.jpg", "images/decatur-il-1435-woodford-16.jpg", "images/decatur-il-1435-woodford-17.jpg"],
   },
@@ -540,7 +540,7 @@ const HOMES = [
 
     features: { backyard: "yes", basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/eastalton-il-136-illinois-1.jpg", "images/eastalton-il-136-illinois-2.jpg", "images/eastalton-il-136-illinois-3.jpg", "images/eastalton-il-136-illinois-4.jpg", "images/eastalton-il-136-illinois-5.jpg", "images/eastalton-il-136-illinois-6.jpg", "images/eastalton-il-136-illinois-7.jpg", "images/eastalton-il-136-illinois-8.jpg", "images/eastalton-il-136-illinois-9.jpg", "images/eastalton-il-136-illinois-10.jpg", "images/eastalton-il-136-illinois-11.jpg"],
   },
   {
     id: "peoria-il-1709-faraday",
@@ -3307,7 +3307,7 @@ const HOMES = [
 
     features: { basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-1117-packard-1.jpg", "images/decatur-il-1117-packard-2.jpg", "images/decatur-il-1117-packard-3.jpg", "images/decatur-il-1117-packard-4.jpg", "images/decatur-il-1117-packard-5.jpg", "images/decatur-il-1117-packard-6.jpg", "images/decatur-il-1117-packard-7.jpg", "images/decatur-il-1117-packard-8.jpg", "images/decatur-il-1117-packard-9.jpg", "images/decatur-il-1117-packard-10.jpg", "images/decatur-il-1117-packard-11.jpg", "images/decatur-il-1117-packard-12.jpg", "images/decatur-il-1117-packard-13.jpg", "images/decatur-il-1117-packard-14.jpg", "images/decatur-il-1117-packard-15.jpg", "images/decatur-il-1117-packard-16.jpg", "images/decatur-il-1117-packard-17.jpg", "images/decatur-il-1117-packard-18.jpg", "images/decatur-il-1117-packard-19.jpg", "images/decatur-il-1117-packard-20.jpg", "images/decatur-il-1117-packard-21.jpg", "images/decatur-il-1117-packard-22.jpg", "images/decatur-il-1117-packard-23.jpg", "images/decatur-il-1117-packard-24.jpg"],
   },
   {
     id: "eaststlouis-il-1127-45th",
@@ -3369,7 +3369,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/westmemphis-ar-2911-church-1.jpg", "images/westmemphis-ar-2911-church-2.jpg", "images/westmemphis-ar-2911-church-3.jpg", "images/westmemphis-ar-2911-church-4.jpg", "images/westmemphis-ar-2911-church-5.jpg", "images/westmemphis-ar-2911-church-6.jpg", "images/westmemphis-ar-2911-church-7.jpg", "images/westmemphis-ar-2911-church-8.jpg", "images/westmemphis-ar-2911-church-9.jpg", "images/westmemphis-ar-2911-church-10.jpg", "images/westmemphis-ar-2911-church-11.jpg", "images/westmemphis-ar-2911-church-12.jpg", "images/westmemphis-ar-2911-church-13.jpg", "images/westmemphis-ar-2911-church-14.jpg"],
   },
   {
     id: "stlouis-mo-1027-garth",
@@ -3409,7 +3409,7 @@ const HOMES = [
 
     features: { garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/granitecity-il-2558-state-1.jpg", "images/granitecity-il-2558-state-2.jpg", "images/granitecity-il-2558-state-3.jpg", "images/granitecity-il-2558-state-4.jpg", "images/granitecity-il-2558-state-5.jpg", "images/granitecity-il-2558-state-6.jpg", "images/granitecity-il-2558-state-7.jpg", "images/granitecity-il-2558-state-8.jpg", "images/granitecity-il-2558-state-9.jpg", "images/granitecity-il-2558-state-10.jpg", "images/granitecity-il-2558-state-11.jpg", "images/granitecity-il-2558-state-12.jpg", "images/granitecity-il-2558-state-13.jpg", "images/granitecity-il-2558-state-14.jpg", "images/granitecity-il-2558-state-15.jpg", "images/granitecity-il-2558-state-16.jpg", "images/granitecity-il-2558-state-17.jpg", "images/granitecity-il-2558-state-18.jpg", "images/granitecity-il-2558-state-19.jpg", "images/granitecity-il-2558-state-20.jpg", "images/granitecity-il-2558-state-21.jpg", "images/granitecity-il-2558-state-22.jpg", "images/granitecity-il-2558-state-23.jpg", "images/granitecity-il-2558-state-24.jpg"],
   },
   {
     id: "decatur-il-1163-hill",
@@ -3451,7 +3451,7 @@ const HOMES = [
 
     features: { backyard: "yes", fenced_yard: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/peoria-il-2315-ann-1.jpg", "images/peoria-il-2315-ann-2.jpg", "images/peoria-il-2315-ann-3.jpg", "images/peoria-il-2315-ann-4.jpg", "images/peoria-il-2315-ann-5.jpg", "images/peoria-il-2315-ann-6.jpg", "images/peoria-il-2315-ann-7.jpg", "images/peoria-il-2315-ann-8.jpg", "images/peoria-il-2315-ann-9.jpg", "images/peoria-il-2315-ann-10.jpg", "images/peoria-il-2315-ann-11.jpg", "images/peoria-il-2315-ann-12.jpg", "images/peoria-il-2315-ann-13.jpg", "images/peoria-il-2315-ann-14.jpg", "images/peoria-il-2315-ann-15.jpg", "images/peoria-il-2315-ann-16.jpg", "images/peoria-il-2315-ann-17.jpg", "images/peoria-il-2315-ann-18.jpg", "images/peoria-il-2315-ann-19.jpg", "images/peoria-il-2315-ann-20.jpg", "images/peoria-il-2315-ann-21.jpg", "images/peoria-il-2315-ann-22.jpg", "images/peoria-il-2315-ann-23.jpg", "images/peoria-il-2315-ann-24.jpg"],
   },
   {
     id: "stlouis-mo-5556-floy",

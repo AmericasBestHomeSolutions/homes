@@ -32,7 +32,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/cahokia-il-1123-saint-1.jpg", "images/cahokia-il-1123-saint-2.jpg", "images/cahokia-il-1123-saint-3.jpg", "images/cahokia-il-1123-saint-4.jpg", "images/cahokia-il-1123-saint-5.jpg", "images/cahokia-il-1123-saint-6.jpg", "images/cahokia-il-1123-saint-7.jpg", "images/cahokia-il-1123-saint-8.jpg", "images/cahokia-il-1123-saint-9.jpg", "images/cahokia-il-1123-saint-10.jpg", "images/cahokia-il-1123-saint-11.jpg", "images/cahokia-il-1123-saint-12.jpg", "images/cahokia-il-1123-saint-13.jpg", "images/cahokia-il-1123-saint-14.jpg", "images/cahokia-il-1123-saint-15.jpg", "images/cahokia-il-1123-saint-16.jpg", "images/cahokia-il-1123-saint-17.jpg", "images/cahokia-il-1123-saint-18.jpg", "images/cahokia-il-1123-saint-19.jpg", "images/cahokia-il-1123-saint-20.jpg", "images/cahokia-il-1123-saint-21.jpg", "images/cahokia-il-1123-saint-22.jpg", "images/cahokia-il-1123-saint-23.jpg", "images/cahokia-il-1123-saint-24.jpg"],
   },
   {
     id: "decatur-il-1428-gulick",
@@ -53,7 +53,7 @@ const HOMES = [
 
     features: { basement: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-1428-gulick-1.jpg", "images/decatur-il-1428-gulick-2.jpg", "images/decatur-il-1428-gulick-3.jpg", "images/decatur-il-1428-gulick-4.jpg", "images/decatur-il-1428-gulick-5.jpg", "images/decatur-il-1428-gulick-6.jpg", "images/decatur-il-1428-gulick-7.jpg", "images/decatur-il-1428-gulick-8.jpg", "images/decatur-il-1428-gulick-9.jpg", "images/decatur-il-1428-gulick-10.jpg", "images/decatur-il-1428-gulick-11.jpg", "images/decatur-il-1428-gulick-12.jpg", "images/decatur-il-1428-gulick-13.jpg", "images/decatur-il-1428-gulick-14.jpg", "images/decatur-il-1428-gulick-15.jpg", "images/decatur-il-1428-gulick-16.jpg", "images/decatur-il-1428-gulick-17.jpg", "images/decatur-il-1428-gulick-18.jpg", "images/decatur-il-1428-gulick-19.jpg", "images/decatur-il-1428-gulick-20.jpg", "images/decatur-il-1428-gulick-21.jpg"],
   },
   {
     id: "decatur-il-1942-church",
@@ -74,7 +74,7 @@ const HOMES = [
 
     features: { basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-1942-church-1.jpg", "images/decatur-il-1942-church-2.jpg", "images/decatur-il-1942-church-3.jpg", "images/decatur-il-1942-church-4.jpg", "images/decatur-il-1942-church-5.jpg", "images/decatur-il-1942-church-6.jpg", "images/decatur-il-1942-church-7.jpg", "images/decatur-il-1942-church-8.jpg", "images/decatur-il-1942-church-9.jpg", "images/decatur-il-1942-church-10.jpg", "images/decatur-il-1942-church-11.jpg", "images/decatur-il-1942-church-12.jpg", "images/decatur-il-1942-church-13.jpg", "images/decatur-il-1942-church-14.jpg", "images/decatur-il-1942-church-15.jpg", "images/decatur-il-1942-church-16.jpg", "images/decatur-il-1942-church-17.jpg", "images/decatur-il-1942-church-18.jpg", "images/decatur-il-1942-church-19.jpg", "images/decatur-il-1942-church-20.jpg", "images/decatur-il-1942-church-21.jpg"],
   },
   {
     id: "decatur-il-1163-hill",
@@ -2886,7 +2886,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/alton-il-606-anderson-1.jpg", "images/alton-il-606-anderson-2.jpg", "images/alton-il-606-anderson-3.jpg", "images/alton-il-606-anderson-4.jpg", "images/alton-il-606-anderson-5.jpg", "images/alton-il-606-anderson-6.jpg", "images/alton-il-606-anderson-7.jpg", "images/alton-il-606-anderson-8.jpg", "images/alton-il-606-anderson-9.jpg", "images/alton-il-606-anderson-10.jpg", "images/alton-il-606-anderson-11.jpg", "images/alton-il-606-anderson-12.jpg", "images/alton-il-606-anderson-13.jpg", "images/alton-il-606-anderson-14.jpg", "images/alton-il-606-anderson-15.jpg", "images/alton-il-606-anderson-16.jpg", "images/alton-il-606-anderson-17.jpg", "images/alton-il-606-anderson-18.jpg", "images/alton-il-606-anderson-19.jpg", "images/alton-il-606-anderson-20.jpg", "images/alton-il-606-anderson-21.jpg", "images/alton-il-606-anderson-22.jpg", "images/alton-il-606-anderson-23.jpg", "images/alton-il-606-anderson-24.jpg"],
   },
   {
     id: "stlouis-mo-4931-plover",
@@ -3429,6 +3429,6 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/stlouis-mo-7320-park-1.jpg", "images/stlouis-mo-7320-park-2.jpg", "images/stlouis-mo-7320-park-3.jpg", "images/stlouis-mo-7320-park-4.jpg", "images/stlouis-mo-7320-park-5.jpg", "images/stlouis-mo-7320-park-6.jpg", "images/stlouis-mo-7320-park-7.jpg", "images/stlouis-mo-7320-park-8.jpg", "images/stlouis-mo-7320-park-9.jpg", "images/stlouis-mo-7320-park-10.jpg", "images/stlouis-mo-7320-park-11.jpg", "images/stlouis-mo-7320-park-12.jpg", "images/stlouis-mo-7320-park-13.jpg", "images/stlouis-mo-7320-park-14.jpg", "images/stlouis-mo-7320-park-15.jpg", "images/stlouis-mo-7320-park-16.jpg", "images/stlouis-mo-7320-park-17.jpg", "images/stlouis-mo-7320-park-18.jpg", "images/stlouis-mo-7320-park-19.jpg", "images/stlouis-mo-7320-park-20.jpg", "images/stlouis-mo-7320-park-21.jpg", "images/stlouis-mo-7320-park-22.jpg", "images/stlouis-mo-7320-park-23.jpg", "images/stlouis-mo-7320-park-24.jpg"],
   },
 ];

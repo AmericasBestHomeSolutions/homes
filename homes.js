@@ -13,27 +13,8 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (168 live, rebuilt from master published 2026-09-21) --- */
+/* --- the homes (170 live, rebuilt from master published 2026-09-21) --- */
 const HOMES = [
-  {
-    id: "cahokia-il-1123-saint",
-    address:     "1123 Saint Benedict Dr",
-    zip:         "62206",
-    city:  "Cahokia",
-    state: "IL",
-    beds:  2,
-    baths: 1,
-    sqft:  "1501",
-    status: "Available",
-
-    monthlyPayment: 895,
-    moveIn:         3000,
-    lockedPrice:    80971,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    ["images/cahokia-il-1123-saint-1.jpg", "images/cahokia-il-1123-saint-2.jpg", "images/cahokia-il-1123-saint-3.jpg", "images/cahokia-il-1123-saint-4.jpg", "images/cahokia-il-1123-saint-5.jpg", "images/cahokia-il-1123-saint-6.jpg", "images/cahokia-il-1123-saint-7.jpg", "images/cahokia-il-1123-saint-8.jpg", "images/cahokia-il-1123-saint-9.jpg", "images/cahokia-il-1123-saint-10.jpg", "images/cahokia-il-1123-saint-11.jpg", "images/cahokia-il-1123-saint-12.jpg", "images/cahokia-il-1123-saint-13.jpg", "images/cahokia-il-1123-saint-14.jpg", "images/cahokia-il-1123-saint-15.jpg", "images/cahokia-il-1123-saint-16.jpg", "images/cahokia-il-1123-saint-17.jpg", "images/cahokia-il-1123-saint-18.jpg", "images/cahokia-il-1123-saint-19.jpg", "images/cahokia-il-1123-saint-20.jpg", "images/cahokia-il-1123-saint-21.jpg", "images/cahokia-il-1123-saint-22.jpg", "images/cahokia-il-1123-saint-23.jpg", "images/cahokia-il-1123-saint-24.jpg"],
-  },
   {
     id: "decatur-il-1428-gulick",
     address:     "1428 N Gulick",
@@ -581,27 +562,6 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-4627-korte-1.jpg", "images/stlouis-mo-4627-korte-2.jpg", "images/stlouis-mo-4627-korte-3.jpg", "images/stlouis-mo-4627-korte-4.jpg", "images/stlouis-mo-4627-korte-5.jpg", "images/stlouis-mo-4627-korte-6.jpg", "images/stlouis-mo-4627-korte-7.jpg", "images/stlouis-mo-4627-korte-8.jpg", "images/stlouis-mo-4627-korte-9.jpg", "images/stlouis-mo-4627-korte-10.jpg", "images/stlouis-mo-4627-korte-11.jpg", "images/stlouis-mo-4627-korte-12.jpg", "images/stlouis-mo-4627-korte-13.jpg", "images/stlouis-mo-4627-korte-14.jpg", "images/stlouis-mo-4627-korte-15.jpg", "images/stlouis-mo-4627-korte-16.jpg", "images/stlouis-mo-4627-korte-17.jpg", "images/stlouis-mo-4627-korte-18.jpg", "images/stlouis-mo-4627-korte-19.jpg", "images/stlouis-mo-4627-korte-20.jpg", "images/stlouis-mo-4627-korte-21.jpg", "images/stlouis-mo-4627-korte-22.jpg", "images/stlouis-mo-4627-korte-23.jpg", "images/stlouis-mo-4627-korte-24.jpg"],
-  },
-  {
-    id: "sparta-il-617-1st",
-    address:     "617 W 1st St",
-    zip:         "62286",
-    description: "Newly renovated 2 bed 1 bath 750 sf. Small town about an hour south east of STL.. One car attached garage.. Move-in Ready: Brand new paint and luxury vinyl plank (LVP) flooring throughout.Layout: Spacious, seamless living room and kitchen setup.Accessibility: Convenient ramp access installed.Parking & Laundry: 1-car garage with an attached laundry area right between the house and garage.Outdoor Space: Great backyard perfect for relaxing",
-    city:  "Sparta",
-    state: "IL",
-    beds:  2,
-    baths: 1,
-    sqft:  "750",
-    status: "Available",
-
-    monthlyPayment: 900,
-    moveIn:         3000,
-    lockedPrice:    86000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { backyard: "yes", garage: "yes", off_street_parking: "yes" },
-    heroPhoto: "",
-    photos:    ["images/sparta-il-617-1st-1.jpg", "images/sparta-il-617-1st-2.jpg", "images/sparta-il-617-1st-3.jpg", "images/sparta-il-617-1st-4.jpg", "images/sparta-il-617-1st-5.jpg", "images/sparta-il-617-1st-6.jpg", "images/sparta-il-617-1st-7.jpg", "images/sparta-il-617-1st-8.jpg", "images/sparta-il-617-1st-9.jpg", "images/sparta-il-617-1st-10.jpg", "images/sparta-il-617-1st-11.jpg", "images/sparta-il-617-1st-12.jpg", "images/sparta-il-617-1st-13.jpg", "images/sparta-il-617-1st-14.jpg", "images/sparta-il-617-1st-15.jpg", "images/sparta-il-617-1st-16.jpg", "images/sparta-il-617-1st-17.jpg", "images/sparta-il-617-1st-18.jpg", "images/sparta-il-617-1st-19.jpg", "images/sparta-il-617-1st-20.jpg", "images/sparta-il-617-1st-21.jpg", "images/sparta-il-617-1st-22.jpg", "images/sparta-il-617-1st-23.jpg", "images/sparta-il-617-1st-24.jpg"],
   },
   {
     id: "eaststlouis-il-835-74th",
@@ -2131,9 +2091,9 @@ const HOMES = [
     sqft:  "720",
     status: "Available",
 
-    monthlyPayment: 895,
-    moveIn:         3000,
-    lockedPrice:    89000,
+    monthlyPayment: 875,
+    moveIn:         2500,
+    lockedPrice:    85000,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
@@ -3350,6 +3310,86 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/peoria-il-422-louisa-1.jpg", "images/peoria-il-422-louisa-2.jpg", "images/peoria-il-422-louisa-3.jpg", "images/peoria-il-422-louisa-4.jpg", "images/peoria-il-422-louisa-5.jpg", "images/peoria-il-422-louisa-6.jpg", "images/peoria-il-422-louisa-7.jpg", "images/peoria-il-422-louisa-8.jpg", "images/peoria-il-422-louisa-9.jpg", "images/peoria-il-422-louisa-10.jpg", "images/peoria-il-422-louisa-11.jpg", "images/peoria-il-422-louisa-12.jpg", "images/peoria-il-422-louisa-13.jpg", "images/peoria-il-422-louisa-14.jpg", "images/peoria-il-422-louisa-15.jpg", "images/peoria-il-422-louisa-16.jpg", "images/peoria-il-422-louisa-17.jpg", "images/peoria-il-422-louisa-18.jpg", "images/peoria-il-422-louisa-19.jpg", "images/peoria-il-422-louisa-20.jpg", "images/peoria-il-422-louisa-21.jpg", "images/peoria-il-422-louisa-22.jpg", "images/peoria-il-422-louisa-23.jpg", "images/peoria-il-422-louisa-24.jpg"],
+  },
+  {
+    id: "flint-mi-3238-colorado",
+    address:     "3238 Colorado Ave",
+    zip:         "48506",
+    description: "750 sqft, fenced back yard",
+    city:  "Flint",
+    state: "MI",
+    beds:  2,
+    baths: 1,
+    sqft:  "750",
+    status: "Available",
+
+    monthlyPayment: 825,
+    moveIn:         3000,
+    lockedPrice:    79000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { backyard: "yes", fenced_yard: "yes" },
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "stlouis-mo-10044-green",
+    address:     "10044 Green Valley Dr.",
+    zip:         "63136",
+    city:  "St. Louis",
+    state: "MO",
+    beds:  3,
+    baths: 1,
+    sqft:  "",
+    status: "Available",
+
+    monthlyPayment: 850,
+    moveIn:         3000,
+    lockedPrice:    79000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "decatur-il-234-home",
+    address:     "234 Home Ave",
+    zip:         "62522",
+    description: "Owner financing!!! Path to Home Ownership!!!. 3 bed / 1 bath / 960 sqft –. Back of nice neighborhood and next to Millikin University. Large front & back yard, updated furnace and water heater,. deep front porch, unfinished basement. Refrigerator & stove/oven included",
+    city:  "Decatur",
+    state: "IL",
+    beds:  3,
+    baths: 1,
+    sqft:  "960",
+    status: "Available",
+
+    monthlyPayment: 955,
+    moveIn:         3000,
+    lockedPrice:    85000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { backyard: "yes", basement: "yes" },
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "flint-mi-523-grace",
+    address:     "523 Grace St.",
+    zip:         "48503",
+    city:  "Flint",
+    state: "MI",
+    beds:  3,
+    baths: 1,
+    sqft:  "1,144",
+    status: "Available",
+
+    monthlyPayment: 850,
+    moveIn:         2500,
+    lockedPrice:    84900,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
   },
   {
     id: "david-il-209-central",

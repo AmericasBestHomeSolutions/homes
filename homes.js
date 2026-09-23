@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (171 live, rebuilt from master published 2026-09-23) --- */
+/* --- the homes (170 live, rebuilt from master published 2026-09-23) --- */
 const HOMES = [
   {
     id: "stlouis-mo-6580-saint",
@@ -1236,27 +1236,6 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-5508-beacon-1.jpg", "images/stlouis-mo-5508-beacon-2.jpg", "images/stlouis-mo-5508-beacon-3.jpg", "images/stlouis-mo-5508-beacon-4.jpg", "images/stlouis-mo-5508-beacon-5.jpg", "images/stlouis-mo-5508-beacon-6.jpg", "images/stlouis-mo-5508-beacon-7.jpg", "images/stlouis-mo-5508-beacon-8.jpg", "images/stlouis-mo-5508-beacon-9.jpg", "images/stlouis-mo-5508-beacon-10.jpg", "images/stlouis-mo-5508-beacon-11.jpg", "images/stlouis-mo-5508-beacon-12.jpg", "images/stlouis-mo-5508-beacon-13.jpg", "images/stlouis-mo-5508-beacon-14.jpg", "images/stlouis-mo-5508-beacon-15.jpg", "images/stlouis-mo-5508-beacon-16.jpg"],
-  },
-  {
-    id: "barling-ar-2207-k",
-    address:     "2207 K St.",
-    zip:         "72923",
-    description: "955 SF,.. 2 bed, 2 bath.. Lot 0.30 acres. Excellent neighborhood. Gas water heater.. Detached 1 car garage,. Big laundry... No AC in the house.. No leakings. Tenants was living in the house until last week, August, 20th/2026. Tenants said there is a problem in the floor around the toilet in the second bathroom.. Some outlets are not working",
-    city:  "Barling",
-    state: "AR",
-    beds:  2,
-    baths: 2,
-    sqft:  "955",
-    status: "Available",
-
-    monthlyPayment: 699,
-    moveIn:         1500,
-    lockedPrice:    75000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { garage: "yes", off_street_parking: "yes", central_air: "no" },
-    heroPhoto: "",
-    photos:    ["images/barling-ar-2207-k-1.jpg", "images/barling-ar-2207-k-2.jpg", "images/barling-ar-2207-k-3.jpg", "images/barling-ar-2207-k-4.jpg", "images/barling-ar-2207-k-5.jpg", "images/barling-ar-2207-k-6.jpg", "images/barling-ar-2207-k-7.jpg", "images/barling-ar-2207-k-8.jpg", "images/barling-ar-2207-k-9.jpg", "images/barling-ar-2207-k-10.jpg", "images/barling-ar-2207-k-11.jpg", "images/barling-ar-2207-k-12.jpg", "images/barling-ar-2207-k-13.jpg", "images/barling-ar-2207-k-14.jpg", "images/barling-ar-2207-k-15.jpg", "images/barling-ar-2207-k-16.jpg", "images/barling-ar-2207-k-17.jpg", "images/barling-ar-2207-k-18.jpg", "images/barling-ar-2207-k-19.jpg", "images/barling-ar-2207-k-20.jpg", "images/barling-ar-2207-k-21.jpg", "images/barling-ar-2207-k-22.jpg", "images/barling-ar-2207-k-23.jpg", "images/barling-ar-2207-k-24.jpg"],
   },
   {
     id: "stlouis-mo-5930-shulte",

@@ -34,7 +34,7 @@ const HOMES = [
 
     features: { basement: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/stlouis-mo-6580-saint-1.jpg", "images/stlouis-mo-6580-saint-2.jpg", "images/stlouis-mo-6580-saint-3.jpg", "images/stlouis-mo-6580-saint-4.jpg", "images/stlouis-mo-6580-saint-5.jpg", "images/stlouis-mo-6580-saint-6.jpg", "images/stlouis-mo-6580-saint-7.jpg", "images/stlouis-mo-6580-saint-8.jpg", "images/stlouis-mo-6580-saint-9.jpg", "images/stlouis-mo-6580-saint-10.jpg", "images/stlouis-mo-6580-saint-11.jpg", "images/stlouis-mo-6580-saint-12.jpg", "images/stlouis-mo-6580-saint-13.jpg", "images/stlouis-mo-6580-saint-14.jpg", "images/stlouis-mo-6580-saint-15.jpg", "images/stlouis-mo-6580-saint-16.jpg", "images/stlouis-mo-6580-saint-17.jpg", "images/stlouis-mo-6580-saint-18.jpg", "images/stlouis-mo-6580-saint-19.jpg", "images/stlouis-mo-6580-saint-20.jpg", "images/stlouis-mo-6580-saint-21.jpg", "images/stlouis-mo-6580-saint-22.jpg", "images/stlouis-mo-6580-saint-23.jpg", "images/stlouis-mo-6580-saint-24.jpg"],
   },
   {
     id: "benton-il-428-central",
@@ -55,7 +55,7 @@ const HOMES = [
 
     features: { backyard: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/benton-il-428-central-1.jpg", "images/benton-il-428-central-2.jpg", "images/benton-il-428-central-3.jpg", "images/benton-il-428-central-4.jpg", "images/benton-il-428-central-5.jpg", "images/benton-il-428-central-6.jpg", "images/benton-il-428-central-7.jpg", "images/benton-il-428-central-8.jpg", "images/benton-il-428-central-9.jpg", "images/benton-il-428-central-10.jpg", "images/benton-il-428-central-11.jpg", "images/benton-il-428-central-12.jpg", "images/benton-il-428-central-13.jpg", "images/benton-il-428-central-14.jpg", "images/benton-il-428-central-15.jpg", "images/benton-il-428-central-16.jpg", "images/benton-il-428-central-17.jpg"],
   },
   {
     id: "decatur-il-234-home",

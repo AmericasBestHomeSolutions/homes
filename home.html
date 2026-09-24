@@ -386,7 +386,8 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
     const mapQ = encodeURIComponent(addrText);
     $("propAddr").innerHTML = `${addrText} <a href="https://www.google.com/maps/search/?api=1&query=${mapQ}" target="_blank" rel="noopener" style="font-weight:500;font-size:14px;color:var(--go,#e23b3b);text-decoration:none;white-space:nowrap;margin-left:6px">View on map &#8599;</a>`;
   })();
-  if (C.description) { $("aboutDesc").textContent = C.description; $("aboutHomeSec").hidden = false; }
+  // written page copy (site_copy.py); falls back to the notes only for a home held for review
+  if (C.copy || C.description) { $("aboutDesc").textContent = C.copy || C.description; $("aboutHomeSec").hidden = false; }
 
   // Property features — yes/no flags pulled from the listing notes (unknown omitted).
   // Honest framing: these come from the written description, not a verified inspection.

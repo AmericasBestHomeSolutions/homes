@@ -6718,5 +6718,15 @@
   "central_air": "unknown",
   "storage_shed": "unknown",
   "attic": "unknown"
+ },
+ "1fbe41bb7de9fb6b090bffc7419779faa8a43a88": {
+  "backyard": "yes",
+  "fenced_yard": "yes",
+  "basement": "no",
+  "garage": "unknown",
+  "off_street_parking": "unknown",
+  "central_air": "yes",
+  "storage_shed": "yes",
+  "attic": "unknown"
  }
 }

@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (202 live, rebuilt from master published 2026-09-28) --- */
+/* --- the homes (203 live, rebuilt from master published 2026-09-28) --- */
 const HOMES = [
   {
     id: "decatur-il-933-elmhurst",
@@ -120,7 +120,7 @@ const HOMES = [
 
     features: { backyard: "yes", fenced_yard: "yes", basement: "yes", central_air: "yes", storage_shed: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-1175-division-1.jpg", "images/decatur-il-1175-division-2.jpg", "images/decatur-il-1175-division-3.jpg", "images/decatur-il-1175-division-4.jpg", "images/decatur-il-1175-division-5.jpg", "images/decatur-il-1175-division-6.jpg", "images/decatur-il-1175-division-7.jpg", "images/decatur-il-1175-division-8.jpg", "images/decatur-il-1175-division-9.jpg", "images/decatur-il-1175-division-10.jpg", "images/decatur-il-1175-division-11.jpg", "images/decatur-il-1175-division-12.jpg", "images/decatur-il-1175-division-13.jpg", "images/decatur-il-1175-division-14.jpg", "images/decatur-il-1175-division-15.jpg", "images/decatur-il-1175-division-16.jpg", "images/decatur-il-1175-division-17.jpg", "images/decatur-il-1175-division-18.jpg", "images/decatur-il-1175-division-19.jpg", "images/decatur-il-1175-division-20.jpg", "images/decatur-il-1175-division-21.jpg", "images/decatur-il-1175-division-22.jpg", "images/decatur-il-1175-division-23.jpg", "images/decatur-il-1175-division-24.jpg"],
   },
   {
     id: "decatur-il-1421-sedgwick",
@@ -164,7 +164,7 @@ const HOMES = [
 
     features: { backyard: "yes", central_air: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/bethany-il-120-crowder-1.jpg", "images/bethany-il-120-crowder-2.jpg", "images/bethany-il-120-crowder-3.jpg", "images/bethany-il-120-crowder-4.jpg", "images/bethany-il-120-crowder-5.jpg", "images/bethany-il-120-crowder-6.jpg", "images/bethany-il-120-crowder-7.jpg", "images/bethany-il-120-crowder-8.jpg", "images/bethany-il-120-crowder-9.jpg", "images/bethany-il-120-crowder-10.jpg", "images/bethany-il-120-crowder-11.jpg", "images/bethany-il-120-crowder-12.jpg", "images/bethany-il-120-crowder-13.jpg", "images/bethany-il-120-crowder-14.jpg", "images/bethany-il-120-crowder-15.jpg", "images/bethany-il-120-crowder-16.jpg", "images/bethany-il-120-crowder-17.jpg", "images/bethany-il-120-crowder-18.jpg", "images/bethany-il-120-crowder-19.jpg", "images/bethany-il-120-crowder-20.jpg", "images/bethany-il-120-crowder-21.jpg", "images/bethany-il-120-crowder-22.jpg", "images/bethany-il-120-crowder-23.jpg", "images/bethany-il-120-crowder-24.jpg"],
   },
   {
     id: "centralia-il-327-hickory",
@@ -186,7 +186,7 @@ const HOMES = [
 
     features: { garage: "yes", storage_shed: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/centralia-il-327-hickory-1.jpg", "images/centralia-il-327-hickory-2.jpg", "images/centralia-il-327-hickory-3.jpg", "images/centralia-il-327-hickory-4.jpg", "images/centralia-il-327-hickory-5.jpg", "images/centralia-il-327-hickory-6.jpg", "images/centralia-il-327-hickory-7.jpg", "images/centralia-il-327-hickory-8.jpg", "images/centralia-il-327-hickory-9.jpg", "images/centralia-il-327-hickory-10.jpg", "images/centralia-il-327-hickory-11.jpg", "images/centralia-il-327-hickory-12.jpg", "images/centralia-il-327-hickory-13.jpg", "images/centralia-il-327-hickory-14.jpg"],
   },
   {
     id: "marion-in-1615-9th",
@@ -2464,7 +2464,7 @@ const HOMES = [
 
     features: { basement: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/cahokia-il-17-cahokia-1.jpg", "images/cahokia-il-17-cahokia-2.jpg", "images/cahokia-il-17-cahokia-3.jpg", "images/cahokia-il-17-cahokia-4.jpg", "images/cahokia-il-17-cahokia-5.jpg", "images/cahokia-il-17-cahokia-6.jpg", "images/cahokia-il-17-cahokia-7.jpg", "images/cahokia-il-17-cahokia-8.jpg", "images/cahokia-il-17-cahokia-9.jpg", "images/cahokia-il-17-cahokia-10.jpg", "images/cahokia-il-17-cahokia-11.jpg", "images/cahokia-il-17-cahokia-12.jpg", "images/cahokia-il-17-cahokia-13.jpg", "images/cahokia-il-17-cahokia-14.jpg", "images/cahokia-il-17-cahokia-15.jpg", "images/cahokia-il-17-cahokia-16.jpg", "images/cahokia-il-17-cahokia-17.jpg", "images/cahokia-il-17-cahokia-18.jpg", "images/cahokia-il-17-cahokia-19.jpg", "images/cahokia-il-17-cahokia-20.jpg", "images/cahokia-il-17-cahokia-21.jpg", "images/cahokia-il-17-cahokia-22.jpg", "images/cahokia-il-17-cahokia-23.jpg", "images/cahokia-il-17-cahokia-24.jpg"],
   },
   {
     id: "cahokia-il-1320-williams",
@@ -2484,7 +2484,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/cahokia-il-1320-williams-1.jpg", "images/cahokia-il-1320-williams-2.jpg", "images/cahokia-il-1320-williams-3.jpg", "images/cahokia-il-1320-williams-4.jpg", "images/cahokia-il-1320-williams-5.jpg", "images/cahokia-il-1320-williams-6.jpg", "images/cahokia-il-1320-williams-7.jpg", "images/cahokia-il-1320-williams-8.jpg", "images/cahokia-il-1320-williams-9.jpg", "images/cahokia-il-1320-williams-10.jpg", "images/cahokia-il-1320-williams-11.jpg", "images/cahokia-il-1320-williams-12.jpg", "images/cahokia-il-1320-williams-13.jpg", "images/cahokia-il-1320-williams-14.jpg", "images/cahokia-il-1320-williams-15.jpg", "images/cahokia-il-1320-williams-16.jpg", "images/cahokia-il-1320-williams-17.jpg", "images/cahokia-il-1320-williams-18.jpg", "images/cahokia-il-1320-williams-19.jpg", "images/cahokia-il-1320-williams-20.jpg"],
   },
   {
     id: "carbondale-il-615-almond",
@@ -3219,7 +3219,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/chesapeake-va-1315-poindexter-1.jpg", "images/chesapeake-va-1315-poindexter-2.jpg", "images/chesapeake-va-1315-poindexter-3.jpg", "images/chesapeake-va-1315-poindexter-4.jpg", "images/chesapeake-va-1315-poindexter-5.jpg", "images/chesapeake-va-1315-poindexter-6.jpg", "images/chesapeake-va-1315-poindexter-7.jpg", "images/chesapeake-va-1315-poindexter-8.jpg", "images/chesapeake-va-1315-poindexter-9.jpg", "images/chesapeake-va-1315-poindexter-10.jpg", "images/chesapeake-va-1315-poindexter-11.jpg", "images/chesapeake-va-1315-poindexter-12.jpg", "images/chesapeake-va-1315-poindexter-13.jpg", "images/chesapeake-va-1315-poindexter-14.jpg", "images/chesapeake-va-1315-poindexter-15.jpg", "images/chesapeake-va-1315-poindexter-16.jpg", "images/chesapeake-va-1315-poindexter-17.jpg", "images/chesapeake-va-1315-poindexter-18.jpg", "images/chesapeake-va-1315-poindexter-19.jpg", "images/chesapeake-va-1315-poindexter-20.jpg", "images/chesapeake-va-1315-poindexter-21.jpg", "images/chesapeake-va-1315-poindexter-22.jpg", "images/chesapeake-va-1315-poindexter-23.jpg", "images/chesapeake-va-1315-poindexter-24.jpg"],
   },
   {
     id: "alton-il-3024-glenwood",
@@ -3346,7 +3346,7 @@ const HOMES = [
 
     features: { backyard: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/cahokia-il-2416-mary-1.jpg", "images/cahokia-il-2416-mary-2.jpg", "images/cahokia-il-2416-mary-3.jpg", "images/cahokia-il-2416-mary-4.jpg", "images/cahokia-il-2416-mary-5.jpg", "images/cahokia-il-2416-mary-6.jpg", "images/cahokia-il-2416-mary-7.jpg", "images/cahokia-il-2416-mary-8.jpg"],
   },
   {
     id: "peoria-il-1829-stanley",
@@ -3846,6 +3846,27 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-1027-garth-1.jpg", "images/stlouis-mo-1027-garth-2.jpg", "images/stlouis-mo-1027-garth-3.jpg", "images/stlouis-mo-1027-garth-4.jpg", "images/stlouis-mo-1027-garth-5.jpg", "images/stlouis-mo-1027-garth-6.jpg", "images/stlouis-mo-1027-garth-7.jpg", "images/stlouis-mo-1027-garth-8.jpg", "images/stlouis-mo-1027-garth-9.jpg", "images/stlouis-mo-1027-garth-10.jpg", "images/stlouis-mo-1027-garth-11.jpg", "images/stlouis-mo-1027-garth-12.jpg", "images/stlouis-mo-1027-garth-13.jpg", "images/stlouis-mo-1027-garth-14.jpg", "images/stlouis-mo-1027-garth-15.jpg", "images/stlouis-mo-1027-garth-16.jpg", "images/stlouis-mo-1027-garth-17.jpg", "images/stlouis-mo-1027-garth-18.jpg", "images/stlouis-mo-1027-garth-19.jpg", "images/stlouis-mo-1027-garth-20.jpg", "images/stlouis-mo-1027-garth-21.jpg", "images/stlouis-mo-1027-garth-22.jpg", "images/stlouis-mo-1027-garth-23.jpg"],
+  },
+  {
+    id: "eaststlouis-il-634-8th",
+    address:     "634 N 8th St.",
+    zip:         "62201",
+    description: "updated water heater, furnace, electrical panel",
+    copy:        "$720 a month, $2,000 to move in, and a three-bedroom, two-bath home in East St. Louis that answers to you instead of a landlord. The big-ticket systems have already been handled: the water heater, furnace, and electrical panel have all been updated, so the parts of a house that cost the most to replace aren't the first things on your list. With three bedrooms, everyone gets a door to close, and the boxes you carry in this time are staying put. The purchase price is $59,000, fixed on paper the day you sign, with owner financing and no bank anywhere in the picture. The home is sold as-is, and the best way to know it is to walk through it in person. A three-bedroom at this payment won't wait around, so send us a text and let's get you inside this week.",
+    city:  "East St. Louis",
+    state: "IL",
+    beds:  3,
+    baths: 2,
+    sqft:  "unknown",
+    status: "Available",
+
+    monthlyPayment: 720,
+    moveIn:         2000,
+    lockedPrice:    59000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
   },
   {
     id: "decatur-il-1527-oakland",

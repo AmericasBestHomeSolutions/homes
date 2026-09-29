@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (203 live, rebuilt from master published 2026-09-29) --- */
+/* --- the homes (202 live, rebuilt from master published 2026-09-29) --- */
 const HOMES = [
   {
     id: "decatur-il-933-elmhurst",
@@ -1774,7 +1774,7 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "1064",
-    status: "Available",
+    status: "Pending",
 
     monthlyPayment: 925,
     moveIn:         2500,
@@ -2885,7 +2885,7 @@ const HOMES = [
 
     features: { basement: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/peoria-il-1205-sheridan-1.jpg", "images/peoria-il-1205-sheridan-2.jpg", "images/peoria-il-1205-sheridan-3.jpg", "images/peoria-il-1205-sheridan-4.jpg", "images/peoria-il-1205-sheridan-5.jpg", "images/peoria-il-1205-sheridan-6.jpg", "images/peoria-il-1205-sheridan-7.jpg", "images/peoria-il-1205-sheridan-8.jpg", "images/peoria-il-1205-sheridan-9.jpg", "images/peoria-il-1205-sheridan-10.jpg", "images/peoria-il-1205-sheridan-11.jpg", "images/peoria-il-1205-sheridan-12.jpg", "images/peoria-il-1205-sheridan-13.jpg", "images/peoria-il-1205-sheridan-14.jpg", "images/peoria-il-1205-sheridan-15.jpg", "images/peoria-il-1205-sheridan-16.jpg", "images/peoria-il-1205-sheridan-17.jpg", "images/peoria-il-1205-sheridan-18.jpg", "images/peoria-il-1205-sheridan-19.jpg", "images/peoria-il-1205-sheridan-20.jpg", "images/peoria-il-1205-sheridan-21.jpg", "images/peoria-il-1205-sheridan-22.jpg", "images/peoria-il-1205-sheridan-23.jpg", "images/peoria-il-1205-sheridan-24.jpg"],
   },
   {
     id: "decatur-il-462-leafland",
@@ -4028,26 +4028,6 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-3422-lucas-1.jpg", "images/stlouis-mo-3422-lucas-2.jpg", "images/stlouis-mo-3422-lucas-3.jpg", "images/stlouis-mo-3422-lucas-4.jpg", "images/stlouis-mo-3422-lucas-5.jpg", "images/stlouis-mo-3422-lucas-6.jpg", "images/stlouis-mo-3422-lucas-7.jpg", "images/stlouis-mo-3422-lucas-8.jpg", "images/stlouis-mo-3422-lucas-9.jpg", "images/stlouis-mo-3422-lucas-10.jpg", "images/stlouis-mo-3422-lucas-11.jpg", "images/stlouis-mo-3422-lucas-12.jpg", "images/stlouis-mo-3422-lucas-13.jpg", "images/stlouis-mo-3422-lucas-14.jpg", "images/stlouis-mo-3422-lucas-15.jpg", "images/stlouis-mo-3422-lucas-16.jpg", "images/stlouis-mo-3422-lucas-17.jpg", "images/stlouis-mo-3422-lucas-18.jpg", "images/stlouis-mo-3422-lucas-19.jpg", "images/stlouis-mo-3422-lucas-20.jpg", "images/stlouis-mo-3422-lucas-21.jpg", "images/stlouis-mo-3422-lucas-22.jpg", "images/stlouis-mo-3422-lucas-23.jpg", "images/stlouis-mo-3422-lucas-24.jpg"],
-  },
-  {
-    id: "stlouis-mo-2528-avis",
-    address:     "2528 Avis St",
-    zip:         "63136",
-    copy:        "$795 a month and $2,000 to move in: that's what it takes to start owning this two-bedroom, one-bath home in St. Louis. No bank, no mortgage application, no waiting on someone in an office to decide your future. This is owner financing, plain and simple, through Americas Best Home Solutions. Your monthly payment is written into the contract from the start, so there's no bracing for a landlord to raise the rent every year. You'll know exactly what's due, month after month, and every one of those payments goes toward a place with your name on it. The purchase price is $69,000, agreed on in writing the day you sign. The home is sold as-is, so come walk through it in person and get a feel for every room before you decide. Don't let this one pass you by. Send us a text or message now to set up your walk-through.",
-    city:  "St. Louis",
-    state: "MO",
-    beds:  2,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 795,
-    moveIn:         2000,
-    lockedPrice:    69000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
   },
   {
     id: "stlouis-mo-1338-gregan",

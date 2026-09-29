@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (202 live, rebuilt from master published 2026-09-29) --- */
+/* --- the homes (203 live, rebuilt from master published 2026-09-29) --- */
 const HOMES = [
   {
     id: "decatur-il-933-elmhurst",
@@ -3700,7 +3700,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/eaststlouis-il-725-39th-1.jpg", "images/eaststlouis-il-725-39th-2.jpg", "images/eaststlouis-il-725-39th-3.jpg", "images/eaststlouis-il-725-39th-4.jpg", "images/eaststlouis-il-725-39th-5.jpg", "images/eaststlouis-il-725-39th-6.jpg", "images/eaststlouis-il-725-39th-7.jpg", "images/eaststlouis-il-725-39th-8.jpg", "images/eaststlouis-il-725-39th-9.jpg", "images/eaststlouis-il-725-39th-10.jpg", "images/eaststlouis-il-725-39th-11.jpg", "images/eaststlouis-il-725-39th-12.jpg", "images/eaststlouis-il-725-39th-13.jpg", "images/eaststlouis-il-725-39th-14.jpg", "images/eaststlouis-il-725-39th-15.jpg", "images/eaststlouis-il-725-39th-16.jpg", "images/eaststlouis-il-725-39th-17.jpg", "images/eaststlouis-il-725-39th-18.jpg", "images/eaststlouis-il-725-39th-19.jpg", "images/eaststlouis-il-725-39th-20.jpg", "images/eaststlouis-il-725-39th-21.jpg", "images/eaststlouis-il-725-39th-22.jpg", "images/eaststlouis-il-725-39th-23.jpg", "images/eaststlouis-il-725-39th-24.jpg"],
   },
   {
     id: "stlouis-mo-5124-northland",
@@ -3787,6 +3787,25 @@ const HOMES = [
     photos:    ["images/westfrankfort-il-1310-poplar-1.jpg", "images/westfrankfort-il-1310-poplar-2.jpg", "images/westfrankfort-il-1310-poplar-3.jpg", "images/westfrankfort-il-1310-poplar-4.jpg", "images/westfrankfort-il-1310-poplar-5.jpg", "images/westfrankfort-il-1310-poplar-6.jpg", "images/westfrankfort-il-1310-poplar-7.jpg", "images/westfrankfort-il-1310-poplar-8.jpg", "images/westfrankfort-il-1310-poplar-9.jpg", "images/westfrankfort-il-1310-poplar-10.jpg", "images/westfrankfort-il-1310-poplar-11.jpg", "images/westfrankfort-il-1310-poplar-12.jpg", "images/westfrankfort-il-1310-poplar-13.jpg", "images/westfrankfort-il-1310-poplar-14.jpg", "images/westfrankfort-il-1310-poplar-15.jpg", "images/westfrankfort-il-1310-poplar-16.jpg", "images/westfrankfort-il-1310-poplar-17.jpg", "images/westfrankfort-il-1310-poplar-18.jpg", "images/westfrankfort-il-1310-poplar-19.jpg", "images/westfrankfort-il-1310-poplar-20.jpg", "images/westfrankfort-il-1310-poplar-21.jpg", "images/westfrankfort-il-1310-poplar-22.jpg", "images/westfrankfort-il-1310-poplar-23.jpg", "images/westfrankfort-il-1310-poplar-24.jpg"],
   },
   {
+    id: "eaststlouis-il-6000-old",
+    address:     "6000 Old Missouri Ave",
+    copy:        "$650 a month and $2,500 to move in. That's what it takes to start owning this East St. Louis home, with no bank standing between you and the front door. This is owner financing through a contract for deed, which means no mortgage application and no waiting on a loan officer to say yes. Your monthly payment is written into the agreement from the start, so instead of bracing every year for a landlord to raise the rent, you'll know exactly what's due. Every check goes toward a home you're buying, not someone else's rental. The purchase price is $59,000, settled the day you sign. The home is sold as-is, so come walk through it in person and get a feel for it before you decide. Homes at this price don't sit around for long. Send us a text or message now and let's get you inside.",
+    city:  "East St. Louis",
+    state: "IL",
+    beds:  "",
+    baths: "",
+    sqft:  "",
+    status: "Available",
+
+    monthlyPayment: 650,
+    moveIn:         2500,
+    lockedPrice:    59000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
     id: "stlouis-mo-1920-prior",
     address:     "1920 Prior Dr",
     zip:         "63136",
@@ -3866,7 +3885,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/eaststlouis-il-634-8th-1.jpg", "images/eaststlouis-il-634-8th-2.jpg", "images/eaststlouis-il-634-8th-3.jpg", "images/eaststlouis-il-634-8th-4.jpg", "images/eaststlouis-il-634-8th-5.jpg", "images/eaststlouis-il-634-8th-6.jpg", "images/eaststlouis-il-634-8th-7.jpg", "images/eaststlouis-il-634-8th-8.jpg", "images/eaststlouis-il-634-8th-9.jpg", "images/eaststlouis-il-634-8th-10.jpg", "images/eaststlouis-il-634-8th-11.jpg", "images/eaststlouis-il-634-8th-12.jpg", "images/eaststlouis-il-634-8th-13.jpg", "images/eaststlouis-il-634-8th-14.jpg", "images/eaststlouis-il-634-8th-15.jpg", "images/eaststlouis-il-634-8th-16.jpg", "images/eaststlouis-il-634-8th-17.jpg", "images/eaststlouis-il-634-8th-18.jpg", "images/eaststlouis-il-634-8th-19.jpg", "images/eaststlouis-il-634-8th-20.jpg", "images/eaststlouis-il-634-8th-21.jpg", "images/eaststlouis-il-634-8th-22.jpg", "images/eaststlouis-il-634-8th-23.jpg", "images/eaststlouis-il-634-8th-24.jpg"],
   },
   {
     id: "decatur-il-1527-oakland",

@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (213 live, rebuilt from master published 2026-09-30) --- */
+/* --- the homes (201 live, rebuilt from master published 2026-09-30) --- */
 const HOMES = [
   {
     id: "peoria-il-2421-lincoln",
@@ -55,7 +55,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/cahokiaheights-il-30-delores-1.jpg", "images/cahokiaheights-il-30-delores-2.jpg", "images/cahokiaheights-il-30-delores-3.jpg", "images/cahokiaheights-il-30-delores-4.jpg", "images/cahokiaheights-il-30-delores-5.jpg", "images/cahokiaheights-il-30-delores-6.jpg", "images/cahokiaheights-il-30-delores-7.jpg", "images/cahokiaheights-il-30-delores-8.jpg", "images/cahokiaheights-il-30-delores-9.jpg", "images/cahokiaheights-il-30-delores-10.jpg", "images/cahokiaheights-il-30-delores-11.jpg", "images/cahokiaheights-il-30-delores-12.jpg", "images/cahokiaheights-il-30-delores-13.jpg", "images/cahokiaheights-il-30-delores-14.jpg"],
   },
   {
     id: "stlouis-mo-567-glorose",
@@ -181,7 +181,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/cahokia-il-805-sparks-1.jpg", "images/cahokia-il-805-sparks-2.jpg", "images/cahokia-il-805-sparks-3.jpg", "images/cahokia-il-805-sparks-4.jpg", "images/cahokia-il-805-sparks-5.jpg", "images/cahokia-il-805-sparks-6.jpg", "images/cahokia-il-805-sparks-7.jpg", "images/cahokia-il-805-sparks-8.jpg", "images/cahokia-il-805-sparks-9.jpg", "images/cahokia-il-805-sparks-10.jpg", "images/cahokia-il-805-sparks-11.jpg", "images/cahokia-il-805-sparks-12.jpg", "images/cahokia-il-805-sparks-13.jpg", "images/cahokia-il-805-sparks-14.jpg", "images/cahokia-il-805-sparks-15.jpg", "images/cahokia-il-805-sparks-16.jpg", "images/cahokia-il-805-sparks-17.jpg", "images/cahokia-il-805-sparks-18.jpg", "images/cahokia-il-805-sparks-19.jpg", "images/cahokia-il-805-sparks-20.jpg"],
   },
   {
     id: "stlouis-mo-6211-bircher",
@@ -223,7 +223,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/cahokia-il-1322-williams-1.jpg", "images/cahokia-il-1322-williams-2.jpg", "images/cahokia-il-1322-williams-3.jpg", "images/cahokia-il-1322-williams-4.jpg", "images/cahokia-il-1322-williams-5.jpg", "images/cahokia-il-1322-williams-6.jpg", "images/cahokia-il-1322-williams-7.jpg", "images/cahokia-il-1322-williams-8.jpg", "images/cahokia-il-1322-williams-9.jpg", "images/cahokia-il-1322-williams-10.jpg", "images/cahokia-il-1322-williams-11.jpg", "images/cahokia-il-1322-williams-12.jpg", "images/cahokia-il-1322-williams-13.jpg", "images/cahokia-il-1322-williams-14.jpg", "images/cahokia-il-1322-williams-15.jpg", "images/cahokia-il-1322-williams-16.jpg", "images/cahokia-il-1322-williams-17.jpg", "images/cahokia-il-1322-williams-18.jpg", "images/cahokia-il-1322-williams-19.jpg", "images/cahokia-il-1322-williams-20.jpg", "images/cahokia-il-1322-williams-21.jpg", "images/cahokia-il-1322-williams-22.jpg", "images/cahokia-il-1322-williams-23.jpg"],
   },
   {
     id: "cahokia-il-803-5th",
@@ -244,7 +244,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/cahokia-il-803-5th-1.jpg", "images/cahokia-il-803-5th-2.jpg", "images/cahokia-il-803-5th-3.jpg", "images/cahokia-il-803-5th-4.jpg", "images/cahokia-il-803-5th-5.jpg", "images/cahokia-il-803-5th-6.jpg", "images/cahokia-il-803-5th-7.jpg", "images/cahokia-il-803-5th-8.jpg", "images/cahokia-il-803-5th-9.jpg", "images/cahokia-il-803-5th-10.jpg", "images/cahokia-il-803-5th-11.jpg", "images/cahokia-il-803-5th-12.jpg", "images/cahokia-il-803-5th-13.jpg", "images/cahokia-il-803-5th-14.jpg", "images/cahokia-il-803-5th-15.jpg", "images/cahokia-il-803-5th-16.jpg", "images/cahokia-il-803-5th-17.jpg", "images/cahokia-il-803-5th-18.jpg", "images/cahokia-il-803-5th-19.jpg", "images/cahokia-il-803-5th-20.jpg", "images/cahokia-il-803-5th-21.jpg", "images/cahokia-il-803-5th-22.jpg", "images/cahokia-il-803-5th-23.jpg", "images/cahokia-il-803-5th-24.jpg"],
   },
   {
     id: "peoria-il-2113-howett",
@@ -286,7 +286,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/cahokia-il-34-saint-1.jpg", "images/cahokia-il-34-saint-2.jpg", "images/cahokia-il-34-saint-3.jpg", "images/cahokia-il-34-saint-4.jpg", "images/cahokia-il-34-saint-5.jpg", "images/cahokia-il-34-saint-6.jpg", "images/cahokia-il-34-saint-7.jpg", "images/cahokia-il-34-saint-8.jpg", "images/cahokia-il-34-saint-9.jpg", "images/cahokia-il-34-saint-10.jpg", "images/cahokia-il-34-saint-11.jpg", "images/cahokia-il-34-saint-12.jpg", "images/cahokia-il-34-saint-13.jpg", "images/cahokia-il-34-saint-14.jpg", "images/cahokia-il-34-saint-15.jpg", "images/cahokia-il-34-saint-16.jpg", "images/cahokia-il-34-saint-17.jpg", "images/cahokia-il-34-saint-18.jpg", "images/cahokia-il-34-saint-19.jpg", "images/cahokia-il-34-saint-20.jpg", "images/cahokia-il-34-saint-21.jpg", "images/cahokia-il-34-saint-22.jpg", "images/cahokia-il-34-saint-23.jpg", "images/cahokia-il-34-saint-24.jpg"],
   },
   {
     id: "peoria-il-2309-malone",
@@ -369,7 +369,7 @@ const HOMES = [
 
     features: { backyard: "yes", basement: "no" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/cottagehills-il-66-franklin-1.jpg", "images/cottagehills-il-66-franklin-2.jpg", "images/cottagehills-il-66-franklin-3.jpg", "images/cottagehills-il-66-franklin-4.jpg", "images/cottagehills-il-66-franklin-5.jpg", "images/cottagehills-il-66-franklin-6.jpg", "images/cottagehills-il-66-franklin-7.jpg", "images/cottagehills-il-66-franklin-8.jpg", "images/cottagehills-il-66-franklin-9.jpg", "images/cottagehills-il-66-franklin-10.jpg", "images/cottagehills-il-66-franklin-11.jpg", "images/cottagehills-il-66-franklin-12.jpg", "images/cottagehills-il-66-franklin-13.jpg", "images/cottagehills-il-66-franklin-14.jpg", "images/cottagehills-il-66-franklin-15.jpg", "images/cottagehills-il-66-franklin-16.jpg", "images/cottagehills-il-66-franklin-17.jpg", "images/cottagehills-il-66-franklin-18.jpg", "images/cottagehills-il-66-franklin-19.jpg", "images/cottagehills-il-66-franklin-20.jpg", "images/cottagehills-il-66-franklin-21.jpg", "images/cottagehills-il-66-franklin-22.jpg", "images/cottagehills-il-66-franklin-23.jpg"],
   },
   {
     id: "stlouis-mo-605-fremont",
@@ -543,27 +543,6 @@ const HOMES = [
     features: { basement: "yes" },
     heroPhoto: "",
     photos:    ["images/stlouis-mo-6580-saint-1.jpg", "images/stlouis-mo-6580-saint-2.jpg", "images/stlouis-mo-6580-saint-3.jpg", "images/stlouis-mo-6580-saint-4.jpg", "images/stlouis-mo-6580-saint-5.jpg", "images/stlouis-mo-6580-saint-6.jpg", "images/stlouis-mo-6580-saint-7.jpg", "images/stlouis-mo-6580-saint-8.jpg", "images/stlouis-mo-6580-saint-9.jpg", "images/stlouis-mo-6580-saint-10.jpg", "images/stlouis-mo-6580-saint-11.jpg", "images/stlouis-mo-6580-saint-12.jpg", "images/stlouis-mo-6580-saint-13.jpg", "images/stlouis-mo-6580-saint-14.jpg", "images/stlouis-mo-6580-saint-15.jpg", "images/stlouis-mo-6580-saint-16.jpg", "images/stlouis-mo-6580-saint-17.jpg", "images/stlouis-mo-6580-saint-18.jpg", "images/stlouis-mo-6580-saint-19.jpg", "images/stlouis-mo-6580-saint-20.jpg", "images/stlouis-mo-6580-saint-21.jpg", "images/stlouis-mo-6580-saint-22.jpg", "images/stlouis-mo-6580-saint-23.jpg", "images/stlouis-mo-6580-saint-24.jpg"],
-  },
-  {
-    id: "benton-il-428-central",
-    address:     "428 S. Central St.",
-    zip:         "62812",
-    description: "1450 SF; detached 1 car garage (needs a roof); big yard. In a nice neighborhood. You can walk to Walmart and McDonald's.. Power is ON",
-    city:  "Benton",
-    state: "IL",
-    beds:  3,
-    baths: 1,
-    sqft:  "1450",
-    status: "Available",
-
-    monthlyPayment: 950,
-    moveIn:         3000,
-    lockedPrice:    87000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { backyard: "yes", garage: "yes", off_street_parking: "yes" },
-    heroPhoto: "",
-    photos:    ["images/benton-il-428-central-1.jpg", "images/benton-il-428-central-2.jpg", "images/benton-il-428-central-3.jpg", "images/benton-il-428-central-4.jpg", "images/benton-il-428-central-5.jpg", "images/benton-il-428-central-6.jpg", "images/benton-il-428-central-7.jpg", "images/benton-il-428-central-8.jpg", "images/benton-il-428-central-9.jpg", "images/benton-il-428-central-10.jpg", "images/benton-il-428-central-11.jpg", "images/benton-il-428-central-12.jpg", "images/benton-il-428-central-13.jpg", "images/benton-il-428-central-14.jpg", "images/benton-il-428-central-15.jpg", "images/benton-il-428-central-16.jpg", "images/benton-il-428-central-17.jpg"],
   },
   {
     id: "decatur-il-234-home",
@@ -1734,28 +1713,6 @@ const HOMES = [
     photos:    ["images/montgomery-al-3120-lower-1.jpg", "images/montgomery-al-3120-lower-2.jpg", "images/montgomery-al-3120-lower-3.jpg", "images/montgomery-al-3120-lower-4.jpg", "images/montgomery-al-3120-lower-5.jpg", "images/montgomery-al-3120-lower-6.jpg", "images/montgomery-al-3120-lower-7.jpg", "images/montgomery-al-3120-lower-8.jpg", "images/montgomery-al-3120-lower-9.jpg", "images/montgomery-al-3120-lower-10.jpg", "images/montgomery-al-3120-lower-11.jpg", "images/montgomery-al-3120-lower-12.jpg", "images/montgomery-al-3120-lower-13.jpg", "images/montgomery-al-3120-lower-14.jpg", "images/montgomery-al-3120-lower-15.jpg", "images/montgomery-al-3120-lower-16.jpg", "images/montgomery-al-3120-lower-17.jpg", "images/montgomery-al-3120-lower-18.jpg", "images/montgomery-al-3120-lower-19.jpg", "images/montgomery-al-3120-lower-20.jpg", "images/montgomery-al-3120-lower-21.jpg", "images/montgomery-al-3120-lower-22.jpg", "images/montgomery-al-3120-lower-23.jpg", "images/montgomery-al-3120-lower-24.jpg"],
   },
   {
-    id: "stlouis-mo-5461-hamilton",
-    address:     "5461 Hamilton Avenue",
-    zip:         "63136",
-    description: "1,066 SF Home, located on a 3,200 SF lot. Asphalt driveway, ceiling fans",
-    copy:        "$750 a month and $2,000 to move in: that's what opens the door to this two-bedroom, one-bath home in St. Louis. You get 1,066 square feet on a 3,200-square-foot lot, ceiling fans to keep the air moving, and an asphalt driveway that gives your car its own spot off the street. Out back, the yard is yours to use however you like, and on a warm evening you can step outside knowing nobody else gets to decide whether you're still here next year. The purchase price is $62,500, agreed in writing the day you sign, with owner financing and no bank in the middle. The home is sold as-is, so come walk through it in person and judge every room with your own eyes. Homes at this payment don't sit long. Send us a text now and let's get you in for a showing.",
-    city:  "St. Louis",
-    state: "MO",
-    beds:  2,
-    baths: 1,
-    sqft:  "1066",
-    status: "Available",
-
-    monthlyPayment: 750,
-    moveIn:         2000,
-    lockedPrice:    62500,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { backyard: "yes", off_street_parking: "yes" },
-    heroPhoto: "",
-    photos:    ["images/stlouis-mo-5461-hamilton-1.jpg", "images/stlouis-mo-5461-hamilton-2.jpg", "images/stlouis-mo-5461-hamilton-3.jpg", "images/stlouis-mo-5461-hamilton-4.jpg", "images/stlouis-mo-5461-hamilton-5.jpg", "images/stlouis-mo-5461-hamilton-6.jpg", "images/stlouis-mo-5461-hamilton-7.jpg"],
-  },
-  {
     id: "eaststlouis-il-5050-hallows",
     address:     "5050 Hallows Avenue",
     zip:         "62204",
@@ -1881,27 +1838,6 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/springfield-il-2949-foxbridge-1.jpg", "images/springfield-il-2949-foxbridge-2.jpg", "images/springfield-il-2949-foxbridge-3.jpg", "images/springfield-il-2949-foxbridge-4.jpg", "images/springfield-il-2949-foxbridge-5.jpg", "images/springfield-il-2949-foxbridge-6.jpg", "images/springfield-il-2949-foxbridge-7.jpg", "images/springfield-il-2949-foxbridge-8.jpg", "images/springfield-il-2949-foxbridge-9.jpg", "images/springfield-il-2949-foxbridge-10.jpg", "images/springfield-il-2949-foxbridge-11.jpg", "images/springfield-il-2949-foxbridge-12.jpg", "images/springfield-il-2949-foxbridge-13.jpg", "images/springfield-il-2949-foxbridge-14.jpg", "images/springfield-il-2949-foxbridge-15.jpg", "images/springfield-il-2949-foxbridge-16.jpg", "images/springfield-il-2949-foxbridge-17.jpg", "images/springfield-il-2949-foxbridge-18.jpg"],
-  },
-  {
-    id: "eaststlouis-il-740-22nd",
-    address:     "740 N 22nd Street",
-    zip:         "62205",
-    description: "800 sq. ft. 3 bedroom 1.5 bath. basement is used as a 4th bedroom",
-    city:  "East St. Louis",
-    state: "IL",
-    beds:  4,
-    baths: 1.5,
-    sqft:  "800",
-    status: "Available",
-
-    monthlyPayment: 926,
-    moveIn:         3000,
-    lockedPrice:    97000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { basement: "yes" },
-    heroPhoto: "",
-    photos:    ["images/eaststlouis-il-740-22nd-1.jpg", "images/eaststlouis-il-740-22nd-2.jpg", "images/eaststlouis-il-740-22nd-3.jpg", "images/eaststlouis-il-740-22nd-4.jpg", "images/eaststlouis-il-740-22nd-5.jpg", "images/eaststlouis-il-740-22nd-6.jpg", "images/eaststlouis-il-740-22nd-7.jpg", "images/eaststlouis-il-740-22nd-8.jpg", "images/eaststlouis-il-740-22nd-9.jpg", "images/eaststlouis-il-740-22nd-10.jpg", "images/eaststlouis-il-740-22nd-11.jpg", "images/eaststlouis-il-740-22nd-12.jpg", "images/eaststlouis-il-740-22nd-13.jpg", "images/eaststlouis-il-740-22nd-14.jpg", "images/eaststlouis-il-740-22nd-15.jpg", "images/eaststlouis-il-740-22nd-16.jpg", "images/eaststlouis-il-740-22nd-17.jpg", "images/eaststlouis-il-740-22nd-18.jpg", "images/eaststlouis-il-740-22nd-19.jpg", "images/eaststlouis-il-740-22nd-20.jpg", "images/eaststlouis-il-740-22nd-21.jpg", "images/eaststlouis-il-740-22nd-22.jpg", "images/eaststlouis-il-740-22nd-23.jpg", "images/eaststlouis-il-740-22nd-24.jpg", "images/eaststlouis-il-740-22nd-25.jpg", "images/eaststlouis-il-740-22nd-26.jpg", "images/eaststlouis-il-740-22nd-27.jpg", "images/eaststlouis-il-740-22nd-28.jpg", "images/eaststlouis-il-740-22nd-29.jpg"],
   },
   {
     id: "decatur-il-830-rogers",
@@ -3828,27 +3764,6 @@ const HOMES = [
     photos:    ["images/granitecity-il-2209-edwards-1.jpg", "images/granitecity-il-2209-edwards-2.jpg", "images/granitecity-il-2209-edwards-3.jpg", "images/granitecity-il-2209-edwards-4.jpg", "images/granitecity-il-2209-edwards-5.jpg", "images/granitecity-il-2209-edwards-6.jpg", "images/granitecity-il-2209-edwards-7.jpg", "images/granitecity-il-2209-edwards-8.jpg", "images/granitecity-il-2209-edwards-9.jpg", "images/granitecity-il-2209-edwards-10.jpg", "images/granitecity-il-2209-edwards-11.jpg", "images/granitecity-il-2209-edwards-12.jpg", "images/granitecity-il-2209-edwards-13.jpg", "images/granitecity-il-2209-edwards-14.jpg", "images/granitecity-il-2209-edwards-15.jpg", "images/granitecity-il-2209-edwards-16.jpg", "images/granitecity-il-2209-edwards-17.jpg", "images/granitecity-il-2209-edwards-18.jpg", "images/granitecity-il-2209-edwards-19.jpg", "images/granitecity-il-2209-edwards-20.jpg", "images/granitecity-il-2209-edwards-21.jpg", "images/granitecity-il-2209-edwards-22.jpg", "images/granitecity-il-2209-edwards-23.jpg", "images/granitecity-il-2209-edwards-24.jpg"],
   },
   {
-    id: "stlouis-mo-10068-royal",
-    address:     "10068 Royal Dr",
-    zip:         "63136",
-    description: "Back on the market",
-    copy:        "Three bedrooms in St. Louis, $925 a month, and $3,000 to get the keys in your hand. This 3 bedroom, 1 bath home comes with owner financing, which means no bank, no mortgage application, and no loan officer deciding your future. With three bedrooms, there's space to spread out and truly settle in. This time, once the moving boxes are empty, they can go straight to the curb, because you won't need them again. The purchase price is $79,000, agreed on in writing the day you sign, with no bank anywhere in the picture. The home is sold as-is, so come walk through every room in person and judge it with your own eyes. A payment like this doesn't come around often. Send us a text now and let's get you through the front door.",
-    city:  "St. Louis",
-    state: "MO",
-    beds:  3,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 925,
-    moveIn:         3000,
-    lockedPrice:    79000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
-  },
-  {
     id: "jackson-ms-1415-geeston",
     address:     "1415 Geeston St",
     zip:         "39213",
@@ -3911,47 +3826,6 @@ const HOMES = [
     photos:    ["images/eaststlouis-il-725-39th-1.jpg", "images/eaststlouis-il-725-39th-2.jpg", "images/eaststlouis-il-725-39th-3.jpg", "images/eaststlouis-il-725-39th-4.jpg", "images/eaststlouis-il-725-39th-5.jpg", "images/eaststlouis-il-725-39th-6.jpg", "images/eaststlouis-il-725-39th-7.jpg", "images/eaststlouis-il-725-39th-8.jpg", "images/eaststlouis-il-725-39th-9.jpg", "images/eaststlouis-il-725-39th-10.jpg", "images/eaststlouis-il-725-39th-11.jpg", "images/eaststlouis-il-725-39th-12.jpg", "images/eaststlouis-il-725-39th-13.jpg", "images/eaststlouis-il-725-39th-14.jpg", "images/eaststlouis-il-725-39th-15.jpg", "images/eaststlouis-il-725-39th-16.jpg", "images/eaststlouis-il-725-39th-17.jpg", "images/eaststlouis-il-725-39th-18.jpg", "images/eaststlouis-il-725-39th-19.jpg", "images/eaststlouis-il-725-39th-20.jpg", "images/eaststlouis-il-725-39th-21.jpg", "images/eaststlouis-il-725-39th-22.jpg", "images/eaststlouis-il-725-39th-23.jpg", "images/eaststlouis-il-725-39th-24.jpg"],
   },
   {
-    id: "stlouis-mo-5124-northland",
-    address:     "5124 Northland Ave",
-    zip:         "63113",
-    description: "Duplex, approx 2,500 sqft total — each unit is 2 bed/1 bath",
-    copy:        "$975 a month and $2,500 at move-in puts a St. Louis duplex within reach: roughly 2,500 square feet across two units, each with two bedrooms and one bath. That's a lot of home for the money, and the way you pay for it is just as solid. Your monthly amount is fixed and written into your contract, so next year's number matches this year's and no landlord gets to decide it's going up. The purchase price is $99,000, agreed on paper the day you sign, and owner financing means no bank and no mortgage application standing between you and the front door. The property is sold as-is, so come walk through both units and judge every room with your own eyes. Homes at this price don't sit around long. Send us a text or message now and let's get you inside.",
-    city:  "St. Louis",
-    state: "MO",
-    beds:  2,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 975,
-    moveIn:         2500,
-    lockedPrice:    99000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
-  },
-  {
-    id: "stlouis-mo-19-harvey",
-    address:     "19 N Harvey Ave",
-    zip:         "63135",
-    copy:        "$1,095 a month and $2,500 at move-in: that's what stands between you and a two-bedroom, one-bath home in St. Louis with your name on the contract. No bank, no mortgage application, no waiting on someone in an office to decide whether you've earned it. This is owner financing, plain and simple. Your monthly payment is written down the day you sign, and it stays that number, so there's no bracing each year for a landlord to raise it or hand the place to someone else. Every payment goes toward a home you're buying, not one you're borrowing. The purchase price is $89,000, agreed on at signing. The home is sold as-is, so come walk through every room in person and see how it fits your life. Homes like this don't sit long. Send us a text or a message now to set up a showing.",
-    city:  "St. Louis",
-    state: "MO",
-    beds:  2,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 1095,
-    moveIn:         2500,
-    lockedPrice:    89000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
-  },
-  {
     id: "david-il-209-central",
     address:     "209 Central Ave St",
     zip:         "61563",
@@ -4008,26 +3882,6 @@ const HOMES = [
     monthlyPayment: 650,
     moveIn:         2500,
     lockedPrice:    59000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
-  },
-  {
-    id: "stlouis-mo-1920-prior",
-    address:     "1920 Prior Dr",
-    zip:         "63136",
-    copy:        "Three bedrooms in St. Louis, $800 a month, and $2,000 to get through the front door. This is a home you can buy without a bank, a mortgage application, or anyone at a loan desk telling you no. With owner financing through a contract for deed, your monthly payment goes toward a place with your name on the paperwork instead of a landlord's. With three bedrooms and a full bath, there's room for everyone under one roof, and when you carry the boxes in this time, you're unpacking for good. The purchase price is $69,000, agreed in writing the day you sign, with no bank anywhere in the picture. The home is sold as-is, so come walk through every room in person and judge it with your own eyes. Send us a text or message soon to set up a showing before someone else claims it.",
-    city:  "St. Louis",
-    state: "MO",
-    beds:  3,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 800,
-    moveIn:         2000,
-    lockedPrice:    69000,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
@@ -4114,88 +3968,6 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1527-oakland-1.jpg", "images/decatur-il-1527-oakland-2.jpg", "images/decatur-il-1527-oakland-3.jpg", "images/decatur-il-1527-oakland-4.jpg", "images/decatur-il-1527-oakland-5.jpg", "images/decatur-il-1527-oakland-6.jpg", "images/decatur-il-1527-oakland-7.jpg", "images/decatur-il-1527-oakland-8.jpg", "images/decatur-il-1527-oakland-9.jpg", "images/decatur-il-1527-oakland-10.jpg", "images/decatur-il-1527-oakland-11.jpg", "images/decatur-il-1527-oakland-12.jpg", "images/decatur-il-1527-oakland-13.jpg", "images/decatur-il-1527-oakland-14.jpg", "images/decatur-il-1527-oakland-15.jpg", "images/decatur-il-1527-oakland-16.jpg", "images/decatur-il-1527-oakland-17.jpg"],
-  },
-  {
-    id: "stlouis-mo-819-elias",
-    address:     "819 Elias Ave",
-    zip:         "63147",
-    copy:        "$800 a month and $2,000 at move-in: that's the whole starting line for this two-bedroom, one-bath home in St. Louis. No bank, no mortgage application, no waiting on a loan officer to say yes. This is owner financing through a contract for deed, which means your payment is written down in black and white from day one, so it won't creep up every year the way rent does. Instead of handing that money to a landlord, every month goes toward a place with your name on the paperwork. The purchase price is $79,000, agreed on the day you sign, with no lender stepping in between you and the deal. The home is sold as-is, and you're welcome to come walk through every room before you decide anything. Homes at this price don't sit around long, so send us a text or message now and let's get you inside.",
-    city:  "St. Louis",
-    state: "MO",
-    beds:  2,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 800,
-    moveIn:         2000,
-    lockedPrice:    79000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
-  },
-  {
-    id: "stlouis-mo-7320-park",
-    address:     "7320 Park Dr.",
-    zip:         "63133",
-    description: "754 square feet. 2bd / 1bth... Systems working",
-    copy:        "$850 a month and $2,000 to move in. That's the whole starting line for this two-bedroom, one-bath home in St. Louis. At 754 square feet, it's a manageable size to heat, clean, and make your own, and its systems are working. Your monthly payment is written into the agreement from day one, so you won't spend each year waiting to hear what someone else decided you'll pay next. The purchase price is $85,000, fixed on paper the day you sign, with owner financing and no bank anywhere in the process. The home is sold as-is, so come walk through every room in person and judge it with your own eyes. Homes at this payment don't stay open long. Send us a text or message now to get on the showing list.",
-    city:  "St. Louis",
-    state: "MO",
-    beds:  2,
-    baths: 1,
-    sqft:  "754",
-    status: "Available",
-
-    monthlyPayment: 850,
-    moveIn:         2000,
-    lockedPrice:    85000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    ["images/stlouis-mo-7320-park-1.jpg", "images/stlouis-mo-7320-park-2.jpg", "images/stlouis-mo-7320-park-3.jpg", "images/stlouis-mo-7320-park-4.jpg", "images/stlouis-mo-7320-park-5.jpg", "images/stlouis-mo-7320-park-6.jpg", "images/stlouis-mo-7320-park-7.jpg", "images/stlouis-mo-7320-park-8.jpg", "images/stlouis-mo-7320-park-9.jpg", "images/stlouis-mo-7320-park-10.jpg", "images/stlouis-mo-7320-park-11.jpg", "images/stlouis-mo-7320-park-12.jpg", "images/stlouis-mo-7320-park-13.jpg", "images/stlouis-mo-7320-park-14.jpg", "images/stlouis-mo-7320-park-15.jpg", "images/stlouis-mo-7320-park-16.jpg", "images/stlouis-mo-7320-park-17.jpg", "images/stlouis-mo-7320-park-18.jpg", "images/stlouis-mo-7320-park-19.jpg", "images/stlouis-mo-7320-park-20.jpg", "images/stlouis-mo-7320-park-21.jpg", "images/stlouis-mo-7320-park-22.jpg", "images/stlouis-mo-7320-park-23.jpg", "images/stlouis-mo-7320-park-24.jpg"],
-  },
-  {
-    id: "stlouis-mo-7028-dawson",
-    address:     "7028 Dawson Pl",
-    zip:         "63136",
-    description: "Small, beautiful home. Utilities on",
-    copy:        "$795 a month. $2,000 to move in. A one-bedroom, one-bath home in St. Louis that's yours to own, with no bank standing between you and the front door. It's small, and it's beautiful, the kind of place that's easy to keep and easy to love. With owner financing, your monthly payment is spelled out in writing from the start, so it won't creep up on you year after year the way rent does, and every payment goes toward a place with your name on it. The purchase price is $69,000, agreed in writing when you sign, with no mortgage application and no loan officer. The home is sold as-is, and we'd be glad to meet you there so you can walk every room yourself. A home like this won't wait around for long, so send us a text or message now and let's get you inside.",
-    city:  "St. Louis",
-    state: "MO",
-    beds:  1,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 795,
-    moveIn:         2000,
-    lockedPrice:    69000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
-  },
-  {
-    id: "stlouis-mo-2143-69th",
-    address:     "2143 69th St",
-    zip:         "63121",
-    copy:        "$850 a month and $2,000 at the door. That's what stands between you and a two-bedroom home in St. Louis with your name on the paperwork. This is owner financing, so there's no bank, no mortgage application, and no loan officer deciding your future. Two bedrooms and one bath give you a real place to settle in and make your own. Your monthly payment is written into the contract, a fixed number that won't creep up every time a lease comes due, so you can plan your months with confidence. The purchase price is $79,000, agreed on the day you sign, with no bank involved. The home is sold as-is, and the best way to judge it is to walk through the rooms yourself. Don't wait on this one. Send us a text or message today to set up your visit.",
-    city:  "St. Louis",
-    state: "MO",
-    beds:  2,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 850,
-    moveIn:         2000,
-    lockedPrice:    79000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
   },
   {
     id: "pekin-il-1021-maple",
@@ -4332,26 +4104,6 @@ const HOMES = [
     monthlyPayment: 725,
     moveIn:         1500,
     lockedPrice:    60000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
-  },
-  {
-    id: "stlouis-mo-5275-alcott",
-    address:     "5275 Alcott Ave",
-    zip:         "63120",
-    copy:        "$775 a month and $1,500 to move in. That's what stands between you and a two-bedroom, one-bath home in St. Louis with your name on the paperwork. No bank reviewing your file, no mortgage application, no waiting on someone else's yes. This is owner financing, plain and simple. Your monthly amount is written into the agreement, so instead of bracing every year for a landlord to raise the rent, you'll know exactly what's due, and every payment goes toward a place that's becoming yours. The purchase price is $69,000, fixed the day you sign. The home is sold as-is, and we'd rather you walk through every room in person than take our word for anything. A two-bedroom at this price won't wait around, so message us now and let's find a time for you to come through.",
-    city:  "St. Louis",
-    state: "MO",
-    beds:  2,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 775,
-    moveIn:         1500,
-    lockedPrice:    69000,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",

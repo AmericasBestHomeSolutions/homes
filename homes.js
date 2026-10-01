@@ -4255,7 +4255,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/jackson-ms-533-stillwood-1.jpg", "images/jackson-ms-533-stillwood-2.jpg", "images/jackson-ms-533-stillwood-3.jpg", "images/jackson-ms-533-stillwood-4.jpg", "images/jackson-ms-533-stillwood-5.jpg", "images/jackson-ms-533-stillwood-6.jpg"],
   },
   {
     id: "stlouis-mo-3422-lucas",

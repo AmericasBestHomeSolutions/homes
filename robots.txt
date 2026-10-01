@@ -2,5 +2,7 @@ User-agent: *
 Allow: /
 # home.html is a template that duplicates the per-home pages — keep crawlers on the canonical <id>.html pages
 Disallow: /home.html
+# next-steps.html is the per-home Deal Room page sent to committed buyers — link-only, not for search
+Disallow: /next-steps.html
 
 Sitemap: https://getownerfinancedhomes.com/sitemap.xml

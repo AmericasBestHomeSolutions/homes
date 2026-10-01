@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (215 live, rebuilt from master published 2026-09-30) --- */
+/* --- the homes (217 live, rebuilt from master published 2026-09-30) --- */
 const HOMES = [
   {
     id: "peoria-il-2421-lincoln",
@@ -266,7 +266,7 @@ const HOMES = [
 
     features: { central_air: "no" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/peoria-il-2113-howett-1.jpg", "images/peoria-il-2113-howett-2.jpg", "images/peoria-il-2113-howett-3.jpg", "images/peoria-il-2113-howett-4.jpg", "images/peoria-il-2113-howett-5.jpg", "images/peoria-il-2113-howett-6.jpg", "images/peoria-il-2113-howett-7.jpg", "images/peoria-il-2113-howett-8.jpg", "images/peoria-il-2113-howett-9.jpg", "images/peoria-il-2113-howett-10.jpg", "images/peoria-il-2113-howett-11.jpg", "images/peoria-il-2113-howett-12.jpg", "images/peoria-il-2113-howett-13.jpg", "images/peoria-il-2113-howett-14.jpg", "images/peoria-il-2113-howett-15.jpg", "images/peoria-il-2113-howett-16.jpg", "images/peoria-il-2113-howett-17.jpg", "images/peoria-il-2113-howett-18.jpg", "images/peoria-il-2113-howett-19.jpg", "images/peoria-il-2113-howett-20.jpg", "images/peoria-il-2113-howett-21.jpg", "images/peoria-il-2113-howett-22.jpg", "images/peoria-il-2113-howett-23.jpg", "images/peoria-il-2113-howett-24.jpg"],
   },
   {
     id: "cahokia-il-34-saint",
@@ -2438,28 +2438,6 @@ const HOMES = [
     photos:    [],
   },
   {
-    id: "belleville-il-718-church",
-    address:     "718 South Church Street",
-    zip:         "62220",
-    description: "850 square feet Full basement",
-    copy:        "$725 a month and $2,000 at move-in puts you in a two-bedroom, one-bath home in Belleville, IL. At 850 square feet, it keeps things simple, and the full basement underneath gives you real room to work with, whether that means storage, hobbies, or a place for everything that never fit in an apartment. Best of all, your monthly payment is written into your agreement, so you're never waiting to find out what someone else decided you owe next year. The purchase price is $79,000, fixed at signing, with owner financing and no bank anywhere in the process. The home is sold as-is, and you're welcome to come through and walk every room before you decide. Homes at this payment don't sit long, so send us a text or message now to set up your showing.",
-    city:  "Belleville",
-    state: "IL",
-    beds:  2,
-    baths: 1,
-    sqft:  "850",
-    status: "Available",
-
-    monthlyPayment: 725,
-    moveIn:         2000,
-    lockedPrice:    79000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { basement: "yes" },
-    heroPhoto: "",
-    photos:    ["images/belleville-il-718-church-1.jpg", "images/belleville-il-718-church-2.jpg", "images/belleville-il-718-church-3.jpg", "images/belleville-il-718-church-4.jpg", "images/belleville-il-718-church-5.jpg", "images/belleville-il-718-church-6.jpg", "images/belleville-il-718-church-7.jpg", "images/belleville-il-718-church-8.jpg", "images/belleville-il-718-church-9.jpg"],
-  },
-  {
     id: "stlouis-mo-5346-janet",
     address:     "5346 Janet Avenue",
     zip:         "63136",
@@ -3889,6 +3867,28 @@ const HOMES = [
     photos:    [],
   },
   {
+    id: "peoria-il-3214-proctor",
+    address:     "3214 W Proctor Pl",
+    zip:         "61605",
+    description: "2 bed one bath in Peoria. In a quiet cul-de-sac. Fenced yard. Newer roof. Water heater (gas) 2024. Electric heat. All utilities currently on.. Newer roof. Some items left behind.. Bathtub surround needs attention",
+    copy:        "$895 a month and $2,500 at move-in puts a two-bedroom, one-bath home in Peoria within reach. It sits on a cul-de-sac, with a newer roof, a gas water heater installed in 2024, and electric heat. Out back, the fenced yard is space that answers to you. Plant something in spring and you'll still be there to watch it come up, with no landlord deciding whether you stay. The purchase price is $85,000, agreed in writing when you sign, and it's owner financing, so no bank stands between you and the front door. The home is sold as-is, and the best way to judge it is to walk through the rooms and stand in that yard in person. A home at this payment won't wait around for long, so send us a text and let's get your showing on the calendar.",
+    city:  "Peoria",
+    state: "IL",
+    beds:  2,
+    baths: 1,
+    sqft:  "",
+    status: "Available",
+
+    monthlyPayment: 895,
+    moveIn:         2500,
+    lockedPrice:    85000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { backyard: "yes", fenced_yard: "yes" },
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
     id: "stlouis-mo-19-harvey",
     address:     "19 N Harvey Ave",
     zip:         "63135",
@@ -4096,6 +4096,28 @@ const HOMES = [
     photos:    ["images/eaststlouis-il-634-8th-1.jpg", "images/eaststlouis-il-634-8th-2.jpg", "images/eaststlouis-il-634-8th-3.jpg", "images/eaststlouis-il-634-8th-4.jpg", "images/eaststlouis-il-634-8th-5.jpg", "images/eaststlouis-il-634-8th-6.jpg", "images/eaststlouis-il-634-8th-7.jpg", "images/eaststlouis-il-634-8th-8.jpg", "images/eaststlouis-il-634-8th-9.jpg", "images/eaststlouis-il-634-8th-10.jpg", "images/eaststlouis-il-634-8th-11.jpg", "images/eaststlouis-il-634-8th-12.jpg", "images/eaststlouis-il-634-8th-13.jpg", "images/eaststlouis-il-634-8th-14.jpg", "images/eaststlouis-il-634-8th-15.jpg", "images/eaststlouis-il-634-8th-16.jpg", "images/eaststlouis-il-634-8th-17.jpg", "images/eaststlouis-il-634-8th-18.jpg", "images/eaststlouis-il-634-8th-19.jpg", "images/eaststlouis-il-634-8th-20.jpg", "images/eaststlouis-il-634-8th-21.jpg", "images/eaststlouis-il-634-8th-22.jpg", "images/eaststlouis-il-634-8th-23.jpg", "images/eaststlouis-il-634-8th-24.jpg"],
   },
   {
+    id: "eaststlouis-il-3129-converse",
+    address:     "3129 Converse Ave",
+    zip:         "62207",
+    description: "3 Bed 2 bath, 1 car garage. 988 Sqft.. Contractor Special. The actual Address is 3127 through the county, but the house numbers still have it as 3129. The property was divided and given a new address. For marketing reasons I would like to keep the address at 3129 Converse. When agreement is written I want to use 3127 Converse",
+    copy:        "$795 a month and $2,000 to move in opens the door to a three-bedroom, two-bath house in East St. Louis. At 988 square feet, it comes with a one-car garage and off-street parking, so there's a spot for your car and room for your tools. This one is a contractor special, meaning it needs substantial work before it shines. That's exactly where the opportunity lives: every wall you fix and every room you finish adds value to a place with your name on the paperwork, not someone else's. The purchase price is $69,000, fixed in writing when you sign, with owner financing and no bank in the middle. It's sold as-is, so come walk through it in person and size up the project with your own eyes. Homes like this don't sit long. Send us a text now and claim your showing.",
+    city:  "East St. Louis",
+    state: "IL",
+    beds:  3,
+    baths: 2,
+    sqft:  "988",
+    status: "Available",
+
+    monthlyPayment: 795,
+    moveIn:         2000,
+    lockedPrice:    69000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { garage: "yes", off_street_parking: "yes" },
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
     id: "decatur-il-1527-oakland",
     address:     "1527 N Oakland Ave",
     zip:         "62526",
@@ -4216,6 +4238,28 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/pekin-il-1021-maple-1.jpg", "images/pekin-il-1021-maple-2.jpg", "images/pekin-il-1021-maple-3.jpg", "images/pekin-il-1021-maple-4.jpg", "images/pekin-il-1021-maple-5.jpg", "images/pekin-il-1021-maple-6.jpg", "images/pekin-il-1021-maple-7.jpg", "images/pekin-il-1021-maple-8.jpg", "images/pekin-il-1021-maple-9.jpg", "images/pekin-il-1021-maple-10.jpg", "images/pekin-il-1021-maple-11.jpg", "images/pekin-il-1021-maple-12.jpg", "images/pekin-il-1021-maple-13.jpg", "images/pekin-il-1021-maple-14.jpg", "images/pekin-il-1021-maple-15.jpg", "images/pekin-il-1021-maple-16.jpg", "images/pekin-il-1021-maple-17.jpg", "images/pekin-il-1021-maple-18.jpg", "images/pekin-il-1021-maple-19.jpg", "images/pekin-il-1021-maple-20.jpg", "images/pekin-il-1021-maple-21.jpg", "images/pekin-il-1021-maple-22.jpg", "images/pekin-il-1021-maple-23.jpg", "images/pekin-il-1021-maple-24.jpg"],
+  },
+  {
+    id: "peoria-il-1829-butler",
+    address:     "1829 W Butler St",
+    zip:         "61605",
+    description: "3 bedroom, 1 bathroom single-family home with approximately 1,020 sq. ft. of living space,. Power is on, basement, detached storage, and yard. Property is being offered as an affordable path to homeownership with owner-financing terms",
+    copy:        "$875 a month and $2,000 at move-in puts your key in the door of this three-bedroom, one-bath home in Peoria. Inside you'll find about 1,020 square feet of living space, plus a basement below that gives you room to stretch out and store what you need, and a storage shed out back for tools and gear. The backyard is where a quiet evening finally belongs to you, with no landlord weighing in on whether you get to stay another year. The purchase price is $81,500, agreed in writing the day you sign, with owner financing and no bank in the middle. The home is sold as-is, so come walk through every room and judge it with your own eyes. Homes like this don't sit long. Send us a text and let's get you on the schedule.",
+    city:  "Peoria",
+    state: "IL",
+    beds:  3,
+    baths: 1,
+    sqft:  "1,020",
+    status: "Available",
+
+    monthlyPayment: 875,
+    moveIn:         2000,
+    lockedPrice:    81500,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { backyard: "yes", basement: "yes", storage_shed: "yes" },
+    heroPhoto: "",
+    photos:    [],
   },
   {
     id: "decatur-il-1871-lawrence",

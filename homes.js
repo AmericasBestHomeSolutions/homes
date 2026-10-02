@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (217 live, rebuilt from master published 2026-09-30) --- */
+/* --- the homes (216 live, rebuilt from master published 2026-09-30) --- */
 const HOMES = [
   {
     id: "peoria-il-2421-lincoln",
@@ -1606,26 +1606,6 @@ const HOMES = [
     photos:    ["images/stlouis-mo-5508-beacon-1.jpg", "images/stlouis-mo-5508-beacon-2.jpg", "images/stlouis-mo-5508-beacon-3.jpg", "images/stlouis-mo-5508-beacon-4.jpg", "images/stlouis-mo-5508-beacon-5.jpg", "images/stlouis-mo-5508-beacon-6.jpg", "images/stlouis-mo-5508-beacon-7.jpg", "images/stlouis-mo-5508-beacon-8.jpg", "images/stlouis-mo-5508-beacon-9.jpg", "images/stlouis-mo-5508-beacon-10.jpg", "images/stlouis-mo-5508-beacon-11.jpg", "images/stlouis-mo-5508-beacon-12.jpg", "images/stlouis-mo-5508-beacon-13.jpg", "images/stlouis-mo-5508-beacon-14.jpg", "images/stlouis-mo-5508-beacon-15.jpg", "images/stlouis-mo-5508-beacon-16.jpg"],
   },
   {
-    id: "stlouis-mo-5930-shulte",
-    address:     "5930 Shulte Avenue",
-    zip:         "63136",
-    copy:        "Three bedrooms in St. Louis at $850 a month, and $2,500 puts the keys in your hand. This 3-bedroom, 1-bath home comes with owner financing, which means no bank, no mortgage application, and no loan officer telling you to try again next year. Three bedrooms give you room for everyone under one roof, and this time the moving boxes get flattened and put away for good, because you're not just passing through. The purchase price is $69,000, set in writing the day you sign, with no bank anywhere in the picture. The home is sold as-is, so come walk through every room and judge it with your own eyes. If this is the one you've been waiting for, don't let someone else get there first. Send us a text and let's set up your showing.",
-    city:  "St. Louis",
-    state: "MO",
-    beds:  3,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 850,
-    moveIn:         2500,
-    lockedPrice:    69000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    ["images/stlouis-mo-5930-shulte-1.jpg", "images/stlouis-mo-5930-shulte-2.jpg", "images/stlouis-mo-5930-shulte-3.jpg", "images/stlouis-mo-5930-shulte-4.jpg", "images/stlouis-mo-5930-shulte-5.jpg", "images/stlouis-mo-5930-shulte-6.jpg", "images/stlouis-mo-5930-shulte-7.jpg", "images/stlouis-mo-5930-shulte-8.jpg", "images/stlouis-mo-5930-shulte-9.jpg", "images/stlouis-mo-5930-shulte-10.jpg", "images/stlouis-mo-5930-shulte-11.jpg", "images/stlouis-mo-5930-shulte-12.jpg", "images/stlouis-mo-5930-shulte-13.jpg", "images/stlouis-mo-5930-shulte-14.jpg", "images/stlouis-mo-5930-shulte-15.jpg"],
-  },
-  {
     id: "bethalto-il-319-corbin",
     address:     "319 W Corbin St",
     zip:         "62010",
@@ -3069,7 +3049,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    ["images/peoria-il-1610-lydia-1.jpg", "images/peoria-il-1610-lydia-2.jpg", "images/peoria-il-1610-lydia-3.jpg", "images/peoria-il-1610-lydia-4.jpg", "images/peoria-il-1610-lydia-5.jpg", "images/peoria-il-1610-lydia-6.jpg", "images/peoria-il-1610-lydia-7.jpg", "images/peoria-il-1610-lydia-8.jpg", "images/peoria-il-1610-lydia-9.jpg", "images/peoria-il-1610-lydia-10.jpg", "images/peoria-il-1610-lydia-11.jpg", "images/peoria-il-1610-lydia-12.jpg", "images/peoria-il-1610-lydia-13.jpg", "images/peoria-il-1610-lydia-14.jpg", "images/peoria-il-1610-lydia-15.jpg", "images/peoria-il-1610-lydia-16.jpg", "images/peoria-il-1610-lydia-17.jpg", "images/peoria-il-1610-lydia-18.jpg", "images/peoria-il-1610-lydia-19.jpg", "images/peoria-il-1610-lydia-20.jpg", "images/peoria-il-1610-lydia-21.jpg", "images/peoria-il-1610-lydia-22.jpg"],
+    photos:    ["images/peoria-il-1610-lydia-1.jpg", "images/peoria-il-1610-lydia-2.jpg", "images/peoria-il-1610-lydia-3.jpg", "images/peoria-il-1610-lydia-4.jpg", "images/peoria-il-1610-lydia-5.jpg", "images/peoria-il-1610-lydia-6.jpg", "images/peoria-il-1610-lydia-7.jpg", "images/peoria-il-1610-lydia-8.jpg", "images/peoria-il-1610-lydia-9.jpg", "images/peoria-il-1610-lydia-10.jpg", "images/peoria-il-1610-lydia-11.jpg", "images/peoria-il-1610-lydia-12.jpg", "images/peoria-il-1610-lydia-13.jpg", "images/peoria-il-1610-lydia-14.jpg", "images/peoria-il-1610-lydia-15.jpg", "images/peoria-il-1610-lydia-16.jpg", "images/peoria-il-1610-lydia-17.jpg", "images/peoria-il-1610-lydia-18.jpg", "images/peoria-il-1610-lydia-19.jpg", "images/peoria-il-1610-lydia-20.jpg", "images/peoria-il-1610-lydia-21.jpg"],
   },
   {
     id: "decatur-il-1505-walnut",
@@ -4115,7 +4095,7 @@ const HOMES = [
 
     features: { garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/eaststlouis-il-3129-converse-1.jpg", "images/eaststlouis-il-3129-converse-2.jpg", "images/eaststlouis-il-3129-converse-3.jpg", "images/eaststlouis-il-3129-converse-4.jpg", "images/eaststlouis-il-3129-converse-5.jpg", "images/eaststlouis-il-3129-converse-6.jpg", "images/eaststlouis-il-3129-converse-7.jpg", "images/eaststlouis-il-3129-converse-8.jpg", "images/eaststlouis-il-3129-converse-9.jpg", "images/eaststlouis-il-3129-converse-10.jpg", "images/eaststlouis-il-3129-converse-11.jpg", "images/eaststlouis-il-3129-converse-12.jpg", "images/eaststlouis-il-3129-converse-13.jpg", "images/eaststlouis-il-3129-converse-14.jpg", "images/eaststlouis-il-3129-converse-15.jpg", "images/eaststlouis-il-3129-converse-16.jpg", "images/eaststlouis-il-3129-converse-17.jpg", "images/eaststlouis-il-3129-converse-18.jpg", "images/eaststlouis-il-3129-converse-19.jpg", "images/eaststlouis-il-3129-converse-20.jpg", "images/eaststlouis-il-3129-converse-21.jpg", "images/eaststlouis-il-3129-converse-22.jpg", "images/eaststlouis-il-3129-converse-23.jpg", "images/eaststlouis-il-3129-converse-24.jpg"],
   },
   {
     id: "decatur-il-1527-oakland",

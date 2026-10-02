@@ -97,6 +97,10 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
 .step .n{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:18px;color:var(--lime);background:var(--pine);width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .step.done .n{background:var(--go)}
 .step .body p{font-size:15px;color:var(--ink-soft);line-height:1.55}
+.step.next{border:2px solid var(--pine)}
+.step .tag{display:inline-block;margin-left:8px;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;background:var(--pine);color:#fff;padding:2px 7px;border-radius:999px;vertical-align:middle}
+.step .part{margin-top:4px;font-size:13px;color:var(--go);font-weight:600}
+.progress-note{font-size:14px;color:var(--ink-soft);background:var(--honey-soft);border-radius:12px;padding:12px 14px;margin-bottom:12px}
 .step .note{margin-top:4px;font-size:13px;color:var(--pine);font-weight:600}
 
 .trust ul{list-style:none;display:flex;flex-direction:column;gap:12px}
@@ -206,6 +210,7 @@ details.faq p{margin-top:10px;font-size:15px;color:var(--ink-soft);line-height:1
   <section class="section">
     <div class="sec-label">Your roadmap</div>
     <h2 class="sec-title" id="roadmapTitle">What happens next</h2>
+    <p class="progress-note" id="progressNote" hidden></p>
     <div class="steps" id="roadmap"></div>
   </section>
 
@@ -307,27 +312,29 @@ const DEAL_ROOM = {
   licenseUrl: "https://www.realtor.com/realestateagents/6363f4576bdfbd63be36155c",
   linkedinUrl: "https://www.linkedin.com/in/joseph-hernandez-9511958",
   siteUrl: "https://iamjoehernandez.com",
+  // D04: published-to-web CSV of the Sheet's `Status` tab ONLY (key + 1/blank flags, no PII).
+  statusUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRE4JY7Zz-hbT5eScrU5EP_WmdN4QyMF6ZnJg6rOoUIjggZLH30GQRDtVmWceEK8D-Ow6o5-u2yWW4u/pub?gid=815884279&single=true&output=csv",
   confirmedStates: {
     IL: {
       label: "Illinois",
       steps: [
         { title: "Choose your home", body: "", done: true },
-        { title: "Send photo ID for everyone who'll be on the agreement, plus emails", body: "" },
-        { title: "Send the down payment", body: "You'll get an invoice from Americas Best Home Solutions." },
-        { title: "Down payment received", body: "We send you a receipt right away." },
-        { title: "We prepare the purchase agreement and send it to you", body: "" },
-        { title: "You get 3 business days to review it", body: "If you change your mind in that window, your down payment is fully refunded." },
-        { title: "Sign and notarize", body: "We send instructions." },
-        { title: "Get your keys", body: "" },
+        { title: "Send photo ID for everyone who'll be on the agreement, plus emails", body: "", flag: "id_received" },
+        { title: "Your invoice", body: "You'll get an invoice from Americas Best Home Solutions.", flag: "invoice_sent" },
+        { title: "Down payment received", body: "We send you a receipt right away.", flag: "down_payment_received" },
+        { title: "We prepare the purchase agreement and send it to you", body: "", flag: "agreement_sent" },
+        { title: "You get 3 business days to review it", body: "If you change your mind in that window, your down payment is fully refunded.", flag: "review_window_done" },
+        { title: "Sign and notarize", body: "We send instructions.", flag: "signed_notarized" },
+        { title: "Get your keys", body: "", flag: "keys_delivered" },
       ],
     },
   },
   genericSteps: [
     { title: "Choose your home", body: "", done: true },
-    { title: "Photo ID for everyone on the agreement, plus emails", body: "" },
-    { title: "Review the purchase agreement and send the down payment", body: "We'll confirm the exact order for your state by text, and send you a receipt as soon as your down payment is received." },
-    { title: "Sign and notarize", body: "" },
-    { title: "Get your keys", body: "" },
+    { title: "Photo ID for everyone on the agreement, plus emails", body: "", flag: "id_received" },
+    { title: "Review the purchase agreement and send the down payment", body: "We'll confirm the exact order for your state by text, and send you a receipt as soon as your down payment is received.", flags: ["down_payment_received", "agreement_sent"], partial: { down_payment_received: "Down payment received", agreement_sent: "Agreement sent" } },
+    { title: "Sign and notarize", body: "", flag: "signed_notarized" },
+    { title: "Get your keys", body: "", flag: "keys_delivered" },
   ],
 };
 
@@ -336,8 +343,73 @@ const DEAL_ROOM = {
   const money = n => "$" + Number(n||0).toLocaleString();
   const moneyR = n => "$" + Math.round(Number(n||0)).toLocaleString();
 
-  const wantedId = new URLSearchParams(location.search).get("home");
+  const qs = new URLSearchParams(location.search);
+  const wantedId = qs.get("home");
   const home = (wantedId && typeof HOMES !== "undefined") ? HOMES.find(h => h.id === wantedId) : null;
+  // D04: per-deal progress. `deal` is an opaque code; never logged, never shown.
+  const rawDeal = qs.get("deal") || "";
+  const dealCode = /^[a-z0-9]{6,32}$/i.test(rawDeal) ? rawDeal : "";
+  const idState = (wantedId || "").split("-")[1] || "";        // ids are city-ST-num-street
+
+  // Key = first 16 hex of SHA-256("<home id>|<code>") — must match scripts/deal_room.py.
+  async function dealKey(){
+    if (!(window.crypto && crypto.subtle)) throw new Error("no crypto");
+    const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(`${wantedId}|${dealCode}`));
+    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, "0")).join("").slice(0, 16);
+  }
+  // Resolves to a Set of done flags, or null when this deal isn't in the sheet (treated like no deal).
+  async function loadProgress(){
+    if (!DEAL_ROOM.statusUrl) throw new Error("no statusUrl");
+    const key = await dealKey();
+    const sep = DEAL_ROOM.statusUrl.includes("?") ? "&" : "?";
+    const res = await fetch(`${DEAL_ROOM.statusUrl}${sep}_=${Date.now()}`, { cache: "no-store" });
+    if (!res.ok) throw new Error("status " + res.status);
+    const rows = (await res.text()).trim().split(/\r?\n/).map(l => l.split(",").map(c => c.replace(/^"|"$/g, "").trim()));
+    const head = rows[0] || [];
+    const row = rows.slice(1).find(r => r[0] === key);
+    if (!row) return null;
+    const done = new Set();
+    head.forEach((h, i) => { if (i > 0 && row[i] === "1") done.add(h); });
+    return done;
+  }
+
+  // Roadmap — state-aware. Only Illinois gets the confirmed sequence with the refund window;
+  // every other state gets the generic roadmap with no refund claim and no claim about step
+  // order. `done` is null for a plain link (exactly the pre-D04 page) or a Set of flags.
+  function renderRoadmap(stateCode, done){
+    const confirmed = DEAL_ROOM.confirmedStates[(stateCode || "").toUpperCase()];
+    const steps = confirmed ? confirmed.steps : DEAL_ROOM.genericSteps;
+    const isDone = st => st.done || (!!done && (st.flag ? done.has(st.flag)
+                          : st.flags ? st.flags.every(f => done.has(f)) : false));
+    const nextIdx = done ? steps.findIndex(st => !isDone(st)) : -1;
+    $("roadmapTitle").textContent = confirmed ? `The ${confirmed.label} path` : "The path for your state";
+    $("roadmap").innerHTML = steps.map((st, i) => {
+      const d = isDone(st);
+      const part = (done && !d && st.partial) ? Object.keys(st.partial).filter(f => done.has(f)).map(f => `<p class="part">${st.partial[f]} ✓</p>`).join("") : "";
+      return `
+      <div class="step${d ? " done" : ""}${i === nextIdx ? " next" : ""}">
+        <div class="n">${d ? "✓" : i + 1}</div>
+        <div class="body">
+          <p><strong>${st.title}</strong>${i === nextIdx ? '<span class="tag">Up next</span>' : ""}</p>
+          ${st.body ? `<p class="note">${st.body}</p>` : ""}${part}
+        </div>
+      </div>`;
+    }).join("");
+    $("progressNote").hidden = !(done && nextIdx === -1);
+    if (done && nextIdx === -1) $("progressNote").textContent = "All done. Welcome home.";
+    $("faqChangeMind").textContent = confirmed
+      ? "You get 3 business days to review the purchase agreement after it's sent. If you change your mind in that window, your down payment is fully refunded."
+      : "Ask us before you pay — we'll walk you through exactly how your agreement handles it.";
+  }
+  function showProgressFailure(){
+    $("progressNote").hidden = false;
+    $("progressNote").textContent = "We couldn't load your progress just now. Refresh in a minute, or call us.";
+  }
+  function startProgress(stateCode){
+    if (!dealCode) return;
+    loadProgress().then(done => { if (done) renderRoadmap(stateCode, done); })
+                  .catch(showProgressFailure);
+  }
 
   const tel = (DEAL_ROOM.phone || "").replace(/[^\d+]/g, "");
   const prettyPhone = tel.length === 10 ? `(${tel.slice(0,3)}) ${tel.slice(3,6)}-${tel.slice(6)}` : DEAL_ROOM.phone;
@@ -348,6 +420,20 @@ const DEAL_ROOM = {
   $("phoneLink").textContent = prettyPhone;
   $("trustPhoneLink").href = `tel:${tel}`;
   $("trustPhoneLink").textContent = prettyPhone;
+
+  if (!home && dealCode && /^[a-z0-9]+-[a-z]{2}-/i.test(wantedId || "")){
+    // Deal link whose home has left homes.js (e.g. sold / pulled mid-deal). The buyer still gets
+    // their roadmap and progress; the home details are hidden and we point them at the phone.
+    document.title = "Your Next Steps | Americas Best Home Solutions";
+    document.querySelector(".hero").hidden = true;
+    $("page").hidden = false;
+    $("pendingBanner").hidden = false;
+    $("pendingBanner").textContent = `We can't load this home's details right now. Call us at ${prettyPhone}.`;
+    renderRoadmap(idState, null);
+    renderPay();
+    startProgress(idState);
+    return;
+  }
 
   if (!home){
     // Unknown or missing ?home= — no roadmap, no stale data. Covers both a
@@ -360,7 +446,7 @@ const DEAL_ROOM = {
   const C = home;
   document.title = `Your Next Steps for ${C.address || C.city} | Americas Best Home Solutions`;
 
-  if ((C.status || "").trim() === "Pending"){
+  if ((C.status || "").trim() === "Pending" && !dealCode){
     $("pendingBanner").hidden = false;
   }
 
@@ -403,29 +489,11 @@ const DEAL_ROOM = {
   })();
   $("heroCity").innerHTML = `<div class="c">${C.city || ""}</div><div class="s">${C.state || ""}</div>`;
 
-  // roadmap — state-aware. Only Illinois gets the confirmed sequence with the
-  // refund window; every other state gets the generic roadmap with no refund
-  // claim and no claim about step order.
-  (function(){
-    const confirmed = DEAL_ROOM.confirmedStates[(C.state || "").toUpperCase()];
-    const steps = confirmed ? confirmed.steps : DEAL_ROOM.genericSteps;
-    $("roadmapTitle").textContent = confirmed ? `The ${confirmed.label} path` : "The path for your state";
-    $("roadmap").innerHTML = steps.map((s, i) => `
-      <div class="step${s.done ? " done" : ""}">
-        <div class="n">${s.done ? "✓" : i + 1}</div>
-        <div class="body">
-          <p><strong>${s.title}</strong></p>
-          ${s.body ? `<p class="note">${s.body}</p>` : ""}
-        </div>
-      </div>
-    `).join("");
+  renderRoadmap(C.state, null);
+  startProgress(C.state);
 
-    $("faqChangeMind").textContent = confirmed
-      ? "You get 3 business days to review the purchase agreement after it's sent. If you change your mind in that window, your down payment is fully refunded."
-      : "Ask us before you pay — we'll walk you through exactly how your agreement handles it.";
-  })();
-
-  // payment accounts
+  renderPay();
+  function renderPay(){
   $("payList").innerHTML = DEAL_ROOM.paymentAccounts.map(a => `
     <div class="pay-row">
       <div>
@@ -435,6 +503,7 @@ const DEAL_ROOM = {
       <div class="handle">${a.link ? `<a href="${a.link}" target="_blank" rel="noopener">${a.handle}</a>` : a.handle}</div>
     </div>
   `).join("");
+  }
 })();
 </script>
 </body>

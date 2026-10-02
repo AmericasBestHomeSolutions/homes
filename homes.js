@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (216 live, rebuilt from master published 2026-09-30) --- */
+/* --- the homes (214 live, rebuilt from master published 2026-09-30) --- */
 const HOMES = [
   {
     id: "peoria-il-2421-lincoln",
@@ -479,28 +479,6 @@ const HOMES = [
     features: { garage: "yes", storage_shed: "yes" },
     heroPhoto: "",
     photos:    ["images/centralia-il-327-hickory-1.jpg", "images/centralia-il-327-hickory-2.jpg", "images/centralia-il-327-hickory-3.jpg", "images/centralia-il-327-hickory-4.jpg", "images/centralia-il-327-hickory-5.jpg", "images/centralia-il-327-hickory-6.jpg", "images/centralia-il-327-hickory-7.jpg", "images/centralia-il-327-hickory-8.jpg", "images/centralia-il-327-hickory-9.jpg", "images/centralia-il-327-hickory-10.jpg", "images/centralia-il-327-hickory-11.jpg", "images/centralia-il-327-hickory-12.jpg", "images/centralia-il-327-hickory-13.jpg", "images/centralia-il-327-hickory-14.jpg"],
-  },
-  {
-    id: "marion-in-1615-9th",
-    address:     "1615 W 9th St",
-    zip:         "46953",
-    description: "2 bed / 1 bath, 839 sqft, built 1946, ranch, Marion, IN (46953). Spacious double lot (66x132, 8,712 sqft) with fully fenced backyard. Central air, natural gas forced-air heat. Eat-in kitchen. Gas range, microwave, refrigerator, washer, electric dryer included. Newer water heater. Storage shed on the lot. Recently occupied — cleared out and cleaned since. Electricity confirmed working; utilities currently off. Original bathroom and kitchen fixtures (as listed, not updated). Carpet and vinyl flooring throughout. Crawl space foundation, asphalt roof, vinyl siding — ages not verified. City water and sewer",
-    copy:        "Two bedrooms, a double lot, and a payment of $925 a month, with $3,000 to move in. This 1946 ranch in Marion, IN sits on a generous lot with a fully fenced backyard and a storage shed. Inside you'll find central air, gas forced-air heat, a newer water heater, and an eat-in kitchen that comes with the range, microwave, and refrigerator, plus a washer and dryer. Out back, that fence marks off ground where a quiet evening belongs to you, and no landlord gets a say in whether you're still there next year. The purchase price is $89,000, fixed the day you sign, with owner financing and no bank anywhere in the picture. It's sold as-is, so come walk through every room and see how it feels. Homes like this don't sit long. Send us a text and claim your showing.",
-    city:  "Marion",
-    state: "IN",
-    beds:  2,
-    baths: 1,
-    sqft:  "839",
-    status: "Available",
-
-    monthlyPayment: 925,
-    moveIn:         3000,
-    lockedPrice:    89000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { backyard: "yes", fenced_yard: "yes", central_air: "yes", storage_shed: "yes" },
-    heroPhoto: "",
-    photos:    ["images/marion-in-1615-9th-1.jpg", "images/marion-in-1615-9th-2.jpg", "images/marion-in-1615-9th-3.jpg", "images/marion-in-1615-9th-4.jpg", "images/marion-in-1615-9th-5.jpg", "images/marion-in-1615-9th-6.jpg", "images/marion-in-1615-9th-7.jpg", "images/marion-in-1615-9th-8.jpg", "images/marion-in-1615-9th-9.jpg", "images/marion-in-1615-9th-10.jpg", "images/marion-in-1615-9th-11.jpg", "images/marion-in-1615-9th-12.jpg", "images/marion-in-1615-9th-13.jpg", "images/marion-in-1615-9th-14.jpg", "images/marion-in-1615-9th-15.jpg", "images/marion-in-1615-9th-16.jpg", "images/marion-in-1615-9th-17.jpg", "images/marion-in-1615-9th-18.jpg", "images/marion-in-1615-9th-19.jpg", "images/marion-in-1615-9th-20.jpg", "images/marion-in-1615-9th-21.jpg", "images/marion-in-1615-9th-22.jpg"],
   },
   {
     id: "granitecity-il-2964-iowa",
@@ -1146,7 +1124,7 @@ const HOMES = [
     beds:  2,
     baths: 2,
     sqft:  "988",
-    status: "Available",
+    status: "Pending",
 
     monthlyPayment: 550,
     moveIn:         1000,
@@ -1928,28 +1906,6 @@ const HOMES = [
     photos:    ["images/peoria-il-2410-ellis-1.jpg", "images/peoria-il-2410-ellis-2.jpg", "images/peoria-il-2410-ellis-3.jpg", "images/peoria-il-2410-ellis-4.jpg", "images/peoria-il-2410-ellis-5.jpg", "images/peoria-il-2410-ellis-6.jpg", "images/peoria-il-2410-ellis-7.jpg", "images/peoria-il-2410-ellis-8.jpg", "images/peoria-il-2410-ellis-9.jpg", "images/peoria-il-2410-ellis-10.jpg", "images/peoria-il-2410-ellis-11.jpg"],
   },
   {
-    id: "saginaw-mi-2236-king",
-    address:     "2236 King St",
-    zip:         "48602",
-    description: "2 bed, 1 bath, nice partially fenced backyard, basement, 806 sq ft",
-    copy:        "$685 a month and $3,000 at move-in open the door to this two-bedroom, one-bath home in Saginaw, Michigan. At 806 square feet, it keeps things simple and easy to manage, with a basement below for storage and extra breathing room and a partially fenced backyard out back. That yard is where a quiet evening outside starts to feel different, because no landlord gets a say in whether you're still there next year. The purchase price is $54,900, set in writing the day you sign, with owner financing and no bank standing between you and the keys. The home is sold as-is, and the best way to know if it's the one is to come walk through it in person. Don't let someone else get there first. Send us a text or message now and let's get you inside.",
-    city:  "Saginaw",
-    state: "MI",
-    beds:  2,
-    baths: 1,
-    sqft:  "806",
-    status: "Available",
-
-    monthlyPayment: 685,
-    moveIn:         3000,
-    lockedPrice:    54900,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { backyard: "yes", fenced_yard: "yes", basement: "yes" },
-    heroPhoto: "",
-    photos:    ["images/saginaw-mi-2236-king-1.jpg", "images/saginaw-mi-2236-king-2.jpg", "images/saginaw-mi-2236-king-3.jpg", "images/saginaw-mi-2236-king-4.jpg", "images/saginaw-mi-2236-king-5.jpg", "images/saginaw-mi-2236-king-6.jpg", "images/saginaw-mi-2236-king-7.jpg", "images/saginaw-mi-2236-king-8.jpg", "images/saginaw-mi-2236-king-9.jpg", "images/saginaw-mi-2236-king-10.jpg", "images/saginaw-mi-2236-king-11.jpg", "images/saginaw-mi-2236-king-12.jpg", "images/saginaw-mi-2236-king-13.jpg", "images/saginaw-mi-2236-king-14.jpg", "images/saginaw-mi-2236-king-15.jpg", "images/saginaw-mi-2236-king-16.jpg", "images/saginaw-mi-2236-king-17.jpg", "images/saginaw-mi-2236-king-18.jpg", "images/saginaw-mi-2236-king-19.jpg"],
-  },
-  {
     id: "cahokia-il-107-judith",
     address:     "107 Judith Ln",
     zip:         "62206",
@@ -2017,7 +1973,7 @@ const HOMES = [
     address:     "233 N 11th St",
     zip:         "62220",
     description: "Large two-bedroom, one-bath, detached garage, corner lot",
-    copy:        "$1,075 a month and $2,500 at move-in puts a roomy Belleville home within reach, with no bank and no mortgage application. This two-bedroom, one-bath house offers 1,639 square feet of living space and sits on a corner lot with a detached garage and off-street parking, so there's a spot for the car and room for tools, projects, or storage. Your monthly amount is written into your contract from day one, so you never have to wait each year to find out what a landlord decides to charge next. The purchase price is $87,000, agreed the day you sign, with owner financing in place of a lender. The home is sold as-is, and the best way to judge it is to come walk through every room in person. Homes like this don't sit long, so send us a text or message now to book your showing.",
+    copy:        "$1,060 a month and $2,000 to move in. That's the doorway to a roomy two-bedroom, one-bath home in Belleville with 1,639 square feet to spread out in. It sits on a corner lot with a detached garage and off-street parking, so there's a spot for the car and space for storage or weekend projects. Every month you'd pay the same $1,060, written into your agreement, with no landlord deciding next year that the number should climb. The purchase price is $85,000, settled on the day you sign. There's no bank weighing in and no mortgage application to fill out, just owner financing. The home is sold as-is, so come walk through every room and judge it with your own eyes. Send us a text now so you're first in line for a showing before someone else claims this corner.",
     city:  "Belleville",
     state: "IL",
     beds:  2,
@@ -2025,9 +1981,9 @@ const HOMES = [
     sqft:  "1639",
     status: "Available",
 
-    monthlyPayment: 1075,
-    moveIn:         2500,
-    lockedPrice:    87000,
+    monthlyPayment: 1060,
+    moveIn:         2000,
+    lockedPrice:    85000,
     termText:       "30-year owner financing (contract for deed)",
 
     features: { garage: "yes", off_street_parking: "yes" },
@@ -2232,17 +2188,17 @@ const HOMES = [
     address:     "1311 N 51st St.",
     zip:         "62204",
     description: "1 bed. 1 bath. 700 sq. ft.. / Recently cleaned out. Needs water heater, and furnace. \\+ Will have to have utility companies put electric and gas meters back on the house",
-    copy:        "$375 a month. $400 to move in. That's what it takes to start owning a 1-bedroom, 1-bath home in East St. Louis with 700 square feet to call your own. The purchase price is $40,000, fixed the day you sign, with owner financing and no bank weighing in. This one needs real work. It needs a water heater and a furnace, and the utility companies will have to reinstall the electric and gas meters before service comes back on. Every system you bring back to life here adds value to a place with your name on the paperwork, not to somebody else's rental portfolio. The home is sold as-is, and you're welcome to come through and walk every room in person. At this price it won't sit quiet for long, so send us a text and let's get you inside.",
+    copy:        "$400 to get started, then $375 a month toward a house in East St. Louis that you're buying, not renting. It's a one-bedroom, one-bath home with 700 square feet to make your own. Be clear on what it needs: a new furnace and a new water heater, and the utility companies will have to reinstall the electric and gas meters before service can be restored. That's a big part of why the numbers are this low, and every repair you put in builds value in a home with your name on it instead of padding someone else's rent check. The purchase price is $39,000, fixed in writing when you sign, with owner financing and no bank standing in the way. It's sold as-is, so come walk through it and size up the work in person. A payment like this won't wait around. Send us a text and claim your showing.",
     city:  "East St. Louis",
     state: "IL",
     beds:  1,
     baths: 1,
     sqft:  "700",
-    status: "Pending",
+    status: "Available",
 
     monthlyPayment: 375,
     moveIn:         400,
-    lockedPrice:    40000,
+    lockedPrice:    39000,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
@@ -3142,7 +3098,7 @@ const HOMES = [
     id: "peoria-il-1117-glendale",
     address:     "1117 NE Glendale",
     zip:         "61603",
-    copy:        "$850 a month and $2,000 to move in, for three bedrooms in Peoria with your name on the paperwork. This 3 bedroom, 1 bath home in Peoria, Illinois comes with owner financing, which means no bank, no mortgage application, and no one in an office deciding whether you get a yes. Three bedrooms give you space to spread out, give every room a purpose, and finally hang pictures on walls that belong to you instead of a landlord. The purchase price is $75,000, fixed in writing the day you sign, with no lender anywhere in the deal. The home is sold as-is, so come walk through every room in person and judge it with your own eyes. Homes at this payment don't stay open for long. Send us a text now and grab a showing time before someone else does.",
+    copy:        "$750 a month and $1,000 to move in puts you in a three-bedroom home in Peoria, IL, with no bank, no mortgage application, and no waiting on someone else's yes. It's a 3 bedroom, 1 bath house offered with owner financing through a contract for deed. Three bedrooms means real space to spread out under one roof, and the boxes you unpack here can stay unpacked, because the place you're settling into is one you're buying. The purchase price is $65,000, agreed in writing the day you sign, with no bank anywhere in the middle. The home is sold as-is, so come walk through every room in person and judge it with your own eyes. A three-bedroom at this payment won't wait around for long, so send us a text or message now and let's get you on the showing schedule.",
     city:  "Peoria",
     state: "IL",
     beds:  3,
@@ -3150,9 +3106,9 @@ const HOMES = [
     sqft:  "",
     status: "Available",
 
-    monthlyPayment: 850,
-    moveIn:         2000,
-    lockedPrice:    75000,
+    monthlyPayment: 750,
+    moveIn:         1000,
+    lockedPrice:    65000,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
@@ -3183,7 +3139,7 @@ const HOMES = [
     address:     "606 Anderson St.,",
     zip:         "62002",
     description: "NEW ROOF December 2025. Handyman Special.. Buyer will need to complete occupancy inspection",
-    copy:        "$550 a month. $1,500 to move in. A two-bedroom home in Alton, IL, instead of another lease. This 660-square-foot house has two bedrooms, one bath, and a brand-new roof put on in December 2025, so the biggest job overhead is already done. It's a handyman special, and that's where the opportunity is. Every repair you make and every room you freshen up adds value to a place with your name on it, not to someone else's rent check. The purchase price is $53,000, agreed in writing the day you sign, with owner financing and no bank involved. The home is sold as-is, and the buyer will need to complete an occupancy inspection, so come walk through it and size up the work in person. Send us a text or message now, before someone else books the first showing.",
+    copy:        "$500 a month. $1,500 to move in. A 2-bedroom, 1-bath home in Alton, IL with a brand-new roof put on in December 2025, so one of the biggest jobs is already handled. At 660 square feet, it's a manageable size to make your own. This is a handyman special, and the buyer will need to complete an occupancy inspection. Those rough spots are where the opportunity lives: every repair you finish here grows your own equity instead of padding someone else's rent check. The purchase price is $53,000, written into your contract from the start, with owner financing and no bank in the middle. The home is sold as-is, so come walk through every room in person and size up the work with your own eyes. A payment like this won't sit long, so send us a text or message now to grab a showing time.",
     city:  "Alton",
     state: "IL",
     beds:  2,
@@ -3191,7 +3147,7 @@ const HOMES = [
     sqft:  "660",
     status: "Available",
 
-    monthlyPayment: 550,
+    monthlyPayment: 500,
     moveIn:         1500,
     lockedPrice:    53000,
     termText:       "30-year owner financing (contract for deed)",
@@ -4055,27 +4011,6 @@ const HOMES = [
     photos:    ["images/stlouis-mo-1027-garth-1.jpg", "images/stlouis-mo-1027-garth-2.jpg", "images/stlouis-mo-1027-garth-3.jpg", "images/stlouis-mo-1027-garth-4.jpg", "images/stlouis-mo-1027-garth-5.jpg", "images/stlouis-mo-1027-garth-6.jpg", "images/stlouis-mo-1027-garth-7.jpg", "images/stlouis-mo-1027-garth-8.jpg", "images/stlouis-mo-1027-garth-9.jpg", "images/stlouis-mo-1027-garth-10.jpg", "images/stlouis-mo-1027-garth-11.jpg", "images/stlouis-mo-1027-garth-12.jpg", "images/stlouis-mo-1027-garth-13.jpg", "images/stlouis-mo-1027-garth-14.jpg", "images/stlouis-mo-1027-garth-15.jpg", "images/stlouis-mo-1027-garth-16.jpg", "images/stlouis-mo-1027-garth-17.jpg", "images/stlouis-mo-1027-garth-18.jpg", "images/stlouis-mo-1027-garth-19.jpg", "images/stlouis-mo-1027-garth-20.jpg", "images/stlouis-mo-1027-garth-21.jpg", "images/stlouis-mo-1027-garth-22.jpg", "images/stlouis-mo-1027-garth-23.jpg"],
   },
   {
-    id: "eaststlouis-il-634-8th",
-    address:     "634 N 8th St.",
-    zip:         "62201",
-    description: "updated water heater, furnace, electrical panel",
-    copy:        "$720 a month, $2,000 to move in, and a three-bedroom, two-bath home in East St. Louis that answers to you instead of a landlord. The big-ticket systems have already been handled: the water heater, furnace, and electrical panel have all been updated, so the parts of a house that cost the most to replace aren't the first things on your list. With three bedrooms, everyone gets a door to close, and the boxes you carry in this time are staying put. The purchase price is $59,000, fixed on paper the day you sign, with owner financing and no bank anywhere in the picture. The home is sold as-is, and the best way to know it is to walk through it in person. A three-bedroom at this payment won't wait around, so send us a text and let's get you inside this week.",
-    city:  "East St. Louis",
-    state: "IL",
-    beds:  3,
-    baths: 2,
-    sqft:  "unknown",
-    status: "Available",
-
-    monthlyPayment: 720,
-    moveIn:         2000,
-    lockedPrice:    59000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    ["images/eaststlouis-il-634-8th-1.jpg", "images/eaststlouis-il-634-8th-2.jpg", "images/eaststlouis-il-634-8th-3.jpg", "images/eaststlouis-il-634-8th-4.jpg", "images/eaststlouis-il-634-8th-5.jpg", "images/eaststlouis-il-634-8th-6.jpg", "images/eaststlouis-il-634-8th-7.jpg", "images/eaststlouis-il-634-8th-8.jpg", "images/eaststlouis-il-634-8th-9.jpg", "images/eaststlouis-il-634-8th-10.jpg", "images/eaststlouis-il-634-8th-11.jpg", "images/eaststlouis-il-634-8th-12.jpg", "images/eaststlouis-il-634-8th-13.jpg", "images/eaststlouis-il-634-8th-14.jpg", "images/eaststlouis-il-634-8th-15.jpg", "images/eaststlouis-il-634-8th-16.jpg", "images/eaststlouis-il-634-8th-17.jpg", "images/eaststlouis-il-634-8th-18.jpg", "images/eaststlouis-il-634-8th-19.jpg", "images/eaststlouis-il-634-8th-20.jpg", "images/eaststlouis-il-634-8th-21.jpg", "images/eaststlouis-il-634-8th-22.jpg", "images/eaststlouis-il-634-8th-23.jpg", "images/eaststlouis-il-634-8th-24.jpg"],
-  },
-  {
     id: "eaststlouis-il-3129-converse",
     address:     "3129 Converse Ave",
     zip:         "62207",
@@ -4132,6 +4067,26 @@ const HOMES = [
     monthlyPayment: 800,
     moveIn:         2000,
     lockedPrice:    79000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "stlouis-mo-2125-68th",
+    address:     "2125 68th",
+    zip:         "63121",
+    copy:        "$800 a month. $2,000 to move in. A two-bedroom, one-bath home in St. Louis with your name on the paperwork. There's no bank to win over and no mortgage application. This is owner financing on a contract for deed. Your monthly amount is written down from the start, so it won't climb every time a lease comes due. That steadiness lets you build a real budget, knowing each payment goes toward a place that's becoming yours instead of a landlord's. The purchase price is $75,000, agreed in writing when you sign, with no lender in the middle. The home is sold as-is, so come walk through it in person and get a feel for both bedrooms yourself. A chance like this doesn't wait around, so send us a message and let's get you through the door this week.",
+    city:  "St. Louis",
+    state: "MO",
+    beds:  2,
+    baths: 1,
+    sqft:  "",
+    status: "Available",
+
+    monthlyPayment: 800,
+    moveIn:         2000,
+    lockedPrice:    75000,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",

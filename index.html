@@ -541,7 +541,7 @@ body{
   <section class="lead reveal" id="get-started">
     <div class="lead-inner">
       <h2>This isn't for everyone.</h2>
-      <p class="sub">We take on a limited number of buyers at a time — and we look for serious ones. If you're ready to stop renting and start owning, apply below and we'll reach out.</p>
+      <p class="sub">We take on a limited number of buyers at a time — and we look for serious ones. If you're ready to stop renting and start owning, tell us a little about yourself below and we'll reach out.</p>
       <form id="leadForm">
         <label for="lfName">Name</label>
         <input id="lfName" name="name" type="text" autocomplete="name" required>
@@ -571,11 +571,11 @@ body{
           <span>I agree to receive text messages from Americas Best Home Solutions LLC about property listings, showings, offers, and follow-up. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe or HELP for help. See our <a href="/privacy-policy" style="color:#fff;font-weight:600">Privacy Policy</a> and <a href="/messaging-terms" style="color:#fff;font-weight:600">Messaging Terms</a>.</span>
         </label>
         <p style="font-family:'DM Mono',monospace;font-size:12px;color:#a9bedd;margin:7px 0 0;letter-spacing:.3px">Optional — you can submit this form without checking the box.</p>
-        <button type="submit" class="btn btn-lime" id="lfSubmit">Apply now — it takes 1 minute</button>
+        <button type="submit" class="btn btn-lime" id="lfSubmit">Show me my options — takes 1 minute</button>
         <p class="form-note" id="lfNote"></p>
       </form>
       <div class="thanks">
-        <h3>Application received — nice move.</h3>
+        <h3>Got it — nice move.</h3>
         <p>You just did what most people only talk about. We'll reach out shortly — in the meantime, feel free to call or text us below.</p>
       </div>
     </div>
@@ -890,7 +890,7 @@ body{
       const results = await Promise.allSettled(targets);
       const ok = results.some(r => r.status === "fulfilled" && r.value.ok);
       if (ok){ section.classList.add("sent"); }
-      else { btn.disabled = false; btn.textContent = "Apply now — it takes 1 minute"; note.textContent = "Something went wrong — please call or text us instead."; }
+      else { btn.disabled = false; btn.textContent = "Show me my options — takes 1 minute"; note.textContent = "Something went wrong — please call or text us instead."; }
     });
   })();
 

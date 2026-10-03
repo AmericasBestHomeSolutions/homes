@@ -7208,5 +7208,145 @@
   "central_air": "unknown",
   "storage_shed": "yes",
   "attic": "unknown"
+ },
+ "ad34799d0130d799588d2484f02e82632071a930": {
+  "backyard": "unknown",
+  "fenced_yard": "unknown",
+  "basement": "unknown",
+  "garage": "unknown",
+  "off_street_parking": "unknown",
+  "central_air": "unknown",
+  "storage_shed": "unknown",
+  "attic": "unknown"
+ },
+ "5c13fd3fa8e1df7f58b043028b3da65b74e9890a": {
+  "backyard": "unknown",
+  "fenced_yard": "unknown",
+  "basement": "unknown",
+  "garage": "unknown",
+  "off_street_parking": "unknown",
+  "central_air": "unknown",
+  "storage_shed": "unknown",
+  "attic": "unknown"
+ },
+ "e92c5ee8c01c5a6298cb19b772a2902abe58b3ad": {
+  "backyard": "unknown",
+  "fenced_yard": "unknown",
+  "basement": "unknown",
+  "garage": "unknown",
+  "off_street_parking": "unknown",
+  "central_air": "unknown",
+  "storage_shed": "unknown",
+  "attic": "unknown"
+ },
+ "8fbc9283f2903aaafeb979fc35a237ff7834b4af": {
+  "backyard": "yes",
+  "fenced_yard": "unknown",
+  "basement": "unknown",
+  "garage": "unknown",
+  "off_street_parking": "unknown",
+  "central_air": "unknown",
+  "storage_shed": "unknown",
+  "attic": "unknown"
+ },
+ "f3f4ccc2c9cf33e1c06e9e742525a2a50f3e4a5d": {
+  "backyard": "unknown",
+  "fenced_yard": "unknown",
+  "basement": "unknown",
+  "garage": "unknown",
+  "off_street_parking": "unknown",
+  "central_air": "unknown",
+  "storage_shed": "unknown",
+  "attic": "unknown"
+ },
+ "8b9a73a5d8bb437e3180537f08c6f46e0bb79161": {
+  "backyard": "unknown",
+  "fenced_yard": "unknown",
+  "basement": "unknown",
+  "garage": "unknown",
+  "off_street_parking": "unknown",
+  "central_air": "unknown",
+  "storage_shed": "unknown",
+  "attic": "unknown"
+ },
+ "15a7bf435025c3fa909fb771233723e5a1c7ef19": {
+  "backyard": "yes",
+  "fenced_yard": "unknown",
+  "basement": "no",
+  "garage": "yes",
+  "off_street_parking": "yes",
+  "central_air": "unknown",
+  "storage_shed": "unknown",
+  "attic": "unknown"
+ },
+ "bd8982eed01d1084017d12e37efb5fe7692b5057": {
+  "backyard": "unknown",
+  "fenced_yard": "unknown",
+  "basement": "unknown",
+  "garage": "yes",
+  "off_street_parking": "yes",
+  "central_air": "unknown",
+  "storage_shed": "unknown",
+  "attic": "unknown"
+ },
+ "42a2832dcbd2f441db626fbfa5e8baed13e2f0a2": {
+  "backyard": "unknown",
+  "fenced_yard": "unknown",
+  "basement": "yes",
+  "garage": "unknown",
+  "off_street_parking": "unknown",
+  "central_air": "unknown",
+  "storage_shed": "unknown",
+  "attic": "unknown"
+ },
+ "a5c8c3c171413c1bacbaa4dcf8537d54ba0008a5": {
+  "backyard": "unknown",
+  "fenced_yard": "unknown",
+  "basement": "unknown",
+  "garage": "unknown",
+  "off_street_parking": "unknown",
+  "central_air": "unknown",
+  "storage_shed": "unknown",
+  "attic": "yes"
+ },
+ "62fd45c21aa0010ca0ff1a7b6b11eaaf04f2be43": {
+  "backyard": "yes",
+  "fenced_yard": "yes",
+  "basement": "yes",
+  "garage": "unknown",
+  "off_street_parking": "unknown",
+  "central_air": "yes",
+  "storage_shed": "yes",
+  "attic": "unknown"
+ },
+ "aaaa74f17edc40b39ed01785b03a52270e3255e0": {
+  "backyard": "yes",
+  "fenced_yard": "unknown",
+  "basement": "yes",
+  "garage": "unknown",
+  "off_street_parking": "unknown",
+  "central_air": "unknown",
+  "storage_shed": "unknown",
+  "attic": "unknown"
+ },
+ "12753ac4d54cb68bb9994a9ea41b271fd73f0d5e": {
+  "backyard": "unknown",
+  "fenced_yard": "unknown",
+  "basement": "unknown",
+  "garage": "yes",
+  "off_street_parking": "yes",
+  "central_air": "unknown",
+  "storage_shed": "unknown",
+  "attic": "unknown"
+ },
+ "494ce481b5e32008138145126129e6ca0f42f9d6": {
+  "backyard": "unknown",
+  "fenced_yard": "unknown",
+  "basement": "unknown",
+  "garage": "unknown",
+  "off_street_parking": "unknown",
+  "central_air": "unknown",
+  "storage_shed": "unknown",
+  "attic": "unknown"
  }
 }

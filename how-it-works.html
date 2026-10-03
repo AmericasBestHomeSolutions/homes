@@ -190,12 +190,11 @@ body{
   <p class="subhead">Owner financing lets you own a home without a bank. Here's exactly how it works — and what it means to be the homeowner.</p>
 
   <!-- VIDEO -->
-  <div class="video-wrap" id="videoWrap">
+  <div class="video-wrap" id="videoWrap" style="display:none">
     <div class="video-ph" id="videoPh">
       <div class="play">
         <svg width="26" height="26" viewBox="0 0 24 24" fill="#d6e6fa" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
       </div>
-      <div class="lab">Video walkthrough coming soon</div>
     </div>
   </div>
 
@@ -384,6 +383,7 @@ const VIDEO_EMBED_URL = "";
   // video: show the real embed if a link is set, otherwise keep the placeholder
   if (VIDEO_EMBED_URL && VIDEO_EMBED_URL.trim()){
     const wrap = $("videoWrap");
+    wrap.style.display = "";
     wrap.innerHTML = `<iframe src="${VIDEO_EMBED_URL.trim()}" title="How owner financing works" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>`;
   }
 

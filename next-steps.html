@@ -315,6 +315,7 @@ const DEAL_ROOM = {
       label: "Illinois",
       steps: [
         { title: "Choose your home", body: "", done: true },
+        { title: "Schedule your tour", body: "We'll set a day and time that works for you.", flag: "tour_scheduled", impliedBy: true },
         { title: "Send photo ID for everyone who'll be on the agreement, plus emails", body: "", flag: "id_received" },
         { title: "Your invoice", body: "You'll get an invoice from Americas Best Home Solutions.", flag: "invoice_sent" },
         { title: "Down payment received", body: "We send you a receipt right away.", flag: "down_payment_received" },
@@ -327,6 +328,7 @@ const DEAL_ROOM = {
   },
   genericSteps: [
     { title: "Choose your home", body: "", done: true },
+    { title: "Schedule your tour", body: "We'll set a day and time that works for you.", flag: "tour_scheduled", impliedBy: true },
     { title: "Photo ID for everyone on the agreement, plus emails", body: "", flag: "id_received" },
     { title: "Review the purchase agreement and send the down payment", body: "We'll confirm the exact order for your state by text, and send you a receipt as soon as your down payment is received.", flags: ["down_payment_received", "agreement_sent"], partial: { down_payment_received: "Down payment received", agreement_sent: "Agreement sent" } },
     { title: "Sign and notarize", body: "", flag: "signed_notarized" },
@@ -366,6 +368,8 @@ const DEAL_ROOM = {
     if (!row) return null;
     const done = new Set();
     head.forEach((h, i) => { if (i > 0 && row[i] === "1") done.add(h); });
+    const wi = head.indexOf("tour_when");
+    done.tourWhen = wi > 0 ? (row[wi] || "") : "";
     return done;
   }
 
@@ -375,8 +379,11 @@ const DEAL_ROOM = {
   function renderRoadmap(stateCode, done){
     const confirmed = DEAL_ROOM.confirmedStates[(stateCode || "").toUpperCase()];
     const steps = confirmed ? confirmed.steps : DEAL_ROOM.genericSteps;
-    const isDone = st => st.done || (!!done && (st.flag ? done.has(st.flag)
+    // `impliedBy`: a step that predates its flag (the tour) counts as done once ANY later step is,
+    // so deals started before the tour step existed don't suddenly show it as "Up next".
+    const isDone = st => st.done || (!!done && (st.flag ? (done.has(st.flag) || (!!st.impliedBy && done.size > 0))
                           : st.flags ? st.flags.every(f => done.has(f)) : false));
+    const esc = t => String(t).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
     const nextIdx = done ? steps.findIndex(st => !isDone(st)) : -1;
     $("roadmapTitle").textContent = confirmed ? `The ${confirmed.label} path` : "The path for your state";
     $("roadmap").innerHTML = steps.map((st, i) => {
@@ -387,7 +394,8 @@ const DEAL_ROOM = {
         <div class="n">${d ? "✓" : i + 1}</div>
         <div class="body">
           <p><strong>${st.title}</strong>${i === nextIdx ? '<span class="tag">Up next</span>' : ""}</p>
-          ${st.body ? `<p class="note">${st.body}</p>` : ""}${part}
+          ${(d && st.flag === "tour_scheduled") ? (done.tourWhen ? `<p class="note">Scheduled for ${esc(done.tourWhen)}.</p>` : "")
+            : st.body ? `<p class="note">${st.body}</p>` : ""}${part}
         </div>
       </div>`;
     }).join("");

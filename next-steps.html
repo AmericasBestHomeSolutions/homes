@@ -348,7 +348,7 @@ const DEAL_ROOM = {
         { title: "Your invoice", body: "You'll get an invoice from Americas Best Home Solutions.", flag: "invoice_sent" },
         { title: "Down payment received", body: "We send you a receipt right away.", flag: "down_payment_received" },
         { title: "We prepare the purchase agreement and send it to you", body: "", flag: "agreement_sent" },
-        { title: "You get 3 business days to review it", body: "If you change your mind in that window, your down payment is fully refunded.", flag: "review_window_done" },
+        { title: "You get 3 business days to review it", body: "Your 3 business days start the day you receive the agreement. If you change your mind in that window, any down payment you have made is fully refunded.", flag: "review_window_done" },
         { title: "Sign your agreement, then a notary walks you through it", body: "You sign online. Then a notary contacts you directly and handles the notarization with you.", flag: "signed_notarized" },
         { title: "Get your keys", body: "", flag: "keys_delivered" },
       ],
@@ -445,7 +445,7 @@ const DEAL_ROOM = {
     $("progressNote").hidden = !(done && nextIdx === -1);
     if (done && nextIdx === -1) $("progressNote").textContent = "All done. Welcome home.";
     $("faqChangeMind").textContent = confirmed
-      ? "You get 3 business days to review the purchase agreement after it's sent. If you change your mind in that window, your down payment is fully refunded."
+      ? "You get 3 business days to review the purchase agreement, counted from the day you receive it. If you change your mind in that window, any down payment you have made is fully refunded."
       : "Ask us before you pay — we'll walk you through exactly how your agreement handles it.";
   }
   function showProgressFailure(){

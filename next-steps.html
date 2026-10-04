@@ -125,6 +125,8 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
 .pay-row .label{font-weight:700;color:var(--pine);font-size:15px}
 .pay-row .handle{font-family:'DM Mono',monospace;font-size:14px;color:var(--ink)}
 .pay-row .handle a{color:var(--pine);text-decoration:none}
+.pay-row .qr{width:132px;height:132px;border-radius:10px;border:1px solid var(--line);background:#fff;display:block;margin:10px 0 0 auto}
+.pay-row .scan{font-size:11px;color:var(--ink-soft);text-align:right;margin-top:4px}
 .pay-row .acct{font-size:12px;color:var(--ink-soft)}
 .pay-warn{font-size:14px;color:var(--ink-soft);background:var(--honey-soft);border-radius:12px;padding:12px 14px;line-height:1.5}
 
@@ -317,6 +319,7 @@ const DEAL_ROOM = {
       label: "Zelle",
       handle: "admin@americasbesthomesolutions.com",
       link: "",
+      qr: "images/pay-zelle-qr.png",
       nameOnAccount: "Americas Best Home Solutions LLC",
     },
     {
@@ -325,6 +328,7 @@ const DEAL_ROOM = {
       label: "Cash App",
       handle: "$iamjoehernandez",
       link: "https://cash.app/$iamjoehernandez",
+      qr: "images/pay-cashapp-qr.png",
       nameOnAccount: "Joseph Hernandez",
     },
   ],
@@ -435,7 +439,7 @@ const DEAL_ROOM = {
       $("payCardList").innerHTML = DEAL_ROOM.paymentAccounts.map(a => `
         <div class="pay-row">
           <div><div class="label">${a.label}</div><div class="acct">Name on account: ${a.nameOnAccount}</div></div>
-          <div class="handle">${a.link ? `<a href="${a.link}" target="_blank" rel="noopener">${a.handle}</a>` : a.handle}</div>
+          <div class="handle">${a.link ? `<a href="${a.link}" target="_blank" rel="noopener">${a.handle}</a>` : a.handle}${a.qr ? `<img class="qr" src="${a.qr}" alt="${a.label} QR code" loading="lazy"><div class="scan">Scan with your phone camera or ${a.label} app</div>` : ""}</div>
         </div>`).join("");
     }
     $("progressNote").hidden = !(done && nextIdx === -1);
@@ -543,7 +547,7 @@ const DEAL_ROOM = {
         <div class="label">${a.label}</div>
         <div class="acct">Name on account: ${a.nameOnAccount}</div>
       </div>
-      <div class="handle">${a.link ? `<a href="${a.link}" target="_blank" rel="noopener">${a.handle}</a>` : a.handle}</div>
+      <div class="handle">${a.link ? `<a href="${a.link}" target="_blank" rel="noopener">${a.handle}</a>` : a.handle}${a.qr ? `<img class="qr" src="${a.qr}" alt="${a.label} QR code" loading="lazy"><div class="scan">Scan with your phone camera or ${a.label} app</div>` : ""}</div>
     </div>
   `).join("");
   }

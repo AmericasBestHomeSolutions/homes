@@ -401,6 +401,10 @@ const DEAL_ROOM = {
     done.tourWhen = wi > 0 ? (row[wi] || "") : "";
     const pi = head.indexOf("payment_note");
     done.payNote = pi > 0 ? (row[pi] || "") : "";
+    const rvi = head.indexOf("review_note");
+    done.reviewNote = rvi > 0 ? (row[rvi] || "") : "";
+    const ri = head.indexOf("review_when");
+    done.reviewWhen = ri > 0 ? (row[ri] || "") : "";
     return done;
   }
 
@@ -426,7 +430,7 @@ const DEAL_ROOM = {
         <div class="body">
           <p><strong>${st.title}</strong>${i === nextIdx ? '<span class="tag">Up next</span>' : ""}</p>
           ${(d && st.flag === "tour_scheduled") ? (done.tourWhen ? `<p class="note">Scheduled for ${esc(done.tourWhen)}.</p>` : "")
-            : st.body ? `<p class="note">${st.body}</p>` : ""}${part}
+            : st.body ? `<p class="note">${st.body}</p>` : ""}${part}${(st.flag === "review_window_done" && done && done.reviewNote) ? `<p class="note"><strong>${esc(done.reviewNote)}</strong></p>` : ""}${(done && st.flag === "review_window_done" && done.reviewWhen) ? `<p class="note"><strong>Your review window: ${esc(done.reviewWhen)}.</strong></p>` : ""}
         </div>
       </div>`;
     }).join("");

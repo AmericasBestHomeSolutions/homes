@@ -13,8 +13,50 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (218 live, rebuilt from master published 2026-10-03) --- */
+/* --- the homes (213 live, rebuilt from master published 2026-10-05) --- */
 const HOMES = [
+  {
+    id: "flint-mi-818-dewey",
+    address:     "818 E Dewey",
+    zip:         "48505",
+    copy:        "$795 a month. $1,900 to get the keys. This two-bedroom, one-bath home in Flint, MI gives you 864 square feet to make your own instead of a landlord's. Your monthly amount is written into the agreement from the start, so there's no waiting each year to find out what a property manager has decided you'll pay next. That number stays steady while you build something of your own. The purchase price is $78,000, settled on paper the day you sign, and there's no bank in the middle. That means no mortgage application and no loan officer, just owner financing directly through us. The home is sold as-is, so come walk through it in person and judge every room with your own eyes. A payment like this doesn't come along often, so send us a text now and let's get you on the schedule for a showing.",
+    city:  "Flint",
+    state: "MI",
+    beds:  2,
+    baths: 1,
+    sqft:  "864",
+    status: "Available",
+
+    monthlyPayment: 795,
+    moveIn:         1900,
+    lockedPrice:    78000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "middletown-oh-3117-finley",
+    address:     "3117 Finley st",
+    zip:         "45045",
+    description: "720 sq ft. Long driveway. Lot 12,632 sq ft. Detached shed. Long term renter moved out Sept 30th",
+    copy:        "$1,169 a month and $4,000 to move in: that's what stands between you and a place of your own in Middletown. This two-bedroom, one-bath home has 720 square feet on a lot of more than a quarter acre, with a long driveway for off-street parking and a detached storage shed for the tools and gear an apartment never had room for. Your monthly amount is written into the agreement, so you won't spend each year waiting to hear what someone else decided you'll pay next. The purchase price is $139,000, fixed when you sign, through owner financing with no bank and no mortgage application. It's sold as-is, so come walk through the house and the grounds in person. A payment like this won't wait around for long. Text us now to grab a showing.",
+    city:  "Middletown",
+    state: "OH",
+    beds:  2,
+    baths: 1,
+    sqft:  "720",
+    status: "Available",
+
+    monthlyPayment: 1168.79,
+    moveIn:         4000,
+    lockedPrice:    139000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { off_street_parking: "yes", storage_shed: "yes" },
+    heroPhoto: "",
+    photos:    [],
+  },
   {
     id: "centreville-il-112-88th",
     address:     "112 N 88th St",
@@ -34,7 +76,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/centreville-il-112-88th-1.jpg", "images/centreville-il-112-88th-2.jpg", "images/centreville-il-112-88th-3.jpg", "images/centreville-il-112-88th-4.jpg", "images/centreville-il-112-88th-5.jpg", "images/centreville-il-112-88th-6.jpg", "images/centreville-il-112-88th-7.jpg", "images/centreville-il-112-88th-8.jpg", "images/centreville-il-112-88th-9.jpg", "images/centreville-il-112-88th-10.jpg", "images/centreville-il-112-88th-11.jpg", "images/centreville-il-112-88th-12.jpg", "images/centreville-il-112-88th-13.jpg", "images/centreville-il-112-88th-14.jpg", "images/centreville-il-112-88th-15.jpg", "images/centreville-il-112-88th-16.jpg", "images/centreville-il-112-88th-17.jpg", "images/centreville-il-112-88th-18.jpg", "images/centreville-il-112-88th-19.jpg", "images/centreville-il-112-88th-20.jpg", "images/centreville-il-112-88th-21.jpg", "images/centreville-il-112-88th-22.jpg", "images/centreville-il-112-88th-23.jpg", "images/centreville-il-112-88th-24.jpg"],
   },
   {
     id: "stlouis-mo-9853-green",
@@ -74,7 +116,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/centralia-il-1119-brookside-1.jpg", "images/centralia-il-1119-brookside-2.jpg", "images/centralia-il-1119-brookside-3.jpg", "images/centralia-il-1119-brookside-4.jpg", "images/centralia-il-1119-brookside-5.jpg", "images/centralia-il-1119-brookside-6.jpg", "images/centralia-il-1119-brookside-7.jpg", "images/centralia-il-1119-brookside-8.jpg", "images/centralia-il-1119-brookside-9.jpg", "images/centralia-il-1119-brookside-10.jpg", "images/centralia-il-1119-brookside-11.jpg", "images/centralia-il-1119-brookside-12.jpg", "images/centralia-il-1119-brookside-13.jpg", "images/centralia-il-1119-brookside-14.jpg", "images/centralia-il-1119-brookside-15.jpg", "images/centralia-il-1119-brookside-16.jpg", "images/centralia-il-1119-brookside-17.jpg"],
   },
   {
     id: "decatur-il-1645-walnut",
@@ -96,7 +138,7 @@ const HOMES = [
 
     features: { backyard: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-1645-walnut-1.jpg", "images/decatur-il-1645-walnut-2.jpg", "images/decatur-il-1645-walnut-3.jpg", "images/decatur-il-1645-walnut-4.jpg", "images/decatur-il-1645-walnut-5.jpg", "images/decatur-il-1645-walnut-6.jpg", "images/decatur-il-1645-walnut-7.jpg", "images/decatur-il-1645-walnut-8.jpg", "images/decatur-il-1645-walnut-9.jpg", "images/decatur-il-1645-walnut-10.jpg", "images/decatur-il-1645-walnut-11.jpg", "images/decatur-il-1645-walnut-12.jpg", "images/decatur-il-1645-walnut-13.jpg", "images/decatur-il-1645-walnut-14.jpg", "images/decatur-il-1645-walnut-15.jpg", "images/decatur-il-1645-walnut-16.jpg", "images/decatur-il-1645-walnut-17.jpg", "images/decatur-il-1645-walnut-18.jpg", "images/decatur-il-1645-walnut-19.jpg", "images/decatur-il-1645-walnut-20.jpg", "images/decatur-il-1645-walnut-21.jpg", "images/decatur-il-1645-walnut-22.jpg", "images/decatur-il-1645-walnut-23.jpg", "images/decatur-il-1645-walnut-24.jpg"],
   },
   {
     id: "eaststlouis-il-5807-forest",
@@ -182,7 +224,7 @@ const HOMES = [
 
     features: { garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-1528-lawrence-1.jpg", "images/decatur-il-1528-lawrence-2.jpg", "images/decatur-il-1528-lawrence-3.jpg", "images/decatur-il-1528-lawrence-4.jpg", "images/decatur-il-1528-lawrence-5.jpg", "images/decatur-il-1528-lawrence-6.jpg", "images/decatur-il-1528-lawrence-7.jpg", "images/decatur-il-1528-lawrence-8.jpg", "images/decatur-il-1528-lawrence-9.jpg", "images/decatur-il-1528-lawrence-10.jpg", "images/decatur-il-1528-lawrence-11.jpg", "images/decatur-il-1528-lawrence-12.jpg", "images/decatur-il-1528-lawrence-13.jpg", "images/decatur-il-1528-lawrence-14.jpg", "images/decatur-il-1528-lawrence-15.jpg", "images/decatur-il-1528-lawrence-16.jpg", "images/decatur-il-1528-lawrence-17.jpg", "images/decatur-il-1528-lawrence-18.jpg", "images/decatur-il-1528-lawrence-19.jpg", "images/decatur-il-1528-lawrence-20.jpg", "images/decatur-il-1528-lawrence-21.jpg", "images/decatur-il-1528-lawrence-22.jpg"],
   },
   {
     id: "decatur-il-1143-william",
@@ -204,7 +246,7 @@ const HOMES = [
 
     features: { basement: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-1143-william-1.jpg", "images/decatur-il-1143-william-2.jpg", "images/decatur-il-1143-william-3.jpg", "images/decatur-il-1143-william-4.jpg", "images/decatur-il-1143-william-5.jpg", "images/decatur-il-1143-william-6.jpg", "images/decatur-il-1143-william-7.jpg", "images/decatur-il-1143-william-8.jpg", "images/decatur-il-1143-william-9.jpg", "images/decatur-il-1143-william-10.jpg", "images/decatur-il-1143-william-11.jpg", "images/decatur-il-1143-william-12.jpg", "images/decatur-il-1143-william-13.jpg", "images/decatur-il-1143-william-14.jpg", "images/decatur-il-1143-william-15.jpg", "images/decatur-il-1143-william-16.jpg", "images/decatur-il-1143-william-17.jpg", "images/decatur-il-1143-william-18.jpg", "images/decatur-il-1143-william-19.jpg", "images/decatur-il-1143-william-20.jpg", "images/decatur-il-1143-william-21.jpg", "images/decatur-il-1143-william-22.jpg", "images/decatur-il-1143-william-23.jpg", "images/decatur-il-1143-william-24.jpg"],
   },
   {
     id: "stlouis-mo-2125-68th",
@@ -290,29 +332,7 @@ const HOMES = [
 
     features: { attic: "yes" },
     heroPhoto: "",
-    photos:    [],
-  },
-  {
-    id: "eaststlouis-il-3129-converse",
-    address:     "3129 Converse Ave",
-    zip:         "62207",
-    description: "3 Bed 2 bath, 1 car garage. 988 Sqft.. Contractor Special. The actual Address is 3127 through the county, but the house numbers still have it as 3129. The property was divided and given a new address. For marketing reasons I would like to keep the address at 3129 Converse. When agreement is written I want to use 3127 Converse",
-    copy:        "$795 a month and $2,000 to move in opens the door to a three-bedroom, two-bath house in East St. Louis. At 988 square feet, it comes with a one-car garage and off-street parking, so there's a spot for your car and room for your tools. This one is a contractor special, meaning it needs substantial work before it shines. That's exactly where the opportunity lives: every wall you fix and every room you finish adds value to a place with your name on the paperwork, not someone else's. The purchase price is $69,000, fixed in writing when you sign, with owner financing and no bank in the middle. It's sold as-is, so come walk through it in person and size up the project with your own eyes. Homes like this don't sit long. Send us a text now and claim your showing.",
-    city:  "East St. Louis",
-    state: "IL",
-    beds:  3,
-    baths: 2,
-    sqft:  "988",
-    status: "Available",
-
-    monthlyPayment: 795,
-    moveIn:         2000,
-    lockedPrice:    69000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { garage: "yes", off_street_parking: "yes" },
-    heroPhoto: "",
-    photos:    ["images/eaststlouis-il-3129-converse-1.jpg", "images/eaststlouis-il-3129-converse-2.jpg", "images/eaststlouis-il-3129-converse-3.jpg", "images/eaststlouis-il-3129-converse-4.jpg", "images/eaststlouis-il-3129-converse-5.jpg", "images/eaststlouis-il-3129-converse-6.jpg", "images/eaststlouis-il-3129-converse-7.jpg", "images/eaststlouis-il-3129-converse-8.jpg", "images/eaststlouis-il-3129-converse-9.jpg", "images/eaststlouis-il-3129-converse-10.jpg", "images/eaststlouis-il-3129-converse-11.jpg", "images/eaststlouis-il-3129-converse-12.jpg", "images/eaststlouis-il-3129-converse-13.jpg", "images/eaststlouis-il-3129-converse-14.jpg", "images/eaststlouis-il-3129-converse-15.jpg", "images/eaststlouis-il-3129-converse-16.jpg", "images/eaststlouis-il-3129-converse-17.jpg", "images/eaststlouis-il-3129-converse-18.jpg", "images/eaststlouis-il-3129-converse-19.jpg", "images/eaststlouis-il-3129-converse-20.jpg", "images/eaststlouis-il-3129-converse-21.jpg", "images/eaststlouis-il-3129-converse-22.jpg", "images/eaststlouis-il-3129-converse-23.jpg", "images/eaststlouis-il-3129-converse-24.jpg"],
+    photos:    ["images/decatur-il-165-ave-1.jpg", "images/decatur-il-165-ave-2.jpg", "images/decatur-il-165-ave-3.jpg", "images/decatur-il-165-ave-4.jpg", "images/decatur-il-165-ave-5.jpg", "images/decatur-il-165-ave-6.jpg", "images/decatur-il-165-ave-7.jpg", "images/decatur-il-165-ave-8.jpg", "images/decatur-il-165-ave-9.jpg", "images/decatur-il-165-ave-10.jpg"],
   },
   {
     id: "peoria-il-2421-lincoln",
@@ -804,8 +824,8 @@ const HOMES = [
     id: "decatur-il-234-home",
     address:     "234 Home Ave",
     zip:         "62522",
-    description: "Due to the keys being taken twice and having to re-key the house twice, we are moving to 3 showing times per week. Please get all interested buyers to attend one of these three times!! Starting Monday, October 5th - showings will be at Monday 5pm, Wednesday 5pm, and Saturday at noon. Thank you!... Please add the following to the ad:. Move in immediately upon fully executed documentation!!. Here is the link to provide for them to start their screening.. I am asking for fully executed contract (notarized after cooling period) prior to move-in. Thanks for the help!!!... Owner financing!!! Path to Home Ownership!!!. 3 bed / 1 bath / 960 sqft –. Back of nice neighborhood and next to Millikin University. Large front & back yard, updated furnace and water heater,. deep front porch, unfinished basement. Refrigerator & stove/oven included",
-    copy:        "$955 a month and $3,000 to move in puts three bedrooms in Decatur within reach. This 960-square-foot home has a large yard front and back, a deep front porch, and an unfinished basement ready for storage or whatever you decide to build down there over time. The furnace and water heater have been updated, and the refrigerator and stove stay with the house. Out back, a long evening on the grass feels different when no landlord gets a say in whether you're still there next year. The purchase price is $85,000, fixed when you sign, with owner financing and no bank in the middle. The home is sold as-is, so come walk through every room and see how it fits your plans. Showing times fill up fast. Send us a message now and claim your spot.",
+    description: "There will be two individuals onsite to allow them through the home. Apologies for this process, but after the keys being taken twice, we need to try this procedure. This will happen again on Wed 10/7 at 5pm and Sat 10/10 at noon. Thank you!.. Due to the keys being taken twice and having to re-key the house twice, we are moving to 3 showing times per week. Please get all interested buyers to attend one of these three times!! Starting Monday, October 5th - showings will be at Monday 5pm, Wednesday 5pm, and Saturday at noon. Thank you!... Please add the following to the ad:. Move in immediately upon fully executed documentation!!. Here is the link to provide for them to start their screening.. I am asking for fully executed contract (notarized after cooling period) prior to move-in. Thanks for the help!!!... Owner financing!!! Path to Home Ownership!!!. 3 bed / 1 bath / 960 sqft –. Back of nice neighborhood and next to Millikin University. Large front & back yard, updated furnace and water heater,. deep front porch, unfinished basement. Refrigerator & stove/oven included",
+    copy:        "$955 a month and $3,000 to move in. That's what stands between you and a three-bedroom home in Decatur with a yard out front and out back. This 960-square-foot house has one bath, an unfinished basement with room to grow into, an updated furnace and water heater, a deep front porch, and the refrigerator and stove already in place. The backyard is big enough that a summer evening out there feels like it belongs to you, with nobody else deciding whether you get to stay. The purchase price is $85,000, settled the day you sign, with owner financing and no bank in the picture. Once the paperwork is fully signed, you can move right in. It's sold as-is, so come walk through every room yourself before you decide. A home like this won't wait long, so send us a message now and grab your chance to see it.",
     city:  "Decatur",
     state: "IL",
     beds:  3,
@@ -1435,27 +1455,6 @@ const HOMES = [
     photos:    ["images/decatur-il-231-grand-1.jpg", "images/decatur-il-231-grand-2.jpg", "images/decatur-il-231-grand-3.jpg", "images/decatur-il-231-grand-4.jpg", "images/decatur-il-231-grand-5.jpg", "images/decatur-il-231-grand-6.jpg", "images/decatur-il-231-grand-7.jpg", "images/decatur-il-231-grand-8.jpg", "images/decatur-il-231-grand-9.jpg", "images/decatur-il-231-grand-10.jpg", "images/decatur-il-231-grand-11.jpg", "images/decatur-il-231-grand-12.jpg", "images/decatur-il-231-grand-13.jpg", "images/decatur-il-231-grand-14.jpg", "images/decatur-il-231-grand-15.jpg", "images/decatur-il-231-grand-16.jpg", "images/decatur-il-231-grand-17.jpg", "images/decatur-il-231-grand-18.jpg", "images/decatur-il-231-grand-19.jpg", "images/decatur-il-231-grand-20.jpg", "images/decatur-il-231-grand-21.jpg", "images/decatur-il-231-grand-22.jpg", "images/decatur-il-231-grand-23.jpg", "images/decatur-il-231-grand-24.jpg"],
   },
   {
-    id: "peoria-il-2210-wiswall",
-    address:     "2210 W Wiswall St",
-    zip:         "61605",
-    description: "Vacant property in Peoria. Recent walkthrough completed. Property will need some repairs/updates before final placement. Photos and video available. Seller financing available to qualified buyer. 20-year term. Buyer may have a Good Standing Surrender option after at least 12 months, with 120 days’ written notice, subject to the terms of the Agreement for Deed",
-    copy:        "$875 a month and $2,500 at move-in. That's what stands between you and this three-bedroom, one-bath home in Peoria, Illinois. There's no bank and no mortgage application, just owner financing through a contract for deed. The house needs some repairs and updates, and that is where the opportunity is. Every wall you patch and every room you freshen up builds equity that belongs to you, not to someone collecting your rent. The purchase price is $79,000, fixed in writing the day you sign, and your monthly payment stays the amount you agreed to. It's sold as-is, so come walk through every room and size it up with your own eyes before you decide anything. Send us a text or message while it's still available, and we'll find a time to get you through the front door.",
-    city:  "Peoria",
-    state: "IL",
-    beds:  3,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 875,
-    moveIn:         2500,
-    lockedPrice:    79000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    ["images/peoria-il-2210-wiswall-1.jpg", "images/peoria-il-2210-wiswall-2.jpg", "images/peoria-il-2210-wiswall-3.jpg", "images/peoria-il-2210-wiswall-4.jpg", "images/peoria-il-2210-wiswall-5.jpg", "images/peoria-il-2210-wiswall-6.jpg", "images/peoria-il-2210-wiswall-7.jpg", "images/peoria-il-2210-wiswall-8.jpg", "images/peoria-il-2210-wiswall-9.jpg", "images/peoria-il-2210-wiswall-10.jpg", "images/peoria-il-2210-wiswall-11.jpg", "images/peoria-il-2210-wiswall-12.jpg", "images/peoria-il-2210-wiswall-13.jpg", "images/peoria-il-2210-wiswall-14.jpg", "images/peoria-il-2210-wiswall-15.jpg", "images/peoria-il-2210-wiswall-16.jpg", "images/peoria-il-2210-wiswall-17.jpg", "images/peoria-il-2210-wiswall-18.jpg", "images/peoria-il-2210-wiswall-19.jpg", "images/peoria-il-2210-wiswall-20.jpg", "images/peoria-il-2210-wiswall-21.jpg", "images/peoria-il-2210-wiswall-22.jpg", "images/peoria-il-2210-wiswall-23.jpg"],
-  },
-  {
     id: "woodriver-il-46-eckhard",
     address:     "46 Eckhard Ave",
     zip:         "62095",
@@ -1955,7 +1954,7 @@ const HOMES = [
     address:     "12094 Littlefield Street",
     zip:         "48227",
     description: "926 square feet. Roof from 2022. Newly updated panel. New windows. New fence all around",
-    copy:        "$3,000 opens the door, and $1,179 a month keeps it yours. This four-bedroom, one-bath Detroit home offers 926 square feet with the big-ticket work already handled: a roof from 2022, a newly updated electrical panel, new windows, and a new fence wrapping the whole yard. That fenced yard is where a warm evening outside stops feeling borrowed, because nobody else gets to decide whether you're staying next year. The purchase price is $109,897, written into your agreement from the moment you sign, with owner financing and no bank in the middle. The home is sold as-is, so come walk through every room and judge it with your own eyes. Homes like this don't sit long. Send us a text now and let's get you inside for a showing.",
+    copy:        "Four bedrooms, $1,099 a month, and $2,500 to get the keys. This 926-square-foot Detroit home has one bath, a roof put on in 2022, an updated electrical panel, and new windows, so some of the big-ticket pieces are already taken care of. A brand-new fence runs all the way around the yard, which means a quiet evening out back belongs to you, with no landlord deciding whether you get to stay another year. The purchase price is $109,000, fixed in writing the day you sign, with owner financing and no bank in the picture. The home is sold as-is, and the best way to size it up is to come stand inside and walk through every room yourself. Don't let this one slip past you. Send us a text or message now, and we'll get your showing on the calendar.",
     city:  "Detroit",
     state: "MI",
     beds:  4,
@@ -1963,9 +1962,9 @@ const HOMES = [
     sqft:  "926",
     status: "Available",
 
-    monthlyPayment: 1179,
-    moveIn:         3000,
-    lockedPrice:    109897,
+    monthlyPayment: 1099,
+    moveIn:         2500,
+    lockedPrice:    109000,
     termText:       "30-year owner financing (contract for deed)",
 
     features: { fenced_yard: "yes" },
@@ -2524,26 +2523,6 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1252-whitmer-1.jpg", "images/decatur-il-1252-whitmer-2.jpg", "images/decatur-il-1252-whitmer-3.jpg", "images/decatur-il-1252-whitmer-4.jpg", "images/decatur-il-1252-whitmer-5.jpg", "images/decatur-il-1252-whitmer-6.jpg", "images/decatur-il-1252-whitmer-7.jpg", "images/decatur-il-1252-whitmer-8.jpg", "images/decatur-il-1252-whitmer-9.jpg", "images/decatur-il-1252-whitmer-10.jpg", "images/decatur-il-1252-whitmer-11.jpg"],
-  },
-  {
-    id: "decatur-il-715-cushing",
-    address:     "715 W Cushing St,",
-    zip:         "62526",
-    copy:        "$1,050 a month and $3,000 to move in, for a three-bedroom house in Decatur, Illinois that could carry your name. This 3-bedroom, 1-bath home comes with owner financing, which means no bank, no mortgage application, and no loan officer deciding your future. Three bedrooms give you space to make each room whatever you need it to be. When you hang pictures on these walls, they'll be staying up, because this is a place you're working toward owning instead of one you'll have to leave when a lease runs out. The purchase price is $79,000, fixed in writing on the day you sign, with no bank anywhere in the picture. The home is sold as-is, and we'd like you to come walk through it in person and see it with your own eyes. Don't let this one slip by. Send us a text or message now and let's get your showing on the calendar.",
-    city:  "Decatur",
-    state: "IL",
-    beds:  3,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 1050,
-    moveIn:         3000,
-    lockedPrice:    79000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    ["images/decatur-il-715-cushing-1.jpg", "images/decatur-il-715-cushing-2.jpg", "images/decatur-il-715-cushing-3.jpg", "images/decatur-il-715-cushing-4.jpg", "images/decatur-il-715-cushing-5.jpg", "images/decatur-il-715-cushing-6.jpg", "images/decatur-il-715-cushing-7.jpg", "images/decatur-il-715-cushing-8.jpg", "images/decatur-il-715-cushing-9.jpg", "images/decatur-il-715-cushing-10.jpg", "images/decatur-il-715-cushing-11.jpg", "images/decatur-il-715-cushing-12.jpg", "images/decatur-il-715-cushing-13.jpg", "images/decatur-il-715-cushing-14.jpg", "images/decatur-il-715-cushing-15.jpg", "images/decatur-il-715-cushing-16.jpg", "images/decatur-il-715-cushing-17.jpg", "images/decatur-il-715-cushing-18.jpg", "images/decatur-il-715-cushing-19.jpg", "images/decatur-il-715-cushing-20.jpg", "images/decatur-il-715-cushing-21.jpg", "images/decatur-il-715-cushing-22.jpg", "images/decatur-il-715-cushing-23.jpg", "images/decatur-il-715-cushing-24.jpg"],
   },
   {
     id: "madison-il-2021-edwardsville",
@@ -3183,26 +3162,6 @@ const HOMES = [
     photos:    ["images/decatur-il-462-leafland-1.jpg", "images/decatur-il-462-leafland-2.jpg", "images/decatur-il-462-leafland-3.jpg", "images/decatur-il-462-leafland-4.jpg", "images/decatur-il-462-leafland-5.jpg", "images/decatur-il-462-leafland-6.jpg", "images/decatur-il-462-leafland-7.jpg", "images/decatur-il-462-leafland-8.jpg", "images/decatur-il-462-leafland-9.jpg"],
   },
   {
-    id: "peoria-il-1610-lydia",
-    address:     "1610 S Lydia Ave",
-    zip:         "61605",
-    description: "900 sqft. Seller will fix electicals with full down payment and signed agreement",
-    city:  "Peoria",
-    state: "IL",
-    beds:  4,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 850,
-    moveIn:         2500,
-    lockedPrice:    84999,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    ["images/peoria-il-1610-lydia-1.jpg", "images/peoria-il-1610-lydia-2.jpg", "images/peoria-il-1610-lydia-3.jpg", "images/peoria-il-1610-lydia-4.jpg", "images/peoria-il-1610-lydia-5.jpg", "images/peoria-il-1610-lydia-6.jpg", "images/peoria-il-1610-lydia-7.jpg", "images/peoria-il-1610-lydia-8.jpg", "images/peoria-il-1610-lydia-9.jpg", "images/peoria-il-1610-lydia-10.jpg", "images/peoria-il-1610-lydia-11.jpg", "images/peoria-il-1610-lydia-12.jpg", "images/peoria-il-1610-lydia-13.jpg", "images/peoria-il-1610-lydia-14.jpg", "images/peoria-il-1610-lydia-15.jpg", "images/peoria-il-1610-lydia-16.jpg", "images/peoria-il-1610-lydia-17.jpg", "images/peoria-il-1610-lydia-18.jpg", "images/peoria-il-1610-lydia-19.jpg", "images/peoria-il-1610-lydia-20.jpg", "images/peoria-il-1610-lydia-21.jpg"],
-  },
-  {
     id: "decatur-il-1505-walnut",
     address:     "1505 E Walnut St",
     zip:         "62526",
@@ -3374,27 +3333,6 @@ const HOMES = [
     photos:    ["images/eaststlouis-il-3511-converse-1.jpg", "images/eaststlouis-il-3511-converse-2.jpg", "images/eaststlouis-il-3511-converse-3.jpg", "images/eaststlouis-il-3511-converse-4.jpg", "images/eaststlouis-il-3511-converse-5.jpg", "images/eaststlouis-il-3511-converse-6.jpg", "images/eaststlouis-il-3511-converse-7.jpg", "images/eaststlouis-il-3511-converse-8.jpg", "images/eaststlouis-il-3511-converse-9.jpg", "images/eaststlouis-il-3511-converse-10.jpg", "images/eaststlouis-il-3511-converse-11.jpg", "images/eaststlouis-il-3511-converse-12.jpg", "images/eaststlouis-il-3511-converse-13.jpg", "images/eaststlouis-il-3511-converse-14.jpg", "images/eaststlouis-il-3511-converse-15.jpg", "images/eaststlouis-il-3511-converse-16.jpg", "images/eaststlouis-il-3511-converse-17.jpg", "images/eaststlouis-il-3511-converse-18.jpg", "images/eaststlouis-il-3511-converse-19.jpg", "images/eaststlouis-il-3511-converse-20.jpg", "images/eaststlouis-il-3511-converse-21.jpg", "images/eaststlouis-il-3511-converse-22.jpg", "images/eaststlouis-il-3511-converse-23.jpg", "images/eaststlouis-il-3511-converse-24.jpg", "images/eaststlouis-il-3511-converse-25.jpg"],
   },
   {
-    id: "decatur-il-1700-grand",
-    address:     "1700 W Grand Ave",
-    zip:         "62522",
-    description: "Property Details:. 1 Bedroom. 1 Bathroom. 418 Sq Ft. Vacant. Ready for Immediate Occupancy",
-    copy:        "$850 gets you through the door, and $600 a month keeps you there. This one-bedroom, one-bath home in Decatur, IL offers a compact 418 square feet, and it's ready for you to move in right away. It's vacant now, so there's no waiting on anyone to pack up and leave. You can start owning this month instead of someday, with every payment going toward a place that has your name on the paperwork. The purchase price is $63,950, fixed in writing when you sign, with owner financing and no bank anywhere in the process. The home is sold as-is, so come walk through it in person and get a feel for the space before you decide. Homes at this payment don't stay open long, so send us a text now and let's get you in for a showing.",
-    city:  "Decatur",
-    state: "IL",
-    beds:  1,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 600,
-    moveIn:         850,
-    lockedPrice:    63950,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    ["images/decatur-il-1700-grand-1.jpg", "images/decatur-il-1700-grand-2.jpg", "images/decatur-il-1700-grand-3.jpg", "images/decatur-il-1700-grand-4.jpg", "images/decatur-il-1700-grand-5.jpg", "images/decatur-il-1700-grand-6.jpg", "images/decatur-il-1700-grand-7.jpg", "images/decatur-il-1700-grand-8.jpg", "images/decatur-il-1700-grand-9.jpg", "images/decatur-il-1700-grand-10.jpg", "images/decatur-il-1700-grand-11.jpg", "images/decatur-il-1700-grand-12.jpg"],
-  },
-  {
     id: "decatur-il-2827-hickory",
     address:     "2827 E Hickory St",
     zip:         "62526",
@@ -3455,26 +3393,6 @@ const HOMES = [
     features: { basement: "yes" },
     heroPhoto: "",
     photos:    ["images/centralia-il-805-hickory-1.jpg", "images/centralia-il-805-hickory-2.jpg", "images/centralia-il-805-hickory-3.jpg", "images/centralia-il-805-hickory-4.jpg", "images/centralia-il-805-hickory-5.jpg", "images/centralia-il-805-hickory-6.jpg", "images/centralia-il-805-hickory-7.jpg", "images/centralia-il-805-hickory-8.jpg", "images/centralia-il-805-hickory-9.jpg", "images/centralia-il-805-hickory-10.jpg", "images/centralia-il-805-hickory-11.jpg", "images/centralia-il-805-hickory-12.jpg", "images/centralia-il-805-hickory-13.jpg", "images/centralia-il-805-hickory-14.jpg", "images/centralia-il-805-hickory-15.jpg", "images/centralia-il-805-hickory-16.jpg", "images/centralia-il-805-hickory-17.jpg", "images/centralia-il-805-hickory-18.jpg", "images/centralia-il-805-hickory-19.jpg", "images/centralia-il-805-hickory-20.jpg", "images/centralia-il-805-hickory-21.jpg", "images/centralia-il-805-hickory-22.jpg"],
-  },
-  {
-    id: "chesapeake-va-1315-poindexter",
-    address:     "1315 Poindexter St.",
-    zip:         "23324",
-    description: "Sold completely as-is - Possible small leak in the roof",
-    city:  "Chesapeake",
-    state: "VA",
-    beds:  3,
-    baths: 2,
-    sqft:  "1412",
-    status: "Available",
-
-    monthlyPayment: 1695,
-    moveIn:         6000,
-    lockedPrice:    259000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    ["images/chesapeake-va-1315-poindexter-1.jpg", "images/chesapeake-va-1315-poindexter-2.jpg", "images/chesapeake-va-1315-poindexter-3.jpg", "images/chesapeake-va-1315-poindexter-4.jpg", "images/chesapeake-va-1315-poindexter-5.jpg", "images/chesapeake-va-1315-poindexter-6.jpg", "images/chesapeake-va-1315-poindexter-7.jpg", "images/chesapeake-va-1315-poindexter-8.jpg", "images/chesapeake-va-1315-poindexter-9.jpg", "images/chesapeake-va-1315-poindexter-10.jpg", "images/chesapeake-va-1315-poindexter-11.jpg", "images/chesapeake-va-1315-poindexter-12.jpg", "images/chesapeake-va-1315-poindexter-13.jpg", "images/chesapeake-va-1315-poindexter-14.jpg", "images/chesapeake-va-1315-poindexter-15.jpg", "images/chesapeake-va-1315-poindexter-16.jpg", "images/chesapeake-va-1315-poindexter-17.jpg", "images/chesapeake-va-1315-poindexter-18.jpg", "images/chesapeake-va-1315-poindexter-19.jpg", "images/chesapeake-va-1315-poindexter-20.jpg", "images/chesapeake-va-1315-poindexter-21.jpg", "images/chesapeake-va-1315-poindexter-22.jpg", "images/chesapeake-va-1315-poindexter-23.jpg", "images/chesapeake-va-1315-poindexter-24.jpg"],
   },
   {
     id: "alton-il-3024-glenwood",
@@ -3665,27 +3583,6 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/cahokia-il-11-delores-1.jpg", "images/cahokia-il-11-delores-2.jpg", "images/cahokia-il-11-delores-3.jpg", "images/cahokia-il-11-delores-4.jpg", "images/cahokia-il-11-delores-5.jpg", "images/cahokia-il-11-delores-6.jpg", "images/cahokia-il-11-delores-7.jpg", "images/cahokia-il-11-delores-8.jpg", "images/cahokia-il-11-delores-9.jpg", "images/cahokia-il-11-delores-10.jpg", "images/cahokia-il-11-delores-11.jpg", "images/cahokia-il-11-delores-12.jpg", "images/cahokia-il-11-delores-13.jpg", "images/cahokia-il-11-delores-14.jpg", "images/cahokia-il-11-delores-15.jpg", "images/cahokia-il-11-delores-16.jpg", "images/cahokia-il-11-delores-17.jpg", "images/cahokia-il-11-delores-18.jpg", "images/cahokia-il-11-delores-19.jpg", "images/cahokia-il-11-delores-20.jpg", "images/cahokia-il-11-delores-21.jpg", "images/cahokia-il-11-delores-22.jpg", "images/cahokia-il-11-delores-23.jpg", "images/cahokia-il-11-delores-24.jpg"],
-  },
-  {
-    id: "peoria-il-2313-wiswall",
-    address:     "2313 W Wiswall St",
-    zip:         "61605",
-    description: "759 square feet",
-    copy:        "$750 a month and $1,250 to move in. That's what it takes to start owning this two-bedroom, one-bath home in Peoria, IL. At 759 square feet, it's a manageable size that's simple to keep up and easy to make your own, room by room. Your monthly payment is written into your agreement from the start, so you won't have to wonder whether next year brings a bigger number or a notice to move. The purchase price is $79,000, settled on paper the day you sign. It's owner financing with no bank in the middle of it. The home is sold as-is, and the best way to judge it is to walk through in person and picture where your things would go. Don't let this one slip by while you're thinking it over. Send us a text or message now and we'll set up a time to show it to you.",
-    city:  "Peoria",
-    state: "IL",
-    beds:  2,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 750,
-    moveIn:         1250,
-    lockedPrice:    79000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    ["images/peoria-il-2313-wiswall-1.jpg", "images/peoria-il-2313-wiswall-2.jpg", "images/peoria-il-2313-wiswall-3.jpg", "images/peoria-il-2313-wiswall-4.jpg", "images/peoria-il-2313-wiswall-5.jpg", "images/peoria-il-2313-wiswall-6.jpg", "images/peoria-il-2313-wiswall-7.jpg", "images/peoria-il-2313-wiswall-8.jpg", "images/peoria-il-2313-wiswall-9.jpg", "images/peoria-il-2313-wiswall-10.jpg", "images/peoria-il-2313-wiswall-11.jpg", "images/peoria-il-2313-wiswall-12.jpg", "images/peoria-il-2313-wiswall-13.jpg", "images/peoria-il-2313-wiswall-14.jpg", "images/peoria-il-2313-wiswall-15.jpg"],
   },
   {
     id: "decatur-il-1509-william",
@@ -3937,6 +3834,27 @@ const HOMES = [
     photos:    [],
   },
   {
+    id: "westfrankfort-il-1310-poplar",
+    address:     "1310 E Poplar St",
+    zip:         "62896",
+    description: "everything working",
+    copy:        "$1,100 a month, $2,500 at move-in, and 1,350 square feet in West Frankfort to call your own. This one-bath home gives you real room to spread out, and everything is in working order. Your monthly payment is written into the contract from the start, so it won't creep up each year, and the only person deciding your future in this house is you. The purchase price is $98,000, agreed on the day you sign. With owner financing, there's no bank and no mortgage application standing between you and the front door. The home is sold as-is, and we'd rather you walk through it and judge every room with your own eyes. If this feels like your move, send us a text or message now and let's get you inside before someone else claims it.",
+    city:  "West Frankfort",
+    state: "IL",
+    beds:  "",
+    baths: 1,
+    sqft:  "1350",
+    status: "Available",
+
+    monthlyPayment: 1100,
+    moveIn:         2500,
+    lockedPrice:    98000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    ["images/westfrankfort-il-1310-poplar-1.jpg", "images/westfrankfort-il-1310-poplar-2.jpg", "images/westfrankfort-il-1310-poplar-3.jpg", "images/westfrankfort-il-1310-poplar-4.jpg", "images/westfrankfort-il-1310-poplar-5.jpg", "images/westfrankfort-il-1310-poplar-6.jpg", "images/westfrankfort-il-1310-poplar-7.jpg", "images/westfrankfort-il-1310-poplar-8.jpg", "images/westfrankfort-il-1310-poplar-9.jpg", "images/westfrankfort-il-1310-poplar-10.jpg", "images/westfrankfort-il-1310-poplar-11.jpg", "images/westfrankfort-il-1310-poplar-12.jpg", "images/westfrankfort-il-1310-poplar-13.jpg", "images/westfrankfort-il-1310-poplar-14.jpg", "images/westfrankfort-il-1310-poplar-15.jpg", "images/westfrankfort-il-1310-poplar-16.jpg", "images/westfrankfort-il-1310-poplar-17.jpg", "images/westfrankfort-il-1310-poplar-18.jpg", "images/westfrankfort-il-1310-poplar-19.jpg", "images/westfrankfort-il-1310-poplar-20.jpg", "images/westfrankfort-il-1310-poplar-21.jpg", "images/westfrankfort-il-1310-poplar-22.jpg", "images/westfrankfort-il-1310-poplar-23.jpg", "images/westfrankfort-il-1310-poplar-24.jpg"],
+  },
+  {
     id: "eaststlouis-il-725-39th",
     address:     "725 N 39th Street",
     zip:         "62205",
@@ -4019,27 +3937,6 @@ const HOMES = [
     features: { backyard: "yes" },
     heroPhoto: "",
     photos:    ["images/david-il-209-central-1.jpg", "images/david-il-209-central-2.jpg", "images/david-il-209-central-3.jpg", "images/david-il-209-central-4.jpg", "images/david-il-209-central-5.jpg", "images/david-il-209-central-6.jpg", "images/david-il-209-central-7.jpg", "images/david-il-209-central-8.jpg", "images/david-il-209-central-9.jpg", "images/david-il-209-central-10.jpg", "images/david-il-209-central-11.jpg", "images/david-il-209-central-12.jpg", "images/david-il-209-central-13.jpg", "images/david-il-209-central-14.jpg", "images/david-il-209-central-15.jpg", "images/david-il-209-central-16.jpg", "images/david-il-209-central-17.jpg", "images/david-il-209-central-18.jpg", "images/david-il-209-central-19.jpg", "images/david-il-209-central-20.jpg", "images/david-il-209-central-21.jpg", "images/david-il-209-central-22.jpg", "images/david-il-209-central-23.jpg"],
-  },
-  {
-    id: "westfrankfort-il-1310-poplar",
-    address:     "1310 E Poplar St",
-    zip:         "62896",
-    description: "everything working",
-    copy:        "$1,100 a month, $2,500 at move-in, and 1,350 square feet in West Frankfort to call your own. This one-bath home gives you real room to spread out, and everything is in working order. Your monthly payment is written into the contract from the start, so it won't creep up each year, and the only person deciding your future in this house is you. The purchase price is $98,000, agreed on the day you sign. With owner financing, there's no bank and no mortgage application standing between you and the front door. The home is sold as-is, and we'd rather you walk through it and judge every room with your own eyes. If this feels like your move, send us a text or message now and let's get you inside before someone else claims it.",
-    city:  "West Frankfort",
-    state: "IL",
-    beds:  "",
-    baths: 1,
-    sqft:  "1350",
-    status: "Available",
-
-    monthlyPayment: 1100,
-    moveIn:         2500,
-    lockedPrice:    98000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    ["images/westfrankfort-il-1310-poplar-1.jpg", "images/westfrankfort-il-1310-poplar-2.jpg", "images/westfrankfort-il-1310-poplar-3.jpg", "images/westfrankfort-il-1310-poplar-4.jpg", "images/westfrankfort-il-1310-poplar-5.jpg", "images/westfrankfort-il-1310-poplar-6.jpg", "images/westfrankfort-il-1310-poplar-7.jpg", "images/westfrankfort-il-1310-poplar-8.jpg", "images/westfrankfort-il-1310-poplar-9.jpg", "images/westfrankfort-il-1310-poplar-10.jpg", "images/westfrankfort-il-1310-poplar-11.jpg", "images/westfrankfort-il-1310-poplar-12.jpg", "images/westfrankfort-il-1310-poplar-13.jpg", "images/westfrankfort-il-1310-poplar-14.jpg", "images/westfrankfort-il-1310-poplar-15.jpg", "images/westfrankfort-il-1310-poplar-16.jpg", "images/westfrankfort-il-1310-poplar-17.jpg", "images/westfrankfort-il-1310-poplar-18.jpg", "images/westfrankfort-il-1310-poplar-19.jpg", "images/westfrankfort-il-1310-poplar-20.jpg", "images/westfrankfort-il-1310-poplar-21.jpg", "images/westfrankfort-il-1310-poplar-22.jpg", "images/westfrankfort-il-1310-poplar-23.jpg", "images/westfrankfort-il-1310-poplar-24.jpg"],
   },
   {
     id: "springfield-il-2640-5th",

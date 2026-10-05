@@ -315,7 +315,13 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
     </form>
     <div class="thanks">
       <h3>Got it — thank you!</h3>
-      <p>We'll reach out shortly. In the meantime, feel free to call or text us below.</p>
+      <p>We'll reach out shortly. The fastest way to lock in a tour is to call or text us now.</p>
+      <div class="cta-group" style="max-width:400px;margin:14px 0 6px">
+        <a class="btn btn-primary" id="thanksCall" href="#">Call us</a>
+        <a class="btn btn-secondary" id="thanksText" href="#">Text us</a>
+      </div>
+      <p style="margin-top:14px"><strong>Your personal roadmap is ready.</strong> It shows every step from here to your keys, and updates as you move forward.</p>
+      <a class="btn btn-secondary" id="thanksRoadmap" href="#" style="max-width:400px;margin-top:6px">See my roadmap</a>
     </div>
   </section>
 
@@ -489,9 +495,22 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
   const smsBody = encodeURIComponent(`Hi, I saw ${C.address ? C.address + " in " : ""}${C.city}, ${C.state} on your site and I'd like to tour it.`);
   ["ctaCall","ctaCall2"].forEach(id=>$(id).href = `tel:${tel}`);
   ["ctaText","ctaText2"].forEach(id=>$(id).href = `sms:${tel}?&body=${smsBody}`);
+  $("thanksCall").href = `tel:${tel}`;
+  $("thanksText").href = `sms:${tel}?&body=${smsBody}`;
   $("navCall").href = `tel:${tel}`;
   $("navCallText").textContent = prettyPhone || "Call us";
   $("ctaNote").textContent = `Call or text ${prettyPhone} — we usually reply same day.`;
+
+  // Opaque per-buyer roadmap code. Reused on a resubmit so one buyer keeps one link.
+  function getDealCode(homeId){
+    const k = "dealCode:" + homeId;
+    try { const v = localStorage.getItem(k); if (/^[a-z0-9]{10}$/.test(v||"")) return v; } catch(e){}
+    const A = "abcdefghjkmnpqrstvwxyz23456789", r = new Uint8Array(10);
+    crypto.getRandomValues(r);
+    const code = Array.from(r, b => A[b % A.length]).join("");
+    try { localStorage.setItem(k, code); } catch(e){}
+    return code;
+  }
 
   // lead form → Formspree (email) + Make (Notion CRM)
   (function(){
@@ -509,13 +528,19 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
       const data = new FormData(form);
       data.append("property", [C.address, `${C.city}, ${C.state}${C.zip?" "+C.zip:""}`].filter(Boolean).join(", "));
       data.append("source", "Property page");
+      data.append("property_id", C.id);
+      const dealCode = getDealCode(C.id);
+      data.append("deal_code", dealCode);   // registered into the Deal Room sheet by the inquiry sweep
       await addConsentRecord(data, form);   // 10DLC opt-in evidence — see consent.js
       const targets = [];
       if (id)   targets.push(fetch(`https://formspree.io/f/${id}`, { method:"POST", headers:{ "Accept":"application/json" }, body:data }));
       if (hook) targets.push(fetch(hook, { method:"POST", body:data }));
       const results = await Promise.allSettled(targets);
       const ok = results.some(r => r.status === "fulfilled" && r.value.ok);
-      if (ok) { section.classList.add("sent"); }
+      if (ok) {
+        $("thanksRoadmap").href = `/next-steps.html?home=${encodeURIComponent(C.id)}&deal=${dealCode}`;
+        section.classList.add("sent");
+      }
       else { btn.disabled = false; btn.textContent = "Send my info"; note.textContent = "Something went wrong — please call or text us instead."; }
     });
   })();

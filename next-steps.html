@@ -459,7 +459,10 @@ const DEAL_ROOM = {
   }
   function startProgress(stateCode){
     if (!dealCode) return;
-    loadProgress().then(done => { if (done) renderRoadmap(stateCode, done); })
+    loadProgress().then(done => {
+      if (done) renderRoadmap(stateCode, done);
+      else { $("progressNote").hidden = false; $("progressNote").textContent = "Your personal tracker is being set up and will appear here soon. Call or text us any time and we'll walk you through it."; }
+    })
                   .catch(showProgressFailure);
   }
 

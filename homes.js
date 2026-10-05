@@ -33,7 +33,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/flint-mi-818-dewey-1.jpg", "images/flint-mi-818-dewey-2.jpg", "images/flint-mi-818-dewey-3.jpg", "images/flint-mi-818-dewey-4.jpg", "images/flint-mi-818-dewey-5.jpg", "images/flint-mi-818-dewey-6.jpg", "images/flint-mi-818-dewey-7.jpg", "images/flint-mi-818-dewey-8.jpg", "images/flint-mi-818-dewey-9.jpg", "images/flint-mi-818-dewey-10.jpg", "images/flint-mi-818-dewey-11.jpg", "images/flint-mi-818-dewey-12.jpg", "images/flint-mi-818-dewey-13.jpg", "images/flint-mi-818-dewey-14.jpg"],
   },
   {
     id: "middletown-oh-3117-finley",
@@ -159,7 +159,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/eaststlouis-il-5807-forest-1.jpg", "images/eaststlouis-il-5807-forest-2.jpg", "images/eaststlouis-il-5807-forest-3.jpg", "images/eaststlouis-il-5807-forest-4.jpg", "images/eaststlouis-il-5807-forest-5.jpg", "images/eaststlouis-il-5807-forest-6.jpg", "images/eaststlouis-il-5807-forest-7.jpg", "images/eaststlouis-il-5807-forest-8.jpg", "images/eaststlouis-il-5807-forest-9.jpg", "images/eaststlouis-il-5807-forest-10.jpg", "images/eaststlouis-il-5807-forest-11.jpg", "images/eaststlouis-il-5807-forest-12.jpg", "images/eaststlouis-il-5807-forest-13.jpg", "images/eaststlouis-il-5807-forest-14.jpg", "images/eaststlouis-il-5807-forest-15.jpg", "images/eaststlouis-il-5807-forest-16.jpg", "images/eaststlouis-il-5807-forest-17.jpg", "images/eaststlouis-il-5807-forest-18.jpg", "images/eaststlouis-il-5807-forest-19.jpg", "images/eaststlouis-il-5807-forest-20.jpg", "images/eaststlouis-il-5807-forest-21.jpg", "images/eaststlouis-il-5807-forest-22.jpg", "images/eaststlouis-il-5807-forest-23.jpg", "images/eaststlouis-il-5807-forest-24.jpg"],
   },
   {
     id: "mtvernon-il-718-harrison",
@@ -202,7 +202,7 @@ const HOMES = [
 
     features: { backyard: "yes", basement: "no", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/detroit-mi-15344-blackstone-1.jpg", "images/detroit-mi-15344-blackstone-2.jpg", "images/detroit-mi-15344-blackstone-3.jpg", "images/detroit-mi-15344-blackstone-4.jpg", "images/detroit-mi-15344-blackstone-5.jpg", "images/detroit-mi-15344-blackstone-6.jpg", "images/detroit-mi-15344-blackstone-7.jpg", "images/detroit-mi-15344-blackstone-8.jpg", "images/detroit-mi-15344-blackstone-9.jpg", "images/detroit-mi-15344-blackstone-10.jpg", "images/detroit-mi-15344-blackstone-11.jpg", "images/detroit-mi-15344-blackstone-12.jpg", "images/detroit-mi-15344-blackstone-13.jpg", "images/detroit-mi-15344-blackstone-14.jpg", "images/detroit-mi-15344-blackstone-15.jpg", "images/detroit-mi-15344-blackstone-16.jpg", "images/detroit-mi-15344-blackstone-17.jpg", "images/detroit-mi-15344-blackstone-18.jpg", "images/detroit-mi-15344-blackstone-19.jpg", "images/detroit-mi-15344-blackstone-20.jpg", "images/detroit-mi-15344-blackstone-21.jpg", "images/detroit-mi-15344-blackstone-22.jpg"],
   },
   {
     id: "decatur-il-1528-lawrence",

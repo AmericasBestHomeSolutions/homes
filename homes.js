@@ -55,7 +55,7 @@ const HOMES = [
 
     features: { off_street_parking: "yes", storage_shed: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/middletown-oh-3117-finley-1.jpg", "images/middletown-oh-3117-finley-2.jpg", "images/middletown-oh-3117-finley-3.jpg", "images/middletown-oh-3117-finley-4.jpg", "images/middletown-oh-3117-finley-5.jpg", "images/middletown-oh-3117-finley-6.jpg", "images/middletown-oh-3117-finley-7.jpg", "images/middletown-oh-3117-finley-8.jpg", "images/middletown-oh-3117-finley-9.jpg", "images/middletown-oh-3117-finley-10.jpg", "images/middletown-oh-3117-finley-11.jpg"],
   },
   {
     id: "centreville-il-112-88th",
@@ -145,7 +145,6 @@ const HOMES = [
     address:     "5807 Forest Blvd",
     zip:         "62204",
     description: "936 square feet, Contractor Special-Needs Plumbing, Furnace and AC Unit, Siding and a cleanout",
-    copy:        "$495 a month and $1,500 to move in puts a two-bedroom home in East St. Louis within reach. This 936-square-foot house with one bath is a true contractor special: it needs plumbing work, a new furnace and AC unit, and new siding. That is the honest picture, and it is also the opportunity. Every pipe you replace and every panel of siding you hang adds value to a home with your name on the paperwork, not to someone else's rental. The purchase price is $41,999, agreed on when you sign, with owner financing and no bank standing in the middle. The home is sold as-is, so come walk through it and size up the project with your own eyes. Homes at this payment do not sit for long, so send us a message now and claim a showing time.",
     city:  "East St. Louis",
     state: "IL",
     beds:  2,
@@ -155,7 +154,7 @@ const HOMES = [
 
     monthlyPayment: 495,
     moveIn:         1500,
-    lockedPrice:    41999,
+    lockedPrice:    42000,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
@@ -288,7 +287,7 @@ const HOMES = [
 
     features: { backyard: "yes", basement: "yes", storage_shed: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/peoria-il-1829-butler-1.jpg", "images/peoria-il-1829-butler-2.jpg", "images/peoria-il-1829-butler-3.jpg", "images/peoria-il-1829-butler-4.jpg", "images/peoria-il-1829-butler-5.jpg", "images/peoria-il-1829-butler-6.jpg", "images/peoria-il-1829-butler-7.jpg", "images/peoria-il-1829-butler-8.jpg", "images/peoria-il-1829-butler-9.jpg", "images/peoria-il-1829-butler-10.jpg", "images/peoria-il-1829-butler-11.jpg", "images/peoria-il-1829-butler-12.jpg", "images/peoria-il-1829-butler-13.jpg", "images/peoria-il-1829-butler-14.jpg", "images/peoria-il-1829-butler-15.jpg", "images/peoria-il-1829-butler-16.jpg", "images/peoria-il-1829-butler-17.jpg", "images/peoria-il-1829-butler-18.jpg", "images/peoria-il-1829-butler-19.jpg", "images/peoria-il-1829-butler-20.jpg", "images/peoria-il-1829-butler-21.jpg", "images/peoria-il-1829-butler-22.jpg", "images/peoria-il-1829-butler-23.jpg", "images/peoria-il-1829-butler-24.jpg"],
   },
   {
     id: "peoria-il-3214-proctor",

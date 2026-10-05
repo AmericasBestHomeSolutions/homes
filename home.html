@@ -507,7 +507,7 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
       if (!id && !hook) { note.textContent = "⚠ Form not connected yet — add a Formspree ID or Make webhook in homes.js."; return; }
       btn.disabled = true; btn.textContent = "Sending…";
       const data = new FormData(form);
-      data.append("property", `${C.city}, ${C.state}`);
+      data.append("property", [C.address, `${C.city}, ${C.state}${C.zip?" "+C.zip:""}`].filter(Boolean).join(", "));
       data.append("source", "Property page");
       await addConsentRecord(data, form);   // 10DLC opt-in evidence — see consent.js
       const targets = [];

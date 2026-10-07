@@ -101,6 +101,8 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
 .who .person{font-weight:700;color:var(--ink);font-size:16px}
 .who .meta{font-size:14px;color:var(--ink-soft);margin:4px 0}
 .who .meta a{color:var(--pine);font-weight:600;text-decoration:none}
+#reviewLink{display:block;margin-top:2px}
+#reviewLink[hidden]{display:none}
 .who .not-agent{margin-top:12px;font-size:14px;font-style:italic;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:12px}
 
 .steps{display:flex;flex-direction:column;gap:12px}
@@ -278,9 +280,10 @@ details.faq p{margin-top:10px;font-size:15px;color:var(--ink-soft);line-height:1
     <div class="meter" id="meter"><div class="meter-top"><span id="meterLab"></span><b id="meterPct"></b></div><div class="bar"><i id="meterFill"></i></div></div>
     <p class="progress-note" id="progressNote" hidden></p>
     <div class="steps" id="roadmap"></div>
-    <div class="card" style="margin-top:14px">
-      <p><strong>After you get your keys: share your experience.</strong></p>
-      <p class="meta">Once your purchase is complete, we'll text you a short review link. Your honest feedback helps the next family find us.</p>
+    <div class="card who" id="reviewCard" style="margin-top:14px">
+      <p class="person" id="reviewHead">After you get your keys: share your experience.</p>
+      <p id="reviewBody">Once your purchase is complete, we'll text you a short review link. Your honest feedback helps the next family find us.</p>
+      <a class="btn btn-secondary" id="reviewLink" href="#" target="_blank" rel="noopener" hidden>Leave a review</a>
     </div>
   </section>
 
@@ -407,6 +410,9 @@ const DEAL_ROOM = {
   licenseUrl: "https://www.realtor.com/realestateagents/6363f4576bdfbd63be36155c",
   linkedinUrl: "https://www.linkedin.com/in/joseph-hernandez-9511958",
   siteUrl: "https://iamjoehernandez.com",
+  // Buyer review form (Google Form). Shown only once this deal's `keys_delivered` flag is set.
+  reviewFormUrl: "https://docs.google.com/forms/d/e/1FAIpQLScjH4sn1KLvV25t7GAlA_CAaZPwewq7wJNS4JUp0WdnqmfLFA/viewform",
+  reviewFormHomeEntry: "entry.1697158524",
   // D04: published-to-web CSV of the Sheet's `Status` tab ONLY (key + 1/blank flags, no PII).
   statusUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRE4JY7Zz-hbT5eScrU5EP_WmdN4QyMF6ZnJg6rOoUIjggZLH30GQRDtVmWceEK8D-Ow6o5-u2yWW4u/pub?gid=815884279&single=true&output=csv",
   confirmedStates: {
@@ -522,6 +528,14 @@ const DEAL_ROOM = {
           <div class="handle">${a.link ? `<a href="${a.link}" target="_blank" rel="noopener">${a.handle}</a>` : a.handle}${a.qr ? `${a.link ? `<a href="${a.link}" target="_blank" rel="noopener">` : ""}<img class="qr" src="${a.qr}" alt="${a.label} QR code" loading="lazy">${a.link ? "</a>" : ""}<div class="scan">${a.link ? "Tap the code to open " + a.label + " or scan it" : "Scan with your phone camera or Zelle app"}</div>` : ""}${!a.link ? `<button type="button" class="copybtn" data-copy="${a.handle}">Tap to copy email</button>` : ""}</div>
         </div>`).join("");
     }
+    // Review card: locked note until this deal's keys are recorded, then a live review button.
+    const keysIn = !!done && done.has("keys_delivered");
+    $("reviewHead").textContent = keysIn ? "Welcome home. How did we do?" : "After you get your keys: share your experience.";
+    $("reviewBody").textContent = keysIn
+      ? "Thank you for trusting us with your purchase. It takes about 2 minutes, and your honest feedback helps the next family find us."
+      : "Once your purchase is complete, we'll text you a short review link. Your honest feedback helps the next family find us.";
+    $("reviewLink").hidden = !keysIn;
+    if (keysIn) $("reviewLink").href = `${DEAL_ROOM.reviewFormUrl}?usp=pp_url&${DEAL_ROOM.reviewFormHomeEntry}=${encodeURIComponent(wantedId || "")}`;
     $("progressNote").hidden = !(done && nextIdx === -1);
     if (done && nextIdx === -1) $("progressNote").textContent = "All done. Welcome home.";
     $("faqChangeMind").textContent = confirmed

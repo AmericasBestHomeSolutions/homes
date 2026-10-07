@@ -99,7 +99,7 @@ const HOMES = [
 
     features: { backyard: "yes", fenced_yard: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-1744-monroe-1.jpg", "images/decatur-il-1744-monroe-2.jpg", "images/decatur-il-1744-monroe-3.jpg", "images/decatur-il-1744-monroe-4.jpg", "images/decatur-il-1744-monroe-5.jpg", "images/decatur-il-1744-monroe-6.jpg", "images/decatur-il-1744-monroe-7.jpg", "images/decatur-il-1744-monroe-8.jpg", "images/decatur-il-1744-monroe-9.jpg"],
   },
   {
     id: "decatur-il-125-16th",

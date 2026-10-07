@@ -283,7 +283,7 @@ details.faq p{margin-top:10px;font-size:15px;color:var(--ink-soft);line-height:1
     <div class="card who" id="reviewCard" style="margin-top:14px">
       <p class="person" id="reviewHead">After you get your keys: share your experience.</p>
       <p id="reviewBody">Once your purchase is complete, we'll text you a short review link. Your honest feedback helps the next family find us.</p>
-      <a class="btn btn-secondary" id="reviewLink" href="#" target="_blank" rel="noopener" hidden>Leave a review</a>
+      <a class="btn btn-secondary" id="reviewLink" href="#" hidden>Leave a review</a>
     </div>
   </section>
 
@@ -535,7 +535,7 @@ const DEAL_ROOM = {
       ? "Thank you for trusting us with your purchase. It takes about 2 minutes, and your honest feedback helps the next family find us."
       : "Once your purchase is complete, we'll text you a short review link. Your honest feedback helps the next family find us.";
     $("reviewLink").hidden = !keysIn;
-    if (keysIn) $("reviewLink").href = `${DEAL_ROOM.reviewFormUrl}?usp=pp_url&${DEAL_ROOM.reviewFormHomeEntry}=${encodeURIComponent(wantedId || "")}`;
+    if (keysIn) $("reviewLink").href = `review.html?home=${encodeURIComponent(wantedId || "")}&deal=${encodeURIComponent(dealCode)}`;
     $("progressNote").hidden = !(done && nextIdx === -1);
     if (done && nextIdx === -1) $("progressNote").textContent = "All done. Welcome home.";
     $("faqChangeMind").textContent = confirmed

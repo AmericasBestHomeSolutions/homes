@@ -129,6 +129,7 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
 .pay-row .handle a{color:var(--pine);text-decoration:none}
 .pay-row .qr{width:132px;height:132px;border-radius:10px;border:1px solid var(--line);background:#fff;display:block;margin:10px 0 0 auto}
 .pay-row .scan{font-size:11px;color:var(--ink-soft);text-align:right;margin-top:4px}
+.pay-row .memo{font-size:13px;color:var(--ink);margin-top:6px;background:var(--honey-soft);border-radius:8px;padding:4px 8px;display:inline-block}
 .copybtn{margin:8px 0 0 auto;display:block;background:var(--pine);color:#fff;border:0;border-radius:10px;padding:8px 14px;font:600 13px 'DM Sans',sans-serif;cursor:pointer}
 .pay-row .acct{font-size:12px;color:var(--ink-soft)}
 .pay-warn{font-size:14px;color:var(--ink-soft);background:var(--honey-soft);border-radius:12px;padding:12px 14px;line-height:1.5}
@@ -524,7 +525,7 @@ const DEAL_ROOM = {
       $("payNote").textContent = done.payNote;
       $("payCardList").innerHTML = DEAL_ROOM.paymentAccounts.map(a => `
         <div class="pay-row">
-          <div><div class="label">${a.label}</div><div class="acct">Name on account: ${a.nameOnAccount}</div></div>
+          <div><div class="label">${a.label}</div><div class="acct">Name on account: ${a.nameOnAccount}</div><div class="memo">Memo: <strong>${esc(C.address || "")}</strong></div></div>
           <div class="handle">${a.link ? `<a href="${a.link}" target="_blank" rel="noopener">${a.handle}</a>` : a.handle}${a.qr ? `${a.link ? `<a href="${a.link}" target="_blank" rel="noopener">` : ""}<img class="qr" src="${a.qr}" alt="${a.label} QR code" loading="lazy">${a.link ? "</a>" : ""}<div class="scan">${a.link ? "Tap the code to open " + a.label + " or scan it" : "Scan with your phone camera or Zelle app"}</div>` : ""}${!a.link ? `<button type="button" class="copybtn" data-copy="${a.handle}">Tap to copy email</button>` : ""}</div>
         </div>`).join("");
     }

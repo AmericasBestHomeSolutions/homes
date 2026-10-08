@@ -1059,7 +1059,7 @@ const HOMES = [
     address:     "802 N 71st St",
     zip:         "62203",
     description: "large basement",
-    copy:        "$850 a month and $2,500 to move in opens the door to this two-bedroom, one-bath home in East St. Louis. Downstairs, a large basement gives you room to spread out, store what matters, or shape into whatever you need down the road. The real comfort may be the number itself. Your monthly payment is written into the agreement, so it won't climb every time a lease comes up for review, and each payment goes toward a place that's yours. The purchase price is $70,000, fixed the moment you sign, with owner financing and no bank anywhere in the process. The home is sold as-is, so come walk through it in person and judge it with your own eyes. Homes at this price don't wait around long. Send us a text now and let's get you inside.",
+    copy:        "$800 a month and $2,500 to get the keys to a two-bedroom home in East St. Louis that answers to you, not a landlord. Inside you'll find two bedrooms, one bath, and a large basement with real room for storage, projects, or whatever you decide it should be. What may matter most is the payment: $800 a month, written into your contract, the same this year as the next, with no surprise notice that it's going up. The purchase price is $70,000, fixed when you sign, with owner financing and no bank anywhere in the picture. The home is sold as-is, so come walk through it in person and judge it with your own eyes. A home at this payment won't wait forever, so send us a message now and we'll get you through the door.",
     city:  "East St. Louis",
     state: "IL",
     beds:  2,
@@ -1067,7 +1067,7 @@ const HOMES = [
     sqft:  "",
     status: "Available",
 
-    monthlyPayment: 850,
+    monthlyPayment: 800,
     moveIn:         2500,
     lockedPrice:    70000,
     termText:       "30-year owner financing (contract for deed)",

@@ -4191,7 +4191,7 @@ const HOMES = [
     id: "decatur-il-1527-oakland",
     address:     "1527 N Oakland Ave",
     zip:         "62526",
-    copy:        "$750 a month, $2,000 up front, and a two-bedroom home in Decatur, Illinois with your name on the paperwork. This one is simple and honest: two bedrooms, one bath, and a front door that opens onto something you're buying instead of renting. The payment is written into your agreement from the start, so the number you see today is the number you'll plan around next spring and the spring after that, with no landlord deciding it's time for more. The purchase price is $71,000, settled the day you sign, with owner financing through Americas Best Home Solutions and no bank weighing in. The home is sold as-is, so come walk through every room in person and decide with your own eyes. Reach out by text or message today, before someone else claims this spot.",
+    copy:        "$750 a month, $1,500 to move in, and a two-bedroom, one-bath home in Decatur, Illinois with your name on the paperwork. There's no bank application and no loan officer to win over. This is owner financing, plain and simple. Your monthly payment is written down from the start and stays put, so you'll know exactly what each month costs instead of bracing for whatever new number shows up when a lease comes due. Every payment goes toward a place that's becoming yours, not someone else's investment. The purchase price is $71,000, agreed to the day you sign. The home is sold as-is, so come walk through every room in person and judge it with your own eyes. Homes at this price don't stay available for long. Send us a text and we'll get you through the door.",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -4200,7 +4200,7 @@ const HOMES = [
     status: "Available",
 
     monthlyPayment: 750,
-    moveIn:         2000,
+    moveIn:         1500,
     lockedPrice:    71000,
     termText:       "30-year owner financing (contract for deed)",
 

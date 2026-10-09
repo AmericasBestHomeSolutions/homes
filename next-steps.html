@@ -322,7 +322,7 @@ details.faq p{margin-top:10px;font-size:15px;color:var(--ink-soft);line-height:1
   </section>
 
   <!-- HOW PAYMENTS WORK -->
-  <section class="section">
+  <section class="section" id="paySection">
     <div class="sec-label">How payments work</div>
     <h2 class="sec-title">Where your money goes</h2>
     <div class="pay-list" id="payList"></div>
@@ -519,7 +519,10 @@ const DEAL_ROOM = {
     const tw = !!done && !!done.tourWhen;
     $("apptCard").hidden = !tw;
     if (tw) $("apptWhen").textContent = done.tourWhen;
-    const pn = !!done && !!done.payNote;
+    // Once the down payment has landed, the payment details are noise: hide them.
+    const paid = !!done && done.has("down_payment_received");
+    $("paySection").hidden = paid;
+    const pn = !!done && !!done.payNote && !paid;
     $("payCard").hidden = !pn;
     if (pn) {
       $("payNote").textContent = done.payNote;

@@ -154,11 +154,13 @@ textarea:focus,input[type=text]:focus{outline:none;border-color:var(--pine);box-
       </div>
 
       <div class="q">
+        <label class="q-label" for="shareName">Your first name (and city, if you like)</label>
+        <p class="q-help">Only our team sees this unless you check the box below.</p>
+        <input type="text" id="shareName" maxlength="80" placeholder="Maria, Decatur" required>
+      </div>
+
+      <div class="q">
         <label class="share"><input type="checkbox" id="canShare"><span>You may share my comment on your website<small>First name and city only. We never show your address.</small></span></label>
-        <div id="nameWrap" hidden>
-          <label class="q-help" for="shareName" style="display:block">How should we show your name? (first name, last initial, city)</label>
-          <input type="text" id="shareName" maxlength="80" placeholder="Maria G., Decatur">
-        </div>
       </div>
 
       <div class="q">
@@ -260,13 +262,8 @@ const REVIEW = {
     return i > 0 && row[i] === "1";
   }
 
-  // Already sent from this browser? Say so instead of inviting a duplicate.
-  const sentKey = "abhs_review_sent_" + homeId;
-  function wasSent(){ try { return !!localStorage.getItem(sentKey); } catch(e){ return false; } }
-  function sentRating(){ try { return parseInt(localStorage.getItem(sentKey), 10) || 0; } catch(e){ return 0; } }
   // Facebook ask only for 4-5 star reviews (Joe's call 2026-10-09). Lower ratings see only the thank-you.
   function showThanks(r){ $("fbCard").hidden = !(r >= 4); show("thanks"); }
-  function markSent(r){ try { localStorage.setItem(sentKey, String(r || 1)); } catch(e){} }
 
   // ── form widgets ───────────────────────────────────────────
   let rating = 0, lastComment = "";
@@ -303,7 +300,6 @@ const REVIEW = {
     b.addEventListener("click", () => b.setAttribute("aria-pressed", b.getAttribute("aria-pressed") !== "true"));
     chipsEl.appendChild(b);
   });
-  $("canShare").addEventListener("change", e => { $("nameWrap").hidden = !e.target.checked; });
 
   // ── submit into the Google Form ────────────────────────────
   $("reviewForm").addEventListener("submit", async e => {
@@ -314,12 +310,12 @@ const REVIEW = {
     body.append(F.home, homeId); body.append(F.stars, String(rating));
     [...chipsEl.children].filter(b => b.getAttribute("aria-pressed") === "true").forEach(b => body.append(F.stood, b.textContent));
     if ($("liked").value.trim()) body.append(F.liked, $("liked").value.trim());
-    if ($("canShare").checked){ body.append(F.share, REVIEW.shareValue); if ($("shareName").value.trim()) body.append(F.shareName, $("shareName").value.trim()); }
+    body.append(F.shareName, $("shareName").value.trim()); if ($("canShare").checked) body.append(F.share, REVIEW.shareValue);
     if ($("privateNote").value.trim()) body.append(F.privateNote, $("privateNote").value.trim());
     if ($("referral").value.trim()) body.append(F.referral, $("referral").value.trim());
     try {
       await fetch(REVIEW.formPostUrl, { method:"POST", mode:"no-cors", headers:{"Content-Type":"application/x-www-form-urlencoded"}, body: body.toString() });
-      markSent(rating); lastComment = $("liked").value.trim(); showThanks(rating);
+      lastComment = $("liked").value.trim(); showThanks(rating);
     } catch (err){
       btn.disabled = false; btn.textContent = "Send my review";
       $("err").textContent = "That didn't go through. Please try again, or use the simple form below."; $("err").hidden = false;
@@ -346,7 +342,6 @@ const REVIEW = {
   // ── boot: fail closed unless keys are recorded for THIS deal ─
   (async function(){
     if (!validHome || !dealCode) return lock("This link isn't complete", `Please use the link we texted you, or call us at ${pretty}.`);
-    if (wasSent()){ showThanks(sentRating()); return; }
     let ok = false;
     try { ok = await keysDelivered(); }
     catch(e){ return lock("We couldn't load this just now", "Please refresh in a minute, or call us."); }

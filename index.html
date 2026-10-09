@@ -467,6 +467,34 @@ body{
 
   <!-- TESTIMONIALS — removed 2026-09-24 (Joe): the old quotes were invented drafts. Add a section back here ONLY with real buyers' words (first name + city), after real closings. -->
 
+  <!-- REVIEWS — real, Joe-approved only. Fed by reviews.json (scripts/reviews_publish.py). Hidden until the first approved review. -->
+  <section class="section reveal" id="reviews" hidden>
+    <div class="sec-head">
+      <div class="sec-label">Real families</div>
+      <h2 class="sec-title">What families are saying</h2>
+      <p class="sec-sub">Words from families who now have their keys.</p>
+    </div>
+    <div class="quotes" id="quotes"></div>
+  </section>
+  <script>
+  (function(){
+    fetch("reviews.json",{cache:"no-cache"}).then(function(r){return r.ok?r.json():[]}).then(function(list){
+      if(!Array.isArray(list)||!list.length)return;
+      var box=document.getElementById("quotes");
+      list.slice().reverse().forEach(function(v){
+        var q=document.createElement("div");q.className="quote";
+        var s=document.createElement("div");s.className="stars";s.textContent="★".repeat(v.stars)+"☆".repeat(5-v.stars);s.setAttribute("aria-label",v.stars+" out of 5 stars");
+        var p=document.createElement("p");p.textContent="\u201C"+v.text+"\u201D";
+        var w=document.createElement("div");w.className="who";
+        var av=document.createElement("div");av.className="av";av.textContent=(v.name||"?").trim().charAt(0).toUpperCase();
+        var t=document.createElement("div");var nm=document.createElement("div");nm.className="nm";nm.textContent=v.name;t.appendChild(nm);
+        w.appendChild(av);w.appendChild(t);q.appendChild(s);q.appendChild(p);q.appendChild(w);box.appendChild(q);
+      });
+      document.getElementById("reviews").hidden=false;
+    }).catch(function(){});
+  })();
+  </script>
+
   <!-- THE OPPORTUNITY — rent vs own + the market story -->
   <section class="section reveal" id="opportunity">
     <div class="sec-head">

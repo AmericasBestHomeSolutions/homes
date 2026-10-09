@@ -229,9 +229,6 @@ const REVIEW = {
   $("plainForm").href = `${REVIEW.formViewUrl}?usp=pp_url&${REVIEW.formEntries.home}=${encodeURIComponent(homeId)}`;
   function show(id){ ["loading","locked","formView","thanks"].forEach(x => $(x).hidden = (x !== id)); window.scrollTo(0,0); }
 
-  const sentKey = "abhs_owner_review_sent_" + (homeId || "none");
-  function wasSent(){ try { return localStorage.getItem(sentKey) === "1"; } catch(e){ return false; } }
-  function markSent(){ try { localStorage.setItem(sentKey, "1"); } catch(e){} }
 
   let rating = 0, lastComment = "";
   const starSvg = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg>';
@@ -291,7 +288,7 @@ const REVIEW = {
     if (identVal() !== "private"){ body.append(F.share, REVIEW.shareValue); body.append(F.display, displayLabel()); }
     try {
       await fetch(REVIEW.formPostUrl, { method:"POST", mode:"no-cors", headers:{"Content-Type":"application/x-www-form-urlencoded"}, body: body.toString() });
-      markSent(); lastComment = $("liked").value.trim();
+      lastComment = $("liked").value.trim();
       // Facebook step only for 4-5 star reviews (Joe's call 2026-10-09) AND only if they chose to be
       // public in some form; private owners are not nudged.
       $("fbCard").hidden = !(rating >= 4) || identVal() === "private";
@@ -309,7 +306,7 @@ const REVIEW = {
     window.open(REVIEW.fbReviewUrl, "_blank", "noopener");
   });
 
-  if (wasSent()) show("thanks"); else show("formView");
+  show("formView");
 })();
 </script>
 </body>

@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex,nofollow"/>
 <meta name="referrer" content="no-referrer"/>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M24 3 41 9V23C41 33 33 41 24 45 15 41 7 33 7 23V9Z' fill='%2315315e'/><path d='M15 26 24 18 33 26Z' fill='%23e23b3b'/><rect x='17.5' y='26' width='13' height='9' fill='white'/><rect x='22' y='30' width='4' height='5' fill='%2315315e'/></svg>"/>
-<title>How did we do? | Americas Best Home Solutions</title>
+<title>How was working with us? | Americas Best Home Solutions</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -96,6 +96,7 @@ textarea:focus,input[type=text]:focus{outline:none;border-color:var(--pine);box-
 .check svg{width:38px;height:38px}
 .center{text-align:center}
 .thanks-actions{display:flex;flex-direction:column;gap:10px;margin-top:20px}
+.ident{display:flex;flex-direction:column;gap:8px;margin-top:6px}
 .fb-card{margin-top:22px;padding-top:22px;border-top:1px solid #e3e9f2}
 .fb-card h2{font-family:'Bricolage Grotesque',sans-serif;font-size:22px;line-height:1.2;margin:0 0 10px;color:var(--pine)}
 .fb-card p{margin:0 auto 16px;max-width:460px;line-height:1.55}
@@ -121,23 +122,22 @@ textarea:focus,input[type=text]:focus{outline:none;border-color:var(--pine);box-
   <!-- LOADING -->
   <div class="card center" id="loading"><p class="tagline" style="margin:0">One moment...</p></div>
 
-  <!-- LOCKED: not eligible yet / bad link / error. Never shows the form. -->
+  <!-- LOADING / ERROR -->
+  <div class="card center" id="loading"><p class="tagline" style="margin:0">One moment...</p></div>
   <div class="card center" id="locked" hidden>
-    <h1 id="lockedTitle">This opens after you get your keys</h1>
-    <p class="tagline" id="lockedBody" style="margin:0 auto 18px">We'll text you the moment it's ready. Thank you for trusting us with your home.</p>
-    <a class="btn btn-secondary" id="backRoadmap" href="#" hidden>Back to your roadmap</a>
+    <h1 id="lockedTitle">This link isn't complete</h1>
+    <p class="tagline" id="lockedBody" style="margin:0 auto">Please use the link we sent you, or give us a call.</p>
   </div>
 
   <!-- FORM -->
   <main id="formView" hidden>
-    <p class="eyebrow">Welcome home</p>
-    <h1>How did we do?</h1>
-    <p class="tagline">Your honest feedback helps the next family find us. It takes about 2 minutes.</p>
-    <div class="hero-card" id="propCard" hidden><div class="addr" id="propAddr"></div><p>You did it. Thank you for letting us be part of it.</p></div>
+    <p class="eyebrow">Thank you</p>
+    <h1>How was working with us?</h1>
+    <p class="tagline">Thank you for trusting us with your property. Your honest feedback helps us serve the next owner better. About a minute, and nothing is posted unless you say so.</p>
 
     <form class="card" id="reviewForm" novalidate style="margin-top:14px">
       <div class="q">
-        <span class="q-label" id="starsLabel">Overall, how would you rate your experience? <span class="req">*</span></span>
+        <span class="q-label" id="starsLabel">Overall, how would you rate working with us? <span class="req">*</span></span>
         <div class="stars" id="stars" role="radiogroup" aria-labelledby="starsLabel"></div>
         <div class="star-word" id="starWord" aria-live="polite"></div>
       </div>
@@ -159,17 +159,21 @@ textarea:focus,input[type=text]:focus{outline:none;border-color:var(--pine);box-
       </div>
 
       <div class="q">
-        <label class="share"><input type="checkbox" id="canShare"><span>You may share my comment on your website<small>First name and city only. We never show your address.</small></span></label>
-        <div id="nameWrap" hidden>
-          <label class="q-help" for="shareName" style="display:block">How should we show your name? (first name, last initial, city)</label>
-          <input type="text" id="shareName" maxlength="80" placeholder="Maria G., Decatur">
+        <span class="q-label">May we share your comment publicly?</span>
+        <p class="q-help">Many owners prefer privacy, and that's completely fine. You choose.</p>
+        <div class="ident" id="ident" role="radiogroup" aria-label="How to share">
+          <label class="share"><input type="radio" name="ident" value="private" checked><span>Keep it private<small>Only our team sees it. This is the default.</small></span></label>
+          <label class="share"><input type="radio" name="ident" value="anon"><span>Share it anonymously<small>Shown as "Verified property partner." No name, no city.</small></span></label>
+          <label class="share"><input type="radio" name="ident" value="named"><span>Share it with how I'd like to be identified<small>You decide exactly what shows.</small></span></label>
         </div>
-      </div>
-
-      <div class="q">
-        <label class="q-label" for="referral">Know someone who could use our help?</label>
-        <p class="q-help">Optional. Share a name and number and we'll reach out kindly.</p>
-        <input type="text" id="referral" maxlength="160">
+        <div id="namedWrap" hidden>
+          <label class="q-help" for="idRole" style="display:block">I'd like to be shown as (e.g. Property manager, Property owner, Investor)</label>
+          <input type="text" id="idRole" maxlength="60" placeholder="Property manager">
+          <label class="q-help" for="idName" style="display:block;margin-top:10px">First name and last initial (optional)</label>
+          <input type="text" id="idName" maxlength="40" placeholder="Joe H.">
+          <label class="q-help" for="idCity" style="display:block;margin-top:10px">City (optional)</label>
+          <input type="text" id="idCity" maxlength="60" placeholder="Atlanta">
+        </div>
       </div>
 
       <div class="q">
@@ -184,86 +188,50 @@ textarea:focus,input[type=text]:focus{outline:none;border-color:var(--pine);box-
   <div class="card center" id="thanks" hidden>
     <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17.5 19 7"/></svg></div>
     <h1>Thank you.</h1>
-    <p class="tagline" style="margin:0 auto">It means a lot. We read every word, and it helps the next family feel safe taking the step you just took.</p>
-    <div class="fb-card">
-      <h2>Your story could be the reason the next family finds their home.</h2>
-      <p class="tagline">Right now, someone is exactly where you were a few months ago. Told no by the bank, wondering if it's even possible. Your words could be what tells them it is. Tap below and we'll copy what you wrote. You just paste it on our Facebook page. About 20 seconds.</p>
-      <button class="btn btn-primary" id="fbBtn" type="button">Copy my words &amp; help the next family &rarr;</button>
-      <p class="fb-after" id="fbAfter" hidden>Copied! Facebook is opening. Tap <b>Yes</b> to recommend us, paste, and post. Thank you.</p>
-    </div>
-    <div class="thanks-actions">
-      <button class="btn btn-secondary" id="shareBtn" type="button">Send a friend our way</button>
-      <a class="btn btn-secondary" id="backRoadmap2" href="#" hidden>Back to your roadmap</a>
+    <p class="tagline" style="margin:0 auto">We read every word. It helps us do right by the next owner who trusts us with their property.</p>
+    <div class="fb-card" id="fbCard" hidden>
+      <h2>Your experience could help the next owner feel safe.</h2>
+      <p class="tagline">If you'd like, you can also leave a recommendation on our Facebook page. It's optional, and you can use your own name or skip it. We'll copy your words so it takes seconds.</p>
+      <button class="btn btn-secondary" id="fbBtn" type="button">Copy my words &amp; open Facebook &rarr;</button>
+      <p class="fb-after" id="fbAfter" hidden>Copied! Facebook is opening. Tap <b>Yes</b>, paste, and post. Thank you.</p>
     </div>
   </div>
 
 </div>
 
-<script src="homes.js"></script>
 <script>
 const REVIEW = {
   phone: "551-550-9906",
-  siteUrl: "https://getownerfinancedhomes.com",
-  // Facebook page recommendations tab (page id 61580021173050). Reviewer posts it from their own account.
   fbReviewUrl: "https://www.facebook.com/profile.php?id=61580021173050&sk=reviews",
-  // Published CSV of the Deal Room `Status` tab ONLY (flags, no PII). Same one next-steps.html reads.
-  statusUrl: "https://docs.google.com/spreadsheets/d/e/2PACX-1vRE4JY7Zz-hbT5eScrU5EP_WmdN4QyMF6ZnJg6rOoUIjggZLH30GQRDtVmWceEK8D-Ow6o5-u2yWW4u/pub?gid=815884279&single=true&output=csv",
-  // The existing Google Form we submit into. Field ids were read from the live form 2026-10-07.
-  formViewUrl: "https://docs.google.com/forms/d/e/1FAIpQLScjH4sn1KLvV25t7GAlA_CAaZPwewq7wJNS4JUp0WdnqmfLFA/viewform",
-  formPostUrl: "https://docs.google.com/forms/d/e/1FAIpQLScjH4sn1KLvV25t7GAlA_CAaZPwewq7wJNS4JUp0WdnqmfLFA/formResponse",
+  // Seller Review Form (same Google Sheet, tab "Form Responses 2"). Field ids read from the live form 2026-10-09.
+  formViewUrl: "https://docs.google.com/forms/d/e/1FAIpQLSeNFDR6riEse-KWUnLecqoFz4bJKyiY8ZhV_vIuZ6ViQtMqhA/viewform",
+  formPostUrl: "https://docs.google.com/forms/d/e/1FAIpQLSeNFDR6riEse-KWUnLecqoFz4bJKyiY8ZhV_vIuZ6ViQtMqhA/formResponse",
   formEntries: {
     home: "entry.1697158524", stars: "entry.206791860", stood: "entry.561921975",
     liked: "entry.1310665719", better: "entry.348634605",
-    share: "entry.1133547505", shareName: "entry.1948218212", referral: "entry.967666002"
+    share: "entry.1133547505", display: "entry.1948218212"
   },
-  shareValue: "Yes, you may share it (first name and city only)",
-  chips: ["Communication","Fast responses","Transparency","Always available","Every step of the process"],
+  // Must match the form's checkbox option text exactly.
+  shareValue: 'Yes, you may share it as "Property owner" with my city',
+  chips: ["Communication","Paid on time","Clear process","Would work with us again"],
   words: ["","Poor","Fair","Good","Great","Excellent"]
 };
 
 (function(){
   const $ = id => document.getElementById(id);
   const qs = new URLSearchParams(location.search);
-  const homeId = qs.get("home") || "";
-  const rawDeal = qs.get("deal") || "";
-  const dealCode = /^[a-z0-9]{6,32}$/i.test(rawDeal) ? rawDeal : "";
-  const validHome = /^[a-z0-9]+-[a-z]{2}-[a-z0-9-]+$/i.test(homeId);
+  const rawHome = qs.get("home") || "";
+  const homeId = /^[a-z0-9]+-[a-z]{2}-[a-z0-9-]+$/i.test(rawHome) ? rawHome : "";
   const tel = REVIEW.phone.replace(/\D/g, "");
-  const pretty = tel.length === 10 ? `(${tel.slice(0,3)}) ${tel.slice(3,6)}-${tel.slice(6)}` : REVIEW.phone;
+  const pretty = `(${tel.slice(0,3)}) ${tel.slice(3,6)}-${tel.slice(6)}`;
   $("navCall").href = "tel:" + tel; $("navCall").textContent = pretty;
-
-  const roadmapHref = validHome && dealCode ? `next-steps.html?home=${encodeURIComponent(homeId)}&deal=${encodeURIComponent(dealCode)}` : "";
-  ["backRoadmap","backRoadmap2"].forEach(i => { if (roadmapHref){ $(i).href = roadmapHref; $(i).hidden = false; } });
   $("plainForm").href = `${REVIEW.formViewUrl}?usp=pp_url&${REVIEW.formEntries.home}=${encodeURIComponent(homeId)}`;
-
   function show(id){ ["loading","locked","formView","thanks"].forEach(x => $(x).hidden = (x !== id)); window.scrollTo(0,0); }
-  function lock(title, body){ if (title) $("lockedTitle").textContent = title; if (body) $("lockedBody").textContent = body; show("locked"); }
 
-  // Same key as next-steps.html / scripts/deal_room.py: first 16 hex of SHA-256("<home id>|<code>").
-  async function dealKey(){
-    if (!(window.crypto && crypto.subtle)) throw new Error("no crypto");
-    const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(`${homeId}|${dealCode}`));
-    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,"0")).join("").slice(0,16);
-  }
-  async function keysDelivered(){
-    const key = await dealKey();
-    const sep = REVIEW.statusUrl.includes("?") ? "&" : "?";
-    const res = await fetch(`${REVIEW.statusUrl}${sep}_=${Date.now()}`, { cache: "no-store" });
-    if (!res.ok) throw new Error("status " + res.status);
-    const rows = (await res.text()).trim().split(/\r?\n/).map(l => l.split(",").map(c => c.replace(/^"|"$/g,"").trim()));
-    const head = rows[0] || [];
-    const row = rows.slice(1).find(r => r[0] === key);
-    if (!row) return false;
-    const i = head.indexOf("keys_delivered");
-    return i > 0 && row[i] === "1";
-  }
-
-  // Already sent from this browser? Say so instead of inviting a duplicate.
-  const sentKey = "abhs_review_sent_" + homeId;
+  const sentKey = "abhs_owner_review_sent_" + (homeId || "none");
   function wasSent(){ try { return localStorage.getItem(sentKey) === "1"; } catch(e){ return false; } }
   function markSent(){ try { localStorage.setItem(sentKey, "1"); } catch(e){} }
 
-  // ── form widgets ───────────────────────────────────────────
   let rating = 0, lastComment = "";
   const starSvg = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.6L12 17.3l-5.9 3.3 1.3-6.6L2.5 9.4l6.6-.8z"/></svg>';
   const starsEl = $("stars");
@@ -298,60 +266,48 @@ const REVIEW = {
     b.addEventListener("click", () => b.setAttribute("aria-pressed", b.getAttribute("aria-pressed") !== "true"));
     chipsEl.appendChild(b);
   });
-  $("canShare").addEventListener("change", e => { $("nameWrap").hidden = !e.target.checked; });
+  const identVal = () => document.querySelector('input[name="ident"]:checked').value;
+  $("ident").addEventListener("change", () => { $("namedWrap").hidden = identVal() !== "named"; });
 
-  // ── submit into the Google Form ────────────────────────────
+  // What shows publicly. Never an address.
+  function displayLabel(){
+    const v = identVal();
+    if (v === "anon") return "Verified property partner";
+    const role = $("idRole").value.trim() || "Property partner";
+    const name = $("idName").value.trim(), city = $("idCity").value.trim();
+    return [name, role].filter(Boolean).join(", ") + (city ? " (" + city + ")" : "");
+  }
+
   $("reviewForm").addEventListener("submit", async e => {
     e.preventDefault();
     if (!rating){ $("err").textContent = "Please tap a star rating first."; $("err").hidden = false; $("stars").scrollIntoView({block:"center",behavior:"smooth"}); return; }
     const btn = $("submitBtn"); btn.disabled = true; btn.textContent = "Sending...";
     const F = REVIEW.formEntries, body = new URLSearchParams();
-    body.append(F.home, homeId); body.append(F.stars, String(rating));
+    body.append(F.home, homeId || "not provided"); body.append(F.stars, String(rating));
     [...chipsEl.children].filter(b => b.getAttribute("aria-pressed") === "true").forEach(b => body.append(F.stood, b.textContent));
     if ($("liked").value.trim()) body.append(F.liked, $("liked").value.trim());
     if ($("better").value.trim()) body.append(F.better, $("better").value.trim());
-    if ($("canShare").checked){ body.append(F.share, REVIEW.shareValue); if ($("shareName").value.trim()) body.append(F.shareName, $("shareName").value.trim()); }
-    if ($("referral").value.trim()) body.append(F.referral, $("referral").value.trim());
+    if (identVal() !== "private"){ body.append(F.share, REVIEW.shareValue); body.append(F.display, displayLabel()); }
     try {
       await fetch(REVIEW.formPostUrl, { method:"POST", mode:"no-cors", headers:{"Content-Type":"application/x-www-form-urlencoded"}, body: body.toString() });
-      markSent(); lastComment = $("liked").value.trim(); show("thanks");
+      markSent(); lastComment = $("liked").value.trim();
+      // Facebook step only if they chose to be public in some form; private owners are not nudged.
+      $("fbCard").hidden = identVal() === "private";
+      show("thanks");
     } catch (err){
       btn.disabled = false; btn.textContent = "Send my review";
       $("err").textContent = "That didn't go through. Please try again, or use the simple form below."; $("err").hidden = false;
     }
   });
 
-  // ── Facebook: copy their words, open our recommendations tab ─
   $("fbBtn").addEventListener("click", async () => {
-    const text = lastComment || "I got my home through Americas Best Home Solutions. They made it possible when the bank said no, and they were with me every step of the way. If you've been wanting to own, call them.";
-    try { await navigator.clipboard.writeText(text); } catch(e){ /* older browsers: they can type it */ }
+    const text = lastComment || "I worked with Americas Best Home Solutions on my property. Clear process, great communication, and they did what they said they would.";
+    try { await navigator.clipboard.writeText(text); } catch(e){}
     $("fbAfter").hidden = false;
     window.open(REVIEW.fbReviewUrl, "_blank", "noopener");
   });
 
-  // ── share with a friend (referral) ─────────────────────────
-  $("shareBtn").addEventListener("click", async () => {
-    const text = "I just got my home through Americas Best Home Solutions. If you've been wanting to own, take a look:";
-    try {
-      if (navigator.share) await navigator.share({ title: "Americas Best Home Solutions", text, url: REVIEW.siteUrl });
-      else { await navigator.clipboard.writeText(`${text} ${REVIEW.siteUrl}`); $("shareBtn").textContent = "Link copied. Paste it to a friend."; }
-    } catch(e){ /* user dismissed the share sheet */ }
-  });
-
-  // ── boot: fail closed unless keys are recorded for THIS deal ─
-  (async function(){
-    if (!validHome || !dealCode) return lock("This link isn't complete", `Please use the link we texted you, or call us at ${pretty}.`);
-    if (wasSent()){ show("thanks"); return; }
-    let ok = false;
-    try { ok = await keysDelivered(); }
-    catch(e){ return lock("We couldn't load this just now", "Please refresh in a minute, or call us."); }
-    if (!ok) return lock();
-    if (typeof HOMES !== "undefined"){
-      const h = HOMES.find(x => x.id === homeId);
-      if (h){ $("propAddr").textContent = [h.address, h.city, h.state].filter(Boolean).map(x => String(x).replace(/[,\s]+$/, "")).join(", "); $("propCard").hidden = false; }
-    }
-    show("formView");
-  })();
+  if (wasSent()) show("thanks"); else show("formView");
 })();
 </script>
 </body>

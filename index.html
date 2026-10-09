@@ -479,7 +479,7 @@ body{
   <script>
   (function(){
     fetch("reviews.json",{cache:"no-cache"}).then(function(r){return r.ok?r.json():[]}).then(function(list){
-      if(!Array.isArray(list)||!list.length)return;
+      list=(Array.isArray(list)?list:[]).filter(function(v){return v.kind!=="owner"});if(!list.length)return;
       var box=document.getElementById("quotes");
       list.slice().reverse().forEach(function(v){
         var q=document.createElement("div");q.className="quote";

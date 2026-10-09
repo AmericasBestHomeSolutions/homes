@@ -158,6 +158,12 @@ textarea:focus,input[type=text]:focus{outline:none;border-color:var(--pine);box-
       </div>
 
       <div class="q">
+        <label class="q-label" for="privateNote">Anything you'd like to tell us privately?</label>
+        <p class="q-help">Optional. Only our team reads this. It is never shared or posted anywhere.</p>
+        <textarea id="privateNote" maxlength="1500"></textarea>
+      </div>
+
+      <div class="q">
         <span class="q-label">May we share your comment publicly?</span>
         <p class="q-help">Many owners prefer privacy, and that's completely fine. You choose.</p>
         <div class="ident" id="ident" role="radiogroup" aria-label="How to share">
@@ -208,7 +214,8 @@ const REVIEW = {
   formEntries: {
     home: "entry.1697158524", stars: "entry.206791860", stood: "entry.561921975",
     liked: "entry.1310665719", better: "entry.348634605",
-    share: "entry.1133547505", display: "entry.1948218212"
+    share: "entry.1133547505", display: "entry.1948218212",
+    privateNote: "entry.1133523516"
   },
   // Must match the form's checkbox option text exactly.
   shareValue: 'Yes, you may share it as "Property owner" with my city',
@@ -286,12 +293,14 @@ const REVIEW = {
     [...chipsEl.children].filter(b => b.getAttribute("aria-pressed") === "true").forEach(b => body.append(F.stood, b.textContent));
     if ($("liked").value.trim()) body.append(F.liked, $("liked").value.trim());
     if ($("better").value.trim()) body.append(F.better, $("better").value.trim());
+    if ($("privateNote").value.trim()) body.append(F.privateNote, $("privateNote").value.trim());
     if (identVal() !== "private"){ body.append(F.share, REVIEW.shareValue); body.append(F.display, displayLabel()); }
     try {
       await fetch(REVIEW.formPostUrl, { method:"POST", mode:"no-cors", headers:{"Content-Type":"application/x-www-form-urlencoded"}, body: body.toString() });
       markSent(); lastComment = $("liked").value.trim();
-      // Facebook step only if they chose to be public in some form; private owners are not nudged.
-      $("fbCard").hidden = identVal() === "private";
+      // Facebook step only for 4-5 star reviews (Joe's call 2026-10-09) AND only if they chose to be
+      // public in some form; private owners are not nudged.
+      $("fbCard").hidden = !(rating >= 4) || identVal() === "private";
       show("thanks");
     } catch (err){
       btn.disabled = false; btn.textContent = "Send my review";

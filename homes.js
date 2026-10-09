@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (220 live, rebuilt from master published 2026-10-07) --- */
+/* --- the homes (219 live, rebuilt from master published 2026-10-07) --- */
 const HOMES = [
   {
     id: "westfrankfort-il-407-saint",
@@ -68,7 +68,7 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "1160",
-    status: "Available",
+    status: "Pending",
 
     monthlyPayment: 1000,
     moveIn:         3000,
@@ -2119,27 +2119,6 @@ const HOMES = [
     features: { central_air: "yes" },
     heroPhoto: "",
     photos:    ["images/cahokia-il-505-chaudet-1.jpg", "images/cahokia-il-505-chaudet-2.jpg", "images/cahokia-il-505-chaudet-3.jpg", "images/cahokia-il-505-chaudet-4.jpg", "images/cahokia-il-505-chaudet-5.jpg"],
-  },
-  {
-    id: "peoria-il-2410-ellis",
-    address:     "2410 N Ellis St",
-    zip:         "61604",
-    description: "4BR/1BA single-family home in Auburndale neighborhood",
-    copy:        "Four bedrooms, $880 a month, and $2,000 to get the keys. This single-family home in Peoria's Auburndale neighborhood offers 1,202 square feet with four bedrooms and one bath, real space to spread out. With a room for everyone and everything, this is where the moving boxes get emptied for good, in a place that answers to you instead of a landlord. The purchase price is $69,000, written into your contract from the start, with owner financing and no bank getting a say. It's sold as-is, so come walk every room in person and see how it fits your plans. Homes at this payment don't wait around, so send us a message today and let's get your showing on the calendar.",
-    city:  "Peoria",
-    state: "IL",
-    beds:  4,
-    baths: 1,
-    sqft:  "1202",
-    status: "Available",
-
-    monthlyPayment: 880,
-    moveIn:         2000,
-    lockedPrice:    69000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    ["images/peoria-il-2410-ellis-1.jpg", "images/peoria-il-2410-ellis-2.jpg", "images/peoria-il-2410-ellis-3.jpg", "images/peoria-il-2410-ellis-4.jpg", "images/peoria-il-2410-ellis-5.jpg", "images/peoria-il-2410-ellis-6.jpg", "images/peoria-il-2410-ellis-7.jpg", "images/peoria-il-2410-ellis-8.jpg", "images/peoria-il-2410-ellis-9.jpg", "images/peoria-il-2410-ellis-10.jpg", "images/peoria-il-2410-ellis-11.jpg"],
   },
   {
     id: "cahokia-il-107-judith",

@@ -153,12 +153,7 @@ textarea:focus,input[type=text]:focus{outline:none;border-color:var(--pine);box-
       </div>
 
       <div class="q">
-        <label class="q-label" for="better">What could we do better?</label>
-        <textarea id="better" maxlength="1500"></textarea>
-      </div>
-
-      <div class="q">
-        <label class="q-label" for="privateNote">Anything you'd like to tell us privately?</label>
+        <label class="q-label" for="privateNote">Anything you'd like to tell us privately? For example, one thing we could do better.</label>
         <p class="q-help">Optional. Only our team reads this. It is never shared or posted anywhere.</p>
         <textarea id="privateNote" maxlength="1500"></textarea>
       </div>
@@ -213,7 +208,7 @@ const REVIEW = {
   formPostUrl: "https://docs.google.com/forms/d/e/1FAIpQLSeNFDR6riEse-KWUnLecqoFz4bJKyiY8ZhV_vIuZ6ViQtMqhA/formResponse",
   formEntries: {
     home: "entry.1697158524", stars: "entry.206791860", stood: "entry.561921975",
-    liked: "entry.1310665719", better: "entry.348634605",
+    liked: "entry.1310665719",
     share: "entry.1133547505", display: "entry.1948218212",
     privateNote: "entry.1133523516"
   },
@@ -292,7 +287,6 @@ const REVIEW = {
     body.append(F.home, homeId || "not provided"); body.append(F.stars, String(rating));
     [...chipsEl.children].filter(b => b.getAttribute("aria-pressed") === "true").forEach(b => body.append(F.stood, b.textContent));
     if ($("liked").value.trim()) body.append(F.liked, $("liked").value.trim());
-    if ($("better").value.trim()) body.append(F.better, $("better").value.trim());
     if ($("privateNote").value.trim()) body.append(F.privateNote, $("privateNote").value.trim());
     if (identVal() !== "private"){ body.append(F.share, REVIEW.shareValue); body.append(F.display, displayLabel()); }
     try {

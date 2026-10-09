@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (220 live, rebuilt from master published 2026-10-07) --- */
+/* --- the homes (219 live, rebuilt from master published 2026-10-07) --- */
 const HOMES = [
   {
     id: "westfrankfort-il-407-saint",
@@ -1053,28 +1053,6 @@ const HOMES = [
     features: { basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-1117-packard-1.jpg", "images/decatur-il-1117-packard-2.jpg", "images/decatur-il-1117-packard-3.jpg", "images/decatur-il-1117-packard-4.jpg", "images/decatur-il-1117-packard-5.jpg", "images/decatur-il-1117-packard-6.jpg", "images/decatur-il-1117-packard-7.jpg", "images/decatur-il-1117-packard-8.jpg", "images/decatur-il-1117-packard-9.jpg", "images/decatur-il-1117-packard-10.jpg", "images/decatur-il-1117-packard-11.jpg", "images/decatur-il-1117-packard-12.jpg", "images/decatur-il-1117-packard-13.jpg", "images/decatur-il-1117-packard-14.jpg", "images/decatur-il-1117-packard-15.jpg", "images/decatur-il-1117-packard-16.jpg", "images/decatur-il-1117-packard-17.jpg", "images/decatur-il-1117-packard-18.jpg", "images/decatur-il-1117-packard-19.jpg", "images/decatur-il-1117-packard-20.jpg", "images/decatur-il-1117-packard-21.jpg", "images/decatur-il-1117-packard-22.jpg", "images/decatur-il-1117-packard-23.jpg", "images/decatur-il-1117-packard-24.jpg"],
-  },
-  {
-    id: "eaststlouis-il-802-71st",
-    address:     "802 N 71st St",
-    zip:         "62203",
-    description: "large basement",
-    copy:        "$800 a month and $2,500 to get the keys to a two-bedroom home in East St. Louis that answers to you, not a landlord. Inside you'll find two bedrooms, one bath, and a large basement with real room for storage, projects, or whatever you decide it should be. What may matter most is the payment: $800 a month, written into your contract, the same this year as the next, with no surprise notice that it's going up. The purchase price is $70,000, fixed when you sign, with owner financing and no bank anywhere in the picture. The home is sold as-is, so come walk through it in person and judge it with your own eyes. A home at this payment won't wait forever, so send us a message now and we'll get you through the door.",
-    city:  "East St. Louis",
-    state: "IL",
-    beds:  2,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 800,
-    moveIn:         2500,
-    lockedPrice:    70000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { basement: "yes" },
-    heroPhoto: "",
-    photos:    ["images/eaststlouis-il-802-71st-1.jpg", "images/eaststlouis-il-802-71st-2.jpg", "images/eaststlouis-il-802-71st-3.jpg", "images/eaststlouis-il-802-71st-4.jpg", "images/eaststlouis-il-802-71st-5.jpg", "images/eaststlouis-il-802-71st-6.jpg", "images/eaststlouis-il-802-71st-7.jpg", "images/eaststlouis-il-802-71st-8.jpg", "images/eaststlouis-il-802-71st-9.jpg", "images/eaststlouis-il-802-71st-10.jpg", "images/eaststlouis-il-802-71st-11.jpg", "images/eaststlouis-il-802-71st-12.jpg", "images/eaststlouis-il-802-71st-13.jpg", "images/eaststlouis-il-802-71st-14.jpg", "images/eaststlouis-il-802-71st-15.jpg", "images/eaststlouis-il-802-71st-16.jpg", "images/eaststlouis-il-802-71st-17.jpg", "images/eaststlouis-il-802-71st-18.jpg", "images/eaststlouis-il-802-71st-19.jpg", "images/eaststlouis-il-802-71st-20.jpg", "images/eaststlouis-il-802-71st-21.jpg", "images/eaststlouis-il-802-71st-22.jpg", "images/eaststlouis-il-802-71st-23.jpg", "images/eaststlouis-il-802-71st-24.jpg"],
   },
   {
     id: "decatur-il-1204-jordan",
@@ -3747,7 +3725,7 @@ const HOMES = [
 
     features: { backyard: "yes", basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-3975-william-1.jpg", "images/decatur-il-3975-william-2.jpg", "images/decatur-il-3975-william-3.jpg", "images/decatur-il-3975-william-4.jpg", "images/decatur-il-3975-william-5.jpg", "images/decatur-il-3975-william-6.jpg", "images/decatur-il-3975-william-7.jpg", "images/decatur-il-3975-william-8.jpg", "images/decatur-il-3975-william-9.jpg", "images/decatur-il-3975-william-10.jpg", "images/decatur-il-3975-william-11.jpg", "images/decatur-il-3975-william-12.jpg", "images/decatur-il-3975-william-13.jpg", "images/decatur-il-3975-william-14.jpg", "images/decatur-il-3975-william-15.jpg", "images/decatur-il-3975-william-16.jpg", "images/decatur-il-3975-william-17.jpg", "images/decatur-il-3975-william-18.jpg", "images/decatur-il-3975-william-19.jpg", "images/decatur-il-3975-william-20.jpg", "images/decatur-il-3975-william-21.jpg", "images/decatur-il-3975-william-22.jpg", "images/decatur-il-3975-william-23.jpg", "images/decatur-il-3975-william-24.jpg"],
   },
   {
     id: "herrin-il-900-16th",
@@ -3873,7 +3851,7 @@ const HOMES = [
 
     features: { backyard: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-138-18th-1.jpg", "images/decatur-il-138-18th-2.jpg", "images/decatur-il-138-18th-3.jpg", "images/decatur-il-138-18th-4.jpg", "images/decatur-il-138-18th-5.jpg", "images/decatur-il-138-18th-6.jpg", "images/decatur-il-138-18th-7.jpg", "images/decatur-il-138-18th-8.jpg", "images/decatur-il-138-18th-9.jpg", "images/decatur-il-138-18th-10.jpg", "images/decatur-il-138-18th-11.jpg", "images/decatur-il-138-18th-12.jpg", "images/decatur-il-138-18th-13.jpg", "images/decatur-il-138-18th-14.jpg", "images/decatur-il-138-18th-15.jpg", "images/decatur-il-138-18th-16.jpg", "images/decatur-il-138-18th-17.jpg", "images/decatur-il-138-18th-18.jpg", "images/decatur-il-138-18th-19.jpg", "images/decatur-il-138-18th-20.jpg", "images/decatur-il-138-18th-21.jpg", "images/decatur-il-138-18th-22.jpg", "images/decatur-il-138-18th-23.jpg", "images/decatur-il-138-18th-24.jpg"],
   },
   {
     id: "jackson-ms-4228-johnson",
@@ -3936,7 +3914,7 @@ const HOMES = [
 
     features: { basement: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-2015-union-1.jpg", "images/decatur-il-2015-union-2.jpg", "images/decatur-il-2015-union-3.jpg", "images/decatur-il-2015-union-4.jpg", "images/decatur-il-2015-union-5.jpg", "images/decatur-il-2015-union-6.jpg", "images/decatur-il-2015-union-7.jpg", "images/decatur-il-2015-union-8.jpg", "images/decatur-il-2015-union-9.jpg", "images/decatur-il-2015-union-10.jpg", "images/decatur-il-2015-union-11.jpg", "images/decatur-il-2015-union-12.jpg", "images/decatur-il-2015-union-13.jpg", "images/decatur-il-2015-union-14.jpg", "images/decatur-il-2015-union-15.jpg", "images/decatur-il-2015-union-16.jpg", "images/decatur-il-2015-union-17.jpg", "images/decatur-il-2015-union-18.jpg", "images/decatur-il-2015-union-19.jpg", "images/decatur-il-2015-union-20.jpg", "images/decatur-il-2015-union-21.jpg", "images/decatur-il-2015-union-22.jpg", "images/decatur-il-2015-union-23.jpg", "images/decatur-il-2015-union-24.jpg"],
   },
   {
     id: "stlouis-mo-8401-broadway",
@@ -4349,7 +4327,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-1931-edwards-1.jpg", "images/decatur-il-1931-edwards-2.jpg", "images/decatur-il-1931-edwards-3.jpg", "images/decatur-il-1931-edwards-4.jpg", "images/decatur-il-1931-edwards-5.jpg", "images/decatur-il-1931-edwards-6.jpg", "images/decatur-il-1931-edwards-7.jpg", "images/decatur-il-1931-edwards-8.jpg", "images/decatur-il-1931-edwards-9.jpg", "images/decatur-il-1931-edwards-10.jpg", "images/decatur-il-1931-edwards-11.jpg", "images/decatur-il-1931-edwards-12.jpg", "images/decatur-il-1931-edwards-13.jpg", "images/decatur-il-1931-edwards-14.jpg", "images/decatur-il-1931-edwards-15.jpg", "images/decatur-il-1931-edwards-16.jpg", "images/decatur-il-1931-edwards-17.jpg", "images/decatur-il-1931-edwards-18.jpg", "images/decatur-il-1931-edwards-19.jpg", "images/decatur-il-1931-edwards-20.jpg"],
   },
   {
     id: "stlouis-mo-3422-lucas",

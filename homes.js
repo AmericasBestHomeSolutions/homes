@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (219 live, rebuilt from master published 2026-10-07) --- */
+/* --- the homes (220 live, rebuilt from master published 2026-10-07) --- */
 const HOMES = [
   {
     id: "westfrankfort-il-407-saint",
@@ -1053,6 +1053,28 @@ const HOMES = [
     features: { basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-1117-packard-1.jpg", "images/decatur-il-1117-packard-2.jpg", "images/decatur-il-1117-packard-3.jpg", "images/decatur-il-1117-packard-4.jpg", "images/decatur-il-1117-packard-5.jpg", "images/decatur-il-1117-packard-6.jpg", "images/decatur-il-1117-packard-7.jpg", "images/decatur-il-1117-packard-8.jpg", "images/decatur-il-1117-packard-9.jpg", "images/decatur-il-1117-packard-10.jpg", "images/decatur-il-1117-packard-11.jpg", "images/decatur-il-1117-packard-12.jpg", "images/decatur-il-1117-packard-13.jpg", "images/decatur-il-1117-packard-14.jpg", "images/decatur-il-1117-packard-15.jpg", "images/decatur-il-1117-packard-16.jpg", "images/decatur-il-1117-packard-17.jpg", "images/decatur-il-1117-packard-18.jpg", "images/decatur-il-1117-packard-19.jpg", "images/decatur-il-1117-packard-20.jpg", "images/decatur-il-1117-packard-21.jpg", "images/decatur-il-1117-packard-22.jpg", "images/decatur-il-1117-packard-23.jpg", "images/decatur-il-1117-packard-24.jpg"],
+  },
+  {
+    id: "eaststlouis-il-802-71st",
+    address:     "802 N 71st St",
+    zip:         "62203",
+    description: "large basement",
+    copy:        "$800 a month and $2,500 to get the keys to a two-bedroom home in East St. Louis that answers to you, not a landlord. Inside you'll find two bedrooms, one bath, and a large basement with real room for storage, projects, or whatever you decide it should be. What may matter most is the payment: $800 a month, written into your contract, the same this year as the next, with no surprise notice that it's going up. The purchase price is $70,000, fixed when you sign, with owner financing and no bank anywhere in the picture. The home is sold as-is, so come walk through it in person and judge it with your own eyes. A home at this payment won't wait forever, so send us a message now and we'll get you through the door.",
+    city:  "East St. Louis",
+    state: "IL",
+    beds:  2,
+    baths: 1,
+    sqft:  "",
+    status: "Available",
+
+    monthlyPayment: 800,
+    moveIn:         2500,
+    lockedPrice:    70000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { basement: "yes" },
+    heroPhoto: "",
+    photos:    ["images/eaststlouis-il-802-71st-1.jpg", "images/eaststlouis-il-802-71st-2.jpg", "images/eaststlouis-il-802-71st-3.jpg", "images/eaststlouis-il-802-71st-4.jpg", "images/eaststlouis-il-802-71st-5.jpg", "images/eaststlouis-il-802-71st-6.jpg", "images/eaststlouis-il-802-71st-7.jpg", "images/eaststlouis-il-802-71st-8.jpg", "images/eaststlouis-il-802-71st-9.jpg", "images/eaststlouis-il-802-71st-10.jpg", "images/eaststlouis-il-802-71st-11.jpg", "images/eaststlouis-il-802-71st-12.jpg", "images/eaststlouis-il-802-71st-13.jpg", "images/eaststlouis-il-802-71st-14.jpg", "images/eaststlouis-il-802-71st-15.jpg", "images/eaststlouis-il-802-71st-16.jpg", "images/eaststlouis-il-802-71st-17.jpg", "images/eaststlouis-il-802-71st-18.jpg", "images/eaststlouis-il-802-71st-19.jpg", "images/eaststlouis-il-802-71st-20.jpg", "images/eaststlouis-il-802-71st-21.jpg", "images/eaststlouis-il-802-71st-22.jpg", "images/eaststlouis-il-802-71st-23.jpg", "images/eaststlouis-il-802-71st-24.jpg"],
   },
   {
     id: "decatur-il-1204-jordan",
@@ -3808,7 +3830,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/eaststlouis-il-351-26th-1.jpg", "images/eaststlouis-il-351-26th-2.jpg", "images/eaststlouis-il-351-26th-3.jpg", "images/eaststlouis-il-351-26th-4.jpg", "images/eaststlouis-il-351-26th-5.jpg", "images/eaststlouis-il-351-26th-6.jpg", "images/eaststlouis-il-351-26th-7.jpg", "images/eaststlouis-il-351-26th-8.jpg", "images/eaststlouis-il-351-26th-9.jpg", "images/eaststlouis-il-351-26th-10.jpg", "images/eaststlouis-il-351-26th-11.jpg", "images/eaststlouis-il-351-26th-12.jpg", "images/eaststlouis-il-351-26th-13.jpg", "images/eaststlouis-il-351-26th-14.jpg", "images/eaststlouis-il-351-26th-15.jpg", "images/eaststlouis-il-351-26th-16.jpg", "images/eaststlouis-il-351-26th-17.jpg", "images/eaststlouis-il-351-26th-18.jpg", "images/eaststlouis-il-351-26th-19.jpg", "images/eaststlouis-il-351-26th-20.jpg", "images/eaststlouis-il-351-26th-21.jpg", "images/eaststlouis-il-351-26th-22.jpg", "images/eaststlouis-il-351-26th-23.jpg", "images/eaststlouis-il-351-26th-24.jpg"],
   },
   {
     id: "jackson-ms-1415-geeston",
@@ -4143,7 +4165,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/eaststlouis-il-724-82nd-1.jpg", "images/eaststlouis-il-724-82nd-2.jpg", "images/eaststlouis-il-724-82nd-3.jpg", "images/eaststlouis-il-724-82nd-4.jpg", "images/eaststlouis-il-724-82nd-5.jpg", "images/eaststlouis-il-724-82nd-6.jpg", "images/eaststlouis-il-724-82nd-7.jpg", "images/eaststlouis-il-724-82nd-8.jpg", "images/eaststlouis-il-724-82nd-9.jpg", "images/eaststlouis-il-724-82nd-10.jpg", "images/eaststlouis-il-724-82nd-11.jpg", "images/eaststlouis-il-724-82nd-12.jpg", "images/eaststlouis-il-724-82nd-13.jpg", "images/eaststlouis-il-724-82nd-14.jpg", "images/eaststlouis-il-724-82nd-15.jpg", "images/eaststlouis-il-724-82nd-16.jpg", "images/eaststlouis-il-724-82nd-17.jpg", "images/eaststlouis-il-724-82nd-18.jpg", "images/eaststlouis-il-724-82nd-19.jpg", "images/eaststlouis-il-724-82nd-20.jpg", "images/eaststlouis-il-724-82nd-21.jpg", "images/eaststlouis-il-724-82nd-22.jpg", "images/eaststlouis-il-724-82nd-23.jpg", "images/eaststlouis-il-724-82nd-24.jpg"],
   },
   {
     id: "stlouis-mo-1920-prior",

@@ -167,6 +167,12 @@ textarea:focus,input[type=text]:focus{outline:none;border-color:var(--pine);box-
       </div>
 
       <div class="q">
+        <label class="q-label" for="privateNote">Anything you'd like to tell us privately?</label>
+        <p class="q-help">Optional. Only our team reads this. It is never shared or posted anywhere.</p>
+        <textarea id="privateNote" maxlength="1500"></textarea>
+      </div>
+
+      <div class="q">
         <label class="q-label" for="referral">Know someone who could use our help?</label>
         <p class="q-help">Optional. Share a name and number and we'll reach out kindly.</p>
         <input type="text" id="referral" maxlength="160">
@@ -185,7 +191,7 @@ textarea:focus,input[type=text]:focus{outline:none;border-color:var(--pine);box-
     <div class="check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5 10 17.5 19 7"/></svg></div>
     <h1>Thank you.</h1>
     <p class="tagline" style="margin:0 auto">It means a lot. We read every word, and it helps the next family feel safe taking the step you just took.</p>
-    <div class="fb-card">
+    <div class="fb-card" id="fbCard" hidden>
       <h2>Your story could be the reason the next family finds their home.</h2>
       <p class="tagline">Right now, someone is exactly where you were a few months ago. Told no by the bank, wondering if it's even possible. Your words could be what tells them it is. Tap below and we'll copy what you wrote. You just paste it on our Facebook page. About 20 seconds.</p>
       <button class="btn btn-primary" id="fbBtn" type="button">Copy my words &amp; help the next family &rarr;</button>
@@ -214,7 +220,8 @@ const REVIEW = {
   formEntries: {
     home: "entry.1697158524", stars: "entry.206791860", stood: "entry.561921975",
     liked: "entry.1310665719", better: "entry.348634605",
-    share: "entry.1133547505", shareName: "entry.1948218212", referral: "entry.967666002"
+    share: "entry.1133547505", shareName: "entry.1948218212", referral: "entry.967666002",
+    privateNote: "entry.1315471687"
   },
   shareValue: "Yes, you may share it (first name and city only)",
   chips: ["Communication","Fast responses","Transparency","Always available","Every step of the process"],
@@ -260,8 +267,11 @@ const REVIEW = {
 
   // Already sent from this browser? Say so instead of inviting a duplicate.
   const sentKey = "abhs_review_sent_" + homeId;
-  function wasSent(){ try { return localStorage.getItem(sentKey) === "1"; } catch(e){ return false; } }
-  function markSent(){ try { localStorage.setItem(sentKey, "1"); } catch(e){} }
+  function wasSent(){ try { return !!localStorage.getItem(sentKey); } catch(e){ return false; } }
+  function sentRating(){ try { return parseInt(localStorage.getItem(sentKey), 10) || 0; } catch(e){ return 0; } }
+  // Facebook ask only for 4-5 star reviews (Joe's call 2026-10-09). Lower ratings see only the thank-you.
+  function showThanks(r){ $("fbCard").hidden = !(r >= 4); show("thanks"); }
+  function markSent(r){ try { localStorage.setItem(sentKey, String(r || 1)); } catch(e){} }
 
   // ── form widgets ───────────────────────────────────────────
   let rating = 0, lastComment = "";
@@ -311,10 +321,11 @@ const REVIEW = {
     if ($("liked").value.trim()) body.append(F.liked, $("liked").value.trim());
     if ($("better").value.trim()) body.append(F.better, $("better").value.trim());
     if ($("canShare").checked){ body.append(F.share, REVIEW.shareValue); if ($("shareName").value.trim()) body.append(F.shareName, $("shareName").value.trim()); }
+    if ($("privateNote").value.trim()) body.append(F.privateNote, $("privateNote").value.trim());
     if ($("referral").value.trim()) body.append(F.referral, $("referral").value.trim());
     try {
       await fetch(REVIEW.formPostUrl, { method:"POST", mode:"no-cors", headers:{"Content-Type":"application/x-www-form-urlencoded"}, body: body.toString() });
-      markSent(); lastComment = $("liked").value.trim(); show("thanks");
+      markSent(rating); lastComment = $("liked").value.trim(); showThanks(rating);
     } catch (err){
       btn.disabled = false; btn.textContent = "Send my review";
       $("err").textContent = "That didn't go through. Please try again, or use the simple form below."; $("err").hidden = false;
@@ -341,7 +352,7 @@ const REVIEW = {
   // ── boot: fail closed unless keys are recorded for THIS deal ─
   (async function(){
     if (!validHome || !dealCode) return lock("This link isn't complete", `Please use the link we texted you, or call us at ${pretty}.`);
-    if (wasSent()){ show("thanks"); return; }
+    if (wasSent()){ showThanks(sentRating()); return; }
     let ok = false;
     try { ok = await keysDelivered(); }
     catch(e){ return lock("We couldn't load this just now", "Please refresh in a minute, or call us."); }

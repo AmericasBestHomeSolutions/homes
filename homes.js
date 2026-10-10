@@ -3809,7 +3809,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    ["images/eaststlouis-il-351-26th-1.jpg", "images/eaststlouis-il-351-26th-2.jpg", "images/eaststlouis-il-351-26th-3.jpg", "images/eaststlouis-il-351-26th-4.jpg", "images/eaststlouis-il-351-26th-5.jpg", "images/eaststlouis-il-351-26th-6.jpg", "images/eaststlouis-il-351-26th-7.jpg", "images/eaststlouis-il-351-26th-8.jpg", "images/eaststlouis-il-351-26th-9.jpg", "images/eaststlouis-il-351-26th-10.jpg", "images/eaststlouis-il-351-26th-11.jpg", "images/eaststlouis-il-351-26th-12.jpg", "images/eaststlouis-il-351-26th-13.jpg", "images/eaststlouis-il-351-26th-14.jpg", "images/eaststlouis-il-351-26th-15.jpg", "images/eaststlouis-il-351-26th-16.jpg", "images/eaststlouis-il-351-26th-17.jpg", "images/eaststlouis-il-351-26th-18.jpg", "images/eaststlouis-il-351-26th-19.jpg", "images/eaststlouis-il-351-26th-20.jpg", "images/eaststlouis-il-351-26th-21.jpg", "images/eaststlouis-il-351-26th-22.jpg", "images/eaststlouis-il-351-26th-23.jpg", "images/eaststlouis-il-351-26th-24.jpg"],
+    photos:    ["images/eaststlouis-il-351-26th-1.jpg", "images/eaststlouis-il-351-26th-2.jpg", "images/eaststlouis-il-351-26th-3.jpg", "images/eaststlouis-il-351-26th-4.jpg", "images/eaststlouis-il-351-26th-5.jpg", "images/eaststlouis-il-351-26th-6.jpg", "images/eaststlouis-il-351-26th-7.jpg", "images/eaststlouis-il-351-26th-8.jpg", "images/eaststlouis-il-351-26th-9.jpg", "images/eaststlouis-il-351-26th-10.jpg", "images/eaststlouis-il-351-26th-11.jpg", "images/eaststlouis-il-351-26th-12.jpg", "images/eaststlouis-il-351-26th-13.jpg", "images/eaststlouis-il-351-26th-14.jpg", "images/eaststlouis-il-351-26th-15.jpg", "images/eaststlouis-il-351-26th-16.jpg", "images/eaststlouis-il-351-26th-17.jpg", "images/eaststlouis-il-351-26th-18.jpg", "images/eaststlouis-il-351-26th-19.jpg", "images/eaststlouis-il-351-26th-20.jpg", "images/eaststlouis-il-351-26th-21.jpg", "images/eaststlouis-il-351-26th-22.jpg", "images/eaststlouis-il-351-26th-23.jpg"],
   },
   {
     id: "jackson-ms-1415-geeston",
@@ -3991,7 +3991,7 @@ const HOMES = [
     beds:  3,
     baths: 2,
     sqft:  "Unknown",
-    status: "Available",
+    status: "Pending",
 
     monthlyPayment: 880,
     moveIn:         2500,

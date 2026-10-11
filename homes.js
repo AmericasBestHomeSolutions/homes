@@ -3453,7 +3453,7 @@ const HOMES = [
 
     features: { backyard: "yes" },
     heroPhoto: "",
-    photos:    ["images/cahokia-il-2416-mary-1.jpg", "images/cahokia-il-2416-mary-2.jpg", "images/cahokia-il-2416-mary-3.jpg", "images/cahokia-il-2416-mary-4.jpg", "images/cahokia-il-2416-mary-5.jpg", "images/cahokia-il-2416-mary-6.jpg", "images/cahokia-il-2416-mary-7.jpg", "images/cahokia-il-2416-mary-8.jpg", "images/cahokia-il-2416-mary-9.jpg"],
+    photos:    ["images/cahokia-il-2416-mary-1.jpg", "images/cahokia-il-2416-mary-2.jpg", "images/cahokia-il-2416-mary-3.jpg", "images/cahokia-il-2416-mary-4.jpg", "images/cahokia-il-2416-mary-5.jpg", "images/cahokia-il-2416-mary-6.jpg", "images/cahokia-il-2416-mary-7.jpg", "images/cahokia-il-2416-mary-8.jpg"],
   },
   {
     id: "peoria-il-1829-stanley",

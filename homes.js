@@ -224,7 +224,7 @@ const HOMES = [
 
     features: { backyard: "yes", off_street_parking: "yes", storage_shed: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/jackson-ms-4228-johnson-1.jpg", "images/jackson-ms-4228-johnson-2.jpg", "images/jackson-ms-4228-johnson-3.jpg", "images/jackson-ms-4228-johnson-4.jpg", "images/jackson-ms-4228-johnson-5.jpg", "images/jackson-ms-4228-johnson-6.jpg", "images/jackson-ms-4228-johnson-7.jpg", "images/jackson-ms-4228-johnson-8.jpg", "images/jackson-ms-4228-johnson-9.jpg", "images/jackson-ms-4228-johnson-10.jpg", "images/jackson-ms-4228-johnson-11.jpg", "images/jackson-ms-4228-johnson-12.jpg", "images/jackson-ms-4228-johnson-13.jpg", "images/jackson-ms-4228-johnson-14.jpg", "images/jackson-ms-4228-johnson-15.jpg", "images/jackson-ms-4228-johnson-16.jpg", "images/jackson-ms-4228-johnson-17.jpg", "images/jackson-ms-4228-johnson-18.jpg", "images/jackson-ms-4228-johnson-19.jpg", "images/jackson-ms-4228-johnson-20.jpg", "images/jackson-ms-4228-johnson-21.jpg", "images/jackson-ms-4228-johnson-22.jpg", "images/jackson-ms-4228-johnson-23.jpg", "images/jackson-ms-4228-johnson-24.jpg"],
   },
   {
     id: "madison-il-1638-4th",
@@ -307,7 +307,7 @@ const HOMES = [
 
     features: { off_street_parking: "yes", central_air: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/jacksonville-ar-201-gray-1.jpg", "images/jacksonville-ar-201-gray-2.jpg", "images/jacksonville-ar-201-gray-3.jpg", "images/jacksonville-ar-201-gray-4.jpg", "images/jacksonville-ar-201-gray-5.jpg", "images/jacksonville-ar-201-gray-6.jpg", "images/jacksonville-ar-201-gray-7.jpg", "images/jacksonville-ar-201-gray-8.jpg", "images/jacksonville-ar-201-gray-9.jpg", "images/jacksonville-ar-201-gray-10.jpg", "images/jacksonville-ar-201-gray-11.jpg", "images/jacksonville-ar-201-gray-12.jpg", "images/jacksonville-ar-201-gray-13.jpg", "images/jacksonville-ar-201-gray-14.jpg", "images/jacksonville-ar-201-gray-15.jpg", "images/jacksonville-ar-201-gray-16.jpg", "images/jacksonville-ar-201-gray-17.jpg", "images/jacksonville-ar-201-gray-18.jpg", "images/jacksonville-ar-201-gray-19.jpg", "images/jacksonville-ar-201-gray-20.jpg", "images/jacksonville-ar-201-gray-21.jpg", "images/jacksonville-ar-201-gray-22.jpg", "images/jacksonville-ar-201-gray-23.jpg"],
   },
   {
     id: "decatur-il-1931-edwards",
@@ -3944,7 +3944,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/cahokia-il-1106-st-1.jpg", "images/cahokia-il-1106-st-2.jpg", "images/cahokia-il-1106-st-3.jpg", "images/cahokia-il-1106-st-4.jpg", "images/cahokia-il-1106-st-5.jpg", "images/cahokia-il-1106-st-6.jpg", "images/cahokia-il-1106-st-7.jpg", "images/cahokia-il-1106-st-8.jpg", "images/cahokia-il-1106-st-9.jpg", "images/cahokia-il-1106-st-10.jpg", "images/cahokia-il-1106-st-11.jpg", "images/cahokia-il-1106-st-12.jpg", "images/cahokia-il-1106-st-13.jpg", "images/cahokia-il-1106-st-14.jpg", "images/cahokia-il-1106-st-15.jpg", "images/cahokia-il-1106-st-16.jpg", "images/cahokia-il-1106-st-17.jpg", "images/cahokia-il-1106-st-18.jpg", "images/cahokia-il-1106-st-19.jpg", "images/cahokia-il-1106-st-20.jpg", "images/cahokia-il-1106-st-21.jpg", "images/cahokia-il-1106-st-22.jpg", "images/cahokia-il-1106-st-23.jpg", "images/cahokia-il-1106-st-24.jpg"],
   },
   {
     id: "stlouis-mo-10516-baron",

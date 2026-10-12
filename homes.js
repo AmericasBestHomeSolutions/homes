@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (215 live, rebuilt from master published 2026-10-12) --- */
+/* --- the homes (216 live, rebuilt from master published 2026-10-12) --- */
 const HOMES = [
   {
     id: "decatur-il-132-23rd",
@@ -137,7 +137,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-945-maffit-1.jpg", "images/decatur-il-945-maffit-2.jpg", "images/decatur-il-945-maffit-3.jpg", "images/decatur-il-945-maffit-4.jpg", "images/decatur-il-945-maffit-5.jpg", "images/decatur-il-945-maffit-6.jpg", "images/decatur-il-945-maffit-7.jpg", "images/decatur-il-945-maffit-8.jpg", "images/decatur-il-945-maffit-9.jpg", "images/decatur-il-945-maffit-10.jpg", "images/decatur-il-945-maffit-11.jpg", "images/decatur-il-945-maffit-12.jpg", "images/decatur-il-945-maffit-13.jpg", "images/decatur-il-945-maffit-14.jpg", "images/decatur-il-945-maffit-15.jpg", "images/decatur-il-945-maffit-16.jpg", "images/decatur-il-945-maffit-17.jpg", "images/decatur-il-945-maffit-18.jpg", "images/decatur-il-945-maffit-19.jpg", "images/decatur-il-945-maffit-20.jpg", "images/decatur-il-945-maffit-21.jpg", "images/decatur-il-945-maffit-22.jpg", "images/decatur-il-945-maffit-23.jpg", "images/decatur-il-945-maffit-24.jpg"],
   },
   {
     id: "decatur-mo-1828-main",
@@ -159,7 +159,7 @@ const HOMES = [
 
     features: { backyard: "yes", fenced_yard: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-mo-1828-main-1.jpg", "images/decatur-mo-1828-main-2.jpg", "images/decatur-mo-1828-main-3.jpg", "images/decatur-mo-1828-main-4.jpg", "images/decatur-mo-1828-main-5.jpg", "images/decatur-mo-1828-main-6.jpg", "images/decatur-mo-1828-main-7.jpg", "images/decatur-mo-1828-main-8.jpg", "images/decatur-mo-1828-main-9.jpg", "images/decatur-mo-1828-main-10.jpg", "images/decatur-mo-1828-main-11.jpg", "images/decatur-mo-1828-main-12.jpg", "images/decatur-mo-1828-main-13.jpg", "images/decatur-mo-1828-main-14.jpg", "images/decatur-mo-1828-main-15.jpg", "images/decatur-mo-1828-main-16.jpg", "images/decatur-mo-1828-main-17.jpg", "images/decatur-mo-1828-main-18.jpg", "images/decatur-mo-1828-main-19.jpg", "images/decatur-mo-1828-main-20.jpg", "images/decatur-mo-1828-main-21.jpg", "images/decatur-mo-1828-main-22.jpg", "images/decatur-mo-1828-main-23.jpg", "images/decatur-mo-1828-main-24.jpg"],
   },
   {
     id: "decatur-il-138-18th",
@@ -3592,7 +3592,7 @@ const HOMES = [
 
     features: { garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/alton-il-3305-franor-1.jpg", "images/alton-il-3305-franor-2.jpg", "images/alton-il-3305-franor-3.jpg", "images/alton-il-3305-franor-4.jpg", "images/alton-il-3305-franor-5.jpg", "images/alton-il-3305-franor-6.jpg", "images/alton-il-3305-franor-7.jpg", "images/alton-il-3305-franor-8.jpg", "images/alton-il-3305-franor-9.jpg", "images/alton-il-3305-franor-10.jpg", "images/alton-il-3305-franor-11.jpg", "images/alton-il-3305-franor-12.jpg", "images/alton-il-3305-franor-13.jpg", "images/alton-il-3305-franor-14.jpg", "images/alton-il-3305-franor-15.jpg", "images/alton-il-3305-franor-16.jpg", "images/alton-il-3305-franor-17.jpg", "images/alton-il-3305-franor-18.jpg", "images/alton-il-3305-franor-19.jpg"],
   },
   {
     id: "cahokia-il-2416-mary",
@@ -3844,26 +3844,6 @@ const HOMES = [
     photos:    ["images/granitecity-il-2209-edwards-1.jpg", "images/granitecity-il-2209-edwards-2.jpg", "images/granitecity-il-2209-edwards-3.jpg", "images/granitecity-il-2209-edwards-4.jpg", "images/granitecity-il-2209-edwards-5.jpg", "images/granitecity-il-2209-edwards-6.jpg", "images/granitecity-il-2209-edwards-7.jpg", "images/granitecity-il-2209-edwards-8.jpg", "images/granitecity-il-2209-edwards-9.jpg", "images/granitecity-il-2209-edwards-10.jpg", "images/granitecity-il-2209-edwards-11.jpg", "images/granitecity-il-2209-edwards-12.jpg", "images/granitecity-il-2209-edwards-13.jpg", "images/granitecity-il-2209-edwards-14.jpg", "images/granitecity-il-2209-edwards-15.jpg", "images/granitecity-il-2209-edwards-16.jpg", "images/granitecity-il-2209-edwards-17.jpg", "images/granitecity-il-2209-edwards-18.jpg", "images/granitecity-il-2209-edwards-19.jpg", "images/granitecity-il-2209-edwards-20.jpg", "images/granitecity-il-2209-edwards-21.jpg", "images/granitecity-il-2209-edwards-22.jpg", "images/granitecity-il-2209-edwards-23.jpg", "images/granitecity-il-2209-edwards-24.jpg", "images/granitecity-il-2209-edwards-25.jpg"],
   },
   {
-    id: "herrin-il-900-16th",
-    address:     "900 S. 16th Street",
-    zip:         "62948",
-    copy:        "Three bedrooms, two baths, and 1,540 square feet in Herrin, IL, for $995 a month, with $3,500 to move in. That is real room to spread out: one bedroom for sleeping, two more for whatever your life calls for, and a second bath that ends the morning shuffle for good. This is the kind of house where you hang the curtains and put nails in the walls for your pictures, knowing no one will ever tell you to take them down. The purchase price is $93,000, written into your agreement the day you sign, with owner financing and no bank anywhere in the process. The home is sold as-is, so come walk through every room in person and judge it with your own eyes. A home this size at this payment won't wait around, so send us a text and let's get your showing on the calendar.",
-    city:  "Herrin",
-    state: "IL",
-    beds:  3,
-    baths: 2,
-    sqft:  "1,540",
-    status: "Available",
-
-    monthlyPayment: 995,
-    moveIn:         3500,
-    lockedPrice:    93000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    ["images/herrin-il-900-16th-1.jpg", "images/herrin-il-900-16th-2.jpg", "images/herrin-il-900-16th-3.jpg", "images/herrin-il-900-16th-4.jpg", "images/herrin-il-900-16th-5.jpg", "images/herrin-il-900-16th-6.jpg", "images/herrin-il-900-16th-7.jpg", "images/herrin-il-900-16th-8.jpg", "images/herrin-il-900-16th-9.jpg", "images/herrin-il-900-16th-10.jpg", "images/herrin-il-900-16th-11.jpg", "images/herrin-il-900-16th-12.jpg", "images/herrin-il-900-16th-13.jpg", "images/herrin-il-900-16th-14.jpg", "images/herrin-il-900-16th-15.jpg", "images/herrin-il-900-16th-16.jpg", "images/herrin-il-900-16th-17.jpg", "images/herrin-il-900-16th-18.jpg", "images/herrin-il-900-16th-19.jpg", "images/herrin-il-900-16th-20.jpg", "images/herrin-il-900-16th-21.jpg", "images/herrin-il-900-16th-22.jpg", "images/herrin-il-900-16th-23.jpg", "images/herrin-il-900-16th-24.jpg"],
-  },
-  {
     id: "stlouis-mo-10068-royal",
     address:     "10068 Royal Dr",
     zip:         "63136",
@@ -3906,6 +3886,26 @@ const HOMES = [
     photos:    ["images/flint-mi-3618-branch-1.jpg", "images/flint-mi-3618-branch-2.jpg", "images/flint-mi-3618-branch-3.jpg", "images/flint-mi-3618-branch-4.jpg", "images/flint-mi-3618-branch-5.jpg", "images/flint-mi-3618-branch-6.jpg", "images/flint-mi-3618-branch-7.jpg", "images/flint-mi-3618-branch-8.jpg", "images/flint-mi-3618-branch-9.jpg", "images/flint-mi-3618-branch-10.jpg", "images/flint-mi-3618-branch-11.jpg", "images/flint-mi-3618-branch-12.jpg", "images/flint-mi-3618-branch-13.jpg", "images/flint-mi-3618-branch-14.jpg", "images/flint-mi-3618-branch-15.jpg", "images/flint-mi-3618-branch-16.jpg", "images/flint-mi-3618-branch-17.jpg", "images/flint-mi-3618-branch-18.jpg", "images/flint-mi-3618-branch-19.jpg", "images/flint-mi-3618-branch-20.jpg", "images/flint-mi-3618-branch-21.jpg", "images/flint-mi-3618-branch-22.jpg", "images/flint-mi-3618-branch-23.jpg", "images/flint-mi-3618-branch-24.jpg"],
   },
   {
+    id: "stlouis-mo-4323-obear",
+    address:     "4323 Obear Ave",
+    zip:         "63107",
+    description: "Needs a good amount of work",
+    city:  "St. Louis",
+    state: "MO",
+    beds:  2,
+    baths: 1,
+    sqft:  "",
+    status: "Available",
+
+    monthlyPayment: 750,
+    moveIn:         3000,
+    lockedPrice:    0,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
     id: "jackson-ms-1415-geeston",
     address:     "1415 Geeston St",
     zip:         "39213",
@@ -3921,6 +3921,26 @@ const HOMES = [
     monthlyPayment: 1095,
     moveIn:         3000,
     lockedPrice:    89000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "cahokia-il-1106-st",
+    address:     "1106 St Michael Dr",
+    zip:         "62206",
+    description: "Needs a big cleanout and a lot of cosmetic work. The house has a brand new roof. Great potential for someone willing to put in the time and money",
+    city:  "Cahokia",
+    state: "IL",
+    beds:  3,
+    baths: 2,
+    sqft:  "",
+    status: "Available",
+
+    monthlyPayment: 800,
+    moveIn:         3000,
+    lockedPrice:    0,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",

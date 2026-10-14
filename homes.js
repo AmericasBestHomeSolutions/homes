@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (216 live, rebuilt from master published 2026-10-13) --- */
+/* --- the homes (220 live, rebuilt from master published 2026-10-13) --- */
 const HOMES = [
   {
     id: "montgomery-al-3120-lower",
@@ -385,7 +385,7 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "1000",
-    status: "Available",
+    status: "Pending",
 
     monthlyPayment: 475,
     moveIn:         1500,
@@ -2916,28 +2916,6 @@ const HOMES = [
     photos:    ["images/woodriver-il-46-eckhard-1.jpg", "images/woodriver-il-46-eckhard-2.jpg", "images/woodriver-il-46-eckhard-3.jpg", "images/woodriver-il-46-eckhard-4.jpg", "images/woodriver-il-46-eckhard-5.jpg", "images/woodriver-il-46-eckhard-6.jpg", "images/woodriver-il-46-eckhard-7.jpg", "images/woodriver-il-46-eckhard-8.jpg", "images/woodriver-il-46-eckhard-9.jpg", "images/woodriver-il-46-eckhard-10.jpg", "images/woodriver-il-46-eckhard-11.jpg", "images/woodriver-il-46-eckhard-12.jpg", "images/woodriver-il-46-eckhard-13.jpg", "images/woodriver-il-46-eckhard-14.jpg", "images/woodriver-il-46-eckhard-15.jpg", "images/woodriver-il-46-eckhard-16.jpg", "images/woodriver-il-46-eckhard-17.jpg", "images/woodriver-il-46-eckhard-18.jpg", "images/woodriver-il-46-eckhard-19.jpg", "images/woodriver-il-46-eckhard-20.jpg", "images/woodriver-il-46-eckhard-21.jpg", "images/woodriver-il-46-eckhard-22.jpg", "images/woodriver-il-46-eckhard-23.jpg", "images/woodriver-il-46-eckhard-24.jpg"],
   },
   {
-    id: "edwardsport-in-108-shipping",
-    address:     "108 E Shipping St",
-    zip:         "47528",
-    description: "1235 sq ft, detached 2-car garage. Full basement",
-    copy:        "$825 a month and $2,700 at move-in puts this two-bedroom Edwardsport home within reach, with owner financing instead of a bank and no mortgage application to fill out. Inside you'll find two bedrooms, one bath, and about 1,235 square feet, plus a full basement with plenty of room for storage or whatever you've been waiting for space to do. A detached two-car garage and off-street parking mean your car has a home too. Your monthly payment is written into the contract from the start, so no landlord gets to decide next year what it costs you to stay. The purchase price is $69,000, fixed when you sign, with no bank anywhere in the picture. The home is sold as-is, and the best way to size it up is to walk through it in person. Homes like this don't wait around, so send us a text now and grab a showing time.",
-    city:  "Edwardsport",
-    state: "IN",
-    beds:  2,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 825,
-    moveIn:         2700,
-    lockedPrice:    69000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { basement: "yes", garage: "yes", off_street_parking: "yes" },
-    heroPhoto: "",
-    photos:    ["images/edwardsport-in-108-shipping-1.jpg", "images/edwardsport-in-108-shipping-2.jpg", "images/edwardsport-in-108-shipping-3.jpg", "images/edwardsport-in-108-shipping-4.jpg", "images/edwardsport-in-108-shipping-5.jpg", "images/edwardsport-in-108-shipping-6.jpg", "images/edwardsport-in-108-shipping-7.jpg", "images/edwardsport-in-108-shipping-8.jpg", "images/edwardsport-in-108-shipping-9.jpg", "images/edwardsport-in-108-shipping-10.jpg", "images/edwardsport-in-108-shipping-11.jpg", "images/edwardsport-in-108-shipping-12.jpg", "images/edwardsport-in-108-shipping-13.jpg", "images/edwardsport-in-108-shipping-14.jpg", "images/edwardsport-in-108-shipping-15.jpg", "images/edwardsport-in-108-shipping-16.jpg", "images/edwardsport-in-108-shipping-17.jpg", "images/edwardsport-in-108-shipping-18.jpg", "images/edwardsport-in-108-shipping-19.jpg", "images/edwardsport-in-108-shipping-20.jpg", "images/edwardsport-in-108-shipping-21.jpg", "images/edwardsport-in-108-shipping-22.jpg", "images/edwardsport-in-108-shipping-23.jpg", "images/edwardsport-in-108-shipping-24.jpg", "images/edwardsport-in-108-shipping-25.jpg", "images/edwardsport-in-108-shipping-26.jpg", "images/edwardsport-in-108-shipping-27.jpg", "images/edwardsport-in-108-shipping-28.jpg", "images/edwardsport-in-108-shipping-29.jpg", "images/edwardsport-in-108-shipping-30.jpg", "images/edwardsport-in-108-shipping-31.jpg", "images/edwardsport-in-108-shipping-32.jpg", "images/edwardsport-in-108-shipping-33.jpg", "images/edwardsport-in-108-shipping-34.jpg", "images/edwardsport-in-108-shipping-35.jpg", "images/edwardsport-in-108-shipping-36.jpg"],
-  },
-  {
     id: "evansville-in-2317-fulton",
     address:     "2317 N Fulton Ave,",
     zip:         "47710",
@@ -2998,27 +2976,6 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/evansville-in-1404-cody-1.jpg", "images/evansville-in-1404-cody-2.jpg", "images/evansville-in-1404-cody-3.jpg", "images/evansville-in-1404-cody-4.jpg", "images/evansville-in-1404-cody-5.jpg", "images/evansville-in-1404-cody-6.jpg", "images/evansville-in-1404-cody-7.jpg", "images/evansville-in-1404-cody-8.jpg", "images/evansville-in-1404-cody-9.jpg", "images/evansville-in-1404-cody-10.jpg", "images/evansville-in-1404-cody-11.jpg", "images/evansville-in-1404-cody-12.jpg", "images/evansville-in-1404-cody-13.jpg", "images/evansville-in-1404-cody-14.jpg", "images/evansville-in-1404-cody-15.jpg", "images/evansville-in-1404-cody-16.jpg", "images/evansville-in-1404-cody-17.jpg", "images/evansville-in-1404-cody-18.jpg", "images/evansville-in-1404-cody-19.jpg"],
-  },
-  {
-    id: "marion-in-1517-branson",
-    address:     "1517 S Branson St",
-    zip:         "46953",
-    description: "Great opportunity in Marion! The property was occupied by tenants until very recently and is ready for its next owner.. With an affordable price and plenty of potential, this property could be a great option for a new homeowner looking for a 3-bedroom house at a great value",
-    copy:        "Three bedrooms in Marion at $850 a month, and $2,000 puts the keys in your hand. This 3-bedroom, 1-bath house offers something a lease never will: rooms you set up exactly the way you want, with the moving boxes broken down for good instead of stacked by the door for the next move. The purchase price is $69,000, agreed in writing on the day you sign, and owner financing handles the rest. There's no bank, no mortgage application, and no waiting on a loan officer's yes. The home sells as-is, so come walk through every room in person and size it up with your own eyes. A three-bedroom at this price in Marion won't sit quietly for long, so send us a message now and let's get you inside.",
-    city:  "Marion",
-    state: "IN",
-    beds:  3,
-    baths: 1,
-    sqft:  "",
-    status: "Available",
-
-    monthlyPayment: 850,
-    moveIn:         2000,
-    lockedPrice:    69000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    ["images/marion-in-1517-branson-1.jpg", "images/marion-in-1517-branson-2.jpg", "images/marion-in-1517-branson-3.jpg", "images/marion-in-1517-branson-4.jpg", "images/marion-in-1517-branson-5.jpg", "images/marion-in-1517-branson-6.jpg", "images/marion-in-1517-branson-7.jpg", "images/marion-in-1517-branson-8.jpg", "images/marion-in-1517-branson-9.jpg"],
   },
   {
     id: "detroit-mi-15344-blackstone",
@@ -3927,6 +3884,27 @@ const HOMES = [
     photos:    [],
   },
   {
+    id: "stlouis-mo-5341-goodfellow",
+    address:     "5341 Goodfellow Blvd",
+    zip:         "63136",
+    description: "Huge home",
+    copy:        "Six bedrooms, three baths, and 3,000 square feet in St. Louis, all for $1,650 a month and $3,000 to move in. This is a big home, with room to spread out and bedrooms to spare after everyone has claimed a space. With this much room under one roof, the boxes you unpack here can be the ones you never have to tape shut again. The purchase price is $179,000, fixed in writing on the day you sign, with owner financing and no bank standing between you and the front door. The home is sold as-is, so come walk every room in person and find out how all that space fits the life you want to build. A home this size at this payment won't wait around for long, so send us a message now and let's get you through the door.",
+    city:  "St. Louis",
+    state: "MO",
+    beds:  6,
+    baths: 3,
+    sqft:  "3,000",
+    status: "Available",
+
+    monthlyPayment: 1650,
+    moveIn:         3000,
+    lockedPrice:    179000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
     id: "cahokia-il-1106-st",
     address:     "1106 St Michael Dr",
     zip:         "62206",
@@ -3945,6 +3923,28 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/cahokia-il-1106-st-1.jpg", "images/cahokia-il-1106-st-2.jpg", "images/cahokia-il-1106-st-3.jpg", "images/cahokia-il-1106-st-4.jpg", "images/cahokia-il-1106-st-5.jpg", "images/cahokia-il-1106-st-6.jpg", "images/cahokia-il-1106-st-7.jpg", "images/cahokia-il-1106-st-8.jpg", "images/cahokia-il-1106-st-9.jpg", "images/cahokia-il-1106-st-10.jpg", "images/cahokia-il-1106-st-11.jpg", "images/cahokia-il-1106-st-12.jpg", "images/cahokia-il-1106-st-13.jpg", "images/cahokia-il-1106-st-14.jpg", "images/cahokia-il-1106-st-15.jpg", "images/cahokia-il-1106-st-16.jpg", "images/cahokia-il-1106-st-17.jpg", "images/cahokia-il-1106-st-18.jpg", "images/cahokia-il-1106-st-19.jpg", "images/cahokia-il-1106-st-20.jpg", "images/cahokia-il-1106-st-21.jpg", "images/cahokia-il-1106-st-22.jpg", "images/cahokia-il-1106-st-23.jpg", "images/cahokia-il-1106-st-24.jpg"],
+  },
+  {
+    id: "duquoin-il-322-cole",
+    address:     "322 West Cole Street",
+    zip:         "62833",
+    description: "This is a fantastic, spacious property in Illinois with a huge yard and plenty of outdoor space!. The property originally consisted of two separate lots, which the previous owner combined into one large parcel. After purchasing the property, I divided it back into two separate lots.. The house itself is large and offers great potential.. One of the biggest highlights is the BRAND-NEW ROOF! There are some minor water stains on the ceiling near the front entrance from a previous roof leak. However, the roof has now been completely replace",
+    copy:        "$1,200 a month and $3,000 to move in. That's what stands between you and three bedrooms, two baths, and a backyard in Du Quoin, IL. The house is roomy, and a brand-new roof means the biggest job up top is already done. Out back, the yard is a place where a cool evening can stretch as long as you like, and no landlord will ever weigh in on whether you get to stay another year. The purchase price is $115,000, fixed in writing the day you sign. With owner financing, there's no bank and no mortgage application standing in your way. The home is sold as-is, and the best way to size it up is to stand in the rooms and walk the yard yourself. Homes like this don't sit long, so send us a text or message now and grab a showing time before someone else does.",
+    city:  "Du Quoin",
+    state: "IL",
+    beds:  3,
+    baths: 2,
+    sqft:  "",
+    status: "Available",
+
+    monthlyPayment: 1200,
+    moveIn:         3000,
+    lockedPrice:    115000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { backyard: "yes" },
+    heroPhoto: "",
+    photos:    [],
   },
   {
     id: "stlouis-mo-10516-baron",
@@ -4115,6 +4115,27 @@ const HOMES = [
     photos:    ["images/springfield-il-2640-5th-1.jpg", "images/springfield-il-2640-5th-2.jpg", "images/springfield-il-2640-5th-3.jpg", "images/springfield-il-2640-5th-4.jpg", "images/springfield-il-2640-5th-5.jpg", "images/springfield-il-2640-5th-6.jpg", "images/springfield-il-2640-5th-7.jpg", "images/springfield-il-2640-5th-8.jpg", "images/springfield-il-2640-5th-9.jpg", "images/springfield-il-2640-5th-10.jpg", "images/springfield-il-2640-5th-11.jpg", "images/springfield-il-2640-5th-12.jpg", "images/springfield-il-2640-5th-13.jpg"],
   },
   {
+    id: "stlouis-mo-6211-reichman",
+    address:     "6211 Reichman Ave",
+    zip:         "63121",
+    description: "All utilities on. In great shape",
+    copy:        "$995 a month and $2,500 at move-in. That's what stands between you and a two-bedroom, one-bath home in St. Louis with your name on the paperwork. This one is in great shape, so your energy can go into making it yours instead of patching it up. Your monthly payment is written into the agreement from the start. That means no surprise increase when a lease would have been up, and no wondering whether next year's number will still fit your budget. The purchase price is $89,000, agreed on the day you sign, with owner financing and no bank anywhere in the picture. The home is sold as-is, and the best way to judge it is to stand in the rooms yourself, so come walk through it. A home in this kind of shape at this price won't wait around. Send us a text now and grab a showing time.",
+    city:  "St. Louis",
+    state: "MO",
+    beds:  2,
+    baths: 1,
+    sqft:  "",
+    status: "Available",
+
+    monthlyPayment: 995,
+    moveIn:         2500,
+    lockedPrice:    89000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
     id: "stlouis-mo-1920-prior",
     address:     "1920 Prior Dr",
     zip:         "63136",
@@ -4150,6 +4171,26 @@ const HOMES = [
     monthlyPayment: 795,
     moveIn:         2000,
     lockedPrice:    79000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "stlouis-mo-4121-clara",
+    address:     "4121 Clara Place",
+    zip:         "63115",
+    copy:        "$775 a month. $2,000 to move in. And a St. Louis house that finally has your name on the paperwork, with no bank and no mortgage application standing in the way. This two-bedroom, one-bath home gives you 789 square feet to arrange however you like, from how you set up the bedrooms to where the couch goes. With owner financing, your payment is written into your contract, so you can plan next year's budget knowing that number stays put instead of climbing every time a lease comes due. The purchase price is $69,000, settled at signing, and no lender ever enters the picture. The home is sold as-is, so come walk through every room and judge it with your own eyes. Homes at this payment rarely wait around, so send us a text now and grab a showing time while one is still open.",
+    city:  "St. Louis",
+    state: "MO",
+    beds:  2,
+    baths: 1,
+    sqft:  "789",
+    status: "Available",
+
+    monthlyPayment: 775,
+    moveIn:         2000,
+    lockedPrice:    69000,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
@@ -4232,6 +4273,26 @@ const HOMES = [
     monthlyPayment: 850,
     moveIn:         2000,
     lockedPrice:    79000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "carbondale-il-303-sycamore",
+    address:     "303 W. Sycamore Street",
+    zip:         "62901",
+    copy:        "$865 a month and $2,000 at move-in opens the door to a two-bedroom, one-bath home in Carbondale, Illinois that you'll be buying, not renting. Inside its 994 square feet, the second bedroom can be whatever you need it to be, and the living space is yours to arrange without asking anyone's permission. Your payment is written into your agreement, so the number you see today is the same number you'll pay next spring and the spring after that, with no surprise hike when a lease runs out. The purchase price is $82,500, agreed on in writing the day you sign, with owner financing and no bank in the middle. The home is sold as-is, so come walk every room in person and judge it with your own eyes. Send us a text now to claim a showing before someone else does.",
+    city:  "Carbondale",
+    state: "IL",
+    beds:  2,
+    baths: 1,
+    sqft:  "994",
+    status: "Available",
+
+    monthlyPayment: 865,
+    moveIn:         2000,
+    lockedPrice:    82500,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
@@ -4399,6 +4460,27 @@ const HOMES = [
     photos:    [],
   },
   {
+    id: "stlouis-mo-5152-maffitt",
+    address:     "5152 Maffitt Ave",
+    zip:         "63113",
+    description: "Downstairs gutted.. Upstairs bedrooms and bathroom in good shape",
+    copy:        "$695 a month, $1,500 to move in, and a three-bedroom, one-bath St. Louis home that could finally carry your name. Upstairs, the bedrooms and the bathroom are in good shape. The downstairs has been gutted and will need to be rebuilt before that level is livable. Where someone else sees an empty first floor, you can see the kitchen and living space it could become, and every wall you put back and every floor you lay adds value to a place that belongs to you, not to a landlord. The purchase price is $59,000, fixed in writing when you sign, with owner financing and no bank anywhere in the process. The home is sold as-is, so come walk both floors with us and size up the work in person. A price like this won't wait around long. Send us a message now and grab a time to tour.",
+    city:  "St. Louis",
+    state: "MO",
+    beds:  3,
+    baths: 1,
+    sqft:  "",
+    status: "Available",
+
+    monthlyPayment: 695,
+    moveIn:         1500,
+    lockedPrice:    59000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
     id: "stlouis-mo-5275-alcott",
     address:     "5275 Alcott Ave",
     zip:         "63120",
@@ -4528,7 +4610,7 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
-    status: "Available",
+    status: "Pending",
 
     monthlyPayment: 875,
     moveIn:         1000,

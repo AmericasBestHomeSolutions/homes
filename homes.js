@@ -3241,7 +3241,7 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
-    status: "Available",
+    status: "Pending",
 
     monthlyPayment: 995,
     moveIn:         3000,
@@ -3262,7 +3262,7 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "873",
-    status: "Available",
+    status: "Pending",
 
     monthlyPayment: 995,
     moveIn:         3000,
@@ -3821,7 +3821,7 @@ const HOMES = [
 
     features: { backyard: "yes", off_street_parking: "yes", storage_shed: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/flint-mi-1206-markham-1.jpg", "images/flint-mi-1206-markham-2.jpg", "images/flint-mi-1206-markham-3.jpg", "images/flint-mi-1206-markham-4.jpg", "images/flint-mi-1206-markham-5.jpg", "images/flint-mi-1206-markham-6.jpg", "images/flint-mi-1206-markham-7.jpg", "images/flint-mi-1206-markham-8.jpg", "images/flint-mi-1206-markham-9.jpg", "images/flint-mi-1206-markham-10.jpg", "images/flint-mi-1206-markham-11.jpg", "images/flint-mi-1206-markham-12.jpg", "images/flint-mi-1206-markham-13.jpg", "images/flint-mi-1206-markham-14.jpg", "images/flint-mi-1206-markham-15.jpg", "images/flint-mi-1206-markham-16.jpg", "images/flint-mi-1206-markham-17.jpg", "images/flint-mi-1206-markham-18.jpg", "images/flint-mi-1206-markham-19.jpg", "images/flint-mi-1206-markham-20.jpg", "images/flint-mi-1206-markham-21.jpg", "images/flint-mi-1206-markham-22.jpg", "images/flint-mi-1206-markham-23.jpg", "images/flint-mi-1206-markham-24.jpg"],
   },
   {
     id: "stlouis-mo-10068-royal",
@@ -4442,7 +4442,7 @@ const HOMES = [
 
     features: { backyard: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/detroit-mi-18465-caldwell-1.jpg", "images/detroit-mi-18465-caldwell-2.jpg", "images/detroit-mi-18465-caldwell-3.jpg", "images/detroit-mi-18465-caldwell-4.jpg", "images/detroit-mi-18465-caldwell-5.jpg", "images/detroit-mi-18465-caldwell-6.jpg", "images/detroit-mi-18465-caldwell-7.jpg", "images/detroit-mi-18465-caldwell-8.jpg", "images/detroit-mi-18465-caldwell-9.jpg", "images/detroit-mi-18465-caldwell-10.jpg", "images/detroit-mi-18465-caldwell-11.jpg", "images/detroit-mi-18465-caldwell-12.jpg", "images/detroit-mi-18465-caldwell-13.jpg", "images/detroit-mi-18465-caldwell-14.jpg", "images/detroit-mi-18465-caldwell-15.jpg", "images/detroit-mi-18465-caldwell-16.jpg", "images/detroit-mi-18465-caldwell-17.jpg", "images/detroit-mi-18465-caldwell-18.jpg", "images/detroit-mi-18465-caldwell-19.jpg", "images/detroit-mi-18465-caldwell-20.jpg", "images/detroit-mi-18465-caldwell-21.jpg", "images/detroit-mi-18465-caldwell-22.jpg", "images/detroit-mi-18465-caldwell-23.jpg", "images/detroit-mi-18465-caldwell-24.jpg"],
   },
   {
     id: "stlouis-mo-1338-gregan",

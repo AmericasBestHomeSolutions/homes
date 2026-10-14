@@ -298,6 +298,15 @@ body.tl-pad{padding-bottom:70px}
     <p class="feat-note" id="featuresNote"></p>
   </section>
 
+  <!-- MAP -->
+  <section class="section reveal" id="mapSec" hidden>
+    <div class="sec-label">Location</div>
+    <h2 class="sec-title">Where it is</h2>
+    <p style="color:var(--ink-soft);margin:0 0 14px">See exactly where this home sits and which other homes are close by.</p>
+    <div class="hm-mini" id="mapEl"></div>
+    <div class="hm-minifoot"><span id="mapNote"></span><a id="mapGoogle" href="#" target="_blank" rel="noopener">Open in Google Maps →</a></div>
+  </section>
+
   <!-- DEAL TERMS -->
   <section class="section reveal">
     <div class="sec-label">Here's the deal</div>
@@ -730,6 +739,17 @@ body.tl-pad{padding-bottom:70px}
   } else {
     document.querySelectorAll(".reveal").forEach(el=>el.classList.add("in"));
   }
+})();
+</script>
+<script src="homes-map.js"></script>
+<script>
+(function(){
+  const id = window.__HOME_ID__ || new URLSearchParams(location.search).get("home");
+  const h = (typeof HOMES !== "undefined") ? HOMES.find(x => x.id === id) : null;
+  if (!h || !window.HomesMap) return;
+  const q = encodeURIComponent([h.address, h.city, h.state, h.zip].filter(Boolean).join(", "));
+  document.getElementById("mapGoogle").href = "https://www.google.com/maps/search/?api=1&query=" + q;
+  HomesMap.mini({ el: document.getElementById("mapEl"), home: h, section: document.getElementById("mapSec"), note: document.getElementById("mapNote") });
 })();
 </script>
 </body>

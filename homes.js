@@ -25,6 +25,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "820",
+    lat:   32.417818,
+    lng:   -86.285237,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 849,
@@ -46,6 +49,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "801",
+    lat:   32.345814,
+    lng:   -86.329991,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 558.49,
@@ -68,6 +74,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "1090",
+    lat:   34.868112,
+    lng:   -92.111837,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 1316.36,
@@ -90,6 +99,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "1364",
+    lat:   33.485108,
+    lng:   -81.998587,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 887.58,
@@ -112,6 +124,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "1036",
+    lat:   33.460254,
+    lng:   -81.940517,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 918.94,
@@ -134,6 +149,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "1335",
+    lat:   33.475814,
+    lng:   -82.000368,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 953.58,
@@ -156,6 +174,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "660",
+    lat:   38.891805,
+    lng:   -90.143169,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 500,
@@ -176,6 +197,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "1000",
+    lat:   38.894924,
+    lng:   -90.136706,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 499,
@@ -198,6 +222,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "1639",
+    lat:   38.517411,
+    lng:   -89.996474,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 1060,
@@ -220,6 +247,9 @@ const HOMES = [
     beds:  2,
     baths: 2,
     sqft:  "1650",
+    lat:   38.911708,
+    lng:   -90.044338,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 685,
@@ -242,6 +272,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   39.645735,
+    lng:   -88.7456,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 1095,
@@ -264,6 +297,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "936",
+    lat:   38.561764,
+    lng:   -90.16678,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 795,
@@ -284,6 +320,9 @@ const HOMES = [
     beds:  4,
     baths: 1,
     sqft:  "1104",
+    lat:   38.555347,
+    lng:   -90.197947,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 525,
@@ -304,6 +343,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "",
+    lat:   38.564621,
+    lng:   -90.196096,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 900,
@@ -324,6 +366,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "",
+    lat:   38.566161,
+    lng:   -90.179424,
+    geo:   "approx",
     status: "Available",
 
     monthlyPayment: 900,
@@ -344,6 +389,9 @@ const HOMES = [
     beds:  3,
     baths: 2,
     sqft:  "1453",
+    lat:   38.584588,
+    lng:   -90.173912,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 940,
@@ -365,6 +413,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "936",
+    lat:   38.561796,
+    lng:   -90.16682,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 425,
@@ -385,6 +436,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "1000",
+    lat:   38.560494,
+    lng:   -90.119819,
+    geo:   "exact",
     status: "Pending",
 
     monthlyPayment: 475,
@@ -407,6 +461,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "864",
+    lat:   38.551389,
+    lng:   -90.134245,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 495,
@@ -427,6 +484,9 @@ const HOMES = [
     beds:  4,
     baths: 1,
     sqft:  "",
+    lat:   38.552155,
+    lng:   -90.134226,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 600,
@@ -448,6 +508,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "1000",
+    lat:   37.730974,
+    lng:   -89.219697,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 900,
@@ -469,6 +532,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "900",
+    lat:   37.732758,
+    lng:   -89.224132,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 865,
@@ -490,6 +556,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "963",
+    lat:   38.515449,
+    lng:   -89.148144,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 595,
@@ -511,6 +580,9 @@ const HOMES = [
     beds:  3,
     baths: 2,
     sqft:  "",
+    lat:   38.531471,
+    lng:   -89.138521,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 1175,
@@ -532,6 +604,9 @@ const HOMES = [
     beds:  3,
     baths: 2,
     sqft:  "",
+    lat:   38.519719,
+    lng:   -89.142055,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 780,
@@ -554,6 +629,9 @@ const HOMES = [
     beds:  2,
     baths: 2,
     sqft:  "1064",
+    lat:   38.579193,
+    lng:   -90.076167,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 495,
@@ -574,6 +652,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "1058",
+    lat:   38.902963,
+    lng:   -90.079987,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 900,
@@ -596,6 +677,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   39.855479,
+    lng:   -88.948449,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 700,
@@ -617,6 +701,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "704",
+    lat:   39.84329,
+    lng:   -88.922361,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 750,
@@ -638,6 +725,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "1032",
+    lat:   39.831629,
+    lng:   -88.944803,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 995,
@@ -659,6 +749,9 @@ const HOMES = [
     beds:  4,
     baths: 1.5,
     sqft:  "",
+    lat:   39.841407,
+    lng:   -88.932433,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 1042,
@@ -681,6 +774,9 @@ const HOMES = [
     beds:  4,
     baths: 2,
     sqft:  "",
+    lat:   39.861521,
+    lng:   -88.960856,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 800,
@@ -702,6 +798,9 @@ const HOMES = [
     beds:  4,
     baths: 1,
     sqft:  "",
+    lat:   39.862399,
+    lng:   -88.95934,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 1295,
@@ -724,6 +823,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "1416",
+    lat:   39.851971,
+    lng:   -88.893219,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 1100,
@@ -746,6 +848,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "1456",
+    lat:   39.86025,
+    lng:   -88.963693,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 1500,
@@ -768,6 +873,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   39.841551,
+    lng:   -88.935292,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 850,
@@ -789,6 +897,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "926",
+    lat:   39.863349,
+    lng:   -88.962323,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 895,
@@ -811,6 +922,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "1000",
+    lat:   39.858404,
+    lng:   -88.934597,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 325,
@@ -833,6 +947,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   39.836279,
+    lng:   -88.936479,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 975,
@@ -855,6 +972,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "1158",
+    lat:   39.84384,
+    lng:   -88.941141,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 900,
@@ -877,6 +997,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "780",
+    lat:   39.863169,
+    lng:   -88.944985,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 895,
@@ -898,6 +1021,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   39.858698,
+    lng:   -88.966251,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 894,
@@ -919,6 +1045,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "825",
+    lat:   39.859224,
+    lng:   -88.941305,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 1000,
@@ -941,6 +1070,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "950",
+    lat:   39.837932,
+    lng:   -88.937695,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 950,
@@ -963,6 +1095,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   39.856795,
+    lng:   -88.97147,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 395,
@@ -985,6 +1120,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   39.861538,
+    lng:   -88.957604,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 700,
@@ -1007,6 +1145,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "",
+    lat:   39.854326,
+    lng:   -88.934918,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 850,
@@ -1029,6 +1170,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "726",
+    lat:   39.862969,
+    lng:   -88.957785,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 875,
@@ -1051,6 +1195,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "884",
+    lat:   39.857051,
+    lng:   -88.936303,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 700,
@@ -1072,6 +1219,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   39.859726,
+    lng:   -88.936391,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 695,
@@ -1093,6 +1243,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "1189",
+    lat:   39.854731,
+    lng:   -88.958061,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 950,
@@ -1114,6 +1267,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   39.850095,
+    lng:   -88.969582,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 825,
@@ -1136,6 +1292,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "936",
+    lat:   39.849186,
+    lng:   -88.968815,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 795,
@@ -1158,6 +1317,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "672",
+    lat:   39.860219,
+    lng:   -88.96236,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 900,
@@ -1179,6 +1341,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "830",
+    lat:   39.831899,
+    lng:   -88.94481,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 850,
@@ -1200,6 +1365,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "975",
+    lat:   39.85581,
+    lng:   -88.965401,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 850,
@@ -1221,6 +1389,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "512",
+    lat:   39.862843,
+    lng:   -88.912064,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 875,
@@ -1243,6 +1414,9 @@ const HOMES = [
     beds:  3,
     baths: 1.5,
     sqft:  "",
+    lat:   39.852197,
+    lng:   -88.970281,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 917.6,
@@ -1265,6 +1439,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   39.859901,
+    lng:   -88.936248,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 850,
@@ -1286,6 +1463,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "624",
+    lat:   39.861432,
+    lng:   -88.957751,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 595,
@@ -1307,6 +1487,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "780",
+    lat:   39.856743,
+    lng:   -88.940876,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 850,
@@ -1328,6 +1511,9 @@ const HOMES = [
     beds:  2,
     baths: 2,
     sqft:  "720",
+    lat:   39.833156,
+    lng:   -88.946287,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 895,
@@ -1350,6 +1536,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "882",
+    lat:   39.860419,
+    lng:   -88.948564,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 795,
@@ -1370,6 +1559,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "861",
+    lat:   39.83529,
+    lng:   -88.939593,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 915,
@@ -1391,6 +1583,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "768",
+    lat:   39.865139,
+    lng:   -88.941524,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 685,
@@ -1413,6 +1608,9 @@ const HOMES = [
     beds:  2,
     baths: 2,
     sqft:  "",
+    lat:   39.845362,
+    lng:   -88.930051,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 1150,
@@ -1434,6 +1632,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "",
+    lat:   39.829734,
+    lng:   -88.93907,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 850,
@@ -1455,6 +1656,9 @@ const HOMES = [
     beds:  4,
     baths: 2,
     sqft:  "",
+    lat:   39.842758,
+    lng:   -88.941528,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 650,
@@ -1476,6 +1680,9 @@ const HOMES = [
     beds:  3,
     baths: 2,
     sqft:  "",
+    lat:   39.852191,
+    lng:   -88.972342,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 950,
@@ -1497,6 +1704,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   39.858275,
+    lng:   -88.938296,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 795,
@@ -1519,6 +1729,9 @@ const HOMES = [
     beds:  2,
     baths: 1.5,
     sqft:  "1170",
+    lat:   39.8628,
+    lng:   -88.918452,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 600,
@@ -1540,6 +1753,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   39.836612,
+    lng:   -88.968059,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 800,
@@ -1560,6 +1776,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "1344",
+    lat:   39.8481,
+    lng:   -88.976555,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 1095,
@@ -1581,6 +1800,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "",
+    lat:   39.853587,
+    lng:   -88.96162,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 850,
@@ -1601,6 +1823,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "768",
+    lat:   39.858352,
+    lng:   -88.936156,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 725,
@@ -1623,6 +1848,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "950",
+    lat:   39.835191,
+    lng:   -88.939046,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 825,
@@ -1645,6 +1873,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "1230",
+    lat:   39.861341,
+    lng:   -88.959191,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 790,
@@ -1666,6 +1897,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "",
+    lat:   39.834641,
+    lng:   -88.945789,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 800,
@@ -1687,6 +1921,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   39.858461,
+    lng:   -88.915406,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 235,
@@ -1707,6 +1944,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   39.844705,
+    lng:   -88.937882,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 845,
@@ -1728,6 +1968,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "",
+    lat:   39.860344,
+    lng:   -88.963844,
+    geo:   "exact",
     status: "Pending",
 
     monthlyPayment: 825,
@@ -1749,6 +1992,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   39.844058,
+    lng:   -88.936296,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 625,
@@ -1770,6 +2016,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   39.837053,
+    lng:   -88.93652,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 725,
@@ -1791,6 +2040,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   39.857488,
+    lng:   -88.93448,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 650,
@@ -1813,6 +2065,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   38.884845,
+    lng:   -90.120457,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 1150,
@@ -1834,6 +2089,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "816",
+    lat:   38.62565,
+    lng:   -90.090483,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 700,
@@ -1854,6 +2112,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "1064",
+    lat:   38.570112,
+    lng:   -90.103487,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 650,
@@ -1875,6 +2136,9 @@ const HOMES = [
     beds:  3,
     baths: 2.5,
     sqft:  "1500",
+    lat:   38.60786,
+    lng:   -90.130826,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 1125,
@@ -1897,6 +2161,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "720",
+    lat:   38.594339,
+    lng:   -90.06581,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 795,
@@ -1917,6 +2184,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "936",
+    lat:   38.636948,
+    lng:   -90.088345,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 495,
@@ -1937,6 +2207,9 @@ const HOMES = [
     beds:  3,
     baths: 2,
     sqft:  "704",
+    lat:   38.610453,
+    lng:   -90.137241,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 500,
@@ -1958,6 +2231,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "",
+    lat:   38.595666,
+    lng:   -90.064581,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 900,
@@ -1980,6 +2256,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "800",
+    lat:   38.617524,
+    lng:   -90.135722,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 570,
@@ -2002,6 +2281,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "",
+    lat:   38.611199,
+    lng:   -90.123432,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 899,
@@ -2024,6 +2306,9 @@ const HOMES = [
     beds:  2,
     baths: 1.5,
     sqft:  "728",
+    lat:   38.565752,
+    lng:   -90.195084,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 917.6,
@@ -2045,6 +2330,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "1066",
+    lat:   38.613319,
+    lng:   -90.126186,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 787.17,
@@ -2067,6 +2355,9 @@ const HOMES = [
     beds:  2,
     baths: 2,
     sqft:  "1025",
+    lat:   38.626749,
+    lng:   -90.096919,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 800,
@@ -2088,6 +2379,9 @@ const HOMES = [
     beds:  1,
     baths: 1,
     sqft:  "480",
+    lat:   38.633662,
+    lng:   -90.090836,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 650,
@@ -2109,6 +2403,9 @@ const HOMES = [
     beds:  1,
     baths: 1,
     sqft:  "700",
+    lat:   38.625224,
+    lng:   -90.09636,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 375,
@@ -2130,6 +2427,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "900",
+    lat:   38.593003,
+    lng:   -90.12551,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 900,
@@ -2151,6 +2451,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "698",
+    lat:   38.595248,
+    lng:   -90.131803,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 895,
@@ -2172,6 +2475,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "816",
+    lat:   38.625534,
+    lng:   -90.090398,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 845,
@@ -2193,6 +2499,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   38.367605,
+    lng:   -88.366978,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 790,
@@ -2215,6 +2524,9 @@ const HOMES = [
     beds:  3,
     baths: 2,
     sqft:  "1456",
+    lat:   38.704959,
+    lng:   -90.135652,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 475,
@@ -2236,6 +2548,9 @@ const HOMES = [
     beds:  3,
     baths: 2,
     sqft:  "1176",
+    lat:   38.714919,
+    lng:   -90.12548,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 950,
@@ -2256,6 +2571,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   38.710956,
+    lng:   -90.127287,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 650,
@@ -2277,6 +2595,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "",
+    lat:   38.704896,
+    lng:   -90.14124,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 750,
@@ -2297,6 +2618,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "720",
+    lat:   38.702213,
+    lng:   -90.16553,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 745,
@@ -2318,6 +2642,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "877",
+    lat:   39.793487,
+    lng:   -88.592097,
+    geo:   "exact",
     status: "Pending",
 
     monthlyPayment: 995,
@@ -2339,6 +2666,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   40.392176,
+    lng:   -90.156209,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 800,
@@ -2360,6 +2690,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "748",
+    lat:   40.464954,
+    lng:   -90.677019,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 850,
@@ -2381,6 +2714,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "",
+    lat:   38.679969,
+    lng:   -90.154016,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 925,
@@ -2402,6 +2738,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "1053",
+    lat:   38.68255,
+    lng:   -90.157054,
+    geo:   "approx",
     status: "Available",
 
     monthlyPayment: 900,
@@ -2424,6 +2763,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "920",
+    lat:   38.319237,
+    lng:   -88.899406,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 1100,
@@ -2445,6 +2787,9 @@ const HOMES = [
     beds:  3,
     baths: 2,
     sqft:  "1030",
+    lat:   39.62072,
+    lng:   -89.017946,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 1125,
@@ -2466,6 +2811,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "",
+    lat:   39.303624,
+    lng:   -89.287873,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 500,
@@ -2486,6 +2834,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   39.002772,
+    lng:   -87.916908,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 855,
@@ -2507,6 +2858,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   40.678407,
+    lng:   -89.643506,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 895,
@@ -2529,6 +2883,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   40.68145,
+    lng:   -89.631256,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 925,
@@ -2550,6 +2907,9 @@ const HOMES = [
     beds:  3,
     baths: 2,
     sqft:  "1278",
+    lat:   40.683219,
+    lng:   -89.620972,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 795,
@@ -2571,6 +2931,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "793",
+    lat:   40.682367,
+    lng:   -89.626168,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 495,
@@ -2592,6 +2955,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "930",
+    lat:   40.675074,
+    lng:   -89.629103,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 650,
@@ -2613,6 +2979,9 @@ const HOMES = [
     beds:  3,
     baths: 2,
     sqft:  "1268",
+    lat:   40.669409,
+    lng:   -89.625746,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 695,
@@ -2635,6 +3004,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "968",
+    lat:   40.671846,
+    lng:   -89.6293,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 495,
@@ -2655,6 +3027,9 @@ const HOMES = [
     beds:  3,
     baths: 2,
     sqft:  "2116",
+    lat:   40.702194,
+    lng:   -89.60372,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 775,
@@ -2676,6 +3051,9 @@ const HOMES = [
     beds:  4,
     baths: 1,
     sqft:  "",
+    lat:   40.670261,
+    lng:   -89.626777,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 850,
@@ -2697,6 +3075,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "",
+    lat:   40.704531,
+    lng:   -89.582332,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 750,
@@ -2718,6 +3099,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   40.688182,
+    lng:   -89.608079,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 700,
@@ -2739,6 +3123,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "800",
+    lat:   40.668092,
+    lng:   -89.631765,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 690,
@@ -2759,6 +3146,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   40.683989,
+    lng:   -89.614606,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 410,
@@ -2780,6 +3170,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "950",
+    lat:   40.37708,
+    lng:   -87.663312,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 875,
@@ -2801,6 +3194,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "700",
+    lat:   39.811017,
+    lng:   -89.614906,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 995,
@@ -2822,6 +3218,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   39.763051,
+    lng:   -89.629177,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 892,
@@ -2842,6 +3241,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "780",
+    lat:   38.628284,
+    lng:   -90.092615,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 695,
@@ -2864,6 +3266,9 @@ const HOMES = [
     beds:  3,
     baths: 2.5,
     sqft:  "",
+    lat:   37.900275,
+    lng:   -88.93314,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 599,
@@ -2884,6 +3289,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   39.259487,
+    lng:   -89.351667,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 574,
@@ -2905,6 +3313,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   38.867661,
+    lng:   -90.099786,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 875,
@@ -2926,6 +3337,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   37.999125,
+    lng:   -87.580715,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 899,
@@ -2947,6 +3361,9 @@ const HOMES = [
     beds:  3,
     baths: 2,
     sqft:  "1035",
+    lat:   37.989345,
+    lng:   -87.553268,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 765,
@@ -2968,6 +3385,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "658",
+    lat:   37.999231,
+    lng:   -87.58348,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 655,
@@ -2989,6 +3409,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "",
+    lat:   42.401283,
+    lng:   -83.249265,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 1199,
@@ -3011,6 +3434,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "",
+    lat:   42.444772,
+    lng:   -82.95763,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 1200,
@@ -3032,6 +3458,9 @@ const HOMES = [
     beds:  4,
     baths: 1,
     sqft:  "926",
+    lat:   42.376386,
+    lng:   -83.175598,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 1099,
@@ -3053,6 +3482,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "864",
+    lat:   43.045349,
+    lng:   -83.690118,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 795,
@@ -3073,6 +3505,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "1144",
+    lat:   43.032407,
+    lng:   -83.710916,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 850,
@@ -3094,6 +3529,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "714",
+    lat:   43.067171,
+    lng:   -83.712891,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 850,
@@ -3116,6 +3554,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   43.061068,
+    lng:   -83.713872,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 790,
@@ -3138,6 +3579,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   43.047011,
+    lng:   -83.717448,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 725,
@@ -3158,6 +3602,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "",
+    lat:   43.406769,
+    lng:   -83.961391,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 1299,
@@ -3179,6 +3626,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "1050",
+    lat:   39.842213,
+    lng:   -88.932101,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 895,
@@ -3201,6 +3651,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   38.67651,
+    lng:   -90.245345,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 800,
@@ -3221,6 +3674,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "1440",
+    lat:   38.71249,
+    lng:   -90.233718,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 790,
@@ -3241,6 +3697,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   38.701827,
+    lng:   -90.261841,
+    geo:   "exact",
     status: "Pending",
 
     monthlyPayment: 995,
@@ -3262,6 +3721,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "873",
+    lat:   38.756861,
+    lng:   -90.19588,
+    geo:   "exact",
     status: "Pending",
 
     monthlyPayment: 995,
@@ -3284,6 +3746,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   38.702371,
+    lng:   -90.247743,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 950,
@@ -3305,6 +3770,9 @@ const HOMES = [
     beds:  "",
     baths: "",
     sqft:  "",
+    lat:   38.668239,
+    lng:   -90.238665,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 725,
@@ -3326,6 +3794,9 @@ const HOMES = [
     beds:  2,
     baths: 1.5,
     sqft:  "",
+    lat:   38.714982,
+    lng:   -90.229938,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 1100,
@@ -3347,6 +3818,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   38.688147,
+    lng:   -90.291993,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 800,
@@ -3368,6 +3842,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "1098",
+    lat:   38.687181,
+    lng:   -90.283945,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 595,
@@ -3389,6 +3866,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "792",
+    lat:   38.697057,
+    lng:   -90.274196,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 775,
@@ -3410,6 +3890,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   38.723534,
+    lng:   -90.22626,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 966.94,
@@ -3431,6 +3914,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   38.68667,
+    lng:   -90.290609,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 625,
@@ -3452,6 +3938,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "",
+    lat:   38.751148,
+    lng:   -90.263089,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 850,
@@ -3472,6 +3961,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   38.708576,
+    lng:   -90.256962,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 750,
@@ -3493,6 +3985,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "858",
+    lat:   38.671164,
+    lng:   -90.220426,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 1000,
@@ -3515,6 +4010,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "",
+    lat:   38.696354,
+    lng:   -90.276276,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 763,
@@ -3536,6 +4034,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "",
+    lat:   38.68033,
+    lng:   -90.234596,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 900,
@@ -3557,6 +4058,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "816",
+    lat:   38.754775,
+    lng:   -90.249925,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 850,
@@ -3578,6 +4082,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "734",
+    lat:   38.670725,
+    lng:   -90.258524,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 1000,
@@ -3600,6 +4107,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "",
+    lat:   38.769907,
+    lng:   -90.316367,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 675,
@@ -3621,6 +4131,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "720",
+    lat:   38.707034,
+    lng:   -90.267603,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 875,
@@ -3642,6 +4155,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "1000",
+    lat:   38.695028,
+    lng:   -90.280511,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 875,
@@ -3662,6 +4178,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "",
+    lat:   38.717059,
+    lng:   -90.259151,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 925,
@@ -3683,6 +4202,9 @@ const HOMES = [
     beds:  1,
     baths: 1,
     sqft:  "",
+    lat:   38.673,
+    lng:   -90.211442,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 620,
@@ -3704,6 +4226,9 @@ const HOMES = [
     beds:  3,
     baths: 2,
     sqft:  "1683",
+    lat:   32.328029,
+    lng:   -90.236916,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 1067,
@@ -3725,6 +4250,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "",
+    lat:   32.243902,
+    lng:   -90.224838,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 1038.43,
@@ -3746,6 +4274,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "",
+    lat:   32.284265,
+    lng:   -90.22087,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 695,
@@ -3768,6 +4299,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "984",
+    lat:   32.306686,
+    lng:   -90.271214,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 925,
@@ -3790,6 +4324,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "720",
+    lat:   39.481952,
+    lng:   -84.398809,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 1120,
@@ -3812,6 +4349,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "1,200",
+    lat:   42.98247,
+    lng:   -83.695857,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 996,
@@ -3834,6 +4374,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "",
+    lat:   38.752578,
+    lng:   -90.244359,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 925,
@@ -3855,6 +4398,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   43.047292,
+    lng:   -83.650467,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 950,
@@ -3875,6 +4421,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   38.668801,
+    lng:   -90.21288,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 750,
@@ -3896,6 +4445,9 @@ const HOMES = [
     beds:  4,
     baths: 2,
     sqft:  "",
+    lat:   32.351488,
+    lng:   -90.19961,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 1095,
@@ -3917,6 +4469,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   38.727716,
+    lng:   -90.261675,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 1250,
@@ -3938,6 +4493,9 @@ const HOMES = [
     beds:  6,
     baths: 3,
     sqft:  "3,000",
+    lat:   38.705915,
+    lng:   -90.26029,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 1650,
@@ -3958,6 +4516,9 @@ const HOMES = [
     beds:  3,
     baths: 2,
     sqft:  "",
+    lat:   38.564695,
+    lng:   -90.175074,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 800,
@@ -3979,6 +4540,9 @@ const HOMES = [
     beds:  3,
     baths: 2,
     sqft:  "",
+    lat:   38.019512,
+    lng:   -89.244178,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 1200,
@@ -4000,6 +4564,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "",
+    lat:   38.761671,
+    lng:   -90.249726,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 975,
@@ -4021,6 +4588,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "",
+    lat:   40.675047,
+    lng:   -89.624997,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 1100,
@@ -4042,6 +4612,9 @@ const HOMES = [
     beds:  "",
     baths: 1,
     sqft:  "1350",
+    lat:   37.898852,
+    lng:   -88.912568,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 1100,
@@ -4063,6 +4636,9 @@ const HOMES = [
     beds:  3,
     baths: 2,
     sqft:  "Unknown",
+    lat:   38.612753,
+    lng:   -90.112378,
+    geo:   "exact",
     status: "Pending",
 
     monthlyPayment: 880,
@@ -4084,6 +4660,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   38.670057,
+    lng:   -90.259924,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 975,
@@ -4104,6 +4683,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   38.744524,
+    lng:   -90.312765,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 1095,
@@ -4125,6 +4707,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "872",
+    lat:   40.489251,
+    lng:   -90.055659,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 800,
@@ -4147,6 +4732,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "975",
+    lat:   39.767816,
+    lng:   -89.649794,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 995,
@@ -4169,6 +4757,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   38.698355,
+    lng:   -90.272529,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 995,
@@ -4189,6 +4780,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "",
+    lat:   38.762381,
+    lng:   -90.265871,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 800,
@@ -4210,6 +4804,9 @@ const HOMES = [
     beds:  3,
     baths: 2,
     sqft:  "",
+    lat:   41.077797,
+    lng:   -81.555301,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 795,
@@ -4230,6 +4827,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "789",
+    lat:   38.679408,
+    lng:   -90.248326,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 775,
@@ -4250,6 +4850,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   39.857738,
+    lng:   -88.97297,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 750,
@@ -4271,6 +4874,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "754",
+    lat:   38.686375,
+    lng:   -90.308156,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 850,
@@ -4292,6 +4898,9 @@ const HOMES = [
     beds:  1,
     baths: 1,
     sqft:  "",
+    lat:   38.70785,
+    lng:   -90.269477,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 795,
@@ -4312,6 +4921,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   38.688889,
+    lng:   -90.292433,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 850,
@@ -4332,6 +4944,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "994",
+    lat:   37.730496,
+    lng:   -89.219397,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 865,
@@ -4353,6 +4968,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   32.353506,
+    lng:   -90.187643,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 700,
@@ -4372,6 +4990,9 @@ const HOMES = [
     beds:  "",
     baths: "",
     sqft:  "",
+    lat:   39.83648,
+    lng:   -88.93132,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 895,
@@ -4392,6 +5013,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "",
+    lat:   38.699177,
+    lng:   -90.294306,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 695,
@@ -4412,6 +5036,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   38.724004,
+    lng:   -90.267586,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 795,
@@ -4433,6 +5060,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "720",
+    lat:   42.428643,
+    lng:   -83.046967,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 795,
@@ -4454,6 +5084,9 @@ const HOMES = [
     beds:  1,
     baths: 1,
     sqft:  "",
+    lat:   38.674236,
+    lng:   -90.303416,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 695,
@@ -4475,6 +5108,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   38.712801,
+    lng:   -90.24036,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 725,
@@ -4495,6 +5131,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   38.718877,
+    lng:   -90.295523,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 695,
@@ -4515,6 +5154,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   38.721415,
+    lng:   -90.262324,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 725,
@@ -4536,6 +5178,9 @@ const HOMES = [
     beds:  3,
     baths: 1,
     sqft:  "",
+    lat:   38.671135,
+    lng:   -90.259845,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 695,
@@ -4556,6 +5201,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   38.694707,
+    lng:   -90.247635,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 775,
@@ -4576,6 +5224,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   38.711611,
+    lng:   -90.259127,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 695,
@@ -4597,6 +5248,9 @@ const HOMES = [
     beds:  "",
     baths: "",
     sqft:  "",
+    lat:   38.632209,
+    lng:   -90.204077,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 900,
@@ -4617,6 +5271,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "900",
+    lat:   39.834496,
+    lng:   -88.928359,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 575,
@@ -4638,6 +5295,9 @@ const HOMES = [
     beds:  "",
     baths: "",
     sqft:  "",
+    lat:   38.630496,
+    lng:   -90.204524,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 875,
@@ -4658,6 +5318,9 @@ const HOMES = [
     beds:  1,
     baths: 1,
     sqft:  "",
+    lat:   38.674425,
+    lng:   -90.268897,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 625,
@@ -4677,6 +5340,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   38.628884,
+    lng:   -90.094108,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 800,
@@ -4696,6 +5362,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   40.714004,
+    lng:   -89.564175,
+    geo:   "exact",
     status: "Pending",
 
     monthlyPayment: 875,
@@ -4715,6 +5384,9 @@ const HOMES = [
     beds:  2,
     baths: 1,
     sqft:  "",
+    lat:   39.179704,
+    lng:   -89.656661,
+    geo:   "exact",
     status: "Available",
 
     monthlyPayment: 725,

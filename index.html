@@ -724,7 +724,7 @@ body{
         <div class="card-price"><span class="num">${money(h.monthlyPayment)}</span><span class="per">/ month</span></div>
         <div class="card-mini">
           <div class="mini"><div class="k">To move in</div><div class="v">${h.moveIn ? money(h.moveIn) : "Ask us"}</div></div>
-          <div class="mini"><div class="k">Price</div><div class="v">${money(h.lockedPrice)}</div></div>
+          <div class="mini"><div class="k">Price</div><div class="v">${h.lockedPrice ? money(h.lockedPrice) : "Ask us"}</div></div>
         </div>
         <div class="card-specs">${specs}</div>
         ${h.address ? `<div class="card-addr" style="font-size:13.5px;color:var(--ink-soft);margin-bottom:12px">${h.address}, ${h.city}, ${h.state}${h.zip?` ${h.zip}`:""}</div>` : ""}

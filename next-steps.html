@@ -619,7 +619,7 @@ const DEAL_ROOM = {
   const moveInText = C.moveIn ? money(C.moveIn) : "Ask us";
   $("dMonthly").textContent = moneyR(C.monthlyPayment);
   $("dMoveIn").textContent  = moveInText;
-  $("dPrice").textContent   = moneyR(C.lockedPrice);
+  $("dPrice").textContent   = C.lockedPrice ? moneyR(C.lockedPrice) : "Ask us";
 
   $("ctaListing").href = `${C.id}.html`;
   if (C.monthlyPayment) $("whyFixed").textContent = `${moneyR(C.monthlyPayment)} a month, fixed`;

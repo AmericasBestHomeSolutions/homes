@@ -9,13 +9,13 @@
 <link rel="canonical" href="https://getownerfinancedhomes.com/peoria-il-1811-millman.html"/>
 <meta property="og:type" content="website"/>
 <meta property="og:site_name" content="Americas Best Home Solutions"/>
-<meta property="og:title" content="3 bed 2 bath in Peoria, IL — $895/mo"/>
-<meta property="og:description" content="1811 W Millman St. · $895/month · $1,000 to move in · $79,000 purchase price. Owner financing — no bank, no mortgage application."/>
+<meta property="og:title" content="3 bed 2 bath in Peoria, IL — $795/mo"/>
+<meta property="og:description" content="1811 W Millman St. · $795/month · $1,000 to move in · $69,000 purchase price. Owner financing — no bank, no mortgage application."/>
 <meta property="og:image" content="https://getownerfinancedhomes.com/images/peoria-il-1811-millman.jpg"/>
 <meta property="og:url" content="https://getownerfinancedhomes.com/peoria-il-1811-millman.html"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:title" content="3 bed 2 bath in Peoria, IL — $895/mo"/>
-<meta name="twitter:description" content="1811 W Millman St. · $895/month · $1,000 to move in · $79,000 purchase price. Owner financing — no bank, no mortgage application."/>
+<meta name="twitter:title" content="3 bed 2 bath in Peoria, IL — $795/mo"/>
+<meta name="twitter:description" content="1811 W Millman St. · $795/month · $1,000 to move in · $69,000 purchase price. Owner financing — no bank, no mortgage application."/>
 <meta name="twitter:image" content="https://getownerfinancedhomes.com/images/peoria-il-1811-millman.jpg"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -605,7 +605,7 @@ body.tl-pad{padding-bottom:70px}
   const moveInText = C.moveIn ? money(C.moveIn) : "Ask us";
   $("dMonthly").textContent = moneyR(C.monthlyPayment);
   $("dMoveIn").textContent  = moveInText;
-  $("dPrice").textContent   = moneyR(C.lockedPrice);
+  $("dPrice").textContent   = C.lockedPrice ? moneyR(C.lockedPrice) : "Ask us";
 
   // hero photo — uses heroPhoto if set, otherwise auto-tries images/<id>.jpg;
   // falls back to the branded navy face + city label if there's no photo.
@@ -629,7 +629,7 @@ body.tl-pad{padding-bottom:70px}
   const terms = [
     ["Your monthly payment", money(C.monthlyPayment), true],
     ["Move-in payment", moveInText, false],
-    ["Purchase price", money(C.lockedPrice), false],
+    ["Purchase price", C.lockedPrice ? money(C.lockedPrice) : "Ask us", false],
     ["Financing", C.termText, false],
     ["The home", `${C.beds} bd · ${C.baths} ba${C.sqft?` · ${Number(C.sqft).toLocaleString()} sqft`:""}`, false],
     ["Location", `${C.address?C.address+", ":""}${C.city}, ${C.state}${C.zip?" "+C.zip:""}`, false],

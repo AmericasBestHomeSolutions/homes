@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (220 live, rebuilt from master published 2026-10-13) --- */
+/* --- the homes (224 live, rebuilt from master published 2026-10-13) --- */
 const HOMES = [
   {
     id: "montgomery-al-3120-lower",
@@ -1152,7 +1152,7 @@ const HOMES = [
     address:     "1749 N College St",
     zip:         "62526",
     description: "Move in ready",
-    copy:        "Two bedrooms in Decatur, $950 a month, and $3,000 puts the keys in your hand. This 2 bedroom, 1 bath home offers 672 square feet that's move-in ready, so there's no waiting on repairs before you settle in. That changes the whole timeline. Instead of telling yourself you'll own a place someday, the first payment you make here goes toward a home with your name on the paperwork, starting now. The purchase price is $95,000, agreed on in writing the day you sign, with owner financing and no bank anywhere in the process. No mortgage application, no loan officer deciding your future. The home is sold as-is, and we'd be glad to walk you through every room in person before you decide. Homes at this payment tend to go quickly, so send us a text or message now and let's get you inside for a look.",
+    copy:        "Two bedrooms in Decatur at $900 a month, with $2,500 getting you through the front door. This 672-square-foot home has two bedrooms and one bath, and it's ready to move into now, with no projects standing between you and your first night there. That matters, because owning stops being a someday plan and starts the week you carry your things inside. The purchase price is $95,000, agreed in writing the day you sign. There's no bank and no mortgage application, just owner financing from start to finish. The home is sold as-is, and we'd be glad to walk through every room with you so you can judge it with your own eyes. If this feels like your move, send us a text or message now, before someone else grabs the first showing.",
     city:  "Decatur",
     state: "IL",
     beds:  2,
@@ -1160,8 +1160,8 @@ const HOMES = [
     sqft:  "672",
     status: "Available",
 
-    monthlyPayment: 950,
-    moveIn:         3000,
+    monthlyPayment: 900,
+    moveIn:         2500,
     lockedPrice:    95000,
     termText:       "30-year owner financing (contract for deed)",
 
@@ -1173,7 +1173,7 @@ const HOMES = [
     address:     "909 S Maffit St",
     zip:         "62521",
     description: "830 sqft, newer paint and floors",
-    copy:        "$875 a month and $2,750 at move-in put a three-bedroom home in Decatur within reach. This 830-square-foot house has one bathroom, newer paint on the walls, and newer floors underfoot, so the space already feels cared for. Three bedrooms means you can finally stop squeezing: a real bedroom, a guest room, an office, a hobby space, whatever your life calls for. You can settle in knowing the next move isn't on someone else's schedule. The purchase price is $89,000, fixed in your agreement the day you sign, with no bank in the middle and no mortgage application to fill out. The house is sold as-is, and the best way to judge it is to walk through the rooms in person. Homes at this payment don't sit long, so send us a text now and get your showing on the calendar.",
+    copy:        "Three bedrooms in Decatur at $850 a month, with $2,500 bringing you through the front door as the buyer, not a tenant. This 830-square-foot home has one bathroom, and the paint and flooring are on the newer side, so the place shows well from the first step inside. With three bedrooms, you can finally hang pictures, set up a spare room the way you want, and stop wondering where you'll have to move next year. The purchase price is $84,995, fixed in your agreement from the day you sign, with owner financing and no bank weighing in. The home is sold as-is, and the best way to judge it is to stand in those rooms in person, so come walk through it. Homes at this payment don't sit around long, so send us a text or message now to set up a time.",
     city:  "Decatur",
     state: "IL",
     beds:  3,
@@ -1181,9 +1181,9 @@ const HOMES = [
     sqft:  "830",
     status: "Available",
 
-    monthlyPayment: 875,
-    moveIn:         2750,
-    lockedPrice:    89000,
+    monthlyPayment: 850,
+    moveIn:         2500,
+    lockedPrice:    84995,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
@@ -1722,6 +1722,7 @@ const HOMES = [
     address:     "1755 N Monroe St",
     zip:         "62526",
     description: "1152 SF, Large yard, new roof, new exterior doors and some new windows in Jan 2026. Needs a furnace and some work on the porch, a permit for the porch is required",
+    copy:        "Three bedrooms in Decatur at $825 a month, with $2,500 to move in. This 1,152-square-foot home has one bath, a large backyard, and some of the big-ticket items already handled: a new roof, new exterior doors, and some new windows installed in January 2026. It does need a furnace, and the porch needs work that requires a permit. That's where the opportunity is. Every repair you make adds value to a home you're buying, not to a landlord's property. The purchase price is $89,000, set in writing when you sign, with owner financing and no bank to answer to. It's sold as-is, so come walk through every room and judge it with your own eyes. Homes at this payment don't wait around, so send us a text and let's get you inside.",
     city:  "Decatur",
     state: "IL",
     beds:  3,
@@ -1729,8 +1730,8 @@ const HOMES = [
     sqft:  "",
     status: "Pending",
 
-    monthlyPayment: 800,
-    moveIn:         2000,
+    monthlyPayment: 825,
+    moveIn:         2500,
     lockedPrice:    89000,
     termText:       "30-year owner financing (contract for deed)",
 
@@ -2144,7 +2145,7 @@ const HOMES = [
     address:     "3511 Converse Ave",
     zip:         "62207",
     description: "New clean out.(8/7/26). 3 Bedrooms, 1 Bath, 698 Sq. ft. All utilities on",
-    copy:        "Three bedrooms, one bath, $915 a month, and $1,600 opens the door. This 698-square-foot home in East St. Louis puts every room under a roof that's headed toward your name, not a landlord's. With three bedrooms there's space to spread out, and when you hang pictures on these walls, you're hanging them in a place you're buying, not borrowing. The purchase price is $76,500, written into your agreement the day you sign. It comes with owner financing and no bank anywhere in the process: no mortgage application and no waiting on an underwriter's verdict. The home is sold as-is, so come walk through it in person and see how it fits your plans. Homes at this payment don't sit long. Send us a text now and grab a showing time before someone else does.",
+    copy:        "Three bedrooms, one bath, $895 a month, and $1,600 opens the door. This 698-square-foot home in East St. Louis gives you three separate bedrooms, so every room can have a purpose and every box gets unpacked one final time, in a place where no one else decides whether you get to stay next year. There's no bank to win over and no mortgage application to fill out. This is owner financing, plain and simple. The purchase price is $76,500, agreed in writing on the day you sign, with no lender stepping in to change the terms. The home is sold as-is, so come walk through every room in person and decide for yourself. A three-bedroom at this payment won't wait around long. Send us a text or message now and let's get you inside.",
     city:  "East St. Louis",
     state: "IL",
     beds:  3,
@@ -2152,7 +2153,7 @@ const HOMES = [
     sqft:  "698",
     status: "Available",
 
-    monthlyPayment: 915,
+    monthlyPayment: 895,
     moveIn:         1600,
     lockedPrice:    76500,
     termText:       "30-year owner financing (contract for deed)",
@@ -2438,7 +2439,7 @@ const HOMES = [
     address:     "221 E Cherry St",
     zip:         "62550",
     description: "221 E Cherry St. Moweaqua, IL 62550. Clean 3 bedroom 2 bath.. 1030sqft on a 6098 sqft lot.. Privacy of a single family home in a big lot.. prime location. Quiet neighborhood. Well maintained house. Good mechanicals.. newer water heater.. metal roof. in great condition.. Great foundation & Structure.. 3x the monthly payments",
-    copy:        "Three bedrooms, two baths, and a backyard in Moweaqua, all for $1,250 a month with $3,000 to move in. This 1,030 sq ft single-family home sits on a roomy 6,098 sq ft lot and has been well maintained. It has a metal roof in great condition, good mechanicals, a newer water heater, and a solid foundation and structure. Out back is the kind of yard where an evening outside finally feels settled, with no landlord deciding whether you get another year there. The purchase price is $136,000, agreed on the day you sign, with owner financing and no bank in the middle. The home is sold as-is, so come walk through every room and judge it with your own eyes. Homes like this don't sit long, so send us a text now and let's get your showing on the calendar.",
+    copy:        "Three bedrooms, two baths, $1,125 a month, and $3,000 to get the keys in Moweaqua. This 1,030 sq ft single-family home sits on a generous lot, and it has been well kept: a clean interior, a metal roof in great condition, a newer water heater, solid mechanicals, and a sound foundation underneath it all. Out back, the yard is yours to use however you like, whether that's a late-afternoon cookout or a quiet hour with your coffee, and nobody else gets to decide whether you're staying next year. The purchase price is $136,000, set in writing when you sign, with owner financing instead of a bank. It's sold as-is, so come walk through it and judge it with your own eyes. Homes this well cared for don't sit open long, so send us a text and let's get you inside.",
     city:  "Moweaqua",
     state: "IL",
     beds:  3,
@@ -2446,7 +2447,7 @@ const HOMES = [
     sqft:  "1030",
     status: "Available",
 
-    monthlyPayment: 1250,
+    monthlyPayment: 1125,
     moveIn:         3000,
     lockedPrice:    136000,
     termText:       "30-year owner financing (contract for deed)",
@@ -2543,7 +2544,7 @@ const HOMES = [
     id: "peoria-il-1811-millman",
     address:     "1811 W Millman St",
     zip:         "61605",
-    copy:        "Three bedrooms and two baths for $895 a month, with $1,000 getting you the keys. This Peoria home offers 1,278 square feet, enough room that every bedroom gets a real purpose and the moving boxes get emptied for good instead of stacked by the door, waiting on the next lease. The purchase price is $79,000, agreed in writing when you sign, and the financing comes straight from the owner. There's no bank, no mortgage application, and no waiting on a loan officer's call. The home is sold as-is, so come walk through every room in person and make up your own mind before you decide anything. A home like this at this payment won't wait around forever. Send us a text or message now and let's get a showing on your calendar this week.",
+    copy:        "$795 a month. $1,000 to move in. A 3-bedroom, 2-bath home in Peoria, IL that finally puts your name on the door. At 1,278 square feet, it gives you three bedrooms and two full baths to work with, which means fewer lines in the morning and real room to settle in. That $795 is written into your agreement, so you can plan your budget a year from now with the same number you see today, instead of bracing for a rent hike every time a lease runs out. The purchase price is $69,000, agreed the day you sign, through owner financing with no bank in the picture. The home is sold as-is, and you're welcome to walk every room in person first. Payments like this get noticed fast, so message or text us now to grab a showing time.",
     city:  "Peoria",
     state: "IL",
     beds:  3,
@@ -2551,9 +2552,9 @@ const HOMES = [
     sqft:  "1278",
     status: "Available",
 
-    monthlyPayment: 895,
+    monthlyPayment: 795,
     moveIn:         1000,
-    lockedPrice:    79000,
+    lockedPrice:    69000,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
@@ -3508,7 +3509,7 @@ const HOMES = [
     address:     "4103 Beachwood Ave",
     zip:         "63121",
     description: "Welcome home to this 3-bedroom, 1-bath two-story home offering comfortable living space and a functional layout. The main level features a living room, dining room, and kitchen, while an inviting open front porch provides the perfect spot to relax and unwind. Additional features include vinyl siding, gas heat, and a full basement offering ample storage space. A wonderful opportunity to make this home your own!",
-    copy:        "$833 a month and $2,000 to move in gets you the keys to a three-bedroom, two-story home in St. Louis. The main floor has a living room, a dining room, and a kitchen, and an open front porch waits out front for your morning coffee. Below is a full basement with plenty of storage, and vinyl siding and gas heat round things out. With three bedrooms, everyone under this roof gets a door to close, and the moving boxes get unpacked for good instead of stacked in a corner waiting for the next lease. The purchase price is $87,000, set the moment you sign, with owner financing and no bank in the picture. The home is sold as-is, so come walk every room and judge it with your own eyes. Send us a text now and grab a showing time before someone else does.",
+    copy:        "$763 a month, $2,000 to move in, and a two-story St. Louis home with three bedrooms and one bath. The main floor runs from living room to dining room to kitchen, an open front porch gives you a place to sit out front, and a full basement takes care of storage. Vinyl siding and gas heat round it out. Your monthly payment is written into the contract, so you know exactly what's due month after month, with no landlord raising it when the lease comes up. The purchase price is $79,000, settled the day you sign, with owner financing and no bank in the middle. The home is sold as-is, so come walk through every room and see how it fits the way you live. Send us a text while it's still available, and we'll set up a time for you to see it.",
     city:  "St. Louis",
     state: "MO",
     beds:  3,
@@ -3516,9 +3517,9 @@ const HOMES = [
     sqft:  "",
     status: "Available",
 
-    monthlyPayment: 833,
+    monthlyPayment: 763,
     moveIn:         2000,
-    lockedPrice:    87000,
+    lockedPrice:    79000,
     termText:       "30-year owner financing (contract for deed)",
 
     features: { basement: "yes" },
@@ -3801,6 +3802,28 @@ const HOMES = [
     photos:    ["images/middletown-oh-3117-finley-1.jpg", "images/middletown-oh-3117-finley-2.jpg", "images/middletown-oh-3117-finley-3.jpg", "images/middletown-oh-3117-finley-4.jpg", "images/middletown-oh-3117-finley-5.jpg", "images/middletown-oh-3117-finley-6.jpg", "images/middletown-oh-3117-finley-7.jpg", "images/middletown-oh-3117-finley-8.jpg", "images/middletown-oh-3117-finley-9.jpg", "images/middletown-oh-3117-finley-10.jpg", "images/middletown-oh-3117-finley-11.jpg"],
   },
   {
+    id: "flint-mi-1206-markham",
+    address:     "1206 Markham St",
+    zip:         "48507",
+    description: "3bd 1ba, Roof is only 3 years old, well livable with some tlc, washer and dryer in mud room, lot is 6970sqft, with storage shed in back. Off street parking",
+    copy:        "Three bedrooms, $996 a month, and $5,000 to move in, right here in Flint. This 1,200-square-foot home has one bath, a roof just three years old, laundry in the mud room, and off-street parking so you're never circling the block after a long shift. Out back, a nearly 7,000-square-foot lot with a storage shed gives you room to plant a garden or fire up a grill on a warm evening, and nobody but you gets to decide whether you stay another season. The purchase price is $119,500, set in writing when you sign, with owner financing and no bank in the middle. It's sold as-is, so come walk through every room and get a feel for it before you commit. This one won't stay open for long. Send us a text now and we'll set up your showing.",
+    city:  "Flint",
+    state: "MI",
+    beds:  3,
+    baths: 1,
+    sqft:  "1,200",
+    status: "Available",
+
+    monthlyPayment: 996,
+    moveIn:         5000,
+    lockedPrice:    119500,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { backyard: "yes", off_street_parking: "yes", storage_shed: "yes" },
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
     id: "stlouis-mo-10068-royal",
     address:     "10068 Royal Dr",
     zip:         "63136",
@@ -3884,6 +3907,27 @@ const HOMES = [
     photos:    [],
   },
   {
+    id: "stlouis-mo-3-pohlman",
+    address:     "3 Pohlman Lane",
+    zip:         "63136",
+    description: "Approved for occupancy by the county.. All utilities on. All systems inspected and approved by the county.. A copy of the passed occupancy inspection can be provided",
+    copy:        "Two bedrooms and one bath in St. Louis, at $1,250 a month with $3,000 to get the keys. This home has already been approved for occupancy, with its systems inspected and signed off, and a copy of the passed inspection is available for you to review. Your monthly payment is a fixed number written into your agreement, the same amount next spring and the spring after, with no one across a desk deciding it's time to raise it. The purchase price is $119,000, settled in writing when you sign, through owner financing with no bank and no mortgage application. The home is sold as-is, so come walk through every room and size it up with your own eyes. Homes like this don't sit open for long. Send us a text now and we'll find you a time to come by.",
+    city:  "St. Louis",
+    state: "MO",
+    beds:  2,
+    baths: 1,
+    sqft:  "",
+    status: "Available",
+
+    monthlyPayment: 1250,
+    moveIn:         3000,
+    lockedPrice:    119000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
     id: "stlouis-mo-5341-goodfellow",
     address:     "5341 Goodfellow Blvd",
     zip:         "63136",
@@ -3944,7 +3988,7 @@ const HOMES = [
 
     features: { backyard: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/duquoin-il-322-cole-1.jpg", "images/duquoin-il-322-cole-2.jpg", "images/duquoin-il-322-cole-3.jpg", "images/duquoin-il-322-cole-4.jpg", "images/duquoin-il-322-cole-5.jpg"],
   },
   {
     id: "stlouis-mo-10516-baron",
@@ -4296,7 +4340,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/carbondale-il-303-sycamore-1.jpg", "images/carbondale-il-303-sycamore-2.jpg", "images/carbondale-il-303-sycamore-3.jpg", "images/carbondale-il-303-sycamore-4.jpg", "images/carbondale-il-303-sycamore-5.jpg", "images/carbondale-il-303-sycamore-6.jpg", "images/carbondale-il-303-sycamore-7.jpg", "images/carbondale-il-303-sycamore-8.jpg", "images/carbondale-il-303-sycamore-9.jpg", "images/carbondale-il-303-sycamore-10.jpg", "images/carbondale-il-303-sycamore-11.jpg", "images/carbondale-il-303-sycamore-12.jpg", "images/carbondale-il-303-sycamore-13.jpg", "images/carbondale-il-303-sycamore-14.jpg", "images/carbondale-il-303-sycamore-15.jpg", "images/carbondale-il-303-sycamore-16.jpg", "images/carbondale-il-303-sycamore-17.jpg", "images/carbondale-il-303-sycamore-18.jpg", "images/carbondale-il-303-sycamore-19.jpg", "images/carbondale-il-303-sycamore-20.jpg", "images/carbondale-il-303-sycamore-21.jpg", "images/carbondale-il-303-sycamore-22.jpg", "images/carbondale-il-303-sycamore-23.jpg", "images/carbondale-il-303-sycamore-24.jpg"],
   },
   {
     id: "jackson-ms-533-stillwood",
@@ -4375,6 +4419,28 @@ const HOMES = [
     lockedPrice:    69000,
     termText:       "30-year owner financing (contract for deed)",
 
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "detroit-mi-18465-caldwell",
+    address:     "18465 Caldwell Street",
+    zip:         "48234",
+    description: "This house needs cosmetic work but it has new plumbing, electrical, and roof. The furnace and water heater are used but appear to have been recently installed. It has hardwood floors that can be refinished and a large backyard. The kitchen and bathroom floors were recently replaced",
+    copy:        "$795 a month and $2,000 to move in, for a Detroit house where the expensive work is already done. This 2-bedroom, 1-bath home of about 720 square feet has new plumbing, new electrical, a new roof, and a newer furnace and water heater. The hardwood floors are waiting to be refinished, and the kitchen and bathroom floors were recently replaced. The large backyard is yours to plant, grill in, or simply enjoy on a warm night without wondering whether a landlord will let you stay. The purchase price is $68,000, agreed in writing when you sign, through owner financing with no bank in the middle. It's sold as-is, so come walk every room in person and judge it yourself. Homes like this don't sit long. Send us a text now to grab a showing.",
+    city:  "Detroit",
+    state: "MI",
+    beds:  2,
+    baths: 1,
+    sqft:  "720",
+    status: "Available",
+
+    monthlyPayment: 795,
+    moveIn:         2000,
+    lockedPrice:    68000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { backyard: "yes" },
     heroPhoto: "",
     photos:    [],
   },
@@ -4493,6 +4559,26 @@ const HOMES = [
     status: "Available",
 
     monthlyPayment: 775,
+    moveIn:         1500,
+    lockedPrice:    69000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "stlouis-mo-5639-wilborn",
+    address:     "5639 Wilborn Drive",
+    zip:         "63136",
+    copy:        "$695 a month and $1,500 to move in. That's the doorway to a two-bedroom, one-bath home in St. Louis, Missouri, with your name on the paperwork instead of a landlord's. There's no bank to win over and no mortgage application to fill out. This is owner financing, plain and simple. The payment you agree to stays the same in writing month after month, so when the calendar flips to a new year, you won't be bracing for a letter announcing a higher number. That steadiness is what lets you plan, save, and finally breathe. The purchase price is $69,000, fixed at signing, with no lender standing between you and the keys. The home is sold as-is, so come walk through every room in person and judge it with your own eyes. Homes at this price don't sit long. Send us a text now and claim your showing.",
+    city:  "St. Louis",
+    state: "MO",
+    beds:  2,
+    baths: 1,
+    sqft:  "",
+    status: "Available",
+
+    monthlyPayment: 695,
     moveIn:         1500,
     lockedPrice:    69000,
     termText:       "30-year owner financing (contract for deed)",

@@ -4424,7 +4424,7 @@ const HOMES = [
     lat:   38.668801,
     lng:   -90.21288,
     geo:   "exact",
-    status: "Available",
+    status: "Pending",
 
     monthlyPayment: 750,
     moveIn:         3000,

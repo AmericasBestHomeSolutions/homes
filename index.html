@@ -58,15 +58,16 @@ body{
 @media (max-width:520px){ .topnav{flex-wrap:wrap} .topnav a{font-size:13px;padding:10px 8px} .topnav a.call{padding:11px 12px} }
 
 /* ── HERO ────────────────────────────────────────────────── */
-.hero{position:relative;background:linear-gradient(160deg,#17376a 0%,#0f2444 100%);color:#fff;border-radius:26px;overflow:hidden;margin-top:6px;padding:40px 28px 30px}
-.hero-art{position:relative;width:100%;height:auto;display:block;opacity:.8;margin-top:22px;pointer-events:none}
-.hero-inner{position:relative;z-index:2;max-width:620px}
-.hero .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#a9c4e8;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);padding:6px 12px;border-radius:999px;margin-bottom:16px}
-.hero h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(32px,7vw,52px);line-height:1.03;letter-spacing:-1.2px;margin-bottom:14px}
+.hero{position:relative;background:linear-gradient(160deg,#17376a 0%,#0f2444 100%);color:#fff;border-radius:22px;overflow:hidden;margin-top:6px;padding:22px 24px 14px}
+.hero-art{position:relative;width:100%;height:auto;max-height:44px;display:block;opacity:.7;margin-top:10px;pointer-events:none}
+.hero-inner{position:relative;z-index:2;max-width:720px}
+.hero .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#a9c4e8;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);padding:5px 10px;border-radius:999px;margin-bottom:10px}
+.hero h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(32px,7vw,52px);line-height:1.03;letter-spacing:-1.2px;margin-bottom:10px}
 .hero h1 em{font-style:normal;color:#ff5c5c}
-.hero p.hero-lead{font-size:clamp(16px,2.3vw,19px);color:#d3e3f7;max-width:44ch;margin-bottom:8px}
-.hero p.reassure{font-size:15px;color:#9fbce4;max-width:44ch;margin-bottom:24px}
+.hero p.hero-lead{font-size:clamp(14px,2vw,15.5px);line-height:1.5;color:#d3e3f7;max-width:62ch;margin-bottom:6px}
+.hero p.reassure{font-size:13.5px;line-height:1.45;color:#9fbce4;max-width:62ch;margin-bottom:14px}
 .hero-cta{display:flex;gap:10px;flex-wrap:wrap}
+.hero .hero-cta .btn{padding:11px 18px;font-size:15px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;text-align:center;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:700;font-size:16px;padding:15px 22px;border-radius:13px;transition:transform .12s ease,background .15s ease;cursor:pointer;border:none}
 .btn:active{transform:scale(.98)}
 .btn:focus-visible{outline:3px solid var(--honey);outline-offset:2px}
@@ -76,8 +77,8 @@ body{
 .btn-ghost:hover{background:rgba(255,255,255,.14)}
 
 /* trust stat strip under hero */
-.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:18px;position:relative;z-index:3}
-.stat{background:var(--card);padding:16px 12px;text-align:center}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden;margin-top:12px;position:relative;z-index:3}
+.stat{background:var(--card);padding:10px 12px;text-align:center}
 .stat .n{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(18px,4vw,24px);color:var(--pine);line-height:1}
 .stat .l{font-family:'DM Mono',monospace;font-size:9.5px;letter-spacing:.5px;text-transform:uppercase;color:var(--ink-soft);margin-top:6px}
 @media (max-width:600px){ .stats{grid-template-columns:1fr 1fr} }
@@ -274,8 +275,8 @@ body{
       <a class="nav-hide" href="/about">About</a>
       <a class="nav-hide" href="/contact">Contact</a>
       <a class="call" id="navCall" href="#">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <span id="navCallText">Call us</span>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        <span id="navCallText">Text us</span>
       </a>
     </nav>
   </header>
@@ -898,8 +899,8 @@ body{
   const tel = (CONTACT.phone||"").replace(/[^\d+]/g,"");
   const pretty = tel.length===10 ? `(${tel.slice(0,3)}) ${tel.slice(3,6)}-${tel.slice(6)}` : (CONTACT.phone||"");
   const smsBody = encodeURIComponent(`Hi ${CONTACT.contactName}, I'm looking for an owner-financed home.`);
-  $("navCall").href = `tel:${tel}`;
-  $("navCallText").textContent = pretty || "Call us";
+  $("navCall").href = `sms:${tel}?&body=${smsBody}`;
+  $("navCallText").textContent = "Text us";
   // (the footer now prints the number and address literally, for carrier
   //  vetting — there's no footCall link left to wire up here)
   $("aboutText").href = `sms:${tel}?&body=${smsBody}`;

@@ -387,6 +387,7 @@ body{
       <div class="count-row" style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:8px">
         <p class="count" id="count" style="margin:0"></p>
         <button id="copyLink" type="button" style="display:none;font-family:'DM Mono',monospace;font-size:13px;padding:8px 14px;border-radius:10px;border:1.5px solid var(--line);background:var(--card);color:var(--pine,#15315e);cursor:pointer;white-space:nowrap">🔗 Share this search</button>
+        <button id="alertBtn" type="button" style="display:none;font-family:'DM Sans',sans-serif;font-weight:700;font-size:14px;padding:9px 16px;border-radius:10px;border:1.5px solid var(--go,#e23b3b);background:var(--go,#e23b3b);color:#fff;cursor:pointer;white-space:nowrap"></button>
       </div>
     </div>
 
@@ -857,6 +858,15 @@ body{
   })();
 
   if (window.HomesMap) HomesMap.mount({ rerender: render, sync: syncURL });
+  if (window.HomesCart && HomesCart.alert){
+    const ab = $("alertBtn"); ab.textContent = HomesCart.alertLabel; ab.style.display = "inline-block";
+    ab.addEventListener("click", () => {
+      const num = v => (v||"").split(":")[1] || "";
+      const ns = window.HomesMap && HomesMap.nearState && HomesMap.nearState();
+      HomesCart.alert({ state: $("fState").value, near: ns ? ns.label : $("fCity").value, miles: ns ? ns.miles : 25,
+        pay: num($("fPay").value), down: num($("fDown").value), beds: $("fBeds").value });
+    });
+  }
   applyURL();
   render();
   if (window.HomesMap) HomesMap.fromURL(new URLSearchParams(location.search));

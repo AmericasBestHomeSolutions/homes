@@ -349,5 +349,5 @@
     } else start();
   }
 
-  window.HomesMap = { mount, applyGeo, update, toURL, fromURL, mini, T, pinned, miles, active: () => !!(S.near || S.area) };
+  window.HomesMap = { mount, applyGeo, update, toURL, fromURL, mini, T, pinned, miles, nearState: () => (S.near && !S.near.me ? { label:S.near.label, miles:S.miles } : null), active: () => !!(S.near || S.area) };
 })();

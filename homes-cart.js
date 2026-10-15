@@ -337,8 +337,94 @@
   }, true);
   window.addEventListener("storage", ev => { if (ev.key === KS || ev.key === KC){ saved = live(load(KS)); cmp = live(load(KC)); sync(); } });
 
+
+  /* ══════════ HOME ALERTS — "text me new homes like this" ══════════
+     Posts to the same Formspree + Make endpoints as every lead form, source "Home alert".
+     scripts/alerts.py (Filling repo) turns those submissions into subscribers. An alert IS a text,
+     so the SMS opt-in box is REQUIRED here (everywhere else it's optional). */
+  const TA = ES ? {
+    btn:"🔔 Avíseme por texto de casas nuevas", h:"Avíseme cuando salga una casa así", lead:"Le escribimos solo cuando entra una casa nueva que cumple con lo que pide. Sin spam — puede cancelar con STOP en cualquier momento.",
+    near:"Cerca de (ciudad o código postal)", within:"Dentro de", state:"o elija un estado", anyState:"Cualquier estado", pay:"Pago mensual máximo", down:"Efectivo máximo para mudarse",
+    beds:"Habitaciones (mínimo)", any:"Cualquiera", go:"Activar mis alertas", sending:"Enviando…", needWhere:"Escriba una ciudad o código postal, o elija un estado.",
+    noPlace:"Todavía no tenemos casas ahí — pruebe con una ciudad cercana o elija un estado.", needConsent:"Marque la casilla de mensajes de texto — las alertas se envían por texto.",
+    doneH:"¡Listo — está en la lista!", doneP:"Le enviaremos un texto de confirmación y luego avisaremos cada vez que entre una casa que cumpla.", mi:"mi",
+    required:"Necesaria para recibir alertas por texto."
+  } : {
+    btn:"🔔 Text me new homes like this", h:"Text me when a home like this comes in", lead:"We only text when a new home fits what you ask for. No spam — reply STOP anytime.",
+    near:"Near (city or zip)", within:"Within", state:"or pick a state", anyState:"Any state", pay:"Max monthly payment", down:"Max cash to move in",
+    beds:"Bedrooms (minimum)", any:"Any", go:"Turn on my alerts", sending:"Sending…", needWhere:"Enter a city or zip, or pick a state.",
+    noPlace:"We don't have homes there yet — try a nearby city or pick a state.", needConsent:"Check the text-message box — alerts are sent by text.",
+    doneH:"You're on the list!", doneP:"We'll text a confirmation, then let you know each time a home that fits comes in.", mi:"mi",
+    required:"Required to get text alerts."
+  };
+  function placeKnown(q){
+    const t = (q||"").trim().toLowerCase(); if (!t) return false;
+    const zip = /^\d{5}$/.test(t);
+    return ALL().some(h => typeof h.lat === "number" && (zip ? String(h.zip||"").slice(0,5) === t : (h.city||"").toLowerCase() === t.split(",")[0].trim()));
+  }
+  function ensureAlertModal(){
+    if ($("haModal")) return;
+    const m = document.createElement("div"); m.className = "hc-modal"; m.id = "haModal";
+    m.innerHTML = `<div class="hc-box" style="max-width:480px" role="dialog" aria-modal="true" aria-label="${esc(TA.h)}"><div id="haBody"></div></div>`;
+    document.body.appendChild(m);
+    m.addEventListener("click", e => { if (e.target === m) m.classList.remove("show"); });
+    document.addEventListener("keydown", e => { if (e.key === "Escape") m.classList.remove("show"); });
+  }
+  function openAlert(pre){
+    pre = pre || {}; ensureAlertModal(); addStyle();
+    const states = [...new Set(ALL().map(h => h.state).filter(Boolean))].sort();
+    const sel = (opts, cur) => opts.map(([v, l]) => `<option value="${v}" ${String(cur||"")===String(v)?"selected":""}>${l}</option>`).join("");
+    $("haBody").innerHTML = `<div class="hc-head"><h3>${esc(TA.h)}</h3><button class="hc-x" type="button" data-ha="close" aria-label="Close">×</button></div>
+      <p style="margin:0 0 6px;color:var(--ink-soft,#5b6577);font-size:14.5px">${TA.lead}</p>
+      <form class="hc-form" id="haForm">
+        <label class="f" for="haNear">${TA.near}</label><input id="haNear" name="alert_near" type="text" value="${esc(pre.near||"")}" autocomplete="off">
+        <div class="hc-two"><div><label class="f" for="haMi">${TA.within}</label><select id="haMi" name="alert_miles">${sel([[10,"10 "+TA.mi],[25,"25 "+TA.mi],[50,"50 "+TA.mi],[100,"100 "+TA.mi]], pre.miles||25)}</select></div>
+          <div><label class="f" for="haState">${TA.state}</label><select id="haState" name="alert_state"><option value="">${TA.anyState}</option>${sel(states.map(x=>[x,x]), pre.state)}</select></div></div>
+        <div class="hc-two"><div><label class="f" for="haPay">${TA.pay}</label><select id="haPay" name="alert_max_pay">${sel([["",TA.any],[700,"$700"],[900,"$900"],[1100,"$1,100"],[1300,"$1,300"]], pre.pay)}</select></div>
+          <div><label class="f" for="haDown">${TA.down}</label><select id="haDown" name="alert_max_down">${sel([["",TA.any],[1500,"$1,500"],[2000,"$2,000"],[2500,"$2,500"],[3000,"$3,000"],[4000,"$4,000"]], pre.down)}</select></div></div>
+        <label class="f" for="haBeds">${TA.beds}</label><select id="haBeds" name="alert_beds">${sel([["",TA.any],[1,"1+"],[2,"2+"],[3,"3+"],[4,"4+"]], pre.beds)}</select>
+        <label class="f" for="haName">${T.name}</label><input id="haName" name="name" type="text" autocomplete="name" required>
+        <label class="f" for="haPhone">${T.phone}</label><input id="haPhone" name="phone" type="tel" autocomplete="tel" required>
+        <label class="f" for="haEmail">${T.email}</label><input id="haEmail" name="email" type="email" autocomplete="email">
+        <label style="display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.5;color:var(--ink-soft,#5b6577);background:var(--paper,#f4f7fc);border:1px solid var(--line,#e2e8f2);border-radius:12px;padding:12px">
+          <input name="sms_consent" type="checkbox" value="${ES?"Sí":"Yes"}" required style="margin-top:3px;width:16px;height:16px;flex-shrink:0"><span>${T.consent}</span></label>
+        <p style="font:12px 'DM Mono',monospace;color:var(--ink-soft,#5b6577);margin:0">${TA.required}</p>
+        <button type="submit" class="hc-cta" id="haSubmit" style="margin-top:2px">${TA.go}</button>
+        <p id="haNote" style="font-size:13px;color:var(--honey,#e23b3b);margin:0" role="alert"></p>
+      </form>`;
+    $("haForm").addEventListener("submit", submitAlert);
+    $("haModal").classList.add("show");
+  }
+  async function submitAlert(e){
+    e.preventDefault();
+    const form = e.target, note = $("haNote"), btn = $("haSubmit");
+    const near = $("haNear").value.trim(), st = $("haState").value;
+    note.textContent = "";
+    if (!near && !st){ note.textContent = TA.needWhere; return; }
+    if (near && !placeKnown(near)){ note.textContent = TA.noPlace; return; }
+    if (!form.querySelector('input[name="sms_consent"]').checked){ note.textContent = TA.needConsent; return; }
+    const C = (typeof CONTACT !== "undefined") ? CONTACT : {};
+    const hook = (C.makeWebhook||"").trim(), fid = (C.formspreeId||"").trim();
+    btn.disabled = true; btn.textContent = TA.sending;
+    const data = new FormData(form);
+    if (!near) data.delete("alert_miles");
+    data.append("source", ES ? "Alerta de casas — casasconfinanciamiento" : "Home alert");
+    data.append("language", ES ? "es" : "en");
+    const crit = [near ? `near ${near} (${data.get("alert_miles")} mi)` : "", st ? "state " + st : "", data.get("alert_max_pay") ? "max pay $" + data.get("alert_max_pay") : "", data.get("alert_max_down") ? "max down $" + data.get("alert_max_down") : "", data.get("alert_beds") ? data.get("alert_beds") + "+ beds" : ""].filter(Boolean).join(" · ");
+    data.append("message", "HOME ALERT signup — " + crit);
+    try { if (typeof addConsentRecord === "function") await addConsentRecord(data, form); } catch(_){}
+    const targets = [];
+    if (fid)  targets.push(fetch(`https://formspree.io/f/${fid}`, { method:"POST", headers:{ "Accept":"application/json" }, body:data }));
+    if (hook) targets.push(fetch(hook, { method:"POST", body:data }));
+    const res = await Promise.allSettled(targets);
+    if (res.some(r => r.status === "fulfilled" && r.value.ok)){
+      $("haBody").innerHTML = `<div class="hc-head"><h3>${esc(TA.doneH)}</h3><button class="hc-x" type="button" data-ha="close" aria-label="Close">×</button></div><p>${TA.doneP}</p><p style="color:var(--ink-soft,#5b6577);font-size:14px">${esc(crit)}</p><button type="button" class="hc-cta" data-ha="close">${T.close}</button>`;
+    } else { btn.disabled = false; btn.textContent = TA.go; note.textContent = T.fail; }
+  }
+  document.addEventListener("click", e => { const x = e.target.closest("[data-ha]"); if (x && x.dataset.ha === "close") $("haModal").classList.remove("show"); }, true);
+
   function init(){ addStyle(); sync(); }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
 
-  window.HomesCart = { heart, compare, sync, open: openPanel, isSaved: id => saved.includes(id) };
+  window.HomesCart = { heart, compare, sync, open: openPanel, isSaved: id => saved.includes(id), alert: openAlert, alertLabel: TA.btn };
 })();

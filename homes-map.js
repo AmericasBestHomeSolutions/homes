@@ -122,6 +122,7 @@
       <div class="sp">${esc(specs)}</div>${dist}
       <div class="ad">${esc(h.address||"")}${h.address?", ":""}${esc(h.city)}, ${esc(h.state)}</div>
       <a class="go" href="${encodeURIComponent(h.id)}.html">${T.view}</a>
+      ${window.HomesCart?`<div style="display:flex;gap:8px;margin-top:8px;align-items:center">${HomesCart.heart(h,true)}${HomesCart.compare(h)}</div>`:""}
       ${h.geo==="approx"?`<div class="ap">${T.approx}</div>`:""}
     </div>`;
   }
@@ -266,6 +267,7 @@
     S.group.addLayers(pins.map(h => {
       const m = L.marker([h.lat, h.lng], { icon: pinIcon(L, h), riseOnHover:true });
       m.bindPopup(() => popupHTML(h), { maxWidth:260, autoPanPadding:[30,30] });
+      m.on("popupopen", () => window.HomesCart && HomesCart.sync());
       return m;
     }));
     if (S.ring){ S.ring.remove(); S.ring = null; }
@@ -334,7 +336,7 @@
         .map(h => (h._dist = miles(home.lat, home.lng, h.lat, h.lng), h)).filter(h => h._dist <= 10)
         .sort((x, y) => x._dist - y._dist);
       const near = all.slice(0, 10);
-      near.forEach(h => L.marker([h.lat, h.lng], { icon:pinIcon(L, h, "dim") }).bindPopup(() => popupHTML(h), { maxWidth:260 }).addTo(map));
+      near.forEach(h => L.marker([h.lat, h.lng], { icon:pinIcon(L, h, "dim") }).bindPopup(() => popupHTML(h), { maxWidth:260 }).on("popupopen", () => window.HomesCart && HomesCart.sync()).addTo(map));
       if (near.length && home.geo !== "approx"){
         map.fitBounds(L.latLngBounds([[home.lat, home.lng]].concat(near.map(h => [h.lat, h.lng]))), { padding:[36,36], maxZoom:15 });
       }

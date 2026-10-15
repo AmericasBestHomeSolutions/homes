@@ -730,6 +730,7 @@ body.tl-pad{padding-bottom:70px}
 })();
 </script>
 <script src="homes-map.js"></script>
+<script src="homes-cart.js"></script>
 <script>
 (function(){
   const id = window.__HOME_ID__ || new URLSearchParams(location.search).get("home");
@@ -737,6 +738,7 @@ body.tl-pad{padding-bottom:70px}
   if (!h || !window.HomesMap) return;
   const q = encodeURIComponent([h.address, h.city, h.state, h.zip].filter(Boolean).join(", "));
   document.getElementById("mapGoogle").href = "https://www.google.com/maps/search/?api=1&query=" + q;
+  if (window.HomesCart){ const n = document.getElementById("ctaNote"); if (n) n.insertAdjacentHTML("afterend", '<div class="hc-hero">' + HomesCart.heart(h, true) + HomesCart.compare(h) + '</div>'); HomesCart.sync(); }
   HomesMap.mini({ el: document.getElementById("mapEl"), home: h, section: document.getElementById("mapSec"), note: document.getElementById("mapNote") });
 })();
 </script>

@@ -332,7 +332,7 @@
       L.tileLayer(tileURL, { maxZoom:19, attribution:T.attrib }).addTo(map);
       L.marker([home.lat, home.lng], { icon:pinIcon(L, home, "cur"), zIndexOffset:1000 }).addTo(map);
       // the 10 closest other homes within 10 miles — enough to compare, not a pile-up in dense cities
-      const all = ALL().filter(h => h.id !== home.id && pinned(h) && !isPending(h))
+      const all = opts.solo ? [] : ALL().filter(h => h.id !== home.id && pinned(h) && !isPending(h))
         .map(h => (h._dist = miles(home.lat, home.lng, h.lat, h.lng), h)).filter(h => h._dist <= 10)
         .sort((x, y) => x._dist - y._dist);
       const near = all.slice(0, 10);

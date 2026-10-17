@@ -179,9 +179,29 @@ details.faq p{margin-top:10px;font-size:15px;color:var(--ink-soft);line-height:1
 .closing-card .sig{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:18px;color:#fff;margin:16px 0 18px}
 .closing-card .sig span{display:block;font-family:'DM Sans',sans-serif;font-weight:500;font-size:13px;color:#a9c4e8;margin-top:2px}
 .closing-card .cta-group{max-width:420px;margin:0 auto}
+.closing-card .btn-primary{box-shadow:0 6px 18px rgba(226,59,59,.35)}
 .closing-card .btn-secondary{background:transparent;color:#fff;border-color:rgba(255,255,255,.7)}
 .closing-card .btn-secondary:hover{background:rgba(255,255,255,.1)}
 @media (min-width:560px){ body{font-size:18px} }
+
+/* ── 2026-10-16: gallery + picture-yourself + potential/ownership ───────── */
+.gallery{margin:10px 0 0}
+.gal-strip{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x proximity;padding-bottom:6px;-webkit-overflow-scrolling:touch}
+.gal-strip a{flex:0 0 38%;max-width:200px;aspect-ratio:4/3;border-radius:12px;overflow:hidden;scroll-snap-align:start;background:#e3eaf5;display:block}
+.gal-strip img{width:100%;height:100%;object-fit:cover;display:block}
+.gal-more{display:inline-block;margin-top:6px;font-weight:700;font-size:15px;color:var(--pine);text-decoration:none}
+.gallery[hidden]{display:none}
+.feel{margin:16px 0 0;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.feel[hidden]{display:none}
+.feel h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;letter-spacing:-.4px;color:var(--pine);margin-bottom:6px}
+.feel p{font-size:15.5px;color:var(--ink-soft);line-height:1.6}
+.feel.picture{background:var(--honey-soft);border-color:#d9e5f5}
+.meter{position:relative}
+.keyrider{position:absolute;left:0;bottom:-4px;color:var(--go);transform:translateX(-50%) rotate(-35deg);transition:left .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1);background:var(--paper);border-radius:999px;padding:0 3px;line-height:0;filter:drop-shadow(0 2px 3px rgba(21,49,94,.25))}
+.keyrider.full{transform:translateX(-100%) rotate(0deg);color:var(--go)}
+.step.last .n{font-size:0}
+.step.last .n::before{content:'';width:22px;height:22px;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 24' fill='none' stroke='black' stroke-width='3.4' stroke-linecap='round'%3E%3Ccircle cx='9' cy='12' r='6.5'/%3E%3Cpath d='M15.5 12H44M36 12v7M43 12v5'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 24' fill='none' stroke='black' stroke-width='3.4' stroke-linecap='round'%3E%3Ccircle cx='9' cy='12' r='6.5'/%3E%3Cpath d='M15.5 12H44M36 12v7M43 12v5'/%3E%3C/svg%3E") center/contain no-repeat}
+@media (prefers-reduced-motion:reduce){.keyrider{transition:none}}
 </style>
 </head>
 <body>
@@ -235,15 +255,25 @@ details.faq p{margin-top:10px;font-size:15px;color:var(--ink-soft);line-height:1
       <span class="chip">Your home-to-be</span>
     </div>
 
+    <div class="gallery" id="gallery" hidden>
+      <div class="gal-strip" id="galStrip"></div>
+      <a class="gal-more" id="galMore" href="#">See all photos →</a>
+    </div>
+
     <p class="eyebrow" id="eyebrow"></p>
     <h1 class="headline" id="headline">Your next steps</h1>
-    <p class="tagline">A fixed monthly payment, a written agreement you review first, and a clear path to a home with your name on it.</p>
+    <p class="tagline">This is the beginning of an amazing, brighter future in your own home. A fixed monthly payment and a clear path toward owning it.</p>
     <p class="subaddr" id="subaddr"></p>
     <p class="specs" id="specs"></p>
 
     <div class="appt" id="apptCard" hidden>
       <div class="ic" aria-hidden="true">📅</div>
-      <div><div class="lab">Your tour</div><div class="when" id="apptWhen"></div><div class="sub">Need a different time? Just text us.</div></div>
+      <div><div class="lab">Your tour</div><div class="when" id="apptWhen"></div><div class="sub"><a id="reschedLink" href="#">Need a different time? Tap to text us.</a></div></div>
+    </div>
+
+    <div class="feel picture" id="pictureCard" hidden>
+      <h3>Picture yourself here</h3>
+      <p id="pictureText"></p>
     </div>
 
     <div class="paycard" id="payCard" hidden>
@@ -263,9 +293,25 @@ details.faq p{margin-top:10px;font-size:15px;color:var(--ink-soft);line-height:1
       <div class="why-title">Why this beats renting</div>
       <ul>
         <li><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><span><b id="whyFixed">Your payment is fixed</b>Written into your agreement, so it doesn't climb the way rent does.</span></li>
-        <li><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9h14v-9"/><path d="M10 19v-5h4v5"/></svg></span><span><b>You're moving toward owning</b>Every payment builds toward a home that's yours, not toward someone else's mortgage.</span></li>
+        <li><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9h14v-9"/><path d="M10 19v-5h4v5"/></svg></span><span><b>You're moving toward owning</b>Every payment builds toward owning the home, not toward someone else's mortgage.</span></li>
         <li><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg></span><span><b>No bank, nothing hidden</b>Seller financing, with every term in writing for you to review before you sign.</span></li>
       </ul>
+    </div>
+
+    <div class="feel">
+      <h3>See the potential</h3>
+      <p>Our homes are sold as-is, so part of the fun is seeing what a place can become, not just what it is today. When you tour, look past the photos and imagine your own touches: the paint, the layout, the little projects that make it yours over time.</p>
+    </div>
+
+    <div class="feel">
+      <h3>Building toward owning</h3>
+      <p>This isn't renting. It's a simple path toward owning your home: keep your payments up, show your commitment, and every month brings you one step closer. Imagine the day you can say, this one is ours.</p>
+    </div>
+
+    <div class="feel" id="mapSec" hidden>
+      <h3>Where your home sits</h3>
+      <div class="hm-mini" id="mapEl" style="margin-top:10px"></div>
+      <div class="hm-minifoot"><span></span><a id="mapGoogle" href="#" target="_blank" rel="noopener">Open in Google Maps →</a></div>
     </div>
 
     <div class="cta-group">
@@ -278,7 +324,7 @@ details.faq p{margin-top:10px;font-size:15px;color:var(--ink-soft);line-height:1
     <div class="sec-label">Your roadmap</div>
     <h2 class="sec-title" id="roadmapTitle">Your path to the keys</h2>
     <p class="roadmap-sub" id="roadmapSub"></p>
-    <div class="meter" id="meter"><div class="meter-top"><span id="meterLab"></span><b id="meterPct"></b></div><div class="bar"><i id="meterFill"></i></div></div>
+    <div class="meter" id="meter"><div class="meter-top"><span id="meterLab"></span><b id="meterPct"></b></div><div class="bar"><i id="meterFill"></i></div><span class="keyrider" id="keyRider"><svg viewBox="0 0 48 24" width="34" height="17" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="12" r="6.5" fill="currentColor" fill-opacity=".18"/><path d="M15.5 12H44M36 12v7M43 12v5"/></svg></span></div>
     <p class="progress-note" id="progressNote" hidden></p>
     <div class="steps" id="roadmap"></div>
     <div class="card who" id="reviewCard" style="margin-top:14px">
@@ -359,8 +405,8 @@ details.faq p{margin-top:10px;font-size:15px;color:var(--ink-soft);line-height:1
       <p>Thank you for trusting us with something this important. Getting a family into a home of their own is the reason I do this work, and I'll be right here with you at every step on this page.</p>
       <div class="sig">Joe Hernandez<span>Americas Best Home Solutions</span></div>
       <div class="cta-group">
-        <a class="btn btn-primary" id="closeCall" href="#">Call me</a>
-        <a class="btn btn-secondary" id="closeText" href="#">Text me</a>
+        <a class="btn btn-secondary" id="closeCall" href="#">Call me</a>
+        <a class="btn btn-primary" id="closeText" href="#">Text me</a>
       </div>
     </div>
   </section>
@@ -382,6 +428,7 @@ details.faq p{margin-top:10px;font-size:15px;color:var(--ink-soft);line-height:1
 </div>
 
 <script src="homes.js"></script>
+<script src="homes-map.js"></script>
 <script>
 /* ---------- config — edit here, not inline below ---------- */
 const DEAL_ROOM = {
@@ -515,10 +562,19 @@ const DEAL_ROOM = {
     const pct = Math.round(nDone / steps.length * 100);
     $("meterLab").innerHTML = nDone >= steps.length ? "Every step complete" : `<b>${nDone}</b> of ${steps.length} steps complete`;
     $("meterPct").textContent = pct + "%";
-    requestAnimationFrame(() => { $("meterFill").style.width = pct + "%"; });
+    requestAnimationFrame(() => { $("meterFill").style.width = pct + "%"; $("keyRider").style.left = pct + "%"; $("keyRider").classList.toggle("full", pct >= 100); });
     const tw = !!done && !!done.tourWhen;
     $("apptCard").hidden = !tw;
-    if (tw) $("apptWhen").textContent = done.tourWhen;
+    if (tw) {
+      $("apptWhen").textContent = done.tourWhen;
+      const body = `Hi, this is ______ (your name). We have an appointment set up for ${done.tourWhen} for ${C.address || "the home"} and I need to reschedule.`;
+      $("reschedLink").href = `sms:+15515509906?&body=${encodeURIComponent(body)}`;
+    }
+    if (tw && window.__pictureLines) {
+      const k = Array.from(wantedId || "").reduce((a, c) => a + c.charCodeAt(0), 0) % window.__pictureLines.length;
+      $("pictureText").textContent = window.__pictureLines[k];
+      $("pictureCard").hidden = false;
+    }
     // Once the down payment has landed, the payment details are noise: hide them.
     const paid = !!done && done.has("down_payment_received");
     $("paySection").hidden = paid;
@@ -622,6 +678,32 @@ const DEAL_ROOM = {
   $("dPrice").textContent   = C.lockedPrice ? moneyR(C.lockedPrice) : "Ask us";
 
   $("ctaListing").href = `${C.id}.html`;
+
+  // map: just this home (solo), same Leaflet helper as the property page
+  (function(){
+    if (!window.HomesMap) return;
+    const q = encodeURIComponent([C.address, C.city, C.state, C.zip].filter(Boolean).join(", "));
+    $("mapGoogle").href = "https://www.google.com/maps/search/?api=1&query=" + q;
+    HomesMap.mini({ el: $("mapEl"), home: C, section: $("mapSec"), solo: true });
+  })();
+
+  // gallery: every photo after the hero, plus a link to the full property page
+  (function(){
+    const all = Array.isArray(C.photos) ? C.photos.filter(Boolean) : [];
+    const rest = all.filter(u => u !== C.heroPhoto).slice(0, 12);
+    if (!rest.length) return;
+    $("galStrip").innerHTML = rest.map((u, i) => `<a href="${C.id}.html" aria-label="Photo ${i + 2} of ${all.length}"><img src="${u}" alt="Photo ${i + 2} of the home at ${String(C.address || "").replace(/[<>"&]/g, "")}" loading="lazy" onerror="this.parentNode.remove()"></a>`).join("");
+    $("galMore").textContent = `See all ${all.length} photos →`;
+    $("galMore").href = `${C.id}.html`;
+    $("gallery").hidden = false;
+  })();
+
+  // picture-yourself copy: only once a tour date exists; wording rotates by home
+  window.__pictureLines = [
+    "Take a quiet moment and picture it: your family and friends gathered here, and an ordinary morning that starts with a cup of coffee by the window. Your tour is a chance to feel what that could be like.",
+    "As you walk through, imagine the people you love around the table, and yourself waking up slowly with a warm cup of coffee in the morning light. Take your time and notice how it feels.",
+    "Think about the days ahead: family and friends visiting, a calm morning with coffee by the window. When you tour, give yourself room to picture it.",
+  ];
   if (C.monthlyPayment) $("whyFixed").textContent = `${moneyR(C.monthlyPayment)} a month, fixed`;
 
   // hero photo — same fallback chain as home.html: real photo → Street View

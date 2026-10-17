@@ -678,7 +678,7 @@ body.tl-pad{padding-bottom:70px}
 
   const tel = (C.phone||"").replace(/[^\d+]/g,"");
   const prettyPhone = tel.length===10 ? `(${tel.slice(0,3)}) ${tel.slice(3,6)}-${tel.slice(6)}` : C.phone;
-  const smsBody = encodeURIComponent(`Hi, I saw ${C.address ? C.address + " in " : ""}${C.city}, ${C.state} on your site and I'd like to tour it.`);
+  const smsBody = encodeURIComponent(`Hi, I saw ${C.address ? C.address + " in " : ""}${C.city}, ${C.state} on your site and I'd like to tour it.\n\nhttps://getownerfinancedhomes.com/${C.id}.html`);
   ["ctaCall","ctaCall2"].forEach(id=>$(id).href = `tel:${tel}`);
   ["ctaText","ctaText2"].forEach(id=>$(id).href = `sms:${tel}?&body=${smsBody}`);
   $("thanksCall").href = `tel:${tel}`;

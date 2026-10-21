@@ -143,7 +143,19 @@ body{
 .card-face .fcity .c{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.4px;line-height:1.05}
 .card-face .fcity .s{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.82);margin-top:3px}
 .status-tag{position:absolute;top:12px;left:12px;z-index:3;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;background:var(--lime);color:var(--pine-deep);padding:5px 10px;border-radius:999px;font-weight:500}
-.status-tag.pending{background:var(--honey-soft);color:#8a6420}
+.status-tag.pending{background:var(--honey);color:#fff}
+.card.is-pending .card-cta{background:var(--pine)}
+.pend-note{font-size:13px;font-weight:600;color:var(--honey);margin:-2px 0 10px}
+.feat-tag{position:absolute;top:12px;right:12px;z-index:4;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;background:var(--honey);color:#fff;padding:5px 10px;border-radius:999px;font-weight:500}
+.spot-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.spot-head h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:26px;color:var(--pine);margin:0}
+.spot-sub{font-size:14px;color:var(--ink-soft)}
+.sold-strip{display:grid;gap:14px;margin-top:16px;grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+.sold-card{position:relative;border-radius:var(--radius);padding:18px 16px;color:#fff;min-height:120px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:linear-gradient(135deg,#0f2444,#24508a)}
+.sold-card .ribbon{position:absolute;top:12px;left:12px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;background:var(--honey);color:#fff;padding:5px 10px;border-radius:999px;font-weight:500}
+.sold-card .c{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;line-height:1.1}
+.sold-card .d{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.8);margin-top:4px}
+
 .of-tag{position:absolute;top:12px;right:12px;z-index:3;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;background:rgba(0,0,0,.28);color:#fff;padding:5px 9px;border-radius:999px}
 .card-body{padding:16px 16px 18px;display:flex;flex-direction:column;flex:1}
 .card-price{display:flex;align-items:baseline;gap:6px}
@@ -328,6 +340,16 @@ body{
   </div>
 
   <!-- LISTINGS -->
+  <!-- FEATURED + JUST SOLD — filled from homes.js (featured field + RECENTLY_SOLD). Hidden when empty. -->
+  <section class="section" id="featuredSec" style="margin-top:40px" hidden>
+    <div class="spot-head"><h2>Featured homes</h2><span class="spot-sub">Our picks right now — homes move fast.</span></div>
+    <div class="cards" id="featuredCards"></div>
+  </section>
+  <section class="section" id="soldSec" style="margin-top:28px" hidden>
+    <div class="spot-head"><h2>Just sold</h2><span class="spot-sub">These homes found their buyer. The next one could be yours.</span></div>
+    <div class="sold-strip" id="soldStrip"></div>
+  </section>
+
   <section class="section reveal" id="listings" style="margin-top:40px">
     <div class="sec-head">
       <div class="sec-label">Available now</div>
@@ -704,9 +726,10 @@ body{
   $("otHomes").textContent = HOMES.length;
   $("otCities").textContent = allCities.length;
 
-  function cardHTML(h){
+  function cardHTML(h, opts){
     const [a,b] = faceFor(h.city + h.state);
-    const pending = (h.status||"").toLowerCase()==="pending" ? " pending" : "";
+    const isPend = (h.status||"").toLowerCase()==="pending";
+    const pending = isPend ? " pending" : "";
     const specs = [
       h.beds ? `<span>${h.beds} bed${Number(h.beds)===1?"":"s"}</span>` : "",
       h.baths ? `<span>${h.baths} bath${Number(h.baths)===1?"":"s"}</span>` : "",
@@ -714,13 +737,13 @@ body{
     ].filter(Boolean).join(`<span class="dot">·</span>`);
     const photoSrc = h.heroPhoto || `images/${h.id}.jpg`;   // drop images/<id>.jpg in and it shows automatically
     return `
-    <a class="card" href="${encodeURIComponent(h.id)}.html">
+    <a class="card${isPend?" is-pending":""}" href="${encodeURIComponent(h.id)}.html">
       <div class="card-face" style="background:linear-gradient(135deg,${a},${b})">
         <img src="${photoSrc}" alt="Home in ${h.city}, ${h.state}" loading="lazy" data-sv="images/sv/${h.id}.jpg" style="opacity:0;transition:opacity .3s ease" onload="this.style.opacity=1" onerror="window.__svFallback(this)">
         <span class="sv-badge" hidden>Street view · © Google</span>
         <span class="scrim"></span>
         <span class="status-tag${pending}">${h.status||"Available"}</span>
-        <span class="of-tag">Owner financing</span>
+        ${opts && opts.featured && h.featured ? `<span class="feat-tag">★ Featured</span>` : `<span class="of-tag">Owner financing</span>`}
         ${window.HomesCart?HomesCart.heart(h):""}
         ${houseMark}
         <div class="fcity"><div class="c">${h.city}</div><div class="s">${h.state}</div></div>
@@ -735,7 +758,8 @@ body{
         ${h._dist!=null?`<div style="font-size:13px;color:var(--ink-soft);margin:-4px 0 8px">📍 ${h._dist.toFixed(1)} mi away</div>`:""}
         ${h.address ? `<div class="card-addr" style="font-size:13.5px;color:var(--ink-soft);margin-bottom:12px">${h.address}, ${h.city}, ${h.state}${h.zip?` ${h.zip}`:""}</div>` : ""}
         ${window.HomesCart?HomesCart.compare(h):""}
-        <span class="card-cta">View this home →</span>
+        ${isPend?`<div class="pend-note">Deposit received on this home</div>`:""}
+        <span class="card-cta">${isPend?"Ask about this home →":"View this home →"}</span>
       </div>
     </a>`;
   }
@@ -780,7 +804,7 @@ body{
     const pages = Math.max(1, Math.ceil(shown.length / PER_PAGE));
     if (page > pages) page = 1;
     const slice = shown.slice((page-1)*PER_PAGE, page*PER_PAGE);
-    $("cards").innerHTML = slice.map(cardHTML).join("");
+    $("cards").innerHTML = slice.map(h => cardHTML(h)).join("");
     $("empty").style.display = shown.length ? "none" : "block";
     const start = shown.length ? (page-1)*PER_PAGE+1 : 0;
     const end = Math.min(page*PER_PAGE, shown.length);
@@ -869,6 +893,25 @@ body{
     });
   }
   applyURL();
+  // ── featured + just sold (data from homes.js) ───────────────────────────
+  (function spotlight(){
+    const feats = HOMES.filter(h => h.featured && (h.status||"").toLowerCase()!=="pending")
+      .sort((a,b) => (b.featured==="promoted") - (a.featured==="promoted"))
+      .slice(0, 6);
+    if (feats.length){
+      $("featuredCards").innerHTML = feats.map(h => cardHTML(h, {featured:true})).join("");
+      $("featuredSec").hidden = false;
+    }
+    const sold = (typeof RECENTLY_SOLD !== "undefined" && RECENTLY_SOLD) || [];
+    if (sold.length){
+      const mo = d => new Date(d + "T12:00:00").toLocaleDateString("en-US", {month:"long", year:"numeric"});
+      $("soldStrip").innerHTML = sold.map(x =>
+        `<div class="sold-card"><span class="ribbon">Sold</span><div class="c">${x.city}, ${x.state}</div><div class="d">Sold ${mo(x.soldOn)}</div></div>`).join("");
+      $("soldSec").hidden = false;
+    }
+    if (window.HomesCart) HomesCart.sync();
+  })();
+
   render();
   if (window.HomesMap) HomesMap.fromURL(new URLSearchParams(location.search));
 

@@ -1551,6 +1551,7 @@ const HOMES = [
     lng:   -89.017946,
     geo:   "exact",
     status: "Available",
+    featured: "top",
 
     monthlyPayment: 1125,
     moveIn:         3000,
@@ -2013,6 +2014,7 @@ const HOMES = [
     lng:   -90.195084,
     geo:   "exact",
     status: "Available",
+    featured: "top",
 
     monthlyPayment: 918,
     moveIn:         3000,
@@ -2334,6 +2336,7 @@ const HOMES = [
     lng:   -88.958061,
     geo:   "exact",
     status: "Available",
+    featured: "top",
 
     monthlyPayment: 950,
     moveIn:         3000,
@@ -2886,6 +2889,7 @@ const HOMES = [
     lng:   -88.7456,
     geo:   "exact",
     status: "Available",
+    featured: "top",
 
     monthlyPayment: 1095,
     moveIn:         3000,
@@ -3517,6 +3521,7 @@ const HOMES = [
     lng:   -84.398809,
     geo:   "exact",
     status: "Available",
+    featured: "top",
 
     monthlyPayment: 1120,
     moveIn:         3000,
@@ -3590,6 +3595,7 @@ const HOMES = [
     lng:   -88.962323,
     geo:   "exact",
     status: "Available",
+    featured: "top",
 
     monthlyPayment: 895,
     moveIn:         3000,
@@ -3930,6 +3936,7 @@ const HOMES = [
     lng:   -88.932433,
     geo:   "exact",
     status: "Available",
+    featured: "top",
 
     monthlyPayment: 1042,
     moveIn:         3000,

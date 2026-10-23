@@ -3037,6 +3037,7 @@ const HOMES = [
     lng:   -90.22626,
     geo:   "exact",
     status: "Available",
+    featured: "top",
 
     monthlyPayment: 967,
     moveIn:         3000,
@@ -4895,7 +4896,7 @@ const HOMES = [
     lat:   43.04169,
     lng:   -83.70277,
     geo:   "exact",
-    status: "Available",
+    status: "Pending",
 
     monthlyPayment: 825,
     moveIn:         3000,
@@ -5479,7 +5480,7 @@ const HOMES = [
     lat:   38.610453,
     lng:   -90.137241,
     geo:   "exact",
-    status: "Available",
+    status: "Pending",
 
     monthlyPayment: 500,
     moveIn:         2000,
@@ -5503,8 +5504,7 @@ const HOMES = [
     lat:   39.811017,
     lng:   -89.614906,
     geo:   "exact",
-    status: "Available",
-    featured: "top",
+    status: "Pending",
 
     monthlyPayment: 995,
     moveIn:         3000,
@@ -5599,7 +5599,7 @@ const HOMES = [
     lat:   39.859726,
     lng:   -88.936391,
     geo:   "exact",
-    status: "Available",
+    status: "Pending",
 
     monthlyPayment: 650,
     moveIn:         1500,

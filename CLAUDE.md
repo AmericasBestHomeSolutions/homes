@@ -28,13 +28,15 @@ Consequences:
 
 | Path | What it is |
 | --- | --- |
-| `homes.js` | **Generated.** `CONTACT` object + `HOMES` array (150 entries). The single source of listing data at runtime. |
+| `homes.js` | **Generated.** `CONTACT` object + `HOMES` array + `SOLD_CARDS`. The single source of listing data at runtime. |
 | `<id>.html` | **Generated.** One static page per home (150 of them), e.g. `cahokia-il-107-judith.html`. |
 | `home.html` | The shared property-page template, driven by `?home=<id>`. Duplicates the per-home pages, so it's `Disallow`ed in `robots.txt`. |
 | `index.html` | Browse-all page. Builds cards and the state/city/price filters from `HOMES`. |
 | `about.html`, `contact.html`, `how-it-works.html`, `privacy-policy.html`, `messaging-terms.html`, `404.html` | Hand-maintained static pages. |
 | `pages.css` | Shared styles — used **only** by about / contact / privacy-policy / messaging-terms. Listing pages and `index.html` carry their own inline `<style>`. |
 | `consent.js` | SMS/A2P 10DLC consent evidence capture for lead forms. |
+| `sold-cards.js` | Recently sold photo cards. Shared with the Spanish site; labels follow `<html lang>`. |
+| `scripts/sold_policy.py` | Sold/pending policy, hashed photo copies, and redirect stubs. The Mac refresh script should call this. |
 | `features.json` | Generator **input**, not read by the site. 505 SHA1-keyed feature records; the generator bakes the relevant ones into each home's `features:` object. |
 | `sitemap.xml` | **Generated.** 6 static URLs + 150 listings. |
 | `images/` | Photos, ~3,500 files. See conventions below. |
@@ -67,7 +69,8 @@ master list, so don't assume clean types:
 
 - `sqft` and `zip` are **strings**, often with a trailing `.0` (`"1453.0"`, `"62526.0"`).
   Rendering code does `Number(C.sqft).toLocaleString()`.
-- `status` is `"Available"` (149) or `"Pending"` (1).
+- `status` on a public home is `"Available"`. A deposit used to be `"Pending"` and stayed on the site with an orange tag. That state is no longer public: `pending` and `sold` are removed from `HOMES` and search. Old `"Pending"` values still in a generated file are treated as sold. Relist a home by deleting its override and refreshing.
+- `SOLD_CARDS` (street name, city, state, optional month, hashed photo) feeds the Recently sold row. `scripts/sold_policy.py` is the policy `refresh_listings.py` / `featured.py` on the Mac should call. `sold-cards.js` renders it and is language-aware for the Spanish site.
 - `heroPhoto` is `""` on every current record; the hero image is resolved by convention.
 - `id` is `<city>-<state>-<housenumber>-<street>`, lowercased, with spaces squashed out of
   the city (`eaststlouis-il-5617-warren`, `cahokiaheights-il-907-frontenac`). It is the

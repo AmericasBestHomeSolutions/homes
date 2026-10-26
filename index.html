@@ -143,18 +143,25 @@ body{
 .card-face .fcity .c{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.4px;line-height:1.05}
 .card-face .fcity .s{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.82);margin-top:3px}
 .status-tag{position:absolute;top:12px;left:12px;z-index:3;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;background:var(--lime);color:var(--pine-deep);padding:5px 10px;border-radius:999px;font-weight:500}
-.status-tag.pending{background:var(--honey);color:#fff}
-.card.is-pending .card-cta{background:var(--pine)}
-.pend-note{font-size:13px;font-weight:600;color:var(--honey);margin:-2px 0 10px}
 .feat-tag{position:absolute;top:12px;right:12px;z-index:4;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;background:var(--honey);color:#fff;padding:5px 10px;border-radius:999px;font-weight:500}
 .spot-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .spot-head h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:26px;color:var(--pine);margin:0}
 .spot-sub{font-size:14px;color:var(--ink-soft)}
-.sold-strip{display:grid;gap:14px;margin-top:16px;grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
-.sold-card{position:relative;border-radius:var(--radius);padding:18px 16px;color:#fff;min-height:120px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;background:linear-gradient(135deg,#0f2444,#24508a)}
-.sold-card .ribbon{position:absolute;top:12px;left:12px;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;background:var(--honey);color:#fff;padding:5px 10px;border-radius:999px;font-weight:500}
-.sold-card .c{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;line-height:1.1}
-.sold-card .d{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.8);margin-top:4px}
+/* Photo cards. sold-cards.js repeats these rules so the Spanish site, which
+   still has the old gradient CSS, picks up the same layout. */
+#soldSec .sold-strip{display:flex;gap:12px;margin-top:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 12px;-webkit-overflow-scrolling:touch}
+#soldSec .sold-card{flex:0 0 min(78vw,270px);scroll-snap-align:start;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:18px;overflow:hidden;min-height:0;padding:0;display:flex;flex-direction:column;box-shadow:0 8px 24px rgba(15,36,68,.06)}
+#soldSec .sold-card .frame{position:relative;aspect-ratio:4/3;background:#e6eef8;overflow:hidden}
+#soldSec .sold-card img{width:100%;height:100%;object-fit:cover;display:block}
+#soldSec .sold-badge{position:absolute;top:10px;left:10px;z-index:2;background:#e23b3b;color:#fff;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:5px 9px;border-radius:999px;font-weight:500}
+#soldSec .sold-cap{padding:12px 14px 14px}
+#soldSec .sold-label{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:18px;letter-spacing:-.3px;color:var(--pine);line-height:1.25;margin:0}
+#soldSec .sold-label .dot{color:var(--ink-soft);font-weight:600}
+#soldSec .sold-when{margin:4px 0 0;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)}
+@media (min-width:800px){
+  #soldSec .sold-strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));overflow:visible;scroll-snap-type:none}
+  #soldSec .sold-card{flex:none}
+}
 
 .of-tag{position:absolute;top:12px;right:12px;z-index:3;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;background:rgba(0,0,0,.28);color:#fff;padding:5px 9px;border-radius:999px}
 .card-body{padding:16px 16px 18px;display:flex;flex-direction:column;flex:1}
@@ -339,15 +346,16 @@ body{
     <div class="stat"><div class="n" id="statCities">—</div><div class="l">Cities &amp; towns</div></div>
   </div>
 
-  <!-- LISTINGS -->
-  <!-- FEATURED + JUST SOLD — filled from homes.js (featured field + RECENTLY_SOLD). Hidden when empty. -->
-  <section class="section" id="featuredSec" style="margin-top:40px" hidden>
+  <!-- RECENTLY SOLD — photo cards from SOLD_CARDS. Street name and city only. -->
+  <section class="section" id="soldSec" style="margin-top:36px" hidden>
+    <div class="spot-head"><h2 id="soldHeading">Recently sold</h2><span class="spot-sub" id="soldSub">These homes found their buyer. The next one could be yours.</span></div>
+    <div class="sold-strip" id="soldStrip"></div>
+  </section>
+
+  <!-- FEATURED — filled from homes.js. Hidden when empty. -->
+  <section class="section" id="featuredSec" style="margin-top:36px" hidden>
     <div class="spot-head"><h2>Featured homes</h2><span class="spot-sub">Our picks right now — homes move fast.</span></div>
     <div class="cards" id="featuredCards"></div>
-  </section>
-  <section class="section" id="soldSec" style="margin-top:28px" hidden>
-    <div class="spot-head"><h2>Just sold</h2><span class="spot-sub">These homes found their buyer. The next one could be yours.</span></div>
-    <div class="sold-strip" id="soldStrip"></div>
   </section>
 
   <section class="section reveal" id="listings" style="margin-top:40px">
@@ -675,6 +683,7 @@ body{
 </div>
 
 <script src="homes.js"></script>
+<script src="sold-cards.js"></script>
 <script src="homes-map.js"></script>
 <script src="homes-cart.js"></script>
 <script src="/consent.js"></script>
@@ -705,31 +714,31 @@ body{
     let h=0; for(const ch of (s||"")) h=(h*31+ch.charCodeAt(0))>>>0;
     return FACES[h % FACES.length];
   };
+  // A deposit (status pending) is sold. Old homes.js files may still say Pending.
+  const LISTINGS = HOMES.filter(h => !/^(pending|sold)$/i.test(String(h.status||"").trim()));
   const houseMark = `<svg class="fmark" width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9h14v-9"/><path d="M10 19v-5h4v5"/></svg>`;
 
   // filter options — built from whatever is in homes.js
-  const states = [...new Set(HOMES.map(h => h.state).filter(Boolean))].sort();
+  const states = [...new Set(LISTINGS.map(h => h.state).filter(Boolean))].sort();
   $("fState").insertAdjacentHTML("beforeend",
     states.map(s => `<option value="${s}">${s}</option>`).join(""));
-  const allCities = [...new Set(HOMES.map(h => h.city).filter(Boolean))].sort();
+  const allCities = [...new Set(LISTINGS.map(h => h.city).filter(Boolean))].sort();
   function fillCities(){
     const st = $("fState").value;
-    const list = [...new Set(HOMES.filter(h => !st || h.state === st).map(h => h.city).filter(Boolean))].sort();
+    const list = [...new Set(LISTINGS.filter(h => !st || h.state === st).map(h => h.city).filter(Boolean))].sort();
     $("fCity").innerHTML = `<option value="">All cities</option>` +
       list.map(c => `<option value="${c}">${c}</option>`).join("");
   }
   fillCities();
 
   // hero stats (+ the same numbers in the one-team band)
-  $("statHomes").textContent = HOMES.length;
+  $("statHomes").textContent = LISTINGS.length;
   $("statCities").textContent = allCities.length;
-  $("otHomes").textContent = HOMES.length;
+  $("otHomes").textContent = LISTINGS.length;
   $("otCities").textContent = allCities.length;
 
   function cardHTML(h, opts){
     const [a,b] = faceFor(h.city + h.state);
-    const isPend = (h.status||"").toLowerCase()==="pending";
-    const pending = isPend ? " pending" : "";
     const specs = [
       h.beds ? `<span>${h.beds} bed${Number(h.beds)===1?"":"s"}</span>` : "",
       h.baths ? `<span>${h.baths} bath${Number(h.baths)===1?"":"s"}</span>` : "",
@@ -737,12 +746,12 @@ body{
     ].filter(Boolean).join(`<span class="dot">·</span>`);
     const photoSrc = h.heroPhoto || `images/${h.id}.jpg`;   // drop images/<id>.jpg in and it shows automatically
     return `
-    <a class="card${isPend?" is-pending":""}" href="${encodeURIComponent(h.id)}.html">
+    <a class="card" href="${encodeURIComponent(h.id)}.html">
       <div class="card-face" style="background:linear-gradient(135deg,${a},${b})">
         <img src="${photoSrc}" alt="Home in ${h.city}, ${h.state}" loading="lazy" data-sv="images/sv/${h.id}.jpg" style="opacity:0;transition:opacity .3s ease" onload="this.style.opacity=1" onerror="window.__svFallback(this)">
         <span class="sv-badge" hidden>Street view · © Google</span>
         <span class="scrim"></span>
-        <span class="status-tag${pending}">${h.status||"Available"}</span>
+        <span class="status-tag">${h.status||"Available"}</span>
         ${opts && opts.featured && h.featured ? `<span class="feat-tag">★ Featured</span>` : `<span class="of-tag">Owner financing</span>`}
         ${window.HomesCart?HomesCart.heart(h):""}
         ${houseMark}
@@ -758,8 +767,7 @@ body{
         ${h._dist!=null?`<div style="font-size:13px;color:var(--ink-soft);margin:-4px 0 8px">📍 ${h._dist.toFixed(1)} mi away</div>`:""}
         ${h.address ? `<div class="card-addr" style="font-size:13.5px;color:var(--ink-soft);margin-bottom:12px">${h.address}, ${h.city}, ${h.state}${h.zip?` ${h.zip}`:""}</div>` : ""}
         ${window.HomesCart?HomesCart.compare(h):""}
-        ${isPend?`<div class="pend-note">Deposit received on this home</div>`:""}
-        <span class="card-cta">${isPend?"Ask about this home →":"View this home →"}</span>
+        <span class="card-cta">View this home →</span>
       </div>
     </a>`;
   }
@@ -781,7 +789,7 @@ body{
       const [kind, amt] = val.split(":");
       return kind === "min" ? n >= Number(amt) : n <= Number(amt);
     };
-    const list = HOMES.filter(h =>
+    const list = LISTINGS.filter(h =>
       (!state || h.state === state) &&
       (!city || h.city === city) &&
       (!bedsVal || (bedsVal >= 4 ? (Number(h.beds)||0) >= 4 : (Number(h.beds)||0) === bedsVal)) &&
@@ -895,20 +903,14 @@ body{
   applyURL();
   // ── featured + just sold (data from homes.js) ───────────────────────────
   (function spotlight(){
-    const feats = HOMES.filter(h => h.featured && (h.status||"").toLowerCase()!=="pending")
+    const feats = LISTINGS.filter(h => h.featured)
       .sort((a,b) => (b.featured==="promoted") - (a.featured==="promoted"))
       .slice(0, 6);
     if (feats.length){
       $("featuredCards").innerHTML = feats.map(h => cardHTML(h, {featured:true})).join("");
       $("featuredSec").hidden = false;
     }
-    const sold = (typeof RECENTLY_SOLD !== "undefined" && RECENTLY_SOLD) || [];
-    if (sold.length){
-      const mo = d => new Date(d + "T12:00:00").toLocaleDateString("en-US", {month:"long", year:"numeric"});
-      $("soldStrip").innerHTML = sold.map(x =>
-        `<div class="sold-card"><span class="ribbon">Sold</span><div class="c">${x.city}, ${x.state}</div><div class="d">Sold ${mo(x.soldOn)}</div></div>`).join("");
-      $("soldSec").hidden = false;
-    }
+    if (window.SoldCards) SoldCards.mount();
     if (window.HomesCart) HomesCart.sync();
   })();
 
@@ -931,7 +933,7 @@ body{
   })();
   // detect which homes have a real cover photo (no homes.js editing needed — just
   // drop images/<id>.jpg and it auto-prioritizes), then re-sort photo homes to the top
-  Promise.allSettled(HOMES.map(h => new Promise(res => {
+  Promise.allSettled(LISTINGS.map(h => new Promise(res => {
     const im = new Image();
     im.onload  = () => { if (im.naturalWidth > 1) photoReady.add(h.id); res(); };
     im.onerror = () => res();

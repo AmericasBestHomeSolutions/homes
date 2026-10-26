@@ -655,11 +655,12 @@ const DEAL_ROOM = {
   }
 
   const C = home;
-  document.title = `Your Next Steps for ${C.address || C.city} | Americas Best Home Solutions`;
-
-  if ((C.status || "").trim() === "Pending" && !dealCode){
-    $("pendingBanner").hidden = false;
+  // Public visitors don't get a sold home's address. A buyer with a deal link still does.
+  if (/^(pending|sold)$/i.test(String(C.status||"").trim()) && !dealCode){
+    location.replace("/");
+    return;
   }
+  document.title = `Your Next Steps for ${C.address || C.city} | Americas Best Home Solutions`;
 
   $("page").hidden = false;
 

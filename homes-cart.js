@@ -49,7 +49,8 @@
   const FEAT_ORDER = ["backyard","fenced_yard","basement","garage","off_street_parking","central_air","storage_shed","attic"];
   const KS = "savedHomes", KC = "compareHomes", MAXS = 30, MAXC = 4, MAXT = 5;
 
-  const ALL = () => (typeof HOMES !== "undefined" ? HOMES : []);
+  const offMarket = h => /^(pending|sold)$/i.test(String((h && h.status) || "").trim());
+  const ALL = () => (typeof HOMES !== "undefined" ? HOMES : []).filter(h => !offMarket(h));
   const byId = id => ALL().find(h => h.id === id);
   const $ = id => document.getElementById(id);
   const esc = s => String(s==null?"":s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
@@ -59,7 +60,7 @@
   const live = a => a.filter(byId);                 // drop homes that have since sold
   let saved = live(load(KS)), cmp = live(load(KC)), tourSel = null, tab = "saved", view = "list";
   const label = h => [h.address, h.city, h.state].filter(Boolean).join(", ");
-  const isPend = h => /pend/i.test(h.status || "");
+  const isPend = h => /pend/i.test(String((h && h.status) || ""));
   const photo = h => h.heroPhoto || `images/${h.id}.jpg`;
   const thumb = h => `<img class="hc-th" src="${esc(photo(h))}" alt="" loading="lazy" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='images/sv/${esc(h.id)}.jpg'}else{this.style.visibility='hidden'}">`;
 
@@ -200,7 +201,7 @@
     const items = saved.map(id => { const h = byId(id);
       const specs = [h.beds?`${h.beds} ${ES?"hab.":"bd"}`:"", h.baths?`${h.baths} ${ES?"baños":"ba"}`:"", h.moveIn?`${money(h.moveIn)} ${T.moveIn.toLowerCase()}`:""].filter(Boolean).join(" · ");
       return `<div class="hc-item">${thumb(h)}<div>
-        <div class="pr">${money(h.monthlyPayment)}<small>${T.mo}</small>${isPend(h)?` <small>· ${T.pend}</small>`:""}</div>
+        <div class="pr">${money(h.monthlyPayment)}<small>${T.mo}</small></div>
         <div class="ad">${esc(label(h))}</div><div class="sp">${esc(specs)}</div>
         <div class="hc-acts"><label><input type="checkbox" data-hc-tour="${esc(id)}" ${tsel.includes(id)?"checked":""}> ${T.tour}</label>
           <button type="button" data-cmp="${esc(id)}"><span class="hc-tx">${cmp.includes(id)?T.cmpOn:T.cmp}</span></button>
@@ -232,7 +233,7 @@
     rows += row(T.baths, hs.map(h => h.baths || "—"), best(hs.map(h=>h.baths),"max"));
     rows += row(T.sqft, hs.map(h => h.sqft ? Number(h.sqft).toLocaleString() : "—"), best(hs.map(h=>h.sqft),"max"));
     rows += row(T.where, hs.map(h => esc([h.city, h.state].filter(Boolean).join(", "))));
-    rows += row(T.status, hs.map(h => isPend(h) ? T.pend : T.avail));
+    rows += row(T.status, hs.map(() => T.avail));
     featKeys.forEach(k => { rows += row(T.labels[k], hs.map(h => { const v = (h.features||{})[k]; return v === "yes" ? '<span class="y">✓</span>' : v === "no" ? '<span class="n">✕</span>' : '<span class="n">—</span>'; })); });
     return `<div class="hc-tw"><table class="hc-tbl">${rows}</table></div>
       <p class="hc-note">${featKeys.length ? T.featNote : ""}</p>

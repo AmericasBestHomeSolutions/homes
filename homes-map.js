@@ -17,8 +17,8 @@
     locDenied:"No pudimos obtener su ubicación.", mo:"/mes", moveIn:"Para mudarse", view:"Ver esta casa →",
     bed:"hab.", bath:"baños", away:"mi de distancia", approx:"Ubicación aproximada",
     noPins:"Ninguna de estas casas tiene ubicación en el mapa todavía.", shown:"en el mapa",
-    sold:"Pendiente", fit:"Ver todas", where:"Dónde está", openG:"Abrir en Google Maps", nearby:"Otras casas cerca",
-    attrib:"© OpenStreetMap contributors", you:"Usted está aquí", legendP:"Pendiente", legendA:"Disponible",
+    fit:"Ver todas", where:"Dónde está", openG:"Abrir en Google Maps", nearby:"Otras casas cerca",
+    attrib:"© OpenStreetMap contributors", you:"Usted está aquí", legendA:"Disponible",
     pinNote:"Los precios en los pines son el pago mensual."
   } : {
     list:"List", map:"Map", near:"Near", nearPh:"City or zip code", within:"Within",
@@ -27,17 +27,17 @@
     locDenied:"We couldn't get your location.", mo:"/mo", moveIn:"To move in", view:"View this home →",
     bed:"bd", bath:"ba", away:"mi away", approx:"Approximate location",
     noPins:"None of these homes have a map location yet.", shown:"on the map",
-    sold:"Pending", fit:"Show all", where:"Where it is", openG:"Open in Google Maps", nearby:"Other homes nearby",
-    attrib:"© OpenStreetMap contributors", you:"You are here", legendP:"Pending", legendA:"Available",
+    fit:"Show all", where:"Where it is", openG:"Open in Google Maps", nearby:"Other homes nearby",
+    attrib:"© OpenStreetMap contributors", you:"You are here", legendA:"Available",
     pinNote:"Prices on the pins are the monthly payment."
   };
 
-  const ALL = () => (typeof HOMES !== "undefined" ? HOMES : []);   // top-level const isn't on window
+  const offMarket = h => /^(pending|sold)$/i.test(String((h && h.status) || "").trim());
+  const ALL = () => (typeof HOMES !== "undefined" ? HOMES : []).filter(h => !offMarket(h));
   const $ = id => document.getElementById(id);
   const money = n => "$" + Math.round(Number(n||0)).toLocaleString();
   const esc = s => String(s==null?"":s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
   const pinned = h => typeof h.lat === "number" && typeof h.lng === "number";
-  const isPending = h => /pend/i.test(h.status || "");
   // OpenStreetMap standard tiles: free, no key, commercial use OK with attribution (tile usage policy).
   // If traffic ever gets heavy, swap this one line for a keyed provider (MapTiler/Stadia free tier).
   const tileURL = "https://tile.openstreetmap.org/{z}/{x}/{y}.png";
@@ -109,7 +109,7 @@
 
   function pinIcon(L, h, cls){
     const label = h.monthlyPayment ? money(h.monthlyPayment) : "•";
-    return L.divIcon({ className:"", html:`<span class="hm-pin ${cls||""}${isPending(h)&&!cls?" pend":""}">${label}</span>`, iconSize:[0,0] });
+    return L.divIcon({ className:"", html:`<span class="hm-pin ${cls||""}">${label}</span>`, iconSize:[0,0] });
   }
   function popupHTML(h){
     const photo = h.heroPhoto || `images/${h.id}.jpg`;
@@ -118,7 +118,7 @@
     const dist = h._dist != null ? `<div class="sp">${h._dist.toFixed(1)} ${T.away}</div>` : "";
     return `<div class="hm-pop">
       <div class="ph" style="background-image:url('${esc(photo)}'),url('${esc(sv)}'),linear-gradient(135deg,#15315e,#2f5c96)"></div>
-      <div class="pr">${money(h.monthlyPayment)}<small> ${T.mo}</small>${isPending(h)?` <small>· ${T.sold}</small>`:""}</div>
+      <div class="pr">${money(h.monthlyPayment)}<small> ${T.mo}</small></div>
       <div class="sp">${esc(specs)}</div>${dist}
       <div class="ad">${esc(h.address||"")}${h.address?", ":""}${esc(h.city)}, ${esc(h.state)}</div>
       <a class="go" href="${encodeURIComponent(h.id)}.html">${T.view}</a>
@@ -215,7 +215,7 @@
       <div class="hm-wrap" id="hmWrap" hidden>
         <div class="hm-map" id="hmMapEl"></div>
         <div class="hm-chip"><button type="button" class="hm-btn" id="hmArea" hidden>${T.searchArea}</button><button type="button" class="hm-btn ghost" id="hmAreaOff" hidden>✕ ${T.areaChip}</button></div>
-        <div class="hm-foot"><span><i style="background:#15315e"></i>${T.legendA}</span><span><i style="background:#7b8696"></i>${T.legendP}</span><span>${T.pinNote}</span><span id="hmCount"></span></div>
+        <div class="hm-foot"><span><i style="background:#15315e"></i>${T.legendA}</span><span>${T.pinNote}</span><span id="hmCount"></span></div>
       </div>`;
     cards.parentNode.insertBefore(host, cards);
 
@@ -332,7 +332,7 @@
       L.tileLayer(tileURL, { maxZoom:19, attribution:T.attrib }).addTo(map);
       L.marker([home.lat, home.lng], { icon:pinIcon(L, home, "cur"), zIndexOffset:1000 }).addTo(map);
       // the 10 closest other homes within 10 miles — enough to compare, not a pile-up in dense cities
-      const all = opts.solo ? [] : ALL().filter(h => h.id !== home.id && pinned(h) && !isPending(h))
+      const all = opts.solo ? [] : ALL().filter(h => h.id !== home.id && pinned(h))
         .map(h => (h._dist = miles(home.lat, home.lng, h.lat, h.lng), h)).filter(h => h._dist <= 10)
         .sort((x, y) => x._dist - y._dist);
       const near = all.slice(0, 10);
@@ -350,4 +350,18 @@
   }
 
   window.HomesMap = { mount, applyGeo, update, toURL, fromURL, mini, T, pinned, miles, nearState: () => (S.near && !S.near.me ? { label:S.near.label, miles:S.miles } : null), active: () => !!(S.near || S.area) };
+
+  // The Spanish homepage is a separate translated index.html. It already loads
+  // this file. After the old city boxes are painted, swap in the photo cards.
+  if (document.getElementById("soldStrip")){
+    const mountSold = () => { if (window.SoldCards) window.SoldCards.mount(); };
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", mountSold);
+    else setTimeout(mountSold, 0);
+    if (!window.SoldCards){
+      const loader = document.createElement("script");
+      loader.src = "sold-cards.js";
+      loader.onload = mountSold;
+      document.head.appendChild(loader);
+    }
+  }
 })();

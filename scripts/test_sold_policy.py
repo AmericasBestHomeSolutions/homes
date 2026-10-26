@@ -28,8 +28,10 @@ STREETS = [
     ("1729 N woodford St.", "Woodford St", "1729"),
     ("2120 St. Louis Ave.", "St. Louis Ave", "2120"),
     ("725 N 39th Street", "39th Street", "725"),
-    ("100 E St", "E St", "100"),
-    ("123 North St", "North St", "123"),
+    ("412 N 51st St", "51st St", "412"),
+    ("88 S 3rd Rd", "3rd Rd", "88"),
+    ("100 E St", "St", "100"),
+    ("123 North St", "St", "123"),
 ]
 
 
@@ -82,6 +84,14 @@ class PolicyTests(unittest.TestCase):
             )
             self.assertEqual(card["street"], "Monroe St")
             self.assertEqual(card["soldOn"], "2026-10-17")
+            snake = policy.build_sold_card(
+                home,
+                override={"state": "sold", "sold_on": "2026-03-04"},
+                image_root=root,
+                dest_dir=root / "images" / "sold",
+            )
+            self.assertEqual(snake["soldOn"], "2026-03-04")
+            self.assertNotIn("sold_on", snake)
             leaks = policy.card_leaks(
                 card,
                 house="1755",
@@ -205,6 +215,15 @@ if (!html.includes(">Sold<")) bad.push("missing badge");
 if (html.includes("images/decatur") || /src="[^"]*\d/.test(html)) bad.push("photo src leaked");
 if (!es.includes("Vendida")) bad.push("spanish badge missing: " + es);
 if (!es.includes("Vendida en")) bad.push("spanish date missing: " + es);
+if (!/October\s+2026/.test(html)) bad.push("soldOn month missing: " + html);
+const ordinal = SoldCards.renderSection([{
+  street: "412 N 51st St", city: "Decatur", state: "IL", sold_on: "2026-10-17",
+  photo: "images/sold/abcdefghijklmnop.jpg"
+}], "en");
+if (!ordinal.includes("51st St")) bad.push("ordinal street missing: " + ordinal);
+if (/N 51st/.test(ordinal)) bad.push("compass kept on numbered street: " + ordinal);
+if (!/October\s+2026/.test(ordinal)) bad.push("sold_on month missing: " + ordinal);
+if (!ordinal.includes("Sold")) bad.push("sold date line missing: " + ordinal);
 if (SoldCards.safePhoto("images/decatur-il-1755-monroe-1.jpg")) bad.push("unsafe photo accepted");
 process.stdout.write(bad.join("\n"));
 process.exit(bad.length ? 1 : 0);

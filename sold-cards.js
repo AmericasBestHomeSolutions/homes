@@ -3,7 +3,7 @@
    Shared by getownerfinancedhomes.com and casasconfinanciamiento.com.
    Language comes from <html lang>. Hand-maintained — NOT generated.
 
-   Reads SOLD_CARDS from homes.js. Each record is {street, city, state, soldOn?, photo?}.
+   Reads SOLD_CARDS from homes.js. Each record is {street, city, state, soldOn? or sold_on?, photo?}.
    street is the street name only. photo is images/sold/<letters>.jpg.
    Cards are not links. A photo path that is not letter-only is dropped, so a
    filename that still contains the home id cannot be shown.
@@ -12,22 +12,11 @@
   const host = (root && typeof root === "object") ? root : globalThis;
   host.SoldCards = factory(host);
 })(typeof window !== "undefined" ? window : globalThis, function (host) {
-  const SUFFIXES = {
-    st: 1, street: 1, ave: 1, avenue: 1, rd: 1, road: 1, dr: 1, drive: 1,
-    ln: 1, lane: 1, ct: 1, court: 1, blvd: 1, boulevard: 1, way: 1, pl: 1,
-    place: 1, ter: 1, terrace: 1, pkwy: 1, parkway: 1, hwy: 1, highway: 1,
-    cir: 1, circle: 1, trl: 1, trail: 1
-  };
-
   function streetName(address) {
     let text = String(address || "").split(",")[0].trim();
     text = text.replace(/^#?\d+[A-Za-z]?(?:\s*-\s*\d+[A-Za-z]?)?\s+/, "").trim();
     const dir = text.match(/^(?:N|S|E|W|NE|NW|SE|SW|North|South|East|West)\.?\s+(.+)$/i);
-    if (dir) {
-      const rest = dir[1].trim();
-      const first = ((rest.split(/\s+/)[0] || "").replace(/[^A-Za-z]/g, "")).toLowerCase();
-      if (first && !SUFFIXES[first]) text = rest;
-    }
+    if (dir) text = dir[1].trim();
     return text.replace(/\.$/, "").split(/\s+/).filter(Boolean).map(word =>
       word.charAt(0) === word.charAt(0).toLowerCase() && word.charAt(0) !== word.charAt(0).toUpperCase()
         ? word.charAt(0).toUpperCase() + word.slice(1)
@@ -64,6 +53,13 @@
     };
   }
 
+  function saleDate(record) {
+    if (!record) return "";
+    const snake = record.sold_on == null ? "" : String(record.sold_on).trim();
+    if (snake) return snake;
+    return record.soldOn == null ? "" : String(record.soldOn).trim();
+  }
+
   function monthLabel(iso, locale) {
     if (!/^\d{4}-\d{2}-\d{2}$/.test(iso || "")) return "";
     const date = new Date(iso + "T12:00:00");
@@ -79,7 +75,7 @@
     if (!street || !city || !state) return "";
     const photo = safePhoto(record.photo);
     const alt = T.alt(street, city, state);
-    const when = monthLabel(record.soldOn, T.locale);
+    const when = monthLabel(saleDate(record), T.locale);
     const frame = photo
       ? `<img src="${esc(photo)}" alt="${esc(alt)}" title="${esc(alt)}" onerror="this.remove()">`
       : "";

@@ -9,7 +9,7 @@ synthetic site.
 Override file ``data/sold-overrides.json`` (Mac, not in this repo). Either a
 dict keyed by home id or a list of records::
 
-    { "decatur-il-1755-monroe": { "state": "pending", "soldOn": "2026-10-17" } }
+    { "decatur-il-1755-monroe": { "state": "pending", "sold_on": "2026-10-17" } }
     { "decatur-il-1755-monroe": "sold" }
     [ { "id": "decatur-il-1755-monroe", "state": "hold" } ]
 
@@ -46,11 +46,6 @@ import shutil
 import subprocess
 from pathlib import Path
 
-_SUFFIXES = {
-    "st", "street", "ave", "avenue", "rd", "road", "dr", "drive", "ln", "lane",
-    "ct", "court", "blvd", "boulevard", "way", "pl", "place", "ter", "terrace",
-    "pkwy", "parkway", "hwy", "highway", "cir", "circle", "trl", "trail",
-}
 _DIR = re.compile(
     r"^(?:N|S|E|W|NE|NW|SE|SW|North|South|East|West)\.?\s+(.+)$",
     re.IGNORECASE,
@@ -62,10 +57,11 @@ _PHOTO_ALPHABET = "abcdefghjkmnpqrstuvwxyz"
 
 
 def street_name(address: str) -> str:
-    """Street name only. Drops the house number and a leading compass point.
+    """Street name only. Drops the house number and one leading compass word.
 
-    ``1755 N Monroe St`` becomes ``Monroe St``. A leading compass word that
-    is itself the street (``100 E St``, ``123 North St``) is kept.
+    ``1755 N Monroe St`` becomes ``Monroe St``. ``412 N 51st St`` becomes
+    ``51st St``. The compass word is dropped for every street, including
+    numbered ones.
     """
     if not address:
         return ""
@@ -73,10 +69,7 @@ def street_name(address: str) -> str:
     text = _HOUSE.sub("", text, count=1).strip()
     match = _DIR.match(text)
     if match:
-        rest = match.group(1).strip()
-        first = re.sub(r"[^A-Za-z]", "", (rest.split() or [""])[0]).lower()
-        if first and first not in _SUFFIXES:
-            text = rest
+        text = match.group(1).strip()
     words = []
     for word in text.strip().rstrip(".").split():
         if word[:1].islower():
@@ -121,10 +114,17 @@ def public_bucket(sheet_status, override) -> str:
 
 
 def sold_on_of(override) -> str:
+    """Sale date from an override. The file key is ``sold_on``; ``soldOn`` and ``date`` still work."""
     if not isinstance(override, dict):
         return ""
-    raw = str(override.get("soldOn") or override.get("date") or "").strip()
-    return raw if _DATE.fullmatch(raw) else ""
+    for key in ("sold_on", "soldOn", "date"):
+        value = override.get(key)
+        if value is None:
+            continue
+        text = str(value).strip()
+        if _DATE.fullmatch(text):
+            return text
+    return ""
 
 
 def load_overrides(path: Path) -> dict:

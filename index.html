@@ -784,7 +784,7 @@ body{
           <div class="mini"><div class="k">Price</div><div class="v">${h.lockedPrice ? money(h.lockedPrice) : "Ask us"}</div></div>
         </div>
         <div class="card-specs">${specs}</div>
-        ${h.contractor?`<div class="cs-note">Needs major repairs${typeof h.contractor==="string"?": "+h.contractor:""}. For investors &amp; contractors.</div>`:""}
+        ${h.contractor?`<div class="cs-note">Needs major repairs${typeof h.contractor==="string"?" — "+h.contractor:""}. For investors &amp; contractors.</div>`:""}
         ${h._dist!=null?`<div style="font-size:13px;color:var(--ink-soft);margin:-4px 0 8px">📍 ${h._dist.toFixed(1)} mi away</div>`:""}
         ${h.address ? `<div class="card-addr" style="font-size:13.5px;color:var(--ink-soft);margin-bottom:12px">${h.address}, ${h.city}, ${h.state}${h.zip?` ${h.zip}`:""}</div>` : ""}
         ${window.HomesCart?HomesCart.compare(h):""}
@@ -962,6 +962,7 @@ body{
     });
   }
   applyURL();
+  chips();
   // ── featured + just sold (data from homes.js) ───────────────────────────
   (function spotlight(){
     const feats = LISTINGS.filter(h => h.featured)

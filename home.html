@@ -609,7 +609,7 @@ body.tl-pad{padding-bottom:70px}
   $("statusTag").textContent = C.status || "Available";
   if (home && home.contractor){
     $("csBanner").hidden = false;
-    $("csWhat").textContent = typeof home.contractor === "string" ? "Major work needed: " + home.contractor : "";
+    $("csWhat").textContent = typeof home.contractor === "string" ? "Known issues: " + home.contractor : "";
     if (!$("csWhat").textContent) $("csWhat").hidden = true;
   }
   $("heroCity").innerHTML = `<div class="c">${C.city}</div><div class="s">${C.state}</div>`;

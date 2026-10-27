@@ -42,9 +42,26 @@ import argparse
 import hashlib
 import json
 import re
-import shutil
 import subprocess
 from pathlib import Path
+
+BLUR_RADIUS = 14      # strong enough that a house number or plate is unreadable
+MAX_SIDE = 900        # sold cards are small; also shrinks the file
+
+
+def write_blurred_copy(source: Path, dest: Path) -> bool:
+    """Save a blurred, downscaled JPEG. The sharp photo never reaches images/sold/.
+    Returns False (publish no photo) if Pillow is missing or the image can't be read."""
+    try:
+        from PIL import Image, ImageFilter
+        with Image.open(source) as im:
+            im = im.convert("RGB")
+            im.thumbnail((MAX_SIDE, MAX_SIDE))
+            im.filter(ImageFilter.GaussianBlur(BLUR_RADIUS)).save(dest, "JPEG", quality=70)
+        return True
+    except Exception:
+        dest.unlink(missing_ok=True)
+        return False
 
 _DIR = re.compile(
     r"^(?:N|S|E|W|NE|NW|SE|SW|North|South|East|West)\.?\s+(.+)$",
@@ -180,7 +197,7 @@ def first_photo_path(home: dict, image_root: Path) -> Path | None:
 
 
 def build_sold_card(home: dict, *, override=None, image_root: Path, dest_dir: Path) -> dict | None:
-    """Public card. Copies the front photo. Omits the card when there is no street."""
+    """Public card. Publishes a blurred copy of the front photo. Omits the card when there is no street."""
     street = street_name(home.get("address") or "")
     city = str(home.get("city") or "").strip()
     state = str(home.get("state") or "").strip()
@@ -195,8 +212,8 @@ def build_sold_card(home: dict, *, override=None, image_root: Path, dest_dir: Pa
     if source is not None and home_id:
         dest_dir.mkdir(parents=True, exist_ok=True)
         filename = public_photo_filename(home_id)
-        shutil.copyfile(source, dest_dir / filename)
-        card["photo"] = f"images/sold/{filename}"
+        if write_blurred_copy(source, dest_dir / filename):
+            card["photo"] = f"images/sold/{filename}"
     return card
 
 

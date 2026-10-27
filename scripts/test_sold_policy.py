@@ -35,6 +35,14 @@ STREETS = [
 ]
 
 
+def _real_jpeg():
+    import io
+    from PIL import Image, ImageDraw
+    im = Image.new("RGB", (400, 300), "white")
+    ImageDraw.Draw(im).rectangle([150, 100, 250, 200], fill="black")   # sharp edge to test blur
+    b = io.BytesIO(); im.save(b, "JPEG"); return b.getvalue()
+
+
 class PolicyTests(unittest.TestCase):
     def test_street_names(self):
         for address, street, number in STREETS:
@@ -67,7 +75,7 @@ class PolicyTests(unittest.TestCase):
             root = Path(tmp)
             photo = root / "images" / "decatur-il-1755-monroe-1.jpg"
             photo.parent.mkdir(parents=True)
-            photo.write_bytes(b"\xff\xd8\xff\xd9")
+            photo.write_bytes(_real_jpeg())
             home = {
                 "id": "decatur-il-1755-monroe",
                 "address": "1755 N Monroe St",
@@ -102,13 +110,21 @@ class PolicyTests(unittest.TestCase):
             self.assertEqual(leaks, [], card)
             copied = root / card["photo"]
             self.assertTrue(copied.is_file())
-            self.assertEqual(copied.read_bytes(), photo.read_bytes())
+            self.assertNotEqual(copied.read_bytes(), photo.read_bytes())
+            from PIL import Image
+            with Image.open(copied) as im:       # the black square's hard edge must be smeared
+                im = im.convert("L"); w, h = im.size
+                edge = abs(im.getpixel((int(w * 0.375) + 8, h // 2)) - im.getpixel((int(w * 0.375) - 8, h // 2)))
+            with Image.open(photo) as im0:
+                im0 = im0.convert("L"); w0, h0 = im0.size
+                sharp = abs(im0.getpixel((int(w0 * 0.375) + 8, h0 // 2)) - im0.getpixel((int(w0 * 0.375) - 8, h0 // 2)))
+            self.assertLess(edge, sharp // 2)
 
     def test_apply_on_a_synthetic_site(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             (root / "images").mkdir()
-            (root / "images" / "decatur-il-1755-monroe-1.jpg").write_bytes(b"\xff\xd8\xff\xd9")
+            (root / "images" / "decatur-il-1755-monroe-1.jpg").write_bytes(_real_jpeg())
             (root / "homes.js").write_text(
                 """const CONTACT = { phone: "1" };
 const HOMES = [

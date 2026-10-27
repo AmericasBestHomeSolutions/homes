@@ -757,5 +757,48 @@ body.tl-pad{padding-bottom:70px}
   HomesMap.mini({ el: document.getElementById("mapEl"), home: h, section: document.getElementById("mapSec"), note: document.getElementById("mapNote") });
 })();
 </script>
+<style>
+#stickyTour{position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;align-items:center;gap:12px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--line,#dfe6f0);box-shadow:0 -6px 22px rgba(15,36,68,.12);transform:translateY(110%);transition:transform .25s}
+#stickyTour.on{transform:none}
+#stickyTour .st-p{flex:1;min-width:0;font:800 20px 'Bricolage Grotesque',sans-serif;color:var(--pine,#15315e);line-height:1.1}
+#stickyTour .st-p small{display:block;font:500 11px 'DM Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft,#5b6b82)}
+#stickyTour a{flex:0 0 auto;background:var(--go,#e23b3b);color:#fff;text-decoration:none;font:700 15px 'DM Sans',sans-serif;padding:13px 18px;border-radius:12px}
+@media(min-width:900px){#stickyTour{left:auto;right:24px;bottom:24px;border:1px solid var(--line,#dfe6f0);border-radius:16px;max-width:460px}}
+#lb{position:fixed;inset:0;z-index:200;background:rgba(8,16,30,.94);display:none;align-items:center;justify-content:center;touch-action:pan-y}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:86vh;object-fit:contain;user-select:none}
+#lb button{position:absolute;background:rgba(255,255,255,.14);color:#fff;border:0;border-radius:999px;width:46px;height:46px;font-size:22px;cursor:pointer}
+#lb .x{top:14px;right:14px}#lb .pv{left:12px;top:50%}#lb .nx{right:12px;top:50%}
+#lb .ct{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:#cfd9ea;font:500 13px 'DM Mono',monospace}
+#gallery img,#heroImg{cursor:zoom-in}
+</style>
+<div id="stickyTour" aria-hidden="true"><div class="st-p"><span id="stPay"></span><small id="stLab"></small></div><a id="stBtn" href="#"></a></div>
+<div id="lb" role="dialog" aria-modal="true"><button class="x" aria-label="Close">&#10005;</button><button class="pv" aria-label="Previous">&#8249;</button><img alt=""><button class="nx" aria-label="Next">&#8250;</button><div class="ct"></div></div>
+<script>
+(function(){
+  const $=id=>document.getElementById(id);
+  // sticky "Schedule a tour" — appears once the main button scrolls out of view
+  const main=$("ctaText"), bar=$("stickyTour");
+  function fill(){ $("stBtn").href=main.href; $("stBtn").textContent=main.textContent; $("stPay").textContent=($("dMonthly").textContent||"").trim(); $("stLab").textContent=($("dMonthly").nextElementSibling||{}).textContent||""; }
+  if(main && "IntersectionObserver" in window){
+    new IntersectionObserver(es=>{ fill(); const out=!es[0].isIntersecting && es[0].boundingClientRect.top<0; bar.classList.toggle("on",out); bar.setAttribute("aria-hidden",out?"false":"true"); }).observe(main);
+  }
+  // full-screen photo viewer with swipe + arrows
+  const lb=$("lb"), im=lb.querySelector("img"), ct=lb.querySelector(".ct"); let list=[], i=0;
+  const show=n=>{ i=(n+list.length)%list.length; im.src=list[i]; ct.textContent=(i+1)+" / "+list.length; };
+  const close=()=>lb.classList.remove("on");
+  document.addEventListener("click",e=>{
+    const t=e.target; if(!(t.matches&&t.matches("#gallery img,#heroImg"))) return;
+    list=[...document.querySelectorAll("#gallery img")].map(x=>x.currentSrc||x.src); const h=$("heroImg");
+    if(!list.length && h && h.src) list=[h.src];
+    if(!list.length) return; const s=t.currentSrc||t.src; show(Math.max(0,list.indexOf(s))); lb.classList.add("on");
+  });
+  lb.querySelector(".x").onclick=close; lb.querySelector(".pv").onclick=()=>show(i-1); lb.querySelector(".nx").onclick=()=>show(i+1);
+  lb.addEventListener("click",e=>{ if(e.target===lb) close(); });
+  document.addEventListener("keydown",e=>{ if(!lb.classList.contains("on")) return; if(e.key==="Escape")close(); if(e.key==="ArrowLeft")show(i-1); if(e.key==="ArrowRight")show(i+1); });
+  let x0=null; lb.addEventListener("touchstart",e=>{x0=e.touches[0].clientX;},{passive:true});
+  lb.addEventListener("touchend",e=>{ if(x0==null) return; const d=e.changedTouches[0].clientX-x0; if(Math.abs(d)>50) show(i+(d<0?1:-1)); x0=null; });
+})();
+</script>
 </body>
 </html>

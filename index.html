@@ -287,6 +287,10 @@ body{
 .reveal{opacity:0;transform:translateY(16px)}
 .reveal.in{opacity:1;transform:none;transition:opacity .6s ease,transform .6s ease}
 @media (prefers-reduced-motion:reduce){ .reveal{opacity:1;transform:none;transition:none} html{scroll-behavior:auto} }
+.searchbar{position:relative;margin:0 0 14px;width:100%;flex:1 1 100%;max-width:none}
+.searchbar .mag{position:absolute;left:16px;top:50%;transform:translateY(-50%);font-size:17px;opacity:.55;pointer-events:none}
+.searchbar input{width:100%;box-sizing:border-box;font:600 17px 'DM Sans',sans-serif;padding:15px 16px 15px 46px;border-radius:14px;border:1.5px solid var(--line);background:#fff;color:var(--ink);box-shadow:0 4px 16px rgba(15,36,68,.06)}
+.searchbar input:focus{outline:none;border-color:var(--pine,#15315e);box-shadow:0 0 0 3px rgba(21,49,94,.15)}
 </style>
 </head>
 <body>
@@ -374,6 +378,7 @@ body{
       <h2 class="sec-title">Find your home</h2>
     </div>
     <div class="listings-head narrow" style="max-width:100%">
+      <div class="searchbar"><span class="mag" aria-hidden="true">&#128269;</span><input id="fQ" type="search" inputmode="search" autocomplete="off" enterkeyhint="search" list="qHints" placeholder="Search address, city, ZIP — or “contractor special”" aria-label="Search"><datalist id="qHints"></datalist></div>
       <div class="filters">
         <div class="filter">
           <label for="fState">State</label>
@@ -811,6 +816,11 @@ body{
     const payLo = Number($("fPayMin").value)||0, payHi = Number($("fPayMax").value)||0;
     const prLo = Number($("fPriceMin").value)||0, prHi = Number($("fPriceMax").value)||0;
     const downHi = Number($("fDown").value)||0;
+    // free-text: every word must appear in address/city/state/zip; "contractor"/"fixer" flips on Contractor Specials
+    const CSW = /^(contractor|contratista|contratistas|special|specials|especial|especiales|fixer|investor)$/;
+    let words = ($("fQ").value||"").toLowerCase().replace(/[.,#]/g," ").split(/\s+/).filter(Boolean);
+    const csQ = words.some(w => CSW.test(w));
+    words = words.filter(w => !CSW.test(w));
     const list = LISTINGS.filter(h =>
       (!state || h.state === state) &&
       (!city || h.city === city) &&
@@ -819,7 +829,8 @@ body{
       rng(Number(h.monthlyPayment)||0, payLo, payHi) &&
       rng(Number(h.lockedPrice)||0, prLo, prHi) &&
       (!downHi || (Number(h.moveIn)||0) <= downHi) &&
-      (type === "all" || (type === "contractor" ? !!h.contractor : !h.contractor))
+      (csQ ? !!h.contractor : (words.length || type === "all" || (type === "contractor" ? !!h.contractor : !h.contractor))) &&
+      (!words.length || (hay => words.every(w => hay.includes(w)))(((h.address||"")+" "+(h.city||"")+" "+(h.state||"")+" "+(h.zip||"")).toLowerCase().replace(/[.,#]/g," ")))
     );
     const num = (v, fallback=0) => Number(v) || fallback;
     if (sort === "monthly-asc")   list.sort((a,b) => num(a.monthlyPayment,Infinity) - num(b.monthlyPayment,Infinity));
@@ -878,8 +889,8 @@ body{
   // ── shareable search links ────────────────────────────────────────────
   // filters ⇄ URL query string, so a search (e.g. Flint, MI) can be sent as a
   // link that opens pre-filtered. Param names are short + human-readable.
-  const URL_KEYS = { fState:"state", fCity:"city", fBeds:"beds", fBaths:"baths", fPayMin:"payMin", fPayMax:"payMax", fPriceMin:"priceMin", fPriceMax:"priceMax", fDown:"down", fType:"type", fSort:"sort" };
-  const FILTER_IDS = ["fCity","fBeds","fBaths","fPayMin","fPayMax","fPriceMin","fPriceMax","fDown","fType","fSort"];
+  const URL_KEYS = { fState:"state", fCity:"city", fBeds:"beds", fBaths:"baths", fPayMin:"payMin", fPayMax:"payMax", fPriceMin:"priceMin", fPriceMax:"priceMax", fDown:"down", fType:"type", fSort:"sort", fQ:"q" };
+  const FILTER_IDS = ["fCity","fBeds","fBaths","fPayMin","fPayMax","fPriceMin","fPriceMax","fDown","fType","fSort","fQ"];
   function applyURL(){
     const p = new URLSearchParams(location.search);
     if (p.get("state")) $("fState").value = p.get("state");
@@ -907,6 +918,14 @@ body{
     page = 1; render(true); syncURL(); chips();
   }));
 
+  (function(){
+    const q = $("fQ"), dl = $("qHints"); let t;
+    q.addEventListener("input", () => { clearTimeout(t); t = setTimeout(() => { page = 1; render(false); syncURL(); chips(); }, 160); });
+    q.addEventListener("keydown", e => { if (e.key === "Enter"){ q.blur(); render(true); } });
+    const cities = [...new Set(LISTINGS.map(h => h.city + ", " + h.state))].sort();
+    dl.innerHTML = cities.map(c => `<option value="${c}">`).join("");
+  })();
+
   // active-filter chips (tap one to clear it), like Zillow's filter pills
   function chips(){
     const m = n => "$" + Number(n).toLocaleString();
@@ -915,6 +934,7 @@ body{
       ["fPayMin", v=>m(v)+"/mo min"], ["fPayMax", v=>"Up to "+m(v)+"/mo"],
       ["fPriceMin", v=>m(v)+" min"], ["fPriceMax", v=>"Up to "+m(v)],
       ["fDown", v=>"Move in "+m(v)+" or less"],
+      ["fQ", v=>"Search: "+v],
       ["fType", v=>v==="contractor"?"Contractor Specials":"All homes"]
     ];
     const box = $("chips");

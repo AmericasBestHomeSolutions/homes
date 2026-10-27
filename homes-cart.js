@@ -128,9 +128,39 @@
 
   /* ---------- state changes ---------- */
   function toggleSave(id){
-    if (saved.includes(id)) saved = saved.filter(x => x !== id);
+    const had = saved.includes(id);
+    if (had) saved = saved.filter(x => x !== id);
     else { if (saved.length >= MAXS){ alert(T.saveFull); return; } saved.push(id); }
     store(KS, saved); tourSel = null; sync(true);
+    remote(had ? { remove: [id] } : { add: [id] });
+  }
+
+  /* ---------- hearts sync: a buyer who opened their personal link keeps their hearts on every device ----------
+     The link adds #buyer=<key> to this site; we keep the key in this browser only and talk to the CRM with it.
+     Home IDs only ever leave this page. No key = hearts stay in this browser, exactly as before. */
+  const CRM = "https://owner.getownerfinancedhomes.com", KB = "buyerKey", KEYRE = /^[A-Za-z0-9_-]{32,64}$/;
+  function buyerKey(){ try { const k = localStorage.getItem(KB) || ""; return KEYRE.test(k) ? k : ""; } catch(e){ return ""; } }
+  function adoptKey(){
+    const m = /(?:^|[#&])buyer=([A-Za-z0-9_-]{32,64})(?:&|$)/.exec(location.hash || "");
+    if (!m) return;
+    try { localStorage.setItem(KB, m[1]); } catch(e){}
+    try { history.replaceState(null, "", location.pathname + location.search); } catch(e){}
+  }
+  function remote(body){
+    const k = buyerKey(); if (!k) return Promise.resolve(null);
+    return fetch(`${CRM}/start/${k}/saved`, { method:"POST", headers:{ "Content-Type":"application/json" }, body:JSON.stringify(body), keepalive:true })
+      .then(r => {
+        if (r.status === 404 || r.status === 410){ try { localStorage.removeItem(KB); } catch(e){} return null; }  // link expired or replaced
+        return r.ok ? r.json() : null;
+      })
+      .then(j => j && j.data && Array.isArray(j.data.saved) ? j.data.saved : null)
+      .catch(() => null);
+  }
+  function pullSaved(){          // push what this browser already has, take back the buyer's full list
+    remote({ add: saved }).then(list => {
+      if (!list) return;
+      saved = live(list).slice(-MAXS); store(KS, saved); sync();
+    });
   }
   function toggleCmp(id){
     if (cmp.includes(id)) cmp = cmp.filter(x => x !== id);
@@ -424,7 +454,7 @@
   }
   document.addEventListener("click", e => { const x = e.target.closest("[data-ha]"); if (x && x.dataset.ha === "close") $("haModal").classList.remove("show"); }, true);
 
-  function init(){ addStyle(); sync(); }
+  function init(){ addStyle(); adoptKey(); sync(); if (buyerKey()) pullSaved(); }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
 
   window.HomesCart = { heart, compare, sync, open: openPanel, isSaved: id => saved.includes(id), alert: openAlert, alertLabel: TA.btn };

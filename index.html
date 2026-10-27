@@ -291,6 +291,12 @@ body{
 .searchbar .mag{position:absolute;left:16px;top:50%;transform:translateY(-50%);font-size:17px;opacity:.55;pointer-events:none}
 .searchbar input{width:100%;box-sizing:border-box;font:600 17px 'DM Sans',sans-serif;padding:15px 16px 15px 46px;border-radius:14px;border:1.5px solid var(--line);background:#fff;color:var(--ink);box-shadow:0 4px 16px rgba(15,36,68,.06)}
 .searchbar input:focus{outline:none;border-color:var(--pine,#15315e);box-shadow:0 0 0 3px rgba(21,49,94,.15)}
+.card-face .pg{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:34px;height:34px;border-radius:50%;border:0;background:rgba(255,255,255,.92);color:#15315e;font-size:20px;line-height:1;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.25);opacity:0;transition:opacity .15s}
+.card-face .pg.pv{left:8px}.card-face .pg.nx{right:8px}
+.card:hover .pg,.card-face.touch .pg{opacity:1}
+.card-face .pdots{position:absolute;bottom:8px;left:0;right:0;z-index:5;display:flex;justify-content:center;gap:5px;pointer-events:none}
+.card-face .pdots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.55)}.card-face .pdots i.on{background:#fff}
+@media(hover:none){.card-face .pg{opacity:.9;width:30px;height:30px}}
 </style>
 </head>
 <body>
@@ -770,11 +776,12 @@ body{
     ].filter(Boolean).join(`<span class="dot">·</span>`);
     const photoSrc = h.heroPhoto || `images/${h.id}.jpg`;   // drop images/<id>.jpg in and it shows automatically
     return `
-    <a class="card${h.contractor?" is-cs":""}" href="${encodeURIComponent(h.id)}.html">
+    <a class="card${h.contractor?" is-cs":""}" data-hid="${h.id}" href="${encodeURIComponent(h.id)}.html">
       <div class="card-face" style="background:linear-gradient(135deg,${a},${b})">
         <img src="${photoSrc}" alt="Home in ${h.city}, ${h.state}" loading="lazy" data-sv="images/sv/${h.id}.jpg" style="opacity:0;transition:opacity .3s ease" onload="this.style.opacity=1" onerror="window.__svFallback(this)">
         <span class="sv-badge" hidden>Street view · © Google</span>
         <span class="scrim"></span>
+        ${(h.photos||[]).length>1?`<button type="button" class="pg pv" aria-label="Previous photo">‹</button><button type="button" class="pg nx" aria-label="Next photo">›</button><span class="pdots">${Array.from({length:Math.min(6,h.photos.length)},(_,k)=>`<i${k?"":" class=\"on\""}></i>`).join("")}</span>`:""}
         <span class="status-tag">${h.status||"Available"}</span>
         ${h.contractor?`<span class="cs-tag">Contractor Special</span>`:""}
         ${opts && opts.featured && h.featured ? `<span class="feat-tag">★ Featured</span>` : `<span class="of-tag">Owner financing</span>`}
@@ -924,6 +931,26 @@ body{
     q.addEventListener("keydown", e => { if (e.key === "Enter"){ q.blur(); render(true); } });
     const cities = [...new Set(LISTINGS.map(h => h.city + ", " + h.state))].sort();
     dl.innerHTML = cities.map(c => `<option value="${c}">`).join("");
+  })();
+
+
+  // swipeable / arrow photo browsing on cards (cover first, then up to 5 more photos)
+  (function(){
+    const box = $("cards"); if(!box) return;
+    const byId = id => LISTINGS.find(h => h.id === id);
+    const pics = h => { const cover = h.heroPhoto || `images/${h.id}.jpg`; return [cover, ...(h.photos||[]).filter(p => p !== cover && p !== h.heroPhoto)].slice(0,6); };
+    function go(card, d){
+      const h = byId(card.dataset.hid); if(!h) return; const list = pics(h); if(list.length < 2) return;
+      const i = ((Number(card.dataset.pi)||0) + d + list.length) % list.length; card.dataset.pi = i;
+      const img = card.querySelector(".card-face img"); img.removeAttribute("data-sv"); img.style.opacity = 1; img.src = list[i];
+      card.querySelectorAll(".pdots i").forEach((x,k) => x.classList.toggle("on", k===i));
+    }
+    box.addEventListener("click", e => { const b = e.target.closest(".pg"); if(!b) return; e.preventDefault(); e.stopPropagation(); go(b.closest(".card"), b.classList.contains("nx") ? 1 : -1); }, true);
+    let x0 = null, moved = false;
+    box.addEventListener("touchstart", e => { if(e.target.closest(".card-face")){ x0 = e.touches[0].clientX; moved = false; e.target.closest(".card-face").classList.add("touch"); } }, {passive:true});
+    box.addEventListener("touchend", e => { if(x0 == null) return; const d = e.changedTouches[0].clientX - x0; x0 = null;
+      if(Math.abs(d) > 40){ moved = true; const c = e.target.closest(".card"); if(c) go(c, d < 0 ? 1 : -1); } }, {passive:true});
+    box.addEventListener("click", e => { if(moved){ e.preventDefault(); e.stopPropagation(); moved = false; } }, true);
   })();
 
   // active-filter chips (tap one to clear it), like Zillow's filter pills

@@ -127,13 +127,13 @@ body{
 .filter select:focus{outline:none;border-color:var(--pine)}
 .count{font-family:'DM Mono',monospace;font-size:12px;color:var(--ink-soft);white-space:nowrap;padding-bottom:12px}
 
-.cards{display:grid;gap:18px;margin-top:20px;grid-template-columns:1fr}
-@media (min-width:560px){ .cards{grid-template-columns:1fr 1fr} }
-@media (min-width:820px){ .cards{grid-template-columns:1fr 1fr 1fr} }
+.cards{display:grid;gap:22px;margin-top:20px;grid-template-columns:1fr}
+@media (min-width:640px){ .cards{grid-template-columns:repeat(auto-fill,minmax(340px,1fr))} }
+@media (min-width:1400px){ .cards{grid-template-columns:repeat(3,minmax(0,1fr))} }
 .card{display:flex;flex-direction:column;text-decoration:none;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;transition:transform .15s ease,box-shadow .15s ease}
 .card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(28,27,23,.12)}
 .card:focus-visible{outline:3px solid var(--honey);outline-offset:2px}
-.card-face{position:relative;aspect-ratio:16/10;display:flex;align-items:flex-end;padding:14px;overflow:hidden}
+.card-face{position:relative;aspect-ratio:4/3;display:flex;align-items:flex-end;padding:14px;overflow:hidden}
 .card-face .fmark{position:absolute;right:-14px;bottom:-18px;opacity:.16;color:#fff;z-index:0}
 .card-face img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;display:block}
 .card-face .scrim{position:absolute;inset:0;z-index:2;background:linear-gradient(to top,rgba(11,20,40,.55),rgba(11,20,40,0) 55%);pointer-events:none}
@@ -155,7 +155,7 @@ body{
   #split{display:grid;grid-template-columns:minmax(0,1fr) minmax(380px,44%);gap:22px;align-items:start}
   #split #splitMap{position:sticky;top:12px}
   #split #splitMap .hm-map{height:calc(100vh - 36px);min-height:480px}
-  #split .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #split .cards{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
   #listings .hm-bar{display:none}
 }
 .status-tag{position:absolute;top:12px;left:12px;z-index:3;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;background:var(--lime);color:var(--pine-deep);padding:5px 10px;border-radius:999px;font-weight:500}
@@ -180,12 +180,12 @@ body{
 }
 
 .of-tag{position:absolute;top:12px;right:12px;z-index:3;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;background:rgba(0,0,0,.28);color:#fff;padding:5px 9px;border-radius:999px}
-.card-body{padding:16px 16px 18px;display:flex;flex-direction:column;flex:1}
+.card-body{padding:16px 18px 20px;display:flex;flex-direction:column;flex:1}
 .card-price{display:flex;align-items:baseline;gap:6px}
-.card-price .num{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:27px;color:var(--ink);line-height:1}
+.card-price .num{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:32px;letter-spacing:-.5px;color:var(--ink);line-height:1}
 .card-price .per{font-family:'DM Mono',monospace;font-size:11px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:1px}
-.card-mini{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
-.card-specs{font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:var(--ink);margin-bottom:6px;display:flex;gap:10px;flex-wrap:wrap}
+.card-mini{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:2px 0 12px}
+.card-specs{font-family:'DM Sans',sans-serif;font-size:17px;font-weight:700;color:var(--ink);margin:10px 0 4px;display:flex;gap:10px;flex-wrap:wrap}
 .card-specs span{display:inline-flex;align-items:center;gap:5px}
 .card-specs .dot{color:var(--line)}
 .mini{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:8px 10px}
@@ -791,14 +791,14 @@ body{
       </div>
       <div class="card-body">
         <div class="card-price"><span class="num">${money(h.monthlyPayment)}</span><span class="per">/ month</span></div>
+        <div class="card-specs">${specs}</div>
+        ${h.address ? `<div class="card-addr" style="font-size:14.5px;color:var(--ink-soft);margin-bottom:12px">${h.address}, ${h.city}, ${h.state}${h.zip?` ${h.zip}`:""}</div>` : ""}
         <div class="card-mini">
           <div class="mini"><div class="k">To move in</div><div class="v">${h.moveIn ? money(h.moveIn) : "Ask us"}</div></div>
           <div class="mini"><div class="k">Price</div><div class="v">${h.lockedPrice ? money(h.lockedPrice) : "Ask us"}</div></div>
         </div>
-        <div class="card-specs">${specs}</div>
         ${h.contractor?`<div class="cs-note">Needs major repairs${typeof h.contractor==="string"?" — "+h.contractor:""}. For investors &amp; contractors.</div>`:""}
         ${h._dist!=null?`<div style="font-size:13px;color:var(--ink-soft);margin:-4px 0 8px">📍 ${h._dist.toFixed(1)} mi away</div>`:""}
-        ${h.address ? `<div class="card-addr" style="font-size:13.5px;color:var(--ink-soft);margin-bottom:12px">${h.address}, ${h.city}, ${h.state}${h.zip?` ${h.zip}`:""}</div>` : ""}
         ${window.HomesCart?HomesCart.compare(h):""}
         <span class="card-cta">View this home →</span>
       </div>
@@ -939,10 +939,25 @@ body{
     const box = $("cards"); if(!box) return;
     const byId = id => LISTINGS.find(h => h.id === id);
     const pics = h => { const cover = h.heroPhoto || `images/${h.id}.jpg`; return [cover, ...(h.photos||[]).filter(p => p !== cover && p !== h.heroPhoto)].slice(0,6); };
+    // same picture as the cover (re-saved copies differ in bytes): compare 16x16 grayscale thumbnails
+    const thumbCache = {};
+    function thumb(src){ return thumbCache[src] || (thumbCache[src] = new Promise(res => { const im = new Image(); im.onload = () => { try{ const c = document.createElement("canvas"); c.width = c.height = 16; const x = c.getContext("2d"); x.drawImage(im,0,0,16,16); res(x.getImageData(0,0,16,16).data); }catch(e){ res(null); } }; im.onerror = () => res(null); im.src = src; })); }
+    const dups = new Set(), primed = new Set();
+    function isCoverDup(img, card, src){ return dups.has(card.dataset.hid + "|" + src); }
+    function prime(card){   // on first touch/hover, find photos that repeat the cover so the arrows skip them
+      const h = byId(card.dataset.hid); if(!h || primed.has(h.id)) return; primed.add(h.id);
+      const list = pics(h); if(list.length < 2) return;
+      thumb(list[0]).then(c0 => { if(!c0) return; list.slice(1).forEach(s => thumb(s).then(c => {
+        if(!c) return; let d = 0; for(let k=0;k<c.length;k+=4) d += Math.abs(c[k]-c0[k]) + Math.abs(c[k+1]-c0[k+1]) + Math.abs(c[k+2]-c0[k+2]);
+        if(d / 256 / 3 < 4) dups.add(h.id + "|" + s); })); });
+    }
+    ["mouseover","touchstart"].forEach(ev => box.addEventListener(ev, e => { const c = e.target.closest && e.target.closest(".card"); if(c) prime(c); }, {passive:true}));
     function go(card, d){
       const h = byId(card.dataset.hid); if(!h) return; const list = pics(h); if(list.length < 2) return;
-      const i = ((Number(card.dataset.pi)||0) + d + list.length) % list.length; card.dataset.pi = i;
-      const img = card.querySelector(".card-face img"); img.removeAttribute("data-sv"); img.style.opacity = 1; img.src = list[i];
+      const img = card.querySelector(".card-face img");
+      let i = ((Number(card.dataset.pi)||0) + d + list.length) % list.length;
+      for(let s=0; s<list.length && i>0 && isCoverDup(img, card, list[i]); s++) i = (i + d + list.length) % list.length;   // skip a photo that is the cover again
+      card.dataset.pi = i; img.removeAttribute("data-sv"); img.style.opacity = 1; img.src = list[i];
       card.querySelectorAll(".pdots i").forEach((x,k) => x.classList.toggle("on", k===i));
     }
     box.addEventListener("click", e => { const b = e.target.closest(".pg"); if(!b) return; e.preventDefault(); e.stopPropagation(); go(b.closest(".card"), b.classList.contains("nx") ? 1 : -1); }, true);

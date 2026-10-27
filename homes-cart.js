@@ -146,6 +146,7 @@
     try { localStorage.setItem(KB, m[1]); } catch(e){}
     try { history.replaceState(null, "", location.pathname + location.search); } catch(e){}
   }
+  adoptKey();   // at load, before any page script rewrites the address and drops the #
   function remote(body){
     const k = buyerKey(); if (!k) return Promise.resolve(null);
     return fetch(`${CRM}/start/${k}/saved`, { method:"POST", headers:{ "Content-Type":"application/json" }, body:JSON.stringify(body), keepalive:true })

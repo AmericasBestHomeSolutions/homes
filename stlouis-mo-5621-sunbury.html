@@ -464,6 +464,11 @@ body.tl-pad{padding-bottom:70px}
 (function(){
   const wantedId = window.__HOME_ID__ || new URLSearchParams(location.search).get("home");
   const home = (typeof HOMES !== "undefined") ? HOMES.find(h => h.id === wantedId) : null;
+  // A deposit is a sale. Old data may still say Pending — don't render the address.
+  if (home && /^(pending|sold)$/i.test(String(home.status||"").trim())){
+    location.replace("/");
+    return;
+  }
   if (!home){
     // unknown or missing home → send the visitor to the browse page
     location.replace("index.html");

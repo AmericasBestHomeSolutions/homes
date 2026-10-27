@@ -6123,7 +6123,7 @@ const SOLD_CARDS = [
   {"street": "39th Street", "city": "East St. Louis", "state": "IL", "photo": "images/sold/kntzxgcytvycmpkc.jpg"},
   {"street": "51st St", "city": "East St. Louis", "state": "IL", "photo": "images/sold/ssqtdzfbruyqazec.jpg"},
   {"street": "St. Louis Ave", "city": "East St. Louis", "state": "IL", "photo": "images/sold/bcbjpkanyxwguwat.jpg"},
-  {"street": "23rd St", "city": "Granite City", "state": "IL", "photo": "images/sold/gpsszjanaeyjndfz.jpg"},
+  {"street": "23rd St", "city": "Granite City", "state": "IL"},
   {"street": "Don Ryan Street", "city": "Hammond", "state": "IL", "photo": "images/sold/wcesuruzprpyrzph.jpg"},
   {"street": "Haungs Ave", "city": "Peoria", "state": "IL", "photo": "images/sold/wfdrptfpgsbvjznn.jpg"},
   {"street": "Wesley St", "city": "Springfield", "state": "IL", "photo": "images/sold/gsttzrvkvwqyrsfz.jpg"},

@@ -142,6 +142,22 @@ body{
 .card-face .fcity{position:relative;z-index:3;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.4)}
 .card-face .fcity .c{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.4px;line-height:1.05}
 .card-face .fcity .s{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.82);margin-top:3px}
+
+.filter.range .rng{display:flex;align-items:center;gap:6px}
+.filter.range .rng select{min-width:0;flex:1}
+.filter.range .rng span{color:var(--ink-soft)}
+.cs-tag{position:absolute;top:44px;left:12px;z-index:3;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;background:#b45309;color:#fff;padding:5px 10px;border-radius:999px;font-weight:500}
+.card.is-cs .card-cta{background:#b45309}
+.cs-note{font-size:13px;color:#92400e;background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:6px 9px;margin:0 0 10px}
+.filter-chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.filter-chips button{font:600 13px 'DM Sans',system-ui,sans-serif;padding:7px 12px;border-radius:999px;border:1.5px solid var(--pine,#15315e);background:#fff;color:var(--pine,#15315e);cursor:pointer}
+@media(min-width:1100px){
+  #split{display:grid;grid-template-columns:minmax(0,1fr) minmax(380px,44%);gap:22px;align-items:start}
+  #split #splitMap{position:sticky;top:12px}
+  #split #splitMap .hm-map{height:calc(100vh - 36px);min-height:480px}
+  #split .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  #listings .hm-bar{display:none}
+}
 .status-tag{position:absolute;top:12px;left:12px;z-index:3;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;background:var(--lime);color:var(--pine-deep);padding:5px 10px;border-radius:999px;font-weight:500}
 .feat-tag{position:absolute;top:12px;right:12px;z-index:4;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;background:var(--honey);color:#fff;padding:5px 10px;border-radius:999px;font-weight:500}
 .spot-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
@@ -346,12 +362,6 @@ body{
     <div class="stat"><div class="n" id="statCities">—</div><div class="l">Cities &amp; towns</div></div>
   </div>
 
-  <!-- RECENTLY SOLD — photo cards from SOLD_CARDS. Street name and city only. -->
-  <section class="section" id="soldSec" style="margin-top:36px" hidden>
-    <div class="spot-head"><h2 id="soldHeading">Recently sold</h2><span class="spot-sub" id="soldSub">These homes found their buyer. The next one could be yours.</span></div>
-    <div class="sold-strip" id="soldStrip"></div>
-  </section>
-
   <!-- FEATURED — filled from homes.js. Hidden when empty. -->
   <section class="section" id="featuredSec" style="margin-top:36px" hidden>
     <div class="spot-head"><h2>Featured homes</h2><span class="spot-sub">Our picks right now — homes move fast.</span></div>
@@ -384,25 +394,27 @@ body{
           </select>
         </div>
         <div class="filter">
-          <label for="fPay">Monthly payment</label>
-          <select id="fPay">
-            <option value="">Any payment</option>
-            <option value="max:700">Under $700/mo</option>
-            <option value="max:900">Under $900/mo</option>
-            <option value="max:1100">Under $1,100/mo</option>
-            <option value="max:1300">Under $1,300/mo</option>
-            <option value="min:1200">$1,200/mo &amp; up</option>
-          </select>
+          <label for="fBaths">Bathrooms</label>
+          <select id="fBaths"><option value="">Any</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option></select>
+        </div>
+        <div class="filter range">
+          <label for="fPayMin">Monthly payment</label>
+          <div class="rng"><select id="fPayMin"><option value="">No min</option><option value="500">$500</option><option value="600">$600</option><option value="700">$700</option><option value="800">$800</option><option value="900">$900</option><option value="1000">$1,000</option><option value="1100">$1,100</option><option value="1200">$1,200</option><option value="1300">$1,300</option><option value="1500">$1,500</option><option value="1800">$1,800</option></select><span>–</span><select id="fPayMax"><option value="">No max</option><option value="500">$500</option><option value="600">$600</option><option value="700">$700</option><option value="800">$800</option><option value="900">$900</option><option value="1000">$1,000</option><option value="1100">$1,100</option><option value="1200">$1,200</option><option value="1300">$1,300</option><option value="1500">$1,500</option><option value="1800">$1,800</option></select></div>
+        </div>
+        <div class="filter range">
+          <label for="fPriceMin">Total price</label>
+          <div class="rng"><select id="fPriceMin"><option value="">No min</option><option value="40000">$40,000</option><option value="50000">$50,000</option><option value="60000">$60,000</option><option value="70000">$70,000</option><option value="80000">$80,000</option><option value="90000">$90,000</option><option value="100000">$100,000</option><option value="110000">$110,000</option><option value="125000">$125,000</option><option value="150000">$150,000</option></select><span>–</span><select id="fPriceMax"><option value="">No max</option><option value="40000">$40,000</option><option value="50000">$50,000</option><option value="60000">$60,000</option><option value="70000">$70,000</option><option value="80000">$80,000</option><option value="90000">$90,000</option><option value="100000">$100,000</option><option value="110000">$110,000</option><option value="125000">$125,000</option><option value="150000">$150,000</option></select></div>
         </div>
         <div class="filter">
           <label for="fDown">Cash to move in</label>
-          <select id="fDown">
-            <option value="">Any amount</option>
-            <option value="max:1500">Under $1,500</option>
-            <option value="max:2000">Under $2,000</option>
-            <option value="max:2500">Under $2,500</option>
-            <option value="max:3000">Under $3,000</option>
-            <option value="max:4000">Under $4,000</option>
+          <select id="fDown"><option value="">Any amount</option><option value="1500">Up to $1,500</option><option value="2000">Up to $2,000</option><option value="2500">Up to $2,500</option><option value="3000">Up to $3,000</option><option value="4000">Up to $4,000</option><option value="5000">Up to $5,000</option></select>
+        </div>
+        <div class="filter" id="fTypeWrap" hidden>
+          <label for="fType">Home type</label>
+          <select id="fType">
+            <option value="">Move-in ready homes</option>
+            <option value="contractor">Contractor Specials</option>
+            <option value="all">All homes</option>
           </select>
         </div>
         <div class="filter">
@@ -415,6 +427,7 @@ body{
           </select>
         </div>
       </div>
+      <div class="filter-chips" id="chips"></div>
       <div class="count-row" style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:8px">
         <p class="count" id="count" style="margin:0"></p>
         <button id="copyLink" type="button" style="display:none;font-family:'DM Mono',monospace;font-size:13px;padding:8px 14px;border-radius:10px;border:1.5px solid var(--line);background:var(--card);color:var(--pine,#15315e);cursor:pointer;white-space:nowrap">🔗 Share this search</button>
@@ -431,6 +444,12 @@ body{
       <p>New homes come in every week. Loosen a filter, or text us what you need and we'll send you the matches as they land.</p>
       <p style="margin-top:14px"><a id="emptyText" href="#" class="btn btn-lime" style="font-size:15px;padding:12px 18px">Text us what you're looking for</a></p>
     </div>
+  </section>
+
+  <!-- RECENTLY SOLD — photo cards from SOLD_CARDS. Street name and city only. -->
+  <section class="section" id="soldSec" style="margin-top:48px" hidden>
+    <div class="spot-head"><h2 id="soldHeading">Recently sold</h2><span class="spot-sub" id="soldSub">These homes found their buyer. The next one could be yours.</span></div>
+    <div class="sold-strip" id="soldStrip"></div>
   </section>
 
   <!-- ONE TEAM, ONE NUMBER — these homes get posted in a few places; here they're all
@@ -746,12 +765,13 @@ body{
     ].filter(Boolean).join(`<span class="dot">·</span>`);
     const photoSrc = h.heroPhoto || `images/${h.id}.jpg`;   // drop images/<id>.jpg in and it shows automatically
     return `
-    <a class="card" href="${encodeURIComponent(h.id)}.html">
+    <a class="card${h.contractor?" is-cs":""}" href="${encodeURIComponent(h.id)}.html">
       <div class="card-face" style="background:linear-gradient(135deg,${a},${b})">
         <img src="${photoSrc}" alt="Home in ${h.city}, ${h.state}" loading="lazy" data-sv="images/sv/${h.id}.jpg" style="opacity:0;transition:opacity .3s ease" onload="this.style.opacity=1" onerror="window.__svFallback(this)">
         <span class="sv-badge" hidden>Street view · © Google</span>
         <span class="scrim"></span>
         <span class="status-tag">${h.status||"Available"}</span>
+        ${h.contractor?`<span class="cs-tag">Contractor Special</span>`:""}
         ${opts && opts.featured && h.featured ? `<span class="feat-tag">★ Featured</span>` : `<span class="of-tag">Owner financing</span>`}
         ${window.HomesCart?HomesCart.heart(h):""}
         ${houseMark}
@@ -764,6 +784,7 @@ body{
           <div class="mini"><div class="k">Price</div><div class="v">${h.lockedPrice ? money(h.lockedPrice) : "Ask us"}</div></div>
         </div>
         <div class="card-specs">${specs}</div>
+        ${h.contractor?`<div class="cs-note">Needs major repairs${typeof h.contractor==="string"?": "+h.contractor:""}. For investors &amp; contractors.</div>`:""}
         ${h._dist!=null?`<div style="font-size:13px;color:var(--ink-soft);margin:-4px 0 8px">📍 ${h._dist.toFixed(1)} mi away</div>`:""}
         ${h.address ? `<div class="card-addr" style="font-size:13.5px;color:var(--ink-soft);margin-bottom:12px">${h.address}, ${h.city}, ${h.state}${h.zip?` ${h.zip}`:""}</div>` : ""}
         ${window.HomesCart?HomesCart.compare(h):""}
@@ -777,24 +798,28 @@ body{
   const PER_PAGE = 20;
   let page = 1;
 
+  const hasCS = LISTINGS.some(h => h.contractor);
+  if (hasCS) $("fTypeWrap").hidden = false;
   function filtered(){
     const state = $("fState").value;
     const city = $("fCity").value;
     const bedsVal = Number($("fBeds").value) || 0;   // exact match; 4 means "4 or more"
-    const payVal = $("fPay").value;    // "", "max:700", "min:1200"
-    const downVal = $("fDown").value;  // "", "max:1500"…
+    const bathsVal = Number($("fBaths").value) || 0;
+    const type = hasCS ? $("fType").value : "all";
     const sort = $("fSort").value;
-    const rangeMatch = (val, n) => {
-      if (!val) return true;
-      const [kind, amt] = val.split(":");
-      return kind === "min" ? n >= Number(amt) : n <= Number(amt);
-    };
+    const rng = (n, lo, hi) => (!lo || n >= lo) && (!hi || n <= hi);
+    const payLo = Number($("fPayMin").value)||0, payHi = Number($("fPayMax").value)||0;
+    const prLo = Number($("fPriceMin").value)||0, prHi = Number($("fPriceMax").value)||0;
+    const downHi = Number($("fDown").value)||0;
     const list = LISTINGS.filter(h =>
       (!state || h.state === state) &&
       (!city || h.city === city) &&
       (!bedsVal || (bedsVal >= 4 ? (Number(h.beds)||0) >= 4 : (Number(h.beds)||0) === bedsVal)) &&
-      rangeMatch(payVal, Number(h.monthlyPayment)||0) &&
-      rangeMatch(downVal, Number(h.moveIn)||0)
+      (!bathsVal || (Number(h.baths)||0) >= bathsVal) &&
+      rng(Number(h.monthlyPayment)||0, payLo, payHi) &&
+      rng(Number(h.lockedPrice)||0, prLo, prHi) &&
+      (!downHi || (Number(h.moveIn)||0) <= downHi) &&
+      (type === "all" || (type === "contractor" ? !!h.contractor : !h.contractor))
     );
     const num = (v, fallback=0) => Number(v) || fallback;
     if (sort === "monthly-asc")   list.sort((a,b) => num(a.monthlyPayment,Infinity) - num(b.monthlyPayment,Infinity));
@@ -853,12 +878,18 @@ body{
   // ── shareable search links ────────────────────────────────────────────
   // filters ⇄ URL query string, so a search (e.g. Flint, MI) can be sent as a
   // link that opens pre-filtered. Param names are short + human-readable.
-  const URL_KEYS = { fState:"state", fCity:"city", fBeds:"beds", fPay:"pay", fDown:"down", fSort:"sort" };
+  const URL_KEYS = { fState:"state", fCity:"city", fBeds:"beds", fBaths:"baths", fPayMin:"payMin", fPayMax:"payMax", fPriceMin:"priceMin", fPriceMax:"priceMax", fDown:"down", fType:"type", fSort:"sort" };
+  const FILTER_IDS = ["fCity","fBeds","fBaths","fPayMin","fPayMax","fPriceMin","fPriceMax","fDown","fType","fSort"];
   function applyURL(){
     const p = new URLSearchParams(location.search);
     if (p.get("state")) $("fState").value = p.get("state");
     fillCities();                                  // city options depend on the chosen state
-    ["fCity","fBeds","fPay","fDown","fSort"].forEach(id => {
+    // older shared links used pay=max:900 / down=max:2000
+    const legacy = (k) => { const m = (p.get(k)||"").match(/^(min|max):(\d+)$/); return m ? m : null; };
+    const lp = legacy("pay"), ld = legacy("down");
+    if (lp && !p.get("payMin") && !p.get("payMax")) p.set(lp[1]==="max"?"payMax":"payMin", lp[2]);
+    if (ld && ld[1]==="max" && !/^\d+$/.test(p.get("down")||"")) p.set("down", ld[2]);
+    FILTER_IDS.forEach(id => {
       const v = p.get(URL_KEYS[id]);
       if (v != null){ $(id).value = v; if ($(id).value !== v) $(id).value = ""; }  // ignore stale/unknown values
     });
@@ -871,10 +902,29 @@ body{
     history.replaceState(null, "", qs ? "?" + qs : location.pathname);
   }
 
-  ["fState","fCity","fBeds","fPay","fDown","fSort"].forEach(id => $(id).addEventListener("change", () => {
+  ["fState",...FILTER_IDS].forEach(id => $(id).addEventListener("change", () => {
     if (id === "fState") fillCities();
-    page = 1; render(true); syncURL();
+    page = 1; render(true); syncURL(); chips();
   }));
+
+  // active-filter chips (tap one to clear it), like Zillow's filter pills
+  function chips(){
+    const m = n => "$" + Number(n).toLocaleString();
+    const def = [
+      ["fState", v=>v], ["fCity", v=>v], ["fBeds", v=>v+(v==="4"?"+":"")+" bd"], ["fBaths", v=>v+"+ ba"],
+      ["fPayMin", v=>m(v)+"/mo min"], ["fPayMax", v=>"Up to "+m(v)+"/mo"],
+      ["fPriceMin", v=>m(v)+" min"], ["fPriceMax", v=>"Up to "+m(v)],
+      ["fDown", v=>"Move in "+m(v)+" or less"],
+      ["fType", v=>v==="contractor"?"Contractor Specials":"All homes"]
+    ];
+    const box = $("chips");
+    box.innerHTML = def.filter(([id]) => $(id).value).map(([id,f]) => `<button type="button" data-c="${id}">${f($(id).value)} ✕</button>`).join("");
+    box.querySelectorAll("button").forEach(b => b.onclick = () => {
+      const id = b.dataset.c; $(id).value = "";
+      if (id === "fState") fillCities();
+      page = 1; render(true); syncURL(); chips();
+    });
+  }
 
   // "Copy link to these results" — search for a lead, tap, paste into a text
   (function(){
@@ -891,13 +941,24 @@ body{
   })();
 
   if (window.HomesMap) HomesMap.mount({ rerender: render, sync: syncURL });
+  // desktop: map beside the cards (Zillow's split view). Phones keep the List / Map toggle.
+  (function(){
+    const wrap = $("hmWrap"), cards = $("cards");
+    if (!wrap || !window.HomesMap || !matchMedia("(min-width:1100px)").matches) return;
+    const split = document.createElement("div"); split.id = "split";
+    const left = document.createElement("div"), right = document.createElement("div"); right.id = "splitMap";
+    cards.parentNode.insertBefore(split, cards);
+    left.append(cards, $("pager"), $("empty")); right.append(wrap); split.append(left, right);
+    $("hmMap").click();
+  })();
+  chips();
   if (window.HomesCart && HomesCart.alert){
     const ab = $("alertBtn"); ab.textContent = HomesCart.alertLabel; ab.style.display = "inline-block";
     ab.addEventListener("click", () => {
       const num = v => (v||"").split(":")[1] || "";
       const ns = window.HomesMap && HomesMap.nearState && HomesMap.nearState();
       HomesCart.alert({ state: $("fState").value, near: ns ? ns.label : $("fCity").value, miles: ns ? ns.miles : 25,
-        pay: num($("fPay").value), down: num($("fDown").value), beds: $("fBeds").value });
+        pay: $("fPayMax").value, down: $("fDown").value, beds: $("fBeds").value });
     });
   }
   applyURL();
@@ -958,8 +1019,8 @@ body{
     const want = [
       $("fBeds").value ? `${$("fBeds").value}${$("fBeds").value==="4"?"+":""} bedroom` : "",
       $("fCity").value || $("fState").value || "",
-      $("fPay").selectedIndex ? $("fPay").options[$("fPay").selectedIndex].text.toLowerCase() : "",
-      $("fDown").selectedIndex ? $("fDown").options[$("fDown").selectedIndex].text.toLowerCase() + " to move in" : ""
+      $("fPayMax").value ? "under $" + Number($("fPayMax").value).toLocaleString() + "/mo" : "",
+      $("fDown").value ? "up to $" + Number($("fDown").value).toLocaleString() + " to move in" : ""
     ].filter(Boolean).join(", ");
     e.currentTarget.href = `sms:${tel}?&body=${encodeURIComponent(`Hi, I'm looking for an owner-financed home${want?" — "+want:""}. Can you send me what you have?`)}`;
   });

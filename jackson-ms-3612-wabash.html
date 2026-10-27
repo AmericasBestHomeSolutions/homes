@@ -266,7 +266,7 @@ body.tl-pad{padding-bottom:70px}
     </div>
 
     <div class="cta-group">
-      <a class="btn btn-primary" id="ctaText" href="#">Text us to tour this home</a>
+      <a class="btn btn-primary" id="ctaText" href="#">Schedule a tour</a>
       <a class="btn btn-secondary" id="ctaCall" href="#">Or call</a>
     </div>
     <p class="cta-note" id="ctaNote"></p>
@@ -435,7 +435,7 @@ body.tl-pad{padding-bottom:70px}
     <h2 id="closerTitle"></h2>
     <p>Text us and we'll set up a time to walk through it. No pressure, no bank.</p>
     <div class="cta-group" style="max-width:400px;margin:0 auto">
-      <a class="btn btn-primary" id="ctaText2" href="#">Text us to tour</a>
+      <a class="btn btn-primary" id="ctaText2" href="#">Schedule a tour</a>
       <a class="btn btn-secondary" id="ctaCall2" href="#">Or call</a>
     </div>
   </section>
@@ -695,7 +695,8 @@ body.tl-pad{padding-bottom:70px}
   const prettyPhone = tel.length===10 ? `(${tel.slice(0,3)}) ${tel.slice(3,6)}-${tel.slice(6)}` : C.phone;
   const smsBody = encodeURIComponent(`Hi, I saw ${C.address ? C.address + " in " : ""}${C.city}, ${C.state} on your site and I'd like to tour it.\n\nhttps://getownerfinancedhomes.com/${C.id}.html`);
   ["ctaCall","ctaCall2"].forEach(id=>$(id).href = `tel:${tel}`);
-  ["ctaText","ctaText2"].forEach(id=>$(id).href = `sms:${tel}?&body=${smsBody}`);
+  // "Schedule a tour" opens the self-serve booking page (CRM portal) with this home pre-picked; texting stays in the nav + note.
+  ["ctaText","ctaText2"].forEach(id=>$(id).href = `https://owner.getownerfinancedhomes.com/book?home=${encodeURIComponent(C.id)}&lang=en`);
   $("thanksCall").href = `tel:${tel}`;
   $("thanksText").href = `sms:${tel}?&body=${smsBody}`;
   $("navCall").href = `sms:${tel}?&body=${smsBody}`;

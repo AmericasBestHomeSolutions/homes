@@ -143,6 +143,7 @@ const HOMES = [
     lng:   -81.616958,
     geo:   "exact",
     status: "Available",
+    contractor: "slate roof needs repair or replacement (duplex)",
 
     monthlyPayment: 935,
     moveIn:         3600,
@@ -258,6 +259,7 @@ const HOMES = [
     lng:   -88.957668,
     geo:   "exact",
     status: "Available",
+    contractor: "no electrical (copper wiring taken); furnace needs work",
 
     monthlyPayment: 850,
     moveIn:         2500,
@@ -419,6 +421,7 @@ const HOMES = [
     lng:   -90.136706,
     geo:   "exact",
     status: "Available",
+    contractor: "interior demolition was started and left unfinished",
 
     monthlyPayment: 499,
     moveIn:         1250,
@@ -489,6 +492,7 @@ const HOMES = [
     lng:   -88.934552,
     geo:   "exact",
     status: "Available",
+    contractor: "roof needs some repair; wiring pulled from the fuse box",
 
     monthlyPayment: 500,
     moveIn:         1500,
@@ -513,6 +517,7 @@ const HOMES = [
     lng:   -90.090398,
     geo:   "exact",
     status: "Available",
+    contractor: "hole in the roof that needs repair",
 
     monthlyPayment: 845,
     moveIn:         1000,
@@ -561,6 +566,7 @@ const HOMES = [
     lng:   -88.915406,
     geo:   "exact",
     status: "Available",
+    contractor: "needs a new roof, new electrical and plumbing, drywall, and a rebuilt kitchen and bath",
 
     monthlyPayment: 235,
     moveIn:         900,
@@ -1282,6 +1288,7 @@ const HOMES = [
     lng:   -86.329991,
     geo:   "exact",
     status: "Available",
+    contractor: "kitchen, ceiling and windows need work; probably needs a new roof",
 
     monthlyPayment: 558.49,
     moveIn:         1000,
@@ -1455,6 +1462,7 @@ const HOMES = [
     lng:   -89.017946,
     geo:   "exact",
     status: "Available",
+    featured: "top",
 
     monthlyPayment: 1125,
     moveIn:         3000,
@@ -2091,6 +2099,7 @@ const HOMES = [
     lng:   -90.135722,
     geo:   "exact",
     status: "Available",
+    contractor: "full gut rehab; not livable as it stands; every system expected to need replacing",
 
     monthlyPayment: 555,
     moveIn:         1000,
@@ -2139,6 +2148,7 @@ const HOMES = [
     lng:   -89.625746,
     geo:   "exact",
     status: "Available",
+    contractor: "back wall has structural failure and must be rebuilt; plumbing needs a licensed plumber; full electrical rewire",
 
     monthlyPayment: 695,
     moveIn:         2000,
@@ -2384,6 +2394,7 @@ const HOMES = [
     lng:   -88.936303,
     geo:   "exact",
     status: "Available",
+    contractor: "fire and smoke damage to the basement ceiling framing; needs real repair work",
 
     monthlyPayment: 700,
     moveIn:         2000,
@@ -2648,6 +2659,7 @@ const HOMES = [
     lng:   -88.97147,
     geo:   "exact",
     status: "Available",
+    contractor: "gutted; needs a full rehab",
 
     monthlyPayment: 395,
     moveIn:         1000,
@@ -2718,6 +2730,7 @@ const HOMES = [
     lng:   -90.290609,
     geo:   "exact",
     status: "Available",
+    contractor: "electric meter removed and power is off; electrical service must be updated before power can be restored",
 
     monthlyPayment: 625,
     moveIn:         1000,
@@ -2843,6 +2856,7 @@ const HOMES = [
     lng:   -90.135652,
     geo:   "exact",
     status: "Available",
+    contractor: "entire interior needs a full rehab",
 
     monthlyPayment: 475,
     moveIn:         1000,
@@ -2866,6 +2880,7 @@ const HOMES = [
     lng:   -89.60372,
     geo:   "exact",
     status: "Available",
+    contractor: "basement needs foundation repair; first-floor unit needs renovation",
 
     monthlyPayment: 775,
     moveIn:         2000,
@@ -2891,6 +2906,7 @@ const HOMES = [
     lng:   -90.22626,
     geo:   "exact",
     status: "Available",
+    featured: "top",
 
     monthlyPayment: 967,
     moveIn:         3000,
@@ -3035,6 +3051,7 @@ const HOMES = [
     lng:   -89.626168,
     geo:   "exact",
     status: "Available",
+    contractor: "no furnace or AC unit in place; heating and cooling must be installed",
 
     monthlyPayment: 450,
     moveIn:         1000,
@@ -3084,6 +3101,7 @@ const HOMES = [
     lng:   -90.283945,
     geo:   "exact",
     status: "Available",
+    contractor: "plumbing, HVAC and electrical all need work from licensed pros",
 
     monthlyPayment: 595,
     moveIn:         1500,
@@ -3279,6 +3297,7 @@ const HOMES = [
     lng:   -90.088345,
     geo:   "exact",
     status: "Available",
+    contractor: "needs plumbing work, a new furnace and AC unit, and new siding",
 
     monthlyPayment: 495,
     moveIn:         1500,
@@ -3303,6 +3322,7 @@ const HOMES = [
     lng:   -88.934597,
     geo:   "exact",
     status: "Available",
+    contractor: "completely gutted; needs plumbing, electrical and mechanicals; a fallen tree damaged the back of the structure",
 
     monthlyPayment: 295,
     moveIn:         1000,
@@ -3351,6 +3371,7 @@ const HOMES = [
     lng:   -90.076167,
     geo:   "exact",
     status: "Available",
+    contractor: "needs electrical and mechanical work",
 
     monthlyPayment: 475,
     moveIn:         1000,
@@ -3524,6 +3545,7 @@ const HOMES = [
     lng:   -88.93314,
     geo:   "exact",
     status: "Available",
+    contractor: "heavy fixer-upper; new electrical throughout and plumbing work",
 
     monthlyPayment: 599,
     moveIn:         1500,
@@ -4121,6 +4143,7 @@ const HOMES = [
     lng:   -90.259845,
     geo:   "exact",
     status: "Available",
+    contractor: "downstairs is gutted and must be rebuilt",
 
     monthlyPayment: 695,
     moveIn:         1500,
@@ -6123,7 +6146,6 @@ const SOLD_CARDS = [
   {"street": "39th Street", "city": "East St. Louis", "state": "IL", "photo": "images/sold/kntzxgcytvycmpkc.jpg"},
   {"street": "51st St", "city": "East St. Louis", "state": "IL", "photo": "images/sold/ssqtdzfbruyqazec.jpg"},
   {"street": "St. Louis Ave", "city": "East St. Louis", "state": "IL", "photo": "images/sold/bcbjpkanyxwguwat.jpg"},
-  {"street": "23rd St", "city": "Granite City", "state": "IL"},
   {"street": "Don Ryan Street", "city": "Hammond", "state": "IL", "photo": "images/sold/wcesuruzprpyrzph.jpg"},
   {"street": "Haungs Ave", "city": "Peoria", "state": "IL", "photo": "images/sold/wfdrptfpgsbvjznn.jpg"},
   {"street": "Wesley St", "city": "Springfield", "state": "IL", "photo": "images/sold/gsttzrvkvwqyrsfz.jpg"},
@@ -6132,6 +6154,7 @@ const SOLD_CARDS = [
   {"street": "2nd St", "city": "Witt", "state": "IL", "photo": "images/sold/abcnzdywvqhymxzg.jpg"},
   {"street": "Sauget Ave", "city": "Cahokia", "state": "IL"},
   {"street": "Jackson Ave", "city": "Flint", "state": "MI"},
+  {"street": "23rd St", "city": "Granite City", "state": "IL"},
   {"street": "Frye Avenue", "city": "Peoria", "state": "IL"},
   {"street": "Pohlman Lane", "city": "St. Louis", "state": "MO"},
 ];

@@ -4,45 +4,64 @@ Static HTML/CSS only. These pages are **not** the live site. They are `noindex`,
 
 Open `search.html`, `listing.html`, and `account.html` (serve the repo root so photos in `../images/` load).
 
-The search uses a sample of **real** Metro East listings (photos, monthly payment, down payment / move-in, beds, baths, sqft, city). The listing screen is **107 Judith Ln, Cahokia**. The map is a schematic so the mockup does not depend on map tiles. A tour row marked “Sample” is layout only, not a booking. The apply form does not submit.
+The search uses a sample of **real** Metro East listings. The listing screen is **107 Judith Ln, Cahokia**. The map is a schematic. **Book a Tour** is the only call to action. It leaves this page for the scheduler the live site already uses:
+
+`https://owner.getownerfinancedhomes.com/book?home=<id>&lang=en`
+
+(Spanish: `lang=es`.) That flow is not redrawn here. Save (the heart) stays. There is no Apply button.
+
+## Where the words come from
+
+Buyer-facing sentences are copied from the live pages. Nothing below is a new mission draft.
+
+| On the mockup | Source |
+| --- | --- |
+| Header and footer name | Live header: **Americas Best Home Solutions**. Domain **getownerfinancedhomes.com** is already on the About page and the footer. |
+| “Who we are” | `about.html` lead (Spanish: `nosotros.html`, “Quiénes somos”). |
+| “How we got here” | `about.html`, same heading (Spanish: `nosotros.html`, “Cómo llegamos aquí”). |
+| “You're buying — not renting” and the four benefit lines | `how-it-works.html`, “Why people choose this” (Spanish: `como-funciona.html`). |
+| “Your past doesn't have to decide your future…” | Home-page hero on `index.html`. |
+| “When you rent, the money is gone…” | FAQ answer, “Is this the same as renting?” |
+| FAQ questions and answers | `how-it-works.html`, “Straight answers” (Spanish: `como-funciona.html`, same questions). |
+| Tour / photo ID line | Listing template: tours are in person; photo ID before a showing. |
+| Judith facts (beds, payment, plumbing note) | That home’s record in `homes.js`. |
+| “Why buy instead of rent” | Section label Joe asked for. The lines under it are the existing benefit headings, not new claims. |
+| Button label “Book a Tour” | Joe’s label. The live button says “Schedule a tour” and already points at the same scheduler URL. |
 
 ## What this layout is
 
-Buyers already know a big city/ZIP search, filters, and a list beside a map. This keeps that shape and strips the rest.
-
-- **Search:** city or ZIP bar, filters for monthly payment, price, beds, and baths. Desktop is list + map. Mobile is the list, with a Map / List toggle.
-- **Card:** photo, monthly payment, down payment, beds / baths / sqft, city, heart to save.
-- **Listing:** photo gallery first, then a box with monthly payment and down payment, and three large actions: Save, Book a Tour, Apply. Short facts, three steps, a map.
-- **Account:** saved homes (heart), compare (up to 4), tour requests (up to 5), and the application. Header links on every screen.
+- **Search:** city or ZIP, filters (monthly, price, beds, baths), list beside a map. Mobile is the list, with a Map / List toggle. Under the results: who we are, why buy instead of rent, and the FAQ (questions collapse).
+- **Card:** photo, monthly payment, down payment, beds / baths / sqft, city, heart.
+- **Listing:** gallery first, monthly payment and down payment, Save and Book a Tour, a short version of the benefits, facts, three steps from How it works, map, and a short FAQ.
+- **Account:** saved homes and Book a Tour for each one.
 
 Pins show the monthly payment, same as today.
 
 ## What would change in the generator
 
-`homes.js`, each `<id>.html`, and the browse page are written by `scripts/refresh_listings.py` on the owner’s Mac (not in this repo). Hand-editing those files will be wiped on the next “Refresh listings from master.”
+`homes.js`, each `<id>.html`, and the browse page are written by `scripts/refresh_listings.py` on the owner’s Mac (not in this repo). Hand-editing those files will be wiped on the next refresh.
 
 After approval, change the **templates** in that script (and the shared `home.html` template it emits):
 
-1. **Browse / home template** — replace the long marketing hero and card grid with this shell: search bar, filter row, scrolling cards, map pane, and the mobile Map / List toggle. Keep reading `HOMES` for the cards and filters. Keep `homes-map.js` for the real map (Leaflet). The schematic here is only for the mockup.
-2. **Card partial** — photo, `monthlyPayment`, down payment from `moveIn`, beds / baths / sqft, city, and the existing heart from `homes-cart.js`.
-3. **Listing template** — gallery first, payment box (monthly + down payment), buttons Save / Book a Tour / Apply, a short fact row, three steps, then the map. Drop the long essay blocks from the default listing. How it works stays on its own page.
-4. **Wiring that stays**
-   - Save, compare (up to 4), and tour list (up to 5): `homes-cart.js` (hand-maintained, already language-aware).
-   - Book a Tour: `https://owner.getownerfinancedhomes.com/book?home=<id>&lang=en` (or `es`).
-   - Apply: the current lead form. Do not change consent wording without bumping `CONSENT_TEXT` and `CONSENT_TEXT_VERSION` in `consent.js`.
-   - Account can be a new **hand-maintained** page (like `next-steps.html`), not a generated file. Today “My homes” is saved in the browser; this mockup puts that, plus tours and apply, under Account in the header.
-
-Do not patch the generated listing HTML in this repo to ship the layout.
+1. **Browse template** — this shell: full company name and domain, search, filters, cards, map, mobile Map / List toggle, then the company block, benefit row, and FAQ. Keep reading `HOMES`. Keep `homes-map.js` for the real map.
+2. **Card partial** — photo, `monthlyPayment`, down payment from `moveIn`, beds / baths / sqft, city, heart from `homes-cart.js`.
+3. **Listing template** — gallery, payment box, Save, and Book a Tour only (same `book?home=` URL). Short benefit lines, facts, the existing three steps, map, collapsed FAQ. Do not add an Apply action.
+4. **Wiring that stays** — `homes-cart.js` (save, compare, language), `consent.js` on any form that still exists elsewhere. Account can be a hand-maintained page, like `next-steps.html`.
 
 ## Spanish site
 
-`build_casas.py` in the casas repo should emit this **same layout**. Copy stays Spanish. `homes-cart.js`, `homes-map.js`, and `sold-cards.js` already follow `<html lang>` and are shared with casas — keep that, and pass `lang=es` on the tour link.
+`build_casas.py` should emit this same layout. Reuse the Spanish pages, do not translate the English mockup from scratch:
+
+- Company and “how we got here”: `nosotros.html`
+- Benefits and FAQ: `como-funciona.html`
+- Tour link: `lang=es`
+- `homes-cart.js`, `homes-map.js`, and `sold-cards.js` already follow `<html lang>`
 
 ## Screenshots
 
 | Screen | Desktop | Mobile |
 | --- | --- | --- |
-| Search (list + map; mobile list with Map toggle) | `screenshots/search-desktop.png` | `screenshots/search-mobile.png` |
+| Search | `screenshots/search-desktop.png` | `screenshots/search-mobile.png` |
 | Search, map open | — | `screenshots/search-mobile-map.png` |
 | Listing | `screenshots/listing-desktop.png` | `screenshots/listing-mobile.png` |
-| Account (saved, tours, apply) | `screenshots/account-desktop.png` | `screenshots/account-mobile.png` |
+| Account | `screenshots/account-desktop.png` | `screenshots/account-mobile.png` |

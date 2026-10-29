@@ -32,7 +32,9 @@
       toggle.innerHTML = mapOn ? listIcon : mapIcon;
       toggle.setAttribute("aria-pressed", mapOn ? "true" : "false");
     };
-    if (new URLSearchParams(location.search).has("map")) document.body.classList.add("show-map");
+    const params = new URLSearchParams(location.search);
+    if (params.has("map")) document.body.classList.add("show-map");
+    if (params.has("full")) document.body.classList.add("shot-full");
     toggle.addEventListener("click", () => {
       document.body.classList.toggle("show-map");
       paint();

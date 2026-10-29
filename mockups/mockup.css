@@ -62,7 +62,7 @@ a { color: var(--navy); }
 .brand .name {
   font-family: "Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
   font-weight: 800;
-  font-size: 17px;
+  font-size: 15px;
   letter-spacing: -.3px;
   line-height: 1.05;
 }
@@ -70,11 +70,11 @@ a { color: var(--navy); }
   display: block;
   font-family: "DM Sans", system-ui, sans-serif;
   font-weight: 600;
-  font-size: 11px;
-  letter-spacing: .04em;
-  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0;
+  text-transform: none;
   color: var(--soft);
-  margin-top: 2px;
+  margin-top: 3px;
 }
 .search {
   flex: 1 1 280px;
@@ -165,9 +165,9 @@ a { color: var(--navy); }
 .chip.on { background: var(--blue); border-color: var(--navy); color: var(--navy); }
 .chip svg { flex: none; }
 
-/* Search split */
-body.page-search { height: 100vh; overflow: hidden; display: flex; flex-direction: column; }
-.split { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(380px, 460px) 1fr; }
+/* Search split. The map stays a fixed height; company, benefits, and FAQ sit below it. */
+body.page-search { min-height: 100vh; background: var(--paper); }
+.split { height: 640px; display: grid; grid-template-columns: minmax(380px, 460px) 1fr; }
 .list { overflow: auto; padding: 14px 8px 28px; }
 .list-head {
   display: flex;
@@ -298,6 +298,7 @@ body.page-search { height: 100vh; overflow: hidden; display: flex; flex-directio
 }
 
 .view-toggle { display: none; }
+body.shot-full .view-toggle { display: none !important; }
 
 /* Listing */
 .listing-wrap { max-width: 1120px; margin: 0 auto; padding: 14px 20px 64px; }
@@ -491,16 +492,12 @@ body.page-search { height: 100vh; overflow: hidden; display: flex; flex-directio
 }
 .panel .card { margin: 0 0 10px; }
 .panel .card:last-child { margin-bottom: 0; }
-.cmp {
-  align-self: flex-start;
-  margin: 6px 0 0;
-  border: 0;
-  background: none;
-  color: var(--navy);
-  font-weight: 700;
-  padding: 0;
-  cursor: pointer;
-  text-decoration: underline;
+.account .cmp {
+  grid-column: 2;
+  justify-self: start;
+  margin: 0 0 10px 12px;
+  font-weight: 800;
+  font-size: 14px;
 }
 .tour-row { display: grid; grid-template-columns: 96px 1fr; gap: 12px; align-items: center; }
 .tour-row img { width: 96px; height: 72px; object-fit: cover; border-radius: 10px; background: #d5deea; }
@@ -519,22 +516,142 @@ body.page-search { height: 100vh; overflow: hidden; display: flex; flex-directio
 .status-row p { margin: 0; }
 .status-row .btn { width: auto; min-width: 180px; }
 
+/* Why buy instead of rent — short lines from the How it works page */
+.whyband {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 8px 16px;
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+}
+.whyband h2 {
+  margin: 0;
+  flex: none;
+  font-family: "Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: -.2px;
+  white-space: nowrap;
+}
+.whyband ul, .why-compact {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.whyband ul { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+.whyband li, .why-compact li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13.5px;
+  font-weight: 700;
+}
+.whyband svg, .why-compact svg { width: 18px; height: 18px; color: var(--navy); flex: none; }
+.why-compact {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 6px;
+}
+.deal .why-k {
+  margin: 12px 0 0;
+  font-size: 11px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--soft);
+  font-weight: 800;
+}
+
+.foot {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 10px 16px 12px;
+  background: var(--navy);
+  color: #d6e3f4;
+  font-size: 13px;
+  line-height: 1.4;
+}
+.foot-brand { flex: none; min-width: 220px; }
+.foot-brand strong {
+  display: block;
+  color: #fff;
+  font-family: "Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  font-size: 14px;
+  letter-spacing: -.2px;
+}
+.foot-brand span { color: #fff; font-weight: 700; font-size: 12.5px; }
+.foot .mission { margin: 0; }
+.foot .mission b { color: #fff; }
+
+.below { max-width: 980px; margin: 0 auto; padding: 28px 20px 36px; }
+.below h2 {
+  margin: 0 0 8px;
+  font-family: "Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  font-size: 26px;
+  letter-spacing: -.4px;
+}
+.below .lede { margin: 0 0 10px; max-width: 68ch; }
+.below .note { margin: 0 0 18px; color: var(--soft); max-width: 68ch; }
+.benefits { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 0 0 22px; }
+.benefits article {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 12px 14px;
+}
+.benefits h3 { margin: 0 0 4px; font-size: 16px; }
+.benefits p { margin: 0; color: var(--soft); font-size: 14.5px; }
+.feel {
+  background: var(--navy);
+  color: #e7eef8;
+  border-radius: 14px;
+  padding: 14px 16px;
+  margin: 0 0 22px;
+}
+.feel p { margin: 0 0 8px; }
+.feel p:last-child { margin: 0; }
+.faq { display: flex; flex-direction: column; gap: 8px; }
+.faq details { background: #fff; border: 1px solid var(--line); border-radius: 12px; }
+.faq summary {
+  cursor: pointer;
+  font-weight: 800;
+  padding: 12px 14px;
+  list-style: none;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; float: right; color: var(--navy); font-size: 20px; line-height: 1; }
+.faq details[open] summary::after { content: "–"; }
+.faq .ans { padding: 0 14px 14px; color: var(--soft); font-size: 15px; margin: 0; }
+
 @media (max-width: 860px) {
-  body.page-search { height: auto; overflow: auto; }
   body.page-search.show-map { height: 100vh; overflow: hidden; }
+  body.show-map .below, body.show-map .foot, body.show-map .whyband { display: none; }
   .top { gap: 8px 10px; padding: 8px 12px; }
   .brand { order: 1; }
   .util { order: 2; margin-left: auto; }
   .search { order: 3; flex: 1 1 100%; max-width: none; }
-  .brand .name small, .util .label, .util .textus { display: none; }
+  .util .label, .util .textus { display: none; }
+  .brand .name { font-size: 12.5px; }
+  .brand .name small { font-size: 11px; }
+  .whyband { display: block; padding: 10px 12px 12px; }
+  .whyband h2 { margin: 0 0 8px; white-space: normal; }
+  .whyband ul { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; width: 100%; }
+  .whyband li { font-size: 13px; }
+  .foot { flex-direction: column; gap: 6px; }
+  .foot-brand { min-width: 0; }
+  body.show-map .whyband, body.show-map .foot { display: none; }
   .filters { padding: 8px 12px; }
   .chip { padding: 7px 10px; font-size: 13px; }
   .list-head { flex-direction: column; align-items: flex-start; gap: 2px; }
   .sort { display: none; }
-  .split { display: block; }
-  .map-pane { display: none; height: calc(100vh - 268px); }
+  .split { display: block; height: auto; }
+  .map-pane { display: none; height: calc(100vh - 230px); }
   body.show-map .list { display: none; }
   body.show-map .map-pane { display: block; }
+  .map-note { bottom: 76px; max-width: 46%; }
   .card { grid-template-columns: 1fr; }
   .photo { aspect-ratio: 16 / 10; min-height: 0; }
   .heart { left: auto; right: 10px; top: 10px; }
@@ -568,4 +685,7 @@ body.page-search { height: 100vh; overflow: hidden; display: flex; flex-directio
   .steps { grid-template-columns: 1fr; }
   .addr { font-size: 26px; }
   .account h1 { font-size: 28px; }
+  .account .cmp { grid-column: 1; margin-left: 12px; }
+  .benefits { grid-template-columns: 1fr; }
+  .below h2 { font-size: 22px; }
 }

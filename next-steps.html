@@ -448,13 +448,11 @@ const DEAL_ROOM = {
       nameOnAccount: "Americas Best Home Solutions LLC",
     },
     {
-      // TODO(joe): replace with the ABHS business Cash App once it's open
-      // (Joe is opening one in the name of Americas Best Home Solutions).
       label: "Cash App",
-      handle: "$iamjoehernandez",
-      link: "https://cash.app/$iamjoehernandez",
-      qr: "images/pay-cashapp-qr.png",
-      nameOnAccount: "Joseph Hernandez",
+      handle: "$americasbesthome",
+      link: "https://cash.app/$americasbesthome",
+      qr: "",
+      nameOnAccount: "Americas Best Home Solutions LLC",
     },
   ],
   phone: "551-550-9906",
@@ -473,7 +471,7 @@ const DEAL_ROOM = {
         { title: "Choose your home", body: "You found one that feels like home. That was the hardest part.", done: true },
         { title: "Schedule your tour", body: "We'll set a day and time that works for you.", flag: "tour_scheduled", impliedBy: true },
         { title: "Send photo ID for everyone who'll be on the agreement, plus emails", body: "", flag: "id_received" },
-        { title: "Your invoice", body: "You'll get an invoice from Americas Best Home Solutions.", flag: "invoice_sent" },
+        { title: "Your Buyer Payment & Purchase Summary", body: "We send you one packet with everything in it: your purchase price, deposit, monthly payment, financing terms, the disclosures that apply, and your invoice with payment instructions.", flag: "invoice_sent" },
         { title: "Down payment received", body: "We send you a receipt right away.", flag: "down_payment_received" },
         { title: "We prepare the purchase agreement and send it to you", body: "", flag: "agreement_sent" },
         { title: "You get 3 business days to review it", body: "Your 3 business days start the day you receive the agreement. If you change your mind in that window, any down payment you have made is fully refunded.", flag: "review_window_done" },

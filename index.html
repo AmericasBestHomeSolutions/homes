@@ -298,6 +298,7 @@ body{
 .card-face .pdots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.55)}.card-face .pdots i.on{background:#fff}
 @media(hover:none){.card-face .pg{opacity:.9;width:30px;height:30px}}
 </style>
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
 
@@ -384,7 +385,8 @@ body{
       <h2 class="sec-title">Find your home</h2>
     </div>
     <div class="listings-head narrow" style="max-width:100%">
-      <div class="searchbar"><span class="mag" aria-hidden="true">&#128269;</span><input id="fQ" type="search" inputmode="search" autocomplete="off" enterkeyhint="search" list="qHints" placeholder="Search address, city, ZIP — or “contractor special”" aria-label="Search"><datalist id="qHints"></datalist></div>
+      <div class="searchbar"><span class="mag" aria-hidden="true">&#128269;</span><input id="fQ" type="search" inputmode="search" autocomplete="off" enterkeyhint="search" list="qHints" placeholder="City or ZIP code" aria-label="City or ZIP code"><datalist id="qHints"></datalist></div>
+      <button type="button" class="near" id="nearMe">Near me</button>
       <div class="filters">
         <div class="filter">
           <label for="fState">State</label>
@@ -416,9 +418,9 @@ body{
           <label for="fPriceMin">Total price</label>
           <div class="rng"><select id="fPriceMin"><option value="">No min</option><option value="40000">$40,000</option><option value="50000">$50,000</option><option value="60000">$60,000</option><option value="70000">$70,000</option><option value="80000">$80,000</option><option value="90000">$90,000</option><option value="100000">$100,000</option><option value="110000">$110,000</option><option value="125000">$125,000</option><option value="150000">$150,000</option></select><span>–</span><select id="fPriceMax"><option value="">No max</option><option value="40000">$40,000</option><option value="50000">$50,000</option><option value="60000">$60,000</option><option value="70000">$70,000</option><option value="80000">$80,000</option><option value="90000">$90,000</option><option value="100000">$100,000</option><option value="110000">$110,000</option><option value="125000">$125,000</option><option value="150000">$150,000</option></select></div>
         </div>
-        <div class="filter">
-          <label for="fDown">Cash to move in</label>
-          <select id="fDown"><option value="">Any amount</option><option value="1500">Up to $1,500</option><option value="2000">Up to $2,000</option><option value="2500">Up to $2,500</option><option value="3000">Up to $3,000</option><option value="4000">Up to $4,000</option><option value="5000">Up to $5,000</option></select>
+        <div class="filter range">
+          <label for="fDownMin">Down payment</label>
+          <div class="rng"><select id="fDownMin"><option value="">No min</option><option value="1000">$1,000</option><option value="1500">$1,500</option><option value="2000">$2,000</option><option value="3000">$3,000</option></select><span>–</span><select id="fDown"><option value="">No max</option><option value="1500">$1,500</option><option value="2000">$2,000</option><option value="2500">$2,500</option><option value="3000">$3,000</option><option value="4000">$4,000</option><option value="5000">$5,000</option></select></div>
         </div>
         <div class="filter" id="fTypeWrap" hidden>
           <label for="fType">Home type</label>
@@ -692,6 +694,25 @@ body{
   </section>
 
   <!-- FOOTER -->
+  <section class="section story" id="story">
+    <h2>Who we are</h2>
+    <p class="lede">Americas Best Home Solutions LLC markets owner-financed homes to buyers on behalf of their owners, and buys properties from owners and listing agents who want a straightforward sale.</p>
+    <p class="lede">In a lot of American towns, the monthly cost of renting is higher than the monthly cost of owning the same house — and the only thing standing between a renting family and an owned home is the bank's approval process. We find homes in those towns whose owners will sell on terms, and connect them with the people who want to live in them.</p>
+    <h2>You're buying — not renting</h2>
+    <div class="benefits">
+      <article><h3>You own from day one</h3><p>Your name is on the agreement the day you sign. You're the homeowner, not a tenant.</p></article>
+      <article><h3>Your payment stays put</h3><p>A fixed monthly payment, in writing. It doesn't climb every year the way rent does — the only thing that could ever move it is a change in property taxes or insurance, and that's spelled out in your terms.</p></article>
+      <article><h3>A payment close to rent</h3><p>Own a home for about what you'd pay a landlord — and it builds toward something that's yours.</p></article>
+      <article><h3>No bank in the way</h3><p>No mortgage application and no bank approval deciding whether you get a home.</p></article>
+    </div>
+    <p class="lede">Your past doesn't have to decide your future. If you've been turned away by banks, this was built for you.</p>
+    <div class="faq">
+      <details open><summary>Is this the same as renting?</summary><p class="ans">No. When you rent, the money is gone and the home stays the landlord's. Here, you're the buyer from day one and every payment goes toward owning the home at the price you agreed to.</p></details>
+      <details><summary>Do I need a bank to buy one of these homes?</summary><p class="ans">No — there's no bank and no mortgage application. The home's owner is the seller, so the purchase is agreed in a written contract between you and the owner. We market the home and guide you through the process.</p></details>
+      <details><summary>What do I pay to move in?</summary><p class="ans">Each home lists its move-in payment and monthly payment right on its page. There are no hidden numbers — we go over all of it with you before anything is signed.</p></details>
+      <details><summary>Can I paint, fix up, or improve the home?</summary><p class="ans">Yes — it's your home. Many buyers love making it their own. We'll cover any specifics in your agreement.</p></details>
+    </div>
+  </section>
   <footer class="foot">
     <div class="fb">Americas Best Home Solutions</div>
     <p class="fcontact" style="opacity:.78;margin-top:2px">getownerfinancedhomes.com is operated by <a href="https://americasbesthomesolutions.com">Americas Best Home Solutions LLC</a></p>
@@ -712,11 +733,13 @@ body{
 
 </div>
 
+<script src="listed-dates.js"></script>
 <script src="homes.js"></script>
 <script src="sold-cards.js"></script>
 <script src="homes-map.js"></script>
 <script src="homes-cart.js"></script>
 <script src="/consent.js"></script>
+<script src="site-chrome.js"></script>
 <script>
 /* ---------- render (don't edit — home data lives in homes.js) ---------- */
 (function(){
@@ -747,6 +770,11 @@ body{
   // A deposit (status pending) is sold. Old homes.js files may still say Pending.
   const LISTINGS = HOMES.filter(h => !/^(pending|sold)$/i.test(String(h.status||"").trim()));
   const houseMark = `<svg class="fmark" width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9h14v-9"/><path d="M10 19v-5h4v5"/></svg>`;
+  function isNewHome(h){
+    const raw = (window.LISTED_ON || {})[h.id];
+    const t = Date.parse(raw || "");
+    return !!(raw && t && (Date.now() - t) <= 7 * 86400000);
+  }
 
   // filter options — built from whatever is in homes.js
   const states = [...new Set(LISTINGS.map(h => h.state).filter(Boolean))].sort();
@@ -783,6 +811,7 @@ body{
         <span class="scrim"></span>
         ${(h.photos||[]).length>1?`<button type="button" class="pg pv" aria-label="Previous photo">‹</button><button type="button" class="pg nx" aria-label="Next photo">›</button><span class="pdots">${Array.from({length:Math.min(6,h.photos.length)},(_,k)=>`<i${k?"":" class=\"on\""}></i>`).join("")}</span>`:""}
         <span class="status-tag">${h.status||"Available"}</span>
+        ${isNewHome(h) ? `<span class="badge-new">New</span>` : ""}
         ${h.contractor?`<span class="cs-tag">Contractor Special</span>`:""}
         ${opts && opts.featured && h.featured ? `<span class="feat-tag">★ Featured</span>` : `<span class="of-tag">Owner financing</span>`}
         ${window.HomesCart?HomesCart.heart(h):""}
@@ -790,8 +819,10 @@ body{
         <div class="fcity"><div class="c">${h.city}</div><div class="s">${h.state}</div></div>
       </div>
       <div class="card-body">
-        <div class="card-price"><span class="num">${money(h.monthlyPayment)}</span><span class="per">/ month</span></div>
+        <div class="card-price"><span class="num">${money(h.monthlyPayment)}</span><span class="per">/mo</span></div>
+        <div class="card-down">${h.moveIn ? money(h.moveIn) + " down" : "Ask us"}</div>
         <div class="card-specs">${specs}</div>
+        <div class="card-where">${h.city}, ${h.state}</div>
         ${h.address ? `<div class="card-addr" style="font-size:14.5px;color:var(--ink-soft);margin-bottom:12px">${h.address}, ${h.city}, ${h.state}${h.zip?` ${h.zip}`:""}</div>` : ""}
         <div class="card-mini">
           <div class="mini"><div class="k">To move in</div><div class="v">${h.moveIn ? money(h.moveIn) : "Ask us"}</div></div>
@@ -822,7 +853,7 @@ body{
     const rng = (n, lo, hi) => (!lo || n >= lo) && (!hi || n <= hi);
     const payLo = Number($("fPayMin").value)||0, payHi = Number($("fPayMax").value)||0;
     const prLo = Number($("fPriceMin").value)||0, prHi = Number($("fPriceMax").value)||0;
-    const downHi = Number($("fDown").value)||0;
+    const downLo = Number($("fDownMin").value)||0, downHi = Number($("fDown").value)||0;
     // free-text: every word must appear in address/city/state/zip; "contractor"/"fixer" flips on Contractor Specials
     const CSW = /^(contractor|contratista|contratistas|special|specials|especial|especiales|fixer|investor)$/;
     let words = ($("fQ").value||"").toLowerCase().replace(/[.,#]/g," ").split(/\s+/).filter(Boolean);
@@ -835,6 +866,7 @@ body{
       (!bathsVal || (Number(h.baths)||0) >= bathsVal) &&
       rng(Number(h.monthlyPayment)||0, payLo, payHi) &&
       rng(Number(h.lockedPrice)||0, prLo, prHi) &&
+      (!downLo || (Number(h.moveIn)||0) >= downLo) &&
       (!downHi || (Number(h.moveIn)||0) <= downHi) &&
       (csQ ? !!h.contractor : (words.length || type === "all" || (type === "contractor" ? !!h.contractor : !h.contractor))) &&
       (!words.length || (hay => words.every(w => hay.includes(w)))(((h.address||"")+" "+(h.city||"")+" "+(h.state||"")+" "+(h.zip||"")).toLowerCase().replace(/[.,#]/g," ")))
@@ -896,8 +928,8 @@ body{
   // ── shareable search links ────────────────────────────────────────────
   // filters ⇄ URL query string, so a search (e.g. Flint, MI) can be sent as a
   // link that opens pre-filtered. Param names are short + human-readable.
-  const URL_KEYS = { fState:"state", fCity:"city", fBeds:"beds", fBaths:"baths", fPayMin:"payMin", fPayMax:"payMax", fPriceMin:"priceMin", fPriceMax:"priceMax", fDown:"down", fType:"type", fSort:"sort", fQ:"q" };
-  const FILTER_IDS = ["fCity","fBeds","fBaths","fPayMin","fPayMax","fPriceMin","fPriceMax","fDown","fType","fSort","fQ"];
+  const URL_KEYS = { fState:"state", fCity:"city", fBeds:"beds", fBaths:"baths", fPayMin:"payMin", fPayMax:"payMax", fPriceMin:"priceMin", fPriceMax:"priceMax", fDownMin:"downMin", fDown:"down", fType:"type", fSort:"sort", fQ:"q" };
+  const FILTER_IDS = ["fCity","fBeds","fBaths","fPayMin","fPayMax","fPriceMin","fPriceMax","fDownMin","fDown","fType","fSort","fQ"];
   function applyURL(){
     const p = new URLSearchParams(location.search);
     if (p.get("state")) $("fState").value = p.get("state");
@@ -975,7 +1007,7 @@ body{
       ["fState", v=>v], ["fCity", v=>v], ["fBeds", v=>v+(v==="4"?"+":"")+" bd"], ["fBaths", v=>v+"+ ba"],
       ["fPayMin", v=>m(v)+"/mo min"], ["fPayMax", v=>"Up to "+m(v)+"/mo"],
       ["fPriceMin", v=>m(v)+" min"], ["fPriceMax", v=>"Up to "+m(v)],
-      ["fDown", v=>"Move in "+m(v)+" or less"],
+      ["fDownMin", v=>m(v)+" down min"], ["fDown", v=>"Up to "+m(v)+" down"],
       ["fQ", v=>"Search: "+v],
       ["fType", v=>v==="contractor"?"Contractor Specials":"All homes"]
     ];
@@ -1014,15 +1046,14 @@ body{
     $("hmMap").click();
   })();
   chips();
-  if (window.HomesCart && HomesCart.alert){
-    const ab = $("alertBtn"); ab.textContent = HomesCart.alertLabel; ab.style.display = "inline-block";
-    ab.addEventListener("click", () => {
-      const num = v => (v||"").split(":")[1] || "";
-      const ns = window.HomesMap && HomesMap.nearState && HomesMap.nearState();
-      HomesCart.alert({ state: $("fState").value, near: ns ? ns.label : $("fCity").value, miles: ns ? ns.miles : 25,
-        pay: $("fPayMax").value, down: $("fDown").value, beds: $("fBeds").value });
-    });
-  }
+  (function(){
+    const ab = $("alertBtn");
+    ab.textContent = "Get alerts for this search";
+    ab.style.display = "inline-block";
+    ab.addEventListener("click", () => { location.href = "account.html#alerts"; });
+    const near = $("nearMe");
+    if (near) near.addEventListener("click", () => { if (window.HomesMap && HomesMap.locate) HomesMap.locate(); });
+  })();
   applyURL();
   chips();
   // ── featured + just sold (data from homes.js) ───────────────────────────
@@ -1083,7 +1114,7 @@ body{
       $("fBeds").value ? `${$("fBeds").value}${$("fBeds").value==="4"?"+":""} bedroom` : "",
       $("fCity").value || $("fState").value || "",
       $("fPayMax").value ? "under $" + Number($("fPayMax").value).toLocaleString() + "/mo" : "",
-      $("fDown").value ? "up to $" + Number($("fDown").value).toLocaleString() + " to move in" : ""
+      $("fDownMin").value || $("fDown").value ? "down $" + ($("fDownMin").value ? Number($("fDownMin").value).toLocaleString() : "0") + "–$" + ($("fDown").value ? Number($("fDown").value).toLocaleString() : "any") : ""
     ].filter(Boolean).join(", ");
     e.currentTarget.href = `sms:${tel}?&body=${encodeURIComponent(`Hi, I'm looking for an owner-financed home${want?" — "+want:""}. Can you send me what you have?`)}`;
   });

@@ -1,0 +1,84 @@
+/* Approved search layout. Loaded after each page's own styles. */
+.brand .bn small, .brand .name small {
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  font-family: "DM Sans", system-ui, sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+}
+.wrap { max-width: 1180px; }
+.wrap { display: flex; flex-direction: column; }
+.wrap > * { order: 10; }
+.wrap > .topbar { order: 1; }
+.wrap > #listings { order: 2; margin-top: 8px !important; }
+.wrap > footer { order: 40; }
+.lang { display: inline-flex; border: 1.5px solid var(--line, #e2e8f2); border-radius: 999px; overflow: hidden; margin-right: 4px; }
+.lang a { text-decoration: none; color: var(--ink-soft, #5b6577); font-size: 12px; font-weight: 800; padding: 6px 8px; }
+.lang a[aria-current="page"] { background: var(--pine, #15315e); color: #fff; }
+.topnav a.acct, .topnav a[href="account.html"] { font-weight: 700; }
+.near {
+  font: 800 14px "DM Sans", system-ui, sans-serif;
+  border: 1.5px solid var(--pine, #15315e);
+  background: #fff;
+  color: var(--pine, #15315e);
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+.badge-new {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 5;
+  background: var(--pine, #15315e);
+  color: #fff;
+  font: 800 11px "DM Sans", system-ui, sans-serif;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 4px 8px;
+}
+.card-face .hc-heart { top: 8px !important; bottom: auto !important; right: 8px !important; }
+.card .fcity, .card .of-tag, .card .card-cta, .card .card-mini, .card .houseMark { display: none; }
+.cards { grid-template-columns: 1fr !important; }
+.card {
+  display: grid !important;
+  grid-template-columns: 168px 1fr;
+  min-height: 132px;
+}
+.card-face { aspect-ratio: auto !important; min-height: 132px; }
+.card-body { padding: 10px 12px !important; }
+.card-price .num { font-size: 28px !important; }
+.card-down { font-weight: 800; margin-top: 2px; }
+.card-where { color: var(--ink-soft, #5b6577); font-weight: 600; font-size: 14px; margin-top: 4px; }
+.card-specs { margin: 6px 0 0 !important; }
+.why-compact { list-style: none; margin: 10px 0 0; padding: 10px 0 0; border-top: 1px solid var(--line, #e2e8f2); display: grid; gap: 4px; font-weight: 700; font-size: 14px; }
+.faq details { background: #fff; border: 1px solid var(--line, #e2e8f2); border-radius: 12px; margin: 8px 0; }
+.faq summary { cursor: pointer; font-weight: 800; padding: 12px 14px; }
+.faq .ans { padding: 0 14px 14px; color: var(--ink-soft, #5b6577); }
+.story { margin-top: 28px; }
+.story h2 { font-family: "Bricolage Grotesque", sans-serif; font-weight: 800; letter-spacing: -.4px; }
+.benefits { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+.benefits article { background: #fff; border: 1px solid var(--line, #e2e8f2); border-radius: 14px; padding: 12px 14px; }
+.benefits h3 { margin: 0 0 4px; font-size: 16px; }
+.benefits p, .story .lede { margin: 0 0 10px; color: var(--ink-soft, #5b6577); }
+.switch { display: inline-flex; align-items: center; gap: 8px; font-weight: 800; cursor: pointer; }
+.switch input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.knob { width: 42px; height: 24px; border-radius: 99px; background: #c5cedd; position: relative; }
+.knob::after { content: ""; position: absolute; width: 18px; height: 18px; border-radius: 50%; background: #fff; top: 3px; left: 3px; }
+.switch input:checked + .knob { background: var(--pine, #15315e); }
+.switch input:checked + .knob::after { left: 21px; }
+.page-home .wrap { max-width: 1100px; }
+.page-home #ctaCall, .page-home #ctaCall2 { background: transparent; color: var(--pine, #15315e); border: 0; box-shadow: none; }
+@media (min-width: 900px) {
+  .page-home .hero { display: grid; grid-template-columns: minmax(0,1.5fr) 320px; column-gap: 18px; align-items: start; }
+  .page-home .hero-photo { grid-column: 1; grid-row: 1 / span 8; }
+  .page-home .deal-strip, .page-home .cta-group, .page-home .cta-note, .page-home .why-compact,
+  .page-home .headline, .page-home .prop-addr, .page-home .prop-specs, .page-home .subhead { grid-column: 2; }
+}
+@media (max-width: 700px) {
+  .card { grid-template-columns: 1fr !important; }
+  .card-face { aspect-ratio: 16/10 !important; min-height: 0; }
+  .benefits { grid-template-columns: 1fr; }
+  .topnav { flex-wrap: wrap; }
+}

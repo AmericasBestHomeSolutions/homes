@@ -349,7 +349,7 @@
     } else start();
   }
 
-  window.HomesMap = { mount, applyGeo, update, toURL, fromURL, mini, T, pinned, miles, nearState: () => (S.near && !S.near.me ? { label:S.near.label, miles:S.miles } : null), active: () => !!(S.near || S.area) };
+  window.HomesMap = { mount, applyGeo, update, toURL, fromURL, mini, locate: useMyLocation, T, pinned, miles, nearState: () => (S.near && !S.near.me ? { label:S.near.label, miles:S.miles } : null), active: () => !!(S.near || S.area) };
 
   // The Spanish homepage is a separate translated index.html. It already loads
   // this file. After the old city boxes are painted, swap in the photo cards.

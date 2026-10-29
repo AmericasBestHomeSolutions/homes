@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="robots" content="noindex"/>
+<title>Your account | Americas Best Home Solutions</title>
+<link rel="stylesheet" href="site.css">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#f4f7fc;color:#16213a;font-family:"DM Sans",system-ui,sans-serif}
+.wrap{max-width:880px;margin:0 auto;padding:16px 20px 48px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{display:flex;gap:8px;align-items:center;text-decoration:none;color:#15315e;font-weight:800}
+.bn small{display:block;font-weight:600;font-size:12px;color:#5b6577}
+.topnav{display:flex;gap:8px;align-items:center}
+.topnav a{text-decoration:none;color:#16213a;font-weight:700}
+.panel{background:#fff;border:1px solid #e2e8f2;border-radius:16px;padding:14px;margin:14px 0}
+h1{font-family:"Bricolage Grotesque",sans-serif}
+.card{display:grid;grid-template-columns:120px 1fr;gap:10px;border:1px solid #e2e8f2;border-radius:12px;overflow:hidden;margin:8px 0;text-decoration:none;color:inherit}
+.card img{width:120px;height:96px;object-fit:cover;background:#d5deea}
+.pay{font-weight:800;font-size:22px;color:#15315e}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <a class="brand" href="index.html"><span class="bn">Americas Best Home Solutions<small>getownerfinancedhomes.com</small></span></a>
+    <nav class="topnav">
+      <a href="index.html">Homes</a>
+      <a class="call" href="sms:+15515509906">Text us</a>
+    </nav>
+  </header>
+  <h1>Your account</h1>
+  <p>Tap the heart on any home to keep it here. Tours are in person, not by video.</p>
+  <section class="panel" id="saved"><h2>Saved</h2><div id="savedList"></div></section>
+  <section class="panel" id="alerts">
+    <h2>Saved searches</h2>
+    <p id="searchSum">Your last search shows up here.</p>
+    <label class="switch"><input type="checkbox" id="alertOn"><span class="knob"></span> <span id="alertState">Alerts off</span></label>
+    <p id="alertHold">Off. Nothing is texted or emailed until this is turned on.</p>
+  </section>
+  <p>We ask everyone for a photo ID before a showing; it's how we keep a log of who's been through the home.</p>
+</div>
+<script src="listed-dates.js"></script>
+<script src="homes.js"></script>
+<script src="site-chrome.js"></script>
+<script>
+/* ALERTS_ENABLED is false. This page does not email or text. The messaging bot sends only after Joe turns alerts on. */
+const ALERTS_ENABLED = false;
+const box = document.getElementById("alertOn");
+box.checked = false;
+box.addEventListener("change", () => {
+  if (ALERTS_ENABLED) return;
+  box.checked = false;
+  document.getElementById("alertHold").textContent = "Alerts are off. Nothing was sent.";
+});
+let saved = [];
+try { saved = JSON.parse(localStorage.getItem("savedHomes") || "[]"); } catch (e) {}
+const list = document.getElementById("savedList");
+const homes = (window.HOMES || []).filter(h => saved.includes(h.id));
+list.innerHTML = homes.length ? homes.map(h => `<div class="card"><a href="${h.id}.html"><img src="images/${h.id}.jpg" alt=""></a><div><a href="${h.id}.html"><div class="pay">$${Math.round(h.monthlyPayment).toLocaleString()}/mo</div></a><div>$${(h.moveIn||0).toLocaleString()} down</div><div>${h.city}, ${h.state}</div><div><a href="https://owner.getownerfinancedhomes.com/book?home=${encodeURIComponent(h.id)}&lang=en">Book a Tour</a></div></div></div>`).join("") : "<p>No saved homes yet.</p>";
+const q = new URLSearchParams(location.search);
+const bits = [q.get("q") || q.get("city"), q.get("payMin") && q.get("payMax") ? `$${q.get("payMin")}–$${q.get("payMax")}/mo` : ""].filter(Boolean);
+if (bits.length) document.getElementById("searchSum").textContent = bits.join(" · ");
+</script>
+</body>
+</html>

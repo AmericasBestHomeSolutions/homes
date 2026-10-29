@@ -205,8 +205,9 @@ body.tl-pad{padding-bottom:70px}
 @media (prefers-reduced-motion:reduce){ .reveal{opacity:1;transform:none;transition:none} html{scroll-behavior:auto} }
 @media (min-width:560px){ body{font-size:18px} }
 </style>
+<link rel="stylesheet" href="site.css">
 </head>
-<body>
+<body class="page-home">
 
 <div class="wrap">
 
@@ -242,6 +243,7 @@ body.tl-pad{padding-bottom:70px}
     <div class="hero-photo" id="heroFace">
       <span class="status-tag" id="statusTag">Available</span>
       <img id="heroImg" alt="" hidden>
+      <span class="badge-new" id="newBadge" hidden>New</span>
       <span class="sv-badge" id="heroSvBadge" hidden>Street view · © Google</span>
       <svg class="fallback" id="heroFallback" width="92" height="92" viewBox="0 0 24 24" fill="none" stroke="#a9c4e8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9h14v-9"/><path d="M10 19v-5h4v5"/>
@@ -266,10 +268,16 @@ body.tl-pad{padding-bottom:70px}
     </div>
 
     <div class="cta-group">
-      <a class="btn btn-primary" id="ctaText" href="#">Schedule a tour</a>
+      <a class="btn btn-primary" id="ctaText" href="#">Book a Tour</a>
       <a class="btn btn-secondary" id="ctaCall" href="#">Or call</a>
     </div>
     <p class="cta-note" id="ctaNote"></p>
+    <ul class="why-compact">
+      <li>You own from day one</li>
+      <li>Your payment stays put</li>
+      <li>A payment close to rent</li>
+      <li>No bank in the way</li>
+    </ul>
   </section>
 
   <!-- GALLERY -->
@@ -355,6 +363,12 @@ body.tl-pad{padding-bottom:70px}
   </section>
 
   <!-- LEAD FORM -->
+  <section class="section faq">
+    <h2 class="sec-title">Straight answers</h2>
+    <details><summary>Is this the same as renting?</summary><p class="ans">No. When you rent, the money is gone and the home stays the landlord's. Here, you're the buyer from day one and every payment goes toward owning the home at the price you agreed to.</p></details>
+    <details><summary>Do I need a bank to buy one of these homes?</summary><p class="ans">No — there's no bank and no mortgage application. The home's owner is the seller, so the purchase is agreed in a written contract between you and the owner. We market the home and guide you through the process.</p></details>
+    <details><summary>Can I paint, fix up, or improve the home?</summary><p class="ans">Yes — it's your home. Many buyers love making it their own. We'll cover any specifics in your agreement.</p></details>
+  </section>
   <section class="lead reveal" id="leadSection">
     <h2>Interested? Let's talk.</h2>
     <p class="sub">Leave your info and we'll reach out to set up a tour. No pressure, no bank.</p>
@@ -435,7 +449,7 @@ body.tl-pad{padding-bottom:70px}
     <h2 id="closerTitle"></h2>
     <p>Text us and we'll set up a time to walk through it. No pressure, no bank.</p>
     <div class="cta-group" style="max-width:400px;margin:0 auto">
-      <a class="btn btn-primary" id="ctaText2" href="#">Schedule a tour</a>
+      <a class="btn btn-primary" id="ctaText2" href="#">Book a Tour</a>
       <a class="btn btn-secondary" id="ctaCall2" href="#">Or call</a>
     </div>
   </section>
@@ -461,6 +475,7 @@ body.tl-pad{padding-bottom:70px}
 
 </div>
 
+<script src="listed-dates.js"></script>
 <script>window.__HOME_ID__="stlouis-mo-127-elkan";</script>
 <script src="homes.js"></script>
 <script src="/consent.js"></script>
@@ -759,6 +774,16 @@ body.tl-pad{padding-bottom:70px}
 </script>
 <script src="homes-map.js"></script>
 <script src="homes-cart.js"></script>
+<script src="site-chrome.js"></script>
+<script>
+(function(){
+  const id = window.__HOME_ID__ || new URLSearchParams(location.search).get("home");
+  const raw = (window.LISTED_ON || {})[id];
+  const t = Date.parse(raw || "");
+  const b = document.getElementById("newBadge");
+  if (b && raw && t && (Date.now() - t) <= 7 * 86400000) b.hidden = false;
+})();
+</script>
 <script>
 (function(){
   const id = window.__HOME_ID__ || new URLSearchParams(location.search).get("home");

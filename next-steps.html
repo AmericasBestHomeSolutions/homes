@@ -533,6 +533,21 @@ const DEAL_ROOM = {
     return done;
   }
 
+  // East St. Louis: the up-front money is a purchase DEPOSIT (it covers the costs of originating the
+  // loan, the paperwork and the closing), not a down payment. Joe, 2026-10-29: same wording as the
+  // packet. Rewrites visible text only, for ids starting "eaststlouis-".
+  if (/^eaststlouis-/.test(wantedId || "")) {
+    const depWord = s => s.replace(/Down payment/g, "Deposit").replace(/down payment/g, "deposit");
+    const sweep = () => {
+      const w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+      for (let n = w.nextNode(); n; n = w.nextNode()) {
+        if (/own payment/i.test(n.nodeValue) && n.parentNode && !/^(SCRIPT|STYLE)$/.test(n.parentNode.nodeName)) n.nodeValue = depWord(n.nodeValue);
+      }
+    };
+    new MutationObserver(sweep).observe(document.body, { childList: true, subtree: true, characterData: true });
+    document.addEventListener("DOMContentLoaded", sweep); sweep();
+  }
+
   // Roadmap — state-aware. Only Illinois gets the confirmed sequence with the refund window;
   // every other state gets the generic roadmap with no refund claim and no claim about step
   // order. `done` is null for a plain link (exactly the pre-D04 page) or a Set of flags.

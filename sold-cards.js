@@ -99,8 +99,8 @@
     const style = doc.createElement("style");
     style.id = "soldCardStyle";
     style.textContent = `
-    #soldSec .sold-strip{display:flex;gap:12px;margin-top:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 12px;-webkit-overflow-scrolling:touch}
-    #soldSec .sold-card{flex:0 0 min(78vw,270px);scroll-snap-align:start;background:#fff;color:var(--ink,#16213a);border:1px solid var(--line,#e2e8f2);border-radius:18px;overflow:hidden;min-height:0;padding:0;display:flex;flex-direction:column;box-shadow:0 8px 24px rgba(15,36,68,.06)}
+    #soldSec .sold-strip{display:flex;gap:12px;margin-top:16px;overflow-x:auto;max-width:100%;min-width:0;scroll-snap-type:x mandatory;padding:2px 2px 12px;-webkit-overflow-scrolling:touch}
+    #soldSec .sold-card{flex:0 0 min(85vw,270px);width:min(85vw,270px);max-width:min(85vw,270px);min-width:0;scroll-snap-align:start;background:#fff;color:var(--ink,#16213a);border:1px solid var(--line,#e2e8f2);border-radius:18px;overflow:hidden;min-height:0;padding:0;display:flex;flex-direction:column;box-shadow:0 8px 24px rgba(15,36,68,.06)}
     #soldSec .sold-card .frame{position:relative;aspect-ratio:4/3;background:#e6eef8;overflow:hidden}
     #soldSec .sold-card img{width:100%;height:100%;object-fit:cover;display:block}
     #soldSec .sold-badge{position:absolute;top:10px;left:10px;z-index:2;background:#e23b3b;color:#fff;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:5px 9px;border-radius:999px;font-weight:500}
@@ -109,8 +109,8 @@
     #soldSec .sold-label .dot{color:var(--ink-soft,#5b6577);font-weight:600}
     #soldSec .sold-when{margin:4px 0 0;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft,#5b6577)}
     @media (min-width:800px){
-      #soldSec .sold-strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));overflow:visible;scroll-snap-type:none}
-      #soldSec .sold-card{flex:none}
+      #soldSec .sold-strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));overflow:visible;max-width:100%;scroll-snap-type:none}
+      #soldSec .sold-card{flex:none;width:auto;max-width:100%}
     }`;
     doc.head.appendChild(style);
   }

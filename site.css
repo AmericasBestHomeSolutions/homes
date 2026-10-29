@@ -8,6 +8,10 @@
 }
 body.page-search { margin: 0; background: var(--paper, #f4f7fc); }
 body.page-search .wrap { max-width: none; padding: 0 0 48px; display: block; }
+/* Clip sideways overflow on the page wrapper. `clip` does not create a scroll
+   container, so the sticky search header still sticks to the viewport and the
+   fixed Book a Tour bar (outside .wrap) is left alone. */
+.wrap { overflow-x: clip; }
 body.page-search .topbar {
   display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
   padding: 10px 16px; background: #fff; border-bottom: 1px solid var(--line, #e2e8f2);
@@ -227,4 +231,8 @@ body.page-search .card-down { font-weight: 800; margin-top: 6px; color: var(--in
     padding: 12px 18px; font-weight: 800; box-shadow: 0 8px 22px rgba(15,36,68,.35); cursor: pointer;
   }
   body.page-search .cards { padding-left: 10px; padding-right: 10px; }
+  body.page-search .z-sort { flex-wrap: wrap; row-gap: 6px; min-width: 0; max-width: 100%; }
+  body.page-search .z-sort .count { min-width: 0; white-space: normal; }
+  body.page-search .sort-pill { margin-left: auto; max-width: 100%; min-width: 0; }
+  body.page-search .sort-pill select { max-width: 100%; min-width: 0; }
 }

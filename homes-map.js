@@ -284,9 +284,11 @@
   function fitAll(force){
     if (!S.map) return;
     const L = window.L, pts = S.last.filter(pinned).map(h => [h.lat, h.lng]);
+    S.map.invalidateSize();
     S._fitting = true;
-    if (S.near && S.ring) S.map.fitBounds(S.ring.getBounds(), { padding:[20,20], animate:false });
-    else if (pts.length) S.map.fitBounds(L.latLngBounds(pts), { padding:[40,40], maxZoom:13, animate:false });
+    if (S.near && S.ring) S.map.fitBounds(S.ring.getBounds(), { padding:[28,28], animate:false });
+    else if (pts.length === 1) S.map.setView(pts[0], 14, { animate:false });
+    else if (pts.length) S.map.fitBounds(L.latLngBounds(pts), { padding:[36,36], maxZoom:12, animate:false });
     // moveend fires synchronously for a non-animated fit; only later pans/zooms are the visitor's
     setTimeout(() => { S._fitting = false; S.dirty = false; const a = $("hmArea"); if (a) a.hidden = true; }, 250);
   }
@@ -349,7 +351,13 @@
     } else start();
   }
 
-  window.HomesMap = { mount, applyGeo, update, toURL, fromURL, mini, T, pinned, miles, nearState: () => (S.near && !S.near.me ? { label:S.near.label, miles:S.miles } : null), active: () => !!(S.near || S.area) };
+  function refit(){
+    if (!S.map) return;
+    S.map.invalidateSize();
+    if (!S.area) fitAll(true);
+  }
+
+  window.HomesMap = { mount, applyGeo, update, toURL, fromURL, mini, refit, locate: useMyLocation, T, pinned, miles, nearState: () => (S.near && !S.near.me ? { label:S.near.label, miles:S.miles } : null), active: () => !!(S.near || S.area) };
 
   // The Spanish homepage is a separate translated index.html. It already loads
   // this file. After the old city boxes are painted, swap in the photo cards.

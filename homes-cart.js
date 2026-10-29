@@ -427,9 +427,16 @@
     $("haForm").addEventListener("submit", submitAlert);
     $("haModal").classList.add("show");
   }
+  /* New-home alerts are OFF until Joe turns this on. Nothing is emailed or texted.
+   When ALERTS_ENABLED is true, the messaging bot sends — this function must still not be the sender. */
+  const ALERTS_ENABLED = false;
   async function submitAlert(e){
     e.preventDefault();
     const form = e.target, note = $("haNote"), btn = $("haSubmit");
+    if (!ALERTS_ENABLED){
+      if (note) note.textContent = ES ? "Las alertas están apagadas. No se envió nada." : "Alerts are off. Nothing was sent.";
+      return;
+    }
     const near = $("haNear").value.trim(), st = $("haState").value;
     note.textContent = "";
     if (!near && !st){ note.textContent = TA.needWhere; return; }

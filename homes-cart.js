@@ -16,7 +16,7 @@
     tabSaved:"Guardadas", tabCmp:"Comparar", empty:"Toque el ♥ en cualquier casa para guardarla aquí.",
     cmpHint:"Elija al menos 2 casas con «Comparar» para verlas lado a lado.", cmpFull:"Puede comparar hasta 4 casas — quite una primero.",
     saveFull:"Puede guardar hasta 30 casas — quite una primero.", remove:"Quitar", view:"Ver casa", tour:"Visita",
-    reqTours:"Pedir visitas", yourTours:"Sus visitas", name:"Nombre", phone:"Teléfono", email:"Correo", pref:"Mejor día y hora",
+    reqTours:"Pedir visitas", yourTours:"Sus visitas", book:"Agende una visita", name:"Nombre", phone:"Teléfono", email:"Correo", pref:"Mejor día y hora",
     anyDay:"Cualquier día", anyTime:"Cualquier hora", times:["Mañana (9–12)","Tarde (12–4)","Noche (4–7)"],
     send:"Pedir estas visitas", sending:"Enviando…", back:"← Volver", close:"Seguir viendo",
     thanksH:"¡Listo — gracias!", thanksP:"Nos comunicaremos pronto para fijar una hora para estas casas.",
@@ -33,7 +33,7 @@
     tabSaved:"Saved", tabCmp:"Compare", empty:"Tap the ♥ on any home to keep it here.",
     cmpHint:"Pick at least 2 homes with “Compare” to see them side by side.", cmpFull:"You can compare up to 4 homes — remove one first.",
     saveFull:"You can save up to 30 homes — remove one first.", remove:"Remove", view:"View home", tour:"Tour",
-    reqTours:"Request tours", yourTours:"Your tours", name:"Name", phone:"Phone", email:"Email", pref:"Best day & time",
+    reqTours:"Request tours", yourTours:"Your tours", book:"Book a Tour", name:"Name", phone:"Phone", email:"Email", pref:"Best day & time",
     anyDay:"Any day", anyTime:"Any time", times:["Morning (9–12)","Afternoon (12–4)","Evening (4–7)"],
     send:"Request these tours", sending:"Sending…", back:"← Back", close:"Keep browsing",
     thanksH:"Got it — thank you!", thanksP:"We'll text or call you shortly to lock in a time for these homes.",
@@ -100,6 +100,7 @@
     .hc-item .ad{font-size:14px;color:var(--ink-soft,#5b6577)} .hc-item .sp{font-size:13.5px}
     .hc-acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px;align-items:center}
     .hc-acts a,.hc-acts button{font:600 13px 'DM Sans',sans-serif;background:none;border:0;color:var(--pine,#15315e);cursor:pointer;padding:6px 4px;text-decoration:underline}
+    .hc-acts a.hc-book{text-decoration:none;background:var(--go,#e23b3b);color:#fff;border-radius:999px;padding:8px 12px;font-weight:800}
     .hc-acts button.rm{color:var(--honey,#e23b3b)}
     .hc-acts label{font-size:13px;font-weight:600;display:inline-flex;gap:6px;align-items:center;cursor:pointer}
     .hc-cta{width:100%;font:800 16px 'DM Sans',sans-serif;border:0;border-radius:999px;padding:15px;background:var(--go,#e23b3b);color:#fff;cursor:pointer;margin-top:12px}
@@ -214,32 +215,24 @@
 
   function renderPanel(){
     const body = $("hcBody");
-    if (view === "form") return renderForm(body);
-    if (view === "done") return renderDone(body);
     const head = `<div class="hc-head"><h3>${T.mine}</h3><button class="hc-x" type="button" data-hc="close" aria-label="Close">×</button></div>
       <div class="hc-tabs"><button type="button" class="${tab==="saved"?"on":""}" data-hc="tab-saved">♥ ${T.tabSaved} (${saved.length})</button><button type="button" class="${tab==="cmp"?"on":""}" data-hc="tab-cmp">⇄ ${T.tabCmp} (${cmp.length})</button></div>`;
     body.innerHTML = head + (tab === "saved" ? savedHTML() : cmpHTML());
   }
 
-  function tourIds(){
-    if (!tourSel) tourSel = saved.filter(id => !isPend(byId(id))).slice(0, MAXT);
-    tourSel = tourSel.filter(id => saved.includes(id));
-    return tourSel;
-  }
   function savedHTML(){
     if (!saved.length) return `<div class="hc-empty">${T.empty}</div>`;
-    const tsel = tourIds();
     const items = saved.map(id => { const h = byId(id);
       const specs = [h.beds?`${h.beds} ${ES?"hab.":"bd"}`:"", h.baths?`${h.baths} ${ES?"baños":"ba"}`:"", h.moveIn?`${money(h.moveIn)} ${T.moveIn.toLowerCase()}`:""].filter(Boolean).join(" · ");
       return `<div class="hc-item">${thumb(h)}<div>
         <div class="pr">${money(h.monthlyPayment)}<small>${T.mo}</small></div>
         <div class="ad">${esc(label(h))}</div><div class="sp">${esc(specs)}</div>
-        <div class="hc-acts"><label><input type="checkbox" data-hc-tour="${esc(id)}" ${tsel.includes(id)?"checked":""}> ${T.tour}</label>
+        <div class="hc-acts">
+          <a class="hc-book" href="https://owner.getownerfinancedhomes.com/book?home=${encodeURIComponent(id)}&lang=${ES?"es":"en"}">${T.book}</a>
           <button type="button" data-cmp="${esc(id)}"><span class="hc-tx">${cmp.includes(id)?T.cmpOn:T.cmp}</span></button>
           <a href="${encodeURIComponent(id)}.html">${T.view}</a>
           <button type="button" class="rm" data-hc="rm" data-id="${esc(id)}">${T.remove}</button></div></div></div>`; }).join("");
-    return items + `<button type="button" class="hc-cta" data-hc="tours" ${tsel.length?"":"disabled"}>${T.reqTours}${tsel.length?` (${tsel.length})`:""}</button>
-      <button type="button" class="hc-link" data-hc="close">${T.close}</button>`;
+    return items + `<button type="button" class="hc-link" data-hc="close">${T.close}</button>`;
   }
 
   function best(vals, dir){           // indexes holding the best value (ignores empty/0)
@@ -271,70 +264,6 @@
       <div class="hc-acts" style="margin-top:8px"><button type="button" data-hc="clear-cmp">${T.remove} ✕</button></div>`;
   }
 
-  /* ---------- tour request (same fields/endpoints as the home-page tour list) ---------- */
-  function getDealCode(homeId){
-    const k = "dealCode:" + homeId;
-    try { const v = localStorage.getItem(k); if (/^[a-z0-9]{10}$/.test(v||"")) return v; } catch(e){}
-    const A = "abcdefghjkmnpqrstvwxyz23456789", r = new Uint8Array(10);
-    crypto.getRandomValues(r);
-    const code = Array.from(r, b => A[b % A.length]).join("");
-    try { localStorage.setItem(k, code); } catch(e){}
-    return code;
-  }
-  function renderForm(body){
-    const ids = tourIds();
-    const days = [`<option value="">${T.anyDay}</option>`];
-    for (let i = 0; i < 7; i++){ const d = new Date(Date.now() + i*864e5); days.push(`<option>${d.toLocaleDateString(T.locale,{weekday:"long",month:"short",day:"numeric"})}</option>`); }
-    body.innerHTML = `<div class="hc-head"><h3>${T.yourTours}</h3><button class="hc-x" type="button" data-hc="close" aria-label="Close">×</button></div>
-      ${ids.map(id => `<div class="hc-item" style="grid-template-columns:1fr;padding:8px 12px"><div><div class="pr" style="font-size:15px">${esc(label(byId(id)))}</div><div class="sp">${money(byId(id).monthlyPayment)}${T.mo}</div></div></div>`).join("")}
-      <form class="hc-form" id="hcForm">
-        <label class="f" for="hcName">${T.name}</label><input id="hcName" name="name" type="text" autocomplete="name" required>
-        <label class="f" for="hcPhone">${T.phone}</label><input id="hcPhone" name="phone" type="tel" autocomplete="tel" required>
-        <label class="f" for="hcEmail">${T.email}</label><input id="hcEmail" name="email" type="email" autocomplete="email" required>
-        <label class="f">${T.pref}</label>
-        <div class="hc-two"><select name="pref_day">${days.join("")}</select><select name="pref_window"><option value="">${T.anyTime}</option>${T.times.map(t=>`<option>${t}</option>`).join("")}</select></div>
-        <label style="display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.5;color:var(--ink-soft,#5b6577);background:var(--paper,#f4f7fc);border:1px solid var(--line,#e2e8f2);border-radius:12px;padding:12px">
-          <input name="sms_consent" type="checkbox" value="${ES?"Sí":"Yes"}" style="margin-top:3px;width:16px;height:16px;flex-shrink:0"><span>${T.consent}</span></label>
-        <p style="font:12px 'DM Mono',monospace;color:var(--ink-soft,#5b6577);margin:0">${T.optional}</p>
-        <button type="submit" class="hc-cta" id="hcSubmit" style="margin-top:2px">${T.send}</button>
-        <p id="hcNote" style="font-size:13px;color:var(--honey,#e23b3b);margin:0"></p>
-        <button type="button" class="hc-link" data-hc="back">${T.back}</button>
-      </form>`;
-    $("hcForm").addEventListener("submit", submitTours);
-  }
-  function renderDone(body){
-    body.innerHTML = `<div class="hc-head"><h3>${T.thanksH}</h3><button class="hc-x" type="button" data-hc="close" aria-label="Close">×</button></div><p>${T.thanksP}</p><button type="button" class="hc-cta" data-hc="close">${T.close}</button>`;
-  }
-  async function submitTours(e){
-    e.preventDefault();
-    const form = e.target, btn = $("hcSubmit"), note = $("hcNote"), ids = tourIds();
-    if (!ids.length) return;
-    const C = (typeof CONTACT !== "undefined") ? CONTACT : {};
-    const hook = (C.makeWebhook||"").trim(), fid = (C.formspreeId||"").trim();
-    btn.disabled = true; btn.textContent = T.sending;
-    const data = new FormData(form);
-    const when = [data.get("pref_day"), data.get("pref_window")].filter(Boolean).join(", ") || (ES ? "Sin preferencia" : "No preference");
-    const homesTxt = ids.map(id => label(byId(id)) + " (" + location.origin + "/" + id + ".html)").join(" | ");
-    data.append("source", ES ? "casasconfinanciamiento — Lista de visitas" : "Tour list");
-    data.append("via", "saved-homes");
-    data.append("property", ids.map(id => label(byId(id))).join("; "));
-    data.append("property_ids", ids.join(","));
-    data.append("tour_count", String(ids.length));
-    data.append("preferred_time", when);
-    data.append("message", `TOUR LIST (${ids.length}): ${homesTxt} — Best time: ${when}`);
-    data.append("deal_code", getDealCode(ids[0]));
-    const others = saved.filter(id => !ids.includes(id));
-    if (others.length) data.append("also_saved", others.map(id => label(byId(id))).join("; "));
-    if (ES) data.append("language", "es");
-    try { if (typeof addConsentRecord === "function") await addConsentRecord(data, form); } catch(_){}
-    const targets = [];
-    if (fid)  targets.push(fetch(`https://formspree.io/f/${fid}`, { method:"POST", headers:{ "Accept":"application/json" }, body:data }));
-    if (hook) targets.push(fetch(hook, { method:"POST", body:data }));
-    const res = await Promise.allSettled(targets);
-    if (res.some(r => r.status === "fulfilled" && r.value.ok)){ view = "done"; renderPanel(); }
-    else { btn.disabled = false; btn.textContent = T.send; note.textContent = T.fail; }
-  }
-
   /* ---------- events ---------- */
   document.addEventListener("click", e => {
     const s = e.target.closest("[data-save]"), c = e.target.closest("[data-cmp]"), a = e.target.closest("[data-hc]");
@@ -348,16 +277,7 @@
     else if (k === "rm"){ saved = saved.filter(x => x !== a.dataset.id); store(KS, saved); tourSel = null; sync(); }
     else if (k === "rm-cmp"){ cmp = cmp.filter(x => x !== a.dataset.id); store(KC, cmp); sync(); }
     else if (k === "clear-cmp"){ cmp = []; store(KC, cmp); sync(); }
-    else if (k === "tours"){ if (tourIds().length){ view = "form"; renderPanel(); } }
-    else if (k === "back"){ view = "list"; renderPanel(); }
   }, true);
-  document.addEventListener("change", e => {
-    const t = e.target.closest("[data-hc-tour]"); if (!t) return;
-    const id = t.dataset.hcTour, cur = tourIds();
-    if (t.checked){ if (cur.length >= MAXT){ t.checked = false; alert(T.maxTours); return; } tourSel = cur.concat(id); }
-    else tourSel = cur.filter(x => x !== id);
-    renderPanel();
-  });
   // interest rides along on every lead form so the CRM sees what the buyer saved
   document.addEventListener("submit", e => {
     const f = e.target; if (!f || !f.id || !/^(leadForm|tlForm)$/.test(f.id) || !saved.length) return;

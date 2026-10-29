@@ -1,0 +1,28 @@
+/* Shared header menu. Loaded on every public page.
+   Desktop: a row of links. Narrow screens: a Menu button that opens them. */
+.topnav{position:relative;display:flex;align-items:center;gap:8px;flex-wrap:nowrap}
+.topnav a.call,.topnav #navCall{display:none !important}
+.nav-toggle{
+  display:none;align-items:center;gap:8px;border:1.5px solid var(--line,#e2e8f2);
+  background:#fff;color:var(--pine,#15315e);font:800 14px "DM Sans",system-ui,sans-serif;
+  border-radius:999px;padding:8px 12px;cursor:pointer;min-height:40px
+}
+.nav-toggle .nav-bars{width:16px;height:2px;background:currentColor;box-shadow:0 -5px 0 currentColor,0 5px 0 currentColor;display:block}
+.site-menu{display:flex;align-items:center;gap:2px;flex-wrap:wrap}
+.site-menu a{font-size:14px;font-weight:700;color:var(--ink-soft,#5b6577);text-decoration:none;padding:8px 10px;border-radius:10px;white-space:nowrap}
+.site-menu a:hover,.site-menu a[aria-current="page"]{color:var(--pine,#15315e);background:#eef2f9}
+@media (max-width:980px){
+  .nav-toggle{display:inline-flex}
+  .site-menu{
+    display:none;position:absolute;right:0;top:calc(100% + 8px);z-index:80;
+    background:#fff;border:1px solid var(--line,#e2e8f2);border-radius:16px;
+    box-shadow:0 16px 40px rgba(15,36,68,.18);flex-direction:column;align-items:stretch;
+    min-width:230px;padding:8px;flex-wrap:nowrap
+  }
+  .topnav.menu-open .site-menu{display:flex}
+  .site-menu a{padding:11px 12px}
+  .site-menu .lang{margin:6px 8px 4px;align-self:flex-start}
+}
+@media (min-width:981px){
+  .site-menu{display:flex !important;position:static;box-shadow:none;border:0;background:transparent;padding:0;flex-direction:row}
+}

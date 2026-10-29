@@ -101,6 +101,7 @@ textarea:focus,input[type=text]:focus{outline:none;border-color:var(--pine);box-
 .fb-card p{margin:0 auto 16px;max-width:460px;line-height:1.55}
 .fb-after{margin-top:12px;font-weight:600;color:var(--pine)}
 </style>
+<link rel="stylesheet" href="/nav.css">
 </head>
 <body>
 <div class="wrap">
@@ -115,7 +116,17 @@ textarea:focus,input[type=text]:focus{outline:none;border-color:var(--pine);box-
       </svg>
       <span class="bn">Americas Best Home Solutions<small>Owner Financing</small></span>
     </a>
-    <nav class="topnav"><a class="call" id="navCall" href="#">Call us</a></nav>
+    <nav class="topnav" aria-label="Site">
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="siteMenu"><span class="nav-bars" aria-hidden="true"></span><span class="nav-word">Menu</span></button>
+      <div class="site-menu" id="siteMenu">
+        <a href="/#listings">Homes</a>
+        <a href="/how-it-works">How it works</a>
+        <a href="/#why-buy">Why buy vs rent</a>
+        <a href="/about">About us</a>
+        <a href="/#faq">FAQ</a>
+        <a class="nav-es" href="https://casasconfinanciamiento.com/">Español</a>
+      </div>
+    </nav>
   </header>
 
   <!-- LOADING -->
@@ -234,7 +245,7 @@ const REVIEW = {
   const validHome = /^[a-z0-9]+-[a-z]{2}-[a-z0-9-]+$/i.test(homeId);
   const tel = REVIEW.phone.replace(/\D/g, "");
   const pretty = tel.length === 10 ? `(${tel.slice(0,3)}) ${tel.slice(3,6)}-${tel.slice(6)}` : REVIEW.phone;
-  $("navCall").href = "tel:" + tel; $("navCall").textContent = pretty;
+  if ($("navCall")) { $("navCall").href = "tel:" + tel; $("navCall").textContent = pretty; }
 
   const roadmapHref = validHome && dealCode ? `next-steps.html?home=${encodeURIComponent(homeId)}&deal=${encodeURIComponent(dealCode)}` : "";
   ["backRoadmap","backRoadmap2"].forEach(i => { if (roadmapHref){ $(i).href = roadmapHref; $(i).hidden = false; } });
@@ -354,5 +365,6 @@ const REVIEW = {
   })();
 })();
 </script>
+<script src="/site-chrome.js"></script>
 </body>
 </html>

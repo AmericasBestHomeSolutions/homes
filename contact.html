@@ -11,6 +11,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/pages.css">
+<link rel="stylesheet" href="/nav.css">
 </head>
 <body>
 <div class="wrap">
@@ -25,26 +26,30 @@
       </svg>
       <span class="bn">Americas Best Home Solutions<small>Owner Financing</small></span>
     </a>
-    <nav class="topnav">
-      <a href="/">Homes</a>
-      <a href="/how-it-works">How it works</a>
-      <a href="/about">About</a>
-      <a href="/contact" aria-current="page">Contact</a>
-      <a class="call" href="tel:+15515509906">(551) 550-9906</a>
+    <nav class="topnav" aria-label="Site">
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="siteMenu"><span class="nav-bars" aria-hidden="true"></span><span class="nav-word">Menu</span></button>
+      <div class="site-menu" id="siteMenu">
+        <a href="/#listings">Homes</a>
+        <a href="/how-it-works">How it works</a>
+        <a href="/#why-buy">Why buy vs rent</a>
+        <a href="/about">About us</a>
+        <a href="/#faq">FAQ</a>
+        <a class="nav-es" href="https://casasconfinanciamiento.com/">Español</a>
+      </div>
     </nav>
   </header>
 
   <section class="phead">
     <span class="eyebrow">Contact</span>
     <h1>Talk to a real person.</h1>
-    <p class="lead">Whether you're looking at one of our homes or you have a property you'd like us to buy, here's how to reach us. Calls and texts go to our team, not a phone tree.</p>
+    <p class="lead">To walk through a home, open it and tap Book a Tour. Owners and agents can email us about a property.</p>
   </section>
 
   <div class="facts">
     <div class="fact">
-      <div class="k">Phone &amp; text</div>
-      <div class="v"><a href="tel:+15515509906">(551) 550-9906</a></div>
-      <div class="note">Texting is usually the fastest way to reach us.</div>
+      <div class="k">See a home</div>
+      <div class="v"><a href="/#listings">Browse homes</a></div>
+      <div class="note">Book a Tour is on every home page.</div>
     </div>
     <div class="fact">
       <div class="k">Email</div>
@@ -74,24 +79,6 @@
       <label for="lfEmail">Email</label>
       <input id="lfEmail" name="email" type="email" autocomplete="email" required>
 
-      <label for="lfPhone">Phone</label>
-      <input id="lfPhone" name="phone" type="tel" autocomplete="tel" required>
-
-      <!-- ══════════════════════════════════════════════════════════════════
-           A2P 10DLC CONSENT CHECKBOX — do not change without reading this.
-           Carriers require that this box be (1) directly under the phone
-           field, (2) unchecked by default, (3) the ONLY thing this checkbox
-           consents to, and (4) NOT required to submit the form. It therefore
-           has no `checked` and no `required` attribute — leave it that way.
-           If you edit the wording, bump CONSENT_TEXT and CONSENT_TEXT_VERSION
-           in consent.js to match, so stored records stay accurate.
-           ══════════════════════════════════════════════════════════════════ -->
-      <label class="consent" for="lfSms">
-        <input id="lfSms" name="sms_consent" type="checkbox" value="Yes">
-        <span>I agree to receive text messages from Americas Best Home Solutions LLC about property listings, showings, offers, and follow-up. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe or HELP for help. See our <a href="/privacy-policy">Privacy Policy</a> and <a href="/messaging-terms">Messaging Terms</a>.</span>
-      </label>
-      <p class="optional">Optional — you can submit this form without checking the box.</p>
-
       <label for="lfProperty">Property of interest</label>
       <input id="lfProperty" name="property_of_interest" type="text" placeholder="Address or city — or “selling a property”">
 
@@ -104,7 +91,7 @@
 
     <div class="thanks">
       <h3>Message received.</h3>
-      <p>Thanks — we'll get back to you shortly. If it's urgent, call or text us at (551) 550-9906.</p>
+      <p>Thanks — we'll get back to you by email.</p>
     </div>
   </section>
 
@@ -115,7 +102,7 @@
       <li><strong>Sellers and agents.</strong> We'll ask for the address, condition, and what you need to net, and come back with a straight yes or no. See <a href="/how-it-works#sellers">how we buy</a> for the full process.</li>
       <li><strong>Everyone.</strong> If we're not the right fit, we'll tell you that instead of stringing you along.</li>
     </ul>
-    <p>Checking the text-message box is entirely optional and is never a condition of buying, selling, or getting a response from us. You can opt out at any time by replying STOP. Full details are in our <a href="/messaging-terms">Messaging Terms</a>.</p>
+    <p>Buyers book a tour from the home page. Full details of any messages we send are in our <a href="/messaging-terms">Messaging Terms</a> and <a href="/privacy-policy">Privacy Policy</a>.</p>
   </div>
 
   <footer class="foot">
@@ -123,7 +110,7 @@
     <p class="fcontact fentity">getownerfinancedhomes.com is operated by <a href="https://americasbesthomesolutions.com">Americas Best Home Solutions LLC</a></p>
     <address class="fcontact faddr">
       30 N Gould St, Ste R, Sheridan, WY 82801<br>
-      <a href="tel:+15515509906">(551) 550-9906</a> · <a href="mailto:admin@americasbesthomesolutions.com">admin@americasbesthomesolutions.com</a>
+      <a href="mailto:admin@americasbesthomesolutions.com">admin@americasbesthomesolutions.com</a>
     </address>
     <p class="fcontact flinks">
       <a href="/">Homes</a> · <a href="/how-it-works">How it works</a> · <a href="/about">About</a> · <a href="/contact">Contact</a> · <a href="/privacy-policy">Privacy Policy</a> · <a href="/messaging-terms">Messaging Terms</a> · <a href="https://owner.getownerfinancedhomes.com" rel="nofollow noopener">Team Portal</a>
@@ -138,7 +125,6 @@
 <!-- homes.js is loaded for its CONTACT block (Formspree id + Make webhook) so
      the form endpoints stay in one place; consent.js adds the 10DLC record. -->
 <script src="/homes.js"></script>
-<script src="/consent.js"></script>
 <script>
 (function(){
   const $ = (id) => document.getElementById(id);
@@ -153,24 +139,23 @@
     e.preventDefault();
 
     // Validate by hand so the optional consent box can never block submission.
-    const missing = ["lfName","lfEmail","lfPhone"].find(f => !$(f).value.trim());
-    if (missing) { $(missing).focus(); note.textContent = "Please fill in your name, email, and phone."; return; }
+    const missing = ["lfName","lfEmail"].find(f => !$(f).value.trim());
+    if (missing) { $(missing).focus(); note.textContent = "Please fill in your name and email."; return; }
     if (!id && !hook) { note.textContent = "⚠ Form not connected yet — add a Formspree ID or Make webhook in homes.js."; return; }
 
     btn.disabled = true; btn.textContent = "Sending…";
     const data = new FormData(form);
     data.append("source", "Contact page");
-    await addConsentRecord(data, form);
-
     const targets = [];
     if (id)   targets.push(fetch(`https://formspree.io/f/${id}`, { method:"POST", headers:{ "Accept":"application/json" }, body:data }));
     if (hook) targets.push(fetch(hook, { method:"POST", body:data }));
     const results = await Promise.allSettled(targets);
 
     if (results.some(r => r.status === "fulfilled" && r.value.ok)) { card.classList.add("sent"); }
-    else { btn.disabled = false; btn.textContent = "Send message"; note.textContent = "Something went wrong — please call or text us at (551) 550-9906 instead."; }
+    else { btn.disabled = false; btn.textContent = "Send message"; note.textContent = "Something went wrong — please email us instead."; }
   });
 })();
 </script>
+<script src="/site-chrome.js"></script>
 </body>
 </html>

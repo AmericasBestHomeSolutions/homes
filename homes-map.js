@@ -246,8 +246,10 @@
     S.sync && S.sync();
   }
 
-  async function initMap(){
-    if (S.map) return;
+  function initMap(){
+    if (S.map) return Promise.resolve();
+    if (S._boot) return S._boot;
+    S._boot = (async () => {
     await loadLib(true);
     const L = window.L;
     S.map = L.map("hmMapEl", { scrollWheelZoom:true, tap:true }).setView([38.6, -89.5], 7);
@@ -257,6 +259,8 @@
       iconCreateFunction: c => L.divIcon({ html:`<div class="hm-cl" style="width:38px;height:38px">${c.getChildCount()}</div>`, className:"", iconSize:[38,38] })
     }).addTo(S.map);
     S.map.on("moveend", () => { if (S.view==="map" && !S._fitting && S.ready){ S.dirty = true; $("hmArea").hidden = false; } });
+    })();
+    return S._boot;
   }
 
   function drawPins(list){

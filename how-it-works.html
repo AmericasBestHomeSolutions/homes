@@ -158,6 +158,7 @@ body{
 }
 @media (min-width:560px){ body{font-size:18px} }
 </style>
+<link rel="stylesheet" href="/nav.css">
 </head>
 <body>
 
@@ -173,15 +174,16 @@ body{
       </svg>
       <span class="bn">Americas Best Home Solutions<small>Owner Financing</small></span>
     </a>
-    <nav class="topnav">
-      <a class="nav-hide" href="index.html">Homes</a>
-      <a class="nav-hide" href="#sellers">Sell to us</a>
-      <a class="nav-hide" href="/about">About</a>
-      <a class="nav-hide" href="/contact">Contact</a>
-      <a class="call" id="navCall" href="#">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        <span id="navCallText">Call us</span>
-      </a>
+    <nav class="topnav" aria-label="Site">
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="siteMenu"><span class="nav-bars" aria-hidden="true"></span><span class="nav-word">Menu</span></button>
+      <div class="site-menu" id="siteMenu">
+        <a href="/#listings">Homes</a>
+        <a href="/how-it-works">How it works</a>
+        <a href="/#why-buy">Why buy vs rent</a>
+        <a href="/about">About us</a>
+        <a href="/#faq">FAQ</a>
+        <a class="nav-es" href="https://casasconfinanciamiento.com/">Español</a>
+      </div>
     </nav>
   </header>
 
@@ -220,7 +222,7 @@ body{
     <div class="sec-label">Step by step</div>
     <h2 class="sec-title">From first call to keys</h2>
     <div class="steps">
-      <div class="step"><div class="n">01</div><div class="body"><h3>Reach out & tour the home</h3><p>Call or text us about a home you like and we'll set up a time to walk through it together.</p></div></div>
+      <div class="step"><div class="n">01</div><div class="body"><h3>Book a tour</h3><p>Open a home you like and book a time to walk through it together.</p></div></div>
       <div class="step"><div class="n">02</div><div class="body"><h3>Agree on the numbers</h3><p>We go over the move-in payment, the monthly payment, and the purchase price — all in plain language, no surprises.</p></div></div>
       <div class="step"><div class="n">03</div><div class="body"><h3>Sign a simple agreement</h3><p>The owner finances it with a contract for deed. No bank, no mortgage application, no long approval process.</p></div></div>
       <div class="step"><div class="n">04</div><div class="body"><h3>Get the keys & move in</h3><p>Make your move-in payment and the home is yours to live in from day one.</p></div></div>
@@ -263,7 +265,7 @@ body{
         <div><h3>Treat it like your own</h3><p>Because it is. Care for it the way you'd care for anything you're building toward owning outright.</p></div>
       </div>
     </div>
-    <p class="resp-note">Not sure if this is right for you? That's exactly what a quick call is for.</p>
+    <p class="resp-note">Not sure if this is right for you? That's exactly what a tour is for.</p>
   </section>
 
   <!-- FAQ -->
@@ -273,11 +275,11 @@ body{
     <div class="faq">
       <details>
         <summary>Is this legit — or is it a scam?</summary>
-        <div class="ans">It's a fair question, and we'd rather you ask it. Americas Best Home Solutions LLC is a registered Wyoming business, established in 2023, and every home we list has a real address, a real price, and a real monthly payment. Here's how you protect yourself with us — and with anyone: you visit the home in person before you commit, you get every number and every term in writing, and you always talk to a real person. We will never ask you to wire money to "hold" a house you haven't seen, and we'll never rush you. If anything ever feels off, slow down and call us directly at the number on this site.</div>
+        <div class="ans">It's a fair question, and we'd rather you ask it. Americas Best Home Solutions LLC is a registered Wyoming business, established in 2023, and every home we list has a real address, a real price, and a real monthly payment. Here's how you protect yourself with us — and with anyone: you visit the home in person before you commit, you get every number and every term in writing, and you always talk to a real person. We will never ask you to wire money to "hold" a house you haven't seen, and we'll never rush you. If anything ever feels off, slow down and email admin@americasbesthomesolutions.com.</div>
       </details>
       <details>
         <summary>Do I need a bank to buy one of these homes?</summary>
-        <div class="ans">No — there's no bank and no mortgage application. The home's owner is the seller, so the purchase is agreed in a written contract between you and the owner. We market the home and guide you through the process. Call us and we'll talk through your situation honestly.</div>
+        <div class="ans">No — there's no bank and no mortgage application. The home's owner is the seller, so the purchase is agreed in a written contract between you and the owner. We market the home and guide you through the process. Book a Tour and we'll talk through your situation honestly.</div>
       </details>
       <details>
         <summary>Is this the same as renting?</summary>
@@ -321,7 +323,7 @@ body{
 
     <h3 style="font-family:'Bricolage Grotesque',sans-serif;font-size:19px;margin:26px 0 10px">How selling to us works</h3>
     <div class="steps">
-      <div class="step"><div class="n">01</div><div class="body"><h3>Send us the address</h3><p>Call, text, or use the contact form. We need the address, roughly what condition it's in, and what you need to walk away with.</p></div></div>
+      <div class="step"><div class="n">01</div><div class="body"><h3>Send us the address</h3><p>Use the contact form. We need the address, roughly what condition it's in, and what you need to walk away with.</p></div></div>
       <div class="step"><div class="n">02</div><div class="body"><h3>We review it</h3><p>We look at the property, the neighborhood, and what it would take to get the home ready for a buyer. Usually a day or two.</p></div></div>
       <div class="step"><div class="n">03</div><div class="body"><h3>You get a straight answer</h3><p>A number and the terms behind it — or a clear no. We don't tie properties up while we shop them around.</p></div></div>
       <div class="step"><div class="n">04</div><div class="body"><h3>Close on your timeline</h3><p>We close through a title company or closing attorney. If you need three weeks, we work to three weeks; if you need three months, we can wait.</p></div></div>
@@ -338,10 +340,9 @@ body{
   <!-- CLOSER -->
   <section class="closer reveal">
     <h2>Ready to find your home?</h2>
-    <p>Browse our available homes, or call and tell us what you're looking for.</p>
+    <p>Browse the homes and book a tour on the one you want to walk through.</p>
     <div class="cta-group" style="max-width:400px;margin:0 auto">
-      <a class="btn btn-primary" href="index.html">See available homes</a>
-      <a class="btn btn-secondary" id="ctaCall" href="#">Call or text us</a>
+      <a class="btn btn-primary" href="/#listings">See available homes</a>
     </div>
   </section>
 
@@ -351,7 +352,7 @@ body{
     <p class="fcontact" style="opacity:.78;margin-top:2px">getownerfinancedhomes.com is operated by <a href="https://americasbesthomesolutions.com">Americas Best Home Solutions LLC</a></p>
     <address class="fcontact" style="font-style:normal;margin-top:8px">
       30 N Gould St, Ste R, Sheridan, WY 82801<br>
-      <a href="tel:+15515509906">(551) 550-9906</a> · <a href="mailto:admin@americasbesthomesolutions.com">admin@americasbesthomesolutions.com</a>
+      <a href="mailto:admin@americasbesthomesolutions.com">admin@americasbesthomesolutions.com</a>
     </address>
     <p class="fcontact" style="margin-top:10px">
       <a href="/">Homes</a> · <a href="/how-it-works">How it works</a> · <a href="/about">About</a> · <a href="/contact">Contact</a> · <a href="/privacy-policy">Privacy Policy</a> · <a href="/messaging-terms">Messaging Terms</a> · <a href="https://owner.getownerfinancedhomes.com" rel="nofollow noopener">Team Portal</a>
@@ -387,17 +388,6 @@ const VIDEO_EMBED_URL = "";
     wrap.innerHTML = `<iframe src="${VIDEO_EMBED_URL.trim()}" title="How owner financing works" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>`;
   }
 
-  // contact links — reuse the shared CONTACT settings from homes.js
-  if (typeof CONTACT !== "undefined"){
-    const tel = (CONTACT.phone||"").replace(/[^\d+]/g,"");
-    const pretty = tel.length===10 ? `(${tel.slice(0,3)}) ${tel.slice(3,6)}-${tel.slice(6)}` : (CONTACT.phone||"");
-    const smsBody = encodeURIComponent(`Hi ${CONTACT.contactName}, I have a question about how owner financing works.`);
-    $("ctaCall").href = `sms:${tel}?&body=${smsBody}`;
-    $("navCall").href = `tel:${tel}`;
-    $("navCallText").textContent = pretty || "Call us";
-    // (the footer prints the number and address literally now — nothing to wire)
-  }
-
   // scroll reveal (respects reduced-motion via CSS)
   if ("IntersectionObserver" in window){
     const io = new IntersectionObserver((entries)=>{
@@ -409,5 +399,6 @@ const VIDEO_EMBED_URL = "";
   }
 })();
 </script>
+<script src="/site-chrome.js"></script>
 </body>
 </html>

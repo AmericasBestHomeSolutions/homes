@@ -206,6 +206,7 @@ body.tl-pad{padding-bottom:70px}
 @media (min-width:560px){ body{font-size:18px} }
 </style>
 <link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="nav.css">
 </head>
 <body class="page-home">
 
@@ -221,15 +222,16 @@ body.tl-pad{padding-bottom:70px}
       </svg>
       <span class="bn">Americas Best Home Solutions<small>Owner Financing</small></span>
     </a>
-    <nav class="topnav">
-      <a class="nav-hide" href="index.html">Homes</a>
-      <a class="nav-hide" href="how-it-works.html">How it works</a>
-      <a class="nav-hide" href="/about">About</a>
-      <a class="nav-hide" href="/contact">Contact</a>
-      <a class="call" id="navCall" href="#">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        <span id="navCallText">Text us</span>
-      </a>
+    <nav class="topnav" aria-label="Site">
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="siteMenu"><span class="nav-bars" aria-hidden="true"></span><span class="nav-word">Menu</span></button>
+      <div class="site-menu" id="siteMenu">
+        <a href="/#listings">Homes</a>
+        <a href="/how-it-works">How it works</a>
+        <a href="/#why-buy">Why buy vs rent</a>
+        <a href="/about">About us</a>
+        <a href="/#faq">FAQ</a>
+        <a class="nav-es" href="https://casasconfinanciamiento.com/">Español</a>
+      </div>
     </nav>
   </header>
 
@@ -269,7 +271,6 @@ body.tl-pad{padding-bottom:70px}
 
     <div class="cta-group">
       <a class="btn btn-primary" id="ctaText" href="#">Book a Tour</a>
-      <a class="btn btn-secondary" id="ctaCall" href="#">Or call</a>
     </div>
     <p class="cta-note" id="ctaNote"></p>
     <ul class="why-compact">
@@ -333,7 +334,7 @@ body.tl-pad{padding-bottom:70px}
     <div class="kl-links" id="klLinks"></div>
     <div class="kl-more" id="klMore" hidden>
       <h4>More homes like this one</h4>
-      <p class="s">Tap <b>Add to my tour list</b> on up to 5 homes, then request them all in one go.</p>
+      <p class="s">Open any home and tap <b>Book a Tour</b>.</p>
       <div class="kl-rail" id="klRail"></div>
     </div>
   </section>
@@ -343,7 +344,7 @@ body.tl-pad{padding-bottom:70px}
     <div class="sec-label">What happens when you reach out</div>
     <h2 class="sec-title">No runaround. Here's the whole path.</h2>
     <div class="steps">
-      <div class="step"><div class="n">01</div><div class="body"><h3>Text or call</h3><p>A real person replies — usually the same day. Tell us when you'd like to see it.</p></div></div>
+      <div class="step"><div class="n">01</div><div class="body"><h3>Book a tour</h3><p>Pick a time on this page. A real person confirms — usually the same day.</p></div></div>
       <div class="step"><div class="n">02</div><div class="body"><h3>Walk the home in person</h3><p>Tours are in person, not by video — you see it exactly as it is. We ask everyone for a photo ID before a showing; it's how we keep a log of who's been through the home.</p></div></div>
       <div class="step"><div class="n">03</div><div class="body"><h3>Your terms in writing</h3><p>The numbers above — price, down payment, monthly payment, fixed rate, no prepayment penalty — come to you as a plain written breakdown with your down payment invoice. We'll never ask for money to "hold" a home you haven't seen.</p></div></div>
       <div class="step"><div class="n">04</div><div class="body"><h3>Move-in payment, then keys</h3><p>From that day, every monthly payment goes toward owning the home — at the price you agreed to.</p></div></div>
@@ -363,107 +364,29 @@ body.tl-pad{padding-bottom:70px}
   </section>
 
   <!-- LEAD FORM -->
-  <section class="section faq">
+  <section class="section faq" id="faq">
     <h2 class="sec-title">Straight answers</h2>
     <details><summary>Is this the same as renting?</summary><p class="ans">No. When you rent, the money is gone and the home stays the landlord's. Here, you're the buyer from day one and every payment goes toward owning the home at the price you agreed to.</p></details>
     <details><summary>Do I need a bank to buy one of these homes?</summary><p class="ans">No — there's no bank and no mortgage application. The home's owner is the seller, so the purchase is agreed in a written contract between you and the owner. We market the home and guide you through the process.</p></details>
     <details><summary>Can I paint, fix up, or improve the home?</summary><p class="ans">Yes — it's your home. Many buyers love making it their own. We'll cover any specifics in your agreement.</p></details>
   </section>
-  <section class="lead reveal" id="leadSection">
-    <h2>Interested? Let's talk.</h2>
-    <p class="sub">Leave your info and we'll reach out to set up a tour. No pressure, no bank.</p>
-    <form id="leadForm">
-      <label for="lfName">Name</label>
-      <input id="lfName" name="name" type="text" autocomplete="name" required>
-      <label for="lfPhone">Phone</label>
-      <input id="lfPhone" name="phone" type="tel" autocomplete="tel" required>
-      <label for="lfEmail">Email</label>
-      <input id="lfEmail" name="email" type="email" autocomplete="email" required>
-      <label for="lfMoveIn">How soon are you looking to move in?</label>
-      <select id="lfMoveIn" name="move_in" required>
-        <option value="" disabled selected>Choose one…</option>
-        <option value="ASAP">As soon as possible</option>
-        <option value="1-3 months">1–3 months</option>
-        <option value="Just looking">Just looking for now</option>
-      </select>
-      <!-- ══════════════════════════════════════════════════════════════════
-           A2P 10DLC CONSENT CHECKBOX — do not change without reading this.
-           Carriers require that this box be unchecked by default, be the ONLY
-           thing it consents to, and NOT be required to submit the form. It
-           therefore has no `checked` and no `required` attribute — leave it
-           that way. If you edit the wording, bump CONSENT_TEXT and
-           CONSENT_TEXT_VERSION in consent.js so stored records stay accurate.
-           ══════════════════════════════════════════════════════════════════ -->
-      <label style="display:flex;gap:11px;align-items:flex-start;font-family:'DM Sans',system-ui,sans-serif;text-transform:none;letter-spacing:0;font-size:13px;line-height:1.5;color:var(--ink-soft,#5b6577);font-weight:400;cursor:pointer;margin:12px 0 2px;background:var(--paper,#f4f7fc);border:1px solid var(--line,#e2e8f2);border-radius:12px;padding:13px 14px">
-        <input id="lfSms" name="sms_consent" type="checkbox" value="Yes" style="margin-top:3px;width:16px;height:16px;flex-shrink:0">
-        <span>I agree to receive text messages from Americas Best Home Solutions LLC about property listings, showings, offers, and follow-up. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe or HELP for help. See our <a href="/privacy-policy" style="color:var(--pine,#15315e);font-weight:600">Privacy Policy</a> and <a href="/messaging-terms" style="color:var(--pine,#15315e);font-weight:600">Messaging Terms</a>.</span>
-      </label>
-      <p style="font-family:'DM Mono',monospace;font-size:12px;color:var(--ink-soft,#5b6577);margin:7px 0 0;letter-spacing:.3px">Optional — you can submit this form without checking the box.</p>
-      <button type="submit" class="btn btn-primary" id="lfSubmit">Send my info</button>
-      <p class="form-note" id="lfNote"></p>
-    </form>
-    <div class="thanks">
-      <h3>Got it — thank you!</h3>
-      <p>We'll reach out shortly. The fastest way to lock in a tour is to text us now.</p>
-      <div class="cta-group" style="max-width:400px;margin:14px auto 6px">
-        <a class="btn btn-primary" id="thanksText" href="#">Text us</a>
-        <a class="btn btn-secondary" id="thanksCall" href="#">Or call</a>
-      </div>
-      <p style="margin-top:14px"><strong>Your personal roadmap is ready.</strong> It shows every step from here to your keys, and updates as you move forward.</p>
-      <div class="cta-group" style="max-width:400px;margin:10px auto 0">
-        <a class="btn btn-secondary" id="thanksRoadmap" href="#">See my roadmap</a>
-      </div>
-    </div>
-  </section>
-
-
-  <div class="tl-tray" id="tlTray"><span id="tlCount"></span><button type="button" id="tlOpen">Request tours</button></div>
-  <div class="tl-modal" id="tlModal"><div class="tl-box">
-    <h3>Your tour list</h3>
-    <p style="font-size:14px;color:var(--ink-soft);margin:0">Tell us where to reach you and when works best. We'll confirm a time with you — no pressure, no bank.</p>
-    <div id="tlItems"></div>
-    <form id="tlForm">
-      <label class="f" for="tlName">Name</label>
-      <input id="tlName" name="name" type="text" autocomplete="name" required>
-      <label class="f" for="tlPhone">Phone</label>
-      <input id="tlPhone" name="phone" type="tel" autocomplete="tel" required>
-      <label class="f" for="tlEmail">Email</label>
-      <input id="tlEmail" name="email" type="email" autocomplete="email" required>
-      <label class="f">Best time to tour (optional)</label>
-      <div class="tl-two"><select id="tlDay" name="pref_day"></select><select id="tlWin" name="pref_window">
-        <option value="">Any time</option><option>Morning (9–12)</option><option>Afternoon (12–4)</option><option>Evening (4–7)</option></select></div>
-      <label style="display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.5;color:var(--ink-soft);background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px">
-        <input id="tlSms" name="sms_consent" type="checkbox" value="Yes" style="margin-top:3px;width:16px;height:16px;flex-shrink:0">
-        <span>I agree to receive text messages from Americas Best Home Solutions LLC about property listings, showings, offers, and follow-up. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe or HELP for help. See our <a href="/privacy-policy" style="color:var(--pine);font-weight:600">Privacy Policy</a> and <a href="/messaging-terms" style="color:var(--pine);font-weight:600">Messaging Terms</a>.</span>
-      </label>
-      <p style="font-family:'DM Mono',monospace;font-size:12px;color:var(--ink-soft);margin:0">Optional — you can submit without checking the box.</p>
-      <button type="submit" class="go" id="tlSubmit">Request these tours</button>
-      <p class="form-note" id="tlNote" style="font-size:13px;color:var(--ink-soft);margin:0"></p>
-      <button type="button" class="x" id="tlClose">Keep browsing</button>
-    </form>
-    <div id="tlDone" hidden><h3>Got it — thank you!</h3><p>We'll text or call you shortly to lock in a time for these homes.</p>
-      <button type="button" class="x" id="tlDoneClose">Close</button></div>
-  </div></div>
-
   <section class="closer reveal">
     <h2 id="closerTitle"></h2>
-    <p>Text us and we'll set up a time to walk through it. No pressure, no bank.</p>
+    <p>Book a tour and we'll set up a time to walk through it. No pressure, no bank.</p>
     <div class="cta-group" style="max-width:400px;margin:0 auto">
       <a class="btn btn-primary" id="ctaText2" href="#">Book a Tour</a>
-      <a class="btn btn-secondary" id="ctaCall2" href="#">Or call</a>
     </div>
   </section>
 
   <!-- FOOTER -->
   <footer class="foot">
-    <!-- The entity attribution, address, phone and email below are STATIC on
-         purpose. A2P 10DLC reviewers may read the raw HTML rather than the
-         rendered page, so none of this may be injected by JavaScript. -->
+    <!-- Address and email stay in the HTML. The phone number lives on the
+         Privacy Policy and Messaging Terms pages, not as a listing call-to-action. -->
     <div class="fb">Americas Best Home Solutions</div>
     <p class="fcontact" style="opacity:.78;margin-top:2px">getownerfinancedhomes.com is operated by <a href="https://americasbesthomesolutions.com">Americas Best Home Solutions LLC</a></p>
     <address class="fcontact" style="font-style:normal;margin-top:8px">
       30 N Gould St, Ste R, Sheridan, WY 82801<br>
-      <a href="tel:+15515509906">(551) 550-9906</a> · <a href="mailto:admin@americasbesthomesolutions.com">admin@americasbesthomesolutions.com</a>
+      <a href="mailto:admin@americasbesthomesolutions.com">admin@americasbesthomesolutions.com</a>
     </address>
     <p class="fcontact" style="margin-top:10px">
       <a href="/">Homes</a> · <a href="/how-it-works">How it works</a> · <a href="/about">About</a> · <a href="/contact">Contact</a> · <a href="/privacy-policy">Privacy Policy</a> · <a href="/messaging-terms">Messaging Terms</a> · <a href="https://owner.getownerfinancedhomes.com" rel="nofollow noopener">Team Portal</a>
@@ -478,7 +401,6 @@ body.tl-pad{padding-bottom:70px}
 <script src="listed-dates.js"></script>
 <script>window.__HOME_ID__="flint-mi-818-dewey";</script>
 <script src="homes.js"></script>
-<script src="/consent.js"></script>
 <script>
 /* ---------- render (don't edit — home data lives in homes.js) ---------- */
 (function(){
@@ -516,75 +438,12 @@ body.tl-pad{padding-bottom:70px}
     const rail = sameCity.concat(rest).slice(0,5);
     const m = n => "$" + Math.round(Number(n)||0).toLocaleString();
 
-    // ── tour list ("cart"): survives page-to-page, max 5 homes ──
-    const KEY = "tourList", MAX = 5;
-    const load = () => { try { return JSON.parse(localStorage.getItem(KEY)||"[]").filter(id => HOMES.some(h => h.id === id)); } catch(e){ return []; } };
-    const save = a => { try { localStorage.setItem(KEY, JSON.stringify(a)); } catch(e){} };
-    let cart = load();
-    const byId = id => HOMES.find(h => h.id === id);
-    const label = h => `${h.address}, ${h.city}, ${h.state}`;
-    const tray = $("tlTray");
-    function sync(){
-      $("tlCount").textContent = `${cart.length} home${cart.length===1?"":"s"} on your tour list`;
-      tray.classList.toggle("show", cart.length > 0);
-      document.body.classList.toggle("tl-pad", cart.length > 0);
-      document.querySelectorAll("[data-tl]").forEach(btn => {
-        const on = cart.includes(btn.dataset.tl);
-        btn.classList.toggle("on", on);
-        btn.textContent = on ? "✓ On my list" : "Add to my tour list";
-      });
-      $("tlItems").innerHTML = cart.map(id => `<div class="tl-item"><span>${label(byId(id))} · ${m(byId(id).monthlyPayment)}/mo</span><button type="button" data-rm="${id}">Remove</button></div>`).join("");
-    }
-    function toggle(id){
-      if (cart.includes(id)) cart = cart.filter(x => x !== id);
-      else if (cart.length >= MAX) { alert(`You can tour up to ${MAX} homes at a time — remove one first.`); return; }
-      else cart.push(id);
-      save(cart); sync();
-    }
-    const card = (h, tag) => `<div class="kl-card"><a class="ph" href="${h.id}.html"><img src="${h.heroPhoto||"images/"+h.id+".jpg"}" alt="Home in ${h.city}, ${h.state}" loading="lazy" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='images/sv/${h.id}.jpg'}else{this.remove()}">${tag?`<em>${tag}</em>`:""}</a><div class="bd"><span class="pay">${m(h.monthlyPayment)}/mo</span><b>${h.address}</b><span class="sp">${h.city}, ${h.state} · ${h.beds} bd · ${h.baths} ba</span><span class="sp">${m(h.moveIn)} to move in</span><div class="row"><a href="${h.id}.html">View</a><button type="button" data-tl="${h.id}">Add to my tour list</button></div></div></div>`;
+    const book = id => `https://owner.getownerfinancedhomes.com/book?home=${encodeURIComponent(id)}&lang=en`;
+    const card = (h, tag) => `<div class="kl-card"><a class="ph" href="${h.id}.html"><img src="${h.heroPhoto||"images/"+h.id+".jpg"}" alt="Home in ${h.city}, ${h.state}" loading="lazy" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='images/sv/${h.id}.jpg'}else{this.remove()}">${tag?`<em>${tag}</em>`:""}</a><div class="bd"><span class="pay">${m(h.monthlyPayment)}/mo</span><b>${h.address}</b><span class="sp">${h.city}, ${h.state} · ${h.beds} bd · ${h.baths} ba</span><span class="sp">${m(h.moveIn)} to move in</span><div class="row"><a href="${h.id}.html">View</a><a href="${book(h.id)}">Book a Tour</a></div></div></div>`;
     if (rail.length){
       $("klRail").innerHTML = card(home, "This home") + rail.map(h => card(h, h.city === home.city ? "" : h.city)).join("");
       $("klMore").hidden = false;
     }
-    document.addEventListener("click", e => {
-      const t = e.target.closest("[data-tl]"); if (t) { toggle(t.dataset.tl); return; }
-      const r = e.target.closest("[data-rm]"); if (r) { cart = cart.filter(x => x !== r.dataset.rm); save(cart); sync(); if (!cart.length) $("tlModal").classList.remove("show"); }
-    });
-    const modal = $("tlModal");
-    $("tlOpen").onclick = () => modal.classList.add("show");
-    $("tlClose").onclick = $("tlDoneClose").onclick = () => modal.classList.remove("show");
-    modal.addEventListener("click", e => { if (e.target === modal) modal.classList.remove("show"); });
-    // day picker: next 7 days
-    const days = ['<option value="">Any day</option>'];
-    for (let i = 0; i < 7; i++){ const d = new Date(Date.now()+i*864e5); days.push(`<option>${d.toLocaleDateString("en-US",{weekday:"long",month:"short",day:"numeric"})}</option>`); }
-    $("tlDay").innerHTML = days.join("");
-    $("tlForm").addEventListener("submit", async e => {
-      e.preventDefault();
-      const btn = $("tlSubmit"), note = $("tlNote");
-      const hook = (CONTACT.makeWebhook||"").trim(), fid = (CONTACT.formspreeId||"").trim();
-      if (!cart.length) return;
-      btn.disabled = true; btn.textContent = "Sending…";
-      const data = new FormData(e.target);
-      const homesTxt = cart.map(id => label(byId(id)) + " (" + location.origin + "/" + id + ".html)").join(" | ");
-      const when = [data.get("pref_day"), data.get("pref_window")].filter(Boolean).join(", ") || "No preference";
-      data.append("source", "Tour list");
-      data.append("property", cart.map(id => label(byId(id))).join("; "));
-      data.append("property_ids", cart.join(","));
-      data.append("tour_count", String(cart.length));
-      data.append("preferred_time", when);
-      data.append("message", `TOUR LIST (${cart.length}): ${homesTxt} — Best time: ${when}`);
-      data.append("deal_code", getDealCode(cart[0]));
-      await addConsentRecord(data, e.target);
-      const targets = [];
-      if (fid) targets.push(fetch(`https://formspree.io/f/${fid}`, { method:"POST", headers:{ "Accept":"application/json" }, body:data }));
-      if (hook) targets.push(fetch(hook, { method:"POST", body:data }));
-      const res = await Promise.allSettled(targets);
-      if (res.some(r => r.status === "fulfilled" && r.value.ok)){
-        cart = []; save(cart); sync();
-        e.target.style.display = "none"; $("tlItems").innerHTML = ""; $("tlDone").hidden = false;
-      } else { btn.disabled = false; btn.textContent = "Request these tours"; note.textContent = "Something went wrong — please text or call us instead."; }
-    });
-    sync();
   })();
   const money = n => "$" + Number(n||0).toLocaleString();          // exact (terms table)
   const moneyR = n => "$" + Math.round(Number(n||0)).toLocaleString(); // whole dollars (headline)
@@ -706,61 +565,8 @@ body.tl-pad{padding-bottom:70px}
     })(1);
   }
 
-  const tel = (C.phone||"").replace(/[^\d+]/g,"");
-  const prettyPhone = tel.length===10 ? `(${tel.slice(0,3)}) ${tel.slice(3,6)}-${tel.slice(6)}` : C.phone;
-  const smsBody = encodeURIComponent(`Hi, I saw ${C.address ? C.address + " in " : ""}${C.city}, ${C.state} on your site and I'd like to tour it.\n\nhttps://getownerfinancedhomes.com/${C.id}.html`);
-  ["ctaCall","ctaCall2"].forEach(id=>$(id).href = `tel:${tel}`);
-  // "Schedule a tour" opens the self-serve booking page (CRM portal) with this home pre-picked; texting stays in the nav + note.
   ["ctaText","ctaText2"].forEach(id=>$(id).href = `https://owner.getownerfinancedhomes.com/book?home=${encodeURIComponent(C.id)}&lang=en`);
-  $("thanksCall").href = `tel:${tel}`;
-  $("thanksText").href = `sms:${tel}?&body=${smsBody}`;
-  $("navCall").href = `sms:${tel}?&body=${smsBody}`;
-  $("navCallText").textContent = "Text us";
-  $("ctaNote").textContent = `Text ${prettyPhone} — we usually reply same day. Prefer to talk? Tap “Or call.”`;
-
-  // Opaque per-buyer roadmap code. Reused on a resubmit so one buyer keeps one link.
-  function getDealCode(homeId){
-    const k = "dealCode:" + homeId;
-    try { const v = localStorage.getItem(k); if (/^[a-z0-9]{10}$/.test(v||"")) return v; } catch(e){}
-    const A = "abcdefghjkmnpqrstvwxyz23456789", r = new Uint8Array(10);
-    crypto.getRandomValues(r);
-    const code = Array.from(r, b => A[b % A.length]).join("");
-    try { localStorage.setItem(k, code); } catch(e){}
-    return code;
-  }
-
-  // lead form → Formspree (email) + Make (Notion CRM)
-  (function(){
-    const form = $("leadForm"), note = $("lfNote"), btn = $("lfSubmit");
-    const section = $("leadSection");
-    const id = (C.formspreeId||"").trim();
-    const hook = (C.makeWebhook||"").trim();
-    note.textContent = (id || hook) ? "We usually reply same day." :
-      "⚠ Form not connected yet — add a Formspree ID or Make webhook in homes.js.";
-
-    form.addEventListener("submit", async (e)=>{
-      e.preventDefault();
-      if (!id && !hook) { note.textContent = "⚠ Form not connected yet — add a Formspree ID or Make webhook in homes.js."; return; }
-      btn.disabled = true; btn.textContent = "Sending…";
-      const data = new FormData(form);
-      data.append("property", [C.address, `${C.city}, ${C.state}${C.zip?" "+C.zip:""}`].filter(Boolean).join(", "));
-      data.append("source", "Property page");
-      data.append("property_id", C.id);
-      const dealCode = getDealCode(C.id);
-      data.append("deal_code", dealCode);   // registered into the Deal Room sheet by the inquiry sweep
-      await addConsentRecord(data, form);   // 10DLC opt-in evidence — see consent.js
-      const targets = [];
-      if (id)   targets.push(fetch(`https://formspree.io/f/${id}`, { method:"POST", headers:{ "Accept":"application/json" }, body:data }));
-      if (hook) targets.push(fetch(hook, { method:"POST", body:data }));
-      const results = await Promise.allSettled(targets);
-      const ok = results.some(r => r.status === "fulfilled" && r.value.ok);
-      if (ok) {
-        $("thanksRoadmap").href = `/next-steps.html?home=${encodeURIComponent(C.id)}&deal=${dealCode}`;
-        section.classList.add("sent");
-      }
-      else { btn.disabled = false; btn.textContent = "Send my info"; note.textContent = "Something went wrong — please text or call us instead."; }
-    });
-  })();
+  $("ctaNote").textContent = "Tours are in person. Pick a time and we'll meet you there.";
 
   if ("IntersectionObserver" in window){
     const io = new IntersectionObserver((entries)=>{

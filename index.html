@@ -165,8 +165,8 @@ body{
 .spot-sub{font-size:14px;color:var(--ink-soft)}
 /* Photo cards. sold-cards.js repeats these rules so the Spanish site, which
    still has the old gradient CSS, picks up the same layout. */
-#soldSec .sold-strip{display:flex;gap:12px;margin-top:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:2px 2px 12px;-webkit-overflow-scrolling:touch}
-#soldSec .sold-card{flex:0 0 min(78vw,270px);scroll-snap-align:start;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:18px;overflow:hidden;min-height:0;padding:0;display:flex;flex-direction:column;box-shadow:0 8px 24px rgba(15,36,68,.06)}
+#soldSec .sold-strip{display:flex;gap:12px;margin-top:16px;overflow-x:auto;max-width:100%;min-width:0;scroll-snap-type:x mandatory;padding:2px 2px 12px;-webkit-overflow-scrolling:touch}
+#soldSec .sold-card{flex:0 0 min(85vw,270px);width:min(85vw,270px);max-width:min(85vw,270px);min-width:0;scroll-snap-align:start;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:18px;overflow:hidden;min-height:0;padding:0;display:flex;flex-direction:column;box-shadow:0 8px 24px rgba(15,36,68,.06)}
 #soldSec .sold-card .frame{position:relative;aspect-ratio:4/3;background:#e6eef8;overflow:hidden}
 #soldSec .sold-card img{width:100%;height:100%;object-fit:cover;display:block}
 #soldSec .sold-badge{position:absolute;top:10px;left:10px;z-index:2;background:#e23b3b;color:#fff;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:5px 9px;border-radius:999px;font-weight:500}
@@ -175,8 +175,8 @@ body{
 #soldSec .sold-label .dot{color:var(--ink-soft);font-weight:600}
 #soldSec .sold-when{margin:4px 0 0;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)}
 @media (min-width:800px){
-  #soldSec .sold-strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));overflow:visible;scroll-snap-type:none}
-  #soldSec .sold-card{flex:none}
+  #soldSec .sold-strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));overflow:visible;max-width:100%;scroll-snap-type:none}
+  #soldSec .sold-card{flex:none;width:auto;max-width:100%}
 }
 
 .of-tag{position:absolute;top:12px;right:12px;z-index:3;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;background:rgba(0,0,0,.28);color:#fff;padding:5px 9px;border-radius:999px}
@@ -299,6 +299,7 @@ body{
 @media(hover:none){.card-face .pg{opacity:.9;width:30px;height:30px}}
 </style>
 <link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="nav.css">
 </head>
 <body class="page-search">
 
@@ -306,7 +307,8 @@ body{
 
   <!-- TOP BAR -->
   <header class="topbar">
-    <a class="brand" href="index.html" aria-label="Americas Best Home Solutions — home">
+    <div class="zhead-row">
+    <a class="brand" href="/#listings" aria-label="Americas Best Home Solutions — home">
       <svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
         <path d="M24 3 41 9V23C41 33 33 41 24 45 15 41 7 33 7 23V9Z" fill="#15315e"/>
         <path d="M15 26 24 18 33 26Z" fill="#e23b3b"/>
@@ -315,22 +317,61 @@ body{
       </svg>
       <span class="bn">Americas Best Home Solutions<small>getownerfinancedhomes.com</small></span>
     </a>
-    <form class="hdr-search" role="search" action="index.html">
-      <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 16l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-      <input id="fQ" type="search" inputmode="search" autocomplete="off" enterkeyhint="search" list="qHints" placeholder="City or ZIP code" aria-label="City or ZIP code">
-      <datalist id="qHints"></datalist>
-      <button type="submit" id="qGo">Search</button>
-    </form>
-    <nav class="topnav">
-      <a class="nav-hide" href="index.html">Homes</a>
-      <a class="nav-hide" href="how-it-works.html">How it works</a>
-      <a class="nav-hide" href="/about">About</a>
-      <a class="nav-hide" href="/contact">Contact</a>
-      <a class="call" id="navCall" href="#">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        <span id="navCallText">Text us</span>
-      </a>
+    <nav class="topnav" aria-label="Site">
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="siteMenu"><span class="nav-bars" aria-hidden="true"></span><span class="nav-word">Menu</span></button>
+      <div class="site-menu" id="siteMenu">
+        <a href="/#listings">Homes</a>
+        <a href="/how-it-works">How it works</a>
+        <a href="/#why-buy">Why buy vs rent</a>
+        <a href="/about">About us</a>
+        <a href="/#faq">FAQ</a>
+        <a class="nav-es" href="https://casasconfinanciamiento.com/">Español</a>
+      </div>
     </nav>
+    </div>
+    <form class="hdr-search" role="search" action="/">
+      <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 16l5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <input id="fQ" type="search" inputmode="search" autocomplete="off" enterkeyhint="search" list="qHints" placeholder="City, ZIP, or address" aria-label="City, ZIP, or address">
+      <datalist id="qHints"></datalist>
+      <button type="button" class="filter-btn" id="filterBtn" aria-expanded="false" aria-controls="filterSheet" aria-label="Filters">
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="8" cy="7" r="2.2" fill="currentColor"/><circle cx="15" cy="12" r="2.2" fill="currentColor"/><circle cx="10" cy="17" r="2.2" fill="currentColor"/></svg>
+        <span class="fcount" id="fCount" hidden>0</span>
+      </button>
+    </form>
+    <div class="z-chips" id="chips"></div>
+    <div class="z-sort">
+      <p class="count" id="count"></p>
+      <label class="sort-pill">Sort
+        <select id="fSort" aria-label="Sort"><option value="">Featured</option><option value="monthly-asc">Monthly ↑</option><option value="down-asc">Down payment ↑</option><option value="price-asc">Price ↑</option></select>
+      </label>
+    </div>
+    <div class="filter-sheet" id="filterSheet" hidden>
+      <label>Monthly min
+        <select id="fPayMin" aria-label="Minimum monthly payment"><option value="">No min</option><option value="500">$500</option><option value="600">$600</option><option value="700">$700</option><option value="800">$800</option><option value="900">$900</option><option value="1000">$1,000</option><option value="1200">$1,200</option><option value="1500">$1,500</option></select>
+      </label>
+      <label>Monthly max
+        <select id="fPayMax" aria-label="Maximum monthly payment"><option value="">No max</option><option value="600">$600</option><option value="800">$800</option><option value="1000">$1,000</option><option value="1200">$1,200</option><option value="1500">$1,500</option><option value="1800">$1,800</option></select>
+      </label>
+      <label>Down min
+        <select id="fDownMin" aria-label="Minimum down payment"><option value="">No min</option><option value="1000">$1,000</option><option value="1500">$1,500</option><option value="2000">$2,000</option><option value="3000">$3,000</option></select>
+      </label>
+      <label>Down max
+        <select id="fDown" aria-label="Maximum down payment"><option value="">No max</option><option value="1500">$1,500</option><option value="2000">$2,000</option><option value="3000">$3,000</option><option value="4000">$4,000</option><option value="5000">$5,000</option></select>
+      </label>
+      <label>Bedrooms
+        <select id="fBeds" aria-label="Bedrooms"><option value="">Any</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option></select>
+      </label>
+      <label>Bathrooms
+        <select id="fBaths" aria-label="Bathrooms"><option value="">Any</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option></select>
+      </label>
+      <label>State <select id="fState"><option value="">All states</option></select></label>
+      <label>City <select id="fCity"><option value="">All cities</option></select></label>
+      <label>Price min <select id="fPriceMin"><option value="">No min</option><option value="40000">$40,000</option><option value="60000">$60,000</option><option value="80000">$80,000</option><option value="100000">$100,000</option><option value="150000">$150,000</option></select></label>
+      <label>Price max <select id="fPriceMax"><option value="">No max</option><option value="60000">$60,000</option><option value="80000">$80,000</option><option value="100000">$100,000</option><option value="150000">$150,000</option></select></label>
+      <label id="fTypeWrap" hidden>Home type <select id="fType"><option value="">Move-in ready</option><option value="contractor">Contractor specials</option><option value="all">All homes</option></select></label>
+      <label>Within <select id="fMiles"><option value="10">10 mi</option><option value="25" selected>25 mi</option><option value="50">50 mi</option><option value="100">100 mi</option></select></label>
+      <button type="button" class="near sheet-wide" id="nearMe">Near me</button>
+    </div>
   </header>
 
   <!-- HERO -->
@@ -342,7 +383,7 @@ body{
       <p class="reassure">Your past doesn't have to decide your future. If you've been turned away by banks, this was built for you.</p>
       <div class="hero-cta">
         <a class="btn btn-lime" href="#listings">See the homes</a>
-        <a class="btn btn-ghost" href="#get-started">Get started today</a>
+        <a class="btn btn-ghost" href="/#why-buy">Why buy vs rent</a>
       </div>
     </div>
     <svg class="hero-art" viewBox="0 88 960 112" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
@@ -385,39 +426,7 @@ body{
     <div class="cards" id="featuredCards"></div>
   </section>
 
-  <div class="chipbar" role="group" aria-label="Filters">
-    <label class="range">Monthly
-      <select id="fPayMin" aria-label="Minimum monthly payment"><option value="">No min</option><option value="500">$500</option><option value="600">$600</option><option value="700">$700</option><option value="800">$800</option><option value="900">$900</option><option value="1000">$1,000</option><option value="1200">$1,200</option><option value="1500">$1,500</option></select>
-      <span>–</span>
-      <select id="fPayMax" aria-label="Maximum monthly payment"><option value="">No max</option><option value="600">$600</option><option value="800">$800</option><option value="1000">$1,000</option><option value="1200">$1,200</option><option value="1500">$1,500</option><option value="1800">$1,800</option></select>
-    </label>
-    <label class="range">Down
-      <select id="fDownMin" aria-label="Minimum down payment"><option value="">No min</option><option value="1000">$1,000</option><option value="1500">$1,500</option><option value="2000">$2,000</option><option value="3000">$3,000</option></select>
-      <span>–</span>
-      <select id="fDown" aria-label="Maximum down payment"><option value="">No max</option><option value="1500">$1,500</option><option value="2000">$2,000</option><option value="3000">$3,000</option><option value="4000">$4,000</option><option value="5000">$5,000</option></select>
-    </label>
-    <label class="range">Beds
-      <select id="fBeds" aria-label="Bedrooms"><option value="">Any</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4+</option></select>
-    </label>
-    <label class="range">Baths
-      <select id="fBaths" aria-label="Bathrooms"><option value="">Any</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option></select>
-    </label>
-    <button type="button" class="near" id="nearMe">Near me</button>
-    <details class="more">
-      <summary>More</summary>
-      <div class="more-panel">
-        <label>State <select id="fState"><option value="">All states</option></select></label>
-        <label>City <select id="fCity"><option value="">All cities</option></select></label>
-        <label>Price min <select id="fPriceMin"><option value="">No min</option><option value="40000">$40,000</option><option value="60000">$60,000</option><option value="80000">$80,000</option><option value="100000">$100,000</option><option value="150000">$150,000</option></select></label>
-        <label>Price max <select id="fPriceMax"><option value="">No max</option><option value="60000">$60,000</option><option value="80000">$80,000</option><option value="100000">$100,000</option><option value="150000">$150,000</option></select></label>
-        <label id="fTypeWrap" hidden>Home type <select id="fType"><option value="">Move-in ready</option><option value="contractor">Contractor specials</option><option value="all">All homes</option></select></label>
-        <label>Sort <select id="fSort"><option value="">Featured</option><option value="monthly-asc">Lowest monthly</option><option value="down-asc">Lowest down payment</option><option value="price-asc">Lowest price</option></select></label>
-        <label>Within <select id="fMiles"><option value="10">10 mi</option><option value="25" selected>25 mi</option><option value="50">50 mi</option><option value="100">100 mi</option></select></label>
-      </div>
-    </details>
-  </div>
-
-  <section class="whyband" aria-label="Why buy instead of rent">
+  <section class="whyband" id="why-strip" aria-label="Why buy instead of rent">
     <h2>Why buy instead of rent</h2>
     <ul>
       <li>You own from day one</li>
@@ -428,22 +437,14 @@ body{
   </section>
 
   <section class="section" id="listings">
-    <div class="listings-head">
-      <p class="count" id="count"></p>
-      <button id="alertBtn" type="button">Get alerts for this search</button>
-      <button id="copyLink" type="button" style="display:none">Share this search</button>
-      <div class="filter-chips" id="chips"></div>
-    </div>
-
     <div class="cards" id="cards"></div>
-    <button type="button" class="view-toggle" id="mapToggle">Map</button>
+    <button type="button" class="view-toggle" id="mapToggle" aria-pressed="false"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 4v14M15 6v14" stroke="currentColor" stroke-width="2"/></svg><span>Map</span></button>
 
     <nav class="pager" id="pager" style="display:none;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap;margin-top:28px"></nav>
 
     <div class="empty" id="empty">
       <h3>Nothing matches those filters — yet</h3>
-      <p>New homes come in every week. Loosen a filter, or text us what you need and we'll send you the matches as they land.</p>
-      <p style="margin-top:14px"><a id="emptyText" href="#" class="btn btn-lime" style="font-size:15px;padding:12px 18px">Text us what you're looking for</a></p>
+      <p>New homes come in every week. Clear a filter chip or widen the monthly or down-payment range.</p>
     </div>
   </section>
 
@@ -460,13 +461,12 @@ body{
       <div class="sec-label" style="color:#ffb3b3">Who you'll be talking to</div>
       <h2>One number. One team. Every home on this site.</h2>
       <ul>
-        <li><span class="m">✓</span><span><strong>You'll know exactly who you're dealing with.</strong> Call or text one number and you reach the same people who unlock the door and walk you through it — usually the same day.</span></li>
+        <li><span class="m">✓</span><span><strong>You'll know exactly who you're dealing with.</strong> Book a tour and you meet the same people who unlock the door and walk you through it — usually the same day.</span></li>
         <li><span class="m">✓</span><span><strong>You see it with your own eyes before you decide.</strong> Every home is walked in person, and you'll never be asked for money to "hold" a home you haven't stood in.</span></li>
         <li><span class="m">✓</span><span><strong>If the one you wanted sells, you're not starting over.</strong> <span id="otHomes">—</span> homes across <span id="otCities">—</span> towns, refreshed every week — tell us what you need and we'll send you the next one.</span></li>
       </ul>
       <div class="hero-cta">
-        <a class="btn btn-lime" id="oneteamText" href="#">Text us what you're looking for</a>
-        <a class="btn btn-ghost" id="oneteamCall" href="#">Call <span id="oneteamPhone"></span></a>
+        <a class="btn btn-lime" href="/#listings">See the homes</a>
       </div>
     </div>
   </section>
@@ -502,14 +502,14 @@ body{
   </section>
 
   <!-- 4 STEPS -->
-  <section class="section reveal">
+  <section class="section reveal" id="how">
     <div class="sec-head">
       <div class="sec-label">Simple from start to keys</div>
       <h2 class="sec-title">Own your home in 4 steps</h2>
       <p class="sec-sub">No long approvals. No runaround. Here's the whole path.</p>
     </div>
     <div class="steps">
-      <div class="step"><div class="n">1</div><h3>Reach out</h3><p>Call or text us, or send your info below. Tell us what you're looking for.</p></div>
+      <div class="step"><div class="n">1</div><h3>Pick a home</h3><p>Browse the list and book a tour on the home you want to walk through.</p></div>
       <div class="step"><div class="n">2</div><h3>Tour a home</h3><p>Pick a home you like and we'll set up a time to walk through it together.</p></div>
       <div class="step"><div class="n">3</div><h3>Sign a simple agreement</h3><p>We finance it ourselves with a contract for deed — plain language, no surprises.</p></div>
       <div class="step"><div class="n">4</div><h3>Get the keys</h3><p>Make your move-in payment and the home is yours to live in from day one.</p></div>
@@ -548,7 +548,7 @@ body{
   </script>
 
   <!-- THE OPPORTUNITY — rent vs own + the market story -->
-  <section class="section reveal" id="opportunity">
+  <section class="section reveal" id="why-buy">
     <div class="sec-head">
       <div class="sec-label">Do the math</div>
       <h2 class="sec-title">Every month, you're paying for a home.<br>The only question is whose.</h2>
@@ -583,7 +583,7 @@ body{
       <p class="fine">Every home and market is different — past experiences aren't a guarantee of future value. What's guaranteed is what's in your written agreement: your price and your terms.</p>
     </div>
     <div class="opp-cta">
-      <a href="#get-started">I'm serious — let's talk →</a>
+      <a href="/#listings">Browse the homes →</a>
     </div>
   </section>
 
@@ -611,54 +611,7 @@ body{
       <span class="chip">Fixed payment, in writing</span>
       <span class="chip">Homes in IL · MO · MI · AL</span>
     </div>
-    <a class="abtn" id="aboutText" href="#">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-      Start your path to owning
-    </a>
-  </section>
-
-  <!-- LEAD FORM / GET STARTED -->
-  <section class="lead reveal" id="get-started">
-    <div class="lead-inner">
-      <h2>This isn't for everyone.</h2>
-      <p class="sub">We take on a limited number of buyers at a time — and we look for serious ones. If you're ready to stop renting and start owning, tell us a little about yourself below and we'll reach out.</p>
-      <form id="leadForm">
-        <label for="lfName">Name</label>
-        <input id="lfName" name="name" type="text" autocomplete="name" required>
-        <label for="lfPhone">Phone</label>
-        <input id="lfPhone" name="phone" type="tel" autocomplete="tel" required>
-        <label for="lfEmail">Email</label>
-        <input id="lfEmail" name="email" type="email" autocomplete="email" required>
-        <label for="lfWhere">What area are you looking in?</label>
-        <input id="lfWhere" name="area" type="text" placeholder="e.g. Decatur, IL — or “open to anywhere”">
-        <label for="lfMoveIn">How soon do you want to move in?</label>
-        <select id="lfMoveIn" name="move_in" required>
-          <option value="" disabled selected>Choose one…</option>
-          <option value="ASAP">As soon as possible</option>
-          <option value="1-3 months">1–3 months</option>
-          <option value="Just looking">Just looking for now</option>
-        </select>
-        <!-- ══════════════════════════════════════════════════════════════════
-             A2P 10DLC CONSENT CHECKBOX — do not change without reading this.
-             Carriers require that this box be unchecked by default, be the ONLY
-             thing it consents to, and NOT be required to submit the form. It
-             therefore has no `checked` and no `required` attribute — leave it
-             that way. If you edit the wording, bump CONSENT_TEXT and
-             CONSENT_TEXT_VERSION in consent.js so stored records stay accurate.
-             ══════════════════════════════════════════════════════════════════ -->
-        <label style="display:flex;gap:11px;align-items:flex-start;font-family:'DM Sans',system-ui,sans-serif;text-transform:none;letter-spacing:0;font-size:13px;line-height:1.5;color:#dbe7fb;font-weight:400;cursor:pointer;margin:12px 0 2px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.22);border-radius:12px;padding:13px 14px">
-          <input id="lfSms" name="sms_consent" type="checkbox" value="Yes" style="margin-top:3px;width:16px;height:16px;flex-shrink:0">
-          <span>I agree to receive text messages from Americas Best Home Solutions LLC about property listings, showings, offers, and follow-up. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe or HELP for help. See our <a href="/privacy-policy" style="color:#fff;font-weight:600">Privacy Policy</a> and <a href="/messaging-terms" style="color:#fff;font-weight:600">Messaging Terms</a>.</span>
-        </label>
-        <p style="font-family:'DM Mono',monospace;font-size:12px;color:#a9bedd;margin:7px 0 0;letter-spacing:.3px">Optional — you can submit this form without checking the box.</p>
-        <button type="submit" class="btn btn-lime" id="lfSubmit">Show me my options — takes 1 minute</button>
-        <p class="form-note" id="lfNote"></p>
-      </form>
-      <div class="thanks">
-        <h3>Got it — nice move.</h3>
-        <p>You just did what most people only talk about. We'll reach out shortly — in the meantime, feel free to call or text us below.</p>
-      </div>
-    </div>
+    <a class="abtn" href="/#listings">See the homes</a>
   </section>
 
   <!-- LEGITIMACY STRIP -->
@@ -673,7 +626,7 @@ body{
     </div>
     <div class="legit-item">
       <span class="lic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
-      <p>A real person answers your call or text</p>
+      <p>Book a tour and walk the home in person</p>
     </div>
     <div class="legit-item">
       <span class="lic"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></span>
@@ -694,7 +647,7 @@ body{
       <article><h3>No bank in the way</h3><p>No mortgage application and no bank approval deciding whether you get a home.</p></article>
     </div>
     <p class="lede">Your past doesn't have to decide your future. If you've been turned away by banks, this was built for you.</p>
-    <div class="faq">
+    <div class="faq" id="faq">
       <details open><summary>Is this the same as renting?</summary><p class="ans">No. When you rent, the money is gone and the home stays the landlord's. Here, you're the buyer from day one and every payment goes toward owning the home at the price you agreed to.</p></details>
       <details><summary>Do I need a bank to buy one of these homes?</summary><p class="ans">No — there's no bank and no mortgage application. The home's owner is the seller, so the purchase is agreed in a written contract between you and the owner. We market the home and guide you through the process.</p></details>
       <details><summary>What do I pay to move in?</summary><p class="ans">Each home lists its move-in payment and monthly payment right on its page. There are no hidden numbers — we go over all of it with you before anything is signed.</p></details>
@@ -706,7 +659,7 @@ body{
     <p class="fcontact" style="opacity:.78;margin-top:2px">getownerfinancedhomes.com is operated by <a href="https://americasbesthomesolutions.com">Americas Best Home Solutions LLC</a></p>
     <address class="fcontact" style="font-style:normal;margin-top:8px">
       30 N Gould St, Ste R, Sheridan, WY 82801<br>
-      <a href="tel:+15515509906">(551) 550-9906</a> · <a href="mailto:admin@americasbesthomesolutions.com">admin@americasbesthomesolutions.com</a>
+      <a href="mailto:admin@americasbesthomesolutions.com">admin@americasbesthomesolutions.com</a>
     </address>
     <p class="fcontact" style="margin-top:10px">
       <a href="/">Homes</a> · <a href="/how-it-works">How it works</a> · <a href="/about">About</a> · <a href="/contact">Contact</a> · <a href="/privacy-policy">Privacy Policy</a> · <a href="/messaging-terms">Messaging Terms</a> · <a href="https://owner.getownerfinancedhomes.com" rel="nofollow noopener">Team Portal</a>
@@ -726,7 +679,6 @@ body{
 <script src="sold-cards.js"></script>
 <script src="homes-map.js"></script>
 <script src="homes-cart.js"></script>
-<script src="/consent.js"></script>
 <script src="site-chrome.js"></script>
 <script>
 /* ---------- render (don't edit — home data lives in homes.js) ---------- */
@@ -783,42 +735,40 @@ body{
   $("otHomes").textContent = LISTINGS.length;
   $("otCities").textContent = allCities.length;
 
+  function featureTag(h){
+    if (isNewHome(h)) return "New";
+    if (h.contractor) return "Needs work";
+    const order = ["backyard","fenced_yard","basement","garage","central_air","attic","storage_shed","off_street_parking"];
+    const labels = {backyard:"Backyard", fenced_yard:"Fenced yard", basement:"Basement", garage:"Garage", central_air:"Central air", attic:"Attic", storage_shed:"Storage", off_street_parking:"Parking"};
+    const f = h.features || {};
+    const key = order.find(k => f[k] === "yes");
+    return key ? labels[key] : "";
+  }
   function cardHTML(h, opts){
     const [a,b] = faceFor(h.city + h.state);
     const specs = [
-      h.beds ? `<span>${h.beds} bed${Number(h.beds)===1?"":"s"}</span>` : "",
-      h.baths ? `<span>${h.baths} bath${Number(h.baths)===1?"":"s"}</span>` : "",
-      h.sqft ? `<span style="font-weight:500;color:var(--ink-soft)">${Number(h.sqft).toLocaleString()} sqft</span>` : ""
-    ].filter(Boolean).join(`<span class="dot">·</span>`);
+      h.beds ? `${h.beds} bd${Number(h.beds)===1?"":"s"}` : "",
+      h.baths ? `${h.baths} ba` : "",
+      (h.sqft && Number(h.sqft)) ? `${Number(h.sqft).toLocaleString()} sqft` : ""
+    ].filter(Boolean).join(" | ");
     const photoSrc = h.heroPhoto || `images/${h.id}.jpg`;   // drop images/<id>.jpg in and it shows automatically
+    const tag = (opts && opts.featured && h.featured) ? "Featured" : featureTag(h);
+    const where = [h.address, h.city, h.state].filter(Boolean).join(", ");
     return `
     <a class="card${h.contractor?" is-cs":""}" data-hid="${h.id}" href="${encodeURIComponent(h.id)}.html">
       <div class="card-face" style="background:linear-gradient(135deg,${a},${b})">
         <img src="${photoSrc}" alt="Home in ${h.city}, ${h.state}" loading="lazy" data-sv="images/sv/${h.id}.jpg" style="opacity:0;transition:opacity .3s ease" onload="this.style.opacity=1" onerror="window.__svFallback(this)">
         <span class="sv-badge" hidden>Street view · © Google</span>
-        <span class="scrim"></span>
-        ${(h.photos||[]).length>1?`<button type="button" class="pg pv" aria-label="Previous photo">‹</button><button type="button" class="pg nx" aria-label="Next photo">›</button><span class="pdots">${Array.from({length:Math.min(6,h.photos.length)},(_,k)=>`<i${k?"":" class=\"on\""}></i>`).join("")}</span>`:""}
-        <span class="status-tag">${h.status||"Available"}</span>
-        ${isNewHome(h) ? `<span class="badge-new">New</span>` : ""}
-        ${h.contractor?`<span class="cs-tag">Contractor Special</span>`:""}
-        ${opts && opts.featured && h.featured ? `<span class="feat-tag">★ Featured</span>` : `<span class="of-tag">Owner financing</span>`}
+        ${(h.photos||[]).length>1?`<button type="button" class="pg pv" aria-label="Previous photo">‹</button><button type="button" class="pg nx" aria-label="Next photo">›</button><span class="pdots">${Array.from({length:Math.min(6,(h.photos||[]).length)},(_,k)=>`<i${k?"":" class=\"on\""}></i>`).join("")}</span>`:""}
+        ${tag ? `<span class="z-feat">${tag}</span>` : ""}
         ${window.HomesCart?HomesCart.heart(h):""}
-        ${houseMark}
-        <div class="fcity"><div class="c">${h.city}</div><div class="s">${h.state}</div></div>
       </div>
       <div class="card-body">
         <div class="card-price"><span class="num">${money(h.monthlyPayment)}</span><span class="per">/mo</span></div>
-        <div class="card-down">${h.moveIn ? money(h.moveIn) + " down" : "Ask us"}</div>
         <div class="card-specs">${specs}</div>
-        <div class="card-where">${h.city}, ${h.state}</div>
-        ${h.address ? `<div class="card-addr" style="font-size:14.5px;color:var(--ink-soft);margin-bottom:12px">${h.address}, ${h.city}, ${h.state}${h.zip?` ${h.zip}`:""}</div>` : ""}
-        <div class="card-mini">
-          <div class="mini"><div class="k">To move in</div><div class="v">${h.moveIn ? money(h.moveIn) : "Ask us"}</div></div>
-          <div class="mini"><div class="k">Price</div><div class="v">${h.lockedPrice ? money(h.lockedPrice) : "Ask us"}</div></div>
-        </div>
-        ${h.contractor?`<div class="cs-note">Needs major repairs${typeof h.contractor==="string"?" — "+h.contractor:""}. For investors &amp; contractors.</div>`:""}
-        ${h._dist!=null?`<div style="font-size:13px;color:var(--ink-soft);margin:-4px 0 8px">📍 ${h._dist.toFixed(1)} mi away</div>`:""}
-        <span class="card-cta">View this home →</span>
+        <div class="card-where">${where}</div>
+        ${h.moveIn ? `<div class="card-down">${money(h.moveIn)} down</div>` : ""}
+        ${h._dist!=null?`<div style="font-size:13px;color:var(--ink-soft);margin-top:4px">${h._dist.toFixed(1)} mi away</div>`:""}
       </div>
     </a>`;
   }
@@ -849,7 +799,7 @@ body{
     const list = LISTINGS.filter(h =>
       (!state || h.state === state) &&
       (!city || h.city === city) &&
-      (!bedsVal || (bedsVal >= 4 ? (Number(h.beds)||0) >= 4 : (Number(h.beds)||0) === bedsVal)) &&
+      (!bedsVal || (Number(h.beds)||0) >= bedsVal) &&
       (!bathsVal || (Number(h.baths)||0) >= bathsVal) &&
       rng(Number(h.monthlyPayment)||0, payLo, payHi) &&
       rng(Number(h.lockedPrice)||0, prLo, prHi) &&
@@ -884,6 +834,9 @@ body{
     renderPager(pages);
     if (window.HomesMap) HomesMap.update(shown);
     if (window.HomesCart) HomesCart.sync();
+    chips();
+    const head = document.querySelector("body.page-search .topbar");
+    if (head) document.documentElement.style.setProperty("--zhead", (head.offsetHeight + 8) + "px");
     if (scroll) document.getElementById("listings").scrollIntoView({block:"start", behavior:"smooth"});
   }
 
@@ -990,21 +943,44 @@ body{
   // active-filter chips (tap one to clear it), like Zillow's filter pills
   function chips(){
     const m = n => "$" + Number(n).toLocaleString();
-    const def = [
-      ["fState", v=>v], ["fCity", v=>v], ["fBeds", v=>v+(v==="4"?"+":"")+" bd"], ["fBaths", v=>v+"+ ba"],
-      ["fPayMin", v=>m(v)+"/mo min"], ["fPayMax", v=>"Up to "+m(v)+"/mo"],
-      ["fPriceMin", v=>m(v)+" min"], ["fPriceMax", v=>"Up to "+m(v)],
-      ["fDownMin", v=>m(v)+" down min"], ["fDown", v=>"Up to "+m(v)+" down"],
-      ["fQ", v=>"Search: "+v],
-      ["fType", v=>v==="contractor"?"Contractor Specials":"All homes"]
-    ];
     const box = $("chips");
-    box.innerHTML = def.filter(([id]) => $(id).value).map(([id,f]) => `<button type="button" data-c="${id}">${f($(id).value)} ✕</button>`).join("");
-    box.querySelectorAll("button").forEach(b => b.onclick = () => {
-      const id = b.dataset.c; $(id).value = "";
-      if (id === "fState") fillCities();
-      page = 1; render(true); syncURL(); chips();
+    if (!box) return;
+    const bits = [];
+    const addRange = (loId, hiId, unit) => {
+      const lo = $(loId).value, hi = $(hiId).value;
+      if (lo && hi) bits.push({ids:[loId, hiId], label:`${m(lo)}–${m(hi)}${unit}`});
+      else if (lo) bits.push({ids:[loId], label:`${m(lo)}+${unit}`});
+      else if (hi) bits.push({ids:[hiId], label:`Up to ${m(hi)}${unit}`});
+    };
+    addRange("fPayMin", "fPayMax", "/mo");
+    addRange("fDownMin", "fDown", " down");
+    addRange("fPriceMin", "fPriceMax", "");
+    if ($("fBeds").value) bits.push({ids:["fBeds"], label: $("fBeds").value + "+ bedrooms"});
+    if ($("fBaths").value) bits.push({ids:["fBaths"], label: $("fBaths").value + "+ bathrooms"});
+    if ($("fState").value) bits.push({ids:["fState"], label: $("fState").value});
+    if ($("fCity").value) bits.push({ids:["fCity"], label: $("fCity").value});
+    if ($("fQ").value) bits.push({ids:["fQ"], label: $("fQ").value});
+    if ($("fType").value === "contractor") bits.push({ids:["fType"], label: "Contractor specials"});
+    else if ($("fType").value === "all") bits.push({ids:["fType"], label: "All homes"});
+    if (window.HomesMap && HomesMap.active && HomesMap.active()) {
+      const ns = HomesMap.nearState && HomesMap.nearState();
+      bits.push({ids:["near"], label: ns ? ("Near " + ns.label) : "Near me"});
+    }
+    box.innerHTML = bits.map((b,i) => `<button type="button" data-i="${i}">${b.label} <span aria-hidden="true">×</span></button>`).join("");
+    box.querySelectorAll("button").forEach(btn => btn.onclick = () => {
+      const b = bits[Number(btn.dataset.i)];
+      if (b.ids[0] === "near") {
+        const c = document.getElementById("hmClear");
+        if (c) c.click();
+      } else {
+        b.ids.forEach(id => { $(id).value = ""; });
+        if (b.ids.includes("fState")) fillCities();
+      }
+      page = 1; render(false); syncURL();
     });
+    const count = bits.filter(b => b.ids[0] !== "fQ").length;
+    const badge = $("fCount");
+    if (badge) { badge.hidden = !count; badge.textContent = String(count); }
   }
 
   // "Copy link to these results" — search for a lead, tap, paste into a text
@@ -1021,6 +997,7 @@ body{
     });
   })();
 
+  applyURL();
   if (window.HomesMap) HomesMap.mount({ rerender: render, sync: syncURL });
   // desktop: map beside the cards (Zillow's split view). Phones keep the List / Map toggle.
   (function(){
@@ -1039,10 +1016,7 @@ body{
   })();
   chips();
   (function(){
-    const ab = $("alertBtn");
-    ab.textContent = "Get alerts for this search";
-    ab.style.display = "inline-block";
-    ab.addEventListener("click", () => { location.href = "account.html#alerts"; });
+    // New-home alerts stay off (ALERTS_ENABLED in account.html and homes-cart.js). Sort only.
     const near = $("nearMe");
     if (near) near.addEventListener("click", () => { if (window.HomesMap && HomesMap.locate) HomesMap.locate(); });
     const miles = $("fMiles");
@@ -1050,13 +1024,20 @@ body{
       const hm = $("hmMiles");
       if (hm) { hm.value = miles.value; hm.dispatchEvent(new Event("change")); }
     });
-    const qGo = $("qGo");
     const qForm = document.querySelector(".hdr-search");
     if (qForm) qForm.addEventListener("submit", (e) => { e.preventDefault(); page = 1; render(false); syncURL(); });
+    const filterBtn = $("filterBtn"), sheet = $("filterSheet");
+    if (filterBtn && sheet) filterBtn.addEventListener("click", () => {
+      const open = sheet.hasAttribute("hidden");
+      if (open) sheet.removeAttribute("hidden"); else sheet.setAttribute("hidden", "");
+      filterBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
     const mapToggle = document.getElementById("mapToggle");
     if (mapToggle) mapToggle.addEventListener("click", () => {
       const on = document.body.classList.toggle("show-map");
-      mapToggle.textContent = on ? "List" : "Map";
+      const label = mapToggle.querySelector("span");
+      if (label) label.textContent = on ? "List" : "Map";
+      mapToggle.setAttribute("aria-pressed", on ? "true" : "false");
       const btn = $(on ? "hmMap" : "hmList");
       if (btn) btn.click();
     });
@@ -1076,7 +1057,14 @@ body{
     if (window.HomesCart) HomesCart.sync();
   })();
 
+  function revealHash(){
+    const id = decodeURIComponent((location.hash || "").replace(/^#/, ""));
+    if (!id) return;
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ block: "start" });
+  }
   render();
+  revealHash();
   if (window.HomesMap) HomesMap.fromURL(new URLSearchParams(location.search));
 
   // arriving from a shared search link? make it obvious the search was applied:
@@ -1092,7 +1080,7 @@ body{
       const h = sec.querySelector(".sec-title");
       if (h) h.textContent = ci ? `Homes in ${ci}, ${st}` : `Homes in ${st}`;
     }
-    requestAnimationFrame(() => sec.scrollIntoView({ block: "start" }));
+    if (!location.hash) requestAnimationFrame(() => sec.scrollIntoView({ block: "start" }));
   })();
   // detect which homes have a real cover photo (no homes.js editing needed — just
   // drop images/<id>.jpg and it auto-prioritizes), then re-sort photo homes to the top
@@ -1101,55 +1089,7 @@ body{
     im.onload  = () => { if (im.naturalWidth > 1) photoReady.add(h.id); res(); };
     im.onerror = () => res();
     im.src = h.heroPhoto || `images/${h.id}.jpg`;
-  }))).then(() => render());
-
-  // contact links (shared CONTACT settings from homes.js)
-  const tel = (CONTACT.phone||"").replace(/[^\d+]/g,"");
-  const pretty = tel.length===10 ? `(${tel.slice(0,3)}) ${tel.slice(3,6)}-${tel.slice(6)}` : (CONTACT.phone||"");
-  const smsBody = encodeURIComponent(`Hi ${CONTACT.contactName}, I'm looking for an owner-financed home.`);
-  $("navCall").href = `sms:${tel}?&body=${smsBody}`;
-  $("navCallText").textContent = "Text us";
-  // (the footer now prints the number and address literally, for carrier
-  //  vetting — there's no footCall link left to wire up here)
-  $("aboutText").href = `sms:${tel}?&body=${smsBody}`;
-  $("oneteamText").href = `sms:${tel}?&body=${smsBody}`;
-  $("oneteamCall").href = `tel:${tel}`;
-  $("oneteamPhone").textContent = pretty;
-  // empty-state text is pre-filled with whatever they just searched for, so the first
-  // message already tells us the town + bedrooms + budget
-  $("emptyText").addEventListener("click", e => {
-    const want = [
-      $("fBeds").value ? `${$("fBeds").value}${$("fBeds").value==="4"?"+":""} bedroom` : "",
-      $("fCity").value || $("fState").value || "",
-      $("fPayMax").value ? "under $" + Number($("fPayMax").value).toLocaleString() + "/mo" : "",
-      $("fDownMin").value || $("fDown").value ? "down $" + ($("fDownMin").value ? Number($("fDownMin").value).toLocaleString() : "0") + "–$" + ($("fDown").value ? Number($("fDown").value).toLocaleString() : "any") : ""
-    ].filter(Boolean).join(", ");
-    e.currentTarget.href = `sms:${tel}?&body=${encodeURIComponent(`Hi, I'm looking for an owner-financed home${want?" — "+want:""}. Can you send me what you have?`)}`;
-  });
-
-  // lead form → Formspree (email) + Make (Notion CRM)  [same wiring as the property page]
-  (function(){
-    const form = $("leadForm"), note = $("lfNote"), btn = $("lfSubmit"), section = $("get-started");
-    const id = (CONTACT.formspreeId||"").trim();
-    const hook = (CONTACT.makeWebhook||"").trim();
-    note.textContent = (id || hook) ? "We usually reply the same day." :
-      "⚠ Form not connected yet — add a Formspree ID or Make webhook in homes.js.";
-    form.addEventListener("submit", async (e)=>{
-      e.preventDefault();
-      if (!id && !hook){ note.textContent = "⚠ Form not connected yet — add a Formspree ID or Make webhook in homes.js."; return; }
-      btn.disabled = true; btn.textContent = "Sending…";
-      const data = new FormData(form);
-      data.append("source", "Home page — Get started");
-      await addConsentRecord(data, form);   // 10DLC opt-in evidence — see consent.js
-      const targets = [];
-      if (id)   targets.push(fetch(`https://formspree.io/f/${id}`, { method:"POST", headers:{ "Accept":"application/json" }, body:data }));
-      if (hook) targets.push(fetch(hook, { method:"POST", body:data }));
-      const results = await Promise.allSettled(targets);
-      const ok = results.some(r => r.status === "fulfilled" && r.value.ok);
-      if (ok){ section.classList.add("sent"); }
-      else { btn.disabled = false; btn.textContent = "Show me my options — takes 1 minute"; note.textContent = "Something went wrong — please call or text us instead."; }
-    });
-  })();
+  }))).then(() => { render(); revealHash(); });
 
   // scroll reveal (respects reduced-motion via CSS)
   if ("IntersectionObserver" in window){

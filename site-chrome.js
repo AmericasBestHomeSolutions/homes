@@ -56,7 +56,15 @@
   acct.textContent = es ? "Cuenta" : "Account";
   if (file === "account.html") acct.setAttribute("aria-current", "page");
 
+  let savedCount = 0;
+  try { savedCount = JSON.parse(localStorage.getItem("savedHomes") || "[]").length; } catch (e) {}
+  const saved = document.createElement("a");
+  saved.className = "saved";
+  saved.href = "account.html#saved";
+  saved.innerHTML = (es ? "Guardados" : "Saved") + (savedCount ? `<span class="count">${savedCount}</span>` : "");
+
   const call = nav.querySelector(".call");
   nav.insertBefore(lang, call || nav.firstChild);
+  nav.insertBefore(saved, call || null);
   nav.insertBefore(acct, call || null);
 })();

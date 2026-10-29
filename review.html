@@ -352,10 +352,10 @@ const REVIEW = {
 
   // ── boot: fail closed unless keys are recorded for THIS deal ─
   (async function(){
-    if (!validHome || !dealCode) return lock("This link isn't complete", `Please use the link we texted you, or call us at ${pretty}.`);
+    if (!validHome || !dealCode) return lock("This link isn't complete", "Please use the link we sent you.");
     let ok = false;
     try { ok = await keysDelivered(); }
-    catch(e){ return lock("We couldn't load this just now", "Please refresh in a minute, or call us."); }
+    catch(e){ return lock("We couldn't load this just now", "Please try again in a moment."); }
     if (!ok) return lock();
     if (typeof HOMES !== "undefined"){
       const h = HOMES.find(x => x.id === homeId);

@@ -64,6 +64,16 @@ class SanitizerTests(unittest.TestCase):
         self.assertEqual(got, "Book a Tour now to set up your showing.")
         self.assertEqual(n, 1)
 
+    def test_email_call_text_me(self):
+        got, n = refresh.sanitize_prose(
+            "Let me know if you have any question, email/call/text me."
+        )
+        self.assertEqual(n, 1)
+        self.assertEqual(
+            got,
+            "Let me know if you have any question, book a Tour.",
+        )
+
     def test_does_not_touch_ordinary_call_wording(self):
         src = "Come walk through every room in person and make your own call. A place to call their own."
         got, n = refresh.sanitize_prose(src)

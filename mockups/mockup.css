@@ -141,12 +141,12 @@ a { color: var(--navy); }
 
 .filters {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   align-items: center;
   padding: 10px 16px;
   background: #fff;
   border-bottom: 1px solid var(--line);
-  overflow-x: auto;
 }
 .chip {
   flex: none;
@@ -164,6 +164,87 @@ a { color: var(--navy); }
 }
 .chip.on { background: var(--blue); border-color: var(--navy); color: var(--navy); }
 .chip svg { flex: none; }
+.range {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: 1.5px solid #cfd6e4;
+  background: #fff;
+  border-radius: 8px;
+  padding: 4px 8px;
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--ink);
+}
+.range span.lab { color: var(--soft); font-size: 11px; letter-spacing: .04em; text-transform: uppercase; margin-right: 2px; }
+.range select {
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-weight: 800;
+  padding: 4px 0;
+  max-width: 88px;
+}
+.range .dash { color: var(--soft); font-weight: 700; }
+.near {
+  flex: none;
+  border: 1.5px solid var(--navy);
+  background: #fff;
+  color: var(--navy);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-weight: 800;
+  font-size: 14px;
+  cursor: pointer;
+}
+.near.on { background: var(--navy); color: #fff; }
+.near-msg { flex: none; margin: 0; font-size: 13px; color: var(--soft); font-weight: 700; }
+.lang { display: inline-flex; border: 1.5px solid var(--line); border-radius: 999px; overflow: hidden; }
+.lang a { text-decoration: none; color: var(--soft); font-size: 12px; font-weight: 800; padding: 6px 8px; }
+.lang a[aria-current="page"] { background: var(--navy); color: #fff; }
+.badge-new {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  background: var(--navy);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 4px 8px;
+}
+.alert-row { margin: 0 12px 10px; }
+.alert-row a { font-weight: 800; font-size: 14px; }
+.saved-search p { margin: 0 0 4px; }
+.switch { display: inline-flex; align-items: center; gap: 8px; font-weight: 800; margin-top: 8px; cursor: pointer; }
+.switch input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.knob {
+  width: 42px;
+  height: 24px;
+  border-radius: 99px;
+  background: #c5cedd;
+  position: relative;
+  flex: none;
+}
+.knob::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  top: 3px;
+  left: 3px;
+  box-shadow: 0 1px 3px rgba(15, 36, 68, .3);
+}
+.switch input:focus-visible + .knob { outline: 2px solid var(--navy); outline-offset: 2px; }
+.switch input:checked + .knob { background: var(--navy); }
+.switch input:checked + .knob::after { left: 21px; }
+.alert-off { margin: 8px 0 0; color: var(--soft); font-size: 13px; }
 
 /* Search split. The map stays a fixed height; company, benefits, and FAQ sit below it. */
 body.page-search { min-height: 100vh; background: var(--paper); }

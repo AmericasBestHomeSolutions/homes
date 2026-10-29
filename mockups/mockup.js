@@ -1,4 +1,7 @@
-/* Tiny behavior for the layout mockup. Nothing here talks to the live site. */
+/* Tiny behavior for the layout mockup. Nothing here talks to the live site.
+   ALERTS_ENABLED is OFF. This page does not email or text anyone.
+   When Joe turns alerts on, the messaging bot sends — not this file. */
+const ALERTS_ENABLED = false;
 (function () {
   document.querySelectorAll(".heart").forEach((btn) => {
     btn.addEventListener("click", (e) => {
@@ -42,11 +45,55 @@
     paint();
   }
 
-  document.querySelectorAll("form[data-mock]").forEach((form) => {
+  document.querySelectorAll("form.search").forEach((form) => {
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-      const note = form.querySelector(".form-note");
-      if (note) note.textContent = "Mockup only — nothing was sent.";
+      const q = (form.querySelector("input") || {}).value || "";
+      const h1 = document.querySelector(".list-head h1");
+      if (h1 && /^\d{5}$/.test(q.trim())) h1.textContent = "ZIP " + q.trim();
     });
   });
+
+  const nearBtn = document.getElementById("nearBtn");
+  if (nearBtn) {
+    nearBtn.addEventListener("click", () => {
+      const msg = document.getElementById("nearMsg");
+      if (!navigator.geolocation) {
+        if (msg) msg.textContent = "Location isn't available. Search a ZIP.";
+        return;
+      }
+      nearBtn.textContent = "Finding you…";
+      navigator.geolocation.getCurrentPosition((pos) => {
+        const { latitude, longitude } = pos.coords;
+        const miles = (lat, lng) => {
+          const r = Math.PI / 180, R = 3958.8;
+          const x = Math.sin((lat - latitude) * r / 2) ** 2 + Math.cos(latitude * r) * Math.cos(lat * r) * Math.sin((lng - longitude) * r / 2) ** 2;
+          return 2 * R * Math.asin(Math.sqrt(x));
+        };
+        const list = document.querySelector(".list");
+        const cards = [...document.querySelectorAll(".list .card")];
+        cards.sort((a, b) => miles(+a.dataset.lat, +a.dataset.lng) - miles(+b.dataset.lat, +b.dataset.lng));
+        cards.forEach((card) => list.appendChild(card));
+        const sort = document.querySelector(".sort");
+        if (sort) sort.textContent = "Nearest";
+        nearBtn.textContent = "Near you";
+        nearBtn.classList.add("on");
+        if (msg) msg.textContent = "";
+      }, () => {
+        nearBtn.textContent = "Near me";
+        if (msg) msg.textContent = "We couldn't use your location. Search a ZIP.";
+      });
+    });
+  }
+
+  const alertOn = document.getElementById("alertOn");
+  if (alertOn) {
+    alertOn.checked = false;
+    alertOn.addEventListener("change", () => {
+      if (ALERTS_ENABLED) return;
+      alertOn.checked = false;
+      const hold = document.getElementById("alertHold");
+      if (hold) hold.hidden = false;
+    });
+  }
 })();

@@ -30,10 +30,13 @@ Buyer-facing sentences are copied from the live pages. Nothing below is a new mi
 
 ## What this layout is
 
-- **Search:** city or ZIP, filters (monthly, price, beds, baths), list beside a map. Mobile is the list, with a Map / List toggle. Under the results: who we are, why buy instead of rent, and the FAQ (questions collapse).
+- **Search:** city or ZIP code, monthly and down-payment ranges (min and max), beds, baths, and Near me (browser location, then nearest first). Mobile is the list, with a Map / List toggle. “Get alerts for this search” opens the saved search on the account page. Under the results: who we are, why buy instead of rent, and the FAQ.
+- **New badge:** sample only on 107 Judith Ln. `homes.js` has no per-home listing date. Keys on a home are address, beds, baths, sqft, monthlyPayment, moveIn, and the rest listed in that file — nothing like `listedOn`. The comment at the top of `homes.js` (“master published 2026-10-27”) is the whole refresh, not a date for one home. The generator would need a new date field before this badge can be real. Until then the badge is layout only.
+- **Alerts:** `ALERTS_ENABLED` in `mockup.js` is `false`. The account switch stays off and this page does not email or text. When Joe turns that flag on, the messaging bot sends — not the website.
 - **Card:** photo, monthly payment, down payment, beds / baths / sqft, city, heart.
 - **Listing:** gallery first, monthly payment and down payment, Save and Book a Tour, a short version of the benefits, facts, three steps from How it works, map, and a short FAQ.
-- **Account:** saved homes and Book a Tour for each one.
+- **Account:** saved homes, Book a Tour for each one, and saved searches with alerts off.
+- **EN / ES:** ES links to the matching page on casasconfinanciamiento.com. The account page has no Spanish twin yet, so its ES link goes to the Spanish home page.
 
 Pins show the monthly payment, same as today.
 

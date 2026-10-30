@@ -72,6 +72,20 @@ body.page-search .z-chips button {
   flex: 0 0 auto; border: 0; background: var(--pine, #15315e); color: #fff;
   font: 700 14px "DM Sans", system-ui, sans-serif; border-radius: 999px; padding: 8px 12px; cursor: pointer;
 }
+/* Always-visible quick filters: city, bedrooms, price range, monthly. The rest live under "More filters". */
+body.page-search .z-quick { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 8px 10px; padding: 10px 0 2px; }
+body.page-search .z-quick .qf { display: grid; gap: 3px; font: 800 11px "DM Sans", system-ui, sans-serif; letter-spacing: .04em; text-transform: uppercase; color: #5b6577; }
+body.page-search .z-quick select {
+  font: 700 14px "DM Sans", system-ui, sans-serif; color: var(--ink, #16213a); background: #fff;
+  border: 1.5px solid #cfd6e4; border-radius: 10px; padding: 8px 10px; min-width: 120px; max-width: 220px; cursor: pointer;
+}
+body.page-search .z-quick select:focus { outline: none; border-color: var(--pine, #15315e); box-shadow: 0 0 0 3px rgba(21,49,94,.15); }
+body.page-search .z-quick .qf-more, body.page-search .z-quick .qf-clear {
+  font: 800 14px "DM Sans", system-ui, sans-serif; border-radius: 10px; padding: 9px 12px; cursor: pointer;
+  border: 1.5px solid var(--pine, #15315e); background: #fff; color: var(--pine, #15315e);
+}
+body.page-search .z-quick .qf-clear { border-color: transparent; text-decoration: underline; }
+body.page-search .z-quick .qf-clear[hidden] { display: none; }
 body.page-search .z-sort { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px 0 4px; }
 body.page-search .z-sort .count { padding: 0; font-weight: 700; }
 body.page-search .sort-pill { display: inline-flex; align-items: center; gap: 8px; font-weight: 800; font-size: 14px; }
@@ -111,10 +125,11 @@ body.page-search #alertBtn {
 }
 body.page-search #copyLink { display: none !important; }
 body.page-search .hm-near, body.page-search .hm-bar, body.page-search .hc-cmpbtn { display: none !important; }
-/* Homes first: the map is a small preview strip above the cards, capped at about a quarter of the screen. */
-body.page-search #split { display: flex !important; flex-direction: column; gap: 0; min-height: 0; }
+/* Homes first: on desktop the cards take the room and the map is a narrow sticky column on the right
+   (about a quarter of the screen), so the pins stay in view while scrolling the filtered homes. */
+body.page-search #split { display: grid !important; grid-template-columns: minmax(0, 1fr) clamp(260px, 25vw, 400px); gap: 0; align-items: start; min-height: 0; }
 body.page-search #split > div:first-child { min-height: 0; }
-body.page-search #splitMap { order: -1; position: static; height: clamp(160px, 25vh, 260px); min-height: 0; margin: 8px 16px 4px; border-radius: 12px; overflow: hidden; border: 1px solid var(--line, #e2e8f2); }
+body.page-search #splitMap { position: sticky; top: var(--zhead, 168px); height: min(calc(100vh - var(--zhead, 168px) - 16px), 620px); min-height: 280px; margin: 20px 16px 0 4px; border-radius: 12px; overflow: hidden; border: 1px solid var(--line, #e2e8f2); }
 body.page-search #splitMap > div,
 body.page-search #splitMap .hm-wrap { height: 100%; margin: 0; position: relative; }
 body.page-search #splitMap .hm-map {
@@ -220,14 +235,22 @@ body.page-search .card-down { font-weight: 800; margin-top: 6px; color: var(--in
   body.page-search .chipbar { position: static; }
   body.page-search #listings { height: auto; overflow: visible; }
   body.page-search #split { display: block !important; min-height: 0; }
-  body.page-search #splitMap { display: none; position: static; height: calc(100vh - 210px); }
+  body.page-search #splitMap { display: none; position: static; height: calc(100vh - 210px); margin: 0; border-radius: 0; border: 0; }
+  /* phones: the quick filters are one swipeable row so the sticky header stays short */
+  body.page-search .z-quick { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  body.page-search .z-quick::-webkit-scrollbar { display: none; }
+  body.page-search .z-quick .qf, body.page-search .z-quick button { flex: 0 0 auto; }
+  body.page-search .z-quick select { min-width: 0; font-size: 16px; padding: 7px 8px; }
+  /* the quick filters already show what is picked (with Clear all), so skip the duplicate chip row on phones */
+  body.page-search .z-chips { display: none !important; }
+  body.page-search .z-quick { padding-top: 8px; }
   body.page-search.show-map #cards,
   body.page-search.show-map #pager,
   body.page-search.show-map #empty { display: none; }
   body.page-search.show-map #splitMap { display: block; }
   body.page-search .view-toggle {
     display: inline-flex; align-items: center; gap: 8px;
-    position: fixed; z-index: 40; left: 50%; bottom: 18px; transform: translateX(-50%);
+    position: fixed; z-index: 1000; left: 50%; bottom: 18px; transform: translateX(-50%); /* above the map pins (Leaflet panes go up to 700) */
     background: #111827; color: #fff; border: 0; border-radius: 999px;
     padding: 12px 18px; font-weight: 800; box-shadow: 0 8px 22px rgba(15,36,68,.35); cursor: pointer;
   }

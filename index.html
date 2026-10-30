@@ -160,9 +160,7 @@ body{
 .filter-chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
 .filter-chips button{font:600 13px 'DM Sans',system-ui,sans-serif;padding:7px 12px;border-radius:999px;border:1.5px solid var(--pine,#15315e);background:#fff;color:var(--pine,#15315e);cursor:pointer}
 @media(min-width:1100px){
-  /* map is a small preview above the homes (max ~25% of the screen), not a half-screen split */
-  #split{display:flex;flex-direction:column}
-  #split #splitMap{order:-1}
+  /* layout lives in site.css: homes on the left, a narrow sticky map (about a quarter of the screen) on the right */
   #split .cards{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
   #listings .hm-bar{display:none}
 }
@@ -346,6 +344,15 @@ body{
         <span class="fcount" id="fCount" hidden>0</span>
       </button>
     </form>
+    <div class="z-quick" id="quickFilters" role="group" aria-label="Filter homes">
+      <label class="qf"><span>City</span><select id="fCity" aria-label="City"><option value="">All cities</option></select></label>
+      <label class="qf"><span>Bedrooms</span><select id="fBeds" aria-label="Bedrooms"><option value="">Any</option><option value="1">1+ beds</option><option value="2">2+ beds</option><option value="3">3+ beds</option><option value="4">4+ beds</option></select></label>
+      <label class="qf"><span>Price from</span><select id="fPriceMin" aria-label="Minimum price"><option value="">No min</option><option value="40000">$40k+</option><option value="50000">$50k+</option><option value="60000">$60k+</option><option value="70000">$70k+</option><option value="80000">$80k+</option><option value="90000">$90k+</option><option value="100000">$100k+</option><option value="150000">$150k+</option></select></label>
+      <label class="qf"><span>Price to</span><select id="fPriceMax" aria-label="Maximum price"><option value="">No max</option><option value="50000">Up to $50k</option><option value="60000">Up to $60k</option><option value="70000">Up to $70k</option><option value="80000">Up to $80k</option><option value="90000">Up to $90k</option><option value="100000">Up to $100k</option><option value="150000">Up to $150k</option></select></label>
+      <label class="qf"><span>Monthly</span><select id="fPayMax" aria-label="Maximum monthly payment"><option value="">Any</option><option value="600">Up to $600</option><option value="800">Up to $800</option><option value="1000">Up to $1,000</option><option value="1200">Up to $1,200</option><option value="1500">Up to $1,500</option><option value="1800">Up to $1,800</option></select></label>
+      <button type="button" class="qf-more" id="moreFilters" aria-controls="filterSheet">More filters</button>
+      <button type="button" class="qf-clear" id="clearFilters" hidden>Clear all</button>
+    </div>
     <div class="z-chips" id="chips"></div>
     <div class="z-sort">
       <p class="count" id="count"></p>
@@ -357,25 +364,16 @@ body{
       <label>Monthly min
         <select id="fPayMin" aria-label="Minimum monthly payment"><option value="">No min</option><option value="500">$500</option><option value="600">$600</option><option value="700">$700</option><option value="800">$800</option><option value="900">$900</option><option value="1000">$1,000</option><option value="1200">$1,200</option><option value="1500">$1,500</option></select>
       </label>
-      <label>Monthly max
-        <select id="fPayMax" aria-label="Maximum monthly payment"><option value="">No max</option><option value="600">$600</option><option value="800">$800</option><option value="1000">$1,000</option><option value="1200">$1,200</option><option value="1500">$1,500</option><option value="1800">$1,800</option></select>
-      </label>
       <label>Down min
         <select id="fDownMin" aria-label="Minimum down payment"><option value="">No min</option><option value="1000">$1,000</option><option value="1500">$1,500</option><option value="2000">$2,000</option><option value="3000">$3,000</option></select>
       </label>
       <label>Down max
         <select id="fDown" aria-label="Maximum down payment"><option value="">No max</option><option value="1500">$1,500</option><option value="2000">$2,000</option><option value="3000">$3,000</option><option value="4000">$4,000</option><option value="5000">$5,000</option></select>
       </label>
-      <label>Bedrooms
-        <select id="fBeds" aria-label="Bedrooms"><option value="">Any</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option></select>
-      </label>
       <label>Bathrooms
         <select id="fBaths" aria-label="Bathrooms"><option value="">Any</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option></select>
       </label>
       <label>State <select id="fState"><option value="">All states</option></select></label>
-      <label>City <select id="fCity"><option value="">All cities</option></select></label>
-      <label>Price min <select id="fPriceMin"><option value="">No min</option><option value="40000">$40,000</option><option value="60000">$60,000</option><option value="80000">$80,000</option><option value="100000">$100,000</option><option value="150000">$150,000</option></select></label>
-      <label>Price max <select id="fPriceMax"><option value="">No max</option><option value="60000">$60,000</option><option value="80000">$80,000</option><option value="100000">$100,000</option><option value="150000">$150,000</option></select></label>
       <label id="fTypeWrap" hidden>Home type <select id="fType"><option value="">Move-in ready</option><option value="contractor">Contractor specials</option><option value="all">All homes</option></select></label>
       <label>Within <select id="fMiles"><option value="10">10 mi</option><option value="25" selected>25 mi</option><option value="50">50 mi</option><option value="100">100 mi</option></select></label>
       <button type="button" class="near sheet-wide" id="nearMe">Near me</button>
@@ -1002,6 +1000,7 @@ body{
     const count = bits.filter(b => b.ids[0] !== "fQ").length;
     const badge = $("fCount");
     if (badge) { badge.hidden = !count; badge.textContent = String(count); }
+    const clr = $("clearFilters"); if (clr) clr.hidden = !bits.some(b => b.ids[0] !== "near");
   }
 
   // "Copy link to these results" — search for a lead, tap, paste into a text
@@ -1020,7 +1019,7 @@ body{
 
   applyURL();
   if (window.HomesMap) HomesMap.mount({ rerender: render, sync: syncURL });
-  // desktop: a small map preview above the cards. Phones keep the List / Map toggle.
+  // desktop: a narrow map column beside the cards (about a quarter of the screen). Phones keep the List / Map toggle.
   (function(){
     const wrap = $("hmWrap"), cards = $("cards");
     if (!wrap || !window.HomesMap) return;
@@ -1052,6 +1051,13 @@ body{
       const open = sheet.hasAttribute("hidden");
       if (open) sheet.removeAttribute("hidden"); else sheet.setAttribute("hidden", "");
       filterBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    const more = $("moreFilters");
+    if (more && filterBtn) more.addEventListener("click", () => { filterBtn.click(); more.setAttribute("aria-expanded", filterBtn.getAttribute("aria-expanded")); });
+    const clr = $("clearFilters");
+    if (clr) clr.addEventListener("click", () => {
+      ["fState",...FILTER_IDS].filter(id => id !== "fSort").forEach(id => { const el = $(id); if (el) el.value = ""; });
+      fillCities(); page = 1; render(false); syncURL();
     });
     const mapToggle = document.getElementById("mapToggle");
     if (mapToggle) mapToggle.addEventListener("click", () => {

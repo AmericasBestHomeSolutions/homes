@@ -149,12 +149,20 @@ body{
 .cs-tag{position:absolute;top:44px;left:12px;z-index:3;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;background:#b45309;color:#fff;padding:5px 10px;border-radius:999px;font-weight:500}
 .card.is-cs .card-cta{background:#b45309}
 .cs-note{font-size:13px;color:#92400e;background:#fff7ed;border:1px solid #fed7aa;border-radius:8px;padding:6px 9px;margin:0 0 10px}
+.buyer-intro{max-width:1180px;margin:0 auto;padding:16px 16px 4px}
+.buyer-intro h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(22px,3.2vw,32px);line-height:1.15;color:var(--pine);margin:0 0 8px}
+.buyer-intro p{font-size:16px;line-height:1.5;color:var(--ink);margin:0 0 10px;max-width:760px}
+.buyer-intro ul{display:flex;flex-wrap:wrap;gap:6px 18px;list-style:none;margin:0 0 6px;padding:0;font-weight:700;font-size:14.5px;color:var(--pine)}
+.buyer-intro li::before{content:"✓ ";color:var(--pine)}
+.buyer-intro .bi-cta{font-size:14.5px;color:var(--ink-soft);margin:0}
+.buyer-intro .bi-cta a{color:var(--pine);font-weight:700}
+@media (max-width:560px){ .buyer-intro{padding:12px 12px 2px} .buyer-intro p{font-size:15px} }
 .filter-chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
 .filter-chips button{font:600 13px 'DM Sans',system-ui,sans-serif;padding:7px 12px;border-radius:999px;border:1.5px solid var(--pine,#15315e);background:#fff;color:var(--pine,#15315e);cursor:pointer}
 @media(min-width:1100px){
-  #split{display:grid;grid-template-columns:minmax(0,1fr) minmax(380px,44%);gap:22px;align-items:start}
-  #split #splitMap{position:sticky;top:12px}
-  #split #splitMap .hm-map{height:calc(100vh - 36px);min-height:480px}
+  /* map is a small preview above the homes (max ~25% of the screen), not a half-screen split */
+  #split{display:flex;flex-direction:column}
+  #split #splitMap{order:-1}
   #split .cards{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
   #listings .hm-bar{display:none}
 }
@@ -437,6 +445,16 @@ body{
   </section>
 
   <section class="section" id="listings">
+    <div class="buyer-intro">
+      <h2>Owner-financed homes. Low down payment. No bank needed.</h2>
+      <p>We sell homes to good, hardworking people, including folks the banks have turned away. Every home is sold as-is: you fix it up your way, make it yours, and stay for the long haul. Rent it out or pass it on to your kids later. It's your home.</p>
+      <ul>
+        <li>We finance it, not a bank</li>
+        <li>Low down payment</li>
+        <li>You own from day one</li>
+      </ul>
+      <p class="bi-cta">Find a home you like below, then tap <strong>Book a Tour</strong> on its page. <a href="how-it-works.html">How it works</a></p>
+    </div>
     <div class="cards" id="cards"></div>
     <button type="button" class="view-toggle" id="mapToggle" aria-pressed="false"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 4v14M15 6v14" stroke="currentColor" stroke-width="2"/></svg><span>Map</span></button>
 
@@ -775,7 +793,7 @@ body{
 
   // homes that actually have a cover photo load into this set, then sort to the top
   const photoReady = new Set();
-  const PER_PAGE = 24;
+  const PER_PAGE = 12;   // a short, scannable page; the pager does the rest
   let page = 1;
 
   const hasCS = LISTINGS.some(h => h.contractor);
@@ -812,7 +830,10 @@ body{
     if (sort === "monthly-asc")   list.sort((a,b) => num(a.monthlyPayment,Infinity) - num(b.monthlyPayment,Infinity));
     else if (sort === "down-asc") list.sort((a,b) => num(a.moveIn,Infinity) - num(b.moveIn,Infinity));  // "Ask us" ($0) sorts last
     else if (sort === "price-asc")list.sort((a,b) => num(a.lockedPrice,Infinity) - num(b.lockedPrice,Infinity));
-    else list.sort((a,b) =>  // Featured: complete listings first (photo, then address)
+    else list.sort((a,b) =>  // Featured: new homes, then our featured picks, then complete listings (photo, then address)
+      (isNewHome(b) - isNewHome(a)) ||
+      ((b.featured==="promoted") - (a.featured==="promoted")) ||
+      ((b.featured?1:0) - (a.featured?1:0)) ||
       (photoReady.has(b.id) - photoReady.has(a.id)) ||
       ((b.address?1:0) - (a.address?1:0))
     );
@@ -999,7 +1020,7 @@ body{
 
   applyURL();
   if (window.HomesMap) HomesMap.mount({ rerender: render, sync: syncURL });
-  // desktop: map beside the cards (Zillow's split view). Phones keep the List / Map toggle.
+  // desktop: a small map preview above the cards. Phones keep the List / Map toggle.
   (function(){
     const wrap = $("hmWrap"), cards = $("cards");
     if (!wrap || !window.HomesMap) return;

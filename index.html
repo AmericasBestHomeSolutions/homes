@@ -345,6 +345,7 @@ body{
       </button>
     </form>
     <div class="z-quick" id="quickFilters" role="group" aria-label="Filter homes">
+      <label class="qf"><span>State</span><select id="fState" aria-label="State"><option value="">All states</option></select></label>
       <label class="qf"><span>City</span><select id="fCity" aria-label="City"><option value="">All cities</option></select></label>
       <label class="qf"><span>Bedrooms</span><select id="fBeds" aria-label="Bedrooms"><option value="">Any</option><option value="1">1+ beds</option><option value="2">2+ beds</option><option value="3">3+ beds</option><option value="4">4+ beds</option></select></label>
       <label class="qf"><span>Price from</span><select id="fPriceMin" aria-label="Minimum price"><option value="">No min</option><option value="40000">$40k+</option><option value="50000">$50k+</option><option value="60000">$60k+</option><option value="70000">$70k+</option><option value="80000">$80k+</option><option value="90000">$90k+</option><option value="100000">$100k+</option><option value="150000">$150k+</option></select></label>
@@ -373,7 +374,6 @@ body{
       <label>Bathrooms
         <select id="fBaths" aria-label="Bathrooms"><option value="">Any</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option></select>
       </label>
-      <label>State <select id="fState"><option value="">All states</option></select></label>
       <label id="fTypeWrap" hidden>Home type <select id="fType"><option value="">Move-in ready</option><option value="contractor">Contractor specials</option><option value="all">All homes</option></select></label>
       <label>Within <select id="fMiles"><option value="10">10 mi</option><option value="25" selected>25 mi</option><option value="50">50 mi</option><option value="100">100 mi</option></select></label>
       <button type="button" class="near sheet-wide" id="nearMe">Near me</button>
@@ -739,9 +739,11 @@ body{
   const allCities = [...new Set(LISTINGS.map(h => h.city).filter(Boolean))].sort();
   function fillCities(){
     const st = $("fState").value;
+    const keep = $("fCity").value;
     const list = [...new Set(LISTINGS.filter(h => !st || h.state === st).map(h => h.city).filter(Boolean))].sort();
     $("fCity").innerHTML = `<option value="">All cities</option>` +
       list.map(c => `<option value="${c}">${c}</option>`).join("");
+    $("fCity").value = list.includes(keep) ? keep : "";   // a city from another state is cleared
   }
   fillCities();
 

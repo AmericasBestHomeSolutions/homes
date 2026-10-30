@@ -111,9 +111,10 @@ body.page-search #alertBtn {
 }
 body.page-search #copyLink { display: none !important; }
 body.page-search .hm-near, body.page-search .hm-bar, body.page-search .hc-cmpbtn { display: none !important; }
-body.page-search #split { display: grid !important; grid-template-columns: minmax(0, 1fr) clamp(320px, 32vw, 500px); gap: 0; align-items: start; min-height: calc(100vh - 200px); }
+/* Homes first: the map is a small preview strip above the cards, capped at about a quarter of the screen. */
+body.page-search #split { display: flex !important; flex-direction: column; gap: 0; min-height: 0; }
 body.page-search #split > div:first-child { min-height: 0; }
-body.page-search #splitMap { position: sticky; top: var(--zhead, 168px); height: calc(100vh - var(--zhead, 168px) - 16px); min-height: 420px; }
+body.page-search #splitMap { order: -1; position: static; height: clamp(160px, 25vh, 260px); min-height: 0; margin: 8px 16px 4px; border-radius: 12px; overflow: hidden; border: 1px solid var(--line, #e2e8f2); }
 body.page-search #splitMap > div,
 body.page-search #splitMap .hm-wrap { height: 100%; margin: 0; position: relative; }
 body.page-search #splitMap .hm-map {

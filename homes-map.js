@@ -292,7 +292,19 @@
     S._fitting = true;
     if (S.near && S.ring) S.map.fitBounds(S.ring.getBounds(), { padding:[28,28], animate:false });
     else if (pts.length === 1) S.map.setView(pts[0], 14, { animate:false });
-    else if (pts.length) S.map.fitBounds(L.latLngBounds(pts), { padding:[36,36], maxZoom:12, animate:false });
+    else if (pts.length){
+      // The desktop map is a short strip (~25% of the screen). Fitting every pin with wide padding
+      // there lands at world zoom, so a short map uses slim padding and fits the core of the homes
+      // (5th-95th percentile); far-off homes are still pinned, just off the first view.
+      const short = S.map.getSize().y < 320;
+      let fit = pts;
+      if (short && pts.length >= 20){
+        const q = (a, f) => a[Math.min(a.length - 1, Math.max(0, Math.round(f * (a.length - 1))))];
+        const la = pts.map(p => p[0]).sort((a,b) => a-b), ln = pts.map(p => p[1]).sort((a,b) => a-b);
+        fit = [[q(la,.05), q(ln,.05)], [q(la,.95), q(ln,.95)]];
+      }
+      S.map.fitBounds(L.latLngBounds(fit), { padding: short ? [12,12] : [36,36], maxZoom:12, animate:false });
+    }
     // moveend fires synchronously for a non-animated fit; only later pans/zooms are the visitor's
     setTimeout(() => { S._fitting = false; S.dirty = false; const a = $("hmArea"); if (a) a.hidden = true; }, 250);
   }

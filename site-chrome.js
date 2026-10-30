@@ -121,7 +121,10 @@
     try { savedCount = JSON.parse(localStorage.getItem("savedHomes") || "[]").length; } catch (e) {}
     const saved = document.createElement("a");
     saved.className = "saved";
-    saved.href = "account.html#saved";
+    saved.href = "/saved.html";
+    saved.addEventListener("click", function (e) {
+      if (window.HomesCart && file !== "saved.html") { e.preventDefault(); window.HomesCart.open("saved"); }
+    });
     saved.innerHTML = (es ? "Guardados" : "Saved") + (savedCount ? '<span class="count">' + savedCount + "</span>" : "");
     menu.append(saved);
   }

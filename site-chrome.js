@@ -125,11 +125,13 @@
     saved.innerHTML = (es ? "Guardados" : "Saved") + (savedCount ? '<span class="count">' + savedCount + "</span>" : "");
     menu.append(saved);
   }
-  if (!nav.querySelector('a[href="account.html"], a[href="/account.html"]')) {
+  if (!nav.querySelector("a.my-account")) {
+    // Buyer account (sign in with an email code; see and change tours) lives on the CRM.
     const acct = document.createElement("a");
-    acct.href = "account.html";
-    acct.textContent = es ? "Cuenta" : "Account";
-    if (file === "account.html") acct.setAttribute("aria-current", "page");
+    acct.className = "my-account";
+    acct.href = "https://owner.getownerfinancedhomes.com/account?lang=" + (es ? "es" : "en");
+    acct.rel = "noopener";
+    acct.textContent = es ? "Mi cuenta" : "My account";
     menu.append(acct);
   }
 })();

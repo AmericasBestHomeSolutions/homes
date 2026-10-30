@@ -73,6 +73,8 @@
     <p class="sub">Tell us what you're looking for — or what you're selling — and we'll come back to you with a straight answer.</p>
 
     <form id="leadForm" novalidate>
+      <!-- home_id: the listing id from ?home=<id> (same id as /book?home=). Make passes it to the CRM web-lead hook. -->
+      <input type="hidden" id="lfHome" name="home_id" value="">
       <label for="lfName">Name</label>
       <input id="lfName" name="name" type="text" autocomplete="name" required>
 
@@ -128,6 +130,8 @@
 <script>
 (function(){
   const $ = (id) => document.getElementById(id);
+  const homeId = new URLSearchParams(location.search).get("home") || "";
+  if (/^[A-Za-z0-9_.-]{1,64}$/.test(homeId)) $("lfHome").value = homeId; else $("lfHome").remove();
   const form = $("leadForm"), note = $("lfNote"), btn = $("lfSubmit"), card = form.closest(".formcard");
   const id   = (CONTACT.formspreeId || "").trim();
   const hook = (CONTACT.makeWebhook || "").trim();

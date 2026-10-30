@@ -79,6 +79,7 @@ body.page-search .z-quick select {
   font: 700 14px "DM Sans", system-ui, sans-serif; color: var(--ink, #16213a); background: #fff;
   border: 1.5px solid #cfd6e4; border-radius: 10px; padding: 8px 10px; min-width: 120px; max-width: 220px; cursor: pointer;
 }
+body.page-search .z-quick #fState { min-width: 0; max-width: 150px; }  /* two-letter codes; keeps City in view on phones */
 body.page-search .z-quick select:focus { outline: none; border-color: var(--pine, #15315e); box-shadow: 0 0 0 3px rgba(21,49,94,.15); }
 body.page-search .z-quick .qf-more, body.page-search .z-quick .qf-clear {
   font: 800 14px "DM Sans", system-ui, sans-serif; border-radius: 10px; padding: 9px 12px; cursor: pointer;

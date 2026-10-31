@@ -24,6 +24,16 @@ Consequences:
 - A refresh commonly produces a large `sitemap.xml` diff (~150 lines moved) because the
   generator re-emits listings in master-list order. That churn is expected, not a bug.
 
+## Portal sync (daily, GitHub Actions)
+
+`scripts/portal_sync.py` + `.github/workflows/portal-sync.yml` keep the site matching the
+seller portal's **Portal Backup** tab: new Available homes get a `homes.js` entry and page,
+changed price/down/monthly are updated, Pending/Sold/Not in portal homes are retired. It runs
+~7:35 AM ET daily and after every Mac "Refresh listings from master" push, and commits to
+`main` only when something changed. It reads only Portal Backup A:M and CRM_Properties A:F
+(no lockbox/seller columns) with the `GOOGLE_SERVICE_ACCOUNT_JSON` repo secret. The Spanish
+site (casas) runs the same script with `--lang es`. Dry run: `python3 scripts/portal_sync.py --dry-run`.
+
 ## Layout
 
 | Path | What it is |

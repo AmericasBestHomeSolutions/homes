@@ -1,5 +1,15 @@
 [
   {"id": "decatur-il-decatur", "reason": "No street address (only 'Decatur'); not in Portal Backup. Removed 2026-10-31 (Joe: take the most appropriate action).", "added": "2026-10-31"},
   {"id": "stlouis-mo-210409-17th", "reason": "Garbled 210 N 17th St condo entry ('210-409'); not in Portal Backup; WhatsApp Intel marks 210 N 17th SOLD. Removed 2026-10-31.", "added": "2026-10-31"},
-  {"id": "stlouis-mo-2101409-17th", "reason": "Garbled 210 N 17th St condo entry ('210-1409'); not in Portal Backup; WhatsApp Intel marks 210 N 17th SOLD. Removed 2026-10-31.", "added": "2026-10-31"}
+  {"id": "stlouis-mo-2101409-17th", "reason": "Garbled 210 N 17th St condo entry ('210-1409'); not in Portal Backup; WhatsApp Intel marks 210 N 17th SOLD. Removed 2026-10-31.", "added": "2026-10-31"},
+  {"id": "stlouis-mo-10516-baron", "reason": "Not in Cameron's portal; Joe says likely sold, Oct 31", "added": "2026-10-31"},
+  {"id": "stlouis-mo-1920-prior", "reason": "Not in Cameron's portal; Joe says likely sold, Oct 31", "added": "2026-10-31"},
+  {"id": "stlouis-mo-2528-avis", "reason": "Not in Cameron's portal; Joe says likely sold, Oct 31", "added": "2026-10-31"},
+  {"id": "stlouis-mo-5275-alcott", "reason": "Not in Cameron's portal; Joe says likely sold, Oct 31", "added": "2026-10-31"},
+  {"id": "stlouis-mo-10068-royal", "reason": "Not in Cameron's portal; Joe says likely sold, Oct 31", "added": "2026-10-31"},
+  {"id": "stlouis-mo-2143-69th", "reason": "Not in Cameron's portal; Joe says likely sold, Oct 31", "added": "2026-10-31"},
+  {"id": "stlouis-mo-5124-northland", "reason": "Not in Cameron's portal; Joe says likely sold, Oct 31", "added": "2026-10-31"},
+  {"id": "jackson-ms-1415-geeston", "reason": "Not in Cameron's portal; Joe says likely sold, Oct 31", "added": "2026-10-31"},
+  {"id": "akron-oh-912-slosson", "reason": "Not in Cameron's portal; Joe says likely sold, Oct 31", "added": "2026-10-31"},
+  {"id": "decatur-il-1871-lawrence", "reason": "Not in Cameron's portal; Joe says likely sold, Oct 31", "added": "2026-10-31"}
 ]

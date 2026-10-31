@@ -12,8 +12,11 @@ and on its own each morning after the 7 AM portal backup. For one site checkout 
 * retires a home the portal marks Pending or Sold (sold card + redirect, via
   scripts/sold_policy.py) or Not in portal (redirect, no sold card).
 
-It never relists a home CRM_Properties marks SOLD / PENDING / not listed, and never
-adds one with no price or monthly payment. Those are listed under "check by hand".
+Cameron's portal is the master for status (Joe's rule): a home the portal shows Available is
+listed even when CRM_Properties says SOLD / PENDING, and that home's "recently sold" card is
+taken down (only when no other closed home shares its street and city). Those relists are
+listed in the summary so the CRM row can be corrected. It never adds a home with no price or
+monthly payment; those are listed under "check by hand".
 
 Columns: only Portal Backup A:M (Portal PROP id .. Date listed) and CRM_Properties
 A:F (Unique ID .. Property Status) are requested from Google, so lockbox, seller
@@ -425,6 +428,52 @@ GONE_HTML = """<!DOCTYPE html>
 
 
 # ---------- the pass ----------
+def _street_city(address: str, city: str, state: str) -> tuple[str, str, str]:
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import sold_policy
+    return (sold_policy.street_name(address).lower(), city_slug(city), (state or "").strip().lower())
+
+
+def closed_streets(portal_rows: list[dict], crm_rows: list[dict]) -> dict[tuple, set]:
+    """(street, city, state) -> ids of homes that are really closed (portal Pending/Sold, or CRM
+    closed with no Available portal row). A sold card on that street stays up while one exists."""
+    available = {home_id(r.get("Address", ""), r.get("City", ""), r.get("State", ""))
+                 for r in portal_rows if str(r.get("Status", "")).strip().lower() == "available"}
+    out: dict[tuple, set] = {}
+    for r in portal_rows:
+        if str(r.get("Status", "")).strip().lower() in ("pending", "sold"):
+            hid = home_id(r.get("Address", ""), r.get("City", ""), r.get("State", ""))
+            out.setdefault(_street_city(r.get("Address", ""), r.get("City", ""), r.get("State", "")), set()).add(hid)
+    for r in crm_rows:
+        hid = str(r.get("Unique ID") or "").strip().lower()
+        if CLOSED.search(str(r.get("Property Status") or "")) and hid not in available:
+            key = _street_city(r.get("Street Address", ""), r.get("City", ""), r.get("State", ""))
+            out.setdefault(key, set()).add(hid)
+    return out
+
+
+def drop_sold_cards(text: str, adds: list[dict], closed: dict) -> tuple[str, list[str]]:
+    """Take down the sold card of a home that is being relisted (street + city + state match)."""
+    keys = {_street_city(r["address"], r["city"], r["state"]): r["id"] for r in adds}
+    m = re.search(r"const SOLD_CARDS = \[\n(.*?)\n\];", text, re.S)
+    if not m or not keys:
+        return text, []
+    kept, dropped = [], []
+    for line in m.group(1).split("\n"):
+        try:
+            card = json.loads(line.strip().rstrip(","))
+        except ValueError:
+            kept.append(line)
+            continue
+        key = (str(card.get("street", "")).lower(), city_slug(card.get("city", "")), str(card.get("state", "")).lower())
+        hid = keys.get(key)
+        if hid and not (closed.get(key, set()) - {hid}):
+            dropped.append(f"{card.get('street')}, {card.get('city')}")
+            continue
+        kept.append(line)
+    return text[:m.start(1)] + "\n".join(kept) + text[m.end(1):], dropped
+
+
 def plan(root: Path, portal_rows: list[dict], crm_rows: list[dict]) -> dict:
     text = (root / "homes.js").read_text(encoding="utf-8")
     site = blocks(text)
@@ -436,7 +485,8 @@ def plan(root: Path, portal_rows: list[dict], crm_rows: list[dict]) -> dict:
     crm_closed = {str(r.get("Unique ID") or "").strip().lower(): r.get("Property Status", "")
                   for r in crm_rows if CLOSED.search(str(r.get("Property Status") or ""))}
     portal = portal_index(portal_rows)
-    out = {"add": [], "update": [], "retire": [], "hand": [], "photos": []}
+    out = {"add": [], "update": [], "retire": [], "hand": [], "photos": [], "relist": [],
+           "closed_streets": closed_streets(portal_rows, crm_rows)}
     for hid, row in portal.items():
         sid = match_site_id(hid, row, site_keys)
         status = row["Status"].strip()
@@ -463,13 +513,11 @@ def plan(root: Path, portal_rows: list[dict], crm_rows: list[dict]) -> dict:
             continue
         if status.lower() != "available":
             continue
-        if hid in crm_closed:
-            out["hand"].append(f"{row['Address']}, {row['City']} ({row['Portal PROP id']}): portal says Available, "
-                               f"CRM_Properties says {crm_closed[hid]}; not relisted")
-            continue
         if not price or not monthly:
             out["hand"].append(f"{row['Address']}, {row['City']} ({row['Portal PROP id']}): no price or monthly payment; skipped")
             continue
+        if hid in crm_closed:
+            out["relist"].append(f"{hid}  portal Available, CRM_Properties says {crm_closed[hid]}")
         out["add"].append({"id": hid, "pid": row["Portal PROP id"], "address": row["Address"], "city": row["City"],
                            "state": row["State"].strip().upper(), "zip": row["Zip"], "beds": num(row["Beds"]) or 0,
                            "baths": num(row["Baths"]) or 0, "sqft": num(row["Sqft"]), "price": price,
@@ -514,6 +562,7 @@ def apply(root: Path, p: dict, lang: str, geocoder=geocode) -> None:
                             f"<priority>0.6</priority></url>\n" for r in p["add"]
                             if f"/{r['id']}.html<" not in sm.read_text(encoding="utf-8"))
             sm.write_text(sm.read_text(encoding="utf-8").replace("</urlset>", lines + "</urlset>", 1), encoding="utf-8")
+    text, p["cards_dropped"] = drop_sold_cards(text, p["add"], p.get("closed_streets", {}))
     js.write_text(text, encoding="utf-8")
     # Retire: pending/sold through the sold policy (sold card, redirect, sitemap); gone = redirect only.
     sold = {r["id"]: r["why"] for r in p["retire"] if r["why"] in ("pending", "sold")}
@@ -591,6 +640,10 @@ def summary(p: dict) -> str:
         lines.append(f"- {r['id']}  {r['why']}")
     for hid, n in p.get("photo_result", {}).items():
         lines.append(f"* {hid}  {n} photos")
+    if p.get("relist"):
+        lines += ["", "Relisted (portal is the master; fix the CRM_Properties status):"] + [f"  {h}" for h in p["relist"]]
+    if p.get("cards_dropped"):
+        lines += ["", "Sold cards taken down: " + "; ".join(p["cards_dropped"])]
     if p["hand"]:
         lines += ["", "Check by hand:"] + [f"  {h}" for h in p["hand"]]
     return "\n".join(lines) + "\n"

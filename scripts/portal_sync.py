@@ -293,6 +293,58 @@ def gallery_on_disk(root: Path, hid: str) -> list[str]:
     return files
 
 
+# ---------- Street View fallback ----------
+# A home with no seller cover (images/<id>.jpg) shows images/sv/<id>.jpg instead: index.html and
+# home.html already fall back to it, with the "Street view · © Google" badge. The Mac's
+# fetch_streetview.py does the same with its own key; this lets the GitHub sync do it too, for
+# homes the Mac never sees. Key: env GOOGLE_MAPS_API_KEY (a GitHub secret; never in git). No key,
+# no fetch. The free metadata call is checked first; no imagery -> the page keeps its fallback.
+SV_META = "https://maps.googleapis.com/maps/api/streetview/metadata"
+SV_IMG = "https://maps.googleapis.com/maps/api/streetview"
+MAX_SV = 40   # Street View fetches per run
+
+
+def streetview_into(root: Path, key: str | None = None, get=None) -> dict:
+    """Fetch images/sv/<id>.jpg for live homes with no cover; drop it once a real cover exists."""
+    key = key if key is not None else os.environ.get("GOOGLE_MAPS_API_KEY", "").strip()
+    text = (root / "homes.js").read_text(encoding="utf-8")
+    sv_dir = root / "images" / "sv"
+    res = {"fetched": [], "none": [], "pruned": [], "skipped": 0}
+    for hid, m in blocks(text).items():
+        block = m.group(0)
+        hero = (field(block, "heroPhoto") or "").strip()
+        has_cover = (root / "images" / f"{hid}.jpg").is_file() or (hero and (root / hero).is_file())
+        sv = sv_dir / f"{hid}.jpg"
+        if has_cover:
+            if sv.is_file():
+                sv.unlink()
+                res["pruned"].append(hid)
+            continue
+        if sv.is_file():
+            continue
+        address = (field(block, "address") or "").split(",")[0].strip()
+        if not key or not re.match(r"\d", address) or len(res["fetched"]) + len(res["none"]) >= MAX_SV:
+            res["skipped"] += 1
+            continue
+        loc = f"{address}, {field(block, 'city') or ''}, {field(block, 'state') or ''} {field(block, 'zip') or ''}".strip()
+        try:
+            q = urllib.parse.urlencode({"location": loc, "key": key})
+            meta = json.loads((get or _get)(f"{SV_META}?{q}", 20))
+            if meta.get("status") != "OK":
+                res["none"].append(f"{hid} ({meta.get('status')})")
+                continue
+            q = urllib.parse.urlencode({"size": "640x640", "location": loc, "source": "outdoor",
+                                        "return_error_code": "true", "key": key})
+            data = (get or _get)(f"{SV_IMG}?{q}", 30)
+            if data[:2] == b"\xff\xd8":
+                sv_dir.mkdir(parents=True, exist_ok=True)
+                sv.write_bytes(data)
+                res["fetched"].append(hid)
+        except Exception as exc:   # never log the URL (it carries the key)
+            res["none"].append(f"{hid} ({exc.__class__.__name__})")
+    return res
+
+
 # ---------- homes.js ----------
 BLOCK_RE = re.compile(r"\n  \{\n    id: \"([^\"]+)\",[\s\S]*?\n  \},")
 
@@ -694,6 +746,7 @@ def photos_into(root: Path, p: dict, fetch=download_photos) -> None:
 
 def summary(p: dict) -> str:
     n = lambda k: len(p[k])
+    sv = p.get("streetview") or {}
     ph = len(p.get("photo_result", {}))
     lines = [f"Portal sync: {n('add')} new, {n('update')} terms changed, {n('retire')} retired"
              + (f", photos for {ph}" if ph else ""), ""]
@@ -706,6 +759,10 @@ def summary(p: dict) -> str:
         lines.append(f"- {r['id']}  {r['why']}")
     for hid, n in p.get("photo_result", {}).items():
         lines.append(f"* {hid}  {n} photos")
+    if sv.get("fetched") or sv.get("pruned"):
+        lines += ["", f"Street View: {len(sv.get('fetched', []))} fetched, {len(sv.get('pruned', []))} replaced by seller photos"]
+    if sv.get("none"):
+        lines += ["", "No Street View imagery (page keeps its fallback): " + ", ".join(sv["none"])]
     if p.get("relist"):
         lines += ["", "Relisted (portal is the master; fix the CRM_Properties status):"] + [f"  {h}" for h in p["relist"]]
     if p.get("cards_dropped"):
@@ -742,6 +799,8 @@ def main(argv=None) -> int:
     pending = [x for x in p["photos"] if x["links"] or gallery_on_disk(a.site, x["id"])]
     if not a.dry_run and (p["add"] or p["update"] or p["retire"] or pending):
         apply(a.site, p, a.lang)
+    if not a.dry_run:
+        p["streetview"] = streetview_into(a.site)
     elif a.dry_run:
         for x in pending:
             print(f"* {x['id']}  photos from {len(x['links'])} link(s)")

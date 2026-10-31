@@ -4,7 +4,6 @@ const LISTED_ON = {
   "peoria-il-926-greenlawn": "2026-10-29",
   "decatur-il-905-olive": "2026-10-29",
   "decatur-il-345-18th": "2026-10-29",
-  "ildecatur-il-1929-prairie": "2026-10-29",
   "stlouis-mo-5515-alcott": "2026-10-29",
   "decatur-il-1825-church": "2026-10-29",
   "cahokia-il-1414-richard": "2026-10-30",

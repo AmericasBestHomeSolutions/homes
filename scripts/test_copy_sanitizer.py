@@ -107,35 +107,32 @@ class SanitizerTests(unittest.TestCase):
         self.assertIn("<p>Send us a text now.</p>", got)
 
 
-class InclusiveCopyTests(unittest.TestCase):
-    def test_family_and_kid_phrases_become_what_the_home_offers(self):
-        cases = {
-            "Fully fenced yard, perfect for pets, kids, or simply relaxing in privacy.":
-                "Fully fenced yard, perfect for pets, gardening, or simply relaxing in privacy.",
-            "A functional layout perfect for a small family or savvy investor":
-                "A functional layout perfect for a first-time owner or savvy investor",
-            "Next to the library. Perfect for families!": "Next to the library. Room to spread out!",
-            "Bonus room (perfect for office, kids, or flex space).":
-                "Bonus room (perfect for an office, hobbies, or flex space).",
-            "Separately fenced area for dogs and rest of family.": "Separately fenced area for pets.",
-            "This longtime family home has been well loved.": "This longtime home has been well loved.",
-            "Great for families. Big yard.": "Great for anyone who wants room to spread out. Big yard.",
-        }
-        for src, want in cases.items():
-            got, n = refresh.inclusive_prose(src)
-            self.assertEqual(got, want)
-            self.assertGreaterEqual(n, 1)
-            self.assertEqual(refresh.family_words_left(got), [])
+class InternalNoteTests(unittest.TestCase):
+    def test_team_note_is_removed_and_the_listing_stays(self):
+        src = ("Hi Team,. So please ask for these from the buyer. Let me know if you have any question, "
+               "book a Tour.. Thank you so much!. An. Separate family room. Small easy-to-maintain yard. "
+               "Welcome to 138 S 18th Street in Decatur! This longtime family home has been well loved.")
+        got, n = refresh.strip_internal_notes(src)
+        self.assertEqual(got, "Separate family room. Small easy-to-maintain yard. Welcome to 138 S 18th Street "
+                              "in Decatur! This longtime family home has been well loved.")
+        self.assertEqual(n, 1)
 
-    def test_property_types_are_left_alone(self):
-        src = "Brick single-family home with a family room. Multi-family zoning."
-        self.assertEqual(refresh.inclusive_prose(src), (src, 0))
-        self.assertEqual(refresh.family_words_left(src), [])
+    def test_seller_preference_and_ssn_requests_are_removed(self):
+        src = ("Nice yard. PREFER TO PUT IN A FAMILY IN THIS HOUSE - paystubs to ensure they can afford home "
+               "and require social security numbers of all occupants. Big kitchen.")
+        self.assertEqual(refresh.strip_internal_notes(src)[0], "Nice yard. Big kitchen.")
+        self.assertEqual(refresh.strip_internal_notes("Roof 2020. SSN on file: 123-45-6789. Big lot.")[0],
+                         "Roof 2020. Big lot.")
+
+    def test_family_wording_is_left_alone(self):
+        for src in ("Perfect for families!", "Perfect for a first-time buyer or growing family.",
+                    "Fenced yard, perfect for pets, kids, or simply relaxing.", "Brick single-family home."):
+            self.assertEqual(refresh.strip_internal_notes(src), (src, 0))
 
     def test_homes_js_fields_get_both_passes(self):
-        src = 'description: "Perfect for families! Send us a text today."'
+        src = 'description: "Hi Team, please call me. Thanks! Big yard. Send us a text today."'
         got, fields, n = refresh.sanitize_homes_js(src)
-        self.assertEqual(got, 'description: "Room to spread out! Book a Tour today."')
+        self.assertEqual(got, 'description: "Big yard. Book a Tour today."')
         self.assertEqual((fields, n), (1, 2))
 
 

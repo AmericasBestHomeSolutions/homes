@@ -5,8 +5,9 @@ The master spreadsheet still lives on the owner's Mac and is what rebuilds
 homes.js. This script does three things that pass must keep doing:
 
 1. Rewrite buyer-facing copy that asks people to text, call, or message us
-   into a Book a Tour line. The Mac refresh puts those sentences back every
-   day, so this post-pass has to remove them again. Legal pages and the SMS
+   into a Book a Tour line, and rewrite copy that assumes kids or a family
+   ("perfect for families") into what the home offers. The Mac refresh puts
+   those sentences back every day, so this post-pass has to remove them again. Legal pages and the SMS
    consent checkbox are not touched.
 
 2. Record a listed date the first time a home id appears
@@ -84,6 +85,72 @@ _META_NAME_RE = re.compile(
 )
 _META_CONTENT_RE = re.compile(r'(content=")([^"]*)(")')
 
+# Inclusive listing copy. Seller notes and the daily refresh sometimes describe a home as
+# "perfect for families" or "great for kids". We never assume who lives in a home, so this
+# post-pass rewrites those phrases into what the space offers (room to spread out, a yard,
+# a place that's truly yours). Property types stay: single-family, multi-family, family room,
+# "casa de una sola familia", unifamiliar. Ordered most specific first.
+_INCLUSIVE = {
+    "en": (
+        (r"\*?\s*PREFER TO PUT IN A FAMILY IN THIS HOUSE[^*\n.]*[*.]?", ""),
+        (r"\bperfect for families!", "Room to spread out!"),
+        (r"\(perfect for families or added privacy\)", "(room to spread out or added privacy)"),
+        (r"perfect for office, kids, or flex space", "perfect for an office, hobbies, or flex space"),
+        (r"perfect for pets, kids, or", "perfect for pets, gardening, or"),
+        (r"perfect for kids, pets, or", "perfect for pets, gardening, or"),
+        (r"perfect for a small family or", "perfect for a first-time owner or"),
+        (r"for dogs and (?:the )?rest of (?:the )?family", "for pets"),
+        (r"\blongtime family home\b", "longtime home"),
+        (r"\bloved family home\b", "loved home"),
+        (r"\bthe right person or family\b", "the right person"),
+        (r"\bfamilies wanting\b", "buyers wanting"),
+        (r"\bfamily[- ]friendly\b", "welcoming"),
+        (r"\b(perfect|great|ideal) for (?:a |your |the )?(?:growing |large |big |small |whole )?(?:famil(?:y|ies)|kids|children)\b",
+         r"\1 for anyone who wants room to spread out"),
+        (r"\broom for (?:the |your )?(?:kids|children|family) to (?:play|run)\b", "room to spread out"),
+        (r"\bfor (?:the |your )?(?:kids|children) to (?:play|run)\b", "to enjoy"),
+        (r"\byour family\b", "you"),
+    ),
+    "es": (
+        (r"\(perfecto para familias o privacidad adicional\)", "(con espacio de sobra o privacidad adicional)"),
+        (r"perfecto para oficina, niños o espacio flexible", "perfecto para oficina, pasatiempos o espacio flexible"),
+        (r"perfecta para una familia pequeña o", "perfecta para quien compra su primera casa o"),
+        (r"¡perfect[ao] para familias!", "¡Con espacio de sobra!"),
+        (r"\b(perfect[ao]|ideal) para (?:su |una |la )?(?:familia(?:s)?(?: grande| pequeña| creciente)?|niños|hijos)\b",
+         "con espacio de sobra"),
+        (r"\bsu familia\b", "usted"),
+    ),
+}
+_INCLUSIVE_RE = {lang: tuple((re.compile(p, re.I), r) for p, r in rules) for lang, rules in _INCLUSIVE.items()}
+# Words that still need a person to look at them after the rewrite (property types excluded).
+_FAMILY_LEFT = re.compile(
+    r"(?i)(?<!single[- ])(?<!multi[- ])(?<!una sola )\b(?:kids?|children|famil(?:y|ies)|niños|hijos|familias?)\b(?! room)"
+)
+
+
+def inclusive_prose(text: str, lang: str = "en") -> tuple[str, int]:
+    """Rewrite family- or kid-assuming phrases. Returns the text and how many were rewritten."""
+    if not text:
+        return text, 0
+    count = 0
+    for pattern, repl in _INCLUSIVE_RE.get(lang, ()):
+        def sub(match: re.Match, _repl=repl) -> str:
+            nonlocal count
+            count += 1
+            out = match.expand(_repl)
+            if out and match.group(0)[:1].isupper() and out[:1].islower():
+                out = out[:1].upper() + out[1:]
+            return out
+        text = pattern.sub(sub, text)
+    if count:
+        text = re.sub(r"[ \t]{2,}", " ", text).strip()
+    return text, count
+
+
+def family_words_left(text: str) -> list[str]:
+    """Family or kid words the rewrite did not handle, for the run summary. Property types are skipped."""
+    return [m.group(0) for m in _FAMILY_LEFT.finditer(text or "")]
+
 
 def sanitize_prose(text: str) -> tuple[str, int]:
     """Replace each text/call/message invitation with Book a Tour.
@@ -117,9 +184,10 @@ def sanitize_homes_js(text: str) -> tuple[str, int, int]:
     def repl(match: re.Match) -> str:
         nonlocal fields, phrases
         body, n = sanitize_prose(match.group(2))
-        if n:
+        body, kind = inclusive_prose(body, "en")
+        if n or kind:
             fields += 1
-            phrases += n
+            phrases += n + kind
         return match.group(1) + body + match.group(3)
 
     return _FIELD_RE.sub(repl, text), fields, phrases
@@ -138,6 +206,8 @@ def sanitize_meta_html(html: str) -> tuple[str, int]:
         def repl_content(content: re.Match) -> str:
             nonlocal phrases
             body, n = sanitize_prose(content.group(2))
+            body, kind = inclusive_prose(body, "en")
+            n += kind
             if not n:
                 return content.group(0)
             phrases += n
@@ -212,6 +282,10 @@ def emit_pages() -> int:
 
 def main() -> None:
     fields, phrases = rewrite_homes_copy()
+    left = sorted({w.lower() for m in _FIELD_RE.finditer(HOMES_JS.read_text(encoding="utf-8"))
+                   for w in family_words_left(m.group(2))})
+    if left:
+        print("check by hand, family/kid words still in descriptions: " + ", ".join(left))
     ids = home_ids()
     stamp_dates(ids)
     n = emit_pages()

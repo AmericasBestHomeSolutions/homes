@@ -32,7 +32,11 @@ changed price/down/monthly are updated, Pending/Sold/Not in portal homes are ret
 ~7:35 AM ET daily and after every Mac "Refresh listings from master" push, and commits to
 `main` only when something changed. It reads only Portal Backup A:M and CRM_Properties A:F
 (no lockbox/seller columns) with the `GOOGLE_SERVICE_ACCOUNT_JSON` repo secret. The Spanish
-site (casas) runs the same script with `--lang es`. Dry run: `python3 scripts/portal_sync.py --dry-run`.
+site (casas) runs the same script with `--lang es`. Photos: for a home with an empty `photos`
+array, the sync takes the photo link from Portal Backup's Listing note (column R; only the URL is
+used, never the note text): a public Google Drive folder, a Dropbox zip, or a direct image URL.
+It saves `images/<id>.jpg` + `images/<id>-1..N.jpg` (max 1280px, progressive JPEG, HEIC converted).
+iCloud shared albums are not supported. Dry run: `python3 scripts/portal_sync.py --dry-run`.
 
 ## Layout
 

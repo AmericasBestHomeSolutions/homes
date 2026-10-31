@@ -27,8 +27,9 @@ never downloaded, let alone written.
 Photos: a home with no seller photos gets them from, in order, the portal's 'Photos link', a link
 in the portal note (R), or a WhatsApp Intel album link for the same address. The first source that
 yields photos wins. Readable without any login: public Google Drive folders, Dropbox, bit.ly to
-either, public Google Photos albums, iCloud shared albums and iCloud photo links (share.icloud.com).
-A link that yields nothing (album no longer shared, OneDrive, a doc) is listed in the summary for a
+any of these, public Google Photos albums, iCloud shared albums and iCloud photo links (share.icloud.com), public OneDrive folders,
+viewthehomeonline.com listing pages, and a Google Doc that is only photos (no text).
+A link that yields nothing (album no longer shared, a map pin, a CRM dashboard) is listed in the summary for a
 browser pass or a new link. At most MAX_PHOTO_HOMES albums (and PHOTO_BUDGET_S seconds) per run; the
 rest are picked up on later runs. Real photos replace the Street View fallback image.
 
@@ -232,7 +233,7 @@ def photo_links(note: str) -> list[str]:
         url = url.rstrip(".,);>")
         host = urllib.parse.urlparse(url).netloc.lower()
         if ("drive.google.com" in host and "/folders/" in url) or "dropbox.com" in host or host in SHORT_HOSTS \
-                or _is_gphotos(url) or _is_icloud(url) \
+                or _is_gphotos(url) or _is_icloud(url) or _is_onedrive(url) or _is_tour(url) or _is_gdoc(url) \
                 or re.search(r"\.(jpe?g|png|webp)(\?|$)", url, re.I):
             if url not in links:
                 links.append(url)
@@ -258,6 +259,20 @@ def _is_gphotos(url: str) -> bool:
 def _is_icloud(url: str) -> bool:
     host = urllib.parse.urlparse(url).netloc.lower()
     return host == "share.icloud.com" or (host.endswith("icloud.com") and ("sharedalbum" in url or "icloudlinks" in url))
+
+
+def _is_onedrive(url: str) -> bool:
+    host = urllib.parse.urlparse(url).netloc.lower()
+    return host == "1drv.ms" or host.endswith("onedrive.live.com")
+
+
+def _is_tour(url: str) -> bool:
+    """viewthehomeonline.com listing page (the seller's own tour site)."""
+    return urllib.parse.urlparse(url).netloc.lower().endswith("viewthehomeonline.com") and bool(re.search(r"/(\d{5,})", url))
+
+
+def _is_gdoc(url: str) -> bool:
+    return "docs.google.com" in urllib.parse.urlparse(url).netloc.lower() and "/document/d/" in url
 
 
 def readable(url: str) -> bool:
@@ -437,6 +452,79 @@ def _icloud(url: str) -> list[bytes]:
     return _icloud_link(m.group(1)) if m else []
 
 
+# OneDrive: a public "anyone with the link" folder is read through OneDrive's own anonymous web
+# token (the same one onedrive.live.com uses for a signed-out visitor); no account is involved.
+# JPEG/PNG are taken first; HEIC copies only when a folder has nothing else. Videos are skipped.
+OD_TOKEN = "https://api-badgerp.svc.ms/v1.0/token"
+OD_APP = "5cbed6ac-a083-4e14-b191-b4ba07653de2"
+OD_API = "https://my.microsoftpersonalcontent.com/_api/v2.0/shares/{}/driveItem?$expand=children"
+
+
+def _onedrive(url: str) -> list[bytes]:
+    import base64
+    treq = urllib.request.Request(OD_TOKEN, data=json.dumps({"appId": OD_APP}).encode(), method="POST",
+                                  headers={"Content-Type": "application/json", **DESKTOP_UA})
+    with urllib.request.urlopen(treq, timeout=60) as resp:
+        tok = json.load(resp)
+    enc = "u!" + base64.urlsafe_b64encode(url.encode()).decode().rstrip("=")
+    req = urllib.request.Request(OD_API.format(enc), headers={**DESKTOP_UA, "Authorization": "Badger " + tok["token"],
+                                                             "Prefer": "autoredeem"})
+    with urllib.request.urlopen(req, timeout=60) as resp:
+        item = json.loads(resp.read())
+    kids = item.get("children") or ([item] if item.get("file") else [])
+    def kind(c):
+        name, mime = c.get("name", "").lower(), (c.get("file") or {}).get("mimeType", "")
+        if re.search(r"\.(jpe?g|png|webp)$", name) or mime in ("image/jpeg", "image/png", "image/webp"):
+            return 0
+        if re.search(r"\.(heic|heif)$", name) or "heic" in mime or "heif" in mime:
+            return 1
+        return None
+    files = [c for c in sorted(kids, key=lambda c: c.get("name", "")) if kind(c) is not None]
+    jpgs = [c for c in files if kind(c) == 0]
+    out = []
+    for c in (jpgs or files)[:MAX_PHOTOS]:
+        dl = c.get("@content.downloadUrl") or c.get("@content.downloadUrlNoAuth")
+        if dl:
+            try:
+                out.append(_get(dl, timeout=120))
+            except Exception:
+                continue
+    return out
+
+
+# viewthehomeonline.com: the listing's /p2/photos/<id> page lists every photo as a public S3 JPEG.
+def _tour(url: str) -> list[bytes]:
+    pid = re.search(r"/(\d{5,})", url).group(1)
+    page = urllib.request.urlopen(urllib.request.Request(f"https://www.viewthehomeonline.com/p2/photos/{pid}",
+                                                         headers=DESKTOP_UA), timeout=60).read().decode("utf-8", "replace")
+    urls = list(dict.fromkeys(re.findall(rf"https://s3\.amazonaws\.com/property-documents/\d+/{pid}/[0-9a-f]+\.jpe?g", page)))
+    return [_get(u) for u in urls[:MAX_PHOTOS]]
+
+
+# A Google Doc shared as "anyone with the link" that is just a page of photos: its HTML export carries
+# the images inline. A doc with real text (a contract, a disclosure) is never mined for images.
+GDOC_MAX_TEXT = 300
+
+
+def _gdoc(url: str) -> list[bytes]:
+    import base64
+    did = re.search(r"/document/d/([A-Za-z0-9_-]+)", url).group(1)
+    page = _get(f"https://docs.google.com/document/d/{did}/export?format=html", timeout=120).decode("utf-8", "replace")
+    text = re.sub(r"\s+", "", html.unescape(re.sub(r"<style.*?</style>|<[^>]+>", " ", page, flags=re.S)))
+    if len(text) > GDOC_MAX_TEXT:
+        return []
+    out, seen = [], set()
+    for src in re.findall(r'<img[^>]+src="([^"]+)"', page):
+        try:
+            blob = base64.b64decode(src.split(",", 1)[1]) if src.startswith("data:") else _get(html.unescape(src))
+        except Exception:
+            continue
+        if blob not in seen:
+            seen.add(blob)
+            out.append(blob)
+    return out[:MAX_PHOTOS]
+
+
 def download_photos(links: list[str]) -> list[bytes]:
     blobs: list[bytes] = []
     for url in links:
@@ -444,7 +532,8 @@ def download_photos(links: list[str]) -> list[bytes]:
             if urllib.parse.urlparse(url).netloc.lower() in SHORT_HOSTS:
                 with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=30) as resp:
                     url = resp.geturl()
-                if not (("drive.google.com" in url and "/folders/" in url) or "dropbox.com" in url):
+                if not (("drive.google.com" in url and "/folders/" in url) or "dropbox.com" in url
+                        or _is_gphotos(url) or _is_icloud(url) or _is_onedrive(url)):
                     continue
             if not readable(url):
                 continue   # OneDrive, a doc, a tour site: left for a browser pass
@@ -452,6 +541,12 @@ def download_photos(links: list[str]) -> list[bytes]:
                 blobs += _google_photos(url)
             elif _is_icloud(url):
                 blobs += _icloud(url)
+            elif _is_onedrive(url):
+                blobs += _onedrive(url)
+            elif _is_tour(url):
+                blobs += _tour(url)
+            elif _is_gdoc(url):
+                blobs += _gdoc(url)
             elif "drive.google.com" in url:
                 blobs += _drive_folder(url)
             elif "dropbox.com" in url:

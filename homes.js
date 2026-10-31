@@ -6261,7 +6261,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-1822-decatur-1.jpg", "images/decatur-il-1822-decatur-2.jpg", "images/decatur-il-1822-decatur-3.jpg", "images/decatur-il-1822-decatur-4.jpg", "images/decatur-il-1822-decatur-5.jpg", "images/decatur-il-1822-decatur-6.jpg", "images/decatur-il-1822-decatur-7.jpg", "images/decatur-il-1822-decatur-8.jpg", "images/decatur-il-1822-decatur-9.jpg", "images/decatur-il-1822-decatur-10.jpg", "images/decatur-il-1822-decatur-11.jpg", "images/decatur-il-1822-decatur-12.jpg", "images/decatur-il-1822-decatur-13.jpg", "images/decatur-il-1822-decatur-14.jpg", "images/decatur-il-1822-decatur-15.jpg", "images/decatur-il-1822-decatur-16.jpg", "images/decatur-il-1822-decatur-17.jpg", "images/decatur-il-1822-decatur-18.jpg", "images/decatur-il-1822-decatur-19.jpg", "images/decatur-il-1822-decatur-20.jpg", "images/decatur-il-1822-decatur-21.jpg", "images/decatur-il-1822-decatur-22.jpg", "images/decatur-il-1822-decatur-23.jpg", "images/decatur-il-1822-decatur-24.jpg", "images/decatur-il-1822-decatur-25.jpg", "images/decatur-il-1822-decatur-26.jpg", "images/decatur-il-1822-decatur-27.jpg", "images/decatur-il-1822-decatur-28.jpg", "images/decatur-il-1822-decatur-29.jpg", "images/decatur-il-1822-decatur-30.jpg"],
   },
   {
     id: "granitecity-il-2539-28th",
@@ -6284,7 +6284,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/granitecity-il-2539-28th-1.jpg", "images/granitecity-il-2539-28th-2.jpg", "images/granitecity-il-2539-28th-3.jpg", "images/granitecity-il-2539-28th-4.jpg", "images/granitecity-il-2539-28th-5.jpg", "images/granitecity-il-2539-28th-6.jpg", "images/granitecity-il-2539-28th-7.jpg", "images/granitecity-il-2539-28th-8.jpg", "images/granitecity-il-2539-28th-9.jpg", "images/granitecity-il-2539-28th-10.jpg", "images/granitecity-il-2539-28th-11.jpg", "images/granitecity-il-2539-28th-12.jpg", "images/granitecity-il-2539-28th-13.jpg", "images/granitecity-il-2539-28th-14.jpg", "images/granitecity-il-2539-28th-15.jpg", "images/granitecity-il-2539-28th-16.jpg", "images/granitecity-il-2539-28th-17.jpg", "images/granitecity-il-2539-28th-18.jpg", "images/granitecity-il-2539-28th-19.jpg", "images/granitecity-il-2539-28th-20.jpg", "images/granitecity-il-2539-28th-21.jpg", "images/granitecity-il-2539-28th-22.jpg", "images/granitecity-il-2539-28th-23.jpg", "images/granitecity-il-2539-28th-24.jpg", "images/granitecity-il-2539-28th-25.jpg", "images/granitecity-il-2539-28th-26.jpg", "images/granitecity-il-2539-28th-27.jpg", "images/granitecity-il-2539-28th-28.jpg", "images/granitecity-il-2539-28th-29.jpg", "images/granitecity-il-2539-28th-30.jpg"],
   },
   {
     id: "peoria-il-2012-marquette",
@@ -6307,7 +6307,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/peoria-il-2012-marquette-1.jpg", "images/peoria-il-2012-marquette-2.jpg", "images/peoria-il-2012-marquette-3.jpg", "images/peoria-il-2012-marquette-4.jpg", "images/peoria-il-2012-marquette-5.jpg", "images/peoria-il-2012-marquette-6.jpg", "images/peoria-il-2012-marquette-7.jpg", "images/peoria-il-2012-marquette-8.jpg", "images/peoria-il-2012-marquette-9.jpg", "images/peoria-il-2012-marquette-10.jpg"],
   },
   {
     id: "peoria-il-2315-ann",

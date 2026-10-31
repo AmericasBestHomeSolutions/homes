@@ -99,6 +99,8 @@ _INCLUSIVE = {
         (r"perfect for pets, kids, or", "perfect for pets, gardening, or"),
         (r"perfect for kids, pets, or", "perfect for pets, gardening, or"),
         (r"perfect for a small family or", "perfect for a first-time owner or"),
+        (r"\bor (?:a )?growing family\b", "or anyone who wants room to grow"),
+        (r"\blet kids and pets play\b", "let pets play"),
         (r"for dogs and (?:the )?rest of (?:the )?family", "for pets"),
         (r"\blongtime family home\b", "longtime home"),
         (r"\bloved family home\b", "loved home"),

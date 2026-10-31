@@ -5505,7 +5505,7 @@ const HOMES = [
 
     features: { backyard: "yes", fenced_yard: "yes", central_air: "yes", storage_shed: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-905-olive-1.jpg", "images/decatur-il-905-olive-2.jpg", "images/decatur-il-905-olive-3.jpg", "images/decatur-il-905-olive-4.jpg", "images/decatur-il-905-olive-5.jpg", "images/decatur-il-905-olive-6.jpg", "images/decatur-il-905-olive-7.jpg", "images/decatur-il-905-olive-8.jpg", "images/decatur-il-905-olive-9.jpg", "images/decatur-il-905-olive-10.jpg", "images/decatur-il-905-olive-11.jpg", "images/decatur-il-905-olive-12.jpg", "images/decatur-il-905-olive-13.jpg", "images/decatur-il-905-olive-14.jpg"],
   },
   {
     id: "westfrankfort-il-1310-poplar",
@@ -5955,7 +5955,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/cahokia-il-1414-richard-1.jpg", "images/cahokia-il-1414-richard-2.jpg", "images/cahokia-il-1414-richard-3.jpg", "images/cahokia-il-1414-richard-4.jpg", "images/cahokia-il-1414-richard-5.jpg", "images/cahokia-il-1414-richard-6.jpg", "images/cahokia-il-1414-richard-7.jpg", "images/cahokia-il-1414-richard-8.jpg", "images/cahokia-il-1414-richard-9.jpg", "images/cahokia-il-1414-richard-10.jpg", "images/cahokia-il-1414-richard-11.jpg", "images/cahokia-il-1414-richard-12.jpg", "images/cahokia-il-1414-richard-13.jpg", "images/cahokia-il-1414-richard-14.jpg", "images/cahokia-il-1414-richard-15.jpg", "images/cahokia-il-1414-richard-16.jpg", "images/cahokia-il-1414-richard-17.jpg", "images/cahokia-il-1414-richard-18.jpg", "images/cahokia-il-1414-richard-19.jpg"],
   },
   {
     id: "decatur-il-1305-whitmer",
@@ -5978,7 +5978,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-1305-whitmer-1.jpg", "images/decatur-il-1305-whitmer-2.jpg", "images/decatur-il-1305-whitmer-3.jpg", "images/decatur-il-1305-whitmer-4.jpg", "images/decatur-il-1305-whitmer-5.jpg", "images/decatur-il-1305-whitmer-6.jpg", "images/decatur-il-1305-whitmer-7.jpg", "images/decatur-il-1305-whitmer-8.jpg"],
   },
   {
     id: "decatur-il-1971-cantrell",
@@ -6001,7 +6001,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-1971-cantrell-1.jpg", "images/decatur-il-1971-cantrell-2.jpg", "images/decatur-il-1971-cantrell-3.jpg", "images/decatur-il-1971-cantrell-4.jpg", "images/decatur-il-1971-cantrell-5.jpg", "images/decatur-il-1971-cantrell-6.jpg", "images/decatur-il-1971-cantrell-7.jpg", "images/decatur-il-1971-cantrell-8.jpg", "images/decatur-il-1971-cantrell-9.jpg", "images/decatur-il-1971-cantrell-10.jpg", "images/decatur-il-1971-cantrell-11.jpg", "images/decatur-il-1971-cantrell-12.jpg", "images/decatur-il-1971-cantrell-13.jpg", "images/decatur-il-1971-cantrell-14.jpg", "images/decatur-il-1971-cantrell-15.jpg", "images/decatur-il-1971-cantrell-16.jpg", "images/decatur-il-1971-cantrell-17.jpg", "images/decatur-il-1971-cantrell-18.jpg", "images/decatur-il-1971-cantrell-19.jpg", "images/decatur-il-1971-cantrell-20.jpg", "images/decatur-il-1971-cantrell-21.jpg", "images/decatur-il-1971-cantrell-22.jpg", "images/decatur-il-1971-cantrell-23.jpg"],
   },
   {
     id: "decatur-il-2616-logan",
@@ -6024,7 +6024,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-2616-logan-1.jpg", "images/decatur-il-2616-logan-2.jpg", "images/decatur-il-2616-logan-3.jpg", "images/decatur-il-2616-logan-4.jpg", "images/decatur-il-2616-logan-5.jpg", "images/decatur-il-2616-logan-6.jpg", "images/decatur-il-2616-logan-7.jpg", "images/decatur-il-2616-logan-8.jpg", "images/decatur-il-2616-logan-9.jpg", "images/decatur-il-2616-logan-10.jpg", "images/decatur-il-2616-logan-11.jpg", "images/decatur-il-2616-logan-12.jpg", "images/decatur-il-2616-logan-13.jpg", "images/decatur-il-2616-logan-14.jpg", "images/decatur-il-2616-logan-15.jpg", "images/decatur-il-2616-logan-16.jpg", "images/decatur-il-2616-logan-17.jpg", "images/decatur-il-2616-logan-18.jpg", "images/decatur-il-2616-logan-19.jpg", "images/decatur-il-2616-logan-20.jpg"],
   },
   {
     id: "detroit-mi-8577-mark",
@@ -6047,7 +6047,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/detroit-mi-8577-mark-1.jpg", "images/detroit-mi-8577-mark-2.jpg", "images/detroit-mi-8577-mark-3.jpg", "images/detroit-mi-8577-mark-4.jpg", "images/detroit-mi-8577-mark-5.jpg", "images/detroit-mi-8577-mark-6.jpg", "images/detroit-mi-8577-mark-7.jpg", "images/detroit-mi-8577-mark-8.jpg", "images/detroit-mi-8577-mark-9.jpg", "images/detroit-mi-8577-mark-10.jpg", "images/detroit-mi-8577-mark-11.jpg", "images/detroit-mi-8577-mark-12.jpg", "images/detroit-mi-8577-mark-13.jpg", "images/detroit-mi-8577-mark-14.jpg", "images/detroit-mi-8577-mark-15.jpg", "images/detroit-mi-8577-mark-16.jpg", "images/detroit-mi-8577-mark-17.jpg", "images/detroit-mi-8577-mark-18.jpg"],
   },
   {
     id: "saginaw-mi-525521-owen",
@@ -6070,7 +6070,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/saginaw-mi-525521-owen-1.jpg", "images/saginaw-mi-525521-owen-2.jpg", "images/saginaw-mi-525521-owen-3.jpg", "images/saginaw-mi-525521-owen-4.jpg", "images/saginaw-mi-525521-owen-5.jpg", "images/saginaw-mi-525521-owen-6.jpg", "images/saginaw-mi-525521-owen-7.jpg", "images/saginaw-mi-525521-owen-8.jpg", "images/saginaw-mi-525521-owen-9.jpg", "images/saginaw-mi-525521-owen-10.jpg", "images/saginaw-mi-525521-owen-11.jpg", "images/saginaw-mi-525521-owen-12.jpg", "images/saginaw-mi-525521-owen-13.jpg", "images/saginaw-mi-525521-owen-14.jpg", "images/saginaw-mi-525521-owen-15.jpg", "images/saginaw-mi-525521-owen-16.jpg", "images/saginaw-mi-525521-owen-17.jpg", "images/saginaw-mi-525521-owen-18.jpg", "images/saginaw-mi-525521-owen-19.jpg"],
   },
   {
     id: "stlouis-mo-2525-tyrell",
@@ -6093,7 +6093,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/stlouis-mo-2525-tyrell-1.jpg", "images/stlouis-mo-2525-tyrell-2.jpg", "images/stlouis-mo-2525-tyrell-3.jpg", "images/stlouis-mo-2525-tyrell-4.jpg", "images/stlouis-mo-2525-tyrell-5.jpg", "images/stlouis-mo-2525-tyrell-6.jpg", "images/stlouis-mo-2525-tyrell-7.jpg", "images/stlouis-mo-2525-tyrell-8.jpg", "images/stlouis-mo-2525-tyrell-9.jpg", "images/stlouis-mo-2525-tyrell-10.jpg", "images/stlouis-mo-2525-tyrell-11.jpg", "images/stlouis-mo-2525-tyrell-12.jpg", "images/stlouis-mo-2525-tyrell-13.jpg", "images/stlouis-mo-2525-tyrell-14.jpg", "images/stlouis-mo-2525-tyrell-15.jpg", "images/stlouis-mo-2525-tyrell-16.jpg", "images/stlouis-mo-2525-tyrell-17.jpg", "images/stlouis-mo-2525-tyrell-18.jpg", "images/stlouis-mo-2525-tyrell-19.jpg", "images/stlouis-mo-2525-tyrell-20.jpg"],
   },
 ];
 

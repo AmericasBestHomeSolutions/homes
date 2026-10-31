@@ -49,7 +49,7 @@ jobs:
           python-version: "3.12"
       - name: Install
         if: steps.gate.outputs.skip != 'true'
-        run: pip install --quiet google-auth requests pillow
+        run: pip install --quiet google-auth requests pillow pillow-heif
       - name: Sync, commit only if something changed
         if: steps.gate.outputs.skip != 'true'
         run: |

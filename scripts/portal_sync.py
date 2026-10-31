@@ -44,9 +44,10 @@ from pathlib import Path
 
 SHEET_ID = "1QDLFUiBFDrKdTnhnRUHUr_pErOpNsDhnZD9AA7vRBQs"
 PORTAL_RANGE = "'Portal Backup'!A:M"     # stops before Lockbox code (N)
+NOTE_RANGE = "'Portal Backup'!R:R"       # Listing note: only photo links are taken from it, the text is never published
 CRM_RANGE = "'CRM_Properties'!A:F"        # Unique ID .. Property Status only
 PORTAL_COLUMNS = ("Portal PROP id", "Address", "City", "State", "Zip", "Status", "Beds", "Baths", "Sqft",
-                  "Price", "Down payment", "Monthly payment", "Date listed")
+                  "Price", "Down payment", "Monthly payment", "Date listed", "Photo links")
 CLOSED = re.compile(r"(?i)\b(sold|pending|not listed|deposit)\b")
 DIRS = {"n", "s", "e", "w", "ne", "nw", "se", "sw", "north", "south", "east", "west"}
 MAX_RETIRE = 25        # a bad read must not empty the site
@@ -117,12 +118,22 @@ def read_sheets() -> tuple[list[dict], list[dict]]:
     creds = service_account.Credentials.from_service_account_info(
         json.loads(info), scopes=["https://www.googleapis.com/auth/spreadsheets.readonly"])
     creds.refresh(Request())
-    query = urllib.parse.urlencode([("ranges", PORTAL_RANGE), ("ranges", CRM_RANGE), ("majorDimension", "ROWS")])
+    query = urllib.parse.urlencode([("ranges", PORTAL_RANGE), ("ranges", CRM_RANGE), ("ranges", NOTE_RANGE),
+                                    ("majorDimension", "ROWS")])
     req = urllib.request.Request(f"https://sheets.googleapis.com/v4/spreadsheets/{SHEET_ID}/values:batchGet?{query}",
                                  headers={"Authorization": f"Bearer {creds.token}"})
     with urllib.request.urlopen(req, timeout=60) as resp:
         payload = json.load(resp)
-    portal, crm = (_rows(r.get("values")) for r in payload["valueRanges"])
+    portal_v, crm_v, note_v = (r.get("values") or [] for r in payload["valueRanges"])
+    portal, crm = _rows(portal_v), _rows(crm_v)
+    # Same row order as A:M (both start at row 1); keep only the photo links from each note.
+    notes = [(row[0] if row else "") for row in note_v[1:]]
+    by_row = {}
+    for i, v in enumerate(portal_v[1:]):
+        if any(str(c).strip() for c in v):
+            by_row[len(by_row)] = " ".join(photo_links(notes[i] if i < len(notes) else ""))
+    for i, row in enumerate(portal):
+        row["Photo links"] = by_row.get(i, "")
     return portal, crm
 
 
@@ -131,7 +142,124 @@ def load_json(path: str | None) -> list[dict]:
 
 
 def whitelist(rows: list[dict]) -> list[dict]:
-    return [{k: str(r.get(k) or "").strip() for k in PORTAL_COLUMNS} for r in rows]
+    out = [{k: str(r.get(k) or "").strip() for k in PORTAL_COLUMNS} for r in rows]
+    for r, src in zip(out, rows):   # offline JSON may carry the raw note; keep only its links
+        if not r["Photo links"] and src.get("Listing note"):
+            r["Photo links"] = " ".join(photo_links(src["Listing note"]))
+    return out
+
+
+# ---------- photos ----------
+# Sellers put a photo link in the portal's Listing note: a public Google Drive folder, a Dropbox
+# file or zip (dl=1), or a direct image URL. iCloud shared albums are not supported (no plain URL).
+LINK_RE = re.compile(r"https?://[^\s\"'<>]+")
+MAX_PHOTOS = 30
+MAX_SIDE = 1280        # same as the existing images/ files (960x1280 portrait, progressive JPEG)
+UA = {"User-Agent": "Mozilla/5.0 (portal-sync; +https://getownerfinancedhomes.com)"}
+
+
+def photo_links(note: str) -> list[str]:
+    links = []
+    for url in LINK_RE.findall(note or ""):
+        url = url.rstrip(".,);")
+        host = urllib.parse.urlparse(url).netloc.lower()
+        if ("drive.google.com" in host and "/folders/" in url) or "dropbox.com" in host \
+                or re.search(r"\.(jpe?g|png|webp)(\?|$)", url, re.I):
+            links.append(url)
+    return links
+
+
+def _get(url: str, timeout=60) -> bytes:
+    with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=timeout) as resp:
+        return resp.read()
+
+
+def _drive_folder(url: str, depth: int = 0) -> list[bytes]:
+    folder = re.search(r"/folders/([A-Za-z0-9_-]+)", url).group(1)
+    page = _get(f"https://drive.google.com/drive/folders/{folder}").decode("utf-8", "replace")
+    ids, subfolders = [], []
+    for m in re.finditer(r'data-id="([A-Za-z0-9_-]{25,})"', page):
+        nxt = page.find('data-id="', m.end())
+        chunk = page[m.end():nxt if nxt > 0 else m.end() + 4000]
+        label = re.search(r'aria-label="([^"]*)"', chunk)
+        label = label.group(1) if label else ""
+        if m.group(1) in ids or m.group(1) in (f for f, _ in subfolders):
+            continue
+        if re.search(r"\.(?:jpe?g|png|webp|heic)\b", label, re.I):
+            ids.append(m.group(1))
+        elif label.endswith("folder") and m.group(1) != folder:
+            subfolders.append((m.group(1), label))
+    if not ids and subfolders and depth == 0:
+        # e.g. "New Pictures" / "Old Pictures+Video": newest first
+        subfolders.sort(key=lambda f: (0 if re.search(r"(?i)\bnew\b", f[1]) else 1))
+        for sub, _label in subfolders:
+            got = _drive_folder(f"https://drive.google.com/drive/folders/{sub}", depth + 1)
+            if got:
+                return got
+        return []
+    return [_get(f"https://drive.usercontent.google.com/download?id={i}&export=download") for i in ids[:MAX_PHOTOS]]
+
+
+def _dropbox(url: str) -> list[bytes]:
+    import io
+    import zipfile
+    parts = urllib.parse.urlparse(url)
+    q = dict(urllib.parse.parse_qsl(parts.query))
+    q["dl"] = "1"
+    data = _get(urllib.parse.urlunparse(parts._replace(query=urllib.parse.urlencode(q))), timeout=180)
+    if data[:2] != b"PK":
+        return [data]
+    with zipfile.ZipFile(io.BytesIO(data)) as z:
+        names = sorted(n for n in z.namelist() if re.search(r"\.(jpe?g|png|webp)$", n, re.I) and "__MACOSX" not in n)
+        return [z.read(n) for n in names[:MAX_PHOTOS]]
+
+
+def download_photos(links: list[str]) -> list[bytes]:
+    blobs: list[bytes] = []
+    for url in links:
+        try:
+            if "drive.google.com" in url:
+                blobs += _drive_folder(url)
+            elif "dropbox.com" in url:
+                blobs += _dropbox(url)
+            else:
+                blobs.append(_get(url))
+        except Exception as exc:  # one bad link must not stop the run
+            print(f"photo link failed: {urllib.parse.urlparse(url).netloc}: {exc.__class__.__name__}")
+    return blobs[:MAX_PHOTOS]
+
+
+def save_photos(root: Path, hid: str, blobs: list[bytes]) -> list[str]:
+    """images/<id>.jpg (hero) + images/<id>-1..N.jpg (gallery), resized like the existing files."""
+    import io
+    from PIL import Image, ImageOps
+    try:
+        import pillow_heif   # iPhone HEIC photos
+        pillow_heif.register_heif_opener()
+    except ImportError:
+        pass
+    saved = []
+    for blob in blobs:
+        try:
+            with Image.open(io.BytesIO(blob)) as im:
+                im = ImageOps.exif_transpose(im).convert("RGB")
+                im.thumbnail((MAX_SIDE, MAX_SIDE))
+                n = len(saved) + 1
+                im.save(root / "images" / f"{hid}-{n}.jpg", "JPEG", quality=80, optimize=True, progressive=True)
+                if n == 1 and not (root / "images" / f"{hid}.jpg").is_file():
+                    im.save(root / "images" / f"{hid}.jpg", "JPEG", quality=82, optimize=True, progressive=True)
+                saved.append(f"images/{hid}-{n}.jpg")
+        except Exception:
+            continue   # HEIC, video or a broken file
+    return saved
+
+
+def gallery_on_disk(root: Path, hid: str) -> list[str]:
+    files, n = [], 1
+    while (root / "images" / f"{hid}-{n}.jpg").is_file():
+        files.append(f"images/{hid}-{n}.jpg")
+        n += 1
+    return files
 
 
 # ---------- homes.js ----------
@@ -308,13 +436,15 @@ def plan(root: Path, portal_rows: list[dict], crm_rows: list[dict]) -> dict:
     crm_closed = {str(r.get("Unique ID") or "").strip().lower(): r.get("Property Status", "")
                   for r in crm_rows if CLOSED.search(str(r.get("Property Status") or ""))}
     portal = portal_index(portal_rows)
-    out = {"add": [], "update": [], "retire": [], "hand": []}
+    out = {"add": [], "update": [], "retire": [], "hand": [], "photos": []}
     for hid, row in portal.items():
         sid = match_site_id(hid, row, site_keys)
         status = row["Status"].strip()
         price, down, monthly = num(row["Price"]), num(row["Down payment"]), num(row["Monthly payment"])
         if sid in site:
             block = site[sid].group(0)
+            if status.lower() == "available" and (field(block, "photos") or "[]").strip() == "[]":
+                out["photos"].append({"id": sid, "links": row.get("Photo links", "").split()})
             if status.lower() in ("pending", "sold"):
                 out["retire"].append({"id": sid, "why": status.lower(), "address": row["Address"]})
             elif status.lower() == "not in portal":
@@ -344,6 +474,7 @@ def plan(root: Path, portal_rows: list[dict], crm_rows: list[dict]) -> dict:
                            "state": row["State"].strip().upper(), "zip": row["Zip"], "beds": num(row["Beds"]) or 0,
                            "baths": num(row["Baths"]) or 0, "sqft": num(row["Sqft"]), "price": price,
                            "down": down or 0, "monthly": monthly})
+        out["photos"].append({"id": hid, "links": row.get("Photo links", "").split()})
     out["add"].sort(key=lambda r: r["id"])
     return out
 
@@ -415,6 +546,7 @@ def apply(root: Path, p: dict, lang: str, geocoder=geocode) -> None:
             kept = [l for l in sm.read_text(encoding="utf-8").splitlines(keepends=True)
                     if not any(f"/{h}.html<" in l for h in gone)]
             sm.write_text("".join(kept), encoding="utf-8")
+    photos_into(root, p)
     text = js.read_text(encoding="utf-8")
     count = len(re.findall(r'\n    id: "', text.split("const SOLD_CARDS")[0]))
     text = re.sub(r"\((\d+) live,", f"({count} live,", text, count=1)
@@ -422,9 +554,34 @@ def apply(root: Path, p: dict, lang: str, geocoder=geocode) -> None:
     js.write_text(text, encoding="utf-8")
 
 
+def photos_into(root: Path, p: dict, fetch=download_photos) -> None:
+    """Fill the photos array of homes that have none: files already in images/ first, else the portal link."""
+    js = root / "homes.js"
+    text = js.read_text(encoding="utf-8")
+    site = blocks(text)
+    p.setdefault("photo_result", {})
+    for item in p.get("photos", []):
+        hid = item["id"]
+        if hid not in site:
+            continue
+        files = gallery_on_disk(root, hid)
+        if not files and item["links"]:
+            files = save_photos(root, hid, fetch(item["links"]))
+        if not files:
+            continue
+        block = site[hid].group(0)
+        new = re.sub(r"\n    photos:\s*\[\s*\],", "\n    photos:    " + json.dumps(files) + ",", block, count=1)
+        if new != block:
+            text = text.replace(block, new, 1)
+            p["photo_result"][hid] = len(files)
+    js.write_text(text, encoding="utf-8")
+
+
 def summary(p: dict) -> str:
     n = lambda k: len(p[k])
-    lines = [f"Portal sync: {n('add')} new, {n('update')} terms changed, {n('retire')} retired", ""]
+    ph = len(p.get("photo_result", {}))
+    lines = [f"Portal sync: {n('add')} new, {n('update')} terms changed, {n('retire')} retired"
+             + (f", photos for {ph}" if ph else ""), ""]
     for r in p["add"]:
         lines.append(f"+ {r['id']}  {r['address']}, {r['city']} {r['state']}  {money(r['price'])} / "
                      f"{money(r['down'])} down / {money(r['monthly'])}/mo  ({r['pid']})")
@@ -432,6 +589,8 @@ def summary(p: dict) -> str:
         lines.append(f"~ {u['id']}  " + ", ".join(f"{k} {o}→{nv}" for k, (o, nv) in u["diffs"].items()))
     for r in p["retire"]:
         lines.append(f"- {r['id']}  {r['why']}")
+    for hid, n in p.get("photo_result", {}).items():
+        lines.append(f"* {hid}  {n} photos")
     if p["hand"]:
         lines += ["", "Check by hand:"] + [f"  {h}" for h in p["hand"]]
     return "\n".join(lines) + "\n"
@@ -457,12 +616,16 @@ def main(argv=None) -> int:
     p = plan(a.site, portal, crm)
     if len(p["retire"]) > MAX_RETIRE and not a.force:
         raise SystemExit(f"{len(p['retire'])} homes would be retired (> {MAX_RETIRE}); refusing without --force.")
+    pending = [x for x in p["photos"] if x["links"] or gallery_on_disk(a.site, x["id"])]
+    if not a.dry_run and (p["add"] or p["update"] or p["retire"] or pending):
+        apply(a.site, p, a.lang)
+    elif a.dry_run:
+        for x in pending:
+            print(f"* {x['id']}  photos from {len(x['links'])} link(s)")
     text = summary(p)
     print(text)
     if a.summary_out:
         a.summary_out.write_text(text, encoding="utf-8")
-    if not a.dry_run and (p["add"] or p["update"] or p["retire"]):
-        apply(a.site, p, a.lang)
     return 0
 
 

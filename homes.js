@@ -313,7 +313,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/jackson-ms-35223524-martin-1.jpg", "images/jackson-ms-35223524-martin-2.jpg", "images/jackson-ms-35223524-martin-3.jpg", "images/jackson-ms-35223524-martin-4.jpg", "images/jackson-ms-35223524-martin-5.jpg", "images/jackson-ms-35223524-martin-6.jpg", "images/jackson-ms-35223524-martin-7.jpg", "images/jackson-ms-35223524-martin-8.jpg", "images/jackson-ms-35223524-martin-9.jpg", "images/jackson-ms-35223524-martin-10.jpg"],
   },
   {
     id: "eaststlouis-il-1422-54th",
@@ -1811,7 +1811,7 @@ const HOMES = [
 
     features: { backyard: "yes", basement: "no", off_street_parking: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/madison-il-2021-edwardsville-1.jpg", "images/madison-il-2021-edwardsville-2.jpg", "images/madison-il-2021-edwardsville-3.jpg", "images/madison-il-2021-edwardsville-4.jpg", "images/madison-il-2021-edwardsville-5.jpg", "images/madison-il-2021-edwardsville-6.jpg", "images/madison-il-2021-edwardsville-7.jpg", "images/madison-il-2021-edwardsville-8.jpg", "images/madison-il-2021-edwardsville-9.jpg", "images/madison-il-2021-edwardsville-10.jpg", "images/madison-il-2021-edwardsville-11.jpg", "images/madison-il-2021-edwardsville-12.jpg", "images/madison-il-2021-edwardsville-13.jpg", "images/madison-il-2021-edwardsville-14.jpg", "images/madison-il-2021-edwardsville-15.jpg", "images/madison-il-2021-edwardsville-16.jpg", "images/madison-il-2021-edwardsville-17.jpg", "images/madison-il-2021-edwardsville-18.jpg", "images/madison-il-2021-edwardsville-19.jpg", "images/madison-il-2021-edwardsville-20.jpg", "images/madison-il-2021-edwardsville-21.jpg", "images/madison-il-2021-edwardsville-22.jpg", "images/madison-il-2021-edwardsville-23.jpg", "images/madison-il-2021-edwardsville-24.jpg", "images/madison-il-2021-edwardsville-25.jpg"],
   },
   {
     id: "eaststlouis-il-305-7th",
@@ -3310,7 +3310,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-125-16th-1.jpg", "images/decatur-il-125-16th-2.jpg", "images/decatur-il-125-16th-3.jpg", "images/decatur-il-125-16th-4.jpg", "images/decatur-il-125-16th-5.jpg", "images/decatur-il-125-16th-6.jpg", "images/decatur-il-125-16th-7.jpg", "images/decatur-il-125-16th-8.jpg", "images/decatur-il-125-16th-9.jpg", "images/decatur-il-125-16th-10.jpg", "images/decatur-il-125-16th-11.jpg", "images/decatur-il-125-16th-12.jpg"],
   },
   {
     id: "decatur-il-1744-monroe",
@@ -3651,7 +3651,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    ["images/eaststlouis-il-6000-old-1.jpg", "images/eaststlouis-il-6000-old-2.jpg", "images/eaststlouis-il-6000-old-3.jpg", "images/eaststlouis-il-6000-old-4.jpg", "images/eaststlouis-il-6000-old-5.jpg", "images/eaststlouis-il-6000-old-6.jpg", "images/eaststlouis-il-6000-old-7.jpg", "images/eaststlouis-il-6000-old-8.jpg", "images/eaststlouis-il-6000-old-9.jpg", "images/eaststlouis-il-6000-old-10.jpg", "images/eaststlouis-il-6000-old-11.jpg", "images/eaststlouis-il-6000-old-12.jpg", "images/eaststlouis-il-6000-old-13.jpg", "images/eaststlouis-il-6000-old-14.jpg", "images/eaststlouis-il-6000-old-15.jpg", "images/eaststlouis-il-6000-old-16.jpg", "images/eaststlouis-il-6000-old-17.jpg", "images/eaststlouis-il-6000-old-18.jpg", "images/eaststlouis-il-6000-old-19.jpg", "images/eaststlouis-il-6000-old-20.jpg", "images/eaststlouis-il-6000-old-21.jpg", "images/eaststlouis-il-6000-old-22.jpg", "images/eaststlouis-il-6000-old-23.jpg", "images/eaststlouis-il-6000-old-24.jpg", "images/eaststlouis-il-6000-old-25.jpg", "images/eaststlouis-il-6000-old-26.jpg", "images/eaststlouis-il-6000-old-27.jpg", "images/eaststlouis-il-6000-old-28.jpg", "images/eaststlouis-il-6000-old-29.jpg", "images/eaststlouis-il-6000-old-30.jpg"],
+    photos:    ["images/eaststlouis-il-6000-old-1.jpg", "images/eaststlouis-il-6000-old-2.jpg", "images/eaststlouis-il-6000-old-3.jpg", "images/eaststlouis-il-6000-old-4.jpg", "images/eaststlouis-il-6000-old-5.jpg", "images/eaststlouis-il-6000-old-6.jpg", "images/eaststlouis-il-6000-old-7.jpg", "images/eaststlouis-il-6000-old-8.jpg", "images/eaststlouis-il-6000-old-9.jpg", "images/eaststlouis-il-6000-old-10.jpg", "images/eaststlouis-il-6000-old-11.jpg", "images/eaststlouis-il-6000-old-12.jpg", "images/eaststlouis-il-6000-old-13.jpg", "images/eaststlouis-il-6000-old-14.jpg", "images/eaststlouis-il-6000-old-15.jpg", "images/eaststlouis-il-6000-old-16.jpg", "images/eaststlouis-il-6000-old-17.jpg", "images/eaststlouis-il-6000-old-18.jpg", "images/eaststlouis-il-6000-old-19.jpg", "images/eaststlouis-il-6000-old-20.jpg", "images/eaststlouis-il-6000-old-21.jpg", "images/eaststlouis-il-6000-old-22.jpg", "images/eaststlouis-il-6000-old-23.jpg", "images/eaststlouis-il-6000-old-24.jpg", "images/eaststlouis-il-6000-old-25.jpg", "images/eaststlouis-il-6000-old-26.jpg", "images/eaststlouis-il-6000-old-27.jpg", "images/eaststlouis-il-6000-old-28.jpg", "images/eaststlouis-il-6000-old-29.jpg"],
   },
   {
     id: "lewistown-il-714-adams",
@@ -6172,7 +6172,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    ["images/stlouis-mo-238-connolly-1.jpg", "images/stlouis-mo-238-connolly-2.jpg", "images/stlouis-mo-238-connolly-3.jpg", "images/stlouis-mo-238-connolly-4.jpg", "images/stlouis-mo-238-connolly-5.jpg", "images/stlouis-mo-238-connolly-6.jpg", "images/stlouis-mo-238-connolly-7.jpg", "images/stlouis-mo-238-connolly-8.jpg", "images/stlouis-mo-238-connolly-9.jpg", "images/stlouis-mo-238-connolly-10.jpg", "images/stlouis-mo-238-connolly-11.jpg", "images/stlouis-mo-238-connolly-12.jpg", "images/stlouis-mo-238-connolly-13.jpg", "images/stlouis-mo-238-connolly-14.jpg", "images/stlouis-mo-238-connolly-15.jpg", "images/stlouis-mo-238-connolly-16.jpg", "images/stlouis-mo-238-connolly-17.jpg", "images/stlouis-mo-238-connolly-18.jpg", "images/stlouis-mo-238-connolly-19.jpg", "images/stlouis-mo-238-connolly-20.jpg", "images/stlouis-mo-238-connolly-21.jpg", "images/stlouis-mo-238-connolly-22.jpg", "images/stlouis-mo-238-connolly-23.jpg", "images/stlouis-mo-238-connolly-24.jpg", "images/stlouis-mo-238-connolly-25.jpg", "images/stlouis-mo-238-connolly-26.jpg", "images/stlouis-mo-238-connolly-27.jpg", "images/stlouis-mo-238-connolly-28.jpg", "images/stlouis-mo-238-connolly-29.jpg", "images/stlouis-mo-238-connolly-30.jpg"],
+    photos:    ["images/stlouis-mo-238-connolly-1.jpg", "images/stlouis-mo-238-connolly-2.jpg", "images/stlouis-mo-238-connolly-3.jpg", "images/stlouis-mo-238-connolly-4.jpg", "images/stlouis-mo-238-connolly-5.jpg", "images/stlouis-mo-238-connolly-6.jpg", "images/stlouis-mo-238-connolly-7.jpg", "images/stlouis-mo-238-connolly-8.jpg", "images/stlouis-mo-238-connolly-9.jpg", "images/stlouis-mo-238-connolly-10.jpg", "images/stlouis-mo-238-connolly-11.jpg", "images/stlouis-mo-238-connolly-12.jpg", "images/stlouis-mo-238-connolly-13.jpg", "images/stlouis-mo-238-connolly-14.jpg", "images/stlouis-mo-238-connolly-15.jpg", "images/stlouis-mo-238-connolly-16.jpg", "images/stlouis-mo-238-connolly-17.jpg", "images/stlouis-mo-238-connolly-18.jpg", "images/stlouis-mo-238-connolly-19.jpg", "images/stlouis-mo-238-connolly-20.jpg", "images/stlouis-mo-238-connolly-21.jpg", "images/stlouis-mo-238-connolly-22.jpg", "images/stlouis-mo-238-connolly-23.jpg", "images/stlouis-mo-238-connolly-24.jpg", "images/stlouis-mo-238-connolly-25.jpg", "images/stlouis-mo-238-connolly-26.jpg", "images/stlouis-mo-238-connolly-27.jpg", "images/stlouis-mo-238-connolly-28.jpg", "images/stlouis-mo-238-connolly-29.jpg"],
   },
   {
     id: "stlouis-mo-4323-obear",

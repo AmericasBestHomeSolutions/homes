@@ -169,6 +169,7 @@
   function setMsg(t){ const m = $("hmMsg"); if (m) m.textContent = t || ""; }
   function setNear(p){
     S.near = p; S.area = null;
+    if (p && window.VisitorNear) VisitorNear.set({ lat:p.lat, lng:p.lng, label:p.label, src:"place" }, true);  // their browser only
     $("hmNear").value = p ? p.label : "";
     $("hmClear").hidden = !p;
     setMsg("");

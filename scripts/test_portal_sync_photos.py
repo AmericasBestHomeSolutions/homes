@@ -38,10 +38,30 @@ class Links(unittest.TestCase):
             self.assertTrue(ps.readable(url), url)
 
     def test_unreadable_kept_for_browser_pass(self):
-        cell = "https://1drv.ms/f/s!abc and https://drive.google.com/drive/folders/abcDEF123."
+        cell = "https://dashboard.resimpli.com/x/1 and https://drive.google.com/drive/folders/abcDEF123."
         self.assertEqual(ps.photo_links(cell), ["https://drive.google.com/drive/folders/abcDEF123"])
-        self.assertEqual(ps.album_links(cell), ["https://drive.google.com/drive/folders/abcDEF123", "https://1drv.ms/f/s!abc"])
-        self.assertFalse(ps.readable("https://1drv.ms/f/s!abc"))
+        self.assertEqual(ps.album_links(cell), ["https://drive.google.com/drive/folders/abcDEF123",
+                                                "https://dashboard.resimpli.com/x/1"])
+        for url in ("https://dashboard.resimpli.com/x/1", "https://maps.app.goo.gl/abc",
+                    "https://www.viewthehomeonline.com/", "https://docs.google.com/spreadsheets/d/abc/edit"):
+            self.assertFalse(ps.readable(url), url)
+
+    def test_new_kinds(self):
+        for url in ("https://1drv.ms/f/s!abc", "https://onedrive.live.com/?id=abc",
+                    "https://www.viewthehomeonline.com/3131734",
+                    "https://docs.google.com/document/d/abcDEF/edit"):
+            self.assertTrue(ps.readable(url), url)
+
+    def test_gdoc_with_text_is_not_mined(self):
+        import base64
+        from unittest import mock
+        img = '<img src="data:image/jpeg;base64,' + base64.b64encode(b"JPEGDATA").decode() + '">'
+        photos_only = ("<html><body>" + img + img + "</body></html>").encode()
+        contract = ("<html><body><p>" + "This agreement is made between the parties. " * 20 + "</p>" + img).encode()
+        with mock.patch.object(ps, "_get", return_value=photos_only):
+            self.assertEqual(ps._gdoc("https://docs.google.com/document/d/abc/edit"), [b"JPEGDATA"])
+        with mock.patch.object(ps, "_get", return_value=contract):
+            self.assertEqual(ps._gdoc("https://docs.google.com/document/d/abc/edit"), [])
 
     def test_label_hides_token(self):
         label = ps.link_label("https://share.icloud.com/photos/0a4nmaDyBTNFiPFmprj4Z5rQA")

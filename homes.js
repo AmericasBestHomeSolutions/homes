@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (271 live, rebuilt from master published 2026-10-27) --- */
+/* --- the homes (270 live, rebuilt from master published 2026-10-27) --- */
 const HOMES = [
   {
     id: "eaststlouis-il-2008-61st",
@@ -4250,7 +4250,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/stlouis-mo-610r-fremont-1.jpg", "images/stlouis-mo-610r-fremont-2.jpg", "images/stlouis-mo-610r-fremont-3.jpg", "images/stlouis-mo-610r-fremont-4.jpg", "images/stlouis-mo-610r-fremont-5.jpg", "images/stlouis-mo-610r-fremont-6.jpg", "images/stlouis-mo-610r-fremont-7.jpg", "images/stlouis-mo-610r-fremont-8.jpg", "images/stlouis-mo-610r-fremont-9.jpg", "images/stlouis-mo-610r-fremont-10.jpg", "images/stlouis-mo-610r-fremont-11.jpg", "images/stlouis-mo-610r-fremont-12.jpg"],
   },
   {
     id: "stlouis-mo-3742-melba",
@@ -4316,7 +4316,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-1096-green-1.jpg", "images/decatur-il-1096-green-2.jpg", "images/decatur-il-1096-green-3.jpg", "images/decatur-il-1096-green-4.jpg", "images/decatur-il-1096-green-5.jpg", "images/decatur-il-1096-green-6.jpg", "images/decatur-il-1096-green-7.jpg", "images/decatur-il-1096-green-8.jpg", "images/decatur-il-1096-green-9.jpg", "images/decatur-il-1096-green-10.jpg", "images/decatur-il-1096-green-11.jpg", "images/decatur-il-1096-green-12.jpg", "images/decatur-il-1096-green-13.jpg", "images/decatur-il-1096-green-14.jpg", "images/decatur-il-1096-green-15.jpg", "images/decatur-il-1096-green-16.jpg", "images/decatur-il-1096-green-17.jpg", "images/decatur-il-1096-green-18.jpg", "images/decatur-il-1096-green-19.jpg", "images/decatur-il-1096-green-20.jpg", "images/decatur-il-1096-green-21.jpg", "images/decatur-il-1096-green-22.jpg", "images/decatur-il-1096-green-23.jpg", "images/decatur-il-1096-green-24.jpg", "images/decatur-il-1096-green-25.jpg", "images/decatur-il-1096-green-26.jpg"],
   },
   {
     id: "decatur-il-442-division",
@@ -4360,7 +4360,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-941-waggoner-1.jpg", "images/decatur-il-941-waggoner-2.jpg", "images/decatur-il-941-waggoner-3.jpg", "images/decatur-il-941-waggoner-4.jpg", "images/decatur-il-941-waggoner-5.jpg", "images/decatur-il-941-waggoner-6.jpg", "images/decatur-il-941-waggoner-7.jpg", "images/decatur-il-941-waggoner-8.jpg", "images/decatur-il-941-waggoner-9.jpg", "images/decatur-il-941-waggoner-10.jpg", "images/decatur-il-941-waggoner-11.jpg", "images/decatur-il-941-waggoner-12.jpg", "images/decatur-il-941-waggoner-13.jpg", "images/decatur-il-941-waggoner-14.jpg", "images/decatur-il-941-waggoner-15.jpg", "images/decatur-il-941-waggoner-16.jpg", "images/decatur-il-941-waggoner-17.jpg", "images/decatur-il-941-waggoner-18.jpg", "images/decatur-il-941-waggoner-19.jpg", "images/decatur-il-941-waggoner-20.jpg", "images/decatur-il-941-waggoner-21.jpg", "images/decatur-il-941-waggoner-22.jpg", "images/decatur-il-941-waggoner-23.jpg", "images/decatur-il-941-waggoner-24.jpg", "images/decatur-il-941-waggoner-25.jpg", "images/decatur-il-941-waggoner-26.jpg", "images/decatur-il-941-waggoner-27.jpg", "images/decatur-il-941-waggoner-28.jpg", "images/decatur-il-941-waggoner-29.jpg", "images/decatur-il-941-waggoner-30.jpg"],
   },
   {
     id: "stlouis-mo-5621-sunbury",
@@ -4718,7 +4718,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/stlouis-mo-8510-concord-1.jpg", "images/stlouis-mo-8510-concord-2.jpg", "images/stlouis-mo-8510-concord-3.jpg", "images/stlouis-mo-8510-concord-4.jpg", "images/stlouis-mo-8510-concord-5.jpg", "images/stlouis-mo-8510-concord-6.jpg", "images/stlouis-mo-8510-concord-7.jpg", "images/stlouis-mo-8510-concord-8.jpg", "images/stlouis-mo-8510-concord-9.jpg", "images/stlouis-mo-8510-concord-10.jpg", "images/stlouis-mo-8510-concord-11.jpg", "images/stlouis-mo-8510-concord-12.jpg", "images/stlouis-mo-8510-concord-13.jpg", "images/stlouis-mo-8510-concord-14.jpg", "images/stlouis-mo-8510-concord-15.jpg", "images/stlouis-mo-8510-concord-16.jpg", "images/stlouis-mo-8510-concord-17.jpg", "images/stlouis-mo-8510-concord-18.jpg", "images/stlouis-mo-8510-concord-19.jpg", "images/stlouis-mo-8510-concord-20.jpg", "images/stlouis-mo-8510-concord-21.jpg", "images/stlouis-mo-8510-concord-22.jpg", "images/stlouis-mo-8510-concord-23.jpg", "images/stlouis-mo-8510-concord-24.jpg", "images/stlouis-mo-8510-concord-25.jpg", "images/stlouis-mo-8510-concord-26.jpg", "images/stlouis-mo-8510-concord-27.jpg", "images/stlouis-mo-8510-concord-28.jpg", "images/stlouis-mo-8510-concord-29.jpg", "images/stlouis-mo-8510-concord-30.jpg"],
   },
   {
     id: "toledo-oh-1428-ave",

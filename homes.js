@@ -5099,7 +5099,8 @@ const HOMES = [
   },
   {
     id: "decatur-il-1929-prairie",
-    address:     "1929 E Prairie St, Decatur, Il",
+    address:     "1929 E Prairie St",
+    zip:         "62521",
     copy:        "$875 a month and $2,500 at the door is what it takes to start owning this Decatur home. Inside you'll find two bedrooms, two and a half baths, and 1,364 square feet of space to arrange exactly the way you want. Two and a half baths in a two-bedroom home means nobody waits in the hallway for a turn. Your monthly payment is written into the agreement from the start, so there's no wondering each year how much more someone will ask of you. The purchase price is $85,000, settled on the day you sign, with owner financing and no bank anywhere in the picture. The home is sold as-is, and you're welcome to come through in person and judge every room yourself. Homes like this don't sit long, so book a Tour now and get your walk-through on the calendar.",
     city:  "Decatur",
     state: "IL",
@@ -5117,7 +5118,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-1929-prairie-1.jpg", "images/decatur-il-1929-prairie-2.jpg", "images/decatur-il-1929-prairie-3.jpg", "images/decatur-il-1929-prairie-4.jpg", "images/decatur-il-1929-prairie-5.jpg", "images/decatur-il-1929-prairie-6.jpg", "images/decatur-il-1929-prairie-7.jpg", "images/decatur-il-1929-prairie-8.jpg", "images/decatur-il-1929-prairie-9.jpg", "images/decatur-il-1929-prairie-10.jpg", "images/decatur-il-1929-prairie-11.jpg", "images/decatur-il-1929-prairie-12.jpg", "images/decatur-il-1929-prairie-13.jpg", "images/decatur-il-1929-prairie-14.jpg", "images/decatur-il-1929-prairie-15.jpg", "images/decatur-il-1929-prairie-16.jpg", "images/decatur-il-1929-prairie-17.jpg", "images/decatur-il-1929-prairie-18.jpg", "images/decatur-il-1929-prairie-19.jpg", "images/decatur-il-1929-prairie-20.jpg", "images/decatur-il-1929-prairie-21.jpg", "images/decatur-il-1929-prairie-22.jpg", "images/decatur-il-1929-prairie-23.jpg", "images/decatur-il-1929-prairie-24.jpg", "images/decatur-il-1929-prairie-25.jpg", "images/decatur-il-1929-prairie-26.jpg", "images/decatur-il-1929-prairie-27.jpg", "images/decatur-il-1929-prairie-28.jpg"],
   },
   {
     id: "danville-il-127-kentucky",
@@ -5554,32 +5555,7 @@ const HOMES = [
 
     features: { backyard: "yes", fenced_yard: "yes", basement: "yes" },
     heroPhoto: "",
-    photos:    [],
-  },
-  {
-    id: "ildecatur-il-1929-prairie",
-    address:     "1929 E Prairie St, Decatur",
-    zip:         "62521",
-    description: "It has a Detached garage",
-    copy:        "Two bedrooms, two baths, $875 a month, and $2,500 to move in. Spread across 1,364 square feet in Decatur, Illinois, this home gives you real room to breathe, plus a detached garage and off-street parking so you're never circling the block after a long shift. The best part might be the number on your paperwork: one monthly payment, written down from day one, that won't creep up every time a lease comes due. The purchase price is $85,000, agreed on the day you sign, with owner financing and no bank in the middle. The home is sold as-is, so come walk through it in person and see how it feels to stand in a place that could be yours. Homes like this don't sit long. Book a Tour and let's get you through the door this week.",
-    city:  "Il Decatur",
-    state: "IL",
-    beds:  2,
-    baths: 2,
-    sqft:  "1,364",
-    lat:   39.8431,
-    lng:   -88.930686,
-    geo:   "exact",
-    status: "Available",
-
-    monthlyPayment: 875,
-    moveIn:         2500,
-    lockedPrice:    85000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { garage: "yes", off_street_parking: "yes" },
-    heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-345-18th-1.jpg", "images/decatur-il-345-18th-2.jpg", "images/decatur-il-345-18th-3.jpg", "images/decatur-il-345-18th-4.jpg", "images/decatur-il-345-18th-5.jpg", "images/decatur-il-345-18th-6.jpg", "images/decatur-il-345-18th-7.jpg", "images/decatur-il-345-18th-8.jpg", "images/decatur-il-345-18th-9.jpg"],
   },
   {
     id: "stlouis-mo-5124-northland",

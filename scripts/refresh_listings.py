@@ -5,8 +5,11 @@ The master spreadsheet still lives on the owner's Mac and is what rebuilds
 homes.js. This script does three things that pass must keep doing:
 
 1. Rewrite buyer-facing copy that asks people to text, call, or message us
-   into a Book a Tour line. The Mac refresh puts those sentences back every
-   day, so this post-pass has to remove them again. Legal pages and the SMS
+   into a Book a Tour line, and remove seller-to-team notes ("Hi Team, ...
+   Thank you so much!", a seller's preference about who lives there, requests
+   for occupants' social security numbers). Those stay internal in the master
+   list. The Mac refresh puts them back every day, so this post-pass has to
+   remove them again. Legal pages and the SMS
    consent checkbox are not touched.
 
 2. Record a listed date the first time a home id appears
@@ -84,6 +87,51 @@ _META_NAME_RE = re.compile(
 )
 _META_CONTENT_RE = re.compile(r'(content=")([^"]*)(")')
 
+# Seller-to-team notes that reach the public description through the master list.
+# They stay internal in the master sheet but must never show on the site: a note to
+# "Hi Team" with its sign-off, a seller's preference about who lives there, or a
+# request for occupants' social security numbers. Only those pieces are removed;
+# the rest of the description stays word for word.
+_TEAM_NOTE = re.compile(
+    r"(?is)\b(?:hi|hello|hey|dear)\s+team\b[\s,.!:]*.{0,600}?"
+    r"\b(?:thank you so much|thank you|thanks so much|thanks)\b[\s.!,]*"
+    r"(?-i:[A-Z][a-z'-]{0,20}(?:\s+[A-Z][a-z'-]{0,20})?\.(?=\s|$)\s*)?"
+)
+_TEAM_GREETING = re.compile(r"(?i)\b(?:hi|hello|hey|dear)\s+team\b[\s,.!:]*|\bhola\s+equipo\b[\s,.!:]*")
+_INTERNAL = re.compile(
+    r"(?i)prefer to put (?:in )?a family in this house|social security|seguro social|\bSSN\b|\d{3}-\d{2}-\d{4}"
+    r"|please ask for (?:these|this|them) from the buyer|\bI require answering\b"
+)
+_SEGMENT = re.compile(r"[^.!?\n*•]*(?:[.!?]+|\n|\*|•|$)")
+
+
+def strip_internal_notes(text: str) -> tuple[str, int]:
+    """Remove seller-to-team notes. Returns the text and how many pieces were removed."""
+    if not text:
+        return text, 0
+    count = 0
+
+    def drop(_match: re.Match) -> str:
+        nonlocal count
+        count += 1
+        return ""
+
+    out = _TEAM_NOTE.sub(drop, text)
+    out = _TEAM_GREETING.sub(drop, out)
+    kept = []
+    for match in _SEGMENT.finditer(out):
+        piece = match.group(0)
+        if piece and _INTERNAL.search(piece):
+            count += 1
+            continue
+        kept.append(piece)
+    out = "".join(kept)
+    if count:
+        out = re.sub(r"[ \t]{2,}", " ", out).strip()
+        out = re.sub(r"^[\s.,;:*•-]+", "", out)
+        out = re.sub(r"[\s,;:*•-]+$", "", out)
+    return out, count
+
 
 def sanitize_prose(text: str) -> tuple[str, int]:
     """Replace each text/call/message invitation with Book a Tour.
@@ -117,9 +165,10 @@ def sanitize_homes_js(text: str) -> tuple[str, int, int]:
     def repl(match: re.Match) -> str:
         nonlocal fields, phrases
         body, n = sanitize_prose(match.group(2))
-        if n:
+        body, notes = strip_internal_notes(body)
+        if n or notes:
             fields += 1
-            phrases += n
+            phrases += n + notes
         return match.group(1) + body + match.group(3)
 
     return _FIELD_RE.sub(repl, text), fields, phrases
@@ -138,6 +187,8 @@ def sanitize_meta_html(html: str) -> tuple[str, int]:
         def repl_content(content: re.Match) -> str:
             nonlocal phrases
             body, n = sanitize_prose(content.group(2))
+            body, notes = strip_internal_notes(body)
+            n += notes
             if not n:
                 return content.group(0)
             phrases += n

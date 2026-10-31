@@ -11,7 +11,6 @@ const LISTED_ON = {
   "decatur-il-1971-cantrell": "2026-10-30",
   "decatur-il-2616-logan": "2026-10-30",
   "detroit-mi-8577-mark": "2026-10-30",
-  "saginaw-mi-525521-owen": "2026-10-30",
   "stlouis-mo-2525-tyrell": "2026-10-30",
   "barling-ar-2207-k": "2026-10-31",
   "cahokia-il-1322-williams": "2026-10-31",
@@ -26,5 +25,9 @@ const LISTED_ON = {
   "stlouis-mo-238-connolly": "2026-10-31",
   "stlouis-mo-4323-obear": "2026-10-31",
   "stlouis-mo-5461-hamilton": "2026-10-31",
-  "stlouis-mo-8401-broadway": "2026-10-31"
+  "stlouis-mo-8401-broadway": "2026-10-31",
+  "decatur-il-1822-decatur": "2026-10-31",
+  "granitecity-il-2539-28th": "2026-10-31",
+  "peoria-il-2012-marquette": "2026-10-31",
+  "peoria-il-2315-ann": "2026-10-31"
 };

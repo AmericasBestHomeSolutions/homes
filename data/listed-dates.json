@@ -45,7 +45,6 @@
   "rossville-il-304-gilbert": null,
   "decatur-il-1180-mueller": null,
   "stlouis-mo-5346-janet": null,
-  "decatur-il-1252-whitmer": null,
   "decatur-il-1811-morgan": null,
   "decatur-il-785-cantrell": null,
   "decatur-il-1439-jasper": null,
@@ -150,7 +149,6 @@
   "decatur-mo-1828-main": null,
   "decatur-il-945-maffit": null,
   "eaststlouis-il-6000-old": null,
-  "eaststlouis-il-5527-avon": null,
   "lewistown-il-714-adams": null,
   "cahokia-il-1922-harvest": null,
   "stlouis-mo-4824-margaretta": null,
@@ -250,7 +248,6 @@
   "decatur-il-1971-cantrell": "2026-10-30",
   "decatur-il-2616-logan": "2026-10-30",
   "detroit-mi-8577-mark": "2026-10-30",
-  "saginaw-mi-525521-owen": "2026-10-30",
   "stlouis-mo-2525-tyrell": "2026-10-30",
   "barling-ar-2207-k": "2026-10-31",
   "cahokia-il-1322-williams": "2026-10-31",
@@ -265,5 +262,9 @@
   "stlouis-mo-238-connolly": "2026-10-31",
   "stlouis-mo-4323-obear": "2026-10-31",
   "stlouis-mo-5461-hamilton": "2026-10-31",
-  "stlouis-mo-8401-broadway": "2026-10-31"
+  "stlouis-mo-8401-broadway": "2026-10-31",
+  "decatur-il-1822-decatur": "2026-10-31",
+  "granitecity-il-2539-28th": "2026-10-31",
+  "peoria-il-2012-marquette": "2026-10-31",
+  "peoria-il-2315-ann": "2026-10-31"
 }

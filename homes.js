@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (262 live, rebuilt from master published 2026-10-27) --- */
+/* --- the homes (258 live, rebuilt from master published 2026-10-27) --- */
 const HOMES = [
   {
     id: "eaststlouis-il-2008-61st",
@@ -5295,30 +5295,6 @@ const HOMES = [
     photos:    ["images/stlouis-mo-1924-belt-1.jpg", "images/stlouis-mo-1924-belt-2.jpg", "images/stlouis-mo-1924-belt-3.jpg", "images/stlouis-mo-1924-belt-4.jpg", "images/stlouis-mo-1924-belt-5.jpg", "images/stlouis-mo-1924-belt-6.jpg", "images/stlouis-mo-1924-belt-7.jpg", "images/stlouis-mo-1924-belt-8.jpg", "images/stlouis-mo-1924-belt-9.jpg", "images/stlouis-mo-1924-belt-10.jpg", "images/stlouis-mo-1924-belt-11.jpg", "images/stlouis-mo-1924-belt-12.jpg", "images/stlouis-mo-1924-belt-13.jpg", "images/stlouis-mo-1924-belt-14.jpg", "images/stlouis-mo-1924-belt-15.jpg", "images/stlouis-mo-1924-belt-16.jpg", "images/stlouis-mo-1924-belt-17.jpg", "images/stlouis-mo-1924-belt-18.jpg", "images/stlouis-mo-1924-belt-19.jpg", "images/stlouis-mo-1924-belt-20.jpg", "images/stlouis-mo-1924-belt-21.jpg", "images/stlouis-mo-1924-belt-22.jpg", "images/stlouis-mo-1924-belt-23.jpg", "images/stlouis-mo-1924-belt-24.jpg", "images/stlouis-mo-1924-belt-25.jpg", "images/stlouis-mo-1924-belt-26.jpg", "images/stlouis-mo-1924-belt-27.jpg", "images/stlouis-mo-1924-belt-28.jpg", "images/stlouis-mo-1924-belt-29.jpg", "images/stlouis-mo-1924-belt-30.jpg"],
   },
   {
-    id: "jackson-ms-1415-geeston",
-    address:     "1415 Geeston St",
-    zip:         "39213",
-    description: "Cleaned and ready",
-    copy:        "Four bedrooms, two baths, $1,095 a month, and $3,000 puts the keys in your hand. This Jackson home has been freshly cleaned and is waiting on its next owner. With four bedrooms there's a room for every person and every purpose, and the moving boxes you open here are the ones you never have to tape shut again. Two baths mean fewer morning lineups at the bathroom door. The purchase price is $89,000, fixed in writing the day you sign, and the whole deal runs through owner financing. There's no bank, no mortgage application, and no waiting on a loan officer's verdict. The home is sold as-is, so come walk through every room in person and judge it with your own eyes. Don't let someone else get there first. Book a Tour now and let's get you through the front door.",
-    city:  "Jackson",
-    state: "MS",
-    beds:  4,
-    baths: 2,
-    sqft:  "",
-    lat:   32.351488,
-    lng:   -90.19961,
-    geo:   "exact",
-    status: "Available",
-
-    monthlyPayment: 1095,
-    moveIn:         3000,
-    lockedPrice:    89000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
-  },
-  {
     id: "decatur-il-825-elm",
     address:     "825 W Elm Street",
     zip:         "62522",
@@ -5443,30 +5419,6 @@ const HOMES = [
     photos:    ["images/decatur-il-345-18th-1.jpg", "images/decatur-il-345-18th-2.jpg", "images/decatur-il-345-18th-3.jpg", "images/decatur-il-345-18th-4.jpg", "images/decatur-il-345-18th-5.jpg", "images/decatur-il-345-18th-6.jpg", "images/decatur-il-345-18th-7.jpg", "images/decatur-il-345-18th-8.jpg", "images/decatur-il-345-18th-9.jpg"],
   },
   {
-    id: "stlouis-mo-5124-northland",
-    address:     "5124 Northland Ave",
-    zip:         "63113",
-    description: "Duplex, approx 2,500 sqft total — each unit is 2 bed/1 bath",
-    copy:        "$975 a month and $2,500 at move-in puts a St. Louis duplex within reach: roughly 2,500 square feet across two units, each with two bedrooms and one bath. That's a lot of home for the money, and the way you pay for it is just as solid. Your monthly amount is fixed and written into your contract, so next year's number matches this year's and no landlord gets to decide it's going up. The purchase price is $99,000, agreed on paper the day you sign, and owner financing means no bank and no mortgage application standing between you and the front door. The property is sold as-is, so come walk through both units and judge every room with your own eyes. Homes at this price don't sit around long. Book a Tour now and let's get you inside.",
-    city:  "St. Louis",
-    state: "MO",
-    beds:  2,
-    baths: 1,
-    sqft:  "",
-    lat:   38.670057,
-    lng:   -90.259924,
-    geo:   "exact",
-    status: "Available",
-
-    monthlyPayment: 975,
-    moveIn:         2500,
-    lockedPrice:    99000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
-  },
-  {
     id: "david-il-209-central",
     address:     "209 Central Ave St",
     zip:         "61563",
@@ -5513,30 +5465,6 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-5515-alcott-1.jpg", "images/stlouis-mo-5515-alcott-2.jpg", "images/stlouis-mo-5515-alcott-3.jpg", "images/stlouis-mo-5515-alcott-4.jpg", "images/stlouis-mo-5515-alcott-5.jpg", "images/stlouis-mo-5515-alcott-6.jpg", "images/stlouis-mo-5515-alcott-7.jpg", "images/stlouis-mo-5515-alcott-8.jpg", "images/stlouis-mo-5515-alcott-9.jpg", "images/stlouis-mo-5515-alcott-10.jpg", "images/stlouis-mo-5515-alcott-11.jpg", "images/stlouis-mo-5515-alcott-12.jpg", "images/stlouis-mo-5515-alcott-13.jpg", "images/stlouis-mo-5515-alcott-14.jpg"],
-  },
-  {
-    id: "akron-oh-912-slosson",
-    address:     "912 Slosson St",
-    zip:         "44320",
-    description: "Cleaned out",
-    copy:        "Three bedrooms and two bathrooms in Akron, at $795 a month with $2,000 to move in. This is a home with real room in it: one bedroom to sleep in, one for hobbies or guests, one for whatever the next chapter brings. Two bathrooms mean the morning rush finally eases up. When you carry boxes through this front door, you're settling into a place that answers to you, not a landlord who can change the terms every year. The purchase price is $79,000, agreed in writing when you sign, and it's owner financing all the way. There's no bank, no mortgage application, and no loan officer holding your future in a folder. The home is sold as-is, so come walk every room in person and see how it feels under your own feet. Book a Tour today and grab a showing time before someone else does.",
-    city:  "Akron",
-    state: "OH",
-    beds:  3,
-    baths: 2,
-    sqft:  "",
-    lat:   41.077797,
-    lng:   -81.555301,
-    geo:   "exact",
-    status: "Available",
-
-    monthlyPayment: 795,
-    moveIn:         2000,
-    lockedPrice:    79000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
   },
   {
     id: "decatur-il-1527-oakland",
@@ -5609,28 +5537,6 @@ const HOMES = [
     features: { garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-1825-church-1.jpg", "images/decatur-il-1825-church-2.jpg", "images/decatur-il-1825-church-3.jpg", "images/decatur-il-1825-church-4.jpg", "images/decatur-il-1825-church-5.jpg", "images/decatur-il-1825-church-6.jpg", "images/decatur-il-1825-church-7.jpg", "images/decatur-il-1825-church-8.jpg", "images/decatur-il-1825-church-9.jpg", "images/decatur-il-1825-church-10.jpg", "images/decatur-il-1825-church-11.jpg", "images/decatur-il-1825-church-12.jpg", "images/decatur-il-1825-church-13.jpg", "images/decatur-il-1825-church-14.jpg", "images/decatur-il-1825-church-15.jpg", "images/decatur-il-1825-church-16.jpg", "images/decatur-il-1825-church-17.jpg", "images/decatur-il-1825-church-18.jpg", "images/decatur-il-1825-church-19.jpg", "images/decatur-il-1825-church-20.jpg", "images/decatur-il-1825-church-21.jpg"],
-  },
-  {
-    id: "decatur-il-1871-lawrence",
-    address:     "1871 E Lawrence St",
-    copy:        "$895 a month, $2,000 to move in, and a Decatur, Illinois address with your name on the paperwork. You buy this home directly through owner financing on a contract for deed. There's no bank, no mortgage application, and no loan officer deciding your future from behind a desk. Your monthly payment is written into your agreement, so when the calendar turns to a new year, the number you budgeted for is the same number you pay. Every one of those payments goes toward a place that's becoming yours. The purchase price is $87,000, agreed on in writing the day you sign. The home is sold as-is, so come walk through every room in person and judge it with your own eyes. Don't let this one slip past you. Book a Tour now to set up your showing.",
-    city:  "Decatur",
-    state: "IL",
-    beds:  "",
-    baths: "",
-    sqft:  "",
-    lat:   39.83648,
-    lng:   -88.93132,
-    geo:   "exact",
-    status: "Available",
-
-    monthlyPayment: 895,
-    moveIn:         2000,
-    lockedPrice:    87000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
   },
   {
     id: "stlouis-mo-3422-lucas",

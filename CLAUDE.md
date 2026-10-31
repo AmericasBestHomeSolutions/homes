@@ -59,6 +59,7 @@ Dry run: `python3 scripts/portal_sync.py --dry-run`.
 | `scripts/sold_policy.py` | Sold/pending policy, hashed photo copies, and redirect stubs. The Mac refresh script should call this. |
 | `features.json` | Generator **input**, not read by the site. 505 SHA1-keyed feature records; the generator bakes the relevant ones into each home's `features:` object. |
 | `sitemap.xml` | **Generated.** 6 static URLs + 150 listings. |
+| `book/<slug>/index.html` | **Generated** by `scripts/book_links.py` (called from `refresh_listings.py`). Short booking links for buyer texts: `getownerfinancedhomes.com/book/905-olive` (short slug = id minus `<city>-<state>-`) and `/book/<full-id>` redirect to `owner.getownerfinancedhomes.com/book?home=<id>&lang=en`, keeping the link's query (lang, utm_*) and #fragment. Slugs are pinned in `data/book-links.json` (never reassigned; a collision uses the full id). Retired homes' links redirect to `/`. noindex, not in the sitemap. |
 | `images/` | Photos, ~3,500 files. See conventions below. |
 | `email-signature/signature.html` | Standalone HTML email signature. |
 

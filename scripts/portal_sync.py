@@ -37,6 +37,9 @@ Offline: --portal-json / --crm-json (lists of row dicts) instead of the Sheets A
 
 Afterwards run the site's own post-pass (scripts/refresh_listings.py or
 scripts/build_casas.py) so pages are rebuilt from home.html and dates are stamped.
+
+Homes listed in data/excluded-homes.json (junk or duplicate ids) are taken off the site on
+every run and never added back; see scripts/excluded_homes.py.
 """
 from __future__ import annotations
 
@@ -50,6 +53,9 @@ import urllib.parse
 import urllib.request
 from datetime import date
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import excluded_homes  # noqa: E402  data/excluded-homes.json: ids never put on either site
 
 SHEET_ID = "1QDLFUiBFDrKdTnhnRUHUr_pErOpNsDhnZD9AA7vRBQs"
 PORTAL_RANGE = "'Portal Backup'!A:M"     # stops before Lockbox code (N)
@@ -565,6 +571,7 @@ def plan(root: Path, portal_rows: list[dict], crm_rows: list[dict], wa: list[dic
     crm_closed = {str(r.get("Unique ID") or "").strip().lower(): r.get("Property Status", "")
                   for r in crm_rows if CLOSED.search(str(r.get("Property Status") or ""))}
     portal = portal_index(portal_rows)
+    excluded = excluded_homes.load(root, Path(__file__).resolve().parents[1])
     out = {"add": [], "update": [], "retire": [], "hand": [], "photos": [], "relist": [],
            "closed_streets": closed_streets(portal_rows, crm_rows)}
     for hid, row in portal.items():
@@ -592,6 +599,9 @@ def plan(root: Path, portal_rows: list[dict], crm_rows: list[dict], wa: list[dic
                     out["update"].append({"id": sid, "address": row["Address"], "diffs": diffs})
             continue
         if status.lower() != "available":
+            continue
+        if hid in excluded or sid in excluded:
+            out["hand"].append(f"{row['Address']}, {row['City']} ({hid}): portal Available but in data/excluded-homes.json; not added")
             continue
         if not price or not monthly:
             out["hand"].append(f"{row['Address']}, {row['City']} ({row['Portal PROP id']}): no price or monthly payment; skipped")
@@ -783,6 +793,14 @@ def main(argv=None) -> int:
     ap.add_argument("--summary-out", type=Path)
     ap.add_argument("--force", action="store_true", help="allow more than MAX_RETIRE retirements")
     a = ap.parse_args(argv)
+    # data/excluded-homes.json first: needs no Google key, so it holds even if the sheet read fails
+    homes_repo = Path(__file__).resolve().parents[1]
+    if a.dry_run:
+        ex = sorted(i for i in excluded_homes.load(a.site, homes_repo) if f'id: "{i}"' in (a.site / "homes.js").read_text(encoding="utf-8"))
+    else:
+        ex = excluded_homes.apply(a.site, a.lang, extra=(homes_repo,))
+    if ex:
+        print("Excluded (data/excluded-homes.json), taken off the site: " + ", ".join(ex))
     if a.portal_json:
         portal, crm = load_json(a.portal_json), load_json(a.crm_json)
         wa = [{"Address": r.get("Address", ""), "City": r.get("City", ""), "State": r.get("State", ""),

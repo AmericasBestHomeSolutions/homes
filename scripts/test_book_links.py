@@ -53,6 +53,7 @@ class T(unittest.TestCase):
             self.assertIn("og:image", short)
             self.assertIn('"905-olive": "decatur-il-905-olive"', (r / "data" / "book-links.json").read_text())
             self.assertEqual(B.links(r), {"decatur-il-905-olive": "905-olive"})
+            self.assertEqual(json.loads((r / "data" / "book-links.json").read_text())["live"], {"decatur-il-905-olive": "905-olive"})
             self.assertEqual(B.build(r, "en")["changed"], 0)                    # idempotent
 
     def test_spanish_site_uses_agendar_and_lang_es(self):
@@ -73,6 +74,8 @@ class T(unittest.TestCase):
             self.assertTrue((r / "book" / "decatur-il-905-olive" / "index.html").is_file())
             self.assertTrue((r / "book" / "peoria-il-905-olive" / "index.html").is_file())
             self.assertEqual(B.links(r)["peoria-il-905-olive"], "peoria-il-905-olive")
+            live = json.loads((r / "data" / "book-links.json").read_text())["live"]
+            self.assertEqual(live["decatur-il-905-olive"], "decatur-il-905-olive")
         with tempfile.TemporaryDirectory() as d:
             r = self.site(d, ("decatur-il-905-olive", "905 Olive", "Available"))
             B.build(r, "en")

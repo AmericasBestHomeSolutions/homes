@@ -11,7 +11,8 @@ page's own home.
 The Spanish site writes /agendar/... with lang=es (a ?lang=en on the link still wins). GitHub Pages answers
 /book/905-olive with a 301 to /book/905-olive/ and keeps the query string, so the link in a text has no slash.
 
-Short slugs are kept in data/book-links.json so a slug, once given, always means the same home: a later home whose
+Short slugs are kept in data/book-links.json ("slugs"; "live" lists what a text should carry for each live home,
+and the CRM reads it from the published site) so a slug, once given, always means the same home: a later home whose
 short slug is taken uses its full id instead. Two new homes that want the same free slug both use their full ids
 and the slug stays unissued. When a home leaves the site (sold, retired, excluded) its pages stay as a redirect to
 the home page, so old texts still land somewhere. The page shows only the street address, city and state; never
@@ -196,7 +197,10 @@ def build(root: Path, lang: str | None = None, extra: tuple[Path, ...] = ()) -> 
     others = tuple(load_state(Path(p)) for p in extra if (Path(p) / STATE).is_file())
     state = assign(load_state(root), ids, others)
     (root / STATE).parent.mkdir(parents=True, exist_ok=True)
-    _write(root / STATE, json.dumps(state, indent=2) + "\n")
+    by_id = {hid: s for s, hid in state["slugs"].items()}
+    # "live": what a text should carry for each home on the site right now (the CRM reads this file from the site).
+    published = {**state, "live": {hid: by_id.get(hid, hid) for hid in ids}}
+    _write(root / STATE, json.dumps(published, indent=2) + "\n")
 
     out = root / t["dir"]
     pages: dict[str, str] = {}

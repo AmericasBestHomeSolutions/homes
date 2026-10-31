@@ -18,9 +18,15 @@ taken down (only when no other closed home shares its street and city). Those re
 listed in the summary so the CRM row can be corrected. It never adds a home with no price or
 monthly payment; those are listed under "check by hand".
 
-Columns: only Portal Backup A:M (Portal PROP id .. Date listed) and CRM_Properties
-A:F (Unique ID .. Property Status) are requested from Google, so lockbox, seller
-and phone columns are never downloaded, let alone written.
+Columns: only Portal Backup A:M (Portal PROP id .. Date listed) plus the photo links in R,
+CRM_Properties A:F (Unique ID .. Property Status), and WhatsApp Intel B:D (address) plus the
+album links in J (Photos) are requested from Google, so lockbox, seller and phone columns are
+never downloaded, let alone written.
+
+Photos: a home with no seller photos gets them from the portal note's link, else from a
+WhatsApp Intel album link for the same address (Drive folder, Dropbox, bit.ly to either).
+iCloud and Google Photos links are not read (no plain download URL). At most
+MAX_PHOTO_HOMES albums are downloaded per run; the rest are picked up on later runs.
 
 Credentials: env GOOGLE_SERVICE_ACCOUNT_JSON (the key JSON, a GitHub Actions secret).
 Offline: --portal-json / --crm-json (lists of row dicts) instead of the Sheets API.
@@ -49,6 +55,9 @@ SHEET_ID = "1QDLFUiBFDrKdTnhnRUHUr_pErOpNsDhnZD9AA7vRBQs"
 PORTAL_RANGE = "'Portal Backup'!A:M"     # stops before Lockbox code (N)
 NOTE_RANGE = "'Portal Backup'!R:R"       # Listing note: only photo links are taken from it, the text is never published
 CRM_RANGE = "'CRM_Properties'!A:F"        # Unique ID .. Property Status only
+WA_ADDR_RANGE = "'WhatsApp Intel'!B:D"    # Address, City, ST
+WA_PHOTO_RANGE = "'WhatsApp Intel'!J:J"   # Photos: album links posted in the group (only links are kept)
+MAX_PHOTO_HOMES = 8    # homes whose albums are downloaded per run; the rest wait for the next run
 PORTAL_COLUMNS = ("Portal PROP id", "Address", "City", "State", "Zip", "Status", "Beds", "Baths", "Sqft",
                   "Price", "Down payment", "Monthly payment", "Date listed", "Photo links")
 CLOSED = re.compile(r"(?i)\b(sold|pending|not listed|deposit)\b")
@@ -112,7 +121,7 @@ def _rows(values) -> list[dict]:
             if any(str(c).strip() for c in r)]
 
 
-def read_sheets() -> tuple[list[dict], list[dict]]:
+def read_sheets() -> tuple[list[dict], list[dict], list[dict]]:
     info = os.environ.get("GOOGLE_SERVICE_ACCOUNT_JSON", "").strip()
     if not info:
         raise SystemExit("GOOGLE_SERVICE_ACCOUNT_JSON is not set (GitHub secret). Use --portal-json for offline runs.")
@@ -122,12 +131,13 @@ def read_sheets() -> tuple[list[dict], list[dict]]:
         json.loads(info), scopes=["https://www.googleapis.com/auth/spreadsheets.readonly"])
     creds.refresh(Request())
     query = urllib.parse.urlencode([("ranges", PORTAL_RANGE), ("ranges", CRM_RANGE), ("ranges", NOTE_RANGE),
+                                    ("ranges", WA_ADDR_RANGE), ("ranges", WA_PHOTO_RANGE),
                                     ("majorDimension", "ROWS")])
     req = urllib.request.Request(f"https://sheets.googleapis.com/v4/spreadsheets/{SHEET_ID}/values:batchGet?{query}",
                                  headers={"Authorization": f"Bearer {creds.token}"})
     with urllib.request.urlopen(req, timeout=60) as resp:
         payload = json.load(resp)
-    portal_v, crm_v, note_v = (r.get("values") or [] for r in payload["valueRanges"])
+    portal_v, crm_v, note_v, wa_addr_v, wa_photo_v = (r.get("values") or [] for r in payload["valueRanges"])
     portal, crm = _rows(portal_v), _rows(crm_v)
     # Same row order as A:M (both start at row 1); keep only the photo links from each note.
     notes = [(row[0] if row else "") for row in note_v[1:]]
@@ -137,7 +147,19 @@ def read_sheets() -> tuple[list[dict], list[dict]]:
             by_row[len(by_row)] = " ".join(photo_links(notes[i] if i < len(notes) else ""))
     for i, row in enumerate(portal):
         row["Photo links"] = by_row.get(i, "")
-    return portal, crm
+    return portal, crm, wa_rows(wa_addr_v, wa_photo_v)
+
+
+def wa_rows(addr_v, photo_v) -> list[dict]:
+    """WhatsApp Intel rows that carry a usable album link: address, city, state and the links only."""
+    out = []
+    for i, row in enumerate(addr_v[1:], 1):
+        cell = photo_v[i][0] if i < len(photo_v) and photo_v[i] else ""
+        links = photo_links(cell)
+        if links and row and str(row[0]).strip():
+            out.append({"Address": str(row[0]).strip(), "City": str(row[1]).strip() if len(row) > 1 else "",
+                        "State": str(row[2]).strip() if len(row) > 2 else "", "links": links})
+    return out
 
 
 def load_json(path: str | None) -> list[dict]:
@@ -155,6 +177,7 @@ def whitelist(rows: list[dict]) -> list[dict]:
 # ---------- photos ----------
 # Sellers put a photo link in the portal's Listing note: a public Google Drive folder, a Dropbox
 # file or zip (dl=1), or a direct image URL. iCloud shared albums are not supported (no plain URL).
+SHORT_HOSTS = {"bit.ly", "www.bit.ly"}   # resolved at download time; used only if it lands on Drive/Dropbox
 LINK_RE = re.compile(r"https?://[^\s\"'<>]+")
 MAX_PHOTOS = 30
 MAX_SIDE = 1280        # same as the existing images/ files (960x1280 portrait, progressive JPEG)
@@ -166,7 +189,7 @@ def photo_links(note: str) -> list[str]:
     for url in LINK_RE.findall(note or ""):
         url = url.rstrip(".,);")
         host = urllib.parse.urlparse(url).netloc.lower()
-        if ("drive.google.com" in host and "/folders/" in url) or "dropbox.com" in host \
+        if ("drive.google.com" in host and "/folders/" in url) or "dropbox.com" in host or host in SHORT_HOSTS \
                 or re.search(r"\.(jpe?g|png|webp)(\?|$)", url, re.I):
             links.append(url)
     return links
@@ -221,6 +244,11 @@ def download_photos(links: list[str]) -> list[bytes]:
     blobs: list[bytes] = []
     for url in links:
         try:
+            if urllib.parse.urlparse(url).netloc.lower() in SHORT_HOSTS:
+                with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=30) as resp:
+                    url = resp.geturl()
+                if not (("drive.google.com" in url and "/folders/" in url) or "dropbox.com" in url):
+                    continue
             if "drive.google.com" in url:
                 blobs += _drive_folder(url)
             elif "dropbox.com" in url:
@@ -474,7 +502,7 @@ def drop_sold_cards(text: str, adds: list[dict], closed: dict) -> tuple[str, lis
     return text[:m.start(1)] + "\n".join(kept) + text[m.end(1):], dropped
 
 
-def plan(root: Path, portal_rows: list[dict], crm_rows: list[dict]) -> dict:
+def plan(root: Path, portal_rows: list[dict], crm_rows: list[dict], wa: list[dict] | None = None) -> dict:
     text = (root / "homes.js").read_text(encoding="utf-8")
     site = blocks(text)
     site_keys = {"ids": set(site), "by_addr": {}}
@@ -524,7 +552,43 @@ def plan(root: Path, portal_rows: list[dict], crm_rows: list[dict]) -> dict:
                            "down": down or 0, "monthly": monthly})
         out["photos"].append({"id": hid, "links": row.get("Photo links", "").split()})
     out["add"].sort(key=lambda r: r["id"])
+    wa_photos(out, site, wa or [], {r["id"]: r for r in out["add"]})
     return out
+
+
+def wa_photos(out: dict, site: dict, wa: list[dict], added: dict) -> None:
+    """Add WhatsApp Intel album links for site homes that still have no seller photos.
+
+    A group post matches a home by house number + street word, and by city when the post names
+    one; a post with no city is used only if exactly one site home has that number + street."""
+    homes = {}   # id -> (number, street, city slug)
+    for sid, m in site.items():
+        if (field(m.group(0), "photos") or "[]").strip() == "[]":
+            number, street = address_key(field(m.group(0), "address") or "")
+            homes[sid] = (number, street, city_slug(field(m.group(0), "city") or ""))
+    for hid, r in added.items():
+        number, street = address_key(r["address"])
+        homes[hid] = (number, street, city_slug(r["city"]))
+    by_ns: dict[tuple, list[str]] = {}
+    for hid, (number, street, _c) in homes.items():
+        if number and street:
+            by_ns.setdefault((number, street), []).append(hid)
+    found: dict[str, list[str]] = {}
+    for row in wa:
+        number, street = address_key(row["Address"])
+        ids = by_ns.get((number, street), [])
+        city = city_slug(row.get("City", ""))
+        ids = [h for h in ids if homes[h][2] == city] if city else (ids if len(ids) == 1 else [])
+        for h in ids:
+            found.setdefault(h, [])
+            found[h] += [u for u in row["links"] if u not in found[h]]
+    items = {x["id"]: x for x in out["photos"]}
+    for hid, links in sorted(found.items()):
+        item = items.get(hid)
+        if item is None:
+            item = items[hid] = {"id": hid, "links": []}
+            out["photos"].append(item)
+        item["links"] += [u for u in links if u not in item["links"]]
 
 
 def apply(root: Path, p: dict, lang: str, geocoder=geocode) -> None:
@@ -609,12 +673,14 @@ def photos_into(root: Path, p: dict, fetch=download_photos) -> None:
     text = js.read_text(encoding="utf-8")
     site = blocks(text)
     p.setdefault("photo_result", {})
+    fetched = 0
     for item in p.get("photos", []):
         hid = item["id"]
         if hid not in site:
             continue
         files = gallery_on_disk(root, hid)
-        if not files and item["links"]:
+        if not files and item["links"] and fetched < MAX_PHOTO_HOMES:
+            fetched += 1
             files = save_photos(root, hid, fetch(item["links"]))
         if not files:
             continue
@@ -655,18 +721,22 @@ def main(argv=None) -> int:
     ap.add_argument("--lang", choices=("en", "es"), default="en")
     ap.add_argument("--portal-json")
     ap.add_argument("--crm-json")
+    ap.add_argument("--wa-json", help="offline WhatsApp Intel rows: [{Address, City, State, Photos}]")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--summary-out", type=Path)
     ap.add_argument("--force", action="store_true", help="allow more than MAX_RETIRE retirements")
     a = ap.parse_args(argv)
     if a.portal_json:
         portal, crm = load_json(a.portal_json), load_json(a.crm_json)
+        wa = [{"Address": r.get("Address", ""), "City": r.get("City", ""), "State": r.get("State", ""),
+               "links": photo_links(r.get("Photos", ""))} for r in load_json(a.wa_json)]
+        wa = [r for r in wa if r["links"]]
     else:
-        portal, crm = read_sheets()
+        portal, crm, wa = read_sheets()
     portal = whitelist(portal)
     if len(portal) < MIN_PORTAL_ROWS:
         raise SystemExit(f"Portal Backup returned {len(portal)} rows (< {MIN_PORTAL_ROWS}); refusing to sync.")
-    p = plan(a.site, portal, crm)
+    p = plan(a.site, portal, crm, wa)
     if len(p["retire"]) > MAX_RETIRE and not a.force:
         raise SystemExit(f"{len(p['retire'])} homes would be retired (> {MAX_RETIRE}); refusing without --force.")
     pending = [x for x in p["photos"] if x["links"] or gallery_on_disk(a.site, x["id"])]

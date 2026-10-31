@@ -5161,7 +5161,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/peoria-il-1825-idaho-1.jpg", "images/peoria-il-1825-idaho-2.jpg", "images/peoria-il-1825-idaho-3.jpg", "images/peoria-il-1825-idaho-4.jpg", "images/peoria-il-1825-idaho-5.jpg", "images/peoria-il-1825-idaho-6.jpg", "images/peoria-il-1825-idaho-7.jpg", "images/peoria-il-1825-idaho-8.jpg", "images/peoria-il-1825-idaho-9.jpg", "images/peoria-il-1825-idaho-10.jpg", "images/peoria-il-1825-idaho-11.jpg", "images/peoria-il-1825-idaho-12.jpg", "images/peoria-il-1825-idaho-13.jpg", "images/peoria-il-1825-idaho-14.jpg", "images/peoria-il-1825-idaho-15.jpg", "images/peoria-il-1825-idaho-16.jpg", "images/peoria-il-1825-idaho-17.jpg", "images/peoria-il-1825-idaho-18.jpg", "images/peoria-il-1825-idaho-19.jpg", "images/peoria-il-1825-idaho-20.jpg", "images/peoria-il-1825-idaho-21.jpg", "images/peoria-il-1825-idaho-22.jpg", "images/peoria-il-1825-idaho-23.jpg", "images/peoria-il-1825-idaho-24.jpg", "images/peoria-il-1825-idaho-25.jpg", "images/peoria-il-1825-idaho-26.jpg", "images/peoria-il-1825-idaho-27.jpg", "images/peoria-il-1825-idaho-28.jpg", "images/peoria-il-1825-idaho-29.jpg", "images/peoria-il-1825-idaho-30.jpg"],
   },
   {
     id: "stlouis-mo-2154-68th",
@@ -5183,7 +5183,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/stlouis-mo-2154-68th-1.jpg", "images/stlouis-mo-2154-68th-2.jpg", "images/stlouis-mo-2154-68th-3.jpg", "images/stlouis-mo-2154-68th-4.jpg", "images/stlouis-mo-2154-68th-5.jpg", "images/stlouis-mo-2154-68th-6.jpg", "images/stlouis-mo-2154-68th-7.jpg", "images/stlouis-mo-2154-68th-8.jpg", "images/stlouis-mo-2154-68th-9.jpg", "images/stlouis-mo-2154-68th-10.jpg", "images/stlouis-mo-2154-68th-11.jpg", "images/stlouis-mo-2154-68th-12.jpg", "images/stlouis-mo-2154-68th-13.jpg", "images/stlouis-mo-2154-68th-14.jpg", "images/stlouis-mo-2154-68th-15.jpg", "images/stlouis-mo-2154-68th-16.jpg", "images/stlouis-mo-2154-68th-17.jpg", "images/stlouis-mo-2154-68th-18.jpg"],
   },
   {
     id: "stlouis-mo-5044-claxton",
@@ -5205,7 +5205,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/stlouis-mo-5044-claxton-1.jpg", "images/stlouis-mo-5044-claxton-2.jpg", "images/stlouis-mo-5044-claxton-3.jpg", "images/stlouis-mo-5044-claxton-4.jpg", "images/stlouis-mo-5044-claxton-5.jpg", "images/stlouis-mo-5044-claxton-6.jpg", "images/stlouis-mo-5044-claxton-7.jpg", "images/stlouis-mo-5044-claxton-8.jpg", "images/stlouis-mo-5044-claxton-9.jpg", "images/stlouis-mo-5044-claxton-10.jpg", "images/stlouis-mo-5044-claxton-11.jpg", "images/stlouis-mo-5044-claxton-12.jpg", "images/stlouis-mo-5044-claxton-13.jpg", "images/stlouis-mo-5044-claxton-14.jpg", "images/stlouis-mo-5044-claxton-15.jpg", "images/stlouis-mo-5044-claxton-16.jpg", "images/stlouis-mo-5044-claxton-17.jpg", "images/stlouis-mo-5044-claxton-18.jpg", "images/stlouis-mo-5044-claxton-19.jpg", "images/stlouis-mo-5044-claxton-20.jpg", "images/stlouis-mo-5044-claxton-21.jpg", "images/stlouis-mo-5044-claxton-22.jpg", "images/stlouis-mo-5044-claxton-23.jpg", "images/stlouis-mo-5044-claxton-24.jpg", "images/stlouis-mo-5044-claxton-25.jpg", "images/stlouis-mo-5044-claxton-26.jpg", "images/stlouis-mo-5044-claxton-27.jpg", "images/stlouis-mo-5044-claxton-28.jpg", "images/stlouis-mo-5044-claxton-29.jpg", "images/stlouis-mo-5044-claxton-30.jpg"],
   },
   {
     id: "carbondale-il-307-sycamore",
@@ -5227,7 +5227,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/carbondale-il-307-sycamore-1.jpg", "images/carbondale-il-307-sycamore-2.jpg", "images/carbondale-il-307-sycamore-3.jpg", "images/carbondale-il-307-sycamore-4.jpg", "images/carbondale-il-307-sycamore-5.jpg", "images/carbondale-il-307-sycamore-6.jpg", "images/carbondale-il-307-sycamore-7.jpg", "images/carbondale-il-307-sycamore-8.jpg", "images/carbondale-il-307-sycamore-9.jpg", "images/carbondale-il-307-sycamore-10.jpg", "images/carbondale-il-307-sycamore-11.jpg", "images/carbondale-il-307-sycamore-12.jpg", "images/carbondale-il-307-sycamore-13.jpg", "images/carbondale-il-307-sycamore-14.jpg", "images/carbondale-il-307-sycamore-15.jpg", "images/carbondale-il-307-sycamore-16.jpg", "images/carbondale-il-307-sycamore-17.jpg", "images/carbondale-il-307-sycamore-18.jpg", "images/carbondale-il-307-sycamore-19.jpg", "images/carbondale-il-307-sycamore-20.jpg", "images/carbondale-il-307-sycamore-21.jpg", "images/carbondale-il-307-sycamore-22.jpg", "images/carbondale-il-307-sycamore-23.jpg", "images/carbondale-il-307-sycamore-24.jpg", "images/carbondale-il-307-sycamore-25.jpg", "images/carbondale-il-307-sycamore-26.jpg", "images/carbondale-il-307-sycamore-27.jpg", "images/carbondale-il-307-sycamore-28.jpg", "images/carbondale-il-307-sycamore-29.jpg", "images/carbondale-il-307-sycamore-30.jpg"],
   },
   {
     id: "decatur-il-660-van",
@@ -5249,7 +5249,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-660-van-1.jpg", "images/decatur-il-660-van-2.jpg", "images/decatur-il-660-van-3.jpg", "images/decatur-il-660-van-4.jpg", "images/decatur-il-660-van-5.jpg", "images/decatur-il-660-van-6.jpg", "images/decatur-il-660-van-7.jpg", "images/decatur-il-660-van-8.jpg", "images/decatur-il-660-van-9.jpg"],
   },
   {
     id: "nokomis-il-524-albert",
@@ -5315,7 +5315,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-1112-main-1.jpg", "images/decatur-il-1112-main-2.jpg", "images/decatur-il-1112-main-3.jpg", "images/decatur-il-1112-main-4.jpg", "images/decatur-il-1112-main-5.jpg", "images/decatur-il-1112-main-6.jpg", "images/decatur-il-1112-main-7.jpg", "images/decatur-il-1112-main-8.jpg", "images/decatur-il-1112-main-9.jpg", "images/decatur-il-1112-main-10.jpg", "images/decatur-il-1112-main-11.jpg", "images/decatur-il-1112-main-12.jpg"],
   },
   {
     id: "decatur-il-decatur",
@@ -5432,7 +5432,7 @@ const HOMES = [
 
     features: { basement: "yes", central_air: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-825-elm-1.jpg", "images/decatur-il-825-elm-2.jpg", "images/decatur-il-825-elm-3.jpg", "images/decatur-il-825-elm-4.jpg", "images/decatur-il-825-elm-5.jpg", "images/decatur-il-825-elm-6.jpg", "images/decatur-il-825-elm-7.jpg", "images/decatur-il-825-elm-8.jpg", "images/decatur-il-825-elm-9.jpg"],
   },
   {
     id: "peoria-il-926-greenlawn",
@@ -5793,7 +5793,7 @@ const HOMES = [
 
     features: { garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-1825-church-1.jpg", "images/decatur-il-1825-church-2.jpg", "images/decatur-il-1825-church-3.jpg", "images/decatur-il-1825-church-4.jpg", "images/decatur-il-1825-church-5.jpg", "images/decatur-il-1825-church-6.jpg", "images/decatur-il-1825-church-7.jpg", "images/decatur-il-1825-church-8.jpg", "images/decatur-il-1825-church-9.jpg", "images/decatur-il-1825-church-10.jpg", "images/decatur-il-1825-church-11.jpg", "images/decatur-il-1825-church-12.jpg", "images/decatur-il-1825-church-13.jpg", "images/decatur-il-1825-church-14.jpg", "images/decatur-il-1825-church-15.jpg", "images/decatur-il-1825-church-16.jpg", "images/decatur-il-1825-church-17.jpg", "images/decatur-il-1825-church-18.jpg", "images/decatur-il-1825-church-19.jpg", "images/decatur-il-1825-church-20.jpg", "images/decatur-il-1825-church-21.jpg"],
   },
   {
     id: "decatur-il-1871-lawrence",

@@ -6,5 +6,12 @@ const LISTED_ON = {
   "decatur-il-345-18th": "2026-10-29",
   "ildecatur-il-1929-prairie": "2026-10-29",
   "stlouis-mo-5515-alcott": "2026-10-29",
-  "decatur-il-1825-church": "2026-10-29"
+  "decatur-il-1825-church": "2026-10-29",
+  "cahokia-il-1414-richard": "2026-10-30",
+  "decatur-il-1305-whitmer": "2026-10-30",
+  "decatur-il-1971-cantrell": "2026-10-30",
+  "decatur-il-2616-logan": "2026-10-30",
+  "detroit-mi-8577-mark": "2026-10-30",
+  "saginaw-mi-525521-owen": "2026-10-30",
+  "stlouis-mo-2525-tyrell": "2026-10-30"
 };

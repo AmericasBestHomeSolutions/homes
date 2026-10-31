@@ -18,15 +18,19 @@ taken down (only when no other closed home shares its street and city). Those re
 listed in the summary so the CRM row can be corrected. It never adds a home with no price or
 monthly payment; those are listed under "check by hand".
 
-Columns: only Portal Backup A:M (Portal PROP id .. Date listed) plus the photo links in R,
+Columns: only Portal Backup A:M (Portal PROP id .. Date listed), its 'Photos link' column (found by
+header name; Grok Bot's daily portal backup copies the portal's per-home photos link there), the photo links in R,
 CRM_Properties A:F (Unique ID .. Property Status), and WhatsApp Intel B:D (address) plus the
 album links in J (Photos) are requested from Google, so lockbox, seller and phone columns are
 never downloaded, let alone written.
 
-Photos: a home with no seller photos gets them from the portal note's link, else from a
-WhatsApp Intel album link for the same address (Drive folder, Dropbox, bit.ly to either).
-iCloud and Google Photos links are not read (no plain download URL). At most
-MAX_PHOTO_HOMES albums are downloaded per run; the rest are picked up on later runs.
+Photos: a home with no seller photos gets them from, in order, the portal's 'Photos link', a link
+in the portal note (R), or a WhatsApp Intel album link for the same address. The first source that
+yields photos wins. Readable without any login: public Google Drive folders, Dropbox, bit.ly to
+either, public Google Photos albums, iCloud shared albums and iCloud photo links (share.icloud.com).
+A link that yields nothing (album no longer shared, OneDrive, a doc) is listed in the summary for a
+browser pass or a new link. At most MAX_PHOTO_HOMES albums (and PHOTO_BUDGET_S seconds) per run; the
+rest are picked up on later runs. Real photos replace the Street View fallback image.
 
 Credentials: env GOOGLE_SERVICE_ACCOUNT_JSON (the key JSON, a GitHub Actions secret).
 Offline: --portal-json / --crm-json (lists of row dicts) instead of the Sheets API.
@@ -59,13 +63,16 @@ import excluded_homes  # noqa: E402  data/excluded-homes.json: ids never put on 
 
 SHEET_ID = "1QDLFUiBFDrKdTnhnRUHUr_pErOpNsDhnZD9AA7vRBQs"
 PORTAL_RANGE = "'Portal Backup'!A:M"     # stops before Lockbox code (N)
+HEADER_RANGE = "'Portal Backup'!1:1"     # header names only, to find the 'Photos link' column
+PHOTOS_HEADER = "photos link"             # Grok Bot's portal backup writes the portal's photos link here
 NOTE_RANGE = "'Portal Backup'!R:R"       # Listing note: only photo links are taken from it, the text is never published
 CRM_RANGE = "'CRM_Properties'!A:F"        # Unique ID .. Property Status only
 WA_ADDR_RANGE = "'WhatsApp Intel'!B:D"    # Address, City, ST
 WA_PHOTO_RANGE = "'WhatsApp Intel'!J:J"   # Photos: album links posted in the group (only links are kept)
-MAX_PHOTO_HOMES = 8    # homes whose albums are downloaded per run; the rest wait for the next run
+MAX_PHOTO_HOMES = 15   # homes whose albums are downloaded per run; the rest wait for the next run
+PHOTO_BUDGET_S = 600   # stop starting new album downloads after 10 minutes (workflow timeout is 20)
 PORTAL_COLUMNS = ("Portal PROP id", "Address", "City", "State", "Zip", "Status", "Beds", "Baths", "Sqft",
-                  "Price", "Down payment", "Monthly payment", "Date listed", "Photo links")
+                  "Price", "Down payment", "Monthly payment", "Date listed", "Portal photos", "Photo links")
 CLOSED = re.compile(r"(?i)\b(sold|pending|not listed|deposit)\b")
 DIRS = {"n", "s", "e", "w", "ne", "nw", "se", "sw", "north", "south", "east", "west"}
 MAX_RETIRE = 25        # a bad read must not empty the site
@@ -136,24 +143,50 @@ def read_sheets() -> tuple[list[dict], list[dict], list[dict]]:
     creds = service_account.Credentials.from_service_account_info(
         json.loads(info), scopes=["https://www.googleapis.com/auth/spreadsheets.readonly"])
     creds.refresh(Request())
-    query = urllib.parse.urlencode([("ranges", PORTAL_RANGE), ("ranges", CRM_RANGE), ("ranges", NOTE_RANGE),
-                                    ("ranges", WA_ADDR_RANGE), ("ranges", WA_PHOTO_RANGE),
-                                    ("majorDimension", "ROWS")])
-    req = urllib.request.Request(f"https://sheets.googleapis.com/v4/spreadsheets/{SHEET_ID}/values:batchGet?{query}",
-                                 headers={"Authorization": f"Bearer {creds.token}"})
-    with urllib.request.urlopen(req, timeout=60) as resp:
-        payload = json.load(resp)
-    portal_v, crm_v, note_v, wa_addr_v, wa_photo_v = (r.get("values") or [] for r in payload["valueRanges"])
+
+    def batch(ranges):
+        query = urllib.parse.urlencode([("ranges", r) for r in ranges] + [("majorDimension", "ROWS")])
+        req = urllib.request.Request(f"https://sheets.googleapis.com/v4/spreadsheets/{SHEET_ID}/values:batchGet?{query}",
+                                     headers={"Authorization": f"Bearer {creds.token}"})
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            return [r.get("values") or [] for r in json.load(resp)["valueRanges"]]
+
+    # Find 'Photos link' by its header name, then request that one column (never the lockbox/seller ones).
+    header = (batch([HEADER_RANGE])[0] or [[]])[0]
+    photos_range = photos_column_range(header)
+    ranges = [PORTAL_RANGE, CRM_RANGE, NOTE_RANGE, WA_ADDR_RANGE, WA_PHOTO_RANGE] + ([photos_range] if photos_range else [])
+    got = batch(ranges)
+    portal_v, crm_v, note_v, wa_addr_v, wa_photo_v = got[:5]
+    photo_v = got[5] if photos_range else []
     portal, crm = _rows(portal_v), _rows(crm_v)
-    # Same row order as A:M (both start at row 1); keep only the photo links from each note.
+    # Same row order as A:M (all ranges start at row 1); keep only the links from each cell.
     notes = [(row[0] if row else "") for row in note_v[1:]]
+    plinks = [(row[0] if row else "") for row in photo_v[1:]]
     by_row = {}
     for i, v in enumerate(portal_v[1:]):
         if any(str(c).strip() for c in v):
-            by_row[len(by_row)] = " ".join(photo_links(notes[i] if i < len(notes) else ""))
+            by_row[len(by_row)] = (" ".join(album_links(plinks[i] if i < len(plinks) else "")),
+                                   " ".join(photo_links(notes[i] if i < len(notes) else "")))
     for i, row in enumerate(portal):
-        row["Photo links"] = by_row.get(i, "")
+        row["Portal photos"], row["Photo links"] = by_row.get(i, ("", ""))
     return portal, crm, wa_rows(wa_addr_v, wa_photo_v)
+
+
+def col_letter(i: int) -> str:
+    out = ""
+    i += 1
+    while i:
+        i, r = divmod(i - 1, 26)
+        out = chr(65 + r) + out
+    return out
+
+
+def photos_column_range(header: list) -> str | None:
+    """'Portal Backup'!V:V (or wherever the 'Photos link' header is), or None before the column exists."""
+    for i, h in enumerate(header):
+        if str(h).strip().lower() == PHOTOS_HEADER and i > 12:   # never one of A:M's own columns
+            return f"'Portal Backup'!{col_letter(i)}:{col_letter(i)}"
+    return None
 
 
 def wa_rows(addr_v, photo_v) -> list[dict]:
@@ -174,9 +207,11 @@ def load_json(path: str | None) -> list[dict]:
 
 def whitelist(rows: list[dict]) -> list[dict]:
     out = [{k: str(r.get(k) or "").strip() for k in PORTAL_COLUMNS} for r in rows]
-    for r, src in zip(out, rows):   # offline JSON may carry the raw note; keep only its links
+    for r, src in zip(out, rows):   # offline JSON may carry the raw note / link cell; keep only links
         if not r["Photo links"] and src.get("Listing note"):
             r["Photo links"] = " ".join(photo_links(src["Listing note"]))
+        if not r["Portal photos"] and src.get("Photos link"):
+            r["Portal photos"] = " ".join(album_links(src["Photos link"]))
     return out
 
 
@@ -191,14 +226,42 @@ UA = {"User-Agent": "Mozilla/5.0 (portal-sync; +https://getownerfinancedhomes.co
 
 
 def photo_links(note: str) -> list[str]:
+    """Album links we can read without a login, in the order they appear."""
     links = []
     for url in LINK_RE.findall(note or ""):
-        url = url.rstrip(".,);")
+        url = url.rstrip(".,);>")
         host = urllib.parse.urlparse(url).netloc.lower()
         if ("drive.google.com" in host and "/folders/" in url) or "dropbox.com" in host or host in SHORT_HOSTS \
+                or _is_gphotos(url) or _is_icloud(url) \
                 or re.search(r"\.(jpe?g|png|webp)(\?|$)", url, re.I):
+            if url not in links:
+                links.append(url)
+    return links
+
+
+def album_links(cell: str) -> list[str]:
+    """The portal's 'Photos link' cell: readable links as above, plus any other link (OneDrive, a doc,
+    a tour site) so it can be listed for a browser pass instead of silently dropped."""
+    links = photo_links(cell)
+    for url in LINK_RE.findall(cell or ""):
+        url = url.rstrip(".,);>")
+        if url not in links:
             links.append(url)
     return links
+
+
+def _is_gphotos(url: str) -> bool:
+    host = urllib.parse.urlparse(url).netloc.lower()
+    return host == "photos.app.goo.gl" or (host == "photos.google.com" and "/share/" in url)
+
+
+def _is_icloud(url: str) -> bool:
+    host = urllib.parse.urlparse(url).netloc.lower()
+    return host == "share.icloud.com" or (host.endswith("icloud.com") and ("sharedalbum" in url or "icloudlinks" in url))
+
+
+def readable(url: str) -> bool:
+    return bool(photo_links(url))
 
 
 def _get(url: str, timeout=60) -> bytes:
@@ -239,11 +302,139 @@ def _dropbox(url: str) -> list[bytes]:
     q = dict(urllib.parse.parse_qsl(parts.query))
     q["dl"] = "1"
     data = _get(urllib.parse.urlunparse(parts._replace(query=urllib.parse.urlencode(q))), timeout=180)
+    if data.startswith(b"[InternetShortcut]"):   # a .url file pointing at the real album
+        m = re.search(rb"URL=(\S+)", data)
+        inner = m.group(1).decode("utf-8", "replace") if m else ""
+        return download_photos([inner]) if inner and "dropbox.com" not in inner and readable(inner) else []
     if data[:2] != b"PK":
         return [data]
     with zipfile.ZipFile(io.BytesIO(data)) as z:
         names = sorted(n for n in z.namelist() if re.search(r"\.(jpe?g|png|webp)$", n, re.I) and "__MACOSX" not in n)
         return [z.read(n) for n in names[:MAX_PHOTOS]]
+
+
+# Google Photos: a public shared album is a plain web page that lists every photo as
+# lh3.googleusercontent.com/pw/<id>; "=w2048" returns that photo as a JPEG. The photos.app.goo.gl
+# short link only redirects for a mobile browser, so it is resolved with an iPhone user agent.
+# Private, deleted or invite-only albums simply yield nothing. (Same method as the Mac's google_photos.py.)
+MOBILE_UA = {"User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 "
+                           "(KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1"}
+DESKTOP_UA = {"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+                            "(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36"}
+GPHOTO_RE = re.compile(r"https://lh3\.googleusercontent\.com/pw/[A-Za-z0-9_-]+")
+
+
+def _google_photos(url: str) -> list[bytes]:
+    if "photos.app.goo.gl" in url:
+        with urllib.request.urlopen(urllib.request.Request(url, headers=MOBILE_UA), timeout=60) as resp:
+            url = resp.geturl()
+        if "photos.google.com" not in url:
+            return []
+    with urllib.request.urlopen(urllib.request.Request(url, headers=DESKTOP_UA), timeout=60) as resp:
+        page = resp.read().decode("utf-8", "replace")
+    seen = []
+    for u in GPHOTO_RE.findall(page):
+        if u not in seen:
+            seen.append(u)
+    out = []
+    for u in seen[:MAX_PHOTOS + 5]:   # a few spare for videos / broken files
+        try:
+            out.append(_get(f"{u}=w2048"))
+        except Exception:
+            continue
+    return out
+
+
+def _post_json(url: str, body: dict, timeout=60):
+    req = urllib.request.Request(url, data=json.dumps(body).encode(), method="POST",
+                                 headers={"Content-Type": "text/plain", "Origin": "https://www.icloud.com", **DESKTOP_UA})
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        return resp.status, dict(resp.headers), json.load(resp)
+
+
+# iCloud, two kinds of public link, both read the way icloud.com's own viewer reads them (no Apple ID):
+#  * share.icloud.com/photos/<id> ("iCloud link"): CloudKit resolves the id to an anonymous access token,
+#    then one records query lists the photos with a ready-made JPEG download URL each.
+#  * www.icloud.com/sharedalbum/#<token> (Shared Album): the sharedstreams "webstream" lists the photos,
+#    "webasseturls" gives their download URLs. The first host answers 330 with the album's real host.
+CK = "https://ckdatabasews.icloud.com/database/1/com.apple.photos.cloud/production"
+
+
+def _icloud_link(short_id: str) -> list[bytes]:
+    _s, _h, res = _post_json(f"{CK}/public/records/resolve", {"shortGUIDs": [{"value": short_id}]})
+    r = (res.get("results") or [{}])[0]
+    access = r.get("anonymousPublicAccess") or {}
+    if not access.get("token") or not r.get("zoneID"):
+        return []   # "Share not found": the seller stopped sharing it
+    zone = {k: r["zoneID"][k] for k in ("zoneName", "ownerRecordName")}
+    url = (access.get("databasePartition") or "https://ckdatabasews.icloud.com").rstrip("/") + \
+        "/database/1/com.apple.photos.cloud/production/shared/records/query?" + \
+        urllib.parse.urlencode({"publicAccessAuthToken": access["token"]})
+    _s, _h, q = _post_json(url, {"query": {"recordType": "CPLAssetAndMasterByAssetDateWithoutHiddenOrDeleted"},
+                                 "zoneID": zone, "resultsLimit": 200})
+    out = []
+    for rec in q.get("records", []):
+        f = rec.get("fields", {})
+        if rec.get("recordType") != "CPLMaster" or "movie" in str(f.get("itemType", {}).get("value", "")).lower():
+            continue
+        res_ = (f.get("resJPEGFullRes") or f.get("resJPEGMedRes") or {}).get("value") or {}
+        if res_.get("downloadURL"):
+            try:
+                out.append(_get(res_["downloadURL"].replace("${f}", "photo.jpg")))
+            except Exception:
+                continue
+        if len(out) >= MAX_PHOTOS:
+            break
+    return out
+
+
+def _icloud_album(token: str) -> list[bytes]:
+    b62 = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+    n = b62.index(token[1]) * 62 + b62.index(token[2]) if token[0] == "B" else b62.index(token[1])
+    host = f"p{n:02d}-sharedstreams.icloud.com"
+    for _ in range(2):
+        try:
+            _s, _h, data = _post_json(f"https://{host}/{token}/sharedstreams/webstream", {"streamCtag": None})
+        except urllib.error.HTTPError as e:
+            if e.code == 330:
+                host = json.loads(e.read() or b"{}").get("X-Apple-MMe-Host") or e.headers.get("X-Apple-MMe-Host")
+                if host:
+                    continue
+            raise
+        if "X-Apple-MMe-Host" in data and not data.get("photos"):
+            host = data["X-Apple-MMe-Host"]
+            continue
+        break
+    else:
+        return []
+    photos = [p for p in data.get("photos", []) if p.get("mediaAssetType") != "video"][:MAX_PHOTOS]
+    if not photos:
+        return []
+    best = {}
+    for p in photos:
+        ders = sorted((p.get("derivatives") or {}).values(), key=lambda d: int(d.get("width") or 0))
+        fit = [d for d in ders if int(d.get("width") or 0) <= 2048] or ders
+        if fit:
+            best[p["photoGuid"]] = fit[-1]["checksum"]
+    _s, _h, urls = _post_json(f"https://{host}/{token}/sharedstreams/webasseturls", {"photoGuids": list(best)})
+    items = urls.get("items", {})
+    out = []
+    for guid in best:
+        it = items.get(best[guid])
+        if it:
+            try:
+                out.append(_get(f"https://{it['url_location']}{it['url_path']}"))
+            except Exception:
+                continue
+    return out
+
+
+def _icloud(url: str) -> list[bytes]:
+    m = re.search(r"sharedalbum/#([A-Za-z0-9_-]+)", url)
+    if m:
+        return _icloud_album(m.group(1))
+    m = re.search(r"(?:share\.icloud\.com/photos/|icloudlinks/)([A-Za-z0-9_-]+)", url)
+    return _icloud_link(m.group(1)) if m else []
 
 
 def download_photos(links: list[str]) -> list[bytes]:
@@ -255,7 +446,13 @@ def download_photos(links: list[str]) -> list[bytes]:
                     url = resp.geturl()
                 if not (("drive.google.com" in url and "/folders/" in url) or "dropbox.com" in url):
                     continue
-            if "drive.google.com" in url:
+            if not readable(url):
+                continue   # OneDrive, a doc, a tour site: left for a browser pass
+            if _is_gphotos(url):
+                blobs += _google_photos(url)
+            elif _is_icloud(url):
+                blobs += _icloud(url)
+            elif "drive.google.com" in url:
                 blobs += _drive_folder(url)
             elif "dropbox.com" in url:
                 blobs += _dropbox(url)
@@ -581,7 +778,7 @@ def plan(root: Path, portal_rows: list[dict], crm_rows: list[dict], wa: list[dic
         if sid in site:
             block = site[sid].group(0)
             if status.lower() == "available" and (field(block, "photos") or "[]").strip() == "[]":
-                out["photos"].append({"id": sid, "links": row.get("Photo links", "").split()})
+                out["photos"].append(photo_item(sid, row))
             if status.lower() in ("pending", "sold"):
                 out["retire"].append({"id": sid, "why": status.lower(), "address": row["Address"]})
             elif status.lower() == "not in portal":
@@ -612,10 +809,16 @@ def plan(root: Path, portal_rows: list[dict], crm_rows: list[dict], wa: list[dic
                            "state": row["State"].strip().upper(), "zip": row["Zip"], "beds": num(row["Beds"]) or 0,
                            "baths": num(row["Baths"]) or 0, "sqft": num(row["Sqft"]), "price": price,
                            "down": down or 0, "monthly": monthly})
-        out["photos"].append({"id": hid, "links": row.get("Photo links", "").split()})
+        out["photos"].append(photo_item(hid, row))
     out["add"].sort(key=lambda r: r["id"])
     wa_photos(out, site, wa or [], {r["id"]: r for r in out["add"]})
     return out
+
+
+def photo_item(hid: str, row: dict) -> dict:
+    """Photo sources for one home, best first: the portal's Photos link, then links in its note."""
+    tiers = [t for t in (row.get("Portal photos", "").split(), row.get("Photo links", "").split()) if t]
+    return {"id": hid, "tiers": tiers, "links": [u for t in tiers for u in t]}
 
 
 def wa_photos(out: dict, site: dict, wa: list[dict], added: dict) -> None:
@@ -648,9 +851,12 @@ def wa_photos(out: dict, site: dict, wa: list[dict], added: dict) -> None:
     for hid, links in sorted(found.items()):
         item = items.get(hid)
         if item is None:
-            item = items[hid] = {"id": hid, "links": []}
+            item = items[hid] = {"id": hid, "tiers": [], "links": []}
             out["photos"].append(item)
-        item["links"] += [u for u in links if u not in item["links"]]
+        extra = [u for u in links if u not in item["links"]]
+        if extra:
+            item.setdefault("tiers", []).append(extra)   # WhatsApp is the last resort
+            item["links"] += extra
 
 
 def apply(root: Path, p: dict, lang: str, geocoder=geocode) -> None:
@@ -729,21 +935,36 @@ def apply(root: Path, p: dict, lang: str, geocoder=geocode) -> None:
     js.write_text(text, encoding="utf-8")
 
 
-def photos_into(root: Path, p: dict, fetch=download_photos) -> None:
-    """Fill the photos array of homes that have none: files already in images/ first, else the portal link."""
+def photos_into(root: Path, p: dict, fetch=download_photos, clock=None) -> None:
+    """Fill the photos array of homes that have none: files already in images/ first, else the
+    portal's Photos link, else the note link, else WhatsApp (first source with photos wins)."""
+    import time
+    clock = clock or time.monotonic
+    start = clock()
     js = root / "homes.js"
     text = js.read_text(encoding="utf-8")
     site = blocks(text)
     p.setdefault("photo_result", {})
+    p.setdefault("photo_failed", {})
+    p.setdefault("photo_waiting", [])
     fetched = 0
     for item in p.get("photos", []):
         hid = item["id"]
         if hid not in site:
             continue
         files = gallery_on_disk(root, hid)
-        if not files and item["links"] and fetched < MAX_PHOTO_HOMES:
+        tiers = item.get("tiers") or ([item["links"]] if item.get("links") else [])
+        if not files and tiers:
+            if fetched >= MAX_PHOTO_HOMES or clock() - start > PHOTO_BUDGET_S:
+                p["photo_waiting"].append(hid)
+                continue
             fetched += 1
-            files = save_photos(root, hid, fetch(item["links"]))
+            for tier in tiers:
+                files = save_photos(root, hid, fetch(tier))
+                if files:
+                    break
+            if not files:
+                p["photo_failed"][hid] = item.get("links") or [u for t in tiers for u in t]
         if not files:
             continue
         block = site[hid].group(0)
@@ -769,6 +990,12 @@ def summary(p: dict) -> str:
         lines.append(f"- {r['id']}  {r['why']}")
     for hid, n in p.get("photo_result", {}).items():
         lines.append(f"* {hid}  {n} photos")
+    if p.get("photo_failed"):
+        lines += ["", "Photo links that gave no photos (browser pass or ask for a new link):"]
+        for hid, links in p["photo_failed"].items():
+            lines.append(f"  {hid}  " + " ".join(link_label(u) for u in links))
+    if p.get("photo_waiting"):
+        lines += ["", f"Albums waiting for the next run ({len(p['photo_waiting'])}): " + ", ".join(p["photo_waiting"])]
     if sv.get("fetched") or sv.get("pruned"):
         lines += ["", f"Street View: {len(sv.get('fetched', []))} fetched, {len(sv.get('pruned', []))} replaced by seller photos"]
     if sv.get("none"):
@@ -780,6 +1007,14 @@ def summary(p: dict) -> str:
     if p["hand"]:
         lines += ["", "Check by hand:"] + [f"  {h}" for h in p["hand"]]
     return "\n".join(lines) + "\n"
+
+
+def link_label(url: str) -> str:
+    """Host plus a short tail: enough to find the album, without pasting a full share token into git."""
+    parts = urllib.parse.urlparse(url)
+    kind = ("Google Photos" if _is_gphotos(url) else "iCloud" if _is_icloud(url) else
+            "Drive" if "drive.google.com" in parts.netloc else "Dropbox" if "dropbox.com" in parts.netloc else parts.netloc)
+    return f"[{kind} …{(parts.path + parts.fragment).rstrip('/')[-6:]}]"
 
 
 def main(argv=None) -> int:

@@ -115,16 +115,16 @@ class T(unittest.TestCase):
 
     def test_real_site_has_905_olive(self):
         root = Path(__file__).resolve().parents[1]
-        page = root / "book" / "905-olive" / "index.html"
+        lang = "es" if (root / "como-funciona.html").is_file() else "en"
+        out = root / B.SITES[lang]["dir"]
+        page = out / "905-olive" / "index.html"
         if not page.is_file():
-            self.skipTest("book/ not generated in this checkout")
-        self.assertIn("home=decatur-il-905-olive&lang=en", page.read_text())
-        live = B.read_homes(root)
-        for hid in live:
-            self.assertTrue((root / "book" / hid / "index.html").is_file(), hid)
+            self.skipTest("booking links not generated in this checkout")
+        self.assertIn(f"home=decatur-il-905-olive&lang={lang}", page.read_text())
+        for hid in B.read_homes(root):
+            self.assertTrue((out / hid / "index.html").is_file(), hid)
         for s in B.links(root).values():
-            self.assertNotRegex((root / "book" / s / "index.html").read_text().lower(), r"lockbox|combo|\bcode\b")
-
+            self.assertNotRegex((out / s / "index.html").read_text().lower(), r"lockbox|combo|\bcode\b")
 
 if __name__ == "__main__":
     unittest.main()

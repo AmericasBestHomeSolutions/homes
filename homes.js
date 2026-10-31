@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (268 live, rebuilt from master published 2026-10-27) --- */
+/* --- the homes (262 live, rebuilt from master published 2026-10-27) --- */
 const HOMES = [
   {
     id: "eaststlouis-il-2008-61st",
@@ -5295,30 +5295,6 @@ const HOMES = [
     photos:    ["images/stlouis-mo-1924-belt-1.jpg", "images/stlouis-mo-1924-belt-2.jpg", "images/stlouis-mo-1924-belt-3.jpg", "images/stlouis-mo-1924-belt-4.jpg", "images/stlouis-mo-1924-belt-5.jpg", "images/stlouis-mo-1924-belt-6.jpg", "images/stlouis-mo-1924-belt-7.jpg", "images/stlouis-mo-1924-belt-8.jpg", "images/stlouis-mo-1924-belt-9.jpg", "images/stlouis-mo-1924-belt-10.jpg", "images/stlouis-mo-1924-belt-11.jpg", "images/stlouis-mo-1924-belt-12.jpg", "images/stlouis-mo-1924-belt-13.jpg", "images/stlouis-mo-1924-belt-14.jpg", "images/stlouis-mo-1924-belt-15.jpg", "images/stlouis-mo-1924-belt-16.jpg", "images/stlouis-mo-1924-belt-17.jpg", "images/stlouis-mo-1924-belt-18.jpg", "images/stlouis-mo-1924-belt-19.jpg", "images/stlouis-mo-1924-belt-20.jpg", "images/stlouis-mo-1924-belt-21.jpg", "images/stlouis-mo-1924-belt-22.jpg", "images/stlouis-mo-1924-belt-23.jpg", "images/stlouis-mo-1924-belt-24.jpg", "images/stlouis-mo-1924-belt-25.jpg", "images/stlouis-mo-1924-belt-26.jpg", "images/stlouis-mo-1924-belt-27.jpg", "images/stlouis-mo-1924-belt-28.jpg", "images/stlouis-mo-1924-belt-29.jpg", "images/stlouis-mo-1924-belt-30.jpg"],
   },
   {
-    id: "stlouis-mo-10068-royal",
-    address:     "10068 Royal Dr",
-    zip:         "63136",
-    description: "Back on the market",
-    copy:        "Three bedrooms in St. Louis, $925 a month, and $3,000 to get the keys in your hand. This 3 bedroom, 1 bath home comes with owner financing, which means no bank, no mortgage application, and no loan officer deciding your future. With three bedrooms, there's space to spread out and truly settle in. This time, once the moving boxes are empty, they can go straight to the curb, because you won't need them again. The purchase price is $79,000, agreed on in writing the day you sign, with no bank anywhere in the picture. The home is sold as-is, so come walk through every room in person and judge it with your own eyes. A payment like this doesn't come around often. Book a Tour now and let's get you through the front door.",
-    city:  "St. Louis",
-    state: "MO",
-    beds:  3,
-    baths: 1,
-    sqft:  "",
-    lat:   38.752578,
-    lng:   -90.244359,
-    geo:   "exact",
-    status: "Available",
-
-    monthlyPayment: 925,
-    moveIn:         3000,
-    lockedPrice:    79000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
-  },
-  {
     id: "jackson-ms-1415-geeston",
     address:     "1415 Geeston St",
     zip:         "39213",
@@ -5391,29 +5367,6 @@ const HOMES = [
     features: { garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/peoria-il-926-greenlawn-1.jpg", "images/peoria-il-926-greenlawn-2.jpg", "images/peoria-il-926-greenlawn-3.jpg", "images/peoria-il-926-greenlawn-4.jpg", "images/peoria-il-926-greenlawn-5.jpg", "images/peoria-il-926-greenlawn-6.jpg", "images/peoria-il-926-greenlawn-7.jpg", "images/peoria-il-926-greenlawn-8.jpg", "images/peoria-il-926-greenlawn-9.jpg", "images/peoria-il-926-greenlawn-10.jpg", "images/peoria-il-926-greenlawn-11.jpg", "images/peoria-il-926-greenlawn-12.jpg", "images/peoria-il-926-greenlawn-13.jpg", "images/peoria-il-926-greenlawn-14.jpg", "images/peoria-il-926-greenlawn-15.jpg", "images/peoria-il-926-greenlawn-16.jpg", "images/peoria-il-926-greenlawn-17.jpg", "images/peoria-il-926-greenlawn-18.jpg", "images/peoria-il-926-greenlawn-19.jpg", "images/peoria-il-926-greenlawn-20.jpg", "images/peoria-il-926-greenlawn-21.jpg", "images/peoria-il-926-greenlawn-22.jpg", "images/peoria-il-926-greenlawn-23.jpg", "images/peoria-il-926-greenlawn-24.jpg", "images/peoria-il-926-greenlawn-25.jpg", "images/peoria-il-926-greenlawn-26.jpg", "images/peoria-il-926-greenlawn-27.jpg", "images/peoria-il-926-greenlawn-28.jpg", "images/peoria-il-926-greenlawn-29.jpg", "images/peoria-il-926-greenlawn-30.jpg"],
-  },
-  {
-    id: "stlouis-mo-10516-baron",
-    address:     "10516 Baron Dr",
-    zip:         "63136",
-    copy:        "Three bedrooms in St. Louis at $975 a month, and $3,000 opens the front door. This 3-bedroom, 1-bath home comes with owner financing, which means no bank, no mortgage application, and no loan officer deciding your future from a spreadsheet. With three bedrooms, there's room for everyone to spread out under one roof, and this time the moving boxes get emptied for good, because the place is yours to keep. The purchase price is $99,000, agreed on in writing when you sign. No bank is involved, start to finish. The home is sold as-is, so come walk through every room in person and judge it with your own eyes. A three-bedroom at this payment is worth moving on quickly, so book a Tour now and let's get you inside for a showing.",
-    city:  "St. Louis",
-    state: "MO",
-    beds:  3,
-    baths: 1,
-    sqft:  "",
-    lat:   38.761671,
-    lng:   -90.249726,
-    geo:   "exact",
-    status: "Available",
-
-    monthlyPayment: 975,
-    moveIn:         3000,
-    lockedPrice:    99000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
   },
   {
     id: "decatur-il-905-olive",
@@ -5562,29 +5515,6 @@ const HOMES = [
     photos:    ["images/stlouis-mo-5515-alcott-1.jpg", "images/stlouis-mo-5515-alcott-2.jpg", "images/stlouis-mo-5515-alcott-3.jpg", "images/stlouis-mo-5515-alcott-4.jpg", "images/stlouis-mo-5515-alcott-5.jpg", "images/stlouis-mo-5515-alcott-6.jpg", "images/stlouis-mo-5515-alcott-7.jpg", "images/stlouis-mo-5515-alcott-8.jpg", "images/stlouis-mo-5515-alcott-9.jpg", "images/stlouis-mo-5515-alcott-10.jpg", "images/stlouis-mo-5515-alcott-11.jpg", "images/stlouis-mo-5515-alcott-12.jpg", "images/stlouis-mo-5515-alcott-13.jpg", "images/stlouis-mo-5515-alcott-14.jpg"],
   },
   {
-    id: "stlouis-mo-1920-prior",
-    address:     "1920 Prior Dr",
-    zip:         "63136",
-    copy:        "Three bedrooms in St. Louis, $800 a month, and $2,000 to get through the front door. This is a home you can buy without a bank, a mortgage application, or anyone at a loan desk telling you no. With owner financing through a contract for deed, your monthly payment goes toward a place with your name on the paperwork instead of a landlord's. With three bedrooms and a full bath, there's room for everyone under one roof, and when you carry the boxes in this time, you're unpacking for good. The purchase price is $69,000, agreed in writing the day you sign, with no bank anywhere in the picture. The home is sold as-is, so come walk through every room in person and judge it with your own eyes. Book a Tour soon to set up a showing before someone else claims it.",
-    city:  "St. Louis",
-    state: "MO",
-    beds:  3,
-    baths: 1,
-    sqft:  "",
-    lat:   38.762381,
-    lng:   -90.265871,
-    geo:   "exact",
-    status: "Available",
-
-    monthlyPayment: 800,
-    moveIn:         2000,
-    lockedPrice:    69000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
-  },
-  {
     id: "akron-oh-912-slosson",
     address:     "912 Slosson St",
     zip:         "44320",
@@ -5656,29 +5586,6 @@ const HOMES = [
     photos:    ["images/stlouis-mo-7028-dawson-1.jpg", "images/stlouis-mo-7028-dawson-2.jpg", "images/stlouis-mo-7028-dawson-3.jpg", "images/stlouis-mo-7028-dawson-4.jpg", "images/stlouis-mo-7028-dawson-5.jpg", "images/stlouis-mo-7028-dawson-6.jpg", "images/stlouis-mo-7028-dawson-7.jpg"],
   },
   {
-    id: "stlouis-mo-2143-69th",
-    address:     "2143 69th St",
-    zip:         "63121",
-    copy:        "$850 a month and $2,000 at the door. That's what stands between you and a two-bedroom home in St. Louis with your name on the paperwork. This is owner financing, so there's no bank, no mortgage application, and no loan officer deciding your future. Two bedrooms and one bath give you a real place to settle in and make your own. Your monthly payment is written into the contract, a fixed number that won't creep up every time a lease comes due, so you can plan your months with confidence. The purchase price is $79,000, agreed on the day you sign, with no bank involved. The home is sold as-is, and the best way to judge it is to walk through the rooms yourself. Don't wait on this one. Book a Tour today to set up your visit.",
-    city:  "St. Louis",
-    state: "MO",
-    beds:  2,
-    baths: 1,
-    sqft:  "",
-    lat:   38.688889,
-    lng:   -90.292433,
-    geo:   "exact",
-    status: "Available",
-
-    monthlyPayment: 850,
-    moveIn:         2000,
-    lockedPrice:    79000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
-  },
-  {
     id: "decatur-il-1825-church",
     address:     "1825 N Church St",
     zip:         "62526",
@@ -5747,52 +5654,6 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-3422-lucas-1.jpg", "images/stlouis-mo-3422-lucas-2.jpg", "images/stlouis-mo-3422-lucas-3.jpg", "images/stlouis-mo-3422-lucas-4.jpg", "images/stlouis-mo-3422-lucas-5.jpg", "images/stlouis-mo-3422-lucas-6.jpg", "images/stlouis-mo-3422-lucas-7.jpg", "images/stlouis-mo-3422-lucas-8.jpg", "images/stlouis-mo-3422-lucas-9.jpg", "images/stlouis-mo-3422-lucas-10.jpg", "images/stlouis-mo-3422-lucas-11.jpg", "images/stlouis-mo-3422-lucas-12.jpg", "images/stlouis-mo-3422-lucas-13.jpg", "images/stlouis-mo-3422-lucas-14.jpg", "images/stlouis-mo-3422-lucas-15.jpg", "images/stlouis-mo-3422-lucas-16.jpg", "images/stlouis-mo-3422-lucas-17.jpg", "images/stlouis-mo-3422-lucas-18.jpg", "images/stlouis-mo-3422-lucas-19.jpg", "images/stlouis-mo-3422-lucas-20.jpg", "images/stlouis-mo-3422-lucas-21.jpg", "images/stlouis-mo-3422-lucas-22.jpg", "images/stlouis-mo-3422-lucas-23.jpg", "images/stlouis-mo-3422-lucas-24.jpg"],
-  },
-  {
-    id: "stlouis-mo-2528-avis",
-    address:     "2528 Avis St",
-    zip:         "63136",
-    copy:        "$795 a month and $2,000 to move in: that's what it takes to start owning this two-bedroom, one-bath home in St. Louis. No bank, no mortgage application, no waiting on someone in an office to decide your future. This is owner financing, plain and simple, through Americas Best Home Solutions. Your monthly payment is written into the contract from the start, so there's no bracing for a landlord to raise the rent every year. You'll know exactly what's due, month after month, and every one of those payments goes toward a place with your name on it. The purchase price is $69,000, agreed on in writing the day you sign. The home is sold as-is, so come walk through it in person and get a feel for every room before you decide. Don't let this one pass you by. Book a Tour now to set up your walk-through.",
-    city:  "St. Louis",
-    state: "MO",
-    beds:  2,
-    baths: 1,
-    sqft:  "",
-    lat:   38.724004,
-    lng:   -90.267586,
-    geo:   "exact",
-    status: "Available",
-
-    monthlyPayment: 795,
-    moveIn:         2000,
-    lockedPrice:    69000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
-  },
-  {
-    id: "stlouis-mo-5275-alcott",
-    address:     "5275 Alcott Ave",
-    zip:         "63120",
-    copy:        "$775 a month and $1,500 to move in. That's what stands between you and a two-bedroom, one-bath home in St. Louis with your name on the paperwork. No bank reviewing your file, no mortgage application, no waiting on someone else's yes. This is owner financing, plain and simple. Your monthly amount is written into the agreement, so instead of bracing every year for a landlord to raise the rent, you'll know exactly what's due, and every payment goes toward a place that's becoming yours. The purchase price is $69,000, fixed the day you sign. The home is sold as-is, and we'd rather you walk through every room in person than take our word for anything. A two-bedroom at this price won't wait around, so book a Tour now and let's find a time for you to come through.",
-    city:  "St. Louis",
-    state: "MO",
-    beds:  2,
-    baths: 1,
-    sqft:  "",
-    lat:   38.694707,
-    lng:   -90.247635,
-    geo:   "exact",
-    status: "Available",
-
-    monthlyPayment: 775,
-    moveIn:         1500,
-    lockedPrice:    69000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
   },
   {
     id: "cahokia-il-1414-richard",

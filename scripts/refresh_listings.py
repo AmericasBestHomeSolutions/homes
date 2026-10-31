@@ -20,6 +20,9 @@ homes.js. This script does three things that pass must keep doing:
 3. Rewrite each <id>.html from home.html, keeping that page's canonical / Open
    Graph block and window.__HOME_ID__, then sanitize description meta tags.
 
+4. Write the short booking links, /book/<slug>/index.html, for every live home
+   (scripts/book_links.py). Buyer texts carry these instead of the booking app's URL.
+
 Run from the repo root:  python3 scripts/refresh_listings.py
 """
 from __future__ import annotations
@@ -272,9 +275,12 @@ def main() -> None:
     ids = home_ids()
     stamp_dates(ids)
     n = emit_pages()
+    import book_links   # /book/<slug>/ redirect pages: the short booking links buyer texts carry
+    b = book_links.build(ROOT, "en")
     print(
         f"sanitized {phrases} text/call lines in {fields} home descriptions, "
-        f"recorded {len(ids)} homes, rewrote {n} listing pages"
+        f"recorded {len(ids)} homes, rewrote {n} listing pages, "
+        f"booking links for {b['homes']} homes ({b['short']} short, {b['gone']} retired)"
     )
 
 

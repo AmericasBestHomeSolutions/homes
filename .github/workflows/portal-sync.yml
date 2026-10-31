@@ -1,0 +1,72 @@
+# Keep getownerfinancedhomes.com in step with the seller portal ('Portal Backup' tab).
+# Runs ~7:35 AM ET every day (both UTC slots cover EDT and EST; a run with nothing new
+# commits nothing), and again right after each "Refresh listings from master" push from
+# the Mac, which rewrites homes.js from the master list. See scripts/portal_sync.py.
+name: Portal sync
+
+on:
+  schedule:
+    - cron: "35 11 * * *"   # 7:35 AM EDT (6:35 AM EST: reads yesterday's backup, harmless)
+    - cron: "35 12 * * *"   # 7:35 AM EST (8:35 AM EDT)
+  push:
+    branches: [main]
+    paths: [homes.js]
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Only print the change summary"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: portal-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PYTHONDONTWRITEBYTECODE: "1"
+      GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+    steps:
+      - name: Secret present?
+        id: gate
+        run: |
+          if [ -z "$GOOGLE_SERVICE_ACCOUNT_JSON" ]; then
+            echo "::notice::GOOGLE_SERVICE_ACCOUNT_JSON is not set; skipping portal sync."
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          fi
+      - uses: actions/checkout@v4
+        if: steps.gate.outputs.skip != 'true'
+      - uses: actions/setup-python@v5
+        if: steps.gate.outputs.skip != 'true'
+        with:
+          python-version: "3.12"
+      - name: Install
+        if: steps.gate.outputs.skip != 'true'
+        run: pip install --quiet google-auth requests pillow
+      - name: Sync, commit only if something changed
+        if: steps.gate.outputs.skip != 'true'
+        run: |
+          git config user.name "Portal sync"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.dry_run }}" = "true" ]; then
+            python3 scripts/portal_sync.py --dry-run
+            exit 0
+          fi
+          for attempt in 1 2 3; do
+            git fetch --quiet origin main && git reset --quiet --hard origin/main
+            python3 scripts/portal_sync.py --summary-out "$RUNNER_TEMP/summary.txt"
+            python3 scripts/refresh_listings.py
+            git add -A -- . ':!scripts/__pycache__'
+            if git diff --cached --quiet; then echo "No changes."; exit 0; fi
+            git commit --quiet -F "$RUNNER_TEMP/summary.txt"
+            if git push --quiet origin HEAD:main; then cat "$RUNNER_TEMP/summary.txt" >> "$GITHUB_STEP_SUMMARY"; exit 0; fi
+            echo "Push raced another commit; retrying ($attempt)."
+          done
+          exit 1

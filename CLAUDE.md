@@ -140,3 +140,18 @@ point of the mechanism, so it can be proven later what a given person agreed to.
   and `features.json`.
 - Changing something that must apply to all 150 listing pages is a generator change,
   not 150 edits.
+
+## Excluded homes (junk / duplicate ids)
+`data/excluded-homes.json` lists site ids that must never be on the site (e.g. `decatur-il-decatur`,
+no street address; the two garbled 210 N 17th St condo ids). The Mac's master list keeps producing
+them, so every pass that writes homes.js enforces the list via `scripts/excluded_homes.py`:
+`scripts/refresh_listings.py` (Mac layout pass), `scripts/portal_sync.py` (daily sync, both sites;
+runs before the sheet read, needs no key), and casas `scripts/build_casas.py`. Each run removes the
+id from homes.js and sitemap.xml, deletes `images/sv/<id>.jpg`, and leaves `<id>.html` as a
+redirect to `/`. Add or remove an id in BOTH repos' `data/excluded-homes.json`.
+
+## Street View link when there is no image
+If a home has no seller photo and no `images/sv/<id>.jpg`, home.html shows a "See the street in
+Google Street View" button (Google Maps URLs, `map_action=pano` at the home's lat/lng). It is
+keyless and free and opens on Google's own site; no image is copied. The Street View *image*
+fallback still needs the Static API key with billing on (free monthly allowance).

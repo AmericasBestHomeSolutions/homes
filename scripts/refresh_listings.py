@@ -262,6 +262,12 @@ def emit_pages() -> int:
 
 
 def main() -> None:
+    import sys
+    sys.path.insert(0, str(Path(__file__).resolve().parent))
+    import excluded_homes   # data/excluded-homes.json: junk/duplicate ids the master list keeps re-adding
+    gone = excluded_homes.apply(ROOT, "en")
+    if gone:
+        print("excluded (data/excluded-homes.json): " + ", ".join(gone))
     fields, phrases = rewrite_homes_copy()
     ids = home_ids()
     stamp_dates(ids)

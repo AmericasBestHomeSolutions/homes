@@ -52,6 +52,9 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
 .hero-photo .fallback{opacity:.9}
 .hero-photo .sv-badge{position:absolute;right:14px;bottom:14px;z-index:3;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.5px;background:rgba(11,20,40,.62);color:#fff;padding:5px 9px;border-radius:999px}
 .hero-photo .sv-badge[hidden]{display:none}
+.hero-photo .sv-link{position:absolute;right:14px;bottom:14px;z-index:3;font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.3px;background:rgba(255,255,255,.94);color:#15315e;padding:8px 13px;border-radius:999px;text-decoration:none;font-weight:600}
+.hero-photo .sv-link:hover{background:#fff;text-decoration:underline}
+.hero-photo .sv-link[hidden]{display:none}
 .hero-photo .fcity{position:absolute;left:16px;bottom:14px;z-index:2;color:#fff}
 .hero-photo .fcity .c{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:26px;letter-spacing:-.5px;line-height:1}
 .hero-photo .fcity .s{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.85);margin-top:4px}
@@ -236,6 +239,7 @@ body.tl-pad{padding-bottom:70px}
       <img id="heroImg" alt="" hidden>
       <span class="badge-new" id="newBadge" hidden>New</span>
       <span class="sv-badge" id="heroSvBadge" hidden>Street view · © Google</span>
+      <a class="sv-link" id="heroSvLink" href="#" target="_blank" rel="noopener" hidden>See the street in Google Street View →</a>
       <svg class="fallback" id="heroFallback" width="92" height="92" viewBox="0 0 24 24" fill="none" stroke="#a9c4e8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9h14v-9"/><path d="M10 19v-5h4v5"/>
       </svg>
@@ -508,7 +512,16 @@ body.tl-pad{padding-bottom:70px}
         img.dataset.svTried = 1;
         img.onload = ()=>{ $("heroFallback").style.display="none"; $("heroCity").style.display="none"; $("heroSvBadge").hidden = false; };
         img.src = sv;
-      } else { img.hidden = true; $("heroSvBadge").hidden = true; }
+      } else {
+        img.hidden = true; $("heroSvBadge").hidden = true;
+        // no photo and no Street View image yet: link to Street View itself (Google Maps URLs,
+        // keyless and free, opens on Google's own site; no image is copied)
+        const L = $("heroSvLink");
+        L.href = (C.lat && C.lng)
+          ? `https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${C.lat},${C.lng}`
+          : "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(`${C.address||""}, ${C.city}, ${C.state} ${C.zip||""}`);
+        L.hidden = false;
+      }
     };
   })();
 

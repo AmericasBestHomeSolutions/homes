@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (270 live, rebuilt from master published 2026-10-27) --- */
+/* --- the homes (267 live, rebuilt from master published 2026-10-27) --- */
 const HOMES = [
   {
     id: "eaststlouis-il-2008-61st",
@@ -5319,28 +5319,6 @@ const HOMES = [
     photos:    ["images/decatur-il-1112-main-1.jpg", "images/decatur-il-1112-main-2.jpg", "images/decatur-il-1112-main-3.jpg", "images/decatur-il-1112-main-4.jpg", "images/decatur-il-1112-main-5.jpg", "images/decatur-il-1112-main-6.jpg", "images/decatur-il-1112-main-7.jpg", "images/decatur-il-1112-main-8.jpg", "images/decatur-il-1112-main-9.jpg", "images/decatur-il-1112-main-10.jpg", "images/decatur-il-1112-main-11.jpg", "images/decatur-il-1112-main-12.jpg"],
   },
   {
-    id: "decatur-il-decatur",
-    address:     "Decatur",
-    copy:        "$850 a month and $2,000 to move in, and a three-bedroom, two-bath home in Decatur, Illinois starts becoming yours. There's no bank and no mortgage application, just straightforward owner financing. With three bedrooms there's room for everyone under one roof, and the boxes you unpack here can stay unpacked, because this time the place is yours to keep. Two bathrooms take some of the strain out of busy mornings. The purchase price is $95,000, fixed in writing the day you sign, and no lender gets a say in it. The home is sold as-is, so come walk through every room and judge it with your own eyes. Homes at this payment tend to get noticed quickly. Book a Tour now and let's get a showing on the calendar.",
-    city:  "Decatur",
-    state: "IL",
-    beds:  3,
-    baths: 2,
-    sqft:  "",
-    lat:   39.845416,
-    lng:   -88.952415,
-    geo:   "approx",
-    status: "Available",
-
-    monthlyPayment: 850,
-    moveIn:         2000,
-    lockedPrice:    95000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
-  },
-  {
     id: "stlouis-mo-1924-belt",
     address:     "1924 Belt Ave",
     copy:        "$875 a month and $3,000 at the start: that's what stands between you and a St. Louis home with your name on the paperwork. This one has two bedrooms, one bath, and 745 square feet you get to arrange however you like, without asking anyone's permission. Your monthly payment is written into the agreement, so the number you see today is the same one you'll see next spring and the spring after that, with no surprise hike when a lease runs out. The purchase price is $89,000, fixed in writing when you sign, with owner financing and no bank in the middle. The home is sold as-is, so come walk through it in person and size it up with your own eyes. If this feels like the one, don't sit on it. Book a Tour and let's get you through the door this week.",
@@ -5857,54 +5835,6 @@ const HOMES = [
     monthlyPayment: 775,
     moveIn:         1500,
     lockedPrice:    69000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
-  },
-  {
-    id: "stlouis-mo-210409-17th",
-    address:     "210-409 N 17th St",
-    zip:         "63103",
-    description: "Downtown St. Louis condo (Blue City), Unit 409, walking distance to the Arch, Busch Stadium, and the Enterprise Center",
-    copy:        "$900 a month and $1,000 to move in puts you in a condo in the heart of downtown St. Louis. The Gateway Arch, Busch Stadium, and the Enterprise Center are all within walking distance, so a ballgame or an evening stroll under the Arch starts right outside your building. Your monthly payment is written into your agreement from the first day, so instead of bracing for a rent hike every year, you'll know exactly what your home costs you month after month. The purchase price is $40,000, agreed on in writing when you sign, with owner financing that means no bank and no mortgage application. The condo is sold as-is, and we'd be glad to meet you there so you can walk through the unit in person. Downtown places at this price don't stay open long, so book a Tour now and grab a showing time.",
-    city:  "St. Louis",
-    state: "MO",
-    beds:  "",
-    baths: "",
-    sqft:  "",
-    lat:   38.632209,
-    lng:   -90.204077,
-    geo:   "exact",
-    status: "Available",
-
-    monthlyPayment: 900,
-    moveIn:         1000,
-    lockedPrice:    40000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
-  },
-  {
-    id: "stlouis-mo-2101409-17th",
-    address:     "210-1409 N 17th St",
-    zip:         "63103",
-    description: "Downtown St. Louis condo (Blue City), Unit 1409, walking distance to the Arch, Busch Stadium, and the Enterprise Center",
-    copy:        "$875 a month and $1,000 to move in. That's what it takes to start owning a condo in downtown St. Louis. This one sits within walking distance of the Arch, Busch Stadium, and the Enterprise Center, so a ballgame, a hockey night, or an easy walk along the riverfront starts just outside your building. Your monthly payment is written into your contract and stays the same, so nobody slides a bigger number across the table next year and tells you to take it or leave. The purchase price is $40,000, agreed on the day you sign, with owner financing and no bank deciding your future. The condo is sold as-is, and the best way to know whether it fits is to come walk through it with us in person. Downtown homes at this price don't wait around, so book a Tour now and let's get you through the door.",
-    city:  "St. Louis",
-    state: "MO",
-    beds:  "",
-    baths: "",
-    sqft:  "",
-    lat:   38.630496,
-    lng:   -90.204524,
-    geo:   "exact",
-    status: "Available",
-
-    monthlyPayment: 875,
-    moveIn:         1000,
-    lockedPrice:    40000,
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",

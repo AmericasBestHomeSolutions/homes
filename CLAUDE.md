@@ -33,10 +33,16 @@ changed price/down/monthly are updated, Pending/Sold/Not in portal homes are ret
 `main` only when something changed. It reads only Portal Backup A:M and CRM_Properties A:F
 (no lockbox/seller columns) with the `GOOGLE_SERVICE_ACCOUNT_JSON` repo secret. The Spanish
 site (casas) runs the same script with `--lang es`. Photos: for a home with an empty `photos`
-array, the sync takes the photo link from Portal Backup's Listing note (column R; only the URL is
-used, never the note text): a public Google Drive folder, a Dropbox zip, or a direct image URL.
-It saves `images/<id>.jpg` + `images/<id>-1..N.jpg` (max 1280px, progressive JPEG, HEIC converted).
-iCloud shared albums are not supported. Dry run: `python3 scripts/portal_sync.py --dry-run`.
+array, the sync tries, in order, Portal Backup's **'Photos link'** column (found by header name; Grok
+Bot's 7 AM portal backup copies each home's portal photos link there), a link in the Listing note
+(column R; only the URL is used, never the note text), then a WhatsApp Intel album link (column J).
+The first source that yields photos wins. Read without any login: public Google Drive folders,
+Dropbox (incl. `.url` shortcuts), public Google Photos albums, iCloud shared albums and iCloud links
+(share.icloud.com). Links that give nothing (unshared album, OneDrive, docs) are listed in the commit
+summary for a browser pass. Up to 15 albums / 10 minutes per run. It saves `images/<id>.jpg` +
+`images/<id>-1..N.jpg` (max 30, 1280px, progressive JPEG, HEIC converted, EXIF dropped), and the
+Street View fallback (`images/sv/<id>.jpg`) is removed once a real cover exists.
+Dry run: `python3 scripts/portal_sync.py --dry-run`.
 
 ## Layout
 

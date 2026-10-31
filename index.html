@@ -428,7 +428,7 @@ body{
 
   <!-- FEATURED — filled from homes.js. Hidden when empty. -->
   <section class="section" id="featuredSec" style="margin-top:36px" hidden>
-    <div class="spot-head"><h2>Featured homes</h2><span class="spot-sub">Our picks right now — homes move fast.</span></div>
+    <div class="spot-head"><h2>Featured homes</h2><span class="spot-sub">New listings and homes near you first — homes move fast.</span></div>
     <div class="cards" id="featuredCards"></div>
   </section>
 
@@ -691,6 +691,7 @@ body{
 </div>
 
 <script src="listed-dates.js"></script>
+<script src="visitor-near.js"></script>
 <script src="homes.js"></script>
 <script src="sold-cards.js"></script>
 <script src="homes-map.js"></script>
@@ -727,9 +728,20 @@ body{
   const LISTINGS = HOMES.filter(h => !/^(pending|sold)$/i.test(String(h.status||"").trim()));
   const houseMark = `<svg class="fmark" width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9h14v-9"/><path d="M10 19v-5h4v5"/></svg>`;
   function isNewHome(h){
-    const raw = (window.LISTED_ON || {})[h.id];
+    const raw = (typeof LISTED_ON !== "undefined" ? LISTED_ON : (window.LISTED_ON || {}))[h.id];
     const t = Date.parse(raw || "");
     return !!(raw && t && (Date.now() - t) <= 7 * 86400000);
+  }
+
+  // Default order. Every home is featured, so: homes near the visitor first (their picked city, "Near me",
+  // or a keyless approximate lookup; see visitor-near.js), then newest listed first, then complete listings.
+  function completeFirst(a, b){
+    return (photoReady.has(b.id) - photoReady.has(a.id)) || ((b.address?1:0) - (a.address?1:0));
+  }
+  function defaultOrder(){
+    if (window.VisitorNear) return VisitorNear.compare(completeFirst);
+    const t = h => Date.parse(((typeof LISTED_ON !== "undefined" ? LISTED_ON : (window.LISTED_ON || {}))[h.id]) || "") || 0;
+    return (a, b) => (t(b) - t(a)) || completeFirst(a, b);
   }
 
   // filter options — built from whatever is in homes.js
@@ -830,13 +842,7 @@ body{
     if (sort === "monthly-asc")   list.sort((a,b) => num(a.monthlyPayment,Infinity) - num(b.monthlyPayment,Infinity));
     else if (sort === "down-asc") list.sort((a,b) => num(a.moveIn,Infinity) - num(b.moveIn,Infinity));  // "Ask us" ($0) sorts last
     else if (sort === "price-asc")list.sort((a,b) => num(a.lockedPrice,Infinity) - num(b.lockedPrice,Infinity));
-    else list.sort((a,b) =>  // Featured: new homes, then our featured picks, then complete listings (photo, then address)
-      (isNewHome(b) - isNewHome(a)) ||
-      ((b.featured==="promoted") - (a.featured==="promoted")) ||
-      ((b.featured?1:0) - (a.featured?1:0)) ||
-      (photoReady.has(b.id) - photoReady.has(a.id)) ||
-      ((b.address?1:0) - (a.address?1:0))
-    );
+    else list.sort(defaultOrder());  // Featured (every home is): near the visitor first, then newest listed first
     return window.HomesMap ? HomesMap.applyGeo(list) : list;
   }
 
@@ -915,6 +921,7 @@ body{
 
   ["fState",...FILTER_IDS].forEach(id => $(id).addEventListener("change", () => {
     if (id === "fState") fillCities();
+    if (id === "fCity" && $("fCity").value && window.VisitorNear) VisitorNear.rememberCity(LISTINGS, $("fCity").value, $("fState").value);
     page = 1; render(true); syncURL(); chips();
   }));
 
@@ -1074,17 +1081,25 @@ body{
   applyURL();
   chips();
   // ── featured + just sold (data from homes.js) ───────────────────────────
-  (function spotlight(){
-    const feats = LISTINGS.filter(h => h.featured)
-      .sort((a,b) => (b.featured==="promoted") - (a.featured==="promoted"))
-      .slice(0, 6);
+  function drawFeatured(){  // every home is featured: near the visitor first, then newest listed
+    const feats = LISTINGS.slice().sort(defaultOrder()).slice(0, 6);
     if (feats.length){
       $("featuredCards").innerHTML = feats.map(h => cardHTML(h, {featured:true})).join("");
       $("featuredSec").hidden = false;
     }
+  }
+  (function spotlight(){
+    drawFeatured();
     if (window.SoldCards) SoldCards.mount();
     if (window.HomesCart) HomesCart.sync();
   })();
+  // The approximate location can arrive a moment after the page draws: reorder only while the visitor is still on
+  // the first page of the default order, so nothing jumps under someone who is already browsing.
+  if (window.VisitorNear) VisitorNear.onChange(() => {
+    drawFeatured();
+    if (page === 1 && !$("fSort").value) render(false);
+    if (window.HomesCart) HomesCart.sync();
+  });
 
   function revealHash(){
     const id = decodeURIComponent((location.hash || "").replace(/^#/, ""));

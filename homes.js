@@ -6034,7 +6034,7 @@ const HOMES = [
     id: "stlouis-mo-4519-june",
     address:     "4519 June Ave",
     zip:         "63121",
-    copy:        "$910 a month and $3,000 to move in. This 2-bedroom, 1-bath home in St. Louis, MO with about 925 square feet gives you room to spread out and a place that's truly yours, with no landlord deciding whether you stay. The purchase price is $79,000, fixed in writing when you sign, with owner financing and no bank in the middle. It's sold as-is, so come walk through every room and judge it with your own eyes. Homes at this payment don't sit long, so book a Tour and claim a showing time. A gas meter must be set before the occupancy inspection; the home needs some finishing work.",
+    copy:        "$910 a month and $3,000 to move in. This 2-bedroom, 1-bath home in St. Louis, MO with about 925 square feet gives you room to spread out and a place that's truly yours, with no landlord deciding whether you stay. The purchase price is $79,000, fixed in writing when you sign, with owner financing and no bank in the middle. It's sold as-is, so come walk through every room and judge it with your own eyes. Homes at this payment don't sit long, so book a Tour and claim a showing time. A gas meter must be set before the occupancy inspection; the home needs some finishing work. The buyer must carry homeowners insurance; otherwise a $125/month insurance charge is added.",
     city:  "St. Louis",
     state: "MO",
     beds:  2,

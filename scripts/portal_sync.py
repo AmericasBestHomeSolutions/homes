@@ -949,8 +949,13 @@ def plan(root: Path, portal_rows: list[dict], crm_rows: list[dict], wa: list[dic
                     old = field(block, key)
                     if num(old) != value:
                         diffs[key] = (num(old), value)
-                if diffs:
-                    out["update"].append({"id": sid, "address": row["Address"], "diffs": diffs})
+                item = {"id": sid, "address": row["Address"], "diffs": diffs}
+                if row.get("Portal PROP id") == "DIRECT":
+                    text = direct_copy(block, row)
+                    if text:
+                        item["copy"] = text
+                if diffs or "copy" in item:
+                    out["update"].append(item)
             continue
         if status.lower() != "available":
             continue
@@ -972,6 +977,25 @@ def plan(root: Path, portal_rows: list[dict], crm_rows: list[dict], wa: list[dic
     wa_photos(out, site, wa or [], {r["id"]: r for r in out["add"]})
     return out
 
+
+def direct_copy(block: str, row: dict) -> str | None:
+    """New listing text for a direct home whose buyer note changed in the CRM, or None.
+
+    Only the note at the end is refreshed: the text must still start with our own generated wording for the
+    current terms, so hand-edited copy is never overwritten (a terms change is repriced first, the note next run)."""
+    key = "description" if field(block, "description") is not None else "copy"
+    current = field(block, key)
+    price, monthly = num(row["Price"]), num(row["Monthly payment"])
+    if current is None or not price or not monthly:
+        return None
+    r = {"city": row["City"], "state": row["State"].strip().upper(), "beds": num(row["Beds"]) or 0,
+         "baths": num(row["Baths"]) or 0, "sqft": num(row["Sqft"]), "price": price,
+         "down": num(row["Down payment"]) or 0, "monthly": monthly,
+         "note": row.get("Direct note", ""), "note_es": row.get("Direct note es", "")}
+    base, full = (_copy_es(r), copy_es(r)) if key == "description" else (_copy_en(r), copy_en(r))
+    if current == full or not current.startswith(base):
+        return None
+    return full
 
 def photo_item(hid: str, row: dict) -> dict:
     """Photo sources for one home, best first: the portal's Photos link, then links in its note."""
@@ -1030,6 +1054,9 @@ def apply(root: Path, p: dict, lang: str, geocoder=geocode) -> None:
         block = re.sub(r'(\n    (?:copy|description):\s*)("(?:\\.|[^"\\])*")',
                        lambda mm: mm.group(1) + json.dumps(reprice_text(json.loads(mm.group(2)), swaps), ensure_ascii=False),
                        block)
+        if u.get("copy"):
+            block = re.sub(r'(\n    (?:copy|description):\s*)("(?:\\.|[^"\\])*")',
+                           lambda mm: mm.group(1) + json.dumps(u["copy"], ensure_ascii=False), block, count=1)
         text = text.replace(m.group(0), block, 1)
         page = root / f"{u['id']}.html"
         if page.is_file() and swaps:
@@ -1143,7 +1170,8 @@ def summary(p: dict) -> str:
         lines.append(f"+ {r['id']}  {r['address']}, {r['city']} {r['state']}  {money(r['price'])} / "
                      f"{money(r['down'])} down / {money(r['monthly'])}/mo  ({r['pid']})")
     for u in p["update"]:
-        lines.append(f"~ {u['id']}  " + ", ".join(f"{k} {o}→{nv}" for k, (o, nv) in u["diffs"].items()))
+        lines.append(f"~ {u['id']}  " + ", ".join([f"{k} {o}→{nv}" for k, (o, nv) in u["diffs"].items()]
+                                                  + (["buyer note updated"] if u.get("copy") else [])))
     for r in p["retire"]:
         lines.append(f"- {r['id']}  {r['why']}")
     for hid, n in p.get("photo_result", {}).items():

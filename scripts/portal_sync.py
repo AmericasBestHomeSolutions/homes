@@ -12,6 +12,12 @@ and on its own each morning after the 7 AM portal backup. For one site checkout 
 * retires a home the portal marks Pending or Sold (sold card + redirect, via
   scripts/sold_policy.py) or Not in portal (redirect, no sold card).
 
+Direct listings (homes a seller gave us directly, entered by staff on the CRM's /direct page) come from the CRM's
+public feed, GET https://owner.getownerfinancedhomes.com/api/public/direct-homes (DIRECT_FEED_URL to override,
+--direct-json offline). They go through the same add / update / photo steps as portal homes. Only staff retire one
+(the feed says pending, sold or withdrawn); a direct home missing from the feed, or a feed that can't be read, is
+left exactly as it is. The feed carries public facts only (no seller, no lockbox).
+
 Cameron's portal is the master for status (Joe's rule): a home the portal shows Available is
 listed even when CRM_Properties says SOLD / PENDING, and that home's "recently sold" card is
 taken down (only when no other closed home shares its street and city). Those relists are
@@ -78,6 +84,8 @@ CLOSED = re.compile(r"(?i)\b(sold|pending|not listed|deposit)\b")
 DIRS = {"n", "s", "e", "w", "ne", "nw", "se", "sw", "north", "south", "east", "west"}
 MAX_RETIRE = 25        # a bad read must not empty the site
 MIN_PORTAL_ROWS = 100
+DIRECT_FEED = "https://owner.getownerfinancedhomes.com/api/public/direct-homes"
+DIRECT_STATUS = {"available": "Available", "pending": "Pending", "sold": "Sold", "withdrawn": "Not in portal"}
 
 SITES = {
     "en": {"domain": "https://getownerfinancedhomes.com",
@@ -204,6 +212,43 @@ def wa_rows(addr_v, photo_v) -> list[dict]:
 
 def load_json(path: str | None) -> list[dict]:
     return json.loads(Path(path).read_text(encoding="utf-8")) if path else []
+
+
+def read_direct(url: str | None = None, fetch=None) -> list[dict] | None:
+    """The CRM's direct-listings feed, or None when it can't be read (then no direct home is touched)."""
+    url = url or os.environ.get("DIRECT_FEED_URL", "").strip() or DIRECT_FEED
+    if not url.startswith("https://"):
+        return None
+    try:
+        if fetch is None:
+            req = urllib.request.Request(url, headers={**UA, "Accept": "application/json"})
+            with urllib.request.urlopen(req, timeout=30) as resp:   # noqa: S310 (https only)
+                data = json.loads(resp.read(2_000_000).decode("utf-8"))
+        else:
+            data = fetch(url)
+        homes = data.get("homes")
+        return homes if isinstance(homes, list) else None
+    except Exception:   # noqa: BLE001 - a down CRM must never change the site
+        return None
+
+
+def direct_rows(feed: list[dict] | None) -> list[dict]:
+    """Feed homes -> portal-shaped rows (same columns as Portal Backup A:M plus photos and the buyer notes)."""
+    out = []
+    for h in feed or []:
+        if not isinstance(h, dict):
+            continue
+        g = lambda k: str(h.get(k) or "").strip()   # noqa: E731
+        status = DIRECT_STATUS.get(g("status").lower())
+        if not status or not g("address") or not g("state"):
+            continue
+        photos = [u for u in (h.get("photos") or []) if isinstance(u, str) and u.startswith("https://")]
+        out.append({"Portal PROP id": "DIRECT", "Address": g("address"), "City": g("city"), "State": g("state"),
+                    "Zip": g("zip"), "Status": status, "Beds": g("beds"), "Baths": g("baths"), "Sqft": g("sqft"),
+                    "Price": g("price"), "Down payment": g("down"), "Monthly payment": g("monthly"),
+                    "Date listed": g("listed"), "Portal photos": " ".join(album_links(" ".join(photos))),
+                    "Photo links": "", "Direct note": g("note")[:400], "Direct note es": g("note_es")[:400]})
+    return out
 
 
 def whitelist(rows: list[dict]) -> list[dict]:
@@ -698,22 +743,39 @@ def baths_word(b) -> str:
     return f"{b:g}" if isinstance(b, float) else str(b)
 
 
+def _with_note(text: str, note: str) -> str:
+    note = (note or "").strip()
+    return f"{text} {note if note.endswith(('.', '!', '?')) else note + '.'}" if note else text
+
+
 def copy_en(r: dict) -> str:
+    return _with_note(_copy_en(r), r.get("note", ""))
+
+
+def copy_es(r: dict) -> str:
+    return _with_note(_copy_es(r), r.get("note_es", ""))
+
+
+def _copy_en(r: dict) -> str:
     sq = f" with about {r['sqft']:,} square feet" if r["sqft"] else ""
-    return (f"{money(r['monthly'])} a month and {money(r['down'])} to move in. This {r['beds']}-bedroom, "
-            f"{baths_word(r['baths'])}-bath home in {r['city']}, {r['state']}{sq} gives you room to spread out and a "
+    size = (f"{r['beds']}-bedroom, {baths_word(r['baths'])}-bath " if r["beds"] and r["baths"]
+            else f"{r['beds']}-bedroom " if r["beds"] else "")
+    return (f"{money(r['monthly'])} a month and {money(r['down'])} to move in. This {size}"
+            f"home in {r['city']}, {r['state']}{sq} gives you room to spread out and a "
             f"place that's truly yours, with no landlord deciding whether you stay. The purchase price is "
             f"{money(r['price'])}, fixed in writing when you sign, with owner financing and no bank in the middle. "
             f"It's sold as-is, so come walk through every room and judge it with your own eyes. Homes at this payment "
             f"don't sit long, so book a Tour and claim a showing time.")
 
 
-def copy_es(r: dict) -> str:
+def _copy_es(r: dict) -> str:
     sq = f" con unos {r['sqft']:,} pies cuadrados" if r["sqft"] else ""
     rec = "recámara" if r["beds"] == 1 else "recámaras"
     ban = "baño" if r["baths"] == 1 else "baños"
-    return (f"{money(r['monthly'])} al mes y {money(r['down'])} para mudarse. Esta casa de {r['beds']} {rec} y "
-            f"{baths_word(r['baths'])} {ban} en {r['city']}, {r['state']}{sq} le da espacio de sobra y un lugar que "
+    size = (f" de {r['beds']} {rec} y {baths_word(r['baths'])} {ban}" if r["beds"] and r["baths"]
+            else f" de {r['beds']} {rec}" if r["beds"] else "")
+    return (f"{money(r['monthly'])} al mes y {money(r['down'])} para mudarse. Esta casa{size}"
+            f" en {r['city']}, {r['state']}{sq} le da espacio de sobra y un lugar que "
             f"de verdad es suyo, sin un casero que decida si se queda. El precio de compra es {money(r['price'])}, "
             f"fijado por escrito cuando firma, con financiamiento del dueño y ningún banco en el medio. Se vende tal "
             f"como está, así que venga a recorrer cada cuarto y júzguela con sus propios ojos. Casas a este pago no se "
@@ -903,7 +965,8 @@ def plan(root: Path, portal_rows: list[dict], crm_rows: list[dict], wa: list[dic
         out["add"].append({"id": hid, "pid": row["Portal PROP id"], "address": row["Address"], "city": row["City"],
                            "state": row["State"].strip().upper(), "zip": row["Zip"], "beds": num(row["Beds"]) or 0,
                            "baths": num(row["Baths"]) or 0, "sqft": num(row["Sqft"]), "price": price,
-                           "down": down or 0, "monthly": monthly})
+                           "down": down or 0, "monthly": monthly,
+                           "note": row.get("Direct note", ""), "note_es": row.get("Direct note es", "")})
         out["photos"].append(photo_item(hid, row))
     out["add"].sort(key=lambda r: r["id"])
     wa_photos(out, site, wa or [], {r["id"]: r for r in out["add"]})
@@ -1119,6 +1182,7 @@ def main(argv=None) -> int:
     ap.add_argument("--portal-json")
     ap.add_argument("--crm-json")
     ap.add_argument("--wa-json", help="offline WhatsApp Intel rows: [{Address, City, State, Photos}]")
+    ap.add_argument("--direct-json", help="offline CRM direct-listings feed: {\"homes\": [...]}")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--summary-out", type=Path)
     ap.add_argument("--force", action="store_true", help="allow more than MAX_RETIRE retirements")
@@ -1141,6 +1205,15 @@ def main(argv=None) -> int:
     portal = whitelist(portal)
     if len(portal) < MIN_PORTAL_ROWS:
         raise SystemExit(f"Portal Backup returned {len(portal)} rows (< {MIN_PORTAL_ROWS}); refusing to sync.")
+    if a.direct_json:
+        feed = (json.loads(Path(a.direct_json).read_text(encoding="utf-8")) or {}).get("homes")
+    else:
+        feed = read_direct()
+    direct = direct_rows(feed)
+    print(f"Direct listings: {len(direct)} from the CRM feed" if feed is not None
+          else "Direct listings: feed not read; direct homes left as they are")
+    # After the portal rows, so a home on both keeps the portal's row (portal_index prefers an Available row).
+    portal = portal + direct
     p = plan(a.site, portal, crm, wa)
     if len(p["retire"]) > MAX_RETIRE and not a.force:
         raise SystemExit(f"{len(p['retire'])} homes would be retired (> {MAX_RETIRE}); refusing without --force.")

@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (259 live, rebuilt from master published 2026-10-27) --- */
+/* --- the homes (256 live, rebuilt from master published 2026-10-27) --- */
 const HOMES = [
   {
     id: "eaststlouis-il-2008-61st",
@@ -1330,7 +1330,7 @@ const HOMES = [
     address:     "233 N 11th St",
     zip:         "62220",
     description: "Large two-bedroom, one-bath, detached garage, corner lot",
-    copy:        "$1,045 a month and $2,000 to move in. That's the doorway to a roomy two-bedroom, one-bath home in Belleville with 1,639 square feet to spread out in. It sits on a corner lot with a detached garage and off-street parking, so there's a spot for the car and space for storage or weekend projects. Every month you'd pay the same $1,045, written into your agreement, with no landlord deciding next year that the number should climb. The purchase price is $85,000, settled on the day you sign. There's no bank weighing in and no mortgage application to fill out, just owner financing. The home is sold as-is, so come walk through every room and judge it with your own eyes. Book a Tour now so you're first in line for a showing before someone else claims this corner.",
+    copy:        "$1,030 a month and $1,500 to move in. That's the doorway to a roomy two-bedroom, one-bath home in Belleville with 1,639 square feet to spread out in. It sits on a corner lot with a detached garage and off-street parking, so there's a spot for the car and space for storage or weekend projects. Every month you'd pay the same $1,030, written into your agreement, with no landlord deciding next year that the number should climb. The purchase price is $82,000, settled on the day you sign. There's no bank weighing in and no mortgage application to fill out, just owner financing. The home is sold as-is, so come walk through every room and judge it with your own eyes. Book a Tour now so you're first in line for a showing before someone else claims this corner.",
     city:  "Belleville",
     state: "IL",
     beds:  2,
@@ -1341,9 +1341,9 @@ const HOMES = [
     geo:   "exact",
     status: "Available",
 
-    monthlyPayment: 1045,
-    moveIn:         2000,
-    lockedPrice:    85000,
+    monthlyPayment: 1030,
+    moveIn:         1500,
+    lockedPrice:    82000,
     termText:       "30-year owner financing (contract for deed)",
 
     features: { garage: "yes", off_street_parking: "yes" },
@@ -2794,31 +2794,6 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-765-division-1.jpg", "images/decatur-il-765-division-2.jpg", "images/decatur-il-765-division-3.jpg", "images/decatur-il-765-division-4.jpg", "images/decatur-il-765-division-5.jpg", "images/decatur-il-765-division-6.jpg", "images/decatur-il-765-division-7.jpg", "images/decatur-il-765-division-8.jpg", "images/decatur-il-765-division-9.jpg", "images/decatur-il-765-division-10.jpg", "images/decatur-il-765-division-11.jpg", "images/decatur-il-765-division-12.jpg", "images/decatur-il-765-division-13.jpg", "images/decatur-il-765-division-14.jpg", "images/decatur-il-765-division-15.jpg", "images/decatur-il-765-division-16.jpg", "images/decatur-il-765-division-17.jpg", "images/decatur-il-765-division-18.jpg", "images/decatur-il-765-division-19.jpg", "images/decatur-il-765-division-20.jpg", "images/decatur-il-765-division-21.jpg", "images/decatur-il-765-division-22.jpg", "images/decatur-il-765-division-23.jpg", "images/decatur-il-765-division-24.jpg"],
-  },
-  {
-    id: "decatur-il-933-elmhurst",
-    address:     "933 Elmhurst Ave",
-    zip:         "62526",
-    description: "2 bedroom, 1 bath home. Washer, dryer, range included. 780 sq feet with fenced in yard. Large shed included for storage. Recently occupied",
-    copy:        "$895 a month and $2,500 at the door. That's what stands between you and a Decatur home of your own. This 2-bedroom, 1-bath house offers 780 square feet, and the washer, dryer, and range stay with it. Out back, a fenced yard gives you room to breathe, and a large storage shed gives the mower and the holiday boxes a place to live. When you step out there after a long shift, nobody else gets to decide whether you're staying another year, because that patch of grass answers to you. The purchase price is $82,000, fixed when you sign, with owner financing and no bank in the picture. The home is sold as-is, so come walk every room and the yard in person before you decide. At this payment, it won't wait long. Book a Tour and grab a showing.",
-    city:  "Decatur",
-    state: "IL",
-    beds:  2,
-    baths: 1,
-    sqft:  "780",
-    lat:   39.863169,
-    lng:   -88.944985,
-    geo:   "exact",
-    status: "Available",
-
-    monthlyPayment: 895,
-    moveIn:         2500,
-    lockedPrice:    82000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { backyard: "yes", fenced_yard: "yes", storage_shed: "yes" },
-    heroPhoto: "",
-    photos:    ["images/decatur-il-933-elmhurst-1.jpg", "images/decatur-il-933-elmhurst-2.jpg", "images/decatur-il-933-elmhurst-3.jpg", "images/decatur-il-933-elmhurst-4.jpg", "images/decatur-il-933-elmhurst-5.jpg", "images/decatur-il-933-elmhurst-6.jpg", "images/decatur-il-933-elmhurst-7.jpg", "images/decatur-il-933-elmhurst-8.jpg", "images/decatur-il-933-elmhurst-9.jpg", "images/decatur-il-933-elmhurst-10.jpg"],
   },
   {
     id: "cottagehills-il-66-franklin",
@@ -4363,7 +4338,7 @@ const HOMES = [
   {
     id: "peoria-il-2049-gale",
     address:     "2049 N Gale Ave",
-    copy:        "$890 a month and $1,500 to move in, for a three-bedroom home in Peoria with your name on the paperwork instead of a landlord's. This 810-square-foot house has three bedrooms and one bath, enough space to give every room a real purpose: one to sleep in, one for the project that never had a home, one for whatever comes next. You unpack once, in a place where nobody else gets to decide whether you stay. The purchase price is $59,000, written into your contract when you sign, with owner financing and no bank anywhere in the process. The home is sold as-is, so come walk through every room in person and decide with your own eyes. Showing times go quickly, so book a Tour now and claim yours before someone else does.",
+    copy:        "$875 a month and $1,500 to move in, for a three-bedroom home in Peoria with your name on the paperwork instead of a landlord's. This 810-square-foot house has three bedrooms and one bath, enough space to give every room a real purpose: one to sleep in, one for the project that never had a home, one for whatever comes next. You unpack once, in a place where nobody else gets to decide whether you stay. The purchase price is $59,000, written into your contract when you sign, with owner financing and no bank anywhere in the process. The home is sold as-is, so come walk through every room in person and decide with your own eyes. Showing times go quickly, so book a Tour now and claim yours before someone else does.",
     city:  "Peoria",
     state: "IL",
     beds:  3,
@@ -4374,7 +4349,7 @@ const HOMES = [
     geo:   "exact",
     status: "Available",
 
-    monthlyPayment: 890,
+    monthlyPayment: 875,
     moveIn:         1500,
     lockedPrice:    59000,
     termText:       "30-year owner financing (contract for deed)",
@@ -4653,28 +4628,6 @@ const HOMES = [
     photos:    ["images/decatur-il-234-home-1.jpg", "images/decatur-il-234-home-2.jpg", "images/decatur-il-234-home-3.jpg", "images/decatur-il-234-home-4.jpg", "images/decatur-il-234-home-5.jpg", "images/decatur-il-234-home-6.jpg", "images/decatur-il-234-home-7.jpg", "images/decatur-il-234-home-8.jpg", "images/decatur-il-234-home-9.jpg", "images/decatur-il-234-home-10.jpg", "images/decatur-il-234-home-11.jpg", "images/decatur-il-234-home-12.jpg"],
   },
   {
-    id: "stlouis-mo-8510-concord",
-    address:     "8510 Concord Pl",
-    copy:        "Four bedrooms in St. Louis, $975 a month, and $2,500 to get you through the front door. This 1,100-square-foot home has four bedrooms and one bath, so there's space to spread out instead of squeezing everything into one crowded corner. Hang the pictures, paint a bedroom any color you like, and settle in knowing nobody is coming to tell you it's time to pack up and move again. The purchase price is $95,000, written into your agreement the day you sign. Owner financing takes the place of a bank, so there's no mortgage application and no loan officer. The home is sold as-is, so come walk through every room in person and decide for yourself. A payment like this doesn't stay available for long. Book a Tour and let's get your showing on the calendar.",
-    city:  "St. Louis",
-    state: "MO",
-    beds:  4,
-    baths: 1,
-    sqft:  "1100",
-    lat:   38.71726,
-    lng:   -90.230587,
-    geo:   "exact",
-    status: "Available",
-
-    monthlyPayment: 975,
-    moveIn:         2500,
-    lockedPrice:    95000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    ["images/stlouis-mo-8510-concord-1.jpg", "images/stlouis-mo-8510-concord-2.jpg", "images/stlouis-mo-8510-concord-3.jpg", "images/stlouis-mo-8510-concord-4.jpg", "images/stlouis-mo-8510-concord-5.jpg", "images/stlouis-mo-8510-concord-6.jpg", "images/stlouis-mo-8510-concord-7.jpg", "images/stlouis-mo-8510-concord-8.jpg", "images/stlouis-mo-8510-concord-9.jpg", "images/stlouis-mo-8510-concord-10.jpg", "images/stlouis-mo-8510-concord-11.jpg", "images/stlouis-mo-8510-concord-12.jpg", "images/stlouis-mo-8510-concord-13.jpg", "images/stlouis-mo-8510-concord-14.jpg", "images/stlouis-mo-8510-concord-15.jpg", "images/stlouis-mo-8510-concord-16.jpg", "images/stlouis-mo-8510-concord-17.jpg", "images/stlouis-mo-8510-concord-18.jpg", "images/stlouis-mo-8510-concord-19.jpg", "images/stlouis-mo-8510-concord-20.jpg", "images/stlouis-mo-8510-concord-21.jpg", "images/stlouis-mo-8510-concord-22.jpg", "images/stlouis-mo-8510-concord-23.jpg", "images/stlouis-mo-8510-concord-24.jpg", "images/stlouis-mo-8510-concord-25.jpg", "images/stlouis-mo-8510-concord-26.jpg", "images/stlouis-mo-8510-concord-27.jpg", "images/stlouis-mo-8510-concord-28.jpg", "images/stlouis-mo-8510-concord-29.jpg", "images/stlouis-mo-8510-concord-30.jpg"],
-  },
-  {
     id: "toledo-oh-1428-ave",
     address:     "1428 South Ave.",
     copy:        "Three bedrooms, 1,704 square feet, $1,195 a month, and $5,000 to move in. This Toledo home gives you real space to spread out, with one bath and enough square footage that nobody has to fight for elbow room. With a bedroom for everyone under one roof, the things you unpack here can stay unpacked, because this time the address is yours. The purchase price is $96,400, written into your agreement the day you sign. There's no bank in the middle and no mortgage application to sit through, just owner financing and a clear road to ownership. The home is sold as-is, so come walk every room in person and judge it with your own eyes. A house this size at this price won't wait around. Book a Tour and grab a showing time this week.",
@@ -4695,28 +4648,6 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/toledo-oh-1428-ave-1.jpg", "images/toledo-oh-1428-ave-2.jpg", "images/toledo-oh-1428-ave-3.jpg", "images/toledo-oh-1428-ave-4.jpg", "images/toledo-oh-1428-ave-5.jpg", "images/toledo-oh-1428-ave-6.jpg", "images/toledo-oh-1428-ave-7.jpg", "images/toledo-oh-1428-ave-8.jpg", "images/toledo-oh-1428-ave-9.jpg", "images/toledo-oh-1428-ave-10.jpg", "images/toledo-oh-1428-ave-11.jpg", "images/toledo-oh-1428-ave-12.jpg", "images/toledo-oh-1428-ave-13.jpg", "images/toledo-oh-1428-ave-14.jpg", "images/toledo-oh-1428-ave-15.jpg", "images/toledo-oh-1428-ave-16.jpg", "images/toledo-oh-1428-ave-17.jpg", "images/toledo-oh-1428-ave-18.jpg", "images/toledo-oh-1428-ave-19.jpg", "images/toledo-oh-1428-ave-20.jpg", "images/toledo-oh-1428-ave-21.jpg", "images/toledo-oh-1428-ave-22.jpg", "images/toledo-oh-1428-ave-23.jpg", "images/toledo-oh-1428-ave-24.jpg"],
-  },
-  {
-    id: "decatur-il-1546-division",
-    address:     "1546 E Division St",
-    copy:        "$875 a month and $2,500 at the start is what stands between you and the keys to a Decatur, IL home that's truly yours. This 2-bedroom, 1-bath home offers 725 square feet, a size that's easy to settle into and make your own. Your payment is a fixed number written into your agreement, so you never have to wait each year to learn what a landlord decided to charge you next. That same amount goes toward a place with your name on it. The purchase price is $85,000, settled the moment you sign, with owner financing and no bank involved. The home is sold as-is, and we'd be glad to walk through it with you in person so you can judge every room with your own eyes. Homes like this don't sit long, so book a Tour now and claim a showing.",
-    city:  "Decatur",
-    state: "IL",
-    beds:  2,
-    baths: 1,
-    sqft:  "725",
-    lat:   39.859481,
-    lng:   -88.935723,
-    geo:   "exact",
-    status: "Available",
-
-    monthlyPayment: 875,
-    moveIn:         2500,
-    lockedPrice:    85000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    ["images/decatur-il-1546-division-1.jpg", "images/decatur-il-1546-division-2.jpg", "images/decatur-il-1546-division-3.jpg", "images/decatur-il-1546-division-4.jpg", "images/decatur-il-1546-division-5.jpg", "images/decatur-il-1546-division-6.jpg", "images/decatur-il-1546-division-7.jpg", "images/decatur-il-1546-division-8.jpg", "images/decatur-il-1546-division-9.jpg", "images/decatur-il-1546-division-10.jpg", "images/decatur-il-1546-division-11.jpg", "images/decatur-il-1546-division-12.jpg", "images/decatur-il-1546-division-13.jpg", "images/decatur-il-1546-division-14.jpg", "images/decatur-il-1546-division-15.jpg", "images/decatur-il-1546-division-16.jpg", "images/decatur-il-1546-division-17.jpg", "images/decatur-il-1546-division-18.jpg", "images/decatur-il-1546-division-19.jpg", "images/decatur-il-1546-division-20.jpg", "images/decatur-il-1546-division-21.jpg", "images/decatur-il-1546-division-22.jpg", "images/decatur-il-1546-division-23.jpg", "images/decatur-il-1546-division-24.jpg", "images/decatur-il-1546-division-25.jpg"],
   },
   {
     id: "decatur-il-1174-king",
@@ -6131,6 +6062,7 @@ const RECENTLY_SOLD = [{"city": "Flint", "state": "MI", "soldOn": "2026-10-17"},
 const SOLD_CARDS = [
   {"street": "Anderson St", "city": "Alton", "state": "IL", "photo": "images/sold/duasjuezmfekyqds.jpg"},
   {"street": "Sauget Ave", "city": "Cahokia", "state": "IL", "photo": "images/sold/wqtevdaahumdjhjs.jpg"},
+  {"street": "Division St", "city": "Decatur", "state": "IL", "soldOn": "2026-11-01", "photo": "images/sold/abbhxkyauvesbxfv.jpg"},
   {"street": "Hickory St", "city": "Decatur", "state": "IL", "soldOn": "2026-10-30", "photo": "images/sold/yjynwxdpptjfvqna.jpg"},
   {"street": "Jordan St", "city": "Decatur", "state": "IL", "photo": "images/sold/pkackgsksmznfkjv.jpg"},
   {"street": "Lawrence St", "city": "Decatur", "state": "IL", "soldOn": "2026-10-30", "photo": "images/sold/afzhwzucrscznvsu.jpg"},

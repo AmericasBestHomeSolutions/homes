@@ -68,5 +68,26 @@ class Copy(unittest.TestCase):
         self.assertIn("Esta casa en St. Louis", ps.copy_es(r))
 
 
+class NoteRefresh(unittest.TestCase):
+    row = {"Portal PROP id": "DIRECT", "City": "St. Louis", "State": "MO", "Beds": "2", "Baths": "1", "Sqft": "925",
+           "Price": "79000", "Down payment": "3000", "Monthly payment": "910",
+           "Direct note": "Needs a gas meter. Buyer carries homeowners insurance", "Direct note es": "Necesita un medidor de gas"}
+
+    def r(self, note="", note_es=""):
+        return {"city": "St. Louis", "state": "MO", "beds": 2, "baths": 1, "sqft": 925, "price": 79000, "down": 3000,
+                "monthly": 910, "note": note, "note_es": note_es}
+
+    def test_changed_note_is_refreshed(self):
+        block = '\n    copy:        ' + ps.json.dumps(ps.copy_en(self.r("Needs a gas meter"))) + ',\n'
+        self.assertEqual(ps.direct_copy(block, self.row), ps.copy_en(self.r(self.row["Direct note"])))
+        es = '\n    description: ' + ps.json.dumps(ps.copy_es(self.r(note_es="Viejo")), ensure_ascii=False) + ',\n'
+        self.assertEqual(ps.direct_copy(es, self.row), ps.copy_es(self.r(note_es="Necesita un medidor de gas")))
+
+    def test_same_or_hand_edited_copy_is_left_alone(self):
+        same = '\n    copy:        ' + ps.json.dumps(ps.copy_en(self.r(self.row["Direct note"]))) + ',\n'
+        self.assertIsNone(ps.direct_copy(same, self.row))
+        self.assertIsNone(ps.direct_copy('\n    copy:        "Hand-written copy.",\n', self.row))
+
+
 if __name__ == "__main__":
     unittest.main()

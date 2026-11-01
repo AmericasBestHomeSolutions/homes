@@ -29,5 +29,6 @@ const LISTED_ON = {
   "decatur-il-1822-decatur": "2026-10-31",
   "granitecity-il-2539-28th": "2026-10-31",
   "peoria-il-2012-marquette": "2026-10-31",
-  "peoria-il-2315-ann": "2026-10-31"
+  "peoria-il-2315-ann": "2026-10-31",
+  "stlouis-mo-4519-june": "2026-11-01"
 };

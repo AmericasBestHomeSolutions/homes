@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (258 live, rebuilt from master published 2026-10-27) --- */
+/* --- the homes (259 live, rebuilt from master published 2026-10-27) --- */
 const HOMES = [
   {
     id: "eaststlouis-il-2008-61st",
@@ -6098,6 +6098,29 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/peoria-il-2315-ann-1.jpg", "images/peoria-il-2315-ann-2.jpg", "images/peoria-il-2315-ann-3.jpg", "images/peoria-il-2315-ann-4.jpg", "images/peoria-il-2315-ann-5.jpg", "images/peoria-il-2315-ann-6.jpg", "images/peoria-il-2315-ann-7.jpg", "images/peoria-il-2315-ann-8.jpg", "images/peoria-il-2315-ann-9.jpg", "images/peoria-il-2315-ann-10.jpg", "images/peoria-il-2315-ann-11.jpg", "images/peoria-il-2315-ann-12.jpg", "images/peoria-il-2315-ann-13.jpg", "images/peoria-il-2315-ann-14.jpg", "images/peoria-il-2315-ann-15.jpg", "images/peoria-il-2315-ann-16.jpg", "images/peoria-il-2315-ann-17.jpg", "images/peoria-il-2315-ann-18.jpg", "images/peoria-il-2315-ann-19.jpg", "images/peoria-il-2315-ann-20.jpg", "images/peoria-il-2315-ann-21.jpg", "images/peoria-il-2315-ann-22.jpg", "images/peoria-il-2315-ann-23.jpg", "images/peoria-il-2315-ann-24.jpg"],
+  },
+  {
+    id: "stlouis-mo-4519-june",
+    address:     "4519 June Ave",
+    zip:         "63121",
+    copy:        "$910 a month and $3,000 to move in. This 2-bedroom, 1-bath home in St. Louis, MO with about 925 square feet gives you room to spread out and a place that's truly yours, with no landlord deciding whether you stay. The purchase price is $79,000, fixed in writing when you sign, with owner financing and no bank in the middle. It's sold as-is, so come walk through every room and judge it with your own eyes. Homes at this payment don't sit long, so book a Tour and claim a showing time. A gas meter must be set before the occupancy inspection; the home needs some finishing work.",
+    city:  "St. Louis",
+    state: "MO",
+    beds:  2,
+    baths: 1,
+    sqft:  "925",
+    lat:   38.703315,
+    lng:   -90.275645,
+    geo:   "exact",
+    status: "Available",
+
+    monthlyPayment: 910,
+    moveIn:         3000,
+    lockedPrice:    79000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
   },
 ];
 

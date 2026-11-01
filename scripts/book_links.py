@@ -34,8 +34,13 @@ BOOKING = "https://owner.getownerfinancedhomes.com/book"
 FEEDBACK = "https://owner.getownerfinancedhomes.com/feedback/"
 # After-tour feedback links (Joe, 2026-11-01): getownerfinancedhomes.com/feedback/<slug> and
 # casasconfinanciamiento.com/opinion/<slug> open the CRM's feedback form for that home (photo + address on top, tap to
-# pick likes and what held them back) and keep the link's query (name, phone, tour, prop, lang). Unlike booking, a
-# feedback link keeps working after a home leaves the site, because buyers answer after the tour.
+# pick likes and what held them back). Unlike booking, a feedback link keeps working after a home leaves the site,
+# because buyers answer after the tour.
+# Since 2026-11-01 (CRM Auditor, Filling-CRM #132) a text carries ONE signed token, ?t=, minted by the CRM (staff route
+# GET /api/tours/<tour id>/feedback-link, or feedback_link() below with a token from it). Never a phone or name: the
+# redirect forwards only FEEDBACK_KEEP and drops anything else (old links' name=/phone=/tour= stay on this page).
+# This repo never holds the signing secret.
+FEEDBACK_KEEP = ("t", "prop", "lang")
 FEEDBACK_SITES = {
     "en": {"dir": "feedback", "title": "How was your tour? {addr}", "go": "Open the feedback form",
            "wait": "Opening the feedback form…"},
@@ -173,15 +178,26 @@ def feedback_url(home_id: str, lang: str) -> str:
     return f"{FEEDBACK}{home_id}?lang={lang}"
 
 
+_TOKEN_RE = re.compile(r"[A-Za-z0-9_.-]{20,400}")
+
+
+def feedback_link(slug: str, token: str, lang: str = "en") -> str:
+    """The short public link to text a buyer: <site>/feedback/<slug>?t=<token>. ``token`` comes from the CRM (staff
+    route GET /api/tours/<tour id>/feedback-link); a phone, name or tour id is never put in the link."""
+    if not _TOKEN_RE.fullmatch(str(token or "")):
+        raise ValueError("feedback token must come from the CRM")
+    return f"{SITES[lang]['domain']}/{FEEDBACK_SITES[lang]['dir']}/{slug}?t={token}"
+
+
 def feedback_page_for(root: Path, home_id: str, rec: dict, lang: str, path: str) -> str:
     t, f = SITES[lang], FEEDBACK_SITES[lang]
     target = feedback_url(home_id, lang)
     addr = _addr(rec or {}) or home_id
     title = f["title"].format(addr=addr)
     e = lambda s: html.escape(s, quote=True)  # noqa: E731
-    js = ("(function(){var u=new URL(%s),q=new URLSearchParams(location.search);"
-          "q.forEach(function(v,k){if(k!=='home')u.searchParams.set(k,v)});"
-          "u.hash=location.hash;location.replace(u.toString())})();") % json.dumps(target)
+    js = ("(function(){var u=new URL(%s),q=new URLSearchParams(location.search),keep=%s;"
+          "keep.forEach(function(k){if(q.has(k))u.searchParams.set(k,q.get(k))});"
+          "location.replace(u.toString())})();") % (json.dumps(target), json.dumps(list(FEEDBACK_KEEP)))
     return f"""<!DOCTYPE html>
 <html lang="{lang}">
 <head>

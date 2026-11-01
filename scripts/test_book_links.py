@@ -116,6 +116,28 @@ class T(unittest.TestCase):
             self.assertIn('location.replace("/")', (es / "agendar" / "905-olive" / "index.html").read_text())
             self.assertTrue((es / "agendar" / "decatur-il-905-olive" / "index.html").is_file())
 
+    def test_feedback_links_keep_working_after_a_home_leaves(self):
+        with tempfile.TemporaryDirectory() as d:
+            r = self.site(d, ("decatur-il-905-olive", "905 W. Olive St.", "Available"))
+            B.build(r, "en")
+            page = (r / "feedback" / "905-olive" / "index.html").read_text()
+            self.assertIn("https://owner.getownerfinancedhomes.com/feedback/decatur-il-905-olive?lang=en", page)
+            self.assertIn("905 W. Olive St., Decatur, IL", page)
+            self.assertNotIn("1234", page)
+            self.assertTrue((r / "feedback" / "decatur-il-905-olive" / "index.html").is_file())
+            r2 = self.site(d, ("decatur-il-1-other", "1 Other St", "Available"))  # 905 Olive left the site
+            B.build(r2, "en")
+            page = (r / "feedback" / "905-olive" / "index.html").read_text()
+            self.assertIn("/feedback/decatur-il-905-olive?lang=en", page)
+            self.assertTrue((r / "feedback" / "decatur-il-905-olive" / "index.html").is_file())
+
+    def test_spanish_feedback_is_opinion(self):
+        with tempfile.TemporaryDirectory() as d:
+            r = self.site(d, ("decatur-il-905-olive", "905 W. Olive St.", "Available"), es=True)
+            B.build(r)
+            page = (r / "opinion" / "905-olive" / "index.html").read_text()
+            self.assertIn("/feedback/decatur-il-905-olive?lang=es", page)
+
     def test_real_site_has_905_olive(self):
         root = Path(__file__).resolve().parents[1]
         lang = "es" if (root / "como-funciona.html").is_file() else "en"

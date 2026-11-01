@@ -31,6 +31,17 @@ import re
 from pathlib import Path
 
 BOOKING = "https://owner.getownerfinancedhomes.com/book"
+FEEDBACK = "https://owner.getownerfinancedhomes.com/feedback/"
+# After-tour feedback links (Joe, 2026-11-01): getownerfinancedhomes.com/feedback/<slug> and
+# casasconfinanciamiento.com/opinion/<slug> open the CRM's feedback form for that home (photo + address on top, tap to
+# pick likes and what held them back) and keep the link's query (name, phone, tour, prop, lang). Unlike booking, a
+# feedback link keeps working after a home leaves the site, because buyers answer after the tour.
+FEEDBACK_SITES = {
+    "en": {"dir": "feedback", "title": "How was your tour? {addr}", "go": "Open the feedback form",
+           "wait": "Opening the feedback form…"},
+    "es": {"dir": "opinion", "title": "¿Qué tal su visita? {addr}", "go": "Abrir el formulario",
+           "wait": "Abriendo el formulario…"},
+}
 SITES = {
     "en": {"domain": "https://getownerfinancedhomes.com", "dir": "book",
            "title": "Book a tour: {addr}", "gone": "This home is no longer available",
@@ -158,6 +169,40 @@ def page_for(root: Path, home_id: str, rec: dict, lang: str, path: str) -> str:
 """
 
 
+def feedback_url(home_id: str, lang: str) -> str:
+    return f"{FEEDBACK}{home_id}?lang={lang}"
+
+
+def feedback_page_for(root: Path, home_id: str, rec: dict, lang: str, path: str) -> str:
+    t, f = SITES[lang], FEEDBACK_SITES[lang]
+    target = feedback_url(home_id, lang)
+    addr = _addr(rec or {}) or home_id
+    title = f["title"].format(addr=addr)
+    e = lambda s: html.escape(s, quote=True)  # noqa: E731
+    js = ("(function(){var u=new URL(%s),q=new URLSearchParams(location.search);"
+          "q.forEach(function(v,k){if(k!=='home')u.searchParams.set(k,v)});"
+          "u.hash=location.hash;location.replace(u.toString())})();") % json.dumps(target)
+    return f"""<!DOCTYPE html>
+<html lang="{lang}">
+<head>
+<meta charset="utf-8"/>
+{MARK}{home_id} feedback -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="robots" content="noindex, nofollow"/>
+<title>{e(title)} | Americas Best Home Solutions</title>
+<link rel="canonical" href="{e(target)}"/>
+<meta property="og:title" content="{e(title)}"/>
+<meta property="og:url" content="{t["domain"]}/{f["dir"]}/{e(path)}"/>
+<script>{js}</script>
+<noscript><meta http-equiv="refresh" content="0;url={e(target)}"/></noscript>
+</head>
+<body>
+<p>{e(f["wait"])} <a href="{e(target)}">{e(f["go"])}</a></p>
+</body>
+</html>
+"""
+
+
 def gone_page(lang: str, key: str) -> str:
     t = SITES[lang]
     return f"""<!DOCTYPE html>
@@ -216,9 +261,23 @@ def build(root: Path, lang: str | None = None, extra: tuple[Path, ...] = ()) -> 
                     pages[d.name] = gone_page(lang, d.name)
     changed = sum(_write(out / key / "index.html", text) for key, text in pages.items())
     _write(out / "index.html", gone_page(lang, "index").replace(t["gone"], t["all"]))
+
+    # Feedback links: every live id, every short slug ever issued (live or not), and any full id that already has a
+    # booking or feedback page, so a text sent before a home went pending still opens the form.
+    fdir = root / FEEDBACK_SITES[lang]["dir"]
+    targets: dict[str, str] = {hid: hid for hid in ids}
+    targets.update({s: hid for s, hid in state["slugs"].items()})
+    for d in (out, fdir):
+        if d.is_dir():
+            for sub in d.iterdir():
+                if sub.is_dir() and sub.name not in targets and short_slug(sub.name) and ID_RE.match(sub.name):
+                    targets[sub.name] = sub.name
+    changed += sum(_write(fdir / key / "index.html", feedback_page_for(root, hid, homes.get(hid, {}), lang, key))
+                   for key, hid in targets.items())
+    _write(fdir / "index.html", gone_page(lang, "index").replace(t["gone"], t["all"]))
     live_short = sum(1 for hid in state["slugs"].values() if hid in homes)
     return {"homes": len(ids), "short": live_short, "gone": sum(1 for p in pages.values() if " gone -->" in p),
-            "changed": changed}
+            "feedback": len(targets), "changed": changed}
 
 
 def links(root: Path) -> dict[str, str]:
@@ -236,4 +295,5 @@ if __name__ == "__main__":
     ap.add_argument("--lang", choices=("en", "es"))
     a = ap.parse_args()
     r = build(Path(a.site), a.lang)
-    print(f"booking links: {r['homes']} homes, {r['short']} short slugs, {r['gone']} retired, {r['changed']} pages written")
+    print(f"booking links: {r['homes']} homes, {r['short']} short slugs, {r['gone']} retired, "
+          f"{r['feedback']} feedback links, {r['changed']} pages written")

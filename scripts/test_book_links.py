@@ -131,6 +131,24 @@ class T(unittest.TestCase):
             self.assertIn("/feedback/decatur-il-905-olive?lang=en", page)
             self.assertTrue((r / "feedback" / "decatur-il-905-olive" / "index.html").is_file())
 
+    def test_feedback_redirect_forwards_only_the_token_prop_and_lang(self):
+        """Filling-CRM #132: no phone or name rides along to the CRM, even from an old link."""
+        with tempfile.TemporaryDirectory() as d:
+            r = self.site(d, ("decatur-il-905-olive", "905 W. Olive St.", "Available"))
+            B.build(r, "en")
+            page = (r / "feedback" / "905-olive" / "index.html").read_text()
+            self.assertIn('["t", "prop", "lang"]', page)
+            self.assertNotIn("q.forEach", page)
+            self.assertNotIn("phone", page)
+
+    def test_feedback_link_needs_a_crm_token(self):
+        token = "eyJ0IjoiVGFiY2RlZjAxMjM0NSJ9.aaaaaa.bbbbbbbbbbbbbbbbbbbbbbbbbbb"
+        self.assertEqual(B.feedback_link("905-olive", token),
+                         f"{B.SITES['en']['domain']}/feedback/905-olive?t={token}")
+        for bad in ("", "3095550148", "Tabcdef012345", "a b c d e f g h i j k l m n o p"):
+            with self.assertRaises(ValueError):
+                B.feedback_link("905-olive", bad)
+
     def test_spanish_feedback_is_opinion(self):
         with tempfile.TemporaryDirectory() as d:
             r = self.site(d, ("decatur-il-905-olive", "905 W. Olive St.", "Available"), es=True)

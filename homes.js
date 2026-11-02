@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (256 live, rebuilt from master published 2026-10-27) --- */
+/* --- the homes (255 live, rebuilt from master published 2026-10-27) --- */
 const HOMES = [
   {
     id: "eaststlouis-il-2008-61st",
@@ -3185,32 +3185,6 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/centreville-il-112-88th-1.jpg", "images/centreville-il-112-88th-2.jpg", "images/centreville-il-112-88th-3.jpg", "images/centreville-il-112-88th-4.jpg", "images/centreville-il-112-88th-5.jpg", "images/centreville-il-112-88th-6.jpg", "images/centreville-il-112-88th-7.jpg", "images/centreville-il-112-88th-8.jpg", "images/centreville-il-112-88th-9.jpg", "images/centreville-il-112-88th-10.jpg", "images/centreville-il-112-88th-11.jpg", "images/centreville-il-112-88th-12.jpg", "images/centreville-il-112-88th-13.jpg", "images/centreville-il-112-88th-14.jpg", "images/centreville-il-112-88th-15.jpg", "images/centreville-il-112-88th-16.jpg", "images/centreville-il-112-88th-17.jpg", "images/centreville-il-112-88th-18.jpg", "images/centreville-il-112-88th-19.jpg", "images/centreville-il-112-88th-20.jpg", "images/centreville-il-112-88th-21.jpg", "images/centreville-il-112-88th-22.jpg", "images/centreville-il-112-88th-23.jpg", "images/centreville-il-112-88th-24.jpg"],
-  },
-  {
-    id: "middletown-oh-3117-finley",
-    address:     "3117 Finley st",
-    zip:         "45045",
-    description: "720 sq ft. Long driveway. Lot 12,632 sq ft. Detached shed. Long term renter moved out Sept 30th",
-    copy:        "$1,120 a month and $3,000 to move in opens the door to a two-bedroom Middletown home on more than a quarter acre. Inside are 720 square feet with two bedrooms and one bath. Outside, a long driveway gives you plenty of off-street parking, and a detached storage shed holds the tools and gear that never fit in an apartment closet. Your monthly payment is written into your contract, so you won't spend each year wondering whether the number will climb or whether someone else gets to decide your next move. The purchase price is $119,000, fixed when you sign, with owner financing and no bank in the middle. The home is sold as-is, and the best way to size it up is to walk through the rooms and the yard in person. Homes like this get noticed fast, so book a Tour now and grab a showing time.",
-    city:  "Middletown",
-    state: "OH",
-    beds:  2,
-    baths: 1,
-    sqft:  "720",
-    lat:   39.481952,
-    lng:   -84.398809,
-    geo:   "exact",
-    status: "Available",
-    featured: "top",
-
-    monthlyPayment: 1120,
-    moveIn:         3000,
-    lockedPrice:    119000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { off_street_parking: "yes", storage_shed: "yes" },
-    heroPhoto: "",
-    photos:    ["images/middletown-oh-3117-finley-1.jpg", "images/middletown-oh-3117-finley-2.jpg", "images/middletown-oh-3117-finley-3.jpg", "images/middletown-oh-3117-finley-4.jpg", "images/middletown-oh-3117-finley-5.jpg", "images/middletown-oh-3117-finley-6.jpg", "images/middletown-oh-3117-finley-7.jpg", "images/middletown-oh-3117-finley-8.jpg", "images/middletown-oh-3117-finley-9.jpg", "images/middletown-oh-3117-finley-10.jpg", "images/middletown-oh-3117-finley-11.jpg"],
   },
   {
     id: "decatur-il-2081-college",

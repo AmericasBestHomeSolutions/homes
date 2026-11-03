@@ -132,7 +132,7 @@
     // Buyer account (sign in with an email code; see and change tours) lives on the CRM.
     const acct = document.createElement("a");
     acct.className = "my-account";
-    acct.href = "https://owner.getownerfinancedhomes.com/account?lang=" + (es ? "es" : "en");
+    acct.href = es ? "https://owner.getownerfinancedhomes.com/account?lang=es" : "/account/?lang=en";
     acct.rel = "noopener";
     acct.textContent = es ? "Mi cuenta" : "My account";
     menu.append(acct);

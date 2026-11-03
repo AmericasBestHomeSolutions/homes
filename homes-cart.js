@@ -228,7 +228,7 @@
         <div class="pr">${money(h.monthlyPayment)}<small>${T.mo}</small></div>
         <div class="ad">${esc(label(h))}</div><div class="sp">${esc(specs)}</div>
         <div class="hc-acts">
-          <a class="hc-book" href="https://owner.getownerfinancedhomes.com/book?home=${encodeURIComponent(id)}&lang=${ES?"es":"en"}">${T.book}</a>
+          <a class="hc-book" href="${typeof bookHref==="function"?bookHref(id):("https://owner.getownerfinancedhomes.com/book?home="+encodeURIComponent(id)+"&lang="+(ES?"es":"en"))}">${T.book}</a>
           <button type="button" data-cmp="${esc(id)}"><span class="hc-tx">${cmp.includes(id)?T.cmpOn:T.cmp}</span></button>
           <a href="${encodeURIComponent(id)}.html">${T.view}</a>
           <button type="button" class="rm" data-hc="rm" data-id="${esc(id)}">${T.remove}</button></div></div></div>`; }).join("");

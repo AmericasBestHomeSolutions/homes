@@ -403,6 +403,7 @@ body.tl-pad{padding-bottom:70px}
 </div>
 
 <script src="listed-dates.js"></script>
+<script src="book-links.js"></script>
 <script>window.__HOME_ID__="decatur-il-347-stone";</script>
 <script src="homes.js"></script>
 <script>
@@ -442,7 +443,8 @@ body.tl-pad{padding-bottom:70px}
     const rail = sameCity.concat(rest).slice(0,5);
     const m = n => "$" + Math.round(Number(n)||0).toLocaleString();
 
-    const book = id => `https://owner.getownerfinancedhomes.com/book?home=${encodeURIComponent(id)}&lang=en`;
+    const crmBook = id => `https://owner.getownerfinancedhomes.com/book?home=${encodeURIComponent(id)}&lang=en`;
+    const book = id => (typeof bookHref === "function" ? bookHref(id) : crmBook(id));
     const card = (h, tag) => `<div class="kl-card"><a class="ph" href="${h.id}.html"><img src="${h.heroPhoto||"images/"+h.id+".jpg"}" alt="Home in ${h.city}, ${h.state}" loading="lazy" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='images/sv/${h.id}.jpg'}else{this.remove()}">${tag?`<em>${tag}</em>`:""}</a><div class="bd"><span class="pay">${m(h.monthlyPayment)}/mo</span><b>${h.address}</b><span class="sp">${h.city}, ${h.state} · ${h.beds} bd · ${h.baths} ba</span><span class="sp">${m(h.moveIn)} to move in</span><div class="row"><a href="${h.id}.html">View</a><a href="${book(h.id)}">Book a Tour</a></div></div></div>`;
     if (rail.length){
       $("klRail").innerHTML = card(home, "This home") + rail.map(h => card(h, h.city === home.city ? "" : h.city)).join("");
@@ -578,7 +580,7 @@ body.tl-pad{padding-bottom:70px}
     })(1);
   }
 
-  ["ctaText","ctaText2"].forEach(id=>$(id).href = `https://owner.getownerfinancedhomes.com/book?home=${encodeURIComponent(C.id)}&lang=en`);
+  ["ctaText","ctaText2"].forEach(id=>$(id).href = (typeof bookHref === "function" ? bookHref(C.id) : `https://owner.getownerfinancedhomes.com/book?home=${encodeURIComponent(C.id)}&lang=en`));
   $("ctaNote").textContent = "Tours are in person. Pick a time and we'll meet you there.";
 
   if ("IntersectionObserver" in window){

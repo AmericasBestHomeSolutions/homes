@@ -23,6 +23,7 @@ class T(unittest.TestCase):
     def site(self, d, *homes, es=False):
         r = Path(d); (r / "data").mkdir(exist_ok=True); (r / "images").mkdir(exist_ok=True)
         (r / "homes.js").write_text(homes_js(*homes), encoding="utf-8")
+        (r / "images" / "_share-default.jpg").write_bytes(b"x")
         if es:
             (r / "como-funciona.html").write_text("x")
         return r
@@ -42,9 +43,11 @@ class T(unittest.TestCase):
             full = (r / "book" / "decatur-il-905-olive" / "index.html").read_text()
             target = "https://owner.getownerfinancedhomes.com/book?home=decatur-il-905-olive&lang=en"
             for page in (short, full):
-                self.assertIn(json.dumps(target), page)                       # JS redirect
-                self.assertIn('content="0;url=' + target.replace("&", "&amp;"), page)   # no-JS fallback
-                self.assertIn('rel="canonical" href="' + target.replace("&", "&amp;"), page)
+                self.assertIn(json.dumps(target), page)                       # iframe base URL
+                self.assertIn("embed", page)
+                self.assertIn('<iframe id="crm"', page)
+                self.assertNotIn("location.replace", page)
+                self.assertIn('rel="canonical" href="https://getownerfinancedhomes.com/book/', page)
                 self.assertIn('name="robots" content="noindex, nofollow"', page)
                 self.assertIn("location.search", page)                         # keeps ?lang / utm_*
                 self.assertIn("905 W. Olive St., Decatur, IL", page)
@@ -54,6 +57,13 @@ class T(unittest.TestCase):
             self.assertIn('"905-olive": "decatur-il-905-olive"', (r / "data" / "book-links.json").read_text())
             self.assertEqual(B.links(r), {"decatur-il-905-olive": "905-olive"})
             self.assertEqual(json.loads((r / "data" / "book-links.json").read_text())["live"], {"decatur-il-905-olive": "905-olive"})
+            js = (r / "book-links.js").read_text()
+            self.assertIn('"/book/905-olive"', js)
+            self.assertIn("function bookHref", js)
+            acct = (r / "account" / "index.html").read_text()
+            self.assertIn('<iframe id="crm"', acct)
+            self.assertIn("owner.getownerfinancedhomes.com/account", acct)
+            self.assertIn("og:image", acct)
             self.assertEqual(B.build(r, "en")["changed"], 0)                    # idempotent
 
     def test_spanish_site_uses_agendar_and_lang_es(self):
@@ -64,6 +74,7 @@ class T(unittest.TestCase):
             self.assertIn("home=decatur-il-905-olive&lang=es", page)
             self.assertIn("Agende una visita", page)
             self.assertFalse((r / "book").exists())
+            self.assertTrue((r / "cuenta" / "index.html").is_file())
 
     def test_collision_falls_back_to_full_id_and_slug_is_stable(self):
         with tempfile.TemporaryDirectory() as d:
@@ -122,6 +133,8 @@ class T(unittest.TestCase):
             B.build(r, "en")
             page = (r / "feedback" / "905-olive" / "index.html").read_text()
             self.assertIn("https://owner.getownerfinancedhomes.com/feedback/decatur-il-905-olive?lang=en", page)
+            self.assertIn('<iframe id="crm"', page)
+            self.assertIn("og:image", page)
             self.assertIn("905 W. Olive St., Decatur, IL", page)
             self.assertNotIn("1234", page)
             self.assertTrue((r / "feedback" / "decatur-il-905-olive" / "index.html").is_file())

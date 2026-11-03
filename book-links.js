@@ -256,4 +256,8 @@ const BOOK_HREF = {
   "westfrankfort-il-407-saint": "/book/407-saint",
   "woodriver-il-46-eckhard": "/book/46-eckhard"
 };
-function bookHref(homeId){return BOOK_HREF[homeId]||('/book/'+encodeURIComponent(homeId));}
+const BOOK_CRM = "https://owner.getownerfinancedhomes.com/book";
+function bookHref(homeId){
+  if(BOOK_HREF[homeId]) return BOOK_HREF[homeId];
+  return BOOK_CRM + '?home=' + encodeURIComponent(homeId) + '&lang=en';
+}

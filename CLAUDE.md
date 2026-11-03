@@ -59,7 +59,7 @@ Dry run: `python3 scripts/portal_sync.py --dry-run`.
 | `scripts/sold_policy.py` | Sold/pending policy, hashed photo copies, and redirect stubs. The Mac refresh script should call this. |
 | `features.json` | Generator **input**, not read by the site. 505 SHA1-keyed feature records; the generator bakes the relevant ones into each home's `features:` object. |
 | `sitemap.xml` | **Generated.** 6 static URLs + 150 listings. |
-| `book/<slug>/index.html`, `feedback/<slug>/`, `account/` | **Generated** by `scripts/book_links.py` (called from `refresh_listings.py`). Public URLs embed the CRM with `embed=1` in a full-page iframe (book, feedback, buyer account); query params (`lang`, `t`, utm_*, …) pass through. `book-links.js` maps home ids → `/book/<slug>` for listing CTAs. Slugs pinned in `data/book-links.json`. Retired book links redirect to `/`. noindex, not in the sitemap. |
+| `book/<slug>/index.html`, `feedback/<slug>/`, `account/` | **Generated** by `scripts/book_links.py` (called from `refresh_listings.py`). Short public URLs redirect the browser to the CRM (book, feedback, buyer account); book pages keep `og:image`. `book-links.js` maps live home ids → `/book/<slug>` for listing CTAs (CRM URL fallback if unmapped). Slugs pinned in `data/book-links.json`. Retired book links redirect to `/`. noindex, not in the sitemap. |
 | `images/` | Photos, ~3,500 files. See conventions below. |
 | `email-signature/signature.html` | Standalone HTML email signature. |
 

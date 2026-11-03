@@ -1,15 +1,15 @@
 """Short booking links: getownerfinancedhomes.com/book/<slug> and casasconfinanciamiento.com/agendar/<slug>.
 
-Buyer texts and listing pages use these paths on the public site. Each page embeds the CRM
-(owner.getownerfinancedhomes.com) in a full-height iframe with ``embed=1``, forwarding query
-params (``lang``, ``t``, utm_*, …) without sending the browser to the staff host.
+Buyer texts used to carry the booking app's own address (owner.getownerfinancedhomes.com/book?home=<id>&lang=en).
+The site is static (GitHub Pages), so each live home gets a tiny redirect page that sends the buyer to that same
+booking page. Any query string the link carries (lang, utm_*, ...) and the #fragment are kept; home= is always the
+page's own home.
 
     /book/905-olive/          short slug: the home id without its "<city>-<state>-" prefix
     /book/decatur-il-905-olive/   the full home id always works too
-    /feedback/<slug>  and  /account  work the same way (feedback keeps only t, prop, lang).
 
-The Spanish site writes /agendar/... and /cuenta with lang=es. GitHub Pages answers
-/book/905-olive with a 301 to /book/905-olive/ and keeps the query string.
+The Spanish site writes /agendar/... with lang=es (a ?lang=en on the link still wins). GitHub Pages answers
+/book/905-olive with a 301 to /book/905-olive/ and keeps the query string, so the link in a text has no slash.
 
 Short slugs are kept in data/book-links.json ("slugs"; "live" lists what a text should carry for each live home,
 and the CRM reads it from the published site) so a slug, once given, always means the same home: a later home whose
@@ -30,10 +30,16 @@ import json
 import re
 from pathlib import Path
 
-CRM = "https://owner.getownerfinancedhomes.com"
-BOOKING = f"{CRM}/book"
-FEEDBACK = f"{CRM}/feedback/"
-ACCOUNT = f"{CRM}/account"
+BOOKING = "https://owner.getownerfinancedhomes.com/book"
+FEEDBACK = "https://owner.getownerfinancedhomes.com/feedback/"
+ACCOUNT = "https://owner.getownerfinancedhomes.com/account"
+# Buyer account on the public site: getownerfinancedhomes.com/account/ forwards here with a small whitelist
+# (lang, home for sign-in deep links). Never forward ``next`` or other open-redirect params.
+ACCOUNT_KEEP = ("lang", "home")
+ACCOUNT_SITES = {
+    "en": {"dir": "account", "title": "My account", "go": "Open my account", "wait": "Opening your account…"},
+    "es": {"dir": "cuenta", "title": "Mi cuenta", "go": "Abrir mi cuenta", "wait": "Abriendo su cuenta…"},
+}
 # After-tour feedback links (Joe, 2026-11-01): getownerfinancedhomes.com/feedback/<slug> and
 # casasconfinanciamiento.com/opinion/<slug> open the CRM's feedback form for that home (photo + address on top, tap to
 # pick likes and what held them back). Unlike booking, a feedback link keeps working after a home leaves the site,
@@ -45,29 +51,22 @@ ACCOUNT = f"{CRM}/account"
 FEEDBACK_KEEP = ("t", "prop", "lang")
 FEEDBACK_SITES = {
     "en": {"dir": "feedback", "title": "How was your tour? {addr}", "go": "Open the feedback form",
-           "wait": "Opening the feedback form…", "frame": "Tour feedback"},
+           "wait": "Opening the feedback form…"},
     "es": {"dir": "opinion", "title": "¿Qué tal su visita? {addr}", "go": "Abrir el formulario",
-           "wait": "Abriendo el formulario…", "frame": "Comentarios de la visita"},
-}
-ACCOUNT_SITES = {
-    "en": {"dir": "account", "title": "My account", "go": "Open my account", "frame": "Buyer account"},
-    "es": {"dir": "cuenta", "title": "Mi cuenta", "go": "Abrir mi cuenta", "frame": "Cuenta del comprador"},
+           "wait": "Abriendo el formulario…"},
 }
 SITES = {
     "en": {"domain": "https://getownerfinancedhomes.com", "dir": "book",
            "title": "Book a tour: {addr}", "gone": "This home is no longer available",
-           "go": "Open the booking page", "all": "See the homes available now", "wait": "Opening the booking page…",
-           "frame": "Book a tour"},
+           "go": "Open the booking page", "all": "See the homes available now", "wait": "Opening the booking page…"},
     "es": {"domain": "https://casasconfinanciamiento.com", "dir": "agendar",
            "title": "Agende una visita: {addr}", "gone": "Esta casa ya no está disponible",
-           "go": "Abrir la página para agendar", "all": "Vea las casas disponibles", "wait": "Abriendo la página para agendar…",
-           "frame": "Agendar una visita"},
+           "go": "Abrir la página para agendar", "all": "Vea las casas disponibles", "wait": "Abriendo la página para agendar…"},
 }
 STATE = Path("data") / "book-links.json"
 ID_RE = re.compile(r"^[a-z0-9][a-z0-9-]{0,120}$")
 _PREFIX = re.compile(r"^[a-z]+-[a-z]{2}-(?=[a-z0-9])")
 MARK = "<!-- book-link:"   # every generated page carries this, so we only ever rewrite our own files
-_EMBED_STYLE = "html,body{margin:0;height:100%;overflow:hidden}iframe{border:0;width:100%;height:100%;display:block;min-height:100dvh}"
 
 
 def short_slug(home_id: str) -> str:
@@ -145,6 +144,19 @@ def account_url(lang: str) -> str:
     return f"{ACCOUNT}?lang={lang}"
 
 
+def redirect_target_from_page(html_text: str) -> str:
+    """CRM URL embedded in a generated redirect page's inline script (for tests)."""
+    m = re.search(r"new URL\((\"(?:\\.|[^\"\\])*\")\)", html_text)
+    if not m:
+        raise ValueError("no redirect URL in page")
+    return json.loads(m.group(1))
+
+
+def meta_property(html_text: str, prop: str) -> str | None:
+    m = re.search(rf'<meta property="{re.escape(prop)}" content="([^"]*)"', html_text)
+    return m.group(1) if m else None
+
+
 def _addr(rec: dict) -> str:
     parts = [p.strip() for p in (rec.get("address", ""), rec.get("city", "")) if p and p.strip()]
     line = ", ".join(parts)
@@ -153,90 +165,38 @@ def _addr(rec: dict) -> str:
     return " ".join(line.split())[:120]
 
 
-def _og_image(root: Path, domain: str, home_id: str | None) -> str:
-    if home_id and (Path(root) / "images" / f"{home_id}.jpg").is_file():
-        return f'<meta property="og:image" content="{domain}/images/{home_id}.jpg"/>\n'
-    if (Path(root) / "images" / "_share-default.jpg").is_file():
-        return f'<meta property="og:image" content="{domain}/images/_share-default.jpg"/>\n'
-    return ""
-
-
-def _embed_js(base: str, *, skip: tuple[str, ...] = (), keep: tuple[str, ...] | None = None) -> str:
-    """Set iframe#crm src to the CRM URL with embed=1 and merged query params."""
-    head = (
-        "(function(){var u=new URL(" + json.dumps(base) + "),q=new URLSearchParams(location.search);"
-        "u.searchParams.set('embed','1');"
-    )
-    if keep is not None:
-        tail = (
-            "var keep=" + json.dumps(list(keep)) + ";"
-            "keep.forEach(function(k){if(q.has(k))u.searchParams.set(k,q.get(k))});"
-        )
-    else:
-        tail = (
-            "var skip=" + json.dumps(list(skip)) + ";"
-            "q.forEach(function(v,k){if(skip.indexOf(k)<0)u.searchParams.set(k,v)});"
-        )
-    return head + tail + "u.hash=location.hash;document.getElementById('crm').src=u.toString();})();"
-
-
-def embed_page(
-    *,
-    lang: str,
-    title: str,
-    public_path: str,
-    mark: str,
-    frame_title: str,
-    crm_base: str,
-    skip: tuple[str, ...] = (),
-    keep: tuple[str, ...] | None = None,
-    og_image: str,
-    noscript_href: str,
-    link_text: str,
-) -> str:
+def page_for(root: Path, home_id: str, rec: dict, lang: str, path: str) -> str:
     t = SITES[lang]
-    public_url = f"{t['domain']}/{public_path.lstrip('/')}"
+    target = booking_url(home_id, lang)
+    addr = _addr(rec) or home_id
+    title = t["title"].format(addr=addr)
+    img = ""
+    if (Path(root) / "images" / f"{home_id}.jpg").is_file():
+        img = f'<meta property="og:image" content="{t["domain"]}/images/{home_id}.jpg"/>\n'
     e = lambda s: html.escape(s, quote=True)  # noqa: E731
-    js = _embed_js(crm_base, skip=skip, keep=keep)
+    # JS keeps the link's own query (lang, utm_*, ...) and #fragment; home= is always this page's home.
+    js = ("(function(){var u=new URL(%s),q=new URLSearchParams(location.search);"
+          "q.forEach(function(v,k){if(k!=='home')u.searchParams.set(k,v)});"
+          "u.hash=location.hash;location.replace(u.toString())})();") % json.dumps(target)
     return f"""<!DOCTYPE html>
 <html lang="{lang}">
 <head>
 <meta charset="utf-8"/>
-{mark}
+{MARK}{home_id} -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="robots" content="noindex, nofollow"/>
 <title>{e(title)} | Americas Best Home Solutions</title>
-<link rel="canonical" href="{e(public_url)}"/>
+<link rel="canonical" href="{e(target)}"/>
 <meta property="og:title" content="{e(title)}"/>
-<meta property="og:url" content="{e(public_url)}"/>
-{og_image}<style>{_EMBED_STYLE}</style>
-<script>{js}</script>
-<noscript><meta http-equiv="refresh" content="0;url={e(noscript_href)}"/></noscript>
+<meta property="og:url" content="{t["domain"]}/{t["dir"]}/{e(path)}"/>
+{img}<script>{js}</script>
+<noscript><meta http-equiv="refresh" content="0;url={e(target)}"/></noscript>
 </head>
 <body>
-<iframe id="crm" title="{e(frame_title)}"></iframe>
-<p><a href="{e(noscript_href)}">{e(link_text)}</a></p>
+<p>{e(t["wait"])} <a href="{e(target)}">{e(t["go"])}</a></p>
 </body>
 </html>
 """
-
-
-def page_for(root: Path, home_id: str, rec: dict, lang: str, path: str) -> str:
-    t = SITES[lang]
-    addr = _addr(rec) or home_id
-    title = t["title"].format(addr=addr)
-    return embed_page(
-        lang=lang,
-        title=title,
-        public_path=f"{t['dir']}/{path}",
-        mark=f"{MARK}{home_id} -->",
-        frame_title=t["frame"],
-        crm_base=booking_url(home_id, lang),
-        skip=("home",),
-        og_image=_og_image(root, t["domain"], home_id),
-        noscript_href=booking_url(home_id, lang),
-        link_text=t["go"],
-    )
 
 
 def feedback_url(home_id: str, lang: str) -> str:
@@ -256,35 +216,64 @@ def feedback_link(slug: str, token: str, lang: str = "en") -> str:
 
 def feedback_page_for(root: Path, home_id: str, rec: dict, lang: str, path: str) -> str:
     t, f = SITES[lang], FEEDBACK_SITES[lang]
+    target = feedback_url(home_id, lang)
     addr = _addr(rec or {}) or home_id
     title = f["title"].format(addr=addr)
-    return embed_page(
-        lang=lang,
-        title=title,
-        public_path=f"{f['dir']}/{path}",
-        mark=f"{MARK}{home_id} feedback -->",
-        frame_title=f["frame"],
-        crm_base=feedback_url(home_id, lang),
-        keep=FEEDBACK_KEEP,
-        og_image=_og_image(root, t["domain"], home_id),
-        noscript_href=feedback_url(home_id, lang),
-        link_text=f["go"],
-    )
+    e = lambda s: html.escape(s, quote=True)  # noqa: E731
+    js = ("(function(){var u=new URL(%s),q=new URLSearchParams(location.search),keep=%s;"
+          "keep.forEach(function(k){if(q.has(k))u.searchParams.set(k,q.get(k))});"
+          "location.replace(u.toString())})();") % (json.dumps(target), json.dumps(list(FEEDBACK_KEEP)))
+    return f"""<!DOCTYPE html>
+<html lang="{lang}">
+<head>
+<meta charset="utf-8"/>
+{MARK}{home_id} feedback -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="robots" content="noindex, nofollow"/>
+<title>{e(title)} | Americas Best Home Solutions</title>
+<link rel="canonical" href="{e(target)}"/>
+<meta property="og:title" content="{e(title)}"/>
+<meta property="og:url" content="{t["domain"]}/{f["dir"]}/{e(path)}"/>
+<script>{js}</script>
+<noscript><meta http-equiv="refresh" content="0;url={e(target)}"/></noscript>
+</head>
+<body>
+<p>{e(f["wait"])} <a href="{e(target)}">{e(f["go"])}</a></p>
+</body>
+</html>
+"""
 
 
 def account_page_for(root: Path, lang: str) -> str:
     a, t = ACCOUNT_SITES[lang], SITES[lang]
-    return embed_page(
-        lang=lang,
-        title=a["title"],
-        public_path=f"{a['dir']}/",
-        mark=f"{MARK}account -->",
-        frame_title=a["frame"],
-        crm_base=account_url(lang),
-        og_image=_og_image(root, t["domain"], None),
-        noscript_href=account_url(lang),
-        link_text=a["go"],
-    )
+    target = account_url(lang)
+    e = lambda s: html.escape(s, quote=True)  # noqa: E731
+    img = ""
+    if (Path(root) / "images" / "_share-default.jpg").is_file():
+        img = f'<meta property="og:image" content="{t["domain"]}/images/_share-default.jpg"/>\n'
+    js = ("(function(){var u=new URL(%s),q=new URLSearchParams(location.search),keep=%s;"
+          "keep.forEach(function(k){if(q.has(k))u.searchParams.set(k,q.get(k))});"
+          "location.replace(u.toString())})();") % (json.dumps(target), json.dumps(list(ACCOUNT_KEEP)))
+    public = f"{t['domain']}/{a['dir']}/"
+    return f"""<!DOCTYPE html>
+<html lang="{lang}">
+<head>
+<meta charset="utf-8"/>
+{MARK}account -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="robots" content="noindex, nofollow"/>
+<title>{e(a["title"])} | Americas Best Home Solutions</title>
+<link rel="canonical" href="{e(target)}"/>
+<meta property="og:title" content="{e(a["title"])}"/>
+<meta property="og:url" content="{e(public)}"/>
+{img}<script>{js}</script>
+<noscript><meta http-equiv="refresh" content="0;url={e(target)}"/></noscript>
+</head>
+<body>
+<p>{e(a["wait"])} <a href="{e(target)}">{e(a["go"])}</a></p>
+</body>
+</html>
+"""
 
 
 def gone_page(lang: str, key: str) -> str:
@@ -317,12 +306,17 @@ def _write(f: Path, text: str) -> bool:
 
 
 def write_book_links_js(root: Path, lang: str, live: dict[str, str]) -> bool:
+    """Map home id → /book/<slug> for listing CTAs; unknown ids fall back to the CRM booking URL."""
     t = SITES[lang]
     mapping = {hid: f"/{t['dir']}/{slug}" for hid, slug in sorted(live.items())}
     body = (
         "/* Generated by scripts/book_links.py — do not hand-edit. */\n"
         "const BOOK_HREF = " + json.dumps(mapping, indent=2) + ";\n"
-        f"function bookHref(homeId){{return BOOK_HREF[homeId]||('/{t['dir']}/'+encodeURIComponent(homeId));}}\n"
+        "const BOOK_CRM = " + json.dumps(BOOKING) + ";\n"
+        f"function bookHref(homeId){{\n"
+        f"  if(BOOK_HREF[homeId]) return BOOK_HREF[homeId];\n"
+        f"  return BOOK_CRM + '?home=' + encodeURIComponent(homeId) + '&lang={lang}';\n"
+        f"}}\n"
     )
     return _write(root / "book-links.js", body)
 

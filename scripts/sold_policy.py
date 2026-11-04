@@ -15,15 +15,17 @@ dict keyed by home id or a list of records::
 
 States:
 
-* ``sold`` and ``pending`` are publicly sold. A deposit (pending) is a sale.
-  The home leaves ``HOMES``, search, and the map. It is not given a Pending tag.
+* ``sold`` is publicly sold. The home leaves ``HOMES``, search, and the map.
+* ``pending`` stays on the site. A deposit is not a sale. ``--apply`` does not
+  remove the home, write a sold card, or replace its page. The listing shows a
+  Pending badge and does not offer a new tour.
 * ``hold`` is not a sale. ``--apply`` leaves hold homes untouched so the Mac
   script can keep whatever it already does with hold.
-* Removing the override relists the home, as long as the sheet row itself is
-  not still marked pending or sold.
+* Removing a sold override relists the home, as long as the sheet row itself
+  is not still marked sold.
 
-An old status of ``pending`` / ``Pending`` / ``sold`` with no override is
-still publicly sold.
+An old status of ``sold`` with no override is still publicly sold. A status of
+``pending`` / ``Pending`` stays listed.
 
 Sold cards (``SOLD_CARDS`` in homes.js) carry the street name and city only.
 The photo is a copy under ``images/sold/<letters>.jpg``. The filename alphabet
@@ -102,29 +104,31 @@ def house_number(address: str) -> str:
 
 
 def override_state(value) -> str | None:
-    """Normalize one override to ``sold``, ``hold``, or None.
-
-    ``pending`` becomes ``sold``.
-    """
+    """Normalize one override to ``sold``, ``pending``, ``hold``, or None."""
     if isinstance(value, dict):
         value = value.get("state", value.get("status", ""))
     text = str(value or "").strip().lower()
-    if text in {"pending", "sold"}:
-        return "sold"
-    if text == "hold":
-        return "hold"
+    if text in {"pending", "sold", "hold"}:
+        return text
     return None
 
 
 def is_legacy_sold_status(status) -> bool:
-    return str(status or "").strip().lower() in {"pending", "sold"}
+    return str(status or "").strip().lower() == "sold"
 
 
 def public_bucket(sheet_status, override) -> str:
-    """Return ``active``, ``hold``, or ``sold`` for one Portal Mirror row."""
+    """Return ``active``, ``hold``, ``pending``, or ``sold`` for one row.
+
+    A sold override or a sold sheet status wins. Pending stays pending so the
+    home can stay on the site with booking turned off.
+    """
     state = override_state(override)
-    if state == "sold" or is_legacy_sold_status(sheet_status):
+    sheet = str(sheet_status or "").strip().lower()
+    if state == "sold" or sheet == "sold" or is_legacy_sold_status(sheet_status):
         return "sold"
+    if state == "pending" or sheet == "pending":
+        return "pending"
     if state == "hold":
         return "hold"
     return "active"

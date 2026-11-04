@@ -5724,7 +5724,7 @@ const HOMES = [
     id: "granitecity-il-2539-28th",
     address:     "2539 E. 28th St.",
     zip:         "62040",
-    copy:        "$997 a month and $2,000 to move in. This 2-bedroom, 1-bath home in Granite City, IL with about 720 square feet gives you room to spread out and a place that's truly yours, with no landlord deciding whether you stay. The purchase price is $84,000, fixed in writing when you sign, with owner financing and no bank in the middle. It's sold as-is, so come walk through every room and judge it with your own eyes. Homes at this payment don't sit long, so book a Tour and claim a showing time.",
+    copy:        "$997 a month and $2,000 to move in. This 2-bedroom, 1-bath home in Granite City, IL with about 720 square feet gives you room to spread out and a place that's truly yours, with no landlord deciding whether you stay. The purchase price is $84,000, fixed in writing when you sign, with owner financing and no bank in the middle. It's sold as-is, so come walk through every room and judge it with your own eyes. A deposit has been placed, so this home is pending and new tours are not open.",
     city:  "Granite City",
     state: "IL",
     beds:  2,
@@ -5733,7 +5733,7 @@ const HOMES = [
     lat:   38.71094,
     lng:   -90.126711,
     geo:   "exact",
-    status: "Available",
+    status: "Pending",
 
     monthlyPayment: 997,
     moveIn:         2000,

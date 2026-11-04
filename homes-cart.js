@@ -23,7 +23,7 @@
     fail:"Algo salió mal — por favor intente de nuevo en un momento.", maxTours:"Puede visitar hasta 5 casas a la vez.",
     optional:"Opcional — puede enviar sin marcar la casilla.", mo:"/mes", pay:"Pago mensual", moveIn:"Para mudarse", price:"Precio",
     beds:"Habitaciones", baths:"Baños", sqft:"Pies²", where:"Ubicación", status:"Estado", feats:"Detalles del anuncio",
-    avail:"Disponible", pend:"Pendiente", ask:"Consúltenos", best:"Más bajo", featNote:"Detalles tomados del anuncio que recibimos; no hemos inspeccionado las casas. Recorra la casa y verifique todo usted mismo.",
+    avail:"Disponible", pend:"Pendiente", pendNote:"Pendiente — no hay visitas nuevas.", ask:"Consúltenos", best:"Más bajo", featNote:"Detalles tomados del anuncio que recibimos; no hemos inspeccionado las casas. Recorra la casa y verifique todo usted mismo.",
     tourN:n=>`${n} para visita`, open:"Abrir mis casas",
     consent:`Acepto recibir mensajes de texto de Americas Best Home Solutions LLC sobre casas disponibles, citas para ver casas, ofertas y seguimiento. La frecuencia de mensajes varía. Pueden aplicar tarifas de mensajes y datos. Responda STOP para cancelar la suscripción o HELP para obtener ayuda. Consulte nuestra <a href="/politica-de-privacidad" style="color:var(--pine);font-weight:600">Política de Privacidad</a> y nuestros <a href="/terminos-de-mensajes" style="color:var(--pine);font-weight:600">Términos de Mensajes</a>.`,
     labels:{backyard:"Patio trasero",fenced_yard:"Patio cercado",basement:"Sótano",garage:"Garaje",off_street_parking:"Estacionamiento propio",central_air:"Aire central / HVAC",storage_shed:"Cobertizo",attic:"Ático"},
@@ -40,7 +40,7 @@
     fail:"Something went wrong — please try again in a moment.", maxTours:"You can tour up to 5 homes at a time.",
     optional:"Optional — you can submit without checking the box.", mo:"/mo", pay:"Monthly payment", moveIn:"To move in", price:"Price",
     beds:"Bedrooms", baths:"Bathrooms", sqft:"Sq ft", where:"Location", status:"Status", feats:"From the listing",
-    avail:"Available", pend:"Pending", ask:"Ask us", best:"Lowest", featNote:"Details come from the listing we were given — we haven't inspected these homes. Walk through the home and check everything yourself.",
+    avail:"Available", pend:"Pending", pendNote:"Pending — new tours aren't open.", ask:"Ask us", best:"Lowest", featNote:"Details come from the listing we were given — we haven't inspected these homes. Walk through the home and check everything yourself.",
     tourN:n=>`${n} to tour`, open:"Open my homes",
     consent:`I agree to receive text messages from Americas Best Home Solutions LLC about property listings, showings, offers, and follow-up. Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe or HELP for help. See our <a href="/privacy-policy" style="color:var(--pine);font-weight:600">Privacy Policy</a> and <a href="/messaging-terms" style="color:var(--pine);font-weight:600">Messaging Terms</a>.`,
     labels:{backyard:"Backyard",fenced_yard:"Fenced yard",basement:"Basement",garage:"Garage",off_street_parking:"Off-street parking",central_air:"Central air / HVAC",storage_shed:"Storage shed",attic:"Attic"},
@@ -49,7 +49,7 @@
   const FEAT_ORDER = ["backyard","fenced_yard","basement","garage","off_street_parking","central_air","storage_shed","attic"];
   const KS = "savedHomes", KC = "compareHomes", MAXS = 30, MAXC = 4, MAXT = 5;
 
-  const offMarket = h => /^(pending|sold)$/i.test(String((h && h.status) || "").trim());
+  const offMarket = h => /^sold$/i.test(String((h && h.status) || "").trim());
   const ALL = () => (typeof HOMES !== "undefined" ? HOMES : []).filter(h => !offMarket(h));
   const byId = id => ALL().find(h => h.id === id);
   const $ = id => document.getElementById(id);
@@ -228,7 +228,7 @@
         <div class="pr">${money(h.monthlyPayment)}<small>${T.mo}</small></div>
         <div class="ad">${esc(label(h))}</div><div class="sp">${esc(specs)}</div>
         <div class="hc-acts">
-          <a class="hc-book" href="${typeof bookHref==="function"?bookHref(id):("https://owner.getownerfinancedhomes.com/book?home="+encodeURIComponent(id)+"&lang="+(ES?"es":"en"))}">${T.book}</a>
+          ${isPend(h) ? `<span>${esc(T.pendNote)}</span>` : `<a class="hc-book" href="${typeof bookHref==="function"?bookHref(id):("https://owner.getownerfinancedhomes.com/book?home="+encodeURIComponent(id)+"&lang="+(ES?"es":"en"))}">${T.book}</a>`}
           <button type="button" data-cmp="${esc(id)}"><span class="hc-tx">${cmp.includes(id)?T.cmpOn:T.cmp}</span></button>
           <a href="${encodeURIComponent(id)}.html">${T.view}</a>
           <button type="button" class="rm" data-hc="rm" data-id="${esc(id)}">${T.remove}</button></div></div></div>`; }).join("");
@@ -257,7 +257,7 @@
     rows += row(T.baths, hs.map(h => h.baths || "—"), best(hs.map(h=>h.baths),"max"));
     rows += row(T.sqft, hs.map(h => h.sqft ? Number(h.sqft).toLocaleString() : "—"), best(hs.map(h=>h.sqft),"max"));
     rows += row(T.where, hs.map(h => esc([h.city, h.state].filter(Boolean).join(", "))));
-    rows += row(T.status, hs.map(() => T.avail));
+    rows += row(T.status, hs.map(h => isPend(h) ? T.pend : T.avail));
     featKeys.forEach(k => { rows += row(T.labels[k], hs.map(h => { const v = (h.features||{})[k]; return v === "yes" ? '<span class="y">✓</span>' : v === "no" ? '<span class="n">✕</span>' : '<span class="n">—</span>'; })); });
     return `<div class="hc-tw"><table class="hc-tbl">${rows}</table></div>
       <p class="hc-note">${featKeys.length ? T.featNote : ""}</p>

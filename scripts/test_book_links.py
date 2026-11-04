@@ -149,6 +149,25 @@ class T(unittest.TestCase):
             self.assertIn("home=decatur-il-905-olive&", (r / "book" / "905-olive" / "index.html").read_text())
             self.assertEqual(B.links(r)["alton-il-905-olive"], "alton-il-905-olive")
 
+    def test_pending_home_blocks_booking(self):
+        with tempfile.TemporaryDirectory() as d:
+            r = self.site(d, ("granitecity-il-2539-28th", "2539 E. 28th St.", "Available"))
+            B.build(r, "en")
+            (r / "homes.js").write_text(homes_js(("granitecity-il-2539-28th", "2539 E. 28th St.", "Pending")))
+            B.build(r, "en")
+            for key in ("2539-28th", "granitecity-il-2539-28th"):
+                page = (r / "book" / key / "index.html").read_text()
+                self.assertIn("This home is pending", page)
+                self.assertIn("new tours are not open", page)
+                self.assertNotIn("owner.getownerfinancedhomes.com", page)
+                self.assertNotIn("location.replace", page)
+            js = (r / "book-links.js").read_text()
+            self.assertIn("granitecity-il-2539-28th", js)
+            self.assertIn("BOOK_CLOSED", js)
+            self.assertNotIn('"/book/2539-28th"', js)
+            live = json.loads((r / "data" / "book-links.json").read_text())["live"]
+            self.assertNotIn("granitecity-il-2539-28th", live)
+
     def test_removed_home_redirects_to_home_page(self):
         with tempfile.TemporaryDirectory() as d:
             r = self.site(d, ("decatur-il-905-olive", "905 Olive", "Available"), ("decatur-il-1-a", "1 A", "Available"))

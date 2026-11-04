@@ -90,7 +90,7 @@ master list, so don't assume clean types:
 
 - `sqft` and `zip` are **strings**, often with a trailing `.0` (`"1453.0"`, `"62526.0"`).
   Rendering code does `Number(C.sqft).toLocaleString()`.
-- `status` on a public home is `"Available"`. A deposit used to be `"Pending"` and stayed on the site with an orange tag. That state is no longer public: `pending` and `sold` are removed from `HOMES` and search. Old `"Pending"` values still in a generated file are treated as sold. Relist a home by deleting its override and refreshing.
+- `status` on a public home is `"Available"` or `"Pending"`. Pending means a deposit is in place: the home stays in search and on its page with an orange Pending badge, and Book a Tour is replaced with a short note. `sold` is removed from `HOMES` and search. Relist a sold home by deleting its override and refreshing.
 - `SOLD_CARDS` (street name, city, state, optional month, hashed photo) feeds the Recently sold row. `scripts/sold_policy.py` is the policy `refresh_listings.py` / `featured.py` on the Mac should call. `sold-cards.js` renders it and is language-aware for the Spanish site.
 - `heroPhoto` is `""` on every current record; the hero image is resolved by convention.
 - `id` is `<city>-<state>-<housenumber>-<street>`, lowercased, with spaces squashed out of

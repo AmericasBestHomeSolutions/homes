@@ -50,15 +50,16 @@ class PolicyTests(unittest.TestCase):
             self.assertEqual(policy.house_number(address), number, address)
             self.assertNotIn(number, street)
 
-    def test_pending_override_is_sold_and_relist_removes_it(self):
+    def test_pending_stays_listed_and_sold_still_retires(self):
         home = {"id": "decatur-il-1755-monroe", "status": "Available", "address": "1755 N Monroe St"}
-        self.assertEqual(policy.public_bucket(home["status"], {"state": "pending"}), "sold")
-        self.assertEqual(policy.public_bucket(home["status"], "pending"), "sold")
-        self.assertEqual(policy.public_bucket(home["status"], "PENDING"), "sold")
+        self.assertEqual(policy.public_bucket(home["status"], {"state": "pending"}), "pending")
+        self.assertEqual(policy.public_bucket(home["status"], "pending"), "pending")
+        self.assertEqual(policy.public_bucket(home["status"], "PENDING"), "pending")
         self.assertEqual(policy.public_bucket(home["status"], None), "active")
-        self.assertEqual(policy.public_bucket("Pending", None), "sold")
-        self.assertEqual(policy.public_bucket("pending", None), "sold")
+        self.assertEqual(policy.public_bucket("Pending", None), "pending")
+        self.assertEqual(policy.public_bucket("pending", None), "pending")
         self.assertEqual(policy.public_bucket("Sold", None), "sold")
+        self.assertEqual(policy.public_bucket("Pending", "sold"), "sold")
         self.assertEqual(policy.public_bucket("Available", "hold"), "hold")
         self.assertEqual(policy.public_bucket("Available", {"state": "sold", "soldOn": "2026-10-02"}), "sold")
 
@@ -166,28 +167,51 @@ const RECENTLY_SOLD = [{"city": "Flint", "state": "MI", "soldOn": "2026-10-17"}]
                 "decatur-il-1755-monroe": {"state": "pending", "soldOn": "2026-10-17"},
                 "keep-il-10-oak": "hold",
             }), encoding="utf-8")
-            # Hold must not retire the available home. Pending status still does.
+            # Hold and pending stay listed. Only a sold status leaves the site.
             report = policy.apply_site(root, overrides)
-            self.assertEqual(report["retired"], ["decatur-il-1755-monroe"])
+            self.assertEqual(report["retired"], [])
             catalog = policy.read_catalog(root / "homes.js")
-            self.assertEqual([home["id"] for home in catalog["HOMES"]], ["keep-il-10-oak"])
-            self.assertEqual(catalog["SOLD_CARDS"][0]["street"], "Monroe St")
-            blob = (root / "homes.js").read_text(encoding="utf-8")
-            sold_at = blob.index("const SOLD_CARDS")
-            self.assertNotIn("1755", blob[sold_at:])
-            self.assertNotIn("decatur-il-1755-monroe", blob[sold_at:])
+            self.assertEqual([home["id"] for home in catalog["HOMES"]],
+                             ["decatur-il-1755-monroe", "keep-il-10-oak"])
+            self.assertEqual(catalog["HOMES"][0]["status"], "Pending")
+            self.assertEqual(catalog.get("SOLD_CARDS") or [], [])
             page = (root / "decatur-il-1755-monroe.html").read_text(encoding="utf-8")
-            self.assertNotIn("1755", page)
-            self.assertNotIn("Monroe", page)
-            self.assertIn('content="0;url=/"', page)
-            self.assertIn("noindex", page)
+            self.assertIn("1755 N Monroe St", page)
+            self.assertNotIn('content="0;url=/"', page)
             self.assertIn("still listed", (root / "keep-il-10-oak.html").read_text(encoding="utf-8"))
             sitemap = (root / "sitemap.xml").read_text(encoding="utf-8")
-            self.assertNotIn("decatur-il-1755-monroe", sitemap)
+            self.assertIn("decatur-il-1755-monroe", sitemap)
             self.assertIn("keep-il-10-oak", sitemap)
             again = policy.apply_site(root, overrides)
             self.assertEqual(again["retired"], [])
-            self.assertEqual(policy.read_catalog(root / "homes.js")["SOLD_CARDS"][0]["street"], "Monroe St")
+
+    def test_sold_status_still_leaves_the_site(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "images").mkdir()
+            (root / "images" / "springfield-il-9-oak-1.jpg").write_bytes(_real_jpeg())
+            (root / "homes.js").write_text(
+                """const HOMES = [
+  {
+    id: "springfield-il-9-oak",
+    address: "9 Oak St",
+    city: "Springfield",
+    state: "IL",
+    status: "Sold",
+    photos: ["images/springfield-il-9-oak-1.jpg"],
+  },
+];
+const SOLD_CARDS = [];
+""",
+                encoding="utf-8",
+            )
+            (root / "springfield-il-9-oak.html").write_text("<p>9 Oak St</p>", encoding="utf-8")
+            report = policy.apply_site(root)
+            self.assertEqual(report["retired"], ["springfield-il-9-oak"])
+            self.assertEqual(policy.read_catalog(root / "homes.js")["HOMES"], [])
+            page = (root / "springfield-il-9-oak.html").read_text(encoding="utf-8")
+            self.assertIn('content="0;url=/"', page)
+            self.assertNotIn("9 Oak", page)
 
 
 class RenderTests(unittest.TestCase):

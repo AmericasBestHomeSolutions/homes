@@ -3532,7 +3532,7 @@ const HOMES = [
     address:     "714 S Adams St",
     zip:         "61542",
     description: "Property Details:. Location: Lewistown, Illinois 61542. 2 bedrooms. 1 bathroom. The property was occupied by tenants until a few weeks ago.. The property has undergone a thorough cleaning.. Pest control treatment has been completed.. Deal Structure:. This is my first property in Illinois... BTW, I don't have a picture link- I just had to put there something",
-    copy:        "Two bedrooms in Lewistown, Illinois, at $800 a month, and $1,500 puts the keys in your hand. This home offers two bedrooms and one full bath, and it has been thoroughly cleaned and is ready for someone who's tired of paying rent on a place that will never be theirs. Your monthly payment is spelled out in writing, so the number you pay this spring is the same number you'll pay next spring, with no landlord deciding it's time for a hike. The purchase price is $68,998, agreed on the moment you sign, with owner financing, no bank in the middle, and no mortgage application to fill out. The home is sold as-is, so come walk through every room yourself and get a real feel for it. Homes at this price don't stay quiet for long. Book a Tour now and we'll find you a time to tour it this week.",
+    copy:        "Two bedrooms in Lewistown, Illinois, at $690 a month, and $1,500 puts the keys in your hand. This home offers two bedrooms and one full bath, and it has been thoroughly cleaned and is ready for someone who's tired of paying rent on a place that will never be theirs. Your monthly payment is spelled out in writing, so the number you pay this spring is the same number you'll pay next spring, with no landlord deciding it's time for a hike. The purchase price is $68,998, agreed on the moment you sign, with owner financing, no bank in the middle, and no mortgage application to fill out. The home is sold as-is, so come walk through every room yourself and get a real feel for it. Homes at this price don't stay quiet for long. Book a Tour now and we'll find you a time to tour it this week.",
     city:  "Lewistown",
     state: "IL",
     beds:  2,
@@ -3543,7 +3543,7 @@ const HOMES = [
     geo:   "exact",
     status: "Available",
 
-    monthlyPayment: 800,
+    monthlyPayment: 690,
     moveIn:         1500,
     lockedPrice:    68998,
     termText:       "30-year owner financing (contract for deed)",
@@ -3673,7 +3673,7 @@ const HOMES = [
     address:     "322 West Cole Street",
     zip:         "62833",
     description: "This is a fantastic, spacious property in Illinois with a huge yard and plenty of outdoor space!. The property originally consisted of two separate lots, which the previous owner combined into one large parcel. After purchasing the property, I divided it back into two separate lots.. The house itself is large and offers great potential.. One of the biggest highlights is the BRAND-NEW ROOF! There are some minor water stains on the ceiling near the front entrance from a previous roof leak. However, the roof has now been completely replace",
-    copy:        "Three bedrooms, two baths, $1,100 a month, and $2,800 to get the keys in Du Quoin, Illinois. It's a large house with room to spread out, and the roof is brand new. Out back, the backyard is where a quiet evening belongs to you, with no landlord around to decide whether you get another year. The purchase price is $89,000, fixed the day you sign, and owner financing means no bank and no mortgage application standing between you and your own front door. The home is sold as-is, and we'd be glad to have you walk through every room in person before you decide. Homes at this payment move quickly, so book a Tour soon to set up a showing.",
+    copy:        "Three bedrooms, two baths, $975 a month, and $2,400 to get the keys in Du Quoin, Illinois. It's a large house with room to spread out, and the roof is brand new. Out back, the backyard is where a quiet evening belongs to you, with no landlord around to decide whether you get another year. The purchase price is $89,000, fixed the day you sign, and owner financing means no bank and no mortgage application standing between you and your own front door. The home is sold as-is, and we'd be glad to have you walk through every room in person before you decide. Homes at this payment move quickly, so book a Tour soon to set up a showing.",
     city:  "Du Quoin",
     state: "IL",
     beds:  3,
@@ -3684,8 +3684,8 @@ const HOMES = [
     geo:   "exact",
     status: "Available",
 
-    monthlyPayment: 1100,
-    moveIn:         2800,
+    monthlyPayment: 975,
+    moveIn:         2400,
     lockedPrice:    89000,
     termText:       "30-year owner financing (contract for deed)",
 
@@ -6046,7 +6046,7 @@ const HOMES = [
     id: "detroit-mi-10122-cedarlawn",
     address:     "10122 Cedarlawn Street",
     zip:         "48204",
-    copy:        "$1,179 a month and $3,000 to move in. This 4-bedroom, 1-bath home in Detroit, MI with about 1,512 square feet gives you room to spread out and a place that's truly yours, with no landlord deciding whether you stay. The purchase price is $109,900, fixed in writing when you sign, with owner financing and no bank in the middle. It's sold as-is, so come walk through every room and judge it with your own eyes. Homes at this payment don't sit long, so book a Tour and claim a showing time.",
+    copy:        "Four bedrooms, one bath, and 1,512 square feet on Cedarlawn Street in Detroit, at $1,179 a month, with $3,000 to move in. Hardwood floors run through the house, a wood-burning fireplace anchors the living room, and the mechanicals are functional. An alarm system is already in place, and there's potential to add a fifth bedroom if you need the extra room. The purchase price is $109,900, fixed in writing the day you sign, through owner financing with no bank and no mortgage application. The home is sold as-is, so come walk every room and judge it with your own eyes. We'd like to show it to you before someone else claims it. Book a Tour and we'll find a time this week.",
     city:  "Detroit",
     state: "MI",
     beds:  4,
@@ -6063,7 +6063,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    ["images/detroit-mi-10122-cedarlawn-1.jpg", "images/detroit-mi-10122-cedarlawn-2.jpg", "images/detroit-mi-10122-cedarlawn-3.jpg", "images/detroit-mi-10122-cedarlawn-4.jpg", "images/detroit-mi-10122-cedarlawn-5.jpg", "images/detroit-mi-10122-cedarlawn-6.jpg", "images/detroit-mi-10122-cedarlawn-7.jpg", "images/detroit-mi-10122-cedarlawn-8.jpg", "images/detroit-mi-10122-cedarlawn-9.jpg", "images/detroit-mi-10122-cedarlawn-10.jpg", "images/detroit-mi-10122-cedarlawn-11.jpg", "images/detroit-mi-10122-cedarlawn-12.jpg", "images/detroit-mi-10122-cedarlawn-13.jpg", "images/detroit-mi-10122-cedarlawn-14.jpg", "images/detroit-mi-10122-cedarlawn-15.jpg", "images/detroit-mi-10122-cedarlawn-16.jpg", "images/detroit-mi-10122-cedarlawn-17.jpg", "images/detroit-mi-10122-cedarlawn-18.jpg", "images/detroit-mi-10122-cedarlawn-19.jpg", "images/detroit-mi-10122-cedarlawn-20.jpg", "images/detroit-mi-10122-cedarlawn-21.jpg", "images/detroit-mi-10122-cedarlawn-22.jpg", "images/detroit-mi-10122-cedarlawn-23.jpg", "images/detroit-mi-10122-cedarlawn-24.jpg"],
+    photos:    ["images/detroit-mi-10122-cedarlawn-1.jpg", "images/detroit-mi-10122-cedarlawn-2.jpg", "images/detroit-mi-10122-cedarlawn-3.jpg", "images/detroit-mi-10122-cedarlawn-4.jpg", "images/detroit-mi-10122-cedarlawn-5.jpg", "images/detroit-mi-10122-cedarlawn-6.jpg", "images/detroit-mi-10122-cedarlawn-7.jpg", "images/detroit-mi-10122-cedarlawn-8.jpg", "images/detroit-mi-10122-cedarlawn-9.jpg", "images/detroit-mi-10122-cedarlawn-10.jpg", "images/detroit-mi-10122-cedarlawn-11.jpg", "images/detroit-mi-10122-cedarlawn-12.jpg", "images/detroit-mi-10122-cedarlawn-13.jpg", "images/detroit-mi-10122-cedarlawn-14.jpg", "images/detroit-mi-10122-cedarlawn-15.jpg", "images/detroit-mi-10122-cedarlawn-16.jpg", "images/detroit-mi-10122-cedarlawn-17.jpg", "images/detroit-mi-10122-cedarlawn-18.jpg", "images/detroit-mi-10122-cedarlawn-19.jpg", "images/detroit-mi-10122-cedarlawn-20.jpg", "images/detroit-mi-10122-cedarlawn-21.jpg", "images/detroit-mi-10122-cedarlawn-22.jpg", "images/detroit-mi-10122-cedarlawn-23.jpg"],
   },
   {
     id: "flint-mi-2041-warner",

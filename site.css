@@ -187,6 +187,12 @@ body.page-search .card .scrim,
 body.page-search .card .badge-new,
 body.page-search .card .cs-tag,
 body.page-search .card .pg { display: none !important; }
+body.page-search .card .status-tag.pending {
+  display: inline-block !important;
+  background: #c2410c;
+  color: #fff;
+  z-index: 6;
+}
 body.page-search .cards { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important; gap: 16px; padding: 12px 12px 96px; margin-top: 8px; }
 body.page-search .card {
   display: flex !important; flex-direction: column; border: 0; border-radius: 16px;

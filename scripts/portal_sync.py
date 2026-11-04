@@ -9,13 +9,16 @@ and on its own each morning after the 7 AM portal backup. For one site checkout 
   portal home the site does not have yet,
 * updates price, down payment, monthly payment, beds, baths and square feet when
   the portal changed them (and the dollar amounts in that home's copy and page tags),
-* retires a home the portal marks Pending or Sold (sold card + redirect, via
+* keeps a home the portal marks Pending on the site and sets its status to
+  Pending (the page stays up; new tours are turned off). Price, down payment,
+  and monthly payment are left as they are.
+* retires a home the portal marks Sold (sold card + redirect, via
   scripts/sold_policy.py) or Not in portal (redirect, no sold card).
 
 Direct listings (homes a seller gave us directly, entered by staff on the CRM's /direct page) come from the CRM's
 public feed, GET https://owner.getownerfinancedhomes.com/api/public/direct-homes (DIRECT_FEED_URL to override,
 --direct-json offline). They go through the same add / update / photo steps as portal homes. Only staff retire one
-(the feed says pending, sold or withdrawn); a direct home missing from the feed, or a feed that can't be read, is
+(the feed says sold or withdrawn). A pending direct home stays listed and its status is set to Pending. A direct home missing from the feed, or a feed that can't be read, is
 left exactly as it is. The feed carries public facts only (no seller, no lockbox).
 
 Cameron's portal is the master for status (Joe's rule): a home the portal shows Available is
@@ -926,7 +929,7 @@ def plan(root: Path, portal_rows: list[dict], crm_rows: list[dict], wa: list[dic
                   for r in crm_rows if CLOSED.search(str(r.get("Property Status") or ""))}
     portal = portal_index(portal_rows)
     excluded = excluded_homes.load(root, Path(__file__).resolve().parents[1])
-    out = {"add": [], "update": [], "retire": [], "hand": [], "photos": [], "relist": [],
+    out = {"add": [], "update": [], "retire": [], "pending": [], "hand": [], "photos": [], "relist": [],
            "closed_streets": closed_streets(portal_rows, crm_rows)}
     for hid, row in portal.items():
         sid = match_site_id(hid, row, site_keys)
@@ -936,8 +939,11 @@ def plan(root: Path, portal_rows: list[dict], crm_rows: list[dict], wa: list[dic
             block = site[sid].group(0)
             if status.lower() == "available" and (field(block, "photos") or "[]").strip() == "[]":
                 out["photos"].append(photo_item(sid, row))
-            if status.lower() in ("pending", "sold"):
-                out["retire"].append({"id": sid, "why": status.lower(), "address": row["Address"]})
+            if status.lower() == "pending":
+                if (field(block, "status") or "").strip().lower() != "pending":
+                    out["pending"].append({"id": sid, "address": row["Address"]})
+            elif status.lower() == "sold":
+                out["retire"].append({"id": sid, "why": "sold", "address": row["Address"]})
             elif status.lower() == "not in portal":
                 out["retire"].append({"id": sid, "why": "gone", "address": row["Address"]})
             elif status.lower() == "available":
@@ -1080,6 +1086,12 @@ def apply(root: Path, p: dict, lang: str, geocoder=geocode) -> None:
                             if f"/{r['id']}.html<" not in sm.read_text(encoding="utf-8"))
             sm.write_text(sm.read_text(encoding="utf-8").replace("</urlset>", lines + "</urlset>", 1), encoding="utf-8")
     text, p["cards_dropped"] = drop_sold_cards(text, p["add"], p.get("closed_streets", {}))
+    for item in p.get("pending") or []:
+        fresh = blocks(text)
+        m = fresh.get(item["id"])
+        if not m:
+            continue
+        text = text.replace(m.group(0), set_field(m.group(0), "status", "Pending"), 1)
     js.write_text(text, encoding="utf-8")
     # Retire: pending/sold through the sold policy (sold card, redirect, sitemap); gone = redirect only.
     sold = {r["id"]: r["why"] for r in p["retire"] if r["why"] in ("pending", "sold")}

@@ -165,6 +165,7 @@ body{
   #listings .hm-bar{display:none}
 }
 .status-tag{position:absolute;top:12px;left:12px;z-index:3;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;background:var(--lime);color:var(--pine-deep);padding:5px 10px;border-radius:999px;font-weight:500}
+.status-tag.pending{background:#c2410c;color:#fff}
 .feat-tag{position:absolute;top:12px;right:12px;z-index:4;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1px;text-transform:uppercase;background:var(--honey);color:#fff;padding:5px 10px;border-radius:999px;font-weight:500}
 .spot-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .spot-head h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:26px;color:var(--pine);margin:0}
@@ -373,6 +374,9 @@ body{
       </label>
       <label>Bathrooms
         <select id="fBaths" aria-label="Bathrooms"><option value="">Any</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option></select>
+      </label>
+      <label>Status
+        <select id="fStatus" aria-label="Status"><option value="">All</option><option value="available">Available</option><option value="pending">Pending</option></select>
       </label>
       <label id="fTypeWrap" hidden>Home type <select id="fType"><option value="">Move-in ready</option><option value="contractor">Contractor specials</option><option value="all">All homes</option></select></label>
       <label>Within <select id="fMiles"><option value="10">10 mi</option><option value="25" selected>25 mi</option><option value="50">50 mi</option><option value="100">100 mi</option></select></label>
@@ -725,8 +729,10 @@ body{
     let h=0; for(const ch of (s||"")) h=(h*31+ch.charCodeAt(0))>>>0;
     return FACES[h % FACES.length];
   };
-  // A deposit (status pending) is sold. Old homes.js files may still say Pending.
-  const LISTINGS = HOMES.filter(h => !/^(pending|sold)$/i.test(String(h.status||"").trim()));
+  // Sold homes leave the list. Pending stays visible, with a badge, and is not counted as available.
+  const isPending = h => /^pending$/i.test(String((h && h.status) || "").trim());
+  const isSold = h => /^sold$/i.test(String((h && h.status) || "").trim());
+  const LISTINGS = HOMES.filter(h => !isSold(h));
   const houseMark = `<svg class="fmark" width="150" height="150" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9h14v-9"/><path d="M10 19v-5h4v5"/></svg>`;
   function isNewHome(h){
     const raw = (typeof LISTED_ON !== "undefined" ? LISTED_ON : (window.LISTED_ON || {}))[h.id];
@@ -761,9 +767,10 @@ body{
   fillCities();
 
   // hero stats (+ the same numbers in the one-team band)
-  $("statHomes").textContent = LISTINGS.length;
+  const availableCount = LISTINGS.filter(h => !isPending(h)).length;
+  $("statHomes").textContent = availableCount;
   $("statCities").textContent = allCities.length;
-  $("otHomes").textContent = LISTINGS.length;
+  $("otHomes").textContent = availableCount;
   $("otCities").textContent = allCities.length;
 
   function featureTag(h){
@@ -783,15 +790,16 @@ body{
       (h.sqft && Number(h.sqft)) ? `${Number(h.sqft).toLocaleString()} sqft` : ""
     ].filter(Boolean).join(" | ");
     const photoSrc = h.heroPhoto || `images/${h.id}.jpg`;   // drop images/<id>.jpg in and it shows automatically
-    const tag = (opts && opts.featured && h.featured) ? "Featured" : featureTag(h);
+    const pending = isPending(h);
+    const tag = pending ? "" : ((opts && opts.featured && h.featured) ? "Featured" : featureTag(h));
     const where = [h.address, h.city, h.state].filter(Boolean).join(", ");
     return `
-    <a class="card${h.contractor?" is-cs":""}" data-hid="${h.id}" href="${encodeURIComponent(h.id)}.html">
+    <a class="card${h.contractor?" is-cs":""}${pending?" is-pending":""}" data-hid="${h.id}" href="${encodeURIComponent(h.id)}.html">
       <div class="card-face" style="background:linear-gradient(135deg,${a},${b})">
         <img src="${photoSrc}" alt="Home in ${h.city}, ${h.state}" loading="lazy" data-sv="images/sv/${h.id}.jpg" style="opacity:0;transition:opacity .3s ease" onload="this.style.opacity=1" onerror="window.__svFallback(this)">
         <span class="sv-badge" hidden>Street view · © Google</span>
         ${(h.photos||[]).length>1?`<button type="button" class="pg pv" aria-label="Previous photo">‹</button><button type="button" class="pg nx" aria-label="Next photo">›</button><span class="pdots">${Array.from({length:Math.min(6,(h.photos||[]).length)},(_,k)=>`<i${k?"":" class=\"on\""}></i>`).join("")}</span>`:""}
-        ${tag ? `<span class="z-feat">${tag}</span>` : ""}
+        ${pending ? `<span class="status-tag pending">Pending</span>` : (tag ? `<span class="z-feat">${tag}</span>` : "")}
         ${window.HomesCart?HomesCart.heart(h):""}
       </div>
       <div class="card-body">
@@ -814,6 +822,7 @@ body{
   function filtered(){
     const state = $("fState").value;
     const city = $("fCity").value;
+    const statusPick = ($("fStatus") && $("fStatus").value) || "";
     const bedsVal = Number($("fBeds").value) || 0;   // exact match; 4 means "4 or more"
     const bathsVal = Number($("fBaths").value) || 0;
     const type = hasCS ? $("fType").value : "all";
@@ -830,6 +839,8 @@ body{
     const list = LISTINGS.filter(h =>
       (!state || h.state === state) &&
       (!city || h.city === city) &&
+      (statusPick !== "pending" || isPending(h)) &&
+      (statusPick !== "available" || !isPending(h)) &&
       (!bedsVal || (Number(h.beds)||0) >= bedsVal) &&
       (!bathsVal || (Number(h.baths)||0) >= bathsVal) &&
       rng(Number(h.monthlyPayment)||0, payLo, payHi) &&
@@ -896,8 +907,8 @@ body{
   // ── shareable search links ────────────────────────────────────────────
   // filters ⇄ URL query string, so a search (e.g. Flint, MI) can be sent as a
   // link that opens pre-filtered. Param names are short + human-readable.
-  const URL_KEYS = { fState:"state", fCity:"city", fBeds:"beds", fBaths:"baths", fPayMin:"payMin", fPayMax:"payMax", fPriceMin:"priceMin", fPriceMax:"priceMax", fDownMin:"downMin", fDown:"down", fType:"type", fSort:"sort", fQ:"q" };
-  const FILTER_IDS = ["fCity","fBeds","fBaths","fPayMin","fPayMax","fPriceMin","fPriceMax","fDownMin","fDown","fType","fSort","fQ"];
+  const URL_KEYS = { fState:"state", fCity:"city", fBeds:"beds", fBaths:"baths", fPayMin:"payMin", fPayMax:"payMax", fPriceMin:"priceMin", fPriceMax:"priceMax", fDownMin:"downMin", fDown:"down", fType:"type", fStatus:"status", fSort:"sort", fQ:"q" };
+  const FILTER_IDS = ["fCity","fBeds","fBaths","fPayMin","fPayMax","fPriceMin","fPriceMax","fDownMin","fDown","fType","fStatus","fSort","fQ"];
   function applyURL(){
     const p = new URLSearchParams(location.search);
     if (p.get("state")) $("fState").value = p.get("state");
@@ -991,6 +1002,8 @@ body{
     if ($("fQ").value) bits.push({ids:["fQ"], label: $("fQ").value});
     if ($("fType").value === "contractor") bits.push({ids:["fType"], label: "Contractor specials"});
     else if ($("fType").value === "all") bits.push({ids:["fType"], label: "All homes"});
+    if ($("fStatus") && $("fStatus").value === "pending") bits.push({ids:["fStatus"], label: "Pending"});
+    else if ($("fStatus") && $("fStatus").value === "available") bits.push({ids:["fStatus"], label: "Available"});
     if (window.HomesMap && HomesMap.active && HomesMap.active()) {
       const ns = HomesMap.nearState && HomesMap.nearState();
       bits.push({ids:["near"], label: ns ? ("Near " + ns.label) : "Near me"});

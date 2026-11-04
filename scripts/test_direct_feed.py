@@ -50,6 +50,29 @@ class Feed(unittest.TestCase):
             p2 = ps.plan(root, ps.direct_rows(FEED["homes"][:1]), [], [])
             self.assertEqual(p2["retire"], [])
 
+    def test_pending_stays_and_sets_status_without_repricing(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "homes.js").write_text(
+                'const HOMES = [\n  {\n    id: "granitecity-il-2539-28th",\n    address:     "2539 E. 28th St.",\n'
+                '    city:  "Granite City",\n    state: "IL",\n    status: "Available",\n'
+                '    monthlyPayment: 997,\n    moveIn:         2000,\n    lockedPrice:    84000,\n'
+                '    photos:    [],\n  },\n];\nconst SOLD_CARDS = [];\n',
+                encoding="utf-8")
+            row = {"Address": "2539 E. 28th St.", "City": "Granite City", "State": "IL", "Zip": "62040",
+                   "Status": "Pending", "Price": "1", "Down payment": "1", "Monthly payment": "1",
+                   "Beds": "2", "Baths": "1", "Sqft": "720", "Portal PROP id": "X"}
+            p = ps.plan(root, [row], [], [])
+            self.assertEqual(p["retire"], [])
+            self.assertEqual(p["update"], [])
+            self.assertEqual([item["id"] for item in p["pending"]], ["granitecity-il-2539-28th"])
+            ps.apply(root, p, "en", geocoder=lambda *a: None)
+            text = (root / "homes.js").read_text(encoding="utf-8")
+            self.assertIn('status: "Pending"', text)
+            self.assertIn("monthlyPayment: 997", text)
+            self.assertIn("lockedPrice:    84000", text)
+            self.assertFalse((root / "granitecity-il-2539-28th.html").exists())
+
 
 class Copy(unittest.TestCase):
     base = {"monthly": 910, "down": 3000, "price": 79000, "city": "St. Louis", "state": "MO", "sqft": None}

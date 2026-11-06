@@ -348,30 +348,29 @@ body{
     <div class="z-quick" id="quickFilters" role="group" aria-label="Filter homes">
       <label class="qf"><span>State</span><select id="fState" aria-label="State"><option value="">All states</option></select></label>
       <label class="qf"><span>City</span><select id="fCity" aria-label="City"><option value="">All cities</option></select></label>
-      <label class="qf"><span>Bedrooms</span><select id="fBeds" aria-label="Bedrooms"><option value="">Any</option><option value="1">1+ beds</option><option value="2">2+ beds</option><option value="3">3+ beds</option><option value="4">4+ beds</option></select></label>
-      <label class="qf"><span>Price from</span><select id="fPriceMin" aria-label="Minimum price"><option value="">No min</option><option value="40000">$40k+</option><option value="50000">$50k+</option><option value="60000">$60k+</option><option value="70000">$70k+</option><option value="80000">$80k+</option><option value="90000">$90k+</option><option value="100000">$100k+</option><option value="150000">$150k+</option></select></label>
-      <label class="qf"><span>Price to</span><select id="fPriceMax" aria-label="Maximum price"><option value="">No max</option><option value="50000">Up to $50k</option><option value="60000">Up to $60k</option><option value="70000">Up to $70k</option><option value="80000">Up to $80k</option><option value="90000">Up to $90k</option><option value="100000">Up to $100k</option><option value="150000">Up to $150k</option></select></label>
-      <label class="qf"><span>Monthly</span><select id="fPayMax" aria-label="Maximum monthly payment"><option value="">Any</option><option value="600">Up to $600</option><option value="800">Up to $800</option><option value="1000">Up to $1,000</option><option value="1200">Up to $1,200</option><option value="1500">Up to $1,500</option><option value="1800">Up to $1,800</option></select></label>
-      <button type="button" class="qf-more" id="moreFilters" aria-controls="filterSheet">More filters</button>
+      <button type="button" class="qf-more" id="moreFilters" aria-controls="filterSheet">Filters</button>
       <button type="button" class="qf-clear" id="clearFilters" hidden>Clear all</button>
     </div>
     <div class="z-chips" id="chips"></div>
     <div class="z-sort">
       <p class="count" id="count"></p>
       <label class="sort-pill">Sort
-        <select id="fSort" aria-label="Sort"><option value="">Featured</option><option value="monthly-asc">Monthly ↑</option><option value="down-asc">Down payment ↑</option><option value="price-asc">Price ↑</option></select>
+        <select id="fSort" aria-label="Sort"><option value="">Featured</option><option value="monthly-asc">Monthly ↑</option><option value="down-asc">Down payment ↑</option></select>
       </label>
     </div>
     <div class="filter-sheet" id="filterSheet" hidden>
-      <label>Monthly min
-        <select id="fPayMin" aria-label="Minimum monthly payment"><option value="">No min</option><option value="500">$500</option><option value="600">$600</option><option value="700">$700</option><option value="800">$800</option><option value="900">$900</option><option value="1000">$1,000</option><option value="1200">$1,200</option><option value="1500">$1,500</option></select>
-      </label>
-      <label>Down min
-        <select id="fDownMin" aria-label="Minimum down payment"><option value="">No min</option><option value="1000">$1,000</option><option value="1500">$1,500</option><option value="2000">$2,000</option><option value="3000">$3,000</option></select>
-      </label>
-      <label>Down max
-        <select id="fDown" aria-label="Maximum down payment"><option value="">No max</option><option value="1500">$1,500</option><option value="2000">$2,000</option><option value="3000">$3,000</option><option value="4000">$4,000</option><option value="5000">$5,000</option></select>
-      </label>
+      <fieldset class="rng sheet-wide"><legend>Bedrooms (same number in both = exactly that many)</legend>
+        <select id="fBedsMin" aria-label="Bedrooms from"><option value="">Any</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option></select><span aria-hidden="true">to</span>
+        <select id="fBedsMax" aria-label="Bedrooms to"><option value="">Any</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option></select>
+      </fieldset>
+      <fieldset class="rng sheet-wide"><legend>Monthly payment</legend>
+        <select id="fPayMin" aria-label="Monthly payment from"><option value="">Any</option><option value="400">$400</option><option value="500">$500</option><option value="600">$600</option><option value="700">$700</option><option value="800">$800</option><option value="900">$900</option><option value="1000">$1,000</option><option value="1200">$1,200</option><option value="1500">$1,500</option><option value="1800">$1,800</option></select><span aria-hidden="true">to</span>
+        <select id="fPayMax" aria-label="Monthly payment to"><option value="">Any</option><option value="400">$400</option><option value="500">$500</option><option value="600">$600</option><option value="700">$700</option><option value="800">$800</option><option value="900">$900</option><option value="1000">$1,000</option><option value="1200">$1,200</option><option value="1500">$1,500</option><option value="1800">$1,800</option></select>
+      </fieldset>
+      <fieldset class="rng sheet-wide"><legend>Down payment (move-in amount)</legend>
+        <select id="fDownMin" aria-label="Down payment from"><option value="">Any</option><option value="500">$500</option><option value="1000">$1,000</option><option value="1500">$1,500</option><option value="2000">$2,000</option><option value="2500">$2,500</option><option value="3000">$3,000</option><option value="4000">$4,000</option><option value="5000">$5,000</option></select><span aria-hidden="true">to</span>
+        <select id="fDown" aria-label="Down payment to"><option value="">Any</option><option value="500">$500</option><option value="1000">$1,000</option><option value="1500">$1,500</option><option value="2000">$2,000</option><option value="2500">$2,500</option><option value="3000">$3,000</option><option value="4000">$4,000</option><option value="5000">$5,000</option></select>
+      </fieldset>
       <label>Bathrooms
         <select id="fBaths" aria-label="Bathrooms"><option value="">Any</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option></select>
       </label>
@@ -381,6 +380,8 @@ body{
       <label id="fTypeWrap" hidden>Home type <select id="fType"><option value="">Move-in ready</option><option value="contractor">Contractor specials</option><option value="all">All homes</option></select></label>
       <label>Within <select id="fMiles"><option value="10">10 mi</option><option value="25" selected>25 mi</option><option value="50">50 mi</option><option value="100">100 mi</option></select></label>
       <button type="button" class="near sheet-wide" id="nearMe">Near me</button>
+      <button type="button" class="sheet-go" id="sheetGo">Show homes</button>
+      <button type="button" class="sheet-clear" id="sheetClear">Clear all</button>
     </div>
   </header>
 
@@ -823,13 +824,12 @@ body{
     const state = $("fState").value;
     const city = $("fCity").value;
     const statusPick = ($("fStatus") && $("fStatus").value) || "";
-    const bedsVal = Number($("fBeds").value) || 0;   // exact match; 4 means "4 or more"
+    const bedLo = Number($("fBedsMin").value)||0, bedHi = Number($("fBedsMax").value)||0;   // one number in both = exactly that
     const bathsVal = Number($("fBaths").value) || 0;
     const type = hasCS ? $("fType").value : "all";
     const sort = $("fSort").value;
     const rng = (n, lo, hi) => (!lo || n >= lo) && (!hi || n <= hi);
     const payLo = Number($("fPayMin").value)||0, payHi = Number($("fPayMax").value)||0;
-    const prLo = Number($("fPriceMin").value)||0, prHi = Number($("fPriceMax").value)||0;
     const downLo = Number($("fDownMin").value)||0, downHi = Number($("fDown").value)||0;
     // free-text: every word must appear in address/city/state/zip; "contractor"/"fixer" flips on Contractor Specials
     const CSW = /^(contractor|contratista|contratistas|special|specials|especial|especiales|fixer|investor)$/;
@@ -841,10 +841,9 @@ body{
       (!city || h.city === city) &&
       (statusPick !== "pending" || isPending(h)) &&
       (statusPick !== "available" || !isPending(h)) &&
-      (!bedsVal || (Number(h.beds)||0) >= bedsVal) &&
+      rng(Number(h.beds)||0, bedLo, bedHi) &&
       (!bathsVal || (Number(h.baths)||0) >= bathsVal) &&
       rng(Number(h.monthlyPayment)||0, payLo, payHi) &&
-      rng(Number(h.lockedPrice)||0, prLo, prHi) &&
       (!downLo || (Number(h.moveIn)||0) >= downLo) &&
       (!downHi || (Number(h.moveIn)||0) <= downHi) &&
       (csQ ? !!h.contractor : (words.length || type === "all" || (type === "contractor" ? !!h.contractor : !h.contractor))) &&
@@ -853,7 +852,6 @@ body{
     const num = (v, fallback=0) => Number(v) || fallback;
     if (sort === "monthly-asc")   list.sort((a,b) => num(a.monthlyPayment,Infinity) - num(b.monthlyPayment,Infinity));
     else if (sort === "down-asc") list.sort((a,b) => num(a.moveIn,Infinity) - num(b.moveIn,Infinity));  // "Ask us" ($0) sorts last
-    else if (sort === "price-asc")list.sort((a,b) => num(a.lockedPrice,Infinity) - num(b.lockedPrice,Infinity));
     else list.sort(defaultOrder());  // Featured (every home is): near the visitor first, then newest listed first
     return window.HomesMap ? HomesMap.applyGeo(list) : list;
   }
@@ -871,6 +869,7 @@ body{
       ? `Showing ${start}–${end} of ${shown.length} home${shown.length===1?"":"s"}`
       : "";
     renderPager(pages);
+    const goBtn = $("sheetGo"); if (goBtn) goBtn.textContent = shown.length ? `Show ${shown.length} home${shown.length===1?"":"s"}` : "No homes match";
     if (window.HomesMap) HomesMap.update(shown);
     if (window.HomesCart) HomesCart.sync();
     chips();
@@ -907,8 +906,8 @@ body{
   // ── shareable search links ────────────────────────────────────────────
   // filters ⇄ URL query string, so a search (e.g. Flint, MI) can be sent as a
   // link that opens pre-filtered. Param names are short + human-readable.
-  const URL_KEYS = { fState:"state", fCity:"city", fBeds:"beds", fBaths:"baths", fPayMin:"payMin", fPayMax:"payMax", fPriceMin:"priceMin", fPriceMax:"priceMax", fDownMin:"downMin", fDown:"down", fType:"type", fStatus:"status", fSort:"sort", fQ:"q" };
-  const FILTER_IDS = ["fCity","fBeds","fBaths","fPayMin","fPayMax","fPriceMin","fPriceMax","fDownMin","fDown","fType","fStatus","fSort","fQ"];
+  const URL_KEYS = { fState:"state", fCity:"city", fBedsMin:"bedsMin", fBedsMax:"bedsMax", fBaths:"baths", fPayMin:"payMin", fPayMax:"payMax", fDownMin:"downMin", fDown:"down", fType:"type", fStatus:"status", fSort:"sort", fQ:"q" };
+  const FILTER_IDS = ["fCity","fBedsMin","fBedsMax","fBaths","fPayMin","fPayMax","fDownMin","fDown","fType","fStatus","fSort","fQ"];
   function applyURL(){
     const p = new URLSearchParams(location.search);
     if (p.get("state")) $("fState").value = p.get("state");
@@ -918,6 +917,7 @@ body{
     const lp = legacy("pay"), ld = legacy("down");
     if (lp && !p.get("payMin") && !p.get("payMax")) p.set(lp[1]==="max"?"payMax":"payMin", lp[2]);
     if (ld && ld[1]==="max" && !/^\d+$/.test(p.get("down")||"")) p.set("down", ld[2]);
+    if (p.get("beds") && !p.get("bedsMin") && !p.get("bedsMax")) p.set("bedsMin", p.get("beds"));   // older links: beds=3 meant 3+
     FILTER_IDS.forEach(id => {
       const v = p.get(URL_KEYS[id]);
       if (v != null){ $(id).value = v; if ($(id).value !== v) $(id).value = ""; }  // ignore stale/unknown values
@@ -931,8 +931,14 @@ body{
     history.replaceState(null, "", qs ? "?" + qs : location.pathname);
   }
 
+  // a "from" above its "to" would show nothing: the one just changed drags the other along
+  const PAIRS = [["fBedsMin","fBedsMax"],["fPayMin","fPayMax"],["fDownMin","fDown"]];
   ["fState",...FILTER_IDS].forEach(id => $(id).addEventListener("change", () => {
     if (id === "fState") fillCities();
+    PAIRS.forEach(([lo, hi]) => {
+      const a = Number($(lo).value), b = Number($(hi).value);
+      if (a && b && a > b) { if (id === lo) $(hi).value = $(lo).value; else $(lo).value = $(hi).value; }
+    });
     if (id === "fCity" && $("fCity").value && window.VisitorNear) VisitorNear.rememberCity(LISTINGS, $("fCity").value, $("fState").value);
     page = 1; render(true); syncURL(); chips();
   }));
@@ -994,8 +1000,12 @@ body{
     };
     addRange("fPayMin", "fPayMax", "/mo");
     addRange("fDownMin", "fDown", " down");
-    addRange("fPriceMin", "fPriceMax", "");
-    if ($("fBeds").value) bits.push({ids:["fBeds"], label: $("fBeds").value + "+ bedrooms"});
+    {
+      const lo = $("fBedsMin").value, hi = $("fBedsMax").value, bd = n => n + (n === "1" ? " bedroom" : " bedrooms");
+      if (lo && hi) bits.push({ids:["fBedsMin","fBedsMax"], label: lo === hi ? bd(lo) : `${lo}–${hi} bedrooms`});
+      else if (lo) bits.push({ids:["fBedsMin"], label: `${lo}+ bedrooms`});
+      else if (hi) bits.push({ids:["fBedsMax"], label: `Up to ${hi} bedrooms`});
+    }
     if ($("fBaths").value) bits.push({ids:["fBaths"], label: $("fBaths").value + "+ bathrooms"});
     if ($("fState").value) bits.push({ids:["fState"], label: $("fState").value});
     if ($("fCity").value) bits.push({ids:["fCity"], label: $("fCity").value});
@@ -1067,16 +1077,30 @@ body{
       const hm = $("hmMiles");
       if (hm) { hm.value = miles.value; hm.dispatchEvent(new Event("change")); }
     });
-    const qForm = document.querySelector(".hdr-search");
-    if (qForm) qForm.addEventListener("submit", (e) => { e.preventDefault(); page = 1; render(false); syncURL(); });
-    const filterBtn = $("filterBtn"), sheet = $("filterSheet");
-    if (filterBtn && sheet) filterBtn.addEventListener("click", () => {
-      const open = sheet.hasAttribute("hidden");
+    const filterBtn = $("filterBtn"), sheet = $("filterSheet"), more = $("moreFilters");
+    const phone = () => matchMedia("(max-width:860px)").matches;
+    const setSheet = open => {
+      if (!sheet) return;
       if (open) sheet.removeAttribute("hidden"); else sheet.setAttribute("hidden", "");
-      filterBtn.setAttribute("aria-expanded", open ? "true" : "false");
+      [filterBtn, more].forEach(b => { if (b) b.setAttribute("aria-expanded", open ? "true" : "false"); });
+    };
+    // Search: apply, put the sheet and the keyboard away, and (phones) jump to the results
+    const search = () => {
+      page = 1; render(false); syncURL(); setSheet(false);
+      if (document.activeElement && document.activeElement.blur && document.activeElement.id === "fQ") document.activeElement.blur();
+      if (phone()) $("listings").scrollIntoView({block:"start", behavior:"smooth"});
+    };
+    const qForm = document.querySelector(".hdr-search");
+    if (qForm) qForm.addEventListener("submit", (e) => { e.preventDefault(); search(); });
+    if (filterBtn) filterBtn.addEventListener("click", () => setSheet(sheet.hasAttribute("hidden")));
+    if (more) more.addEventListener("click", () => setSheet(sheet.hasAttribute("hidden")));
+    const go = $("sheetGo"); if (go) go.addEventListener("click", search);
+    const sheetClear = $("sheetClear"); if (sheetClear) sheetClear.addEventListener("click", () => { $("clearFilters").click(); });
+    // tap anywhere else, or Escape, closes it; it never stays hanging over the homes
+    document.addEventListener("click", e => {
+      if (sheet && !sheet.hasAttribute("hidden") && !e.target.closest("#filterSheet, #filterBtn, #moreFilters, #chips, #clearFilters")) setSheet(false);
     });
-    const more = $("moreFilters");
-    if (more && filterBtn) more.addEventListener("click", () => { filterBtn.click(); more.setAttribute("aria-expanded", filterBtn.getAttribute("aria-expanded")); });
+    document.addEventListener("keydown", e => { if (e.key === "Escape") setSheet(false); });
     const clr = $("clearFilters");
     if (clr) clr.addEventListener("click", () => {
       ["fState",...FILTER_IDS].filter(id => id !== "fSort").forEach(id => { const el = $(id); if (el) el.value = ""; });

@@ -97,11 +97,18 @@ body.page-search .filter-sheet {
   position: absolute; right: 16px; top: calc(100% - 4px); z-index: 45; width: min(460px, calc(100vw - 24px));
   background: #fff; border: 1px solid var(--line, #e2e8f2); border-radius: 16px; padding: 14px;
   display: grid; grid-template-columns: 1fr 1fr; gap: 10px; box-shadow: 0 16px 40px rgba(15,36,68,.16);
+  max-height: calc(100vh - 140px); overflow-y: auto; -webkit-overflow-scrolling: touch;
 }
 body.page-search .filter-sheet[hidden] { display: none !important; }
 body.page-search .filter-sheet label { display: grid; gap: 4px; font-size: 12px; font-weight: 800; color: #5b6577; }
 body.page-search .filter-sheet select { font: 600 14px "DM Sans", system-ui, sans-serif; padding: 8px; border-radius: 8px; border: 1px solid #e2e8f2; width: 100%; }
 body.page-search .filter-sheet .sheet-wide { grid-column: 1 / -1; }
+body.page-search .filter-sheet fieldset.rng { border: 0; margin: 0; padding: 0; min-width: 0; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+body.page-search .filter-sheet fieldset.rng legend { padding: 0; margin: 0 0 4px; font-size: 12px; font-weight: 800; color: #5b6577; float: left; width: 100%; }
+body.page-search .filter-sheet fieldset.rng select { flex: 1 1 0; min-width: 0; width: auto; }
+body.page-search .filter-sheet fieldset.rng span { color: #5b6577; font-size: 13px; font-weight: 700; }
+body.page-search .filter-sheet .sheet-go { grid-column: 1 / -1; font: 800 16px "DM Sans", system-ui, sans-serif; padding: 13px; border-radius: 12px; border: 0; background: var(--pine, #15315e); color: #fff; cursor: pointer; }
+body.page-search .filter-sheet .sheet-clear { grid-column: 1 / -1; font: 700 14px "DM Sans", system-ui, sans-serif; background: none; border: 0; color: var(--pine, #15315e); text-decoration: underline; cursor: pointer; padding: 2px; }
 body.page-search .z-feat {
   position: absolute; top: 12px; left: 12px; z-index: 5; background: #fff; color: #16213a;
   font: 700 13px "DM Sans", system-ui, sans-serif; padding: 6px 10px; border-radius: 8px;

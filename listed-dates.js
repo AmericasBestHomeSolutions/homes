@@ -41,5 +41,13 @@ const LISTED_ON = {
   "detroit-mi-10122-cedarlawn": "2026-11-04",
   "flint-mi-2041-warner": "2026-11-04",
   "montgomery-al-298-broadway": "2026-11-04",
-  "saginaw-mi-505-yale": "2026-11-04"
+  "saginaw-mi-505-yale": "2026-11-04",
+  "alexandria-in-814-st": "2026-11-06",
+  "alton-il-2420-alby": "2026-11-06",
+  "decatur-il-909-maffit": "2026-11-06",
+  "eaststlouis-il-2120-st": "2026-11-06",
+  "flint-mi-2317-reid": "2026-11-06",
+  "flint-mi-4807-birchcrest": "2026-11-06",
+  "galesburg-il-343-pine": "2026-11-06",
+  "springfield-il-1132-oak": "2026-11-06"
 };

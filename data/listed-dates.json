@@ -131,7 +131,6 @@
   "stlouis-mo-5532-robin": null,
   "decatur-il-125-16th": null,
   "decatur-il-1744-monroe": null,
-  "westfrankfort-il-407-saint": null,
   "decatur-il-2015-union": null,
   "decatur-il-1931-edwards": null,
   "jacksonville-ar-201-gray": null,
@@ -179,7 +178,6 @@
   "litchfield-il-707-madison": null,
   "stlouis-mo-6582-saint": null,
   "decatur-il-752-miller": null,
-  "stlouis-mo-8554-oriole": null,
   "stlouis-mo-8521-clifton": null,
   "stlouis-mo-2726-belt": null,
   "stlouis-mo-1338-gregan": null,
@@ -191,7 +189,6 @@
   "muncie-in-1630-elm": null,
   "decatur-il-1237-johns": null,
   "peoria-il-2807-nevada": null,
-  "stlouis-mo-3437-oakdale": null,
   "stlouis-mo-212-cameron": null,
   "carbondale-il-501-carico": null,
   "stlouis-mo-4527-davison": null,
@@ -258,5 +255,13 @@
   "detroit-mi-10122-cedarlawn": "2026-11-04",
   "flint-mi-2041-warner": "2026-11-04",
   "montgomery-al-298-broadway": "2026-11-04",
-  "saginaw-mi-505-yale": "2026-11-04"
+  "saginaw-mi-505-yale": "2026-11-04",
+  "alexandria-in-814-st": "2026-11-06",
+  "alton-il-2420-alby": "2026-11-06",
+  "decatur-il-909-maffit": "2026-11-06",
+  "eaststlouis-il-2120-st": "2026-11-06",
+  "flint-mi-2317-reid": "2026-11-06",
+  "flint-mi-4807-birchcrest": "2026-11-06",
+  "galesburg-il-343-pine": "2026-11-06",
+  "springfield-il-1132-oak": "2026-11-06"
 }

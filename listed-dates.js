@@ -54,5 +54,6 @@ const LISTED_ON = {
   "stlouis-mo-4323-obear": "2026-11-09",
   "stlouis-mo-5461-hamilton": "2026-11-09",
   "stlouis-mo-8401-broadway": "2026-11-09",
-  "witt-il-529-2nd": "2026-11-09"
+  "witt-il-529-2nd": "2026-11-09",
+  "stlouis-mo-4519-june": "2026-11-09"
 };

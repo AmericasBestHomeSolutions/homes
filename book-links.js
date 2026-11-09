@@ -226,7 +226,6 @@ const BOOK_HREF = {
   "stlouis-mo-4043-camellia": "/book/4043-camellia",
   "stlouis-mo-4121-clara": "/book/4121-clara",
   "stlouis-mo-4323-obear": "/book/4323-obear",
-  "stlouis-mo-4519-june": "/book/4519-june",
   "stlouis-mo-4521-oakwood": "/book/4521-oakwood",
   "stlouis-mo-4527-davison": "/book/4527-davison",
   "stlouis-mo-4546-pope": "/book/4546-pope",

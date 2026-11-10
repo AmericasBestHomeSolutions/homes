@@ -6029,6 +6029,29 @@ const HOMES = [
     photos:    ["images/stlouis-mo-4323-obear-1.jpg", "images/stlouis-mo-4323-obear-2.jpg", "images/stlouis-mo-4323-obear-3.jpg", "images/stlouis-mo-4323-obear-4.jpg", "images/stlouis-mo-4323-obear-5.jpg", "images/stlouis-mo-4323-obear-6.jpg", "images/stlouis-mo-4323-obear-7.jpg", "images/stlouis-mo-4323-obear-8.jpg", "images/stlouis-mo-4323-obear-9.jpg", "images/stlouis-mo-4323-obear-10.jpg", "images/stlouis-mo-4323-obear-11.jpg", "images/stlouis-mo-4323-obear-12.jpg", "images/stlouis-mo-4323-obear-13.jpg", "images/stlouis-mo-4323-obear-14.jpg", "images/stlouis-mo-4323-obear-15.jpg", "images/stlouis-mo-4323-obear-16.jpg", "images/stlouis-mo-4323-obear-17.jpg", "images/stlouis-mo-4323-obear-18.jpg", "images/stlouis-mo-4323-obear-19.jpg", "images/stlouis-mo-4323-obear-20.jpg", "images/stlouis-mo-4323-obear-21.jpg", "images/stlouis-mo-4323-obear-22.jpg", "images/stlouis-mo-4323-obear-23.jpg", "images/stlouis-mo-4323-obear-24.jpg"],
   },
   {
+    id: "stlouis-mo-4519-june",
+    address:     "4519 June Ave",
+    zip:         "63121",
+    copy:        "$910 a month and $3,000 to move in. This 2-bedroom, 1-bath home in St. Louis, MO with about 925 square feet gives you room to spread out and a place that's truly yours, with no landlord deciding whether you stay. The purchase price is $79,000, fixed in writing when you sign, with owner financing and no bank in the middle. It's sold as-is, so come walk through every room and judge it with your own eyes. Homes at this payment don't sit long, so book a Tour and claim a showing time. A gas meter must be set before the occupancy inspection; the home needs some finishing work. The buyer must carry homeowners insurance; otherwise a $125/month insurance charge is added.",
+    city:  "St. Louis",
+    state: "MO",
+    beds:  2,
+    baths: 1,
+    sqft:  "925",
+    lat:   38.703315,
+    lng:   -90.275645,
+    geo:   "exact",
+    status: "Available",
+
+    monthlyPayment: 910,
+    moveIn:         3000,
+    lockedPrice:    79000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
     id: "stlouis-mo-5461-hamilton",
     address:     "5461 Hamilton Avenue",
     zip:         "63136",
@@ -6096,29 +6119,6 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/witt-il-529-2nd-1.jpg", "images/witt-il-529-2nd-2.jpg", "images/witt-il-529-2nd-3.jpg", "images/witt-il-529-2nd-4.jpg", "images/witt-il-529-2nd-5.jpg", "images/witt-il-529-2nd-6.jpg", "images/witt-il-529-2nd-7.jpg", "images/witt-il-529-2nd-8.jpg", "images/witt-il-529-2nd-9.jpg", "images/witt-il-529-2nd-10.jpg", "images/witt-il-529-2nd-11.jpg", "images/witt-il-529-2nd-12.jpg", "images/witt-il-529-2nd-13.jpg", "images/witt-il-529-2nd-14.jpg", "images/witt-il-529-2nd-15.jpg", "images/witt-il-529-2nd-16.jpg", "images/witt-il-529-2nd-17.jpg", "images/witt-il-529-2nd-18.jpg", "images/witt-il-529-2nd-19.jpg", "images/witt-il-529-2nd-20.jpg", "images/witt-il-529-2nd-21.jpg", "images/witt-il-529-2nd-22.jpg", "images/witt-il-529-2nd-23.jpg", "images/witt-il-529-2nd-24.jpg"],
-  },
-  {
-    id: "stlouis-mo-4519-june",
-    address:     "4519 June Ave",
-    zip:         "63121",
-    copy:        "$910 a month and $3,000 to move in. This 2-bedroom, 1-bath home in St. Louis, MO with about 925 square feet gives you room to spread out and a place that's truly yours, with no landlord deciding whether you stay. The purchase price is $79,000, fixed in writing when you sign, with owner financing and no bank in the middle. It's sold as-is, so come walk through every room and judge it with your own eyes. Homes at this payment don't sit long, so book a Tour and claim a showing time. A gas meter must be set before the occupancy inspection; the home needs some finishing work. The buyer must carry homeowners insurance; otherwise a $125/month insurance charge is added.",
-    city:  "St. Louis",
-    state: "MO",
-    beds:  2,
-    baths: 1,
-    sqft:  "925",
-    lat:   38.703315,
-    lng:   -90.275645,
-    geo:   "exact",
-    status: "Available",
-
-    monthlyPayment: 910,
-    moveIn:         3000,
-    lockedPrice:    79000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
   },
 ];
 

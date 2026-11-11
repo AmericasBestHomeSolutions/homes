@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (260 live, rebuilt from master published 2026-11-08) --- */
+/* --- the homes (265 live, rebuilt from master published 2026-11-08) --- */
 const HOMES = [
   {
     id: "eaststlouis-il-2008-61st",
@@ -5606,6 +5606,80 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
+    photos:    ["images/newbern-nc-2000-aycock-1.jpg", "images/newbern-nc-2000-aycock-2.jpg", "images/newbern-nc-2000-aycock-3.jpg", "images/newbern-nc-2000-aycock-4.jpg", "images/newbern-nc-2000-aycock-5.jpg", "images/newbern-nc-2000-aycock-6.jpg", "images/newbern-nc-2000-aycock-7.jpg", "images/newbern-nc-2000-aycock-8.jpg", "images/newbern-nc-2000-aycock-9.jpg", "images/newbern-nc-2000-aycock-10.jpg", "images/newbern-nc-2000-aycock-11.jpg", "images/newbern-nc-2000-aycock-12.jpg", "images/newbern-nc-2000-aycock-13.jpg", "images/newbern-nc-2000-aycock-14.jpg", "images/newbern-nc-2000-aycock-15.jpg", "images/newbern-nc-2000-aycock-16.jpg", "images/newbern-nc-2000-aycock-17.jpg", "images/newbern-nc-2000-aycock-18.jpg", "images/newbern-nc-2000-aycock-19.jpg"],
+  },
+  {
+    id: "urbana-il-2002-country",
+    address:     "2002 Country Squire Dr",
+    zip:         "61802",
+    description: "1665 sq ft. attached garage. power and water on",
+    copy:        "Three bedrooms, two baths, $1,675 a month, and $5,000 to move in. This Urbana home gives you about 1,665 square feet to spread out, plus an attached garage and off-street parking, so getting in and out on a cold Illinois morning is easy. With three bedrooms, there's room for everyone under one roof, and the boxes you unpack here can stay unpacked, because the place is yours. The purchase price is $135,000, written down the day you sign, with owner financing and no bank anywhere in the picture. The home is sold as-is, and we'd be glad to have you walk through it in person and see how it fits. Homes like this don't stay open for long, so book a Tour now to set up your walkthrough.",
+    city:  "Urbana",
+    state: "IL",
+    beds:  3,
+    baths: 2,
+    sqft:  "",
+    lat:   40.10251,
+    lng:   -88.183321,
+    geo:   "exact",
+    status: "Available",
+
+    monthlyPayment: 1675,
+    moveIn:         5000,
+    lockedPrice:    135000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { garage: "yes", off_street_parking: "yes" },
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "decatur-il-1375-maple",
+    address:     "1375 N Maple Ave",
+    zip:         "62526",
+    description: "3 Bed. 2 Bath. 1,512 Sq ft + large, enclosed porch. Convert large utility room or huge basement for more bedrooms. Big family can live here with tons of room. Good section of town, nice neighborhood. Built-ins (wooden cabinets, french doors, bunkbed, built-in table...). Abundant storage, large closets. Nice water heater and heater unit",
+    copy:        "$1,200 a month and $4,000 at signing puts you in a 3-bedroom, 2-bath Decatur home with 1,512 square feet and a large enclosed porch. Inside, the woodwork stands out: built-in wooden cabinets, French doors, a built-in table, and big closets with storage to spare. A huge basement and a roomy utility room give you space to spread out, and the water heater and heating unit are in good shape. With three bedrooms and all that room, everyone gets a spot, and the moving boxes get broken down for good. The purchase price is $109,500, agreed on the day you sign, with owner financing and no bank in the middle. It's sold as-is, so come walk every room in person. Book a Tour soon to get your showing on the calendar before someone else does.",
+    city:  "Decatur",
+    state: "IL",
+    beds:  3,
+    baths: 2,
+    sqft:  "",
+    lat:   39.855471,
+    lng:   -88.966864,
+    geo:   "exact",
+    status: "Available",
+
+    monthlyPayment: 1200,
+    moveIn:         4000,
+    lockedPrice:    109500,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { basement: "yes" },
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
+    id: "stlouis-mo-8800-jordan",
+    address:     "8800 Jordan St",
+    zip:         "63147",
+    description: "Built in 1948. 884 Sqft Brick home. 7167 sqft lot. Driveway for off street parking. Large fenced in back yard. Power is on. Passed inspection in March of 2026. Furnace repairs will be completed 11-12-26. Needs cleaning, interior painting. Has 2 Bd and 1 full bath upstairs. Has 1 full bath downstairs with possible additional Bd bedrooms",
+    city:  "St. Louis",
+    state: "MO",
+    beds:  2,
+    baths: 2,
+    sqft:  "",
+    lat:   38.724044,
+    lng:   -90.23035,
+    geo:   "exact",
+    status: "Available",
+
+    monthlyPayment: 995,
+    moveIn:         3000,
+    lockedPrice:    99000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    features: { backyard: "yes", fenced_yard: "yes", off_street_parking: "yes" },
+    heroPhoto: "",
     photos:    [],
   },
   {
@@ -5683,6 +5757,30 @@ const HOMES = [
     photos:    ["images/david-il-209-central-1.jpg", "images/david-il-209-central-2.jpg", "images/david-il-209-central-3.jpg", "images/david-il-209-central-4.jpg", "images/david-il-209-central-5.jpg", "images/david-il-209-central-6.jpg", "images/david-il-209-central-7.jpg", "images/david-il-209-central-8.jpg", "images/david-il-209-central-9.jpg", "images/david-il-209-central-10.jpg", "images/david-il-209-central-11.jpg", "images/david-il-209-central-12.jpg", "images/david-il-209-central-13.jpg", "images/david-il-209-central-14.jpg", "images/david-il-209-central-15.jpg", "images/david-il-209-central-16.jpg", "images/david-il-209-central-17.jpg", "images/david-il-209-central-18.jpg", "images/david-il-209-central-19.jpg", "images/david-il-209-central-20.jpg", "images/david-il-209-central-21.jpg", "images/david-il-209-central-22.jpg", "images/david-il-209-central-23.jpg"],
   },
   {
+    id: "stlouis-mo-2508-arden",
+    address:     "2508 Arden Ave",
+    zip:         "63121",
+    description: "2 bedroom and 1 bath single family home. Recently remodeled. Includes appliances",
+    copy:        "$950 a month and $2,500 at move-in open the door to a recently remodeled single-family home in St. Louis. Inside are two bedrooms, one bath, and 656 square feet, with the appliances included. Since the remodel is already behind it, owning doesn't have to wait for some far-off year when a bank finally says yes. It can start here, this season. The purchase price is $89,000, fixed in writing the day you sign, with owner financing and no bank anywhere in the process. The home is sold as-is, and we'd be glad to walk you through every room in person so you know exactly what you're getting. Homes at this price don't sit for long, so book a Tour now and let's get a showing on the calendar.",
+    city:  "St. Louis",
+    state: "MO",
+    beds:  2,
+    baths: 1,
+    sqft:  "656",
+    lat:   38.688418,
+    lng:   -90.281224,
+    geo:   "exact",
+    status: "Available",
+
+    monthlyPayment: 950,
+    moveIn:         2500,
+    lockedPrice:    89000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
+  },
+  {
     id: "decatur-il-1527-oakland",
     address:     "1527 N Oakland Ave",
     zip:         "62526",
@@ -5728,6 +5826,29 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-7028-dawson-1.jpg", "images/stlouis-mo-7028-dawson-2.jpg", "images/stlouis-mo-7028-dawson-3.jpg", "images/stlouis-mo-7028-dawson-4.jpg", "images/stlouis-mo-7028-dawson-5.jpg", "images/stlouis-mo-7028-dawson-6.jpg", "images/stlouis-mo-7028-dawson-7.jpg"],
+  },
+  {
+    id: "decatur-il-1690-johns",
+    address:     "1690 E. Johns St.",
+    zip:         "62526",
+    description: "Recently occupied. Work needed on heating system and front porch",
+    city:  "Decatur",
+    state: "IL",
+    beds:  2,
+    baths: 1,
+    sqft:  "826",
+    lat:   39.838584,
+    lng:   -88.934003,
+    geo:   "exact",
+    status: "Available",
+
+    monthlyPayment: 875,
+    moveIn:         2000,
+    lockedPrice:    69000,
+    termText:       "30-year owner financing (contract for deed)",
+
+    heroPhoto: "",
+    photos:    [],
   },
   {
     id: "stlouis-mo-3422-lucas",

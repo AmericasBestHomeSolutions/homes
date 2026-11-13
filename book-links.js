@@ -267,7 +267,7 @@ const BOOK_HREF = {
   "witt-il-529-2nd": "/book/529-2nd",
   "woodriver-il-46-eckhard": "/book/46-eckhard"
 };
-const BOOK_CLOSED = ["alexandria-in-814-st", "cahokia-il-1308-richard", "cahokia-il-1322-williams", "cahokia-il-1414-richard", "carbondale-il-307-sycamore", "decatur-il-1811-morgan", "madison-il-2021-edwardsville", "stlouis-mo-2508-arden", "stlouis-mo-7205-calvin"];
+const BOOK_CLOSED = [];
 const BOOK_CRM = "https://owner.getownerfinancedhomes.com/book";
 function bookHref(homeId){
   if(BOOK_CLOSED.indexOf(homeId) !== -1) return encodeURIComponent(homeId) + '.html';

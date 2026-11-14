@@ -21,11 +21,12 @@ public feed, GET https://owner.getownerfinancedhomes.com/api/public/direct-homes
 (the feed says sold or withdrawn). A pending direct home stays listed and its status is set to Pending. A direct home missing from the feed, or a feed that can't be read, is
 left exactly as it is. The feed carries public facts only (no seller, no lockbox).
 
-Cameron's portal is the master for status (Joe's rule): a home the portal shows Available is
-listed even when CRM_Properties says SOLD / PENDING, and that home's "recently sold" card is
-taken down (only when no other closed home shares its street and city). Those relists are
-listed in the summary so the CRM row can be corrected. It never adds a home with no price or
-monthly payment; those are listed under "check by hand".
+The CRM's Sold / Pending beats the portal's Available (Joe's rule, 2026-11-13; before that the portal won).
+A portal home (not a direct listing) that CRM_Properties marks Sold, Pending or Deposit is NOT added, and is
+retired if the site already shows it. The summary lists those homes under "Held by the CRM" so a wrong CRM
+row can be fixed there. "Not listed" in CRM_Properties does not hide a home: the portal's Available still
+relists it, and that home's "recently sold" card is taken down (only when no other closed home shares its
+street and city). It never adds a home with no price or monthly payment; those are listed under "check by hand".
 
 Columns: only Portal Backup A:M (Portal PROP id .. Date listed), its 'Photos link' column (found by
 header name; Grok Bot's daily portal backup copies the portal's per-home photos link there), the photo links in R,
@@ -84,6 +85,7 @@ PHOTO_BUDGET_S = 600   # stop starting new album downloads after 10 minutes (wor
 PORTAL_COLUMNS = ("Portal PROP id", "Address", "City", "State", "Zip", "Status", "Beds", "Baths", "Sqft",
                   "Price", "Down payment", "Monthly payment", "Date listed", "Portal photos", "Photo links")
 CLOSED = re.compile(r"(?i)\b(sold|pending|not listed|deposit)\b")
+CRM_WINS = re.compile(r"(?i)\b(sold|pending|deposit)\b")   # CRM status that beats the portal's Available
 DIRS = {"n", "s", "e", "w", "ne", "nw", "se", "sw", "north", "south", "east", "west"}
 MAX_RETIRE = 25        # a bad read must not empty the site
 MIN_PORTAL_ROWS = 100
@@ -927,16 +929,23 @@ def plan(root: Path, portal_rows: list[dict], crm_rows: list[dict], wa: list[dic
         site_keys["by_addr"].setdefault((number, street, st), sid)
     crm_closed = {str(r.get("Unique ID") or "").strip().lower(): r.get("Property Status", "")
                   for r in crm_rows if CLOSED.search(str(r.get("Property Status") or ""))}
+    crm_wins = {k: v for k, v in crm_closed.items() if CRM_WINS.search(str(v))}
     portal = portal_index(portal_rows)
     excluded = excluded_homes.load(root, Path(__file__).resolve().parents[1])
-    out = {"add": [], "update": [], "retire": [], "pending": [], "hand": [], "photos": [], "relist": [],
+    out = {"add": [], "update": [], "retire": [], "pending": [], "hand": [], "photos": [], "relist": [], "held": [],
            "closed_streets": closed_streets(portal_rows, crm_rows)}
     for hid, row in portal.items():
         sid = match_site_id(hid, row, site_keys)
         status = row["Status"].strip()
         price, down, monthly = num(row["Price"]), num(row["Down payment"]), num(row["Monthly payment"])
+        crm_status = "" if row.get("Portal PROP id") == "DIRECT" else crm_wins.get(sid) or crm_wins.get(hid)
         if sid in site:
             block = site[sid].group(0)
+            if status.lower() == "available" and crm_status:   # the CRM's Sold / Pending beats the portal's Available
+                why = "pending" if re.search(r"(?i)pending", str(crm_status)) and not re.search(r"(?i)sold|deposit", str(crm_status)) else "sold"
+                out["retire"].append({"id": sid, "why": why, "address": row["Address"]})
+                out["held"].append(f"{sid}  portal Available, CRM_Properties says {crm_status}; taken off the site")
+                continue
             if status.lower() == "available" and (field(block, "photos") or "[]").strip() == "[]":
                 out["photos"].append(photo_item(sid, row))
             if status.lower() == "pending":
@@ -970,6 +979,9 @@ def plan(root: Path, portal_rows: list[dict], crm_rows: list[dict], wa: list[dic
             continue
         if not price or not monthly:
             out["hand"].append(f"{row['Address']}, {row['City']} ({row['Portal PROP id']}): no price or monthly payment; skipped")
+            continue
+        if crm_status:
+            out["held"].append(f"{hid}  portal Available, CRM_Properties says {crm_status}; not added")
             continue
         if hid in crm_closed:
             out["relist"].append(f"{hid}  portal Available, CRM_Properties says {crm_closed[hid]}")
@@ -1199,7 +1211,9 @@ def summary(p: dict) -> str:
     if sv.get("none"):
         lines += ["", "No Street View imagery (page keeps its fallback): " + ", ".join(sv["none"])]
     if p.get("relist"):
-        lines += ["", "Relisted (portal is the master; fix the CRM_Properties status):"] + [f"  {h}" for h in p["relist"]]
+        lines += ["", "Relisted (CRM_Properties says Not listed, portal says Available; fix whichever is wrong):"] + [f"  {h}" for h in p["relist"]]
+    if p.get("held"):
+        lines += ["", "Held by the CRM (CRM Sold / Pending beats the portal's Available; fix the CRM_Properties row if it is wrong):"] + [f"  {h}" for h in p["held"]]
     if p.get("cards_dropped"):
         lines += ["", "Sold cards taken down: " + "; ".join(p["cards_dropped"])]
     if p["hand"]:

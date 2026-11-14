@@ -22,7 +22,7 @@ public feed, GET https://owner.getownerfinancedhomes.com/api/public/direct-homes
 left exactly as it is. The feed carries public facts only (no seller, no lockbox).
 
 The CRM also publishes one effective status per home, GET https://owner.getownerfinancedhomes.com/api/public/home-status (STATUS_FEED_URL to override, --status-json offline).
-This pass only uses that feed to close a live site home that it marks Pending or Sold, never to add, relist or reopen a home, and it ignores a feed it cannot read or trust.
+This pass only uses that feed to close a live site home that it marks Pending or Sold, never to add, relist or reopen a home, and it ignores a feed it cannot read, cannot trust, or that is more than 36 hours old.
 
 The CRM's Sold / Pending beats the portal's Available (Joe's rule, 2026-11-13; before that the portal won).
 A portal home (not a direct listing) that CRM_Properties marks Sold, Pending or Deposit is NOT added, and is
@@ -69,7 +69,7 @@ import re
 import sys
 import urllib.parse
 import urllib.request
-from datetime import date
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -96,6 +96,7 @@ DIRECT_FEED = "https://owner.getownerfinancedhomes.com/api/public/direct-homes"
 STATUS_FEED = "https://owner.getownerfinancedhomes.com/api/public/home-status"
 STATUS_VALUES = {"available": "Available", "pending": "Pending", "sold": "Sold"}
 SLUG_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
+STATUS_MAX_AGE_H = 36  # an older feed is not trusted
 MAX_FEED_CLOSE = 15    # a bad status feed must not empty the site
 DIRECT_STATUS = {"available": "Available", "pending": "Pending", "sold": "Sold", "withdrawn": "Not in portal"}
 
@@ -244,7 +245,7 @@ def read_direct(url: str | None = None, fetch=None) -> list[dict] | None:
         return None
 
 
-def read_status_feed(url: str | None = None, fetch=None, data=None) -> dict[str, str] | None:
+def read_status_feed(url: str | None = None, fetch=None, data=None, now=None) -> dict[str, str] | None:
     """The CRM's status feed as {home id: Available|Pending|Sold}, or None when unreadable or untrustworthy.
 
     An empty list, a bad shape, an HTTP error or a bad JSON body all mean None (the feed then changes nothing).
@@ -262,13 +263,31 @@ def read_status_feed(url: str | None = None, fetch=None, data=None) -> dict[str,
                 data = fetch(url)
         if not isinstance(data, dict) or not isinstance(data.get("homes"), list) or not data["homes"]:
             return None
-        out = {}
+        if data.get("as_of") is not None:
+            try:
+                at = datetime.fromisoformat(str(data["as_of"]).strip().replace("Z", "+00:00"))
+                if at.tzinfo is None:
+                    at = at.replace(tzinfo=timezone.utc)
+            except ValueError:
+                print("Status feed: as_of is not a date; feed ignored")
+                return None
+            if (now or datetime.now(timezone.utc)) - at > timedelta(hours=STATUS_MAX_AGE_H):
+                print(f"Status feed: as_of {data['as_of']} is older than {STATUS_MAX_AGE_H} hours; feed ignored")
+                return None
+        out, bad = {}, set()
         for h in data["homes"]:
             if not isinstance(h, dict):
                 continue
             hid, st = h.get("id"), STATUS_VALUES.get(str(h.get("status") or "").strip().lower())
             if isinstance(hid, str) and SLUG_RE.match(hid.strip().lower()) and st:
-                out[hid.strip().lower()] = st
+                hid = hid.strip().lower()
+                if out.get(hid, st) != st:
+                    bad.add(hid)
+                out[hid] = st
+        for hid in bad:
+            del out[hid]
+        if bad:
+            print("Status feed: conflicting statuses ignored for " + ", ".join(sorted(bad)))
         return out or None
     except Exception:   # noqa: BLE001 - a down CRM must never change the site
         return None
@@ -973,11 +992,16 @@ def plan(root: Path, portal_rows: list[dict], crm_rows: list[dict], wa: list[dic
     out = {"add": [], "update": [], "retire": [], "pending": [], "hand": [], "photos": [], "relist": [], "held": [],
            "closed_streets": closed_streets(portal_rows, crm_rows),
            "status_feed": {"read": None if status_feed is None else len(status_feed), "closed": 0, "refused": False}}
-    direct_sids = set()
+    portal_sids, pending_sids = set(), set()
     for hid, row in portal.items():
         sid = match_site_id(hid, row, site_keys)
-        if row.get("Portal PROP id") == "DIRECT":
-            direct_sids.add(sid)
+        feed_hold = ""
+        if row.get("Portal PROP id") != "DIRECT":
+            portal_sids.add(sid)
+            if (status_feed or {}).get(sid) in ("Pending", "Sold"):
+                feed_hold = status_feed[sid]
+            if row["Status"].strip().lower() == "pending":
+                pending_sids.add(sid)
         status = row["Status"].strip()
         price, down, monthly = num(row["Price"]), num(row["Down payment"]), num(row["Monthly payment"])
         crm_status = "" if row.get("Portal PROP id") == "DIRECT" else crm_wins.get(sid) or crm_wins.get(hid)
@@ -1025,6 +1049,9 @@ def plan(root: Path, portal_rows: list[dict], crm_rows: list[dict], wa: list[dic
         if crm_status:
             out["held"].append(f"{hid}  portal Available, CRM_Properties says {crm_status}; not added")
             continue
+        if feed_hold:   # the feed closed it on an earlier run; never put it back
+            out["held"].append(f"{hid}  portal Available, the CRM status feed says {feed_hold}; not added")
+            continue
         if hid in crm_closed:
             out["relist"].append(f"{hid}  portal Available, CRM_Properties says {crm_closed[hid]}")
         out["add"].append({"id": hid, "pid": row["Portal PROP id"], "address": row["Address"], "city": row["City"],
@@ -1034,21 +1061,24 @@ def plan(root: Path, portal_rows: list[dict], crm_rows: list[dict], wa: list[dic
                            "note": row.get("Direct note", ""), "note_es": row.get("Direct note es", "")})
         out["photos"].append(photo_item(hid, row))
     out["add"].sort(key=lambda r: r["id"])
-    feed_closes(out, site, status_feed, direct_sids)
+    feed_closes(out, site, status_feed, portal_sids, pending_sids)
     wa_photos(out, site, wa or [], {r["id"]: r for r in out["add"]})
     return out
 
 
-def feed_closes(out: dict, site: dict, status_feed: dict[str, str] | None, direct_sids: set) -> None:
+def feed_closes(out: dict, site: dict, status_feed: dict[str, str] | None, portal_sids: set, pending_sids: set) -> None:
     """Close live site homes the CRM status feed marks Pending or Sold. Close only; staff retire direct homes."""
     if not status_feed:
         return
     already = {r["id"] for r in out["retire"]}
     todo = [(sid, st) for sid, st in sorted(status_feed.items())
-            if sid in site and st in ("Pending", "Sold") and sid not in already and sid not in direct_sids]
-    if len(todo) > MAX_FEED_CLOSE:
+            if sid in site and st in ("Pending", "Sold") and sid not in already
+            and sid in portal_sids   # only homes the portal lists this run; direct and unlisted homes are staff's
+            and not (st == "Pending" and sid in pending_sids)]   # the portal already handles its own Pending
+    if len(todo) > MAX_FEED_CLOSE or len(out["retire"]) + len(todo) > MAX_RETIRE:
         out["status_feed"]["refused"] = True
-        out["hand"].append(f"STATUS FEED REFUSED: it would close {len(todo)} live homes (> {MAX_FEED_CLOSE}); "
+        out["hand"].append(f"STATUS FEED REFUSED: it would close {len(todo)} live homes (feed limit {MAX_FEED_CLOSE}, "
+                           f"total limit {MAX_RETIRE} with {len(out['retire'])} already retiring); "
                            "the feed part was not applied. Check the CRM feed.")
         return
     for sid, st in todo:

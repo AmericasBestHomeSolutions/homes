@@ -244,7 +244,11 @@ class T(unittest.TestCase):
         page = out / "905-olive" / "index.html"
         if not page.is_file():
             self.skipTest("booking links not generated in this checkout")
-        self.assertIn(f"home=decatur-il-905-olive&lang={lang}", page.read_text())
+        text = page.read_text()
+        if "no longer available" in text:   # 905 Olive sold; the page is now a redirect stub. Check the other live homes below.
+            pass
+        else:
+            self.assertIn(f"home=decatur-il-905-olive&lang={lang}", text)
         for hid in B.read_homes(root):
             self.assertTrue((out / hid / "index.html").is_file(), hid)
         for s in B.links(root).values():

@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (259 live, rebuilt from master published 2026-11-14) --- */
+/* --- the homes (256 live, rebuilt from master published 2026-11-14) --- */
 const HOMES = [
   {
     id: "eaststlouis-il-2008-61st",
@@ -2918,29 +2918,6 @@ const HOMES = [
     photos:    ["images/eaststlouis-il-724-82nd-1.jpg", "images/eaststlouis-il-724-82nd-2.jpg", "images/eaststlouis-il-724-82nd-3.jpg", "images/eaststlouis-il-724-82nd-4.jpg", "images/eaststlouis-il-724-82nd-5.jpg", "images/eaststlouis-il-724-82nd-6.jpg", "images/eaststlouis-il-724-82nd-7.jpg", "images/eaststlouis-il-724-82nd-8.jpg", "images/eaststlouis-il-724-82nd-9.jpg", "images/eaststlouis-il-724-82nd-10.jpg", "images/eaststlouis-il-724-82nd-11.jpg", "images/eaststlouis-il-724-82nd-12.jpg", "images/eaststlouis-il-724-82nd-13.jpg", "images/eaststlouis-il-724-82nd-14.jpg", "images/eaststlouis-il-724-82nd-15.jpg", "images/eaststlouis-il-724-82nd-16.jpg", "images/eaststlouis-il-724-82nd-17.jpg", "images/eaststlouis-il-724-82nd-18.jpg", "images/eaststlouis-il-724-82nd-19.jpg", "images/eaststlouis-il-724-82nd-20.jpg", "images/eaststlouis-il-724-82nd-21.jpg", "images/eaststlouis-il-724-82nd-22.jpg", "images/eaststlouis-il-724-82nd-23.jpg", "images/eaststlouis-il-724-82nd-24.jpg"],
   },
   {
-    id: "stlouis-mo-1027-garth",
-    address:     "1027 Garth Ave",
-    zip:         "63147",
-    copy:        "Three bedrooms in St. Louis at $750 a month, and $1,200 opens the door. Inside you'll find three bedrooms, one bath, and 1,440 square feet to spread out in, real space instead of a cramped rental where you're always making do. With three bedrooms, everyone gets a room of their own, and the boxes come off the truck in a place you're buying rather than renting. The purchase price is $69,000, agreed in writing when you sign, and it doesn't move. There's no bank to apply to and no mortgage paperwork. This is owner financing, straight and simple. The home is offered as-is, so come walk through every room in person and judge it with your own eyes. A home like this won't wait around. Book a Tour now and let's get you inside this week.",
-    city:  "St. Louis",
-    state: "MO",
-    beds:  3,
-    baths: 1,
-    sqft:  "1440",
-    lat:   38.71249,
-    lng:   -90.233718,
-    geo:   "exact",
-    status: "Pending",
-
-    monthlyPayment: 750,
-    moveIn:         1200,
-    lockedPrice:    69000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    ["images/stlouis-mo-1027-garth-1.jpg", "images/stlouis-mo-1027-garth-2.jpg", "images/stlouis-mo-1027-garth-3.jpg", "images/stlouis-mo-1027-garth-4.jpg", "images/stlouis-mo-1027-garth-5.jpg", "images/stlouis-mo-1027-garth-6.jpg", "images/stlouis-mo-1027-garth-7.jpg", "images/stlouis-mo-1027-garth-8.jpg", "images/stlouis-mo-1027-garth-9.jpg", "images/stlouis-mo-1027-garth-10.jpg", "images/stlouis-mo-1027-garth-11.jpg", "images/stlouis-mo-1027-garth-12.jpg", "images/stlouis-mo-1027-garth-13.jpg", "images/stlouis-mo-1027-garth-14.jpg", "images/stlouis-mo-1027-garth-15.jpg", "images/stlouis-mo-1027-garth-16.jpg", "images/stlouis-mo-1027-garth-17.jpg", "images/stlouis-mo-1027-garth-18.jpg", "images/stlouis-mo-1027-garth-19.jpg", "images/stlouis-mo-1027-garth-20.jpg", "images/stlouis-mo-1027-garth-21.jpg", "images/stlouis-mo-1027-garth-22.jpg", "images/stlouis-mo-1027-garth-23.jpg"],
-  },
-  {
     id: "jackson-ms-4228-johnson",
     address:     "4228 Johnson Ct.",
     zip:         "39209",
@@ -5726,52 +5703,6 @@ const HOMES = [
     photos:    ["images/decatur-il-1527-oakland-1.jpg", "images/decatur-il-1527-oakland-2.jpg", "images/decatur-il-1527-oakland-3.jpg", "images/decatur-il-1527-oakland-4.jpg", "images/decatur-il-1527-oakland-5.jpg", "images/decatur-il-1527-oakland-6.jpg", "images/decatur-il-1527-oakland-7.jpg", "images/decatur-il-1527-oakland-8.jpg", "images/decatur-il-1527-oakland-9.jpg", "images/decatur-il-1527-oakland-10.jpg", "images/decatur-il-1527-oakland-11.jpg", "images/decatur-il-1527-oakland-12.jpg", "images/decatur-il-1527-oakland-13.jpg", "images/decatur-il-1527-oakland-14.jpg", "images/decatur-il-1527-oakland-15.jpg", "images/decatur-il-1527-oakland-16.jpg", "images/decatur-il-1527-oakland-17.jpg"],
   },
   {
-    id: "decatur-il-945-maffit",
-    address:     "945 S Maffit St",
-    zip:         "62521",
-    copy:        "$995 a month and $2,500 to move in. This 3-bedroom, 1-bath home in Decatur, IL with about 1,032 square feet gives you room to spread out and a place that's truly yours, with no landlord deciding whether you stay. The purchase price is $101,000, fixed in writing when you sign, with owner financing and no bank in the middle. It's sold as-is, so come walk through every room and judge it with your own eyes. Homes at this payment don't sit long, so book a Tour and claim a showing time.",
-    city:  "Decatur",
-    state: "IL",
-    beds:  3,
-    baths: 1,
-    sqft:  "1032",
-    lat:   39.831629,
-    lng:   -88.944803,
-    geo:   "exact",
-    status: "Pending",
-
-    monthlyPayment: 995,
-    moveIn:         2500,
-    lockedPrice:    101000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    ["images/decatur-il-945-maffit-1.jpg", "images/decatur-il-945-maffit-2.jpg", "images/decatur-il-945-maffit-3.jpg", "images/decatur-il-945-maffit-4.jpg", "images/decatur-il-945-maffit-5.jpg", "images/decatur-il-945-maffit-6.jpg", "images/decatur-il-945-maffit-7.jpg", "images/decatur-il-945-maffit-8.jpg", "images/decatur-il-945-maffit-9.jpg", "images/decatur-il-945-maffit-10.jpg", "images/decatur-il-945-maffit-11.jpg", "images/decatur-il-945-maffit-12.jpg", "images/decatur-il-945-maffit-13.jpg", "images/decatur-il-945-maffit-14.jpg", "images/decatur-il-945-maffit-15.jpg", "images/decatur-il-945-maffit-16.jpg", "images/decatur-il-945-maffit-17.jpg", "images/decatur-il-945-maffit-18.jpg", "images/decatur-il-945-maffit-19.jpg", "images/decatur-il-945-maffit-20.jpg", "images/decatur-il-945-maffit-21.jpg", "images/decatur-il-945-maffit-22.jpg", "images/decatur-il-945-maffit-23.jpg", "images/decatur-il-945-maffit-24.jpg"],
-  },
-  {
-    id: "stlouis-mo-10044-green",
-    address:     "10044 Green Valley Dr.",
-    zip:         "63136",
-    copy:        "$850 a month and $3,000 to move in. This 3-bedroom, 1-bath home in Saint Louis, MO gives you room to spread out and a place that's truly yours, with no landlord deciding whether you stay. The purchase price is $79,000, fixed in writing when you sign, with owner financing and no bank in the middle. It's sold as-is, so come walk through every room and judge it with your own eyes. Homes at this payment don't sit long, so book a Tour and claim a showing time.",
-    city:  "Saint Louis",
-    state: "MO",
-    beds:  3,
-    baths: 1,
-    sqft:  "",
-    lat:   38.751148,
-    lng:   -90.263089,
-    geo:   "exact",
-    status: "Pending",
-
-    monthlyPayment: 850,
-    moveIn:         3000,
-    lockedPrice:    79000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    ["images/stlouis-mo-10044-green-1.jpg", "images/stlouis-mo-10044-green-2.jpg", "images/stlouis-mo-10044-green-3.jpg", "images/stlouis-mo-10044-green-4.jpg", "images/stlouis-mo-10044-green-5.jpg", "images/stlouis-mo-10044-green-6.jpg", "images/stlouis-mo-10044-green-7.jpg", "images/stlouis-mo-10044-green-8.jpg", "images/stlouis-mo-10044-green-9.jpg", "images/stlouis-mo-10044-green-10.jpg", "images/stlouis-mo-10044-green-11.jpg", "images/stlouis-mo-10044-green-12.jpg", "images/stlouis-mo-10044-green-13.jpg", "images/stlouis-mo-10044-green-14.jpg"],
-  },
-  {
     id: "stlouis-mo-8401-broadway",
     address:     "8401 N Broadway",
     zip:         "63147",
@@ -6084,6 +6015,7 @@ const SOLD_CARDS = [
   {"street": "Jordan St", "city": "Decatur", "state": "IL", "photo": "images/sold/pkackgsksmznfkjv.jpg"},
   {"street": "King St", "city": "Decatur", "state": "IL", "soldOn": "2026-11-03", "photo": "images/sold/uuevcdpghuafcrvm.jpg"},
   {"street": "Lawrence St", "city": "Decatur", "state": "IL", "soldOn": "2026-10-30", "photo": "images/sold/afzhwzucrscznvsu.jpg"},
+  {"street": "Maffit St", "city": "Decatur", "state": "IL", "soldOn": "2026-11-19", "photo": "images/sold/tqwwefkpepjzjjec.jpg"},
   {"street": "Monroe", "city": "Decatur", "state": "IL", "photo": "images/sold/jvkmmxhsjqfymevk.jpg"},
   {"street": "Monroe St", "city": "Decatur", "state": "IL", "photo": "images/sold/jvkmmxhsjqfymevk.jpg"},
   {"street": "Monroe Street", "city": "Decatur", "state": "IL", "soldOn": "2026-11-13", "photo": "images/sold/jgnegbgrmmhnrcru.jpg"},
@@ -6125,6 +6057,7 @@ const SOLD_CARDS = [
   {"street": "& 521 Owen St", "city": "Saginaw", "state": "MI", "soldOn": "2026-10-31", "photo": "images/sold/nhrtcfbsmjvrnrzc.jpg"},
   {"street": "Calvin Ave", "city": "Saint Louis", "state": "MO", "photo": "images/sold/xkabaseuswzwtfhu.jpg"},
   {"street": "Connolly Dr", "city": "Saint Louis", "state": "MO", "soldOn": "2026-11-14", "photo": "images/sold/egcjeebhmvwgbcsa.jpg"},
+  {"street": "Green Valley Dr", "city": "Saint Louis", "state": "MO", "soldOn": "2026-11-19", "photo": "images/sold/bekmcxcspdqgsrad.jpg"},
   {"street": "Hamilton Avenue", "city": "Saint Louis", "state": "MO", "soldOn": "2026-11-14", "photo": "images/sold/tbgzdedbhbzbdmvx.jpg"},
   {"street": "Obear Ave", "city": "Saint Louis", "state": "MO", "soldOn": "2026-11-14", "photo": "images/sold/gjczhqxrttuqaeqc.jpg"},
   {"street": "Queens Ave", "city": "Saint Louis", "state": "MO", "photo": "images/sold/btsupddvesdswttr.jpg"},
@@ -6133,6 +6066,7 @@ const SOLD_CARDS = [
   {"street": "Bermuda Dr", "city": "St. Louis", "state": "MO", "photo": "images/sold/bxunwsarrujdcphu.jpg"},
   {"street": "Clairmont Drive", "city": "St. Louis", "state": "MO", "soldOn": "2026-11-03", "photo": "images/sold/egeexvzbvgvmwdrj.jpg"},
   {"street": "Fremont St", "city": "St. Louis", "state": "MO", "soldOn": "2026-11-03", "photo": "images/sold/avnkufzdqnkssnrq.jpg"},
+  {"street": "Garth Ave", "city": "St. Louis", "state": "MO", "soldOn": "2026-11-19", "photo": "images/sold/zuwukanhwauwuhmx.jpg"},
   {"street": "Korte Ave", "city": "St. Louis", "state": "MO", "photo": "images/sold/grkvpamckeypwkzz.jpg"},
   {"street": "Margaretta Ave", "city": "St. Louis", "state": "MO", "soldOn": "2026-11-03", "photo": "images/sold/bxcgsbgxmfphcadp.jpg"},
   {"street": "Oakdale Ave", "city": "St. Louis", "state": "MO", "soldOn": "2026-11-06", "photo": "images/sold/kzdgrjhcsgrwbukj.jpg"},

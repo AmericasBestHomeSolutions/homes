@@ -57,8 +57,6 @@ const LISTED_ON = {
   "decatur-il-1712-church": "2026-11-16",
   "jackson-ms-2112-paden": "2026-11-16",
   "flint-mi-2832-clement": "2026-11-16",
-  "decatur-il-945-maffit": "2026-11-17",
-  "stlouis-mo-10044-green": "2026-11-17",
   "stlouis-mo-8401-broadway": "2026-11-17",
   "witt-il-529-2nd": "2026-11-17",
   "cahokia-il-5-denovion": "2026-11-19",

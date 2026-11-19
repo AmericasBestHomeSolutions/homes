@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Homes near Cahokia — layout mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mockup.css">
+</head>
+<body class="page-search">
+<p class="banner">Layout mockup for approval — not the live site.</p>
+<header class="top">
+  <a class="brand" href="search.html">
+    <svg class="mark" viewBox="0 0 48 48" aria-hidden="true">
+      <path d="M24 3 41 9V23C41 33 33 41 24 45 15 41 7 33 7 23V9Z" fill="#15315e"/>
+      <path d="M15 26 24 18 33 26Z" fill="#e23b3b"/>
+      <rect x="17.5" y="26" width="13" height="9" fill="#fff"/>
+      <rect x="22" y="30" width="4" height="5" fill="#15315e"/>
+    </svg>
+    <span class="name">Americas Best Home Solutions<small>getownerfinancedhomes.com</small></span>
+  </a>
+  <form class="search" action="search.html" role="search">
+    <svg class="mag" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 16l5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    <label class="sr" for="q">City or ZIP</label>
+    <input id="q" name="q" type="search" value="Cahokia, IL" placeholder="City or ZIP code" inputmode="search">
+    <button type="submit">Search</button>
+  </form>
+  <nav class="util" aria-label="Account">
+    <div class="lang" role="group" aria-label="Language">
+      <a href="search.html" hreflang="en" aria-current="page">EN</a>
+      <a href="https://casasconfinanciamiento.com/" hreflang="es">ES</a>
+    </div>
+    <a href="account.html#saved"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7-4.35-7-9.1A3.9 3.9 0 0 1 12 8.6a3.9 3.9 0 0 1 7 2.8c0 4.75-7 9.1-7 9.1z" fill="#e23b3b" stroke="#e23b3b" stroke-width="1.5"/></svg><span class="label">Saved</span><span class="count">2</span></a>
+    <a href="account.html"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5 19c1.4-3 3.8-4.5 7-4.5S17.6 16 19 19" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="label">Account</span></a>
+    <a class="textus" href="sms:+15515509906">Text us</a>
+  </nav>
+</header>
+<div class="filters" role="group" aria-label="Filters">
+  <label class="range">Monthly
+    <select id="payMin" aria-label="Minimum monthly payment">
+      <option value="">No min</option>
+      <option value="400" selected>$400</option>
+      <option value="600">$600</option>
+      <option value="800">$800</option>
+      <option value="1000">$1,000</option>
+    </select>
+    <span class="dash">–</span>
+    <select id="payMax" aria-label="Maximum monthly payment">
+      <option value="">No max</option>
+      <option value="800">$800</option>
+      <option value="1000">$1,000</option>
+      <option value="1200" selected>$1,200</option>
+      <option value="1500">$1,500</option>
+    </select>
+  </label>
+  <label class="range">Down
+    <select id="downMin" aria-label="Minimum down payment">
+      <option value="">No min</option>
+      <option value="1000" selected>$1,000</option>
+      <option value="1500">$1,500</option>
+      <option value="2000">$2,000</option>
+    </select>
+    <span class="dash">–</span>
+    <select id="downMax" aria-label="Maximum down payment">
+      <option value="">No max</option>
+      <option value="1500">$1,500</option>
+      <option value="2000" selected>$2,000</option>
+      <option value="3000">$3,000</option>
+      <option value="5000">$5,000</option>
+    </select>
+  </label>
+  <button class="chip" type="button">Beds</button>
+  <button class="chip" type="button">Baths</button>
+  <button class="near" id="nearBtn" type="button">Near me</button>
+  <p class="near-msg" id="nearMsg"></p>
+</div>
+<section class="whyband" aria-label="Why buy instead of rent">
+  <h2>Why buy instead of rent</h2>
+  <ul>
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11 12 4l8 7v9H4z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 20v-5h4v5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>You own from day one</li>
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 3v4M16 3v4M4 10h16" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>Your payment stays put</li>
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M7 7h7a3 3 0 0 1 0 6H9a3 3 0 0 0 0 6h8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>A payment close to rent</li>
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 8h16zM6 8v10h12V8" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5 20h14" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>No bank in the way</li>
+  </ul>
+</section>
+<div class="split">
+  <section class="list" aria-label="Homes">
+    <div class="list-head">
+      <div>
+        <h1>Cahokia, IL</h1>
+        <p>7 owner-financed homes</p>
+      </div>
+      <span class="sort">Monthly payment</span>
+    </div>
+    <p class="alert-row"><a href="account.html#alerts">Get alerts for this search</a></p>
+
+    <article class="card" data-lat="38.5618" data-lng="-90.1668">
+      <a class="card-link" href="listing.html">
+        <div class="photo"><img src="../images/cahokia-il-1320-williams.jpg" alt="Home in Cahokia, Illinois"></div>
+        <div class="meta">
+          <p class="pay">$395<span>/mo</span></p>
+          <p class="down">$1,000 down</p>
+          <p class="specs"><span>3 bd</span><span>1 ba</span><span>936 sqft</span></p>
+          <p class="where">Cahokia, IL</p>
+        </div>
+      </a>
+      <button class="heart on" type="button" aria-pressed="true" aria-label="Saved"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7-4.35-7-9.1A3.9 3.9 0 0 1 12 8.6a3.9 3.9 0 0 1 7 2.8c0 4.75-7 9.1-7 9.1z"/></svg></button>
+    </article>
+
+    <article class="card is-active" data-lat="38.584588" data-lng="-90.173912">
+      <a class="card-link" href="listing.html">
+        <div class="photo"><span class="badge-new">New</span><!-- sample only: homes.js has no listing date --><img src="../images/cahokia-il-107-judith.jpg" alt="107 Judith Ln, Cahokia, Illinois"></div>
+        <div class="meta">
+          <p class="pay">$940<span>/mo</span></p>
+          <p class="down">$1,500 down</p>
+          <p class="specs"><span>3 bd</span><span>2 ba</span><span>1,453 sqft</span></p>
+          <p class="where">Cahokia, IL</p>
+        </div>
+      </a>
+      <button class="heart on" type="button" aria-pressed="true" aria-label="Saved"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7-4.35-7-9.1A3.9 3.9 0 0 1 12 8.6a3.9 3.9 0 0 1 7 2.8c0 4.75-7 9.1-7 9.1z"/></svg></button>
+    </article>
+
+    <article class="card" data-lat="38.5514" data-lng="-90.1342">
+      <a class="card-link" href="listing.html">
+        <div class="photo"><img src="../images/cahokia-il-11-delores.jpg" alt="Home in Cahokia, Illinois"></div>
+        <div class="meta">
+          <p class="pay">$475<span>/mo</span></p>
+          <p class="down">$1,000 down</p>
+          <p class="specs"><span>2 bd</span><span>1 ba</span><span>864 sqft</span></p>
+          <p class="where">Cahokia, IL</p>
+        </div>
+      </a>
+      <button class="heart" type="button" aria-pressed="false" aria-label="Save this home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7-4.35-7-9.1A3.9 3.9 0 0 1 12 8.6a3.9 3.9 0 0 1 7 2.8c0 4.75-7 9.1-7 9.1z"/></svg></button>
+    </article>
+
+    <article class="card" data-lat="38.5553" data-lng="-90.1979">
+      <a class="card-link" href="listing.html">
+        <div class="photo"><img src="../images/cahokia-il-34-saint.jpg" alt="Home in Cahokia, Illinois"></div>
+        <div class="meta">
+          <p class="pay">$495<span>/mo</span></p>
+          <p class="down">$1,500 down</p>
+          <p class="specs"><span>4 bd</span><span>1 ba</span><span>1,104 sqft</span></p>
+          <p class="where">Cahokia, IL</p>
+        </div>
+      </a>
+      <button class="heart" type="button" aria-pressed="false" aria-label="Save this home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7-4.35-7-9.1A3.9 3.9 0 0 1 12 8.6a3.9 3.9 0 0 1 7 2.8c0 4.75-7 9.1-7 9.1z"/></svg></button>
+    </article>
+
+    <article class="card" data-lat="38.7022" data-lng="-90.1655">
+      <a class="card-link" href="listing.html">
+        <div class="photo"><img src="../images/granitecity-il-1734-spruce.jpg" alt="Home in Granite City, Illinois"></div>
+        <div class="meta">
+          <p class="pay">$745<span>/mo</span></p>
+          <p class="down">$2,000 down</p>
+          <p class="specs"><span>2 bd</span><span>1 ba</span><span>720 sqft</span></p>
+          <p class="where">Granite City, IL</p>
+        </div>
+      </a>
+      <button class="heart" type="button" aria-pressed="false" aria-label="Save this home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7-4.35-7-9.1A3.9 3.9 0 0 1 12 8.6a3.9 3.9 0 0 1 7 2.8c0 4.75-7 9.1-7 9.1z"/></svg></button>
+    </article>
+
+    <article class="card" data-lat="38.5952" data-lng="-90.1318">
+      <a class="card-link" href="listing.html">
+        <div class="photo"><img src="../images/eaststlouis-il-3511-converse.jpg" alt="Home in East St. Louis, Illinois"></div>
+        <div class="meta">
+          <p class="pay">$895<span>/mo</span></p>
+          <p class="down">$1,500 down</p>
+          <p class="specs"><span>3 bd</span><span>1 ba</span><span>698 sqft</span></p>
+          <p class="where">East St. Louis, IL</p>
+        </div>
+      </a>
+      <button class="heart" type="button" aria-pressed="false" aria-label="Save this home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7-4.35-7-9.1A3.9 3.9 0 0 1 12 8.6a3.9 3.9 0 0 1 7 2.8c0 4.75-7 9.1-7 9.1z"/></svg></button>
+    </article>
+
+    <article class="card" data-lat="38.5174" data-lng="-89.9965">
+      <a class="card-link" href="listing.html">
+        <div class="photo"><img src="../images/belleville-il-233-11th.jpg" alt="Home in Belleville, Illinois"></div>
+        <div class="meta">
+          <p class="pay">$1,060<span>/mo</span></p>
+          <p class="down">$2,000 down</p>
+          <p class="specs"><span>2 bd</span><span>1 ba</span><span>1,639 sqft</span></p>
+          <p class="where">Belleville, IL</p>
+        </div>
+      </a>
+      <button class="heart" type="button" aria-pressed="false" aria-label="Save this home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7-4.35-7-9.1A3.9 3.9 0 0 1 12 8.6a3.9 3.9 0 0 1 7 2.8c0 4.75-7 9.1-7 9.1z"/></svg></button>
+    </article>
+  </section>
+
+  <aside class="map-pane" aria-label="Map">
+    <svg viewBox="0 0 800 1000" preserveAspectRatio="none" aria-hidden="true">
+      <rect width="800" height="1000" fill="#e7f0ea"/>
+      <path d="M0 0 H78 C130 90 36 170 96 270 C156 370 48 470 108 580 C160 690 64 800 118 920 C136 970 70 1000 48 1000 H0 Z" fill="#c5d8ee"/>
+      <ellipse cx="500" cy="200" rx="110" ry="48" fill="#c9e0c6"/>
+      <ellipse cx="280" cy="620" rx="86" ry="38" fill="#d0e4cc"/>
+      <ellipse cx="600" cy="760" rx="74" ry="32" fill="#d0e4cc"/>
+      <g stroke="#ffffff" fill="none" stroke-linecap="square">
+        <path d="M0 170 H800" stroke-width="7"/>
+        <path d="M0 400 H800" stroke-width="16"/>
+        <path d="M0 620 H800" stroke-width="8"/>
+        <path d="M0 830 H800" stroke-width="11"/>
+        <path d="M230 0 V1000" stroke-width="13"/>
+        <path d="M450 0 V1000" stroke-width="8"/>
+        <path d="M650 0 V1000" stroke-width="8"/>
+      </g>
+      <g stroke="#f7fbf8" stroke-width="4" fill="none" opacity=".85">
+        <path d="M80 250 C 200 240, 320 300, 800 280"/>
+        <path d="M0 760 C 180 740, 360 800, 800 770"/>
+        <path d="M360 0 C 340 200, 390 500, 370 1000"/>
+      </g>
+      <g font-family="DM Sans, system-ui, sans-serif" font-size="18" font-weight="700" fill="#4d6274">
+        <text x="14" y="490" fill="#2a4d73">St. Louis</text>
+        <text x="250" y="130">Granite City</text>
+        <text x="268" y="370">East St. Louis</text>
+        <text x="175" y="840">Cahokia</text>
+        <text x="520" y="910">Belleville</text>
+      </g>
+    </svg>
+    <a class="pin" style="left:26.6%;top:11.6%" href="listing.html">$745</a>
+    <a class="pin" style="left:38.6%;top:56.2%" href="listing.html">$895</a>
+    <a class="pin on" style="left:23.6%;top:60.6%" href="listing.html">$940</a>
+    <a class="pin" style="left:26.1%;top:70.1%" href="listing.html">$395</a>
+    <a class="pin" style="left:15%;top:72.8%" href="listing.html">$495</a>
+    <a class="pin" style="left:37.8%;top:74.4%" href="listing.html">$475</a>
+    <a class="pin" style="left:68%;top:86%" href="listing.html">$1,060</a>
+    <div class="map-tools"><button type="button">Search this area</button></div>
+    <p class="map-note">Pin price is the monthly payment</p>
+  </aside>
+</div>
+<section class="below">
+  <div class="who">
+    <h2>Who we are</h2>
+    <p class="lede">Americas Best Home Solutions LLC markets owner-financed homes to buyers on behalf of their owners, and buys properties from owners and listing agents who want a straightforward sale.</p>
+    <p class="note">In a lot of American towns, the monthly cost of renting is higher than the monthly cost of owning the same house — and the only thing standing between a renting family and an owned home is the bank's approval process. We find homes in those towns whose owners will sell on terms, and connect them with the people who want to live in them.</p>
+  </div>
+  <h2>You're buying — not renting</h2>
+  <div class="benefits">
+    <article>
+      <h3>You own from day one</h3>
+      <p>Your name is on the agreement the day you sign. You're the homeowner, not a tenant.</p>
+    </article>
+    <article>
+      <h3>Your payment stays put</h3>
+      <p>A fixed monthly payment, in writing. It doesn't climb every year the way rent does — the only thing that could ever move it is a change in property taxes or insurance, and that's spelled out in your terms.</p>
+    </article>
+    <article>
+      <h3>A payment close to rent</h3>
+      <p>Own a home for about what you'd pay a landlord — and it builds toward something that's yours.</p>
+    </article>
+    <article>
+      <h3>No bank in the way</h3>
+      <p>No mortgage application and no bank approval deciding whether you get a home.</p>
+    </article>
+  </div>
+  <div class="feel">
+    <p>Your past doesn't have to decide your future. If you've been turned away by banks, this was built for you.</p>
+    <p>When you rent, the money is gone and the home stays the landlord's. Here, you're the buyer from day one and every payment goes toward owning the home at the price you agreed to.</p>
+  </div>
+  <h2>Straight answers</h2>
+  <div class="faq">
+    <details>
+      <summary>Is this legit — or is it a scam?</summary>
+      <p class="ans">It's a fair question, and we'd rather you ask it. Americas Best Home Solutions LLC is a registered Wyoming business, established in 2023, and every home we list has a real address, a real price, and a real monthly payment. Here's how you protect yourself with us — and with anyone: you visit the home in person before you commit, you get every number and every term in writing, and you always talk to a real person. We will never ask you to wire money to "hold" a house you haven't seen, and we'll never rush you. If anything ever feels off, slow down and call us directly at the number on this site.</p>
+    </details>
+    <details>
+      <summary>Do I need a bank to buy one of these homes?</summary>
+      <p class="ans">No — there's no bank and no mortgage application. The home's owner is the seller, so the purchase is agreed in a written contract between you and the owner. We market the home and guide you through the process. Call us and we'll talk through your situation honestly.</p>
+    </details>
+    <details open>
+      <summary>Is this the same as renting?</summary>
+      <p class="ans">No. When you rent, the money is gone and the home stays the landlord's. Here, you're the buyer from day one and every payment goes toward owning the home at the price you agreed to.</p>
+    </details>
+    <details>
+      <summary>What do I pay to move in?</summary>
+      <p class="ans">Each home lists its move-in payment and monthly payment right on its page. There are no hidden numbers — we go over all of it with you before anything is signed.</p>
+    </details>
+    <details>
+      <summary>What happens if I miss a payment?</summary>
+      <p class="ans">Life happens — talk to us early if things get tight. Your written agreement spells out exactly how payments work, and we'll walk through every line with you so there are no surprises.</p>
+    </details>
+    <details>
+      <summary>Can I paint, fix up, or improve the home?</summary>
+      <p class="ans">Yes — it's your home. Many buyers love making it their own. We'll cover any specifics in your agreement.</p>
+    </details>
+    <details>
+      <summary>How is this different from a bank mortgage?</summary>
+      <p class="ans">A mortgage means a bank decides if you qualify, then loans you the money. Here we skip the bank entirely and finance it to you directly with a simple contract for deed — usually faster and with far less paperwork.</p>
+    </details>
+  </div>
+</section>
+<footer class="foot">
+  <div class="foot-brand">
+    <strong>Americas Best Home Solutions</strong>
+    <span>getownerfinancedhomes.com</span>
+  </div>
+  <p class="mission"><b>How we got here.</b> In a lot of American towns, the monthly cost of renting is higher than the monthly cost of owning the same house — and the only thing standing between a renting family and an owned home is the bank's approval process. We find homes in those towns whose owners will sell on terms, and connect them with the people who want to live in them.</p>
+</footer>
+<button class="view-toggle" type="button">Map</button>
+<script src="mockup.js"></script>
+</body>
+</html>

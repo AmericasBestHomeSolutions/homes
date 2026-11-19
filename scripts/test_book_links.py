@@ -167,6 +167,9 @@ class T(unittest.TestCase):
             self.assertNotIn('"/book/2539-28th"', js)
             live = json.loads((r / "data" / "book-links.json").read_text())["live"]
             self.assertNotIn("granitecity-il-2539-28th", live)
+            feedback = (r / "feedback" / "granitecity-il-2539-28th" / "index.html").read_text()
+            self.assertIn("2539 E. 28th St., Decatur, IL", feedback)
+            self.assertNotIn("owner.getownerfinancedhomes.com/book", feedback)
 
     def test_removed_home_redirects_to_home_page(self):
         with tempfile.TemporaryDirectory() as d:

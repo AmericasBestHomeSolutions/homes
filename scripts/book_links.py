@@ -411,7 +411,9 @@ def build(root: Path, lang: str | None = None, extra: tuple[Path, ...] = ()) -> 
 
     # Feedback links: every live id, every short slug ever issued (live or not), and any full id that already has a
     # booking or feedback page, so a text sent before a home went pending still opens the form.
+    # Pending homes are not bookable, but the feedback page still names the house the buyer toured.
     fdir = root / FEEDBACK_SITES[lang]["dir"]
+    labeled = {**homes, **pending}
     targets: dict[str, str] = {hid: hid for hid in ids}
     targets.update({s: hid for s, hid in state["slugs"].items()})
     for d in (out, fdir):
@@ -419,7 +421,7 @@ def build(root: Path, lang: str | None = None, extra: tuple[Path, ...] = ()) -> 
             for sub in d.iterdir():
                 if sub.is_dir() and sub.name not in targets and short_slug(sub.name) and ID_RE.match(sub.name):
                     targets[sub.name] = sub.name
-    changed += sum(_write(fdir / key / "index.html", feedback_page_for(root, hid, homes.get(hid, {}), lang, key))
+    changed += sum(_write(fdir / key / "index.html", feedback_page_for(root, hid, labeled.get(hid, {}), lang, key))
                    for key, hid in targets.items())
     _write(fdir / "index.html", gone_page(lang, "index").replace(t["gone"], t["all"]))
 

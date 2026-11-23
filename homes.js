@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (256 live, rebuilt from master published 2026-11-14) --- */
+/* --- the homes (254 live, rebuilt from master published 2026-11-14) --- */
 const HOMES = [
   {
     id: "eaststlouis-il-2008-61st",
@@ -840,30 +840,6 @@ const HOMES = [
     features: { backyard: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-1286-vanderhoof-1.jpg", "images/decatur-il-1286-vanderhoof-2.jpg", "images/decatur-il-1286-vanderhoof-3.jpg", "images/decatur-il-1286-vanderhoof-4.jpg", "images/decatur-il-1286-vanderhoof-5.jpg", "images/decatur-il-1286-vanderhoof-6.jpg", "images/decatur-il-1286-vanderhoof-7.jpg", "images/decatur-il-1286-vanderhoof-8.jpg", "images/decatur-il-1286-vanderhoof-9.jpg", "images/decatur-il-1286-vanderhoof-10.jpg", "images/decatur-il-1286-vanderhoof-11.jpg", "images/decatur-il-1286-vanderhoof-12.jpg", "images/decatur-il-1286-vanderhoof-13.jpg", "images/decatur-il-1286-vanderhoof-14.jpg", "images/decatur-il-1286-vanderhoof-15.jpg", "images/decatur-il-1286-vanderhoof-16.jpg", "images/decatur-il-1286-vanderhoof-17.jpg", "images/decatur-il-1286-vanderhoof-18.jpg", "images/decatur-il-1286-vanderhoof-19.jpg", "images/decatur-il-1286-vanderhoof-20.jpg", "images/decatur-il-1286-vanderhoof-21.jpg", "images/decatur-il-1286-vanderhoof-22.jpg", "images/decatur-il-1286-vanderhoof-23.jpg", "images/decatur-il-1286-vanderhoof-24.jpg"],
-  },
-  {
-    id: "centralia-il-805-hickory",
-    address:     "805 S Hickory St.",
-    zip:         "62801",
-    description: "The water in the basement is already pumped out",
-    city:  "Centralia",
-    state: "IL",
-    beds:  3,
-    baths: 2,
-    sqft:  "",
-    lat:   38.519719,
-    lng:   -89.142055,
-    geo:   "exact",
-    status: "Pending",
-
-    monthlyPayment: 780,
-    moveIn:         2500,
-    lockedPrice:    79000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { basement: "yes" },
-    heroPhoto: "",
-    photos:    ["images/centralia-il-805-hickory-1.jpg", "images/centralia-il-805-hickory-2.jpg", "images/centralia-il-805-hickory-3.jpg", "images/centralia-il-805-hickory-4.jpg", "images/centralia-il-805-hickory-5.jpg", "images/centralia-il-805-hickory-6.jpg", "images/centralia-il-805-hickory-7.jpg", "images/centralia-il-805-hickory-8.jpg", "images/centralia-il-805-hickory-9.jpg", "images/centralia-il-805-hickory-10.jpg", "images/centralia-il-805-hickory-11.jpg", "images/centralia-il-805-hickory-12.jpg", "images/centralia-il-805-hickory-13.jpg", "images/centralia-il-805-hickory-14.jpg", "images/centralia-il-805-hickory-15.jpg", "images/centralia-il-805-hickory-16.jpg", "images/centralia-il-805-hickory-17.jpg", "images/centralia-il-805-hickory-18.jpg", "images/centralia-il-805-hickory-19.jpg", "images/centralia-il-805-hickory-20.jpg", "images/centralia-il-805-hickory-21.jpg", "images/centralia-il-805-hickory-22.jpg"],
   },
   {
     id: "cahokia-il-1320-williams",
@@ -2256,30 +2232,6 @@ const HOMES = [
     features: { backyard: "yes", fenced_yard: "yes", basement: "yes", central_air: "yes", storage_shed: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-1175-division-1.jpg", "images/decatur-il-1175-division-2.jpg", "images/decatur-il-1175-division-3.jpg", "images/decatur-il-1175-division-4.jpg", "images/decatur-il-1175-division-5.jpg", "images/decatur-il-1175-division-6.jpg", "images/decatur-il-1175-division-7.jpg", "images/decatur-il-1175-division-8.jpg", "images/decatur-il-1175-division-9.jpg", "images/decatur-il-1175-division-10.jpg", "images/decatur-il-1175-division-11.jpg", "images/decatur-il-1175-division-12.jpg", "images/decatur-il-1175-division-13.jpg", "images/decatur-il-1175-division-14.jpg", "images/decatur-il-1175-division-15.jpg", "images/decatur-il-1175-division-16.jpg", "images/decatur-il-1175-division-17.jpg", "images/decatur-il-1175-division-18.jpg", "images/decatur-il-1175-division-19.jpg", "images/decatur-il-1175-division-20.jpg", "images/decatur-il-1175-division-21.jpg", "images/decatur-il-1175-division-22.jpg", "images/decatur-il-1175-division-23.jpg", "images/decatur-il-1175-division-24.jpg"],
-  },
-  {
-    id: "granitecity-il-2964-iowa",
-    address:     "2964 Iowa Street",
-    zip:         "62040",
-    description: "1176 Square ft. 5000 sq ft lot size. needs cleaning but other than that it is ready to live in",
-    copy:        "Three bedrooms, two baths, $950 a month, and $3,000 puts the keys in your hand. This Granite City home offers 1,176 square feet on a 5,000-square-foot lot, with enough bedrooms that everyone gets a door to close and nobody ends up sleeping on the couch. It's the kind of place where you hang pictures on the wall knowing you won't be taking them down again when a lease runs out. The purchase price is $129,000, written into your agreement and fixed from the moment you sign. There's no bank involved, just straightforward owner financing. The home is sold as-is, so come walk through every room in person and judge it with your own eyes. Homes at this payment don't sit around long, so book a Tour now and let's get your showing on the calendar.",
-    city:  "Granite City",
-    state: "IL",
-    beds:  3,
-    baths: 2,
-    sqft:  "1176",
-    lat:   38.714919,
-    lng:   -90.12548,
-    geo:   "exact",
-    status: "Pending",
-
-    monthlyPayment: 950,
-    moveIn:         3000,
-    lockedPrice:    129000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    heroPhoto: "",
-    photos:    [],
   },
   {
     id: "decatur-il-1421-sedgwick",
@@ -6006,6 +5958,7 @@ const SOLD_CARDS = [
   {"street": "Sauget Ave", "city": "Cahokia", "state": "IL", "photo": "images/sold/wqtevdaahumdjhjs.jpg"},
   {"street": "Williams St", "city": "Cahokia", "state": "IL", "photo": "images/sold/nfejjgxkezjxmhvs.jpg"},
   {"street": "Sycamore Street", "city": "Carbondale", "state": "IL", "photo": "images/sold/jxknhpptrmvszhcy.jpg"},
+  {"street": "Hickory St", "city": "Centralia", "state": "IL", "soldOn": "2026-11-23", "photo": "images/sold/pfrccujxpkxqdpzp.jpg"},
   {"street": "Kentucky Ave", "city": "Danville", "state": "IL", "soldOn": "2026-11-13", "photo": "images/sold/qbfksnkwwajaaxws.jpg"},
   {"street": "18th St", "city": "Decatur", "state": "IL", "photo": "images/sold/rjjgkwmpsphjnmrv.jpg"},
   {"street": "Church St", "city": "Decatur", "state": "IL", "soldOn": "2026-11-13", "photo": "images/sold/adwdxwqrcxdnyzpj.jpg"},
@@ -6076,6 +6029,7 @@ const SOLD_CARDS = [
   {"street": "Range Ln", "city": "Cahokia", "state": "IL", "soldOn": "2026-10-30"},
   {"street": "Waggoner St", "city": "Decatur", "state": "IL"},
   {"street": "Avon Pl", "city": "East St. Louis", "state": "IL", "soldOn": "2026-10-31"},
+  {"street": "Iowa Street", "city": "Granite City", "state": "IL", "soldOn": "2026-11-23"},
   {"street": "Arden Ave", "city": "Saint Louis", "state": "MO"},
   {"street": "Era Ave", "city": "St. Louis", "state": "MO", "soldOn": "2026-10-30"},
   {"street": "Florence Pl", "city": "St. Louis", "state": "MO", "soldOn": "2026-10-30"},

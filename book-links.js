@@ -251,7 +251,7 @@ const BOOK_HREF = {
   "witt-il-529-2nd": "/book/529-2nd",
   "woodriver-il-46-eckhard": "/book/46-eckhard"
 };
-const BOOK_CLOSED = ["centralia-il-805-hickory", "flint-mi-2832-clement", "granitecity-il-2964-iowa", "stlouis-mo-1338-gregan", "stlouis-mo-4121-clara", "stlouis-mo-8800-jordan"];
+const BOOK_CLOSED = ["flint-mi-2832-clement", "stlouis-mo-1338-gregan", "stlouis-mo-4121-clara", "stlouis-mo-8800-jordan"];
 const BOOK_CRM = "https://owner.getownerfinancedhomes.com/book";
 function bookHref(homeId){
   if(BOOK_CLOSED.indexOf(homeId) !== -1) return encodeURIComponent(homeId) + '.html';

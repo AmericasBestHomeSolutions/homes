@@ -5808,7 +5808,7 @@ const HOMES = [
     termText:       "30-year owner financing (contract for deed)",
 
     heroPhoto: "",
-    photos:    [],
+    photos:    ["images/decatur-il-305-maffit-1.jpg", "images/decatur-il-305-maffit-2.jpg", "images/decatur-il-305-maffit-3.jpg", "images/decatur-il-305-maffit-4.jpg", "images/decatur-il-305-maffit-5.jpg", "images/decatur-il-305-maffit-6.jpg", "images/decatur-il-305-maffit-7.jpg", "images/decatur-il-305-maffit-8.jpg", "images/decatur-il-305-maffit-9.jpg", "images/decatur-il-305-maffit-10.jpg", "images/decatur-il-305-maffit-11.jpg", "images/decatur-il-305-maffit-12.jpg", "images/decatur-il-305-maffit-13.jpg", "images/decatur-il-305-maffit-14.jpg", "images/decatur-il-305-maffit-15.jpg", "images/decatur-il-305-maffit-16.jpg", "images/decatur-il-305-maffit-17.jpg", "images/decatur-il-305-maffit-18.jpg", "images/decatur-il-305-maffit-19.jpg", "images/decatur-il-305-maffit-20.jpg", "images/decatur-il-305-maffit-21.jpg", "images/decatur-il-305-maffit-22.jpg", "images/decatur-il-305-maffit-23.jpg", "images/decatur-il-305-maffit-24.jpg"],
   },
   {
     id: "decatur-il-346-18th",

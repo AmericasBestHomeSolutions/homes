@@ -946,6 +946,7 @@ def _city_page(group: dict, lang: str) -> str:
 .buyer-panel label{{display:grid;gap:4px;font-size:13px;font-weight:700;color:var(--ink-soft,#5b6577)}}
 .buyer-panel input,.buyer-panel select{{font:600 16px "DM Sans",system-ui,sans-serif;padding:12px;border-radius:12px;border:1.5px solid var(--line);min-height:48px;background:#fff;color:var(--ink,#16213a)}}
 .buyer-budgets{{display:grid;grid-template-columns:1fr 1fr;gap:10px}}
+.chip-label{{font:800 12px system-ui,sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#5b6577;margin-top:4px}}
 .range-chips{{display:flex;gap:8px;overflow-x:auto;padding:2px 0 8px}}
 .range-chips button{{flex:0 0 auto;min-height:44px;padding:0 14px;border-radius:999px;border:1.5px solid var(--line,#d5dbe6);background:#fff;font:700 14px system-ui,sans-serif;color:#15315e;cursor:pointer}}
 .range-chips button[aria-pressed="true"]{{background:#15315e;color:#fff}}
@@ -978,7 +979,7 @@ html.preview .joe-slot[hidden]{{display:block !important;border:1.5px dashed var
       <span class="bn">{BRAND}<small>{'casasconfinanciamiento.com' if lang == 'es' else 'getownerfinancedhomes.com'}</small></span>
     </a>
     <nav class="topnav" aria-label="Site">
-      <a class="nav-account" href="/account/?lang={lang}">{'Mi cuenta: visitas y documentos' if lang == 'es' else 'My account: tours and paperwork'}</a>
+      <a class="nav-account" href="/account/?lang={lang}" aria-label="{'Mi cuenta: visitas y documentos' if lang == 'es' else 'My account: tours and paperwork'}"><span>{'Mi cuenta' if lang == 'es' else 'My account'}</span></a>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="siteMenu"><span class="nav-bars" aria-hidden="true"></span><span class="nav-word">{'Menú' if lang == 'es' else 'Menu'}</span></button>
       <div class="site-menu" id="siteMenu">
         {nav_html}
@@ -1006,6 +1007,7 @@ html.preview .joe-slot[hidden]{{display:block !important;border:1.5px dashed var
       <button type="button" data-min="1000" data-max="1300">$1,000–$1,300</button>
       <button type="button" data-min="1300" data-max="">$1,300+</button>
     </div>
+    <div class="chip-label">{'RECÁMARAS' if lang == 'es' else 'BEDROOMS'}</div>
     <div class="range-chips" id="bedChips" data-min="bedsMin" role="radiogroup" aria-label="{'Recámaras' if lang == 'es' else 'Bedrooms'}">
       <button type="button" data-min="" aria-pressed="true">{'Cualquiera' if lang == 'es' else 'Any'}</button>
       <button type="button" data-min="1">1+</button>

@@ -358,10 +358,17 @@ body.page-search .hdr-search{display:none}
 <style>
 /* After site.css so the buyer search is the first screen on a phone. */
 body.page-search,body.page-search .topbar,body.page-search .buyer-panel,body.page-search #listings,body.page-search #listings *{font-family:system-ui,sans-serif !important}
-body.page-search .buyer-panel{min-height:204px}
-@media(min-width:861px){
-  body.page-search .zhead-row{min-height:96px}
-  body.page-search .topbar{min-height:235px}
+body.page-search .buyer-panel{min-height:0}
+body.page-search .zhead-row{min-height:56px;flex-wrap:nowrap}
+body.page-search .topbar{min-height:64px}
+@media(max-width:860px){
+  body.page-search .topbar{padding:6px 8px}
+  body.page-search .zhead-row{gap:6px}
+  body.page-search .brand{flex:1 1 auto;min-width:0;overflow:hidden;display:flex;align-items:center;gap:6px}
+  body.page-search .brand .mark{width:22px;height:22px;flex:none}
+  body.page-search .brand .bn{font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  body.page-search .topnav{flex:0 0 auto;flex-wrap:nowrap !important;gap:2px}
+  body.page-search .nav-account,body.page-search .nav-lang,body.page-search .nav-toggle{font-size:12px;padding:0 7px;min-height:36px}
 }
 body.page-search #listings{min-height:520px !important}
 body.page-search #cards{min-height:460px !important}
@@ -371,7 +378,13 @@ body.page-search .buyer-intro{display:none !important}
 .range-chips button{flex:0 0 auto;min-height:44px;padding:0 14px;border-radius:999px;border:1.5px solid var(--line,#d5dbe6);background:#fff;font:700 14px system-ui,sans-serif;color:var(--pine,#15315e);cursor:pointer}
 .range-chips button[aria-pressed="true"]{background:var(--pine,#15315e);color:#fff;border-color:var(--pine,#15315e)}
 .chip-clear{justify-self:start;min-height:44px;padding:0 4px;border:0;background:transparent;color:var(--pine,#15315e);font:800 14px system-ui,sans-serif;text-decoration:underline;cursor:pointer}
-body.page-search .buyer-panel{position:sticky;top:64px;z-index:24;background:#fff}
+body.page-search .buyer-panel{position:static;background:#fff}
+.range-chips[hidden],.chip-label[hidden],.filter-slim[hidden]{display:none !important}
+.filter-slim{position:fixed;z-index:28;left:8px;right:8px;top:var(--zhead,64px);height:56px;max-height:56px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 14px;border:1px solid var(--line,#e2e8f2);border-radius:14px;background:#fff;box-shadow:0 8px 22px rgba(15,36,68,.12);color:var(--pine,#15315e);font:700 14px system-ui,sans-serif;text-align:left}
+.filter-slim #filterSlimText{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.filter-slim #filterSlimEdit{flex:0 0 auto;min-height:36px;padding:0 12px;border-radius:999px;background:var(--pine,#15315e);color:#fff;display:inline-flex;align-items:center}
+body.page-search .view-toggle{position:static !important;left:auto !important;bottom:auto !important;transform:none !important;margin:12px 16px 20px;z-index:1}
+#stickyTour{z-index:80}
 body.page-search .city-pills{display:flex !important;flex-wrap:nowrap !important;overflow-x:auto;scroll-snap-type:x mandatory;gap:8px;padding-bottom:10px}
 body.page-search .city-pills a{flex:0 0 auto;scroll-snap-align:start;min-height:44px}
 body.page-search #cards{display:flex !important;flex-direction:row;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 16px 18px;grid-template-columns:none !important}
@@ -409,10 +422,10 @@ body.page-search .hdr-search{display:none !important}
         <rect x="17.5" y="26" width="13" height="9" fill="#ffffff"/>
         <rect x="22" y="30" width="4" height="5" fill="#15315e"/>
       </svg>
-      <span class="bn">Americas Best Home Solutions<small>getownerfinancedhomes.com</small></span>
+      <span class="bn">Americas Best<span class="brand-rest"> Home Solutions</span><small>getownerfinancedhomes.com</small></span>
     </a>
     <nav class="topnav" aria-label="Site">
-      <a class="nav-account" href="/account/?lang=en">My account: tours and paperwork</a>
+      <a class="nav-account" href="/account/?lang=en" aria-label="My account: tours and paperwork"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 19.2c1.4-3 3.8-4.4 7-4.4s5.6 1.4 7 4.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>My account</span></a>
       <a class="nav-es nav-lang" href="https://casasconfinanciamiento.com/">Español</a>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="siteMenu"><span class="nav-bars" aria-hidden="true"></span><span class="nav-word">Menu</span></button>
       <div class="site-menu" id="siteMenu">
@@ -497,7 +510,7 @@ body.page-search .hdr-search{display:none !important}
       <button type="button" data-min="1000" data-max="1300">$1,000–$1,300</button>
       <button type="button" data-min="1300" data-max="">$1,300+</button>
     </div>
-    <div class="chip-label" id="bedLabel" hidden>Bedrooms</div>
+    <div class="chip-label" id="bedLabel" hidden>BEDROOMS</div>
     <div class="range-chips" id="bedChips" data-min="bedsMin" data-max="" role="radiogroup" aria-label="Bedrooms" hidden>
       <button type="button" data-min="" data-max="" aria-pressed="true">Any</button>
       <button type="button" data-min="1" data-max="">1+</button>
@@ -507,6 +520,10 @@ body.page-search .hdr-search{display:none !important}
     </div>
     <button type="button" class="chip-clear" id="clearBuyer">Clear filters</button>
   </form>
+  <button type="button" id="filterSlim" class="filter-slim" hidden>
+    <span id="filterSlimText">Find a home</span>
+    <span id="filterSlimEdit">Filters</span>
+  </button>
 
   <section class="section" id="listings">
     <div class="cards" id="cards">
@@ -1357,6 +1374,56 @@ function startHomePage(){
     const q = $("fQ"), dl = $("qHints"); let t;
     q.addEventListener("input", () => { clearTimeout(t); t = setTimeout(() => { page = 1; render(false); syncURL(); chips(); }, 160); });
     if (window.BuyerSearch) BuyerSearch.bindChips(document.getElementById("buyerSearch"));
+    (function(){
+      const panel = document.getElementById("buyerSearch");
+      const slim = $("filterSlim");
+      const slimText = $("filterSlimText");
+      const slimEdit = $("filterSlimEdit");
+      if (!panel || !slim) return;
+      const short = {
+        "Under $2,000": "Under $2k down",
+        "$2,000–$4,000": "$2k–$4k down",
+        "$4,000+": "$4k+ down",
+        "Under $800": "Under $800/mo",
+        "$800–$1,000": "$800–$1k/mo",
+        "$1,000–$1,300": "$1k–$1.3k/mo",
+        "$1,300+": "$1.3k+/mo"
+      };
+      function pressed(group){
+        const btn = group && group.querySelector('[aria-pressed="true"]');
+        return btn ? btn.textContent.trim() : "Any";
+      }
+      function paintSlim(){
+        const bits = [];
+        const q = ($("fQ").value || "").trim();
+        if (q) bits.push(q.split(",")[0]);
+        const down = pressed(document.querySelector('[data-max="chipDownMax"]'));
+        const pay = pressed(document.querySelector('[data-max="chipPayMax"]'));
+        const beds = pressed($("bedChips"));
+        if (down && down !== "Any") bits.push(short[down] || down);
+        if (pay && pay !== "Any") bits.push(short[pay] || pay);
+        if (beds && beds !== "Any" && $("bedChips") && !$("bedChips").hidden) bits.push(beds + " beds");
+        slimText.textContent = bits.length ? bits.join(" · ") : "Find a home";
+        slimEdit.textContent = bits.length ? "Edit" : "Filters";
+      }
+      const head = document.querySelector("body.page-search .topbar");
+      const watch = new IntersectionObserver(function(entries){
+        const away = !entries[0].isIntersecting;
+        slim.hidden = !away;
+        if (away) paintSlim();
+      }, { rootMargin: "-8px 0px 0px 0px", threshold: 0 });
+      watch.observe(panel);
+      slim.addEventListener("click", function(){
+        panel.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+      panel.addEventListener("change", paintSlim);
+      panel.addEventListener("input", paintSlim);
+      if (head && "ResizeObserver" in window) {
+        new ResizeObserver(function(){
+          document.documentElement.style.setProperty("--zhead", (head.offsetHeight + 8) + "px");
+        }).observe(head);
+      }
+    })();
     const searchForm = document.getElementById("buyerSearch");
     if (searchForm) searchForm.addEventListener("change", () => { page = 1; render(false); syncURL(); chips(); });
     const clearBuyer = $("clearBuyer");

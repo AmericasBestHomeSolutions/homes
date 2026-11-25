@@ -16,9 +16,6 @@
 <meta property="og:description" content="1 owner-financed home in Washington Park, IL. Each listing shows the address, purchase price, down payment, and monthly payment. No bank."/>
 <meta property="og:url" content="https://getownerfinancedhomes.com/washingtonpark-il.html"/>
 <meta property="og:image" content="https://getownerfinancedhomes.com/images/_share-default.jpg"/>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/pages.css">
 <link rel="stylesheet" href="/nav.css">
 <style>
@@ -33,6 +30,17 @@
 .buyer-panel label{display:grid;gap:4px;font-size:13px;font-weight:700;color:var(--ink-soft,#5b6577)}
 .buyer-panel input,.buyer-panel select{font:600 16px "DM Sans",system-ui,sans-serif;padding:12px;border-radius:12px;border:1.5px solid var(--line);min-height:48px;background:#fff;color:var(--ink,#16213a)}
 .buyer-budgets{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.range-chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 8px}
+.range-chips button{flex:0 0 auto;min-height:44px;padding:0 14px;border-radius:999px;border:1.5px solid var(--line,#d5dbe6);background:#fff;font:700 14px system-ui,sans-serif;color:#15315e;cursor:pointer}
+.range-chips button[aria-pressed="true"]{background:#15315e;color:#fff}
+.row-scroller{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 0 16px}
+.swipe-card{flex:0 0 min(78vw,280px);scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.swipe-card a{color:inherit;text-decoration:none;display:block}
+.swipe-card img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:#e6eef8}
+.swipe-card .where{font-weight:800;margin:10px 12px 4px}
+.swipe-card .meta,.swipe-card .avail{margin:0 12px 8px;font-size:14px}
+.chip-clear{min-height:44px;border:0;background:transparent;color:#15315e;font-weight:800;text-decoration:underline;cursor:pointer}
+#cityHomes{list-style:none;margin:0;padding:0}
 .buyer-group{margin:18px 0}
 .buyer-group h2{font-size:20px;margin:0 0 8px}
 .joe-slot[hidden]{display:none !important}
@@ -54,6 +62,7 @@ html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(
       <span class="bn">Americas Best Home Solutions<small>getownerfinancedhomes.com</small></span>
     </a>
     <nav class="topnav" aria-label="Site">
+      <a class="nav-account" href="/account/?lang=en">My account: tours and paperwork</a>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="siteMenu"><span class="nav-bars" aria-hidden="true"></span><span class="nav-word">Menu</span></button>
       <div class="site-menu" id="siteMenu">
         <a href="/#listings">Homes</a>
@@ -68,35 +77,40 @@ html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(
     <label>City or ZIP
       <input id="fQ" name="q" type="search" value="Washington Park, IL" autocomplete="off" enterkeyhint="search">
     </label>
-    <div class="buyer-budgets">
-      <label>Max down payment
-        <select id="fDown" name="down">
-          <option value="">Any</option>
-          <option value="1000">$1,000</option><option value="1500">$1,500</option>
-          <option value="2000">$2,000</option><option value="2500">$2,500</option>
-          <option value="3000">$3,000</option><option value="4000">$4,000</option>
-          <option value="5000">$5,000</option>
-        </select>
-      </label>
-      <label>Max monthly
-        <select id="fPayMax" name="payMax">
-          <option value="">Any</option>
-          <option value="500">$500</option><option value="600">$600</option><option value="700">$700</option>
-          <option value="800">$800</option><option value="900">$900</option><option value="1000">$1,000</option>
-          <option value="1100">$1,100</option><option value="1200">$1,200</option><option value="1300">$1,300</option>
-          <option value="1400">$1,400</option><option value="1500">$1,500</option>
-        </select>
-      </label>
+    <input type="hidden" id="chipDownMin" value=""><input type="hidden" id="chipDownMax" value="">
+    <input type="hidden" id="chipPayMin" value=""><input type="hidden" id="chipPayMax" value="">
+    <input type="hidden" id="bedsMin" value="">
+    <div class="range-chips" data-min="chipDownMin" data-max="chipDownMax" role="radiogroup" aria-label="Down payment">
+      <button type="button" data-min="" data-max="" aria-pressed="true">Any</button>
+      <button type="button" data-min="" data-max="1999">Under $2,000</button>
+      <button type="button" data-min="2000" data-max="4000">$2,000–$4,000</button>
+      <button type="button" data-min="4000" data-max="">$4,000+</button>
     </div>
+    <div class="range-chips" data-min="chipPayMin" data-max="chipPayMax" role="radiogroup" aria-label="Monthly payment">
+      <button type="button" data-min="" data-max="" aria-pressed="true">Any</button>
+      <button type="button" data-min="" data-max="799">Under $800</button>
+      <button type="button" data-min="800" data-max="1000">$800–$1,000</button>
+      <button type="button" data-min="1000" data-max="1300">$1,000–$1,300</button>
+      <button type="button" data-min="1300" data-max="">$1,300+</button>
+    </div>
+    <div class="range-chips" id="bedChips" data-min="bedsMin" role="radiogroup" aria-label="Bedrooms">
+      <button type="button" data-min="" aria-pressed="true">Any</button>
+      <button type="button" data-min="1">1+</button>
+      <button type="button" data-min="2">2+</button>
+      <button type="button" data-min="3">3+</button>
+      <button type="button" data-min="4">4+</button>
+    </div>
+    <button type="button" class="chip-clear" id="clearBuyer">Clear filters</button>
   </form>
   <section class="phead">
     <span class="eyebrow">Owner financing</span>
     <h1>Owner Financed Homes in Washington Park, IL</h1>
     <p class="lead">1 owner-financed home in Washington Park, IL. Every listing below shows the address, purchase price, down payment, and monthly payment. No bank and no mortgage application.</p>
   </section>
-  <ul class="city-list" id="cityHomes">
-      <li data-id="washingtonpark-il-5617-warren" data-down="1400" data-pay="672" data-status="Available" data-photo="1"><a href="/washingtonpark-il-5617-warren.html">5617 Warren Ave.</a><span class="meta">Washington Park, IL · $59,900 price · $1,400 down · $672/mo · 2 beds, 1 bath</span></li>
-  </ul>
+  <div class="row-scroller" id="cityHomes">
+      <article class="swipe-card" data-id="washingtonpark-il-5617-warren" data-down="1400" data-pay="672" data-beds="2" data-status="Available" data-photo="1"><a href="/washingtonpark-il-5617-warren.html"><img src="/images/cards/washingtonpark-il-5617-warren-480.webp" alt="" width="480" height="360" loading="lazy" decoding="async"><p class="where">5617 Warren Ave.</p><p class="meta">Washington Park, IL · $59,900 price · $1,400 down · $672/mo · 2 beds, 1 bath</p><p class="meta">2 beds</p><p class="avail">Available now</p></a></article>
+  </div>
+  <p id="cityEmpty" hidden>Nothing in that range. Try a wider payment range or fewer bedrooms. Nearby homes show below when we have them.</p>
   <div id="buyerExtra"></div>
   <p class="city-back"><a href="/">Browse all homes</a></p>
 </div>

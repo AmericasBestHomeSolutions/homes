@@ -219,7 +219,6 @@ def facts_text(home: dict, lang: str) -> str:
     where = place(home)
     price, down, monthly = money(home.get("lockedPrice")), money(home.get("moveIn")), money(home.get("monthlyPayment"))
     size, sq = bed_bath(home, lang), sqft_of(home)
-    term = (home.get("termText") or "").strip()
     pending = str(home.get("status") or "").strip().lower() == "pending"
     if lang == "es":
         parts = [f"Casa con financiamiento del dueño en {where}."]
@@ -233,8 +232,6 @@ def facts_text(home: dict, lang: str) -> str:
             parts.append(size + ".")
         if sq:
             parts.append(f"{sq:,} pies cuadrados.")
-        if term:
-            parts.append(term if term.endswith(".") else term + ".")
         if pending:
             parts.append("Esta casa está pendiente.")
         return " ".join(parts)
@@ -249,8 +246,6 @@ def facts_text(home: dict, lang: str) -> str:
         parts.append(size + ".")
     if sq:
         parts.append(f"{sq:,} square feet.")
-    if term:
-        parts.append(term if term.endswith(".") else term + ".")
     if pending:
         parts.append("This home is pending.")
     return " ".join(parts)
@@ -260,11 +255,28 @@ def page_description(home: dict, lang: str) -> str:
     return facts_text(home, lang)
 
 
+# Sentences that state a term, a rate, taxes, or insurance are not shown.
+# The written agreement is where those points are confirmed.
+_SENSITIVE_COPY = re.compile(
+    r"30\s*-?\s*years?|30\s*años|treinta\s+años|fixed[\s-]*price|precio\s+fijo|"
+    r"(?:the\s+)?price\s+is\s+fixed|interest\s+rate|tasa\s+de\s+inter[eé]s|"
+    r"property\s+tax(?:es)?|\btaxes\b|\bimpuestos?\b|\binsurance\b|\bseguro\b",
+    re.IGNORECASE,
+)
+
+
+def scrub_public_copy(text: str) -> str:
+    """Drop sentences that mention a loan term, interest, taxes, or insurance."""
+    parts = re.split(r"(?<=[.!?])\s+", str(text or "").strip())
+    kept = [part.strip() for part in parts if part.strip() and not _SENSITIVE_COPY.search(part)]
+    return re.sub(r"\s{2,}", " ", " ".join(kept)).strip()
+
+
 def prose(home: dict) -> str:
     for key in ("copy", "description"):
         text = home.get(key)
         if isinstance(text, str) and text.strip():
-            return text.strip()
+            return scrub_public_copy(text)
     return ""
 
 
@@ -378,15 +390,13 @@ def listing_graph(home: dict, lang: str, image: str) -> dict:
         if lang == "es":
             if down:
                 extra.append(f"Enganche {down}")
-            if monthly:
-                extra.append(f"Pago mensual {monthly}")
+        if monthly:
+            extra.append(f"Pago mensual {monthly}")
         else:
             if down:
                 extra.append(f"Down payment {down}")
             if monthly:
                 extra.append(f"Monthly payment {monthly}")
-        if term:
-            extra.append(term)
         if extra:
             offer["description"] = ". ".join(extra)
         listing["offers"] = {"@id": url + "#offer"}
@@ -447,7 +457,6 @@ def term_rows(home: dict, lang: str) -> list[dict]:
             ("Pago mensual", monthly, True),
             ("Enganche", down, False),
             ("Precio de compra", price, False),
-            ("Financiamiento", term, False),
             ("La casa", " · ".join(home_bits), False),
             ("Ubicación", loc, False),
         ]
@@ -456,7 +465,6 @@ def term_rows(home: dict, lang: str) -> list[dict]:
             ("Your monthly payment", monthly, True),
             ("Down payment", down, False),
             ("Purchase price", price, False),
-            ("Financing", term, False),
             ("The home", " · ".join(home_bits), False),
             ("Location", loc, False),
         ]
@@ -850,16 +858,25 @@ def _city_page(group: dict, lang: str) -> str:
         if size:
             bits.append(size)
         pending = str(home.get("status") or "").strip().lower() == "pending"
-        flag = f' <span class="pending">{pending_word}</span>' if pending else ""
         href = f"/{home['id']}.html"
         down_n = num(home.get("moveIn"))
         pay_n = num(home.get("monthlyPayment"))
+        beds_n = num(home.get("beds"))
         photo = "1" if str(home.get("hasPhoto") or "").strip().lower() in {"1", "true", "yes"} else "0"
+        if beds_n:
+            bed_label = f"{int(beds_n) if float(beds_n) == int(float(beds_n)) else beds_n} " + ("recámaras" if lang == "es" else "beds")
+        else:
+            bed_label = "recámaras no indicadas" if lang == "es" else "beds not listed"
+        avail = pending_word if pending else ("Disponible ahora" if lang == "es" else "Available now")
+        img = (f'<img src="/images/cards/{esc(home["id"])}-480.webp" alt="" width="480" height="360" loading="lazy" decoding="async">'
+               if photo == "1" else "")
         items.append(
-            f'<li data-id="{esc(home["id"])}" data-down="{"" if down_n is None else down_n}" '
-            f'data-pay="{"" if pay_n is None else pay_n}" data-status="{esc(str(home.get("status") or "Available"))}" '
-            f'data-photo="{photo}"><a href="{esc(href)}">{esc(home.get("address") or home["id"])}</a>{flag}'
-            f'<span class="meta">{esc(" · ".join(bits))}</span></li>')
+            f'<article class="swipe-card" data-id="{esc(home["id"])}" data-down="{"" if down_n is None else down_n}" '
+            f'data-pay="{"" if pay_n is None else pay_n}" data-beds="{"" if not beds_n else beds_n}" '
+            f'data-status="{esc(str(home.get("status") or "Available"))}" data-photo="{photo}">'
+            f'<a href="{esc(href)}">{img}<p class="where">{esc(home.get("address") or home["id"])}</p>'
+            f'<p class="meta">{esc(" · ".join(bits))}</p><p class="meta">{esc(bed_label)}</p>'
+            f'<p class="avail">{esc(avail)}</p></a></article>')
     list_items = []
     for i, home in enumerate(group["homes"], 1):
         list_items.append({
@@ -915,9 +932,6 @@ def _city_page(group: dict, lang: str) -> str:
 <meta property="og:description" content="{esc(desc)}"/>
 <meta property="og:url" content="{esc(url)}"/>
 <meta property="og:image" content="{domain}/images/_share-default.jpg"/>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/pages.css">
 <link rel="stylesheet" href="/nav.css">
 <style>
@@ -932,6 +946,17 @@ def _city_page(group: dict, lang: str) -> str:
 .buyer-panel label{{display:grid;gap:4px;font-size:13px;font-weight:700;color:var(--ink-soft,#5b6577)}}
 .buyer-panel input,.buyer-panel select{{font:600 16px "DM Sans",system-ui,sans-serif;padding:12px;border-radius:12px;border:1.5px solid var(--line);min-height:48px;background:#fff;color:var(--ink,#16213a)}}
 .buyer-budgets{{display:grid;grid-template-columns:1fr 1fr;gap:10px}}
+.range-chips{{display:flex;gap:8px;overflow-x:auto;padding:2px 0 8px}}
+.range-chips button{{flex:0 0 auto;min-height:44px;padding:0 14px;border-radius:999px;border:1.5px solid var(--line,#d5dbe6);background:#fff;font:700 14px system-ui,sans-serif;color:#15315e;cursor:pointer}}
+.range-chips button[aria-pressed="true"]{{background:#15315e;color:#fff}}
+.row-scroller{{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 0 16px}}
+.swipe-card{{flex:0 0 min(78vw,280px);scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}}
+.swipe-card a{{color:inherit;text-decoration:none;display:block}}
+.swipe-card img{{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:#e6eef8}}
+.swipe-card .where{{font-weight:800;margin:10px 12px 4px}}
+.swipe-card .meta,.swipe-card .avail{{margin:0 12px 8px;font-size:14px}}
+.chip-clear{{min-height:44px;border:0;background:transparent;color:#15315e;font-weight:800;text-decoration:underline;cursor:pointer}}
+#cityHomes{{list-style:none;margin:0;padding:0}}
 .buyer-group{{margin:18px 0}}
 .buyer-group h2{{font-size:20px;margin:0 0 8px}}
 .joe-slot[hidden]{{display:none !important}}
@@ -953,6 +978,7 @@ html.preview .joe-slot[hidden]{{display:block !important;border:1.5px dashed var
       <span class="bn">{BRAND}<small>{'casasconfinanciamiento.com' if lang == 'es' else 'getownerfinancedhomes.com'}</small></span>
     </a>
     <nav class="topnav" aria-label="Site">
+      <a class="nav-account" href="/account/?lang={lang}">{'Mi cuenta: visitas y documentos' if lang == 'es' else 'My account: tours and paperwork'}</a>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="siteMenu"><span class="nav-bars" aria-hidden="true"></span><span class="nav-word">{'Menú' if lang == 'es' else 'Menu'}</span></button>
       <div class="site-menu" id="siteMenu">
         {nav_html}
@@ -964,35 +990,40 @@ html.preview .joe-slot[hidden]{{display:block !important;border:1.5px dashed var
     <label>{'Ciudad o código postal' if lang == 'es' else 'City or ZIP'}
       <input id="fQ" name="q" type="search" value="{esc(city)}, {esc(state)}" autocomplete="off" enterkeyhint="search">
     </label>
-    <div class="buyer-budgets">
-      <label>{'Enganche máximo' if lang == 'es' else 'Max down payment'}
-        <select id="fDown" name="down">
-          <option value="">{'Cualquiera' if lang == 'es' else 'Any'}</option>
-          <option value="1000">$1,000</option><option value="1500">$1,500</option>
-          <option value="2000">$2,000</option><option value="2500">$2,500</option>
-          <option value="3000">$3,000</option><option value="4000">$4,000</option>
-          <option value="5000">$5,000</option>
-        </select>
-      </label>
-      <label>{'Mensualidad máxima' if lang == 'es' else 'Max monthly'}
-        <select id="fPayMax" name="payMax">
-          <option value="">{'Cualquiera' if lang == 'es' else 'Any'}</option>
-          <option value="500">$500</option><option value="600">$600</option><option value="700">$700</option>
-          <option value="800">$800</option><option value="900">$900</option><option value="1000">$1,000</option>
-          <option value="1100">$1,100</option><option value="1200">$1,200</option><option value="1300">$1,300</option>
-          <option value="1400">$1,400</option><option value="1500">$1,500</option>
-        </select>
-      </label>
+    <input type="hidden" id="chipDownMin" value=""><input type="hidden" id="chipDownMax" value="">
+    <input type="hidden" id="chipPayMin" value=""><input type="hidden" id="chipPayMax" value="">
+    <input type="hidden" id="bedsMin" value="">
+    <div class="range-chips" data-min="chipDownMin" data-max="chipDownMax" role="radiogroup" aria-label="{'Enganche' if lang == 'es' else 'Down payment'}">
+      <button type="button" data-min="" data-max="" aria-pressed="true">{'Cualquiera' if lang == 'es' else 'Any'}</button>
+      <button type="button" data-min="" data-max="1999">{'Menos de $2,000' if lang == 'es' else 'Under $2,000'}</button>
+      <button type="button" data-min="2000" data-max="4000">$2,000–$4,000</button>
+      <button type="button" data-min="4000" data-max="">$4,000+</button>
     </div>
+    <div class="range-chips" data-min="chipPayMin" data-max="chipPayMax" role="radiogroup" aria-label="{'Mensualidad' if lang == 'es' else 'Monthly payment'}">
+      <button type="button" data-min="" data-max="" aria-pressed="true">{'Cualquiera' if lang == 'es' else 'Any'}</button>
+      <button type="button" data-min="" data-max="799">{'Menos de $800' if lang == 'es' else 'Under $800'}</button>
+      <button type="button" data-min="800" data-max="1000">$800–$1,000</button>
+      <button type="button" data-min="1000" data-max="1300">$1,000–$1,300</button>
+      <button type="button" data-min="1300" data-max="">$1,300+</button>
+    </div>
+    <div class="range-chips" id="bedChips" data-min="bedsMin" role="radiogroup" aria-label="{'Recámaras' if lang == 'es' else 'Bedrooms'}">
+      <button type="button" data-min="" aria-pressed="true">{'Cualquiera' if lang == 'es' else 'Any'}</button>
+      <button type="button" data-min="1">1+</button>
+      <button type="button" data-min="2">2+</button>
+      <button type="button" data-min="3">3+</button>
+      <button type="button" data-min="4">4+</button>
+    </div>
+    <button type="button" class="chip-clear" id="clearBuyer">{'Quitar filtros' if lang == 'es' else 'Clear filters'}</button>
   </form>
   <section class="phead">
     <span class="eyebrow">{esc(eyebrow)}</span>
     <h1>{esc(h1)}</h1>
     <p class="lead">{esc(lead)}</p>
   </section>
-  <ul class="city-list" id="cityHomes">
+  <div class="row-scroller" id="cityHomes">
       {rows}
-  </ul>
+  </div>
+  <p id="cityEmpty" hidden>{'Nada en ese rango. Pruebe un rango más amplio o menos recámaras.' if lang == 'es' else 'Nothing in that range. Try a wider payment range or fewer bedrooms. Nearby homes show below when we have them.'}</p>
   <div id="buyerExtra"></div>
   <p class="city-back"><a href="/">{esc(browse)}</a></p>
 </div>
@@ -1173,6 +1204,7 @@ def _write_buyer_index(root: Path, homes: list[dict]) -> bool:
             "lat": lat,
             "lng": lng,
             "hasPhoto": str(home.get("hasPhoto") or "").strip().lower() in {"1", "true", "yes"},
+            "beds": num(home.get("beds")),
         })
     path = Path(root) / "data" / "buyer-index.json"
     path.parent.mkdir(exist_ok=True)

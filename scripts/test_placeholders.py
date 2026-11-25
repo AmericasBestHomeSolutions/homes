@@ -42,7 +42,7 @@ class Placeholders(unittest.TestCase):
         reviews = json.loads((ROOT / "reviews.json").read_text(encoding="utf-8"))
         buyers = [row for row in reviews if row.get("kind") != "owner"]
         names = [row.get("name") for row in buyers]
-        self.assertIn("Logan, Decatur", names)
+        self.assertEqual(names, ["Logan, Decatur", "Trinity, Decatur"])
         for row in buyers:
             self.assertRegex(row.get("name") or "", r".+,\s+.+")
             self.assertTrue(row.get("text") and row.get("date"))

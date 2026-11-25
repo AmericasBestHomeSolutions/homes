@@ -314,7 +314,7 @@ html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(
     <p class="prop-addr" id="propAddr" style="font-weight:600;font-size:17px;color:var(--pine,#15315e);margin:2px 0 6px">1947 Sir Richard Ct, Decatur, IL 62526 <a href="https://www.google.com/maps/search/?api=1&amp;query=1947%20Sir%20Richard%20Ct%2C%20Decatur%2C%20IL%2062526" target="_blank" rel="noopener" style="font-weight:500;font-size:14px;color:var(--go,#e23b3b);text-decoration:none;white-space:nowrap;margin-left:6px">View on map &#8599;</a></p>
     <p class="prop-specs" id="propSpecs" style="display:flex;gap:10px;flex-wrap:wrap;font-weight:600;font-size:16px;color:var(--ink);margin:0 0 8px"><span>3 beds, 1 bath</span><span style="color:var(--line)">·</span><span style="font-weight:500;color:var(--ink-soft)">1,239 sqft</span></p>
     <p class="condition-line" id="conditionLine" hidden></p>
-    <p class="subhead" id="subhead">This is buying, not renting. A fixed monthly payment close to rent — and every 1st of the month, it's building toward a home that's yours.</p>
+    <p class="subhead" id="subhead">This is buying, not renting. A monthly payment you agree to in writing, and every 1st of the month it builds toward a home that's yours. What your monthly payment includes is confirmed in your paperwork.</p>
     <div id="csBanner" hidden style="background:#fff7ed;border:1.5px solid #fdba74;border-radius:14px;padding:14px 16px;margin:0 0 16px;color:#7c2d12">
       <strong style="display:block;font-size:16px;margin-bottom:4px">🔨 Contractor Special — needs major repairs</strong>
       <span id="csWhat" style="display:block;font-weight:600"></span>
@@ -418,7 +418,7 @@ html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(
     <div class="steps">
       <div class="step"><div class="n">01</div><div class="body"><h3>Book a tour</h3><p>Pick a time on this page. A real person confirms — usually the same day.</p></div></div>
       <div class="step"><div class="n">02</div><div class="body"><h3>Walk the home in person</h3><p>Tours are in person, not by video — you see it exactly as it is. We ask everyone for a photo ID before a showing; it's how we keep a log of who's been through the home.</p></div></div>
-      <div class="step"><div class="n">03</div><div class="body"><h3>Your terms in writing</h3><p>The numbers above — price, down payment, monthly payment, fixed rate, no prepayment penalty — come to you as a plain written breakdown with your down payment invoice. We'll never ask for money to "hold" a home you haven't seen.</p></div></div>
+      <div class="step"><div class="n">03</div><div class="body"><h3>Your terms in writing</h3><p>The price, down payment, and monthly payment come to you in a plain written breakdown. Final terms are confirmed in your paperwork. What your monthly payment includes is confirmed in your paperwork. We'll never ask for money to hold a home you haven't seen.</p></div></div>
       <div class="step"><div class="n">04</div><div class="body"><h3>Move-in payment, then keys</h3><p>From that day, every monthly payment goes toward owning the home — at the price you agreed to.</p></div></div>
     </div>
     <p class="other-homes" style="margin-top:16px"><a href="how-it-works.html">Want the full rundown? See how owner financing works →</a></p>
@@ -551,7 +551,7 @@ function startListing(){
       $("seoCity").innerHTML = `<a href="/${citySlug(C.city)}-${String(C.state).toLowerCase()}.html">${label}</a>`;
     }
   }
-  if (!$("subhead").textContent.trim()) $("subhead").textContent = "This is buying, not renting. A fixed monthly payment close to rent — and every 1st of the month, it's building toward a home that's yours.";
+  if (!$("subhead").textContent.trim()) $("subhead").textContent = "This is buying, not renting. A monthly payment you agree to in writing, and every 1st of the month it builds toward a home that's yours. What your monthly payment includes is confirmed in your paperwork.";
   if (!$("propSpecs").textContent.trim()) $("propSpecs").innerHTML = [
     C.beds ? `<span>${C.beds} bed${Number(C.beds)===1?"":"s"}</span>` : "",
     C.baths ? `<span>${C.baths} bath${Number(C.baths)===1?"":"s"}</span>` : "",

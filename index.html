@@ -338,7 +338,7 @@ body.page-search #cities .sec-sub{margin:4px 0 0;max-width:62ch}
 .buyer-group{margin:8px 0 18px;grid-column:1 / -1}
 .buyer-group h2{font-family:'Bricolage Grotesque',sans-serif;font-size:22px;margin:0 0 8px}
 .card-ask,.card-avail{font-size:14px;font-weight:700;margin-top:4px}
-.card-book{display:inline-flex;align-items:center;justify-content:center;min-height:48px;margin:8px 12px 12px;padding:0 14px;border-radius:12px;background:var(--go,#d43333);color:#fff;font-weight:800;text-decoration:none}
+.card-book{display:none !important}
 .card{display:flex;flex-direction:column}
 .card-open{color:inherit;text-decoration:none}
 .joe-slot[hidden]{display:none !important}
@@ -372,7 +372,26 @@ body.page-search .topbar{min-height:64px}
 }
 body.page-search #listings{min-height:520px !important}
 body.page-search #cards{min-height:460px !important}
-body.page-search .buyer-intro{display:none !important}
+body.page-search .buyer-intro,
+body.page-search .hero,
+body.page-search #why-strip,
+body.page-search #featuredSec,
+body.page-search .oneteam,
+body.page-search #why-buy,
+body.page-search .about,
+body.page-search .legit,
+body.page-search #story,
+body.page-search #trustBand{display:none !important}
+.card-book{display:none !important}
+a.st-go,.btn-primary{background:#C62F2A}
+.see-all{display:flex;align-items:center;justify-content:center;min-height:420px;flex:0 0 min(78vw,300px);background:#E6EEFA;color:#15315e;font-weight:800;text-decoration:none;border-radius:16px;padding:16px;text-align:center}
+.hero-promise{margin:12px 16px 8px;font-size:22px;font-weight:800;line-height:1.25;color:#0F2444}
+.week-hero{margin:0 16px 12px}
+.week-hero img{width:100%;height:140px;object-fit:cover;object-position:50% 60%;border-radius:16px;display:block}
+body.page-search #how .step{padding:12px 14px}
+body.page-search #how .steps{gap:8px}
+body.page-search .joe-intro img{width:140px}
+.week-hero figcaption{font-size:13px;color:#5b6577;margin-top:6px}
 .chip-label{font:800 12px system-ui,sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#5b6577;margin-top:4px}
 .range-chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 6px;-webkit-overflow-scrolling:touch}
 .range-chips button{flex:0 0 auto;min-height:44px;padding:0 14px;border-radius:999px;border:1.5px solid var(--line,#d5dbe6);background:#fff;font:700 14px system-ui,sans-serif;color:var(--pine,#15315e);cursor:pointer}
@@ -484,6 +503,10 @@ body.page-search .hdr-search{display:none !important}
     </div>
   </header>
 
+  <p class="hero-promise">A home of your own, without the bank. See the down payment and the monthly payment on every home, then tour it in person.</p>
+  <!-- weekly-hero:start -->
+<figure class="week-hero"><img src="images/cards/oblong-il-807-illinois-480.webp" alt="A real home you can tour: 807 W Illinois St,, Oblong, IL" width="480" height="360" fetchpriority="high"><figcaption>A real home you can tour: 807 W Illinois St,, Oblong, IL</figcaption></figure>
+<!-- weekly-hero:end -->
   <form class="buyer-panel" id="buyerSearch" action="/" method="get">
     <h1>Find a home</h1>
     <label>City or ZIP
@@ -561,7 +584,7 @@ body.page-search .hdr-search{display:none !important}
     <div class="hero-inner">
       <span class="eyebrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M12 2 3 7v6c0 5 3.8 8.4 9 11 5.2-2.6 9-6 9-11V7l-9-5z"/></svg> Owner Financing · No Bank Needed</span>
       <h1>Own the home.<br><em>Skip the bank.</em></h1>
-      <p class="hero-lead">Owner-financed homes across Illinois, Missouri, Michigan, Alabama &amp; more — a fixed monthly payment close to what you're handing a landlord right now. The difference: on the 1st of the month, this one comes back to you as a home that's yours.</p>
+      <p class="hero-lead">Owner-financed homes across Illinois, Missouri, Michigan, Alabama and more. See the down payment and the monthly payment on every home, then tour it in person.</p>
       <p class="reassure">Your past doesn't have to decide your future. If you've been turned away by banks, this was built for you.</p>
       <div class="hero-cta">
         <a class="btn btn-lime" href="#listings">See the homes</a>
@@ -710,7 +733,7 @@ body.page-search .hdr-search{display:none !important}
   </section>
 
   <!-- TRUST BAND -->
-  <section class="section reveal">
+  <section class="section reveal" id="trustBand">
     <div class="sec-head">
       <div class="sec-label">Why people choose us</div>
       <h2 class="sec-title">A real path to owning — <br>without the bank in the way</h2>
@@ -801,7 +824,7 @@ body.page-search .hdr-search{display:none !important}
           <li><span class="m">✕</span>Your money is gone on the 1st — you'll never see it again</li>
           <li><span class="m">✕</span>You're paying off the <em>landlord's</em> property, not yours</li>
           <li><span class="m">✕</span>Rent goes up, and you can't stop it</li>
-          <li><span class="m">✕</span>After 10, 20, 30 years — nothing to show for it</li>
+          <li><span class="m">✕</span>After many years of rent, nothing to show for it</li>
           <li><span class="m">✕</span>Nothing that's yours to keep</li>
         </ul>
       </div>
@@ -809,17 +832,16 @@ body.page-search .hdr-search{display:none !important}
         <h3>When you own</h3>
         <ul>
           <li><span class="m">✓</span>Every payment pulls toward a home that's <strong>yours</strong></li>
-          <li><span class="m">✓</span>Your monthly payment is <strong>fixed, in writing</strong> — it doesn't climb every year like rent</li>
+          <li><span class="m">✓</span>Your monthly payment is written down — it doesn't climb every year like rent</li>
           <li><span class="m">✓</span>Paint it, fix it, make it yours — it's your property</li>
           <li><span class="m">✓</span>An asset — something <strong>truly yours</strong>, to keep for the long run</li>
-          <li><span class="m">✓</span>If your neighborhood rises in value, that upside is <strong>yours</strong></li>
+          <li><span class="m">✓</span>You keep the home you agreed to buy</li>
         </ul>
       </div>
     </div>
     <div class="opp-story">
       <h3>The part nobody tells you</h3>
-      <p>Here's what we've watched happen, market after market: the neighborhoods where we offer these homes don't stay down forever. Over the years, many of them turn around. Banks that once said "no" to the area start lending there again. And the buyers who stuck with it — who kept making that monthly payment — are the ones holding a home at the price they agreed to years earlier, in a neighborhood now worth more. Some have refinanced. Some have sold and walked away ahead. Every one of them owned something real.</p>
-      <p>That's why we treat this as a golden opportunity — and why we don't offer it to just anyone. We take on a limited number of buyers at a time, and we look for serious people who understand the responsibility that comes with the keys, and want the reward that comes with it.</p>
+      <p>What your monthly payment includes is confirmed in your paperwork. Final terms are confirmed in your paperwork.</p>
       <p>Nobody can promise you the future. But one thing is certain: <strong>rent never pays you back.</strong></p>
       <p class="fine">Every home and market is different — past experiences aren't a guarantee of future value. What's guaranteed is what's in your written agreement: your price and your terms.</p>
     </div>
@@ -849,7 +871,7 @@ body.page-search .hdr-search{display:none !important}
     <div class="sig">— The team at Americas Best Home Solutions</div>
     <div class="chips">
       <span class="chip">Payments comparable to rent</span>
-      <span class="chip">Fixed payment, in writing</span>
+      <span class="chip">Payment agreed in writing</span>
       <span class="chip">Homes in IL · MO · MI · AL</span>
     </div>
     <a class="abtn" href="/#listings">See the homes</a>
@@ -1067,7 +1089,6 @@ function startHomePage(){
         ${miles}
       </div>
       </a>
-      <a class="card-book" href="${bookHrefFor}">${bookLabel}</a>
     </article>`;
   }
 
@@ -1140,8 +1161,10 @@ function startHomePage(){
   }
   function rowHTML(title, id, homes){
     if (!homes.length) return "";
-    const cards = homes.map((h, i) => cardHTML(h, {eager: i < 1 && id === "row-available"})).join("");
-    return `<section class="home-row" id="${id}"><div class="row-head"><h2>${title}</h2><div class="row-nav"><button type="button" class="row-arrow" data-dir="-1" aria-label="Previous homes">‹</button><button type="button" class="row-arrow" data-dir="1" aria-label="Next homes">›</button></div></div><p class="row-hint">Swipe sideways. The next home is partly in view.</p><div class="row-scroller" tabindex="0" aria-label="${title}">${cards}</div></section>`;
+    const shown = homes.slice(0, 12);
+    const cards = shown.map((h, i) => cardHTML(h, {eager: i < 1 && id === "row-available"})).join("");
+    const more = homes.length > 12 ? `<a class="card see-all" href="/#cities">See all ${homes.length} homes</a>` : "";
+    return `<section class="home-row" id="${id}"><div class="row-head"><h2>${title}</h2><div class="row-nav"><button type="button" class="row-arrow" data-dir="-1" aria-label="Previous homes">‹</button><button type="button" class="row-arrow" data-dir="1" aria-label="Next homes">›</button></div></div><p class="row-hint">Swipe sideways. The next home is partly in view.</p><div class="row-scroller" tabindex="0" aria-label="${title}">${cards}${more}</div></section>`;
   }
   function wireRows(){
     document.querySelectorAll(".row-arrow").forEach(btn => {

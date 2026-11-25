@@ -26,3 +26,5 @@ jobs:
           python3 scripts/test_buyer_search.py
           python3 scripts/test_seo_pages.py
           python3 scripts/test_card_photos.py
+          python3 scripts/test_banned_copy.py
+          python3 scripts/test_shared_checksums.py

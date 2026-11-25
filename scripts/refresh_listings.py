@@ -275,6 +275,8 @@ def main() -> None:
     ids = home_ids()
     stamp_dates(ids)
     n = emit_pages()
+    import seo_pages  # titles, visible terms, city pages, hreflang, sitemap — after the template rewrite
+    seo_pages.rebuild(ROOT, "en")
     import book_links   # /book/<slug>/ redirect pages: the short booking links buyer texts carry
     b = book_links.build(ROOT, "en")
     print(

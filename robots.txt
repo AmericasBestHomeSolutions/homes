@@ -4,5 +4,7 @@ Allow: /
 Disallow: /home.html
 # next-steps.html is the per-home Deal Room page sent to committed buyers — link-only, not for search
 Disallow: /next-steps.html
+# photo checklist Jekyll used to hide; not a page
+Disallow: /images/_photo-filenames.txt
 
 Sitemap: https://getownerfinancedhomes.com/sitemap.xml

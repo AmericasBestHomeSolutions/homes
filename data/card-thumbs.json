@@ -98,6 +98,13 @@
       "w": 480,
       "w320": 320
     },
+    "images/cahokia-il-305-7th.jpg": {
+      "fp": "130184:c3ea51f3521efb8dcddba55c7b7c1ccf7d8342db",
+      "h": 215,
+      "out": "images/cards/cahokia-il-305-7th-480.webp",
+      "w": 480,
+      "w320": 320
+    },
     "images/cahokia-il-34-saint.jpg": {
       "fp": "306242:52baa732061f22415774318710dd069d0ceebdc5",
       "h": 640,
@@ -441,13 +448,6 @@
       "w": 480,
       "w320": 320
     },
-    "images/decatur-il-1905-college.jpg": {
-      "fp": "358870:2c06d7b8a92cf8cf3de4362fbd9c0753303b5abd",
-      "h": 640,
-      "out": "images/cards/decatur-il-1905-college-480.webp",
-      "w": 480,
-      "w320": 320
-    },
     "images/decatur-il-1908-union.jpg": {
       "fp": "319583:0a9ccfbb91d15c42d6dc914ca15ac235221734f3",
       "h": 640,
@@ -455,24 +455,10 @@
       "w": 480,
       "w320": 320
     },
-    "images/decatur-il-1929-prairie.jpg": {
-      "fp": "172339:4bf2aa99d3a3e40f53a85af16a54ba6a8e2d013e",
-      "h": 853,
-      "out": "images/cards/decatur-il-1929-prairie-480.webp",
-      "w": 480,
-      "w320": 320
-    },
     "images/decatur-il-1931-edwards.jpg": {
       "fp": "227907:084962846019ea5d34b41e5a6ffefc483ddb1403",
       "h": 360,
       "out": "images/cards/decatur-il-1931-edwards-480.webp",
-      "w": 480,
-      "w320": 320
-    },
-    "images/decatur-il-1942-church.jpg": {
-      "fp": "288894:af63a11c3b3f766f14272078812b582af8fa8430",
-      "h": 640,
-      "out": "images/cards/decatur-il-1942-church-480.webp",
       "w": 480,
       "w320": 320
     },
@@ -487,13 +473,6 @@
       "fp": "282774:2a8c7f8625629b52964b05b4668a7f0d62b61d07",
       "h": 640,
       "out": "images/cards/decatur-il-1963-31st-480.webp",
-      "w": 480,
-      "w320": 320
-    },
-    "images/decatur-il-1971-cantrell.jpg": {
-      "fp": "371214:f1a32155458fba63786ebdca6e028dfd0948834a",
-      "h": 640,
-      "out": "images/cards/decatur-il-1971-cantrell-480.webp",
       "w": 480,
       "w320": 320
     },
@@ -623,13 +602,6 @@
       "w": 480,
       "w320": 320
     },
-    "images/decatur-il-825-elm.jpg": {
-      "fp": "173564:dfb2fb6585b603c7fe94aef88cb0216e72e085ea",
-      "h": 272,
-      "out": "images/cards/decatur-il-825-elm-480.webp",
-      "w": 480,
-      "w320": 320
-    },
     "images/decatur-il-835-whitmer.jpg": {
       "fp": "295421:a2da204cf67c0a9d12c41f47ca19830211890dd1",
       "h": 360,
@@ -669,13 +641,6 @@
       "fp": "263541:672ae462dc1e0ffea00c80d1cf3a5d4b6b91f1d8",
       "h": 362,
       "out": "images/cards/decatur-il-989-packard-480.webp",
-      "w": 480,
-      "w320": 320
-    },
-    "images/detroit-mi-15344-blackstone.jpg": {
-      "fp": "93668:be378f10462e1163cb8529a39c251d2dd3e6f031",
-      "h": 360,
-      "out": "images/cards/detroit-mi-15344-blackstone-480.webp",
       "w": 480,
       "w320": 320
     },
@@ -826,13 +791,6 @@
       "w": 480,
       "w320": 320
     },
-    "images/eaststlouis-il-724-82nd.jpg": {
-      "fp": "187313:1aaa91f05c4b8d322555ac4075d0419d7ce6fd85",
-      "h": 361,
-      "out": "images/cards/eaststlouis-il-724-82nd-480.webp",
-      "w": 480,
-      "w320": 320
-    },
     "images/eaststlouis-il-826-82nd.jpg": {
       "fp": "247234:30ca157ab1f7cc9d07fad13a8d843ecb32a1d3dd",
       "h": 640,
@@ -931,13 +889,6 @@
       "w": 480,
       "w320": 320
     },
-    "images/jackson-ms-293-cameron.jpg": {
-      "fp": "304418:86f7ec3e03640329066c0d59b2518401e2ef4db4",
-      "h": 360,
-      "out": "images/cards/jackson-ms-293-cameron-480.webp",
-      "w": 480,
-      "w320": 320
-    },
     "images/jackson-ms-35223524-martin.jpg": {
       "fp": "180129:dbf1d660fcf792cf5b42cdae2b3ad89195b29438",
       "h": 360,
@@ -1001,13 +952,6 @@
       "w": 480,
       "w320": 320
     },
-    "images/montgomery-al-3120-lower.jpg": {
-      "fp": "263475:7b175bb9c86f256e4b80afce749d3f9bad4f675e",
-      "h": 640,
-      "out": "images/cards/montgomery-al-3120-lower-480.webp",
-      "w": 480,
-      "w320": 320
-    },
     "images/montgomery-al-801-patton.jpg": {
       "fp": "354662:adf5309cfee3549c5df3af6a3c5c12f92c7c56fd",
       "h": 360,
@@ -1019,13 +963,6 @@
       "fp": "259994:eae0309682e6fb477c9aaf804e5170e3209f0307",
       "h": 270,
       "out": "images/cards/muncie-in-1630-elm-480.webp",
-      "w": 480,
-      "w320": 320
-    },
-    "images/newbern-nc-2000-aycock.jpg": {
-      "fp": "298380:0cde4e6d53e515a243c21f50f889e3cc0141add4",
-      "h": 360,
-      "out": "images/cards/newbern-nc-2000-aycock-480.webp",
       "w": 480,
       "w320": 320
     },
@@ -1148,13 +1085,6 @@
       "w": 480,
       "w320": 320
     },
-    "images/peoria-il-3214-proctor.jpg": {
-      "fp": "287717:6a12fc94b6fd103e8d7bf624de3ca443c85b6c4e",
-      "h": 360,
-      "out": "images/cards/peoria-il-3214-proctor-480.webp",
-      "w": 480,
-      "w320": 320
-    },
     "images/peoria-il-422-louisa.jpg": {
       "fp": "191743:577cd03cdd18cbfd808eaf839fe6f9acffbf2558",
       "h": 637,
@@ -1222,13 +1152,6 @@
       "fp": "291852:ee8c669ae517aeaea4968347db3d21eec77a4d98",
       "h": 640,
       "out": "images/cards/stlouis-mo-1332-woodruff-480.webp",
-      "w": 480,
-      "w320": 320
-    },
-    "images/stlouis-mo-1338-gregan.jpg": {
-      "fp": "365269:1a7942b10914b77e45264d8f02267a6412e759c6",
-      "h": 640,
-      "out": "images/cards/stlouis-mo-1338-gregan-480.webp",
       "w": 480,
       "w320": 320
     },
@@ -1407,13 +1330,6 @@
       "w": 480,
       "w320": 320
     },
-    "images/stlouis-mo-5341-goodfellow.jpg": {
-      "fp": "276823:94436113ecb90950b502206d7c8a1c1a7aca6de2",
-      "h": 640,
-      "out": "images/cards/stlouis-mo-5341-goodfellow-480.webp",
-      "w": 480,
-      "w320": 320
-    },
     "images/stlouis-mo-5346-janet.jpg": {
       "fp": "166163:d1bed8619900ca1851bd9443851845aec727091d",
       "h": 307,
@@ -1453,13 +1369,6 @@
       "fp": "363200:9bedb40d17c36a563096cdcd79d012de4acdb020",
       "h": 640,
       "out": "images/cards/stlouis-mo-5645-hodiamont-480.webp",
-      "w": 480,
-      "w320": 320
-    },
-    "images/stlouis-mo-5657-roosevelt.jpg": {
-      "fp": "288617:cefef03c8385712ce874f0fd4f2a7af1a9f5742b",
-      "h": 640,
-      "out": "images/cards/stlouis-mo-5657-roosevelt-480.webp",
       "w": 480,
       "w320": 320
     },
@@ -1530,13 +1439,6 @@
       "fp": "133132:ed5adae4f08a364e6fa9e84e485d75785946c63a",
       "h": 480,
       "out": "images/cards/belleville-il-304-revere-480.webp",
-      "w": 480,
-      "w320": 320
-    },
-    "images/sv/belleville-il-308-revere.jpg": {
-      "fp": "117756:b04c69b57d5dbc51194d33c4fd81a65f624ffd92",
-      "h": 480,
-      "out": "images/cards/belleville-il-308-revere-480.webp",
       "w": 480,
       "w320": 320
     },
@@ -1617,13 +1519,6 @@
       "w": 480,
       "w320": 320
     },
-    "images/sv/detroit-mi-19459-harned.jpg": {
-      "fp": "87769:c278e50c2f31d9c8cc183b5138d20bb13fae794c",
-      "h": 480,
-      "out": "images/cards/detroit-mi-19459-harned-480.webp",
-      "w": 480,
-      "w320": 320
-    },
     "images/sv/eaststlouis-il-2008-61st.jpg": {
       "fp": "122865:93a6a3208dc50bfecc93ccf9e7c2bb8d3fb3e70a",
       "h": 480,
@@ -1635,13 +1530,6 @@
       "fp": "76780:dcce896e061caf40fe3750f0aa22d35767dae8d7",
       "h": 480,
       "out": "images/cards/eaststlouis-il-249-61st-480.webp",
-      "w": 480,
-      "w320": 320
-    },
-    "images/sv/flint-mi-2832-clement.jpg": {
-      "fp": "90326:d88ca30c3ed0979d918ed9489c443258634a5c5d",
-      "h": 480,
-      "out": "images/cards/flint-mi-2832-clement-480.webp",
       "w": 480,
       "w320": 320
     },

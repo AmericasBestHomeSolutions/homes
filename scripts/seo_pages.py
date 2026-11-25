@@ -258,7 +258,7 @@ def page_description(home: dict, lang: str) -> str:
 # Sentences that state a term, a rate, taxes, or insurance are not shown.
 # The written agreement is where those points are confirmed.
 _SENSITIVE_COPY = re.compile(
-    r"30\s*-?\s*years?|30\s*años|treinta\s+años|fixed[\s-]*price|precio\s+fijo|"
+    r"30\s*-?\s*years?|30\s*años|treinta\s+años|fixed[\s-]*price|fixed monthly|precio\s+fijo|"
     r"(?:the\s+)?price\s+is\s+fixed|interest\s+rate|tasa\s+de\s+inter[eé]s|"
     r"property\s+tax(?:es)?|\btaxes\b|\bimpuestos?\b|\binsurance\b|\bseguro\b",
     re.IGNORECASE,
@@ -951,7 +951,12 @@ def _city_page(group: dict, lang: str) -> str:
 .range-chips button{{flex:0 0 auto;min-height:44px;padding:0 14px;border-radius:999px;border:1.5px solid var(--line,#d5dbe6);background:#fff;font:700 14px system-ui,sans-serif;color:#15315e;cursor:pointer}}
 .range-chips button[aria-pressed="true"]{{background:#15315e;color:#fff}}
 .row-scroller{{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 0 16px}}
+.buyer-panel{{position:sticky;top:56px;z-index:20;background:var(--paper,#f5f7fb)}}
 .swipe-card{{flex:0 0 min(78vw,280px);scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}}
+@media (max-width:860px){{
+  #cityHomes{{flex-direction:column;overflow:visible;scroll-snap-type:none}}
+  .swipe-card{{flex:1 1 auto;width:100%;max-width:none}}
+}}
 .swipe-card a{{color:inherit;text-decoration:none;display:block}}
 .swipe-card img{{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:#e6eef8}}
 .swipe-card .where{{font-weight:800;margin:10px 12px 4px}}
@@ -1236,6 +1241,49 @@ def _stamp_finance(root: Path, homes: list[dict], lang: str) -> bool:
     return changed
 
 
+def pick_weekly_hero(homes: list[dict], today: date | None = None) -> dict | None:
+    """Available home with a landscape photo. The ISO week picks which one, in id order."""
+    today = today or date.today()
+    pool = []
+    for home in homes:
+        if str(home.get("status") or "").strip().lower() == "pending":
+            continue
+        if str(home.get("hasPhoto") or "").strip().lower() not in {"1", "true", "yes"}:
+            continue
+        try:
+            width = float(home.get("cardWidth") or 0)
+            height = float(home.get("cardHeight") or 0)
+        except (TypeError, ValueError):
+            continue
+        if width > 0 and width >= height:
+            pool.append(home)
+    pool.sort(key=lambda home: home.get("id") or "")
+    if not pool:
+        return None
+    return pool[today.isocalendar().week % len(pool)]
+
+
+def _stamp_weekly_hero(root: Path, homes: list[dict]) -> bool:
+    home = pick_weekly_hero(homes)
+    index = Path(root) / "index.html"
+    if home is None or not index.is_file():
+        return False
+    text = index.read_text(encoding="utf-8")
+    if "<!-- weekly-hero:start -->" not in text:
+        return False
+    caption = "A real home you can tour: " + ", ".join(
+        part for part in (home.get("address") or "", home.get("city") or "", home.get("state") or "") if part
+    )
+    block = (
+        "<!-- weekly-hero:start -->\n"
+        f'<figure class="week-hero"><img src="images/cards/{esc(home["id"])}-480.webp" alt="{esc(caption)}" '
+        f'width="480" height="360" fetchpriority="high"><figcaption>{esc(caption)}</figcaption></figure>\n'
+        "<!-- weekly-hero:end -->"
+    )
+    new = re.sub(r"<!-- weekly-hero:start -->[\s\S]*?<!-- weekly-hero:end -->", lambda _m: block, text, count=1)
+    return _write_if_changed(index, new)
+
+
 def rebuild(root: Path, lang: str = "en") -> str:
     root = Path(root)
     if not (root / "home.html").is_file() or not (root / "homes.js").is_file():
@@ -1275,6 +1323,7 @@ def rebuild(root: Path, lang: str = "en") -> str:
     _write_buyer_index(root, homes)
     index_changed = bool(_stamp_cities_on_index(root, groups, lang))
     index_changed = _stamp_finance(root, homes, lang) or index_changed
+    index_changed = _stamp_weekly_hero(root, homes) or index_changed
     if index_changed:
         index_loc = domain + "/"
         entries = [(loc, today if loc == index_loc else last, pri, en, es) for loc, last, pri, en, es in entries]

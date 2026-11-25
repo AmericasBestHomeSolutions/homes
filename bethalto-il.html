@@ -35,7 +35,12 @@
 .range-chips button{flex:0 0 auto;min-height:44px;padding:0 14px;border-radius:999px;border:1.5px solid var(--line,#d5dbe6);background:#fff;font:700 14px system-ui,sans-serif;color:#15315e;cursor:pointer}
 .range-chips button[aria-pressed="true"]{background:#15315e;color:#fff}
 .row-scroller{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 0 16px}
+.buyer-panel{position:sticky;top:56px;z-index:20;background:var(--paper,#f5f7fb)}
 .swipe-card{flex:0 0 min(78vw,280px);scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+@media (max-width:860px){
+  #cityHomes{flex-direction:column;overflow:visible;scroll-snap-type:none}
+  .swipe-card{flex:1 1 auto;width:100%;max-width:none}
+}
 .swipe-card a{color:inherit;text-decoration:none;display:block}
 .swipe-card img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:#e6eef8}
 .swipe-card .where{font-weight:800;margin:10px 12px 4px}

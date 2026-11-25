@@ -548,8 +548,7 @@ def _card_html(home: dict, index: int, listed: dict[str, str], today: date, lang
     down_html = f'<div class="card-down">{down} {down_word}</div>' if down else ""
     price_html = f'<div class="card-ask">{purchase} {price_word}</div>' if purchase else ""
     avail_html = f'<div class="card-avail">{pending_word if pending else avail}</div>'
-    href, book_label = book or ("", "")
-    book_html = f'<a class="card-book" href="{html.escape(href, quote=True)}">{html.escape(book_label)}</a>' if href else ""
+    book_html = ""
     return (
         f'<article class="{classes}" data-hid="{html.escape(home["id"], quote=True)}" data-static="1">'
         f'<a class="card-open" href="{html.escape(home["id"], quote=True)}.html">'

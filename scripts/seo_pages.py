@@ -28,6 +28,7 @@ import json
 import re
 from datetime import date
 from pathlib import Path
+from urllib.parse import quote
 
 # Keep these in step with scripts/portal_sync.py SITES.
 DOMAINS = {
@@ -467,6 +468,20 @@ def _replace_once(page: str, pattern: str, repl: str, flags=0) -> str:
     return new if n else page
 
 
+def _book_path(root: Path, home_id: str, lang: str) -> str:
+    """Public /book/<slug> (or /agendar/) so the tour button works before homes.js loads."""
+    directory = "agendar" if lang == "es" else "book"
+    slug = home_id
+    path = root / "data" / "book-links.json"
+    if path.is_file():
+        slugs = json.loads(path.read_text(encoding="utf-8")).get("slugs") or {}
+        for short, hid in slugs.items():
+            if hid == home_id:
+                slug = short
+                break
+    return f"/{directory}/{slug}"
+
+
 def write_listing(root: Path, home: dict, lang: str, template: str | None = None) -> str:
     """Fill home.html with this home's title, H1, facts, and tags. Returns the HTML."""
     template = template if template is not None else (root / "home.html").read_text(encoding="utf-8")
@@ -490,7 +505,7 @@ def write_listing(root: Path, home: dict, lang: str, template: str | None = None
                          lambda m: m.group(1) + "\n" + tags)
     other = DOMAINS[OTHER[lang]]
     counterpart = f"{other}/{home['id']}.html"
-    page = _replace_once(page, r'(<a class="nav-es" href=")[^"]*(")',
+    page = _replace_once(page, r'(<a class="nav-es[^"]*" href=")[^"]*(")',
                          lambda m: m.group(1) + counterpart + m.group(2))
     if ".seo-facts{" not in page and "</style>" in page:
         page = page.replace("</style>", FACTS_CSS + "\n</style>", 1)
@@ -517,6 +532,11 @@ def write_listing(root: Path, home: dict, lang: str, template: str | None = None
         page = page.replace('id="ctaText" href="#"', f'id="ctaText" href="{similar}"', 1)
         page = page.replace('id="ctaText2" href="#"', f'id="ctaText2" href="{similar}"', 1)
         page = page.replace('id="stBtn" class="st-go" href="#"', f'id="stBtn" class="st-go" href="{similar}"', 1)
+    else:
+        href = _book_path(root, home["id"], lang)
+        page = page.replace('id="ctaText" href="#"', f'id="ctaText" href="{href}"', 1)
+        page = page.replace('id="ctaText2" href="#"', f'id="ctaText2" href="{href}"', 1)
+        page = page.replace('id="stBtn" class="st-go" href="#"', f'id="stBtn" class="st-go" href="{href}"', 1)
     page = _replace_once(page, r'(id="statusTag"[^>]*>)[^<]*', lambda m: m.group(1) + label)
     page = _replace_once(page, r'(<div class="num" id="dMonthly">)[^<]*',
                          lambda m: m.group(1) + esc(money(home.get("monthlyPayment"))))
@@ -524,6 +544,40 @@ def write_listing(root: Path, home: dict, lang: str, template: str | None = None
                          lambda m: m.group(1) + esc(money(home.get("moveIn"))))
     page = _replace_once(page, r'(<div class="num" id="dPrice">)[^<]*',
                          lambda m: m.group(1) + esc(money(home.get("lockedPrice"))))
+    # Address, beds, and the tour note are on the first screen. Bake them so
+    # filling them in after load does not push the price row down.
+    zipc = clean_zip(home.get("zip"))
+    loc = ", ".join(p for p in (city, state) if p)
+    if zipc:
+        loc = (loc + " " + zipc).strip()
+    addr_text = ", ".join(p for p in ((home.get("address") or "").strip(), loc) if p)
+    if addr_text and 'id="propAddr"' in page:
+        map_label = "Ver en el mapa" if lang == "es" else "View on map"
+        addr_html = (esc(addr_text) + ' <a href="https://www.google.com/maps/search/?api=1&amp;query='
+                     + esc(quote(addr_text)) + '" target="_blank" rel="noopener" '
+                     'style="font-weight:500;font-size:14px;color:var(--go,#e23b3b);text-decoration:none;white-space:nowrap;margin-left:6px">'
+                     + esc(map_label) + " &#8599;</a>")
+        page = _replace_once(page, r'(<p class="prop-addr" id="propAddr"[^>]*>).*?</p>',
+                             lambda m: m.group(1) + addr_html + "</p>", re.S)
+    if 'id="propSpecs"' in page:
+        size = bed_bath(home, lang)
+        sq = sqft_of(home)
+        parts = []
+        if size:
+            parts.append(f"<span>{esc(size)}</span>")
+        if sq:
+            unit = "pies cuadrados" if lang == "es" else "sqft"
+            parts.append(f'<span style="font-weight:500;color:var(--ink-soft)">{sq:,.0f} {unit}</span>')
+        if parts:
+            specs = '<span style="color:var(--line)">·</span>'.join(parts)
+            page = _replace_once(page, r'(<p class="prop-specs" id="propSpecs"[^>]*>).*?</p>',
+                                 lambda m: m.group(1) + specs + "</p>", re.S)
+    if pending and 'id="ctaNote"' in page:
+        note = ("Esta casa está pendiente. Ya hay un depósito, así que no hay visitas nuevas."
+                if lang == "es" else
+                "This home is pending. A deposit has been placed, so new tours are not open.")
+        page = _replace_once(page, r'(<p class="cta-note" id="ctaNote">).*?</p>',
+                             lambda m: m.group(1) + esc(note) + "</p>", re.S)
     if 'id="conditionLine"' in page:
         cond = str(home.get("condition") or "").strip()
         if cond:
@@ -547,14 +601,25 @@ def write_listing(root: Path, home: dict, lang: str, template: str | None = None
     page = re.sub(r'\n?<script type="application/json" id="seo-terms">.*?</script>', "", page, count=1, flags=re.S)
     page = page.replace('<div class="terms" id="termsList">', terms_tag + '\n<div class="terms" id="termsList">', 1)
     photo_flag = str(home.get("hasPhoto") or "").strip().lower()
-    card_rel = str(home.get("cardPhoto") or "")
+    hid = home["id"]
+    cards = root / "images" / "cards"
+    sizes = "(max-width: 860px) calc(100vw - 40px), 680px"
+    webp_parts, jpg_parts = [], []
+    if (cards / f"{hid}-320.webp").is_file():
+        webp_parts.append(f"images/cards/{hid}-320.webp 320w")
+    if (cards / f"{hid}-480.webp").is_file():
+        webp_parts.append(f"images/cards/{hid}-480.webp 480w")
+    if (cards / f"{hid}-320.jpg").is_file():
+        jpg_parts.append(f"images/cards/{hid}-320.jpg 320w")
+    if (cards / f"{hid}-480.jpg").is_file():
+        jpg_parts.append(f"images/cards/{hid}-480.jpg 480w")
     hero_src = ""
-    if card_rel and (root / card_rel).is_file():
-        hero_src = card_rel
-    elif photo_flag in {"true", "1", "yes"} and (root / "images" / f"{home['id']}.jpg").is_file():
-        hero_src = f"images/{home['id']}.jpg"
-    elif photo_flag in {"false", "0"} and (root / "images" / "sv" / f"{home['id']}.jpg").is_file():
-        hero_src = f"images/sv/{home['id']}.jpg"
+    if webp_parts:
+        hero_src = webp_parts[-1].split(" ")[0]
+    elif photo_flag in {"true", "1", "yes"} and (root / "images" / f"{hid}.jpg").is_file():
+        hero_src = f"images/{hid}.jpg"
+    elif photo_flag in {"false", "0"} and (root / "images" / "sv" / f"{hid}.jpg").is_file():
+        hero_src = f"images/sv/{hid}.jpg"
     if hero_src:
         try:
             width = int(float(home.get("cardWidth") or 480))
@@ -566,14 +631,27 @@ def write_listing(root: Path, home: dict, lang: str, template: str | None = None
         if height <= 0:
             height = 360
         alt = esc(f"Home for sale in {home.get('city') or ''}, {home.get('state') or ''}")
-        img = (f'<img id="heroImg" alt="{alt}" src="{esc(hero_src)}" fetchpriority="high" '
-               f'width="{width}" height="{height}">')
+        chosen = webp_parts or jpg_parts
+        srcset = f' srcset="{esc(", ".join(chosen))}" sizes="{sizes}"' if chosen else ""
+        source = ""
+        if webp_parts:
+            source = f'<source type="image/webp" srcset="{esc(", ".join(webp_parts))}" sizes="{sizes}">'
+        img = (f'<picture>{source}<img id="heroImg" alt="{alt}" src="{esc(hero_src)}"{srcset} '
+               f'width="{width}" height="{height}" fetchpriority="high"></picture>')
         page = _replace_once(page, r'<img id="heroImg"[^>]*>', lambda _m, img=img: img)
         if photo_flag in {"false", "0"}:
             page = page.replace('id="heroSvBadge" hidden', 'id="heroSvBadge"', 1)
-        if 'rel="preload" as="image"' not in page:
-            preload = f'<link rel="preload" as="image" href="{esc(hero_src)}" fetchpriority="high"/>'
-            page = page.replace("</head>", preload + "\n</head>", 1)
+        page = re.sub(r'\n?<link rel="preload" as="image"[^>]*>', "", page)
+        if webp_parts:
+            preload = (f'<link rel="preload" as="image" type="image/webp" fetchpriority="high" '
+                       f'href="{esc(hero_src)}" imagesrcset="{esc(", ".join(webp_parts))}" imagesizes="{sizes}"/>')
+        else:
+            preload = f'<link rel="preload" as="image" fetchpriority="high" href="{esc(hero_src)}"/>'
+        page = page.replace(
+            '<meta name="viewport" content="width=device-width, initial-scale=1.0"/>',
+            '<meta name="viewport" content="width=device-width, initial-scale=1.0"/>\n' + preload,
+            1,
+        )
     if "<!-- buyer-eval:start -->" in page:
         import listing_facts
         baked = dict(home)
@@ -591,7 +669,9 @@ def write_listing(root: Path, home: dict, lang: str, template: str | None = None
         for src in ("listed-dates.js", "book-links.js", "homes.js", "homes-map.js", "homes-cart.js", "site-chrome.js"):
             page = page.replace(f'<script src="{src}"></script>', f'<script src="{src}" defer></script>')
     marker = '<script src="homes.js" defer></script>' if '<script src="homes.js" defer></script>' in page else '<script src="homes.js"></script>'
-    if 'window.__HOME_ID__="' not in page and marker in page:
+    if 'window.__HOME_ID__="' not in page and "<!-- home-id -->" in page:
+        page = page.replace("<!-- home-id -->", f'<script>window.__HOME_ID__="{esc(home["id"])}";</script>', 1)
+    elif 'window.__HOME_ID__="' not in page and marker in page:
         page = page.replace(marker, f'<script>window.__HOME_ID__="{esc(home["id"])}";</script>\n' + marker, 1)
     page = re.sub(r'\n?<script id="seo-restore">.*?</script>', "", page, count=1, flags=re.S)
     if "</body>" in page:
@@ -1251,7 +1331,8 @@ def validate(root: Path, lang: str = "en") -> list[str]:
             errors.append(f"hreflang mismatch on {home['id']}: {hrefs}")
         if f'{other}/{home["id"]}.html' not in text:
             errors.append(f"language switcher missing counterpart on {home['id']}")
-        if 'src="homes.js" defer' not in text and "DOMContentLoaded" in (root / "home.html").read_text(encoding="utf-8"):
+        boots_late = '"homes.js"' in text and ('addEventListener("load"' in text or "setTimeout(" in text)
+        if 'src="homes.js" defer' not in text and not boots_late and "DOMContentLoaded" in (root / "home.html").read_text(encoding="utf-8"):
             errors.append(f"homes.js is not deferred on {home['id']}")
         try:
             docs = _ld_types(text)

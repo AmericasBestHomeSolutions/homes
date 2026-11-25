@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="preload" as="image" type="image/webp" fetchpriority="high" href="images/cards/stlouis-mo-6580-saint-480.webp" imagesrcset="images/cards/stlouis-mo-6580-saint-320.webp 320w, images/cards/stlouis-mo-6580-saint-480.webp 480w" imagesizes="(max-width: 860px) calc(100vw - 40px), 680px"/>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M24 3 41 9V23C41 33 33 41 24 45 15 41 7 33 7 23V9Z' fill='%2315315e'/><path d='M15 26 24 18 33 26Z' fill='%23e23b3b'/><rect x='17.5' y='26' width='13' height='9' fill='white'/><rect x='22' y='30' width='4' height='5' fill='%2315315e'/></svg>"/>
 <title>6580 Saint Louis Ave, St. Louis, MO — $61,000 · $1,000 down · $625/mo | Owner Financed</title>
 <meta name="description" content="Owner-financed home at 6580 Saint Louis Ave, St. Louis, MO. Purchase price $61,000. Down payment $1,000. Monthly payment $625. 2 beds, 1 bath. 30-year owner financing (contract for deed)."/>
@@ -22,9 +23,6 @@
 <meta name="twitter:description" content="Owner-financed home at 6580 Saint Louis Ave, St. Louis, MO. Purchase price $61,000. Down payment $1,000. Monthly payment $625. 2 beds, 1 bath. 30-year owner financing (contract for deed)."/>
 <meta name="twitter:image" content="https://getownerfinancedhomes.com/images/stlouis-mo-6580-saint.jpg"/>
 <script type="application/ld+json" id="seo-jsonld">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://getownerfinancedhomes.com/#organization","name":"Americas Best Home Solutions","legalName":"Americas Best Home Solutions LLC","url":"https://getownerfinancedhomes.com/","logo":"https://getownerfinancedhomes.com/images/brand/logo-mark-480.png","email":"admin@americasbesthomesolutions.com","address":{"@type":"PostalAddress","streetAddress":"30 N Gould St, Ste R","addressLocality":"Sheridan","addressRegion":"WY","postalCode":"82801","addressCountry":"US"}},{"@type":"Offer","@id":"https://getownerfinancedhomes.com/stlouis-mo-6580-saint.html#offer","url":"https://getownerfinancedhomes.com/stlouis-mo-6580-saint.html","priceCurrency":"USD","price":"61000","availability":"https://schema.org/InStock","itemOffered":{"@id":"https://getownerfinancedhomes.com/stlouis-mo-6580-saint.html#home"},"seller":{"@id":"https://getownerfinancedhomes.com/#organization"},"description":"Down payment $1,000. Monthly payment $625. 30-year owner financing (contract for deed)"},{"@type":"RealEstateListing","@id":"https://getownerfinancedhomes.com/stlouis-mo-6580-saint.html#listing","name":"6580 Saint Louis Ave, St. Louis, MO — $61,000, $1,000 down, $625/mo","url":"https://getownerfinancedhomes.com/stlouis-mo-6580-saint.html","description":"Owner-financed home at 6580 Saint Louis Ave, St. Louis, MO. Purchase price $61,000. Down payment $1,000. Monthly payment $625. 2 beds, 1 bath. 30-year owner financing (contract for deed).","mainEntity":{"@id":"https://getownerfinancedhomes.com/stlouis-mo-6580-saint.html#home"},"image":"https://getownerfinancedhomes.com/images/stlouis-mo-6580-saint.jpg","offers":{"@id":"https://getownerfinancedhomes.com/stlouis-mo-6580-saint.html#offer"}},{"@type":"House","@id":"https://getownerfinancedhomes.com/stlouis-mo-6580-saint.html#home","name":"6580 Saint Louis Ave, St. Louis, MO","address":{"@type":"PostalAddress","addressCountry":"US","streetAddress":"6580 Saint Louis Ave","addressLocality":"St. Louis","addressRegion":"MO","postalCode":"63121"},"numberOfBedrooms":2,"numberOfBathroomsTotal":1,"geo":{"@type":"GeoCoordinates","latitude":38.68667,"longitude":-90.290609}},{"@type":"BreadcrumbList","@id":"https://getownerfinancedhomes.com/stlouis-mo-6580-saint.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Homes","item":"https://getownerfinancedhomes.com/"},{"@type":"ListItem","position":2,"name":"Owner Financed Homes in St. Louis, MO","item":"https://getownerfinancedhomes.com/stlouis-mo.html"},{"@type":"ListItem","position":3,"name":"6580 Saint Louis Ave","item":"https://getownerfinancedhomes.com/stlouis-mo-6580-saint.html"}]}]}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=optional" rel="stylesheet">
 
 <!-- ════════════════════════════════════════════════════════════════════════
      AMERICAS BEST HOME SOLUTIONS — PROPERTY PAGE (template — serves EVERY home)
@@ -65,7 +63,16 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
 /* ── HERO ────────────────────────────────────────────────── */
 .hero{margin-top:2px}
 .hero-photo{position:relative;width:100%;aspect-ratio:16/10;border-radius:var(--radius);overflow:hidden;background:linear-gradient(135deg,#15315e,#2f5c96);display:flex;align-items:center;justify-content:center}
+.hero-photo picture{position:absolute;inset:0;display:block;z-index:1}
 .hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.deal-strip{min-height:84px}
+.headline{min-height:2.6em}
+#propAddr{min-height:2.4em}
+#propSpecs{min-height:1.6em}
+#subhead{min-height:4.5em}
+#ctaNote{min-height:2.4em}
+.cta-group{min-height:120px}
+#hcHero{min-height:48px}
 .hero-photo img[hidden]{display:none}
 .hero-photo .fallback{opacity:.9}
 .hero-photo .sv-badge{position:absolute;right:14px;bottom:14px;z-index:3;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.5px;background:rgba(11,20,40,.62);color:#fff;padding:5px 9px;border-radius:999px}
@@ -251,7 +258,6 @@ body.tl-pad{padding-bottom:70px}
 html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(--brand-primary,#15315e);border-radius:12px;padding:12px 14px;margin:10px 0;background:#fff}
 .nav-account,.nav-lang{min-height:48px;display:inline-flex;align-items:center}
 </style>
-<link rel="preload" as="image" href="images/cards/stlouis-mo-6580-saint-480.webp" fetchpriority="high"/>
 </head>
 <body class="page-home">
 
@@ -269,7 +275,7 @@ html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(
     </a>
     <nav class="topnav" aria-label="Site">
       <a class="nav-account" href="/account/?lang=en">My account: tours and paperwork</a>
-      <a class="nav-es nav-lang" href="https://casasconfinanciamiento.com/">Español</a>
+      <a class="nav-es nav-lang" href="https://casasconfinanciamiento.com/stlouis-mo-6580-saint.html">Español</a>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="siteMenu"><span class="nav-bars" aria-hidden="true"></span><span class="nav-word">Menu</span></button>
       <div class="site-menu" id="siteMenu">
         <a href="/#listings">Homes</a>
@@ -290,7 +296,7 @@ html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(
   <section class="hero">
     <div class="hero-photo" id="heroFace">
       <span class="status-tag" id="statusTag">Available</span>
-      <img id="heroImg" alt="Home for sale in St. Louis, MO" src="images/cards/stlouis-mo-6580-saint-480.webp" fetchpriority="high" width="480" height="640">
+      <picture><source type="image/webp" srcset="images/cards/stlouis-mo-6580-saint-320.webp 320w, images/cards/stlouis-mo-6580-saint-480.webp 480w" sizes="(max-width: 860px) calc(100vw - 40px), 680px"><img id="heroImg" alt="Home for sale in St. Louis, MO" src="images/cards/stlouis-mo-6580-saint-480.webp" srcset="images/cards/stlouis-mo-6580-saint-320.webp 320w, images/cards/stlouis-mo-6580-saint-480.webp 480w" sizes="(max-width: 860px) calc(100vw - 40px), 680px" width="480" height="640" fetchpriority="high"></picture>
       <span class="badge-new" id="newBadge" hidden>New</span>
       <span class="sv-badge" id="heroSvBadge" hidden>Street view · © Google</span>
       <a class="sv-link" id="heroSvLink" href="#" target="_blank" rel="noopener" hidden>See the street in Google Street View →</a>
@@ -305,10 +311,10 @@ html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(
 <p class="seo-city" id="seoCity"><a href="/stlouis-mo.html">Owner financed homes in St. Louis, MO</a></p>
     
     
-    <p class="prop-addr" id="propAddr" style="font-weight:600;font-size:17px;color:var(--pine,#15315e);margin:2px 0 6px"></p>
-    <p class="prop-specs" id="propSpecs" style="display:flex;gap:10px;flex-wrap:wrap;font-weight:600;font-size:16px;color:var(--ink);margin:0 0 8px"></p>
+    <p class="prop-addr" id="propAddr" style="font-weight:600;font-size:17px;color:var(--pine,#15315e);margin:2px 0 6px">6580 Saint Louis Ave, St. Louis, MO 63121 <a href="https://www.google.com/maps/search/?api=1&amp;query=6580%20Saint%20Louis%20Ave%2C%20St.%20Louis%2C%20MO%2063121" target="_blank" rel="noopener" style="font-weight:500;font-size:14px;color:var(--go,#e23b3b);text-decoration:none;white-space:nowrap;margin-left:6px">View on map &#8599;</a></p>
+    <p class="prop-specs" id="propSpecs" style="display:flex;gap:10px;flex-wrap:wrap;font-weight:600;font-size:16px;color:var(--ink);margin:0 0 8px"><span>2 beds, 1 bath</span></p>
     <p class="condition-line" id="conditionLine" hidden></p>
-    <p class="subhead" id="subhead"></p>
+    <p class="subhead" id="subhead">This is buying, not renting. A fixed monthly payment close to rent — and every 1st of the month, it's building toward a home that's yours.</p>
     <div id="csBanner" hidden style="background:#fff7ed;border:1.5px solid #fdba74;border-radius:14px;padding:14px 16px;margin:0 0 16px;color:#7c2d12">
       <strong style="display:block;font-size:16px;margin-bottom:4px">🔨 Contractor Special — needs major repairs</strong>
       <span id="csWhat" style="display:block;font-weight:600"></span>
@@ -322,12 +328,13 @@ html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(
     </div>
 
     <div class="cta-group">
-      <a class="btn btn-primary" id="ctaText" href="#">Book a tour</a>
+      <a class="btn btn-primary" id="ctaText" href="/book/6580-saint">Book a tour</a>
       <a class="btn btn-secondary" id="ctaSms" href="#" hidden>Have a question? Text us</a>
     </div>
     <p class="tours-open" id="toursOpen">Tours open: pick your time on the next screen. No password.</p>
     <p class="account-link"><a href="/account/?lang=en">My account: tours and paperwork</a></p>
-    <p class="cta-note" id="ctaNote"></p>
+    <p class="cta-note" id="ctaNote">Tours are in person. Pick a time and we'll meet you there.</p>
+    <div class="hc-hero" id="hcHero"></div>
     <!-- buyer-eval:start -->
 <div class="buyer-eval" id="buyerEval" data-baked="1">
 <p class="qualify-line">No bank loan needed. We keep it simple: if the down payment and monthly payment fit your budget, we&#x27;ll walk you through the next steps.</p>
@@ -439,7 +446,7 @@ html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(
     <h2 id="closerTitle"></h2>
     <p id="closerLead">Book a tour and we'll set up a time to walk through it. No pressure, no bank.</p>
     <div class="cta-group" style="max-width:400px;margin:0 auto">
-      <a class="btn btn-primary" id="ctaText2" href="#">Book a tour</a>
+      <a class="btn btn-primary" id="ctaText2" href="/book/6580-saint">Book a tour</a>
       <a class="btn btn-secondary" id="ctaSms2" href="#" hidden>Have a question? Text us</a>
     </div>
   </section>
@@ -464,14 +471,11 @@ html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(
 
 </div>
 
-<script src="listed-dates.js" defer></script>
-<script src="book-links.js" defer></script>
 <script>window.__HOME_ID__="stlouis-mo-6580-saint";</script>
-<script src="homes.js" defer></script>
 <script>
 /* ---------- render (don't edit — home data lives in homes.js) ---------- */
-/* Waits until deferred homes.js has run. Keep the title/H1 formula in step with scripts/seo_pages.py. */
-document.addEventListener("DOMContentLoaded", function(){
+/* Runs after the load event so the hero photo can paint first. */
+function startListing(){
   const wantedId = window.__HOME_ID__ || new URLSearchParams(location.search).get("home");
   const home = (typeof HOMES !== "undefined") ? HOMES.find(h => h.id === wantedId) : null;
   // Sold homes leave the public page. Pending stays visible, with tours turned off below.
@@ -547,8 +551,8 @@ document.addEventListener("DOMContentLoaded", function(){
       $("seoCity").innerHTML = `<a href="/${citySlug(C.city)}-${String(C.state).toLowerCase()}.html">${label}</a>`;
     }
   }
-  $("subhead").textContent = "This is buying, not renting. A fixed monthly payment close to rent — and every 1st of the month, it's building toward a home that's yours.";
-  $("propSpecs").innerHTML = [
+  if (!$("subhead").textContent.trim()) $("subhead").textContent = "This is buying, not renting. A fixed monthly payment close to rent — and every 1st of the month, it's building toward a home that's yours.";
+  if (!$("propSpecs").textContent.trim()) $("propSpecs").innerHTML = [
     C.beds ? `<span>${C.beds} bed${Number(C.beds)===1?"":"s"}</span>` : "",
     C.baths ? `<span>${C.baths} bath${Number(C.baths)===1?"":"s"}</span>` : "",
     C.sqft ? `<span style="font-weight:500;color:var(--ink-soft)">${Number(C.sqft).toLocaleString()} sqft</span>` : ""
@@ -565,9 +569,11 @@ document.addEventListener("DOMContentLoaded", function(){
     line.hidden = false;
   })();
   (function(){
+    if (!$("propAddr").textContent.trim()) {
     const addrText = [C.address, `${C.city}, ${C.state}${C.zip?" "+C.zip:""}`].filter(Boolean).join(", ");
     const mapQ = encodeURIComponent(addrText);
     $("propAddr").innerHTML = `${addrText} <a href="https://www.google.com/maps/search/?api=1&query=${mapQ}" target="_blank" rel="noopener" style="font-weight:500;font-size:14px;color:var(--go,#e23b3b);text-decoration:none;white-space:nowrap;margin-left:6px">View on map &#8599;</a>`;
+    }
   })();
   // written page copy (site_copy.py); falls back to the notes only for a home held for review
   if (C.copy || C.description) { $("aboutDesc").textContent = C.copy || C.description; $("aboutHomeSec").hidden = false; }
@@ -717,7 +723,7 @@ document.addEventListener("DOMContentLoaded", function(){
     }
   } else {
     ["ctaText","ctaText2"].forEach(id=>$(id).href = (typeof bookHref === "function" ? bookHref(C.id) : `https://owner.getownerfinancedhomes.com/book?home=${encodeURIComponent(C.id)}&lang=en`));
-    $("ctaNote").textContent = "Tours are in person. Pick a time and we'll meet you there.";
+    if (!$("ctaNote").textContent.trim()) $("ctaNote").textContent = "Tours are in person. Pick a time and we'll meet you there.";
     // Second choice: "Text us". The text carries this home's page link, because the CRM's
     // inbound-tour-reply-v1 only answers a text that has getownerfinancedhomes.com/<id>.html in it.
     const tel = String(C.phone||"").replace(/[^\d+]/g,"");
@@ -736,13 +742,25 @@ document.addEventListener("DOMContentLoaded", function(){
   } else {
     document.querySelectorAll(".reveal").forEach(el=>el.classList.add("in"));
   }
-});
+  const stBtn = document.getElementById("stBtn");
+  const cta = document.getElementById("ctaText");
+  if (stBtn && cta) { stBtn.href = cta.href; stBtn.textContent = cta.textContent; }
+  document.dispatchEvent(new Event("listing-ready"));
+}
+setTimeout(function () {
+  var srcs = ["listed-dates.js", "book-links.js", "homes.js", "homes-map.js", "homes-cart.js", "site-chrome.js"];
+  var left = srcs.length;
+  srcs.forEach(function (src) {
+    var s = document.createElement("script");
+    s.src = src;
+    s.async = false;
+    s.onload = s.onerror = function () { if (--left === 0) startListing(); };
+    document.body.appendChild(s);
+  });
+}, 2500);
 </script>
-<script src="homes-map.js" defer></script>
-<script src="homes-cart.js" defer></script>
-<script src="site-chrome.js" defer></script>
 <script>
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("listing-ready", function(){
   const id = window.__HOME_ID__ || new URLSearchParams(location.search).get("home");
   const raw = (window.LISTED_ON || {})[id];
   const t = Date.parse(raw || "");
@@ -751,13 +769,13 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 </script>
 <script>
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("listing-ready", function(){
   const id = window.__HOME_ID__ || new URLSearchParams(location.search).get("home");
   const h = (typeof HOMES !== "undefined") ? HOMES.find(x => x.id === id) : null;
   if (!h || !window.HomesMap) return;
   const q = encodeURIComponent([h.address, h.city, h.state, h.zip].filter(Boolean).join(", "));
   document.getElementById("mapGoogle").href = "https://www.google.com/maps/search/?api=1&query=" + q;
-  if (window.HomesCart){ const n = document.getElementById("ctaNote"); if (n) n.insertAdjacentHTML("afterend", '<div class="hc-hero">' + HomesCart.heart(h, true) + HomesCart.compare(h) + '</div>'); HomesCart.sync(); }
+  if (window.HomesCart){ const slot = document.getElementById("hcHero") || document.getElementById("ctaNote"); if (slot) { if (slot.id === "hcHero") slot.innerHTML = HomesCart.heart(h, true) + HomesCart.compare(h); else slot.insertAdjacentHTML("afterend", '<div class="hc-hero">' + HomesCart.heart(h, true) + HomesCart.compare(h) + '</div>'); } HomesCart.sync(); }
   HomesMap.mini({ el: document.getElementById("mapEl"), home: h, section: document.getElementById("mapSec"), note: document.getElementById("mapNote") });
 });
 </script>
@@ -779,7 +797,7 @@ document.addEventListener("DOMContentLoaded", function(){
 #lb .ct{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:#cfd9ea;font:500 13px 'DM Mono',monospace}
 #gallery img,#heroImg{cursor:zoom-in}
 </style>
-<div id="stickyTour" aria-hidden="true"><div class="st-p"><span id="stPay"></span><small id="stLab">price</small></div><a id="stSms" class="st-sms" href="#" hidden>Text us</a><a id="stBtn" class="st-go" href="#">Book a tour</a></div>
+<div id="stickyTour" aria-hidden="true"><div class="st-p"><span id="stPay"></span><small id="stLab">price</small></div><a id="stSms" class="st-sms" href="#" hidden>Text us</a><a id="stBtn" class="st-go" href="/book/6580-saint">Book a tour</a></div>
 <div id="lb" role="dialog" aria-modal="true"><button class="x" aria-label="Close">&#10005;</button><button class="pv" aria-label="Previous">&#8249;</button><img alt=""><button class="nx" aria-label="Next">&#8250;</button><div class="ct"></div></div>
 <script>
 document.addEventListener("DOMContentLoaded", function(){

@@ -14,20 +14,32 @@
   const id = window.__HOME_ID__ || new URLSearchParams(location.search).get("home");
   const file = (location.pathname.split("/").pop() || "index.html").toLowerCase();
   const mapToEN = {
-    "como-funciona.html": "/how-it-works",
+    "como-funciona.html": "/how-it-works.html",
+    "como-funciona": "/how-it-works.html",
     "nosotros.html": "/about",
+    "nosotros": "/about",
     "contacto.html": "/contact",
+    "contacto": "/contact",
     "politica-de-privacidad.html": "/privacy-policy",
+    "politica-de-privacidad": "/privacy-policy",
     "terminos-de-mensajes.html": "/messaging-terms",
-    "account.html": "/"
+    "terminos-de-mensajes": "/messaging-terms",
+    "account.html": "/",
+    "account": "/"
   };
   const mapToES = {
     "how-it-works.html": "/como-funciona.html",
+    "how-it-works": "/como-funciona.html",
     "about.html": "/nosotros",
+    "about": "/nosotros",
     "contact.html": "/contacto",
+    "contact": "/contacto",
     "privacy-policy.html": "/politica-de-privacidad",
+    "privacy-policy": "/politica-de-privacidad",
     "messaging-terms.html": "/terminos-de-mensajes",
-    "account.html": "/"
+    "messaging-terms": "/terminos-de-mensajes",
+    "account.html": "/",
+    "account": "/"
   };
   let path = "/";
   if (id && file !== "index.html" && file !== "home.html" && file !== "account.html") path = "/" + id + ".html";

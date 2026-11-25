@@ -61,9 +61,12 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
 .status-tag{position:absolute;top:14px;left:14px;z-index:2;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;background:var(--lime);color:var(--pine-deep);padding:6px 11px;border-radius:999px;font-weight:500}
 .status-tag.pending{background:#c2410c;color:#fff}
 .pending-note{background:#fff7ed;border:1.5px solid #fdba74;color:#7c2d12;border-radius:14px;padding:14px 16px;font-weight:600;margin:0;line-height:1.45}
-.headline{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(30px,8vw,46px);line-height:1.05;letter-spacing:-1px;margin:22px 0 8px;color:var(--ink)}
+.headline{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(24px,5.2vw,34px);line-height:1.15;letter-spacing:-.5px;margin:22px 0 8px;color:var(--ink)}
 .headline em{font-style:normal;color:var(--pine)}
-.subhead{font-size:18px;color:var(--ink-soft);max-width:32ch}
+.seo-facts{font-size:17px;line-height:1.55;color:var(--ink);margin:0 0 8px;max-width:52ch}
+.seo-city{margin:0 0 12px}
+.seo-city a{color:var(--pine);font-weight:700}
+.subhead{font-size:18px;color:var(--ink-soft);max-width:40ch}
 
 /* ── DEAL STRIP ──────────────────────────────────────────── */
 .deal-strip{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin:22px 0 8px}
@@ -250,6 +253,8 @@ body.tl-pad{padding-bottom:70px}
     </div>
 
     <h1 class="headline" id="headline"></h1>
+    <p class="seo-facts" id="seoFacts"></p>
+    <p class="seo-city" id="seoCity"></p>
     <p class="prop-addr" id="propAddr" style="font-weight:600;font-size:17px;color:var(--pine,#15315e);margin:2px 0 6px"></p>
     <p class="prop-specs" id="propSpecs" style="display:flex;gap:10px;flex-wrap:wrap;font-weight:600;font-size:16px;color:var(--ink);margin:0 0 8px"></p>
     <p class="subhead" id="subhead"></p>
@@ -396,12 +401,13 @@ body.tl-pad{padding-bottom:70px}
 
 </div>
 
-<script src="listed-dates.js"></script>
-<script src="book-links.js"></script>
-<script src="homes.js"></script>
+<script src="listed-dates.js" defer></script>
+<script src="book-links.js" defer></script>
+<script src="homes.js" defer></script>
 <script>
 /* ---------- render (don't edit — home data lives in homes.js) ---------- */
-(function(){
+/* Waits until deferred homes.js has run. Keep the title/H1 formula in step with scripts/seo_pages.py. */
+document.addEventListener("DOMContentLoaded", function(){
   const wantedId = window.__HOME_ID__ || new URLSearchParams(location.search).get("home");
   const home = (typeof HOMES !== "undefined") ? HOMES.find(h => h.id === wantedId) : null;
   // Sold homes leave the public page. Pending stays visible, with tours turned off below.
@@ -445,12 +451,37 @@ body.tl-pad{padding-bottom:70px}
       $("klMore").hidden = false;
     }
   })();
-  const money = n => "$" + Number(n||0).toLocaleString();          // exact (terms table)
-  const moneyR = n => "$" + Math.round(Number(n||0)).toLocaleString(); // whole dollars (headline)
+  const shown = n => {
+    if (n === "" || n == null) return "";
+    const v = Number(n);
+    if (!isFinite(v) || v === 0) return "";
+    return "$" + Math.round(v).toLocaleString("en-US");
+  };
+  const money = shown;
+  const moneyR = shown;
+  const es = (document.documentElement.lang || "en").toLowerCase().startsWith("es");
+  const citySlug = city => String(city || "").toLowerCase().split("saint ").join("st").split("st. ").join("st").replace(/[^a-z0-9]/g, "");
+  const seoPlace = () => [C.address, [C.city, C.state].filter(Boolean).join(", ")].filter(Boolean).join(", ");
+  const seoBits = () => [shown(C.lockedPrice), shown(C.moveIn) ? shown(C.moveIn) + (es ? " de enganche" : " down") : "", shown(C.monthlyPayment) ? shown(C.monthlyPayment) + (es ? "/mes" : "/mo") : ""].filter(Boolean);
+  const seoTitle = () => seoPlace() + (seoBits().length ? " — " + seoBits().join(" · ") : "") + " | " + (es ? "Financiamiento del dueño" : "Owner Financed");
+  const seoH1 = () => seoPlace() + (seoBits().length ? " — " + seoBits().join(", ") : "");
 
-  document.title = `Own a Home in ${C.city}, ${C.state} — Owner Financing | Americas Best Home Solutions`;
-
-  $("headline").innerHTML = `Own a home in <em>${C.city}</em>.<br>No bank needed.`;
+  if (document.documentElement.getAttribute("data-seo") !== "1") {
+    document.title = seoTitle();
+    if ($("headline")) $("headline").textContent = seoH1();
+    if ($("seoFacts") && !$("seoFacts").textContent) {
+      const bits = [es ? `Casa con financiamiento del dueño en ${seoPlace()}.` : `Owner-financed home at ${seoPlace()}.`];
+      if (shown(C.lockedPrice)) bits.push((es ? "Precio de compra " : "Purchase price ") + shown(C.lockedPrice) + ".");
+      if (shown(C.moveIn)) bits.push((es ? "Enganche " : "Down payment ") + shown(C.moveIn) + ".");
+      if (shown(C.monthlyPayment)) bits.push((es ? "Pago mensual " : "Monthly payment ") + shown(C.monthlyPayment) + ".");
+      if (C.termText) bits.push(String(C.termText).endsWith(".") ? C.termText : C.termText + ".");
+      $("seoFacts").textContent = bits.join(" ");
+    }
+    if ($("seoCity") && !$("seoCity").textContent && C.city && C.state) {
+      const label = (es ? "Casas con financiamiento del dueño en " : "Owner financed homes in ") + C.city + ", " + C.state;
+      $("seoCity").innerHTML = `<a href="/${citySlug(C.city)}-${String(C.state).toLowerCase()}.html">${label}</a>`;
+    }
+  }
   $("subhead").textContent = "This is buying, not renting. A fixed monthly payment close to rent — and every 1st of the month, it's building toward a home that's yours.";
   $("propSpecs").innerHTML = [
     C.beds ? `<span>${C.beds} bed${Number(C.beds)===1?"":"s"}</span>` : "",
@@ -502,10 +533,10 @@ body.tl-pad{padding-bottom:70px}
   }
   $("heroCity").innerHTML = `<div class="c">${C.city}</div><div class="s">${C.state}</div>`;
 
-  const moveInText = C.moveIn ? money(C.moveIn) : "Ask us";
-  $("dMonthly").textContent = moneyR(C.monthlyPayment);
-  $("dMoveIn").textContent  = moveInText;
-  $("dPrice").textContent   = C.lockedPrice ? moneyR(C.lockedPrice) : "Ask us";
+  const moveInText = shown(C.moveIn);
+  if (shown(C.monthlyPayment)) $("dMonthly").textContent = shown(C.monthlyPayment);
+  if (moveInText) $("dMoveIn").textContent = moveInText;
+  if (shown(C.lockedPrice)) $("dPrice").textContent = shown(C.lockedPrice);
 
   // hero photo — uses heroPhoto if set, otherwise auto-tries images/<id>.jpg;
   // falls back to the branded navy face + city label if there's no photo.
@@ -536,13 +567,13 @@ body.tl-pad{padding-bottom:70px}
   })();
 
   const terms = [
-    ["Your monthly payment", money(C.monthlyPayment), true],
-    ["Move-in payment", moveInText, false],
-    ["Purchase price", C.lockedPrice ? money(C.lockedPrice) : "Ask us", false],
-    ["Financing", C.termText, false],
-    ["The home", `${C.beds} bd · ${C.baths} ba${C.sqft?` · ${Number(C.sqft).toLocaleString()} sqft`:""}`, false],
-    ["Location", `${C.address?C.address+", ":""}${C.city}, ${C.state}${C.zip?" "+C.zip:""}`, false],
-  ];
+    ["Your monthly payment", shown(C.monthlyPayment), true],
+    ["Down payment", moveInText, false],
+    ["Purchase price", shown(C.lockedPrice), false],
+    ["Financing", C.termText || "", false],
+    ["The home", [C.beds ? `${C.beds} bd` : "", C.baths ? `${C.baths} ba` : "", C.sqft ? `${Number(C.sqft).toLocaleString("en-US")} sqft` : ""].filter(Boolean).join(" · "), false],
+    ["Location", [C.address, `${C.city}, ${C.state}${C.zip ? " " + String(C.zip).replace(/\.0$/, "") : ""}`].filter(Boolean).join(", "), false],
+  ].filter(([, v]) => v);
   $("termsList").innerHTML = terms.map(([k,v,big])=>
     `<div class="term-row${big?" big":""}"><span class="k">${k}</span><span class="v">${v}</span></div>`
   ).join("");
@@ -615,22 +646,22 @@ body.tl-pad{padding-bottom:70px}
   } else {
     document.querySelectorAll(".reveal").forEach(el=>el.classList.add("in"));
   }
-})();
+});
 </script>
-<script src="homes-map.js"></script>
-<script src="homes-cart.js"></script>
-<script src="site-chrome.js"></script>
+<script src="homes-map.js" defer></script>
+<script src="homes-cart.js" defer></script>
+<script src="site-chrome.js" defer></script>
 <script>
-(function(){
+document.addEventListener("DOMContentLoaded", function(){
   const id = window.__HOME_ID__ || new URLSearchParams(location.search).get("home");
   const raw = (window.LISTED_ON || {})[id];
   const t = Date.parse(raw || "");
   const b = document.getElementById("newBadge");
   if (b && raw && t && (Date.now() - t) <= 7 * 86400000) b.hidden = false;
-})();
+});
 </script>
 <script>
-(function(){
+document.addEventListener("DOMContentLoaded", function(){
   const id = window.__HOME_ID__ || new URLSearchParams(location.search).get("home");
   const h = (typeof HOMES !== "undefined") ? HOMES.find(x => x.id === id) : null;
   if (!h || !window.HomesMap) return;
@@ -638,7 +669,7 @@ body.tl-pad{padding-bottom:70px}
   document.getElementById("mapGoogle").href = "https://www.google.com/maps/search/?api=1&query=" + q;
   if (window.HomesCart){ const n = document.getElementById("ctaNote"); if (n) n.insertAdjacentHTML("afterend", '<div class="hc-hero">' + HomesCart.heart(h, true) + HomesCart.compare(h) + '</div>'); HomesCart.sync(); }
   HomesMap.mini({ el: document.getElementById("mapEl"), home: h, section: document.getElementById("mapSec"), note: document.getElementById("mapNote") });
-})();
+});
 </script>
 <style>
 #stickyTour{position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;align-items:center;gap:12px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--line,#dfe6f0);box-shadow:0 -6px 22px rgba(15,36,68,.12);transform:translateY(110%);transition:transform .25s}
@@ -658,7 +689,7 @@ body.tl-pad{padding-bottom:70px}
 <div id="stickyTour" aria-hidden="true"><div class="st-p"><span id="stPay"></span><small id="stLab"></small></div><a id="stBtn" href="#"></a></div>
 <div id="lb" role="dialog" aria-modal="true"><button class="x" aria-label="Close">&#10005;</button><button class="pv" aria-label="Previous">&#8249;</button><img alt=""><button class="nx" aria-label="Next">&#8250;</button><div class="ct"></div></div>
 <script>
-(function(){
+document.addEventListener("DOMContentLoaded", function(){
   const $=id=>document.getElementById(id);
   // sticky "Schedule a tour" — appears once the main button scrolls out of view
   const main=$("ctaText"), bar=$("stickyTour");
@@ -681,7 +712,7 @@ body.tl-pad{padding-bottom:70px}
   document.addEventListener("keydown",e=>{ if(!lb.classList.contains("on")) return; if(e.key==="Escape")close(); if(e.key==="ArrowLeft")show(i-1); if(e.key==="ArrowRight")show(i+1); });
   let x0=null; lb.addEventListener("touchstart",e=>{x0=e.touches[0].clientX;},{passive:true});
   lb.addEventListener("touchend",e=>{ if(x0==null) return; const d=e.changedTouches[0].clientX-x0; if(Math.abs(d)>50) show(i+(d<0?1:-1)); x0=null; });
-})();
+});
 </script>
 </body>
 </html>

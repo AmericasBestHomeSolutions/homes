@@ -55,6 +55,10 @@ Offline: --portal-json / --crm-json (lists of row dicts) instead of the Sheets A
 
 Afterwards run the site's own post-pass (scripts/refresh_listings.py or
 scripts/build_casas.py) so pages are rebuilt from home.html and dates are stamped.
+apply() then rebuilds titles, visible terms, city pages, hreflang and the sitemap
+through scripts/seo_pages.py (the Spanish site passes lang="es"). The casas layout
+pass must call seo_pages.rebuild(root, "es") after it rewrites pages, or it will
+paint over that work.
 
 Homes listed in data/excluded-homes.json (junk or duplicate ids) are taken off the site on
 every run and never added back; see scripts/excluded_homes.py.
@@ -879,35 +883,17 @@ def new_block(r: dict, lang: str, coords) -> str:
 
 
 def head_block(r: dict, lang: str) -> str:
-    d = SITES[lang]["domain"]
-    if lang == "es":
-        title = f"{r['beds']} rec {baths_word(r['baths'])} baño en {r['city']}, {r['state']} — {money(r['monthly'])}/mes"
-        desc = (f"{r['address']} · {money(r['monthly'])}/mes · {money(r['down'])} para mudarse · {money(r['price'])} "
-                f"precio fijo. Financiamiento del dueño — sin banco, sin solicitud hipotecaria.")
-        locale = '\n<meta property="og:locale" content="es_US"/>'
-    else:
-        title = f"{r['beds']} bed {baths_word(r['baths'])} bath in {r['city']}, {r['state']} — {money(r['monthly'])}/mo"
-        desc = (f"{r['address']} · {money(r['monthly'])}/month · {money(r['down'])} to move in · {money(r['price'])} "
-                f"purchase price. Owner financing — no bank, no mortgage application.")
-        locale = ""
-    t, s, url, img = (html.escape(title), html.escape(desc), f"{d}/{r['id']}.html", f"{d}/images/_share-default.jpg")
-    return (f'<link rel="canonical" href="{url}"/>\n<meta property="og:type" content="website"/>\n'
-            f'<meta property="og:site_name" content="Americas Best Home Solutions"/>{locale}\n'
-            f'<meta property="og:title" content="{t}"/>\n<meta property="og:description" content="{s}"/>\n'
-            f'<meta property="og:image" content="{img}"/>\n<meta property="og:url" content="{url}"/>\n'
-            f'<meta name="twitter:card" content="summary_large_image"/>\n<meta name="twitter:title" content="{t}"/>\n'
-            f'<meta name="twitter:description" content="{s}"/>\n<meta name="twitter:image" content="{img}"/>')
+    """Canonical, Open Graph, hreflang and JSON-LD. Wording lives in scripts/seo_pages.py."""
+    import seo_pages
+    return seo_pages.head_tags(seo_pages.normalize(r, lang), lang, Path("."))
 
 
 def write_page(root: Path, r: dict, lang: str) -> None:
-    page = (root / "home.html").read_text(encoding="utf-8")
-    desc = re.search(r'<meta name="description" content="[^"]*"/>', page)
-    page = re.sub(r'<link rel="canonical"[\s\S]*?<meta name="twitter:image"[^>]*>\n?', "", page)
-    if desc:
-        page = page.replace(desc.group(0), desc.group(0) + "\n" + head_block(r, lang), 1)
-    marker = '<script src="homes.js"></script>'
-    page = page.replace(marker, f'<script>window.__HOME_ID__="{r["id"]}";</script>\n' + marker, 1)
-    (root / f"{r['id']}.html").write_text(page, encoding="utf-8")
+    import seo_pages
+    if not (root / "home.html").is_file():
+        return
+    home = seo_pages.normalize(r, lang)
+    (root / f"{home['id']}.html").write_text(seo_pages.write_listing(root, home, lang), encoding="utf-8")
 
 
 GONE_HTML = """<!DOCTYPE html>
@@ -1233,6 +1219,8 @@ def apply(root: Path, p: dict, lang: str, geocoder=geocode) -> None:
     text = re.sub(r"\((\d+) live,", f"({count} live,", text, count=1)
     text = re.sub(r"\((\d+), generadas", f"({count}, generadas", text, count=1)
     js.write_text(text, encoding="utf-8")
+    import seo_pages
+    seo_pages.rebuild(root, lang)
 
 
 def photos_into(root: Path, p: dict, fetch=download_photos, clock=None) -> None:

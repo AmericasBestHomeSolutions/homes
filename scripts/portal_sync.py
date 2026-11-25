@@ -1421,6 +1421,7 @@ def main(argv=None) -> int:
         p["cards"] = card_photos.sync(a.site)
         import seo_pages
         seo_pages.rebuild(a.site, a.lang)
+        card_photos.stamp_first_screen(a.site)
     elif a.dry_run:
         for x in pending:
             print(f"* {x['id']}  photos from {len(x['links'])} link(s)")

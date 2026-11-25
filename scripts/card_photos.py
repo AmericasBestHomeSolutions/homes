@@ -3,7 +3,7 @@
 
 The homepage used to download every full-size cover (and 404 the missing ones)
 just to learn which homes have a seller photo. This pass records that in homes.js
-and writes a ~480px card image under images/cards/<id>.webp.
+and writes 320px and 480px card images (webp and jpeg) under images/cards/.
 
 refresh_listings.py and portal_sync.py both call sync(), so the next portal run
 reproduces the same fields and files. Unchanged sources are not re-encoded:
@@ -17,14 +17,31 @@ false so those homes sort after homes with a real photo.
 from __future__ import annotations
 
 import hashlib
+import html
 import json
 import re
+from datetime import date, datetime, timedelta
 from pathlib import Path
 
+CARD_WIDTHS = (320, 480)
 CARD_WIDTH = 480
 WEBP_QUALITY = 74
-CACHE_VERSION = 1
-FIELDS = ("hasPhoto", "photoCount", "cardPhoto", "cardWidth", "cardHeight")
+JPG_QUALITY = 76
+CACHE_VERSION = 2
+# Keep this string identical to CARD_SIZES in index.html.
+CARD_SIZES = "(max-width: 860px) calc(100vw - 20px), 480px"
+FIRST_SCREEN = 6
+EAGER_CARDS = 2
+FIELDS = ("hasPhoto", "photoCount", "cardPhoto", "cardWidth", "cardHeight", "cardW320")
+FACES = (
+    ("#15315e", "#2f5c96"), ("#15315e", "#24508a"), ("#1a4675", "#3a6bab"),
+    ("#1c3f70", "#3f6db0"), ("#0f2444", "#24508a"), ("#1c4a7a", "#37639f"),
+)
+FEAT_ORDER = ("backyard", "fenced_yard", "basement", "garage", "central_air", "attic", "storage_shed", "off_street_parking")
+FEAT_LABELS = {
+    "backyard": "Backyard", "fenced_yard": "Fenced yard", "basement": "Basement", "garage": "Garage",
+    "central_air": "Central air", "attic": "Attic", "storage_shed": "Storage", "off_street_parking": "Parking",
+}
 
 
 def truthy_flag(value) -> bool:
@@ -116,18 +133,47 @@ def card_source(root: Path, hid: str, hero: str, photos: list[str], real: list[P
     return "none", None
 
 
-def _encode(src: Path, dest: Path) -> tuple[int, int]:
+def _card_names(hid: str) -> list[str]:
+    names = [f"{hid}.webp"]
+    for width in CARD_WIDTHS:
+        names.append(f"{hid}-{width}.webp")
+        names.append(f"{hid}-{width}.jpg")
+    return names
+
+
+def _remove_cards(root: Path, hid: str) -> None:
+    folder = root / "images" / "cards"
+    for name in _card_names(hid):
+        path = folder / name
+        if path.is_file():
+            path.unlink()
+
+
+def _encode(root: Path, hid: str, src: Path) -> dict:
+    """Write each width as webp and jpeg. Skip a width that would duplicate a smaller one."""
     from PIL import Image, ImageOps
 
-    dest.parent.mkdir(parents=True, exist_ok=True)
+    folder = root / "images" / "cards"
+    folder.mkdir(parents=True, exist_ok=True)
+    made: dict[int, tuple[int, int]] = {}
     with Image.open(src) as image:
         image = ImageOps.exif_transpose(image)
-        if image.mode not in ("RGB", "RGBA"):
+        if image.mode != "RGB":
             image = image.convert("RGB")
-        image.thumbnail((CARD_WIDTH, CARD_WIDTH * 4), Image.Resampling.LANCZOS)
-        width, height = image.size
-        image.save(dest, "WEBP", quality=WEBP_QUALITY, method=4)
-    return width, height
+        large = image.copy()
+        large.thumbnail((480, 480 * 4), Image.Resampling.LANCZOS)
+        width, height = large.size
+        large.save(folder / f"{hid}-480.webp", "WEBP", quality=WEBP_QUALITY, method=4)
+        large.save(folder / f"{hid}-480.jpg", "JPEG", quality=JPG_QUALITY, optimize=True, progressive=True)
+        made[480] = (width, height)
+        # A second file only when it is actually smaller, so srcset widths stay distinct.
+        if width > 320:
+            small = image.copy()
+            small.thumbnail((320, 320 * 4), Image.Resampling.LANCZOS)
+            made[320] = small.size
+            small.save(folder / f"{hid}-320.webp", "WEBP", quality=WEBP_QUALITY, method=4)
+            small.save(folder / f"{hid}-320.jpg", "JPEG", quality=JPG_QUALITY, optimize=True, progressive=True)
+    return made
 
 
 def _literal(value) -> str:
@@ -154,6 +200,24 @@ def _insert_fields(block: str, fields: dict) -> str:
     return block[:index] + "\n" + "\n".join(lines) + block[index:]
 
 
+def _variants_ready(root: Path, hid: str, info: dict) -> bool:
+    folder = root / "images" / "cards"
+    if not (folder / f"{hid}-480.webp").is_file() or not (folder / f"{hid}-480.jpg").is_file():
+        return False
+    if info.get("w320") and not (folder / f"{hid}-320.webp").is_file():
+        return False
+    if info.get("w320") and not (folder / f"{hid}-320.jpg").is_file():
+        return False
+    return True
+
+
+def _apply_cached(fields: dict, hid: str, info: dict) -> None:
+    fields["cardPhoto"] = f"images/cards/{hid}-480.webp"
+    fields["cardWidth"] = int(info["w"])
+    fields["cardHeight"] = int(info["h"])
+    fields["cardW320"] = int(info.get("w320") or 0)
+
+
 def manifest_for(root: Path, hid: str, block: str, incoming: dict, outgoing: dict) -> tuple[dict, str]:
     """Return homes.js fields and 'encoded', 'cached', or 'none'."""
     import portal_sync as ps
@@ -170,28 +234,38 @@ def manifest_for(root: Path, hid: str, block: str, incoming: dict, outgoing: dic
         "cardPhoto": "",
         "cardWidth": 0,
         "cardHeight": 0,
+        "cardW320": 0,
     }
     if src is None:
-        dest = root / "images" / "cards" / f"{hid}.webp"
-        if dest.is_file():
-            dest.unlink()
+        _remove_cards(root, hid)
         return fields, "none"
-    dest = root / "images" / "cards" / f"{hid}.webp"
     rel = str(src.resolve().relative_to(root.resolve())).replace("\\", "/")
     fp = _fingerprint(src)
     previous = incoming.get(rel) or {}
-    if (previous.get("fp") == fp and previous.get("w") and previous.get("h")
-            and dest.is_file() and previous.get("out") == f"images/cards/{hid}.webp"):
-        fields["cardPhoto"] = f"images/cards/{hid}.webp"
-        fields["cardWidth"] = int(previous["w"])
-        fields["cardHeight"] = int(previous["h"])
+    if previous.get("fp") == fp and previous.get("w") and _variants_ready(root, hid, previous):
+        _apply_cached(fields, hid, previous)
         outgoing[rel] = previous
         return fields, "cached"
-    width, height = _encode(src, dest)
-    fields["cardPhoto"] = f"images/cards/{hid}.webp"
-    fields["cardWidth"] = width
-    fields["cardHeight"] = height
-    outgoing[rel] = {"fp": fp, "out": fields["cardPhoto"], "w": width, "h": height}
+    made = _encode(root, hid, src)
+    large = made.get(480) or made[max(made)]
+    small = made.get(320)
+    fields["cardPhoto"] = f"images/cards/{hid}-480.webp"
+    fields["cardWidth"] = large[0]
+    fields["cardHeight"] = large[1]
+    fields["cardW320"] = small[0] if small else 0
+    outgoing[rel] = {
+        "fp": fp,
+        "out": fields["cardPhoto"],
+        "w": large[0],
+        "h": large[1],
+        "w320": fields["cardW320"],
+    }
+    # A source narrower than 320 only produces the 480-named file. Drop a stale 320 pair.
+    if not small:
+        for suffix in (".webp", ".jpg"):
+            stale = root / "images" / "cards" / f"{hid}-320{suffix}"
+            if stale.is_file():
+                stale.unlink()
     return fields, "encoded"
 
 
@@ -250,10 +324,261 @@ def sync(root: Path) -> dict:
         js.write_text(written, encoding="utf-8")
     cards = root / "images" / "cards"
     if cards.is_dir():
-        for path in cards.glob("*.webp"):
-            if path.stem not in ids:
+        keep = {name for hid in ids for name in _card_names(hid) if name != f"{hid}.webp"}
+        for path in cards.iterdir():
+            if path.suffix.lower() in {".webp", ".jpg"} and path.name not in keep:
                 path.unlink()
                 counts["removed"] += 1
     # Drop cache rows whose source was not used this run (manifest_for copied live ones).
     _save_cache(cache_path, new_cache)
     return counts
+
+
+def _features(block: str) -> dict:
+    match = re.search(r"\n    features:\s*\{([^}]*)\}", block)
+    if not match:
+        return {}
+    return dict(re.findall(r"([A-Za-z0-9_]+):\s*\"([^\"]*)\"", match.group(1)))
+
+
+def _listed(root: Path) -> dict[str, str]:
+    path = root / "listed-dates.js"
+    if not path.is_file():
+        return {}
+    return dict(re.findall(r'"([^"]+)": "([^"]+)"', path.read_text(encoding="utf-8")))
+
+
+def _listed_time(raw: str) -> float:
+    if not raw:
+        return 0.0
+    try:
+        return datetime.fromisoformat(raw).timestamp()
+    except ValueError:
+        return 0.0
+
+
+def public_homes(root: Path) -> list[dict]:
+    """Live homes in homes.js order, with the card fields the homepage sorts on."""
+    import portal_sync as ps
+
+    text = (root / "homes.js").read_text(encoding="utf-8")
+    head, _tail = _split(text)
+    homes = []
+    for hid, match in ps.blocks(head).items():
+        block = match.group(0)
+        status = ps.field(block, "status") or "Available"
+        if str(status).strip().lower() == "sold":
+            continue
+
+        def num(key, block=block):
+            raw = ps.field(block, key)
+            try:
+                return int(float(raw))
+            except (TypeError, ValueError):
+                return 0
+
+        homes.append({
+            "id": hid,
+            "address": ps.field(block, "address") or "",
+            "city": ps.field(block, "city") or "",
+            "state": ps.field(block, "state") or "",
+            "beds": ps.field(block, "beds"),
+            "baths": ps.field(block, "baths"),
+            "sqft": ps.field(block, "sqft") or "",
+            "status": status,
+            "monthlyPayment": ps.field(block, "monthlyPayment"),
+            "moveIn": ps.field(block, "moveIn"),
+            "hasPhoto": ps.field(block, "hasPhoto"),
+            "cardPhoto": ps.field(block, "cardPhoto") or "",
+            "cardWidth": num("cardWidth"),
+            "cardHeight": num("cardHeight"),
+            "cardW320": num("cardW320"),
+            "photos": _photos(block),
+            "features": _features(block),
+            "contractor": ps.field(block, "contractor"),
+        })
+    return homes
+
+
+def default_order(root: Path, today: date | None = None) -> list[dict]:
+    """Homepage order before a visitor location arrives: seller photos, then newest."""
+    listed = _listed(root)
+    homes = public_homes(root)
+
+    def key(item):
+        index, home = item
+        photo = 0 if has_real_photo(home) else 1
+        when = _listed_time(listed.get(home["id"]) or "")
+        address = 1 if home.get("address") else 0
+        return (photo, -when, -address, index)
+
+    return [home for _index, home in sorted(enumerate(homes), key=key)]
+
+
+def _srcset(home: dict) -> tuple[str, str, str]:
+    hid = home["id"]
+    webp, jpg = [], []
+    if home.get("cardW320"):
+        webp.append(f"images/cards/{hid}-320.webp {int(home['cardW320'])}w")
+        jpg.append(f"images/cards/{hid}-320.jpg {int(home['cardW320'])}w")
+    if home.get("cardWidth"):
+        webp.append(f"images/cards/{hid}-480.webp {int(home['cardWidth'])}w")
+        jpg.append(f"images/cards/{hid}-480.jpg {int(home['cardWidth'])}w")
+    fallback = f"images/cards/{hid}-480.jpg" if home.get("cardPhoto") else ""
+    return ", ".join(webp), ", ".join(jpg), fallback
+
+
+def _face(seed: str) -> tuple[str, str]:
+    value = 0
+    for ch in seed or "":
+        value = (value * 31 + ord(ch)) & 0xFFFFFFFF
+    return FACES[value % len(FACES)]
+
+
+def _money(value) -> str:
+    try:
+        number = float(value)
+    except (TypeError, ValueError):
+        return ""
+    if not number:
+        return ""
+    return f"${round(number):,}"
+
+
+def _sqft(value) -> str:
+    try:
+        number = float(value)
+    except (TypeError, ValueError):
+        return ""
+    if not number:
+        return ""
+    return f"{int(number):,}" if number == int(number) else f"{number:,}"
+
+
+def _tag(home: dict, listed: dict[str, str], today: date) -> str:
+    raw = listed.get(home["id"]) or ""
+    if raw:
+        try:
+            listed_on = date.fromisoformat(raw[:10])
+        except ValueError:
+            listed_on = None
+        if listed_on and today - listed_on <= timedelta(days=7):
+            return "New"
+    if home.get("contractor"):
+        return "Needs work"
+    features = home.get("features") or {}
+    for key in FEAT_ORDER:
+        if features.get(key) == "yes":
+            return FEAT_LABELS[key]
+    return ""
+
+
+def _card_html(home: dict, index: int, listed: dict[str, str], today: date) -> str:
+    city, state = home.get("city") or "", home.get("state") or ""
+    pending = str(home.get("status") or "").strip().lower() == "pending"
+    classes = "card"
+    if home.get("contractor"):
+        classes += " is-cs"
+    if pending:
+        classes += " is-pending"
+    a, b = _face(city + state)
+    bits = []
+    beds, baths = home.get("beds"), home.get("baths")
+    if beds not in (None, "", 0, "0"):
+        bits.append(f"{beds} bd" if str(beds) == "1" else f"{beds} bds")
+    if baths not in (None, "", 0, "0"):
+        bits.append(f"{baths} ba")
+    sqft = _sqft(home.get("sqft"))
+    if sqft:
+        bits.append(f"{sqft} sqft")
+    where = ", ".join(part for part in (home.get("address") or "", city, state) if part)
+    webp, jpg, fallback = _srcset(home)
+    eager = index < EAGER_CARDS and webp
+    attrs = 'fetchpriority="high"' if eager else 'loading="lazy" decoding="async"'
+    picture = ""
+    if webp and jpg and fallback:
+        picture = (
+            f'<picture><source type="image/webp" srcset="{html.escape(webp, quote=True)}" sizes="{CARD_SIZES}">'
+            f'<img src="{html.escape(fallback, quote=True)}" srcset="{html.escape(jpg, quote=True)}" sizes="{CARD_SIZES}" '
+            f'alt="Home in {html.escape(city, quote=True)}, {html.escape(state, quote=True)}" '
+            f'width="{int(home.get("cardWidth") or 480)}" height="{int(home.get("cardHeight") or 360)}" {attrs}></picture>'
+        )
+    street = picture and not has_real_photo(home)
+    badge = '<span class="sv-badge">Street view · © Google</span>' if street else '<span class="sv-badge" hidden>Street view · © Google</span>'
+    dots = ""
+    count = min(6, len(home.get("photos") or []))
+    if count > 1:
+        marks = "".join('<i class="on"></i>' if i == 0 else "<i></i>" for i in range(count))
+        dots = f'<span class="pdots">{marks}</span>'
+    tag = "" if pending else _tag(home, listed, today)
+    flag = '<span class="status-tag pending">Pending</span>' if pending else (f'<span class="z-feat">{html.escape(tag)}</span>' if tag else "")
+    heart = (
+        f'<button type="button" class="hc-heart" data-save="{html.escape(home["id"], quote=True)}" '
+        f'aria-pressed="false" aria-label="Save" title="Save"><span class="hc-ic">♡</span></button>'
+    )
+    price = _money(home.get("monthlyPayment"))
+    down = _money(home.get("moveIn"))
+    down_html = f'<div class="card-down">{down} down</div>' if down else ""
+    return (
+        f'<a class="{classes}" data-hid="{html.escape(home["id"], quote=True)}" data-static="1" href="{html.escape(home["id"], quote=True)}.html">'
+        f'<div class="card-face" style="background:linear-gradient(135deg,{a},{b})">{picture}{badge}{dots}{flag}{heart}</div>'
+        f'<div class="card-body"><div class="card-price"><span class="num">{price}</span><span class="per">/mo</span></div>'
+        f'<div class="card-specs">{html.escape(" | ".join(bits))}</div>'
+        f'<div class="card-where">{html.escape(where)}</div>{down_html}</div></a>'
+    )
+
+
+def _preload(home: dict) -> str:
+    webp, _jpg, _fallback = _srcset(home)
+    if not webp:
+        return ""
+    href = f"images/cards/{home['id']}-480.webp"
+    return (
+        f'<link rel="preload" as="image" type="image/webp" fetchpriority="high" href="{href}" '
+        f'imagesrcset="{html.escape(webp, quote=True)}" imagesizes="{CARD_SIZES}">'
+    )
+
+
+def _replace_marked(text: str, start: str, end: str, block: str, anchor: str) -> str:
+    pattern = re.compile(re.escape(start) + r"[\s\S]*?" + re.escape(end))
+    wrapped = f"{start}\n{block}\n{end}" if block else f"{start}\n{end}"
+    if pattern.search(text):
+        return pattern.sub(lambda _m: wrapped, text, count=1)
+    if anchor not in text:
+        return text
+    return text.replace(anchor, anchor + "\n" + wrapped, 1)
+
+
+def stamp_first_screen(root: Path, limit: int = FIRST_SCREEN, today: date | None = None) -> int:
+    """Write the first screen of homepage cards into index.html so they do not wait on homes.js."""
+    root = Path(root)
+    index = root / "index.html"
+    if not index.is_file() or not (root / "homes.js").is_file():
+        return 0
+    today = today or date.today()
+    homes = [home for home in default_order(root) if home.get("cardPhoto")][:limit]
+    # A home with no card still belongs in the order; keep it so the static prefix matches JS.
+    if len(homes) < limit:
+        homes = default_order(root)[:limit]
+    listed = _listed(root)
+    cards = "\n".join(_card_html(home, i, listed, today) for i, home in enumerate(homes))
+    preloads = "\n".join(link for link in (_preload(home) for home in homes[:EAGER_CARDS]) if link)
+    text = index.read_text(encoding="utf-8")
+    text = _replace_marked(text, "<!-- lcp-preload:start -->", "<!-- lcp-preload:end -->", preloads,
+                           '<meta name="viewport" content="width=device-width, initial-scale=1.0"/>')
+    # The viewport replace puts the marker AFTER the anchor line only if we prepend wrong.
+    # _replace_marked inserts wrapped + anchor, so the marker lands before the viewport tag.
+    # Move it to just after the viewport when it was newly inserted in front.
+    text = _replace_marked(
+        text, "<!-- first-cards:start -->", "<!-- first-cards:end -->", cards,
+        '<div class="cards" id="cards">',
+    )
+    # _replace_marked inserts BEFORE the cards div. Put the cards inside it instead.
+    text = text.replace(
+        "<!-- first-cards:start -->\n" + cards + "\n<!-- first-cards:end -->\n" + '<div class="cards" id="cards">',
+        '<div class="cards" id="cards">\n<!-- first-cards:start -->\n' + cards + "\n<!-- first-cards:end -->",
+        1,
+    )
+    if text != index.read_text(encoding="utf-8"):
+        index.write_text(text, encoding="utf-8")
+    return len(homes)

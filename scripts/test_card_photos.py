@@ -80,20 +80,25 @@ class Manifest(unittest.TestCase):
             zebra = ps.blocks(text)["decatur-il-9-zebra"].group(0)
             self.assertIn("hasPhoto: true,", zebra)
             self.assertIn("photoCount: 3,", zebra)
-            self.assertIn('cardPhoto: "images/cards/decatur-il-9-zebra.webp",', zebra)
+            self.assertIn('cardPhoto: "images/cards/decatur-il-9-zebra-480.webp",', zebra)
             self.assertIn("cardWidth: 480,", zebra)
+            self.assertIn("cardW320: 320,", zebra)
             apple = ps.blocks(text)["decatur-il-1-apple"].group(0)
             self.assertIn("hasPhoto: false,", apple)
             self.assertIn("photoCount: 0,", apple)
-            self.assertIn('cardPhoto: "images/cards/decatur-il-1-apple.webp",', apple)
+            self.assertIn('cardPhoto: "images/cards/decatur-il-1-apple-480.webp",', apple)
             birch = ps.blocks(text)["decatur-il-2-birch"].group(0)
             self.assertIn("hasPhoto: false,", birch)
             self.assertIn('cardPhoto: "",', birch)
-            thumb = root / "images" / "cards" / "decatur-il-9-zebra.webp"
+            thumb = root / "images" / "cards" / "decatur-il-9-zebra-480.webp"
             self.assertTrue(thumb.is_file())
+            self.assertTrue((root / "images" / "cards" / "decatur-il-9-zebra-320.webp").is_file())
+            self.assertTrue((root / "images" / "cards" / "decatur-il-9-zebra-480.jpg").is_file())
             from PIL import Image
             with Image.open(thumb) as image:
                 self.assertEqual(image.size[0], 480)
+            with Image.open(root / "images" / "cards" / "decatur-il-9-zebra-320.webp") as image:
+                self.assertEqual(image.size[0], 320)
             second = card_photos.sync(root)
             self.assertEqual(second["encoded"], 0)
             self.assertEqual(second["cached"], 2)
@@ -102,6 +107,31 @@ class Manifest(unittest.TestCase):
             third = card_photos.sync(root)
             self.assertEqual(third["encoded"], 1)
             self.assertEqual(third["cached"], 1)
+
+    def test_first_screen_is_static_and_preloaded(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            site(root)
+            (root / "index.html").write_text(
+                '<html><head><meta name="viewport" content="width=device-width, initial-scale=1.0"/>\n</head>'
+                '<body><div class="cards" id="cards"></div></body></html>',
+                encoding="utf-8")
+            card_photos.sync(root)
+            n = card_photos.stamp_first_screen(root)
+            self.assertEqual(n, 3)
+            page = (root / "index.html").read_text(encoding="utf-8")
+            self.assertIn('rel="preload"', page)
+            self.assertIn("imagesrcset=", page)
+            self.assertLess(page.find("decatur-il-9-zebra"), page.find("decatur-il-1-apple"))
+            self.assertEqual(page.count('fetchpriority="high"'), 4)  # two preloads and two images
+            self.assertIn('data-static="1"', page)
+            self.assertIn('data-hid="decatur-il-2-birch"', page)
+            self.assertNotIn("decatur-il-2-birch-480", page)
+            self.assertIn("images/cards/decatur-il-9-zebra-320.webp 320w", page)
+            self.assertIn("images/cards/decatur-il-9-zebra-480.webp 480w", page)
+            again = page
+            card_photos.stamp_first_screen(root)
+            self.assertEqual((root / "index.html").read_text(encoding="utf-8"), again)
 
     def test_sort_puts_real_photos_before_street_view(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -197,6 +227,10 @@ class Templates(unittest.TestCase):
         self.assertIn("function hasRealPhoto", text)
         self.assertIn("h.cardPhoto", text)
         self.assertIn('loading="lazy"', text)
+        self.assertIn('addEventListener("load"', text)
+        self.assertNotIn('<script src="homes.js"', text)
+        self.assertIn("imagesrcset=", text)
+        self.assertIn('fetchpriority="high"', text)
         self.assertIn("cardWidth", text)
         self.assertLess(text.find("hasRealPhoto(b)"), text.find("VisitorNear.compare"))
         cities = text.find('id="cities"')

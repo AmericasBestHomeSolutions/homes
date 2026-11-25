@@ -3,6 +3,10 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<!-- lcp-preload:start -->
+<link rel="preload" as="image" type="image/webp" fetchpriority="high" href="images/cards/decatur-il-305-maffit-480.webp" imagesrcset="images/cards/decatur-il-305-maffit-320.webp 320w, images/cards/decatur-il-305-maffit-480.webp 480w" imagesizes="(max-width: 860px) calc(100vw - 20px), 480px">
+<link rel="preload" as="image" type="image/webp" fetchpriority="high" href="images/cards/stlouis-mo-8401-broadway-480.webp" imagesrcset="images/cards/stlouis-mo-8401-broadway-320.webp 320w, images/cards/stlouis-mo-8401-broadway-480.webp 480w" imagesizes="(max-width: 860px) calc(100vw - 20px), 480px">
+<!-- lcp-preload:end -->
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M24 3 41 9V23C41 33 33 41 24 45 15 41 7 33 7 23V9Z' fill='%2315315e'/><path d='M15 26 24 18 33 26Z' fill='%23e23b3b'/><rect x='17.5' y='26' width='13' height='9' fill='white'/><rect x='22' y='30' width='4' height='5' fill='%2315315e'/></svg>"/>
 <title>Owner-Financed Homes | Americas Best Home Solutions</title>
 <meta name="description" content="Own a home without a bank. Owner financing across Illinois, Missouri, Michigan, Alabama and more — a monthly payment close to rent. Browse available homes."/>
@@ -26,7 +30,8 @@
 <script type="application/ld+json" id="seo-org">{"@context":"https://schema.org","@type":"Organization","@id":"https://getownerfinancedhomes.com/#organization","name":"Americas Best Home Solutions","legalName":"Americas Best Home Solutions LLC","url":"https://getownerfinancedhomes.com/","logo":"https://getownerfinancedhomes.com/images/brand/logo-mark-480.png","email":"admin@americasbesthomesolutions.com","address":{"@type":"PostalAddress","streetAddress":"30 N Gould St, Ste R","addressLocality":"Sheridan","addressRegion":"WY","postalCode":"82801","addressCountry":"US"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap"></noscript>
 
 <!-- ════════════════════════════════════════════════════════════════════════
      AMERICAS BEST HOME SOLUTIONS — BROWSE ALL HOMES (home page)
@@ -152,6 +157,8 @@ body{
 .card:focus-visible{outline:3px solid var(--honey);outline-offset:2px}
 .card-face{position:relative;aspect-ratio:4/3;display:flex;align-items:flex-end;padding:14px;overflow:hidden}
 .card-face .fmark{position:absolute;right:-14px;bottom:-18px;opacity:.16;color:#fff;z-index:0}
+.card-face picture{position:absolute;inset:0;display:block;z-index:1}
+.card-face picture{position:absolute;inset:0;display:block;z-index:1}
 .card-face img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;display:block}
 .card-face .scrim{position:absolute;inset:0;z-index:2;background:linear-gradient(to top,rgba(11,20,40,.55),rgba(11,20,40,0) 55%);pointer-events:none}
 .card-face .sv-badge{position:absolute;bottom:12px;right:12px;z-index:3;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:.5px;background:rgba(11,20,40,.62);color:#fff;padding:4px 8px;border-radius:999px;pointer-events:none}
@@ -483,7 +490,15 @@ body.page-search #cities .sec-sub{margin:4px 0 0;max-width:62ch}
       </ul>
       <p class="bi-cta">Find a home you like below, then tap <strong>Book a Tour</strong> on its page. <a href="how-it-works.html">How it works</a></p>
     </div>
-    <div class="cards" id="cards"></div>
+    <div class="cards" id="cards">
+<!-- first-cards:start -->
+<a class="card" data-hid="decatur-il-305-maffit" data-static="1" href="decatur-il-305-maffit.html"><div class="card-face" style="background:linear-gradient(135deg,#15315e,#24508a)"><picture><source type="image/webp" srcset="images/cards/decatur-il-305-maffit-320.webp 320w, images/cards/decatur-il-305-maffit-480.webp 480w" sizes="(max-width: 860px) calc(100vw - 20px), 480px"><img src="images/cards/decatur-il-305-maffit-480.jpg" srcset="images/cards/decatur-il-305-maffit-320.jpg 320w, images/cards/decatur-il-305-maffit-480.jpg 480w" sizes="(max-width: 860px) calc(100vw - 20px), 480px" alt="Home in Decatur, IL" width="480" height="360" fetchpriority="high"></picture><span class="sv-badge" hidden>Street view · © Google</span><span class="pdots"><i class="on"></i><i></i><i></i><i></i><i></i><i></i></span><span class="z-feat">New</span><button type="button" class="hc-heart" data-save="decatur-il-305-maffit" aria-pressed="false" aria-label="Save" title="Save"><span class="hc-ic">♡</span></button></div><div class="card-body"><div class="card-price"><span class="num">$1,295</span><span class="per">/mo</span></div><div class="card-specs">4 bds | 3 ba | 2,020 sqft</div><div class="card-where">305 S Maffit St, Decatur, IL</div><div class="card-down">$3,500 down</div></div></a>
+<a class="card" data-hid="stlouis-mo-8401-broadway" data-static="1" href="stlouis-mo-8401-broadway.html"><div class="card-face" style="background:linear-gradient(135deg,#15315e,#24508a)"><picture><source type="image/webp" srcset="images/cards/stlouis-mo-8401-broadway-320.webp 320w, images/cards/stlouis-mo-8401-broadway-480.webp 480w" sizes="(max-width: 860px) calc(100vw - 20px), 480px"><img src="images/cards/stlouis-mo-8401-broadway-480.jpg" srcset="images/cards/stlouis-mo-8401-broadway-320.jpg 320w, images/cards/stlouis-mo-8401-broadway-480.jpg 480w" sizes="(max-width: 860px) calc(100vw - 20px), 480px" alt="Home in Saint Louis, MO" width="480" height="640" fetchpriority="high"></picture><span class="sv-badge" hidden>Street view · © Google</span><span class="pdots"><i class="on"></i><i></i><i></i><i></i><i></i><i></i></span><button type="button" class="hc-heart" data-save="stlouis-mo-8401-broadway" aria-pressed="false" aria-label="Save" title="Save"><span class="hc-ic">♡</span></button></div><div class="card-body"><div class="card-price"><span class="num">$1,100</span><span class="per">/mo</span></div><div class="card-specs">2 bds | 1.5 ba</div><div class="card-where">8401 N Broadway, Saint Louis, MO</div><div class="card-down">$3,000 down</div></div></a>
+<a class="card" data-hid="witt-il-529-2nd" data-static="1" href="witt-il-529-2nd.html"><div class="card-face" style="background:linear-gradient(135deg,#1c3f70,#3f6db0)"><picture><source type="image/webp" srcset="images/cards/witt-il-529-2nd-320.webp 320w, images/cards/witt-il-529-2nd-480.webp 480w" sizes="(max-width: 860px) calc(100vw - 20px), 480px"><img src="images/cards/witt-il-529-2nd-480.jpg" srcset="images/cards/witt-il-529-2nd-320.jpg 320w, images/cards/witt-il-529-2nd-480.jpg 480w" sizes="(max-width: 860px) calc(100vw - 20px), 480px" alt="Home in Witt, IL" width="480" height="640" loading="lazy" decoding="async"></picture><span class="sv-badge" hidden>Street view · © Google</span><span class="pdots"><i class="on"></i><i></i><i></i><i></i><i></i><i></i></span><button type="button" class="hc-heart" data-save="witt-il-529-2nd" aria-pressed="false" aria-label="Save" title="Save"><span class="hc-ic">♡</span></button></div><div class="card-body"><div class="card-price"><span class="num">$574</span><span class="per">/mo</span></div><div class="card-specs">2 bds | 1 ba | 765 sqft</div><div class="card-where">529 N 2nd St, Witt, IL</div><div class="card-down">$1,000 down</div></div></a>
+<a class="card" data-hid="eaststlouis-il-516-84th" data-static="1" href="eaststlouis-il-516-84th.html"><div class="card-face" style="background:linear-gradient(135deg,#1c4a7a,#37639f)"><picture><source type="image/webp" srcset="images/cards/eaststlouis-il-516-84th-320.webp 320w, images/cards/eaststlouis-il-516-84th-480.webp 480w" sizes="(max-width: 860px) calc(100vw - 20px), 480px"><img src="images/cards/eaststlouis-il-516-84th-480.jpg" srcset="images/cards/eaststlouis-il-516-84th-320.jpg 320w, images/cards/eaststlouis-il-516-84th-480.jpg 480w" sizes="(max-width: 860px) calc(100vw - 20px), 480px" alt="Home in East St. Louis, IL" width="480" height="640" loading="lazy" decoding="async"></picture><span class="sv-badge" hidden>Street view · © Google</span><span class="pdots"><i class="on"></i><i></i><i></i><i></i><i></i><i></i></span><button type="button" class="hc-heart" data-save="eaststlouis-il-516-84th" aria-pressed="false" aria-label="Save" title="Save"><span class="hc-ic">♡</span></button></div><div class="card-body"><div class="card-price"><span class="num">$725</span><span class="per">/mo</span></div><div class="card-specs">3 bds | 1 ba | 800 sqft</div><div class="card-where">516 N 84th Street, East St. Louis, IL</div><div class="card-down">$2,000 down</div></div></a>
+<a class="card" data-hid="decatur-il-1828-main" data-static="1" href="decatur-il-1828-main.html"><div class="card-face" style="background:linear-gradient(135deg,#15315e,#24508a)"><picture><source type="image/webp" srcset="images/cards/decatur-il-1828-main-320.webp 320w, images/cards/decatur-il-1828-main-480.webp 480w" sizes="(max-width: 860px) calc(100vw - 20px), 480px"><img src="images/cards/decatur-il-1828-main-480.jpg" srcset="images/cards/decatur-il-1828-main-320.jpg 320w, images/cards/decatur-il-1828-main-480.jpg 480w" sizes="(max-width: 860px) calc(100vw - 20px), 480px" alt="Home in Decatur, IL" width="480" height="640" loading="lazy" decoding="async"></picture><span class="sv-badge" hidden>Street view · © Google</span><span class="pdots"><i class="on"></i><i></i><i></i><i></i><i></i><i></i></span><button type="button" class="hc-heart" data-save="decatur-il-1828-main" aria-pressed="false" aria-label="Save" title="Save"><span class="hc-ic">♡</span></button></div><div class="card-body"><div class="card-price"><span class="num">$895</span><span class="per">/mo</span></div><div class="card-specs">2 bds | 1 ba | 1,050 sqft</div><div class="card-where">1828 E. Main Street, Decatur, IL</div><div class="card-down">$2,000 down</div></div></a>
+<a class="card" data-hid="decatur-il-927-street" data-static="1" href="decatur-il-927-street.html"><div class="card-face" style="background:linear-gradient(135deg,#15315e,#24508a)"><picture><source type="image/webp" srcset="images/cards/decatur-il-927-street-320.webp 320w, images/cards/decatur-il-927-street-480.webp 480w" sizes="(max-width: 860px) calc(100vw - 20px), 480px"><img src="images/cards/decatur-il-927-street-480.jpg" srcset="images/cards/decatur-il-927-street-320.jpg 320w, images/cards/decatur-il-927-street-480.jpg 480w" sizes="(max-width: 860px) calc(100vw - 20px), 480px" alt="Home in Decatur, IL" width="480" height="640" loading="lazy" decoding="async"></picture><span class="sv-badge" hidden>Street view · © Google</span><span class="pdots"><i class="on"></i><i></i><i></i><i></i></span><button type="button" class="hc-heart" data-save="decatur-il-927-street" aria-pressed="false" aria-label="Save" title="Save"><span class="hc-ic">♡</span></button></div><div class="card-body"><div class="card-price"><span class="num">$800</span><span class="per">/mo</span></div><div class="card-specs">2 bds | 1 ba | 858 sqft</div><div class="card-where">927 West North Street, Decatur, IL</div><div class="card-down">$2,000 down</div></div></a>
+<!-- first-cards:end --></div>
     <button type="button" class="view-toggle" id="mapToggle" aria-pressed="false"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 4v14M15 6v14" stroke="currentColor" stroke-width="2"/></svg><span>Map</span></button>
 
     <nav class="pager" id="pager" style="display:none;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap;margin-top:28px"></nav>
@@ -775,15 +790,21 @@ body.page-search #cities .sec-sub{margin:4px 0 0;max-width:62ch}
 
 </div>
 
-<script src="listed-dates.js"></script>
-<script src="visitor-near.js"></script>
-<script src="book-links.js"></script>
-<script src="homes.js"></script>
-<script src="sold-cards.js"></script>
-<script src="homes-map.js"></script>
-<script src="homes-cart.js"></script>
-<script src="site-chrome.js"></script>
 <script>
+/* These files are not needed to paint the first cards. Load them after the
+   load event so they do not delay the first photo. async=false keeps order. */
+window.addEventListener("load", function () {
+  var srcs = ["listed-dates.js","visitor-near.js","book-links.js","homes.js","sold-cards.js","homes-map.js","homes-cart.js","site-chrome.js"];
+  var left = srcs.length;
+  srcs.forEach(function (src) {
+    var s = document.createElement("script");
+    s.src = src;
+    s.async = false;
+    s.onload = s.onerror = function () { if (--left === 0) startHomePage(); };
+    document.body.appendChild(s);
+  });
+});
+function startHomePage(){
 /* ---------- render (don't edit — home data lives in homes.js) ---------- */
 (function(){
   const $ = id => document.getElementById(id);
@@ -877,14 +898,26 @@ body.page-search #cities .sec-sub{margin:4px 0 0;max-width:62ch}
     const pending = isPending(h);
     const tag = pending ? "" : ((opts && opts.featured && h.featured) ? "Featured" : featureTag(h));
     const where = [h.address, h.city, h.state].filter(Boolean).join(", ");
+    // Same sizes string as CARD_SIZES in scripts/card_photos.py.
+    const CARD_SIZES = "(max-width: 860px) calc(100vw - 20px), 480px";
     const w = Number(h.cardWidth) || 480, ht = Number(h.cardHeight) || 360;
+    const webp = [], jpg = [];
+    if (Number(h.cardW320)) {
+      webp.push(`images/cards/${h.id}-320.webp ${Number(h.cardW320)}w`);
+      jpg.push(`images/cards/${h.id}-320.jpg ${Number(h.cardW320)}w`);
+    }
+    if (h.cardPhoto && w) {
+      webp.push(`images/cards/${h.id}-480.webp ${w}w`);
+      jpg.push(`images/cards/${h.id}-480.jpg ${w}w`);
+    }
     const eager = !!(opts && opts.eager);
-    const img = h.cardPhoto
-      ? `<img src="${h.cardPhoto}" alt="Home in ${h.city}, ${h.state}" width="${w}" height="${ht}" ${eager ? 'fetchpriority="high" decoding="sync"' : 'loading="lazy" decoding="async"'}>`
+    const img = webp.length
+      ? `<picture><source type="image/webp" srcset="${webp.join(", ")}" sizes="${CARD_SIZES}"><img src="images/cards/${h.id}-480.jpg" srcset="${jpg.join(", ")}" sizes="${CARD_SIZES}" alt="Home in ${h.city}, ${h.state}" width="${w}" height="${ht}" ${eager ? 'fetchpriority="high"' : 'loading="lazy" decoding="async"'}"></picture>`
       : "";
-    const street = h.cardPhoto && !hasRealPhoto(h);
+    const street = img && !hasRealPhoto(h);
+    const extra = opts && opts.extra ? " js-extra" : "";
     return `
-    <a class="card${h.contractor?" is-cs":""}${pending?" is-pending":""}" data-hid="${h.id}" href="${encodeURIComponent(h.id)}.html">
+    <a class="card${extra}${h.contractor?" is-cs":""}${pending?" is-pending":""}" data-hid="${h.id}" href="${encodeURIComponent(h.id)}.html">
       <div class="card-face" style="background:linear-gradient(135deg,${a},${b})">
         ${img}
         <span class="sv-badge"${street ? "" : " hidden"}>Street view · © Google</span>
@@ -904,6 +937,14 @@ body.page-search #cities .sec-sub{margin:4px 0 0;max-width:62ch}
 
   const PER_PAGE = 12;   // a short, scannable page; the pager does the rest
   let page = 1;
+  // The first screen is static HTML (scripts/card_photos.py). Leave those images
+  // in place when the default order still starts with them, so LCP is not reset.
+  const STATIC_IDS = [...document.querySelectorAll("#cards > a.card[data-static]")].map(el => el.dataset.hid);
+  let staticFresh = STATIC_IDS.length > 0;
+  function staticMatches(slice){
+    if (!staticFresh || page !== 1 || slice.length < STATIC_IDS.length) return false;
+    return STATIC_IDS.every((id, i) => slice[i] && slice[i].id === id);
+  }
 
   const hasCS = LISTINGS.some(h => h.contractor);
   if (hasCS) $("fTypeWrap").hidden = false;
@@ -948,8 +989,15 @@ body.page-search #cities .sec-sub{margin:4px 0 0;max-width:62ch}
     const pages = Math.max(1, Math.ceil(shown.length / PER_PAGE));
     if (page > pages) page = 1;
     const slice = shown.slice((page-1)*PER_PAGE, page*PER_PAGE);
-    $("cards").innerHTML = slice.map((h, i) => cardHTML(h, {eager: i === 0})).join("");
-    $("cards").style.minHeight = shown.length ? "" : "0";
+    if (!scroll && staticMatches(slice)) {
+      document.querySelectorAll("#cards > a.card.js-extra").forEach(el => el.remove());
+      const rest = slice.slice(STATIC_IDS.length);
+      if (rest.length) $("cards").insertAdjacentHTML("beforeend", rest.map(h => cardHTML(h, {extra:true})).join(""));
+    } else {
+      staticFresh = false;
+      $("cards").innerHTML = slice.map((h, i) => cardHTML(h, {eager: i < 2})).join("");
+      if (!shown.length) $("cards").style.minHeight = "0";
+    }
     $("empty").style.display = shown.length ? "none" : "block";
     const start = shown.length ? (page-1)*PER_PAGE+1 : 0;
     const end = Math.min(page*PER_PAGE, shown.length);
@@ -1262,6 +1310,7 @@ body.page-search #cities .sec-sub{margin:4px 0 0;max-width:62ch}
     document.querySelectorAll(".reveal").forEach(el=>el.classList.add("in"));
   }
 })();
+}
 </script>
 </body>
 </html>

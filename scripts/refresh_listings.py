@@ -23,6 +23,10 @@ homes.js. This script does three things that pass must keep doing:
 4. Write the short booking links, /book/<slug>/index.html, for every live home
    (scripts/book_links.py). Buyer texts carry these instead of the booking app's URL.
 
+5. Record which homes have a seller photo (hasPhoto, photoCount) and write
+   images/cards/<id>.webp (scripts/card_photos.py). Unchanged photos are not
+   re-encoded. The homepage reads those fields instead of probing covers.
+
 Run from the repo root:  python3 scripts/refresh_listings.py
 """
 from __future__ import annotations
@@ -274,14 +278,18 @@ def main() -> None:
     fields, phrases = rewrite_homes_copy()
     ids = home_ids()
     stamp_dates(ids)
+    import card_photos
+    cards = card_photos.sync(ROOT)
     n = emit_pages()
     import seo_pages  # titles, visible terms, city pages, hreflang, sitemap — after the template rewrite
     seo_pages.rebuild(ROOT, "en")
+    card_photos.stamp_first_screen(ROOT)
     import book_links   # /book/<slug>/ redirect pages: the short booking links buyer texts carry
     b = book_links.build(ROOT, "en")
     print(
         f"sanitized {phrases} text/call lines in {fields} home descriptions, "
-        f"recorded {len(ids)} homes, rewrote {n} listing pages, "
+        f"recorded {len(ids)} homes, card photos {cards['encoded']} encoded / {cards['cached']} unchanged "
+        f"({cards['real']} seller, {cards['street']} street view), rewrote {n} listing pages, "
         f"booking links for {b['homes']} homes ({b['short']} short, {b['gone']} retired)"
     )
 

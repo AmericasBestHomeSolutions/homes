@@ -75,7 +75,7 @@ PILL_CSS = """
 .city-pills a{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line,#e2e8f2);border-radius:999px;padding:8px 14px;font-weight:700;font-size:14.5px;color:var(--pine,#15315e);text-decoration:none}
 .city-pills a:hover{border-color:var(--pine,#15315e);background:var(--honey-soft,#eaf1fb)}
 .city-pills .n{font-weight:600;color:var(--ink-soft,#5b6577)}
-body.page-search #cities{margin:0;padding:14px 16px 16px;background:#fff;border-bottom:1px solid var(--line,#e2e8f2)}
+body.page-search #cities{margin:28px 0 0;padding:14px 16px 28px;background:#fff;border-top:1px solid var(--line,#e2e8f2);border-bottom:1px solid var(--line,#e2e8f2)}
 body.page-search #cities .sec-title{font-size:clamp(22px,3vw,28px)}
 body.page-search #cities .sec-sub{margin:4px 0 0;max-width:62ch}
 """.strip()
@@ -517,6 +517,14 @@ def write_listing(root: Path, home: dict, lang: str, template: str | None = None
                          lambda m: m.group(1) + esc(money(home.get("moveIn"))))
     page = _replace_once(page, r'(<div class="num" id="dPrice">)[^<]*',
                          lambda m: m.group(1) + esc(money(home.get("lockedPrice"))))
+    if 'id="conditionLine"' in page:
+        cond = str(home.get("condition") or "").strip()
+        if cond:
+            slot = f'<p class="condition-line" id="conditionLine"><span class="k">Condition</span> {esc(cond)}</p>'
+        else:
+            slot = '<p class="condition-line" id="conditionLine" hidden></p>'
+        page = _replace_once(page, r'<p class="condition-line" id="conditionLine"[^>]*>.*?</p>',
+                             lambda _m, slot=slot: slot, re.S)
     blurb = prose(home)
     if blurb:
         page = page.replace('id="aboutHomeSec" hidden', 'id="aboutHomeSec"', 1)
@@ -587,6 +595,8 @@ def load_homes(root: Path) -> list[dict]:
             "lockedPrice": _field(block, "lockedPrice"),
             "termText": _field(block, "termText") or "",
             "heroPhoto": _field(block, "heroPhoto") or "",
+            "hasPhoto": _field(block, "hasPhoto"),
+            "condition": _field(block, "condition") or "",
             "copy": _field(block, "copy") or "",
             "description": _field(block, "description") or "",
             "lat": _field(block, "lat"),
@@ -620,6 +630,8 @@ def normalize(row: dict, lang: str) -> dict:
         "lockedPrice": pick("lockedPrice", "price", "Price"),
         "termText": pick("termText") or TERMS[lang],
         "heroPhoto": pick("heroPhoto") or "",
+        "hasPhoto": pick("hasPhoto"),
+        "condition": pick("condition", "Condition") or "",
         "copy": pick("copy") or "",
         "description": pick("description") or "",
         "lat": pick("lat"),
@@ -639,8 +651,10 @@ def group_cities(homes: list[dict]) -> list[dict]:
         bucket["homes"].append(home)
     out = [g for g in groups.values() if g["homes"]]
     out.sort(key=lambda g: (-len(g["homes"]), g["city"].lower(), g["state"]))
+    from card_photos import listing_sort_key
     for g in out:
-        g["homes"].sort(key=lambda h: (h.get("address") or "", h["id"]))
+        # Real seller photos first, then Street View-only homes, then address.
+        g["homes"].sort(key=listing_sort_key)
     return out
 
 
@@ -926,10 +940,13 @@ def _stamp_cities_on_index(root: Path, groups: list[dict], lang: str) -> bool:
     if "<!-- city-landings:start -->" in text:
         text = re.sub(r"<!-- city-landings:start -->[\s\S]*?<!-- city-landings:end -->", lambda _m: section, text, count=1)
     else:
-        needle = '<section class="section" id="listings">'
-        if needle in text:
-            text = text.replace(needle, section + "\n\n  " + needle, 1)
-        else:
+        placed = False
+        for anchor in ('<section class="section" id="soldSec"', '<footer class="foot">', "</body>"):
+            if anchor in text:
+                text = text.replace(anchor, section + "\n\n  " + anchor, 1)
+                placed = True
+                break
+        if not placed:
             text = text.replace("</body>", section + "\n</body>", 1)
     return _write_if_changed(index, text)
 

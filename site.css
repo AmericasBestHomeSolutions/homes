@@ -33,7 +33,7 @@ body.page-search .hdr-search button.filter-btn {
 }
 body.page-search .hdr-search .fcount {
   position: absolute; top: -4px; right: -4px; min-width: 18px; height: 18px; padding: 0 4px;
-  border-radius: 99px; background: var(--go, #e23b3b); color: #fff;
+  border-radius: 99px; background: var(--go, #d43333); color: #fff;
   font: 800 11px "DM Sans", system-ui, sans-serif; display: inline-flex; align-items: center; justify-content: center;
 }
 body.page-search .hdr-search .fcount[hidden] { display: none; }
@@ -201,6 +201,8 @@ body.page-search .card .status-tag.pending {
   z-index: 6;
 }
 body.page-search .cards { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important; gap: 16px; padding: 12px 12px 96px; margin-top: 8px; }
+/* City links follow the list. Keep that block below the first screen until the cards are drawn. */
+body.page-search #cards { min-height: 70vh; }
 body.page-search .card {
   display: flex !important; flex-direction: column; border: 0; border-radius: 16px;
   overflow: hidden; box-shadow: 0 1px 4px rgba(15,36,68,.14); min-height: 0;
@@ -242,6 +244,24 @@ body.page-search .card-down { font-weight: 800; margin-top: 6px; color: var(--in
   .page-home .headline, .page-home .prop-addr, .page-home .prop-specs, .page-home .subhead { grid-column: 2; }
 }
 @media (max-width: 860px) {
+  /* One short sticky row-stack so the first home card fits a 390x844 screen. */
+  body.page-search .topbar { padding: 6px 12px 4px; }
+  body.page-search .zhead-row { gap: 8px; min-width: 0; }
+  body.page-search .brand { min-width: 0; }
+  body.page-search .brand .mark { width: 26px; height: 26px; }
+  body.page-search .brand .bn { display: block; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 15px; }
+  body.page-search .brand .bn small { display: none; }
+  body.page-search .hdr-search { margin-top: 6px; min-height: 40px; }
+  body.page-search .hdr-search input { padding: 6px 4px; }
+  body.page-search .z-quick { padding: 4px 0 0; }
+  body.page-search .z-quick .qf { gap: 1px; }
+  body.page-search .z-quick select { padding: 4px 8px; }
+  body.page-search .z-sort { flex-wrap: nowrap; align-items: center; gap: 10px; padding: 2px 0 0; }
+  body.page-search .z-sort .count { flex: 1 1 auto; min-width: 0; overflow: visible; font-size: 13px; white-space: nowrap; }
+  body.page-search .sort-pill { flex: 0 0 auto; margin-left: 0; }
+  body.page-search .buyer-intro { padding-top: 8px; }
+  body.page-search .buyer-intro h2 { margin-bottom: 4px; }
+  body.page-search .buyer-intro p { margin-bottom: 6px; }
   .card { grid-template-columns: 1fr !important; }
   .card-face { aspect-ratio: 16/10 !important; min-height: 0; }
   .benefits { grid-template-columns: 1fr; }
@@ -269,8 +289,8 @@ body.page-search .card-down { font-weight: 800; margin-top: 6px; color: var(--in
     padding: 12px 18px; font-weight: 800; box-shadow: 0 8px 22px rgba(15,36,68,.35); cursor: pointer;
   }
   body.page-search .cards { padding-left: 10px; padding-right: 10px; }
-  body.page-search .z-sort { flex-wrap: wrap; row-gap: 6px; min-width: 0; max-width: 100%; }
-  body.page-search .z-sort .count { min-width: 0; white-space: normal; }
-  body.page-search .sort-pill { margin-left: auto; max-width: 100%; min-width: 0; }
-  body.page-search .sort-pill select { max-width: 100%; min-width: 0; }
+  body.page-search .z-sort { flex-wrap: nowrap; align-items: center; gap: 10px; min-width: 0; max-width: 100%; }
+  body.page-search .z-sort .count { min-width: 0; overflow: visible; white-space: nowrap; }
+  body.page-search .sort-pill { margin-left: 0; flex: 0 0 auto; }
+  body.page-search .sort-pill select { max-width: 124px; min-width: 0; padding: 4px 6px; }
 }

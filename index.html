@@ -48,8 +48,8 @@
   --lime:#ffffff;          /* white accent on navy (steps/tags) */
   --honey:#e23b3b;         /* RED accent (section labels)       */
   --honey-soft:#eaf1fb;    /* soft blue tint (icon backgrounds) */
-  --go:#e23b3b;            /* RED call-to-action buttons        */
-  --go-hover:#c92f2f;      /* darker red on hover               */
+  --go:#d43333;            /* RED buttons. White on this is 4.86:1. */
+  --go-hover:#b82a2a;      /* darker red on hover               */
   --radius:18px;
 }
 html{scroll-behavior:smooth}
@@ -89,7 +89,7 @@ body{
 .btn:active{transform:scale(.98)}
 .btn:focus-visible{outline:3px solid var(--honey);outline-offset:2px}
 .btn-lime{background:var(--go);color:#fff}
-.btn-lime:hover{background:#f05252}
+.btn-lime:hover{background:var(--go-hover)}
 .btn-ghost{background:rgba(255,255,255,.06);color:#fff;border:1.5px solid rgba(255,255,255,.35)}
 .btn-ghost:hover{background:rgba(255,255,255,.14)}
 
@@ -193,7 +193,7 @@ body{
 #soldSec .sold-card{flex:0 0 min(85vw,270px);width:min(85vw,270px);max-width:min(85vw,270px);min-width:0;scroll-snap-align:start;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:18px;overflow:hidden;min-height:0;padding:0;display:flex;flex-direction:column;box-shadow:0 8px 24px rgba(15,36,68,.06)}
 #soldSec .sold-card .frame{position:relative;aspect-ratio:4/3;background:#e6eef8;overflow:hidden}
 #soldSec .sold-card img{width:100%;height:100%;object-fit:cover;display:block}
-#soldSec .sold-badge{position:absolute;top:10px;left:10px;z-index:2;background:#e23b3b;color:#fff;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:5px 9px;border-radius:999px;font-weight:500}
+#soldSec .sold-badge{position:absolute;top:10px;left:10px;z-index:2;background:var(--go,#d43333);color:#fff;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;padding:5px 9px;border-radius:999px;font-weight:500}
 #soldSec .sold-cap{padding:12px 14px 14px}
 #soldSec .sold-label{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:18px;letter-spacing:-.3px;color:var(--pine);line-height:1.25;margin:0}
 #soldSec .sold-label .dot{color:var(--ink-soft);font-weight:600}
@@ -325,7 +325,7 @@ body{
 .city-pills a{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1px solid var(--line,#e2e8f2);border-radius:999px;padding:8px 14px;font-weight:700;font-size:14.5px;color:var(--pine,#15315e);text-decoration:none}
 .city-pills a:hover{border-color:var(--pine,#15315e);background:var(--honey-soft,#eaf1fb)}
 .city-pills .n{font-weight:600;color:var(--ink-soft,#5b6577)}
-body.page-search #cities{margin:0;padding:14px 16px 16px;background:#fff;border-bottom:1px solid var(--line,#e2e8f2)}
+body.page-search #cities{margin:28px 0 0;padding:14px 16px 28px;background:#fff;border-top:1px solid var(--line,#e2e8f2);border-bottom:1px solid var(--line,#e2e8f2)}
 body.page-search #cities .sec-title{font-size:clamp(22px,3vw,28px)}
 body.page-search #cities .sec-sub{margin:4px 0 0;max-width:62ch}
 </style>
@@ -471,6 +471,29 @@ body.page-search #cities .sec-sub{margin:4px 0 0;max-width:62ch}
     </ul>
   </section>
 
+
+  <section class="section" id="listings">
+    <div class="buyer-intro">
+      <h2>Owner-financed homes. Low down payment. No bank needed.</h2>
+      <p>We sell homes to good, hardworking people, including folks the banks have turned away. Every home is sold as-is: you fix it up your way, make it yours, and stay for the long haul. Rent it out later, or keep it as a place that's truly yours for the long run. It's your home.</p>
+      <ul>
+        <li>We finance it, not a bank</li>
+        <li>Low down payment</li>
+        <li>You own from day one</li>
+      </ul>
+      <p class="bi-cta">Find a home you like below, then tap <strong>Book a Tour</strong> on its page. <a href="how-it-works.html">How it works</a></p>
+    </div>
+    <div class="cards" id="cards"></div>
+    <button type="button" class="view-toggle" id="mapToggle" aria-pressed="false"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 4v14M15 6v14" stroke="currentColor" stroke-width="2"/></svg><span>Map</span></button>
+
+    <nav class="pager" id="pager" style="display:none;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap;margin-top:28px"></nav>
+
+    <div class="empty" id="empty">
+      <h3>Nothing matches those filters — yet</h3>
+      <p>New homes come in every week. Clear a filter chip or widen the monthly or down-payment range.</p>
+    </div>
+  </section>
+
   <!-- city-landings:start -->
   <section class="section" id="cities">
     <div class="sec-label">By city</div>
@@ -525,28 +548,6 @@ body.page-search #cities .sec-sub{margin:4px 0 0;max-width:62ch}
     </div>
   </section>
 <!-- city-landings:end -->
-
-  <section class="section" id="listings">
-    <div class="buyer-intro">
-      <h2>Owner-financed homes. Low down payment. No bank needed.</h2>
-      <p>We sell homes to good, hardworking people, including folks the banks have turned away. Every home is sold as-is: you fix it up your way, make it yours, and stay for the long haul. Rent it out later, or keep it as a place that's truly yours for the long run. It's your home.</p>
-      <ul>
-        <li>We finance it, not a bank</li>
-        <li>Low down payment</li>
-        <li>You own from day one</li>
-      </ul>
-      <p class="bi-cta">Find a home you like below, then tap <strong>Book a Tour</strong> on its page. <a href="how-it-works.html">How it works</a></p>
-    </div>
-    <div class="cards" id="cards"></div>
-    <button type="button" class="view-toggle" id="mapToggle" aria-pressed="false"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9 4v14M15 6v14" stroke="currentColor" stroke-width="2"/></svg><span>Map</span></button>
-
-    <nav class="pager" id="pager" style="display:none;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap;margin-top:28px"></nav>
-
-    <div class="empty" id="empty">
-      <h3>Nothing matches those filters — yet</h3>
-      <p>New homes come in every week. Clear a filter chip or widen the monthly or down-payment range.</p>
-    </div>
-  </section>
 
   <!-- RECENTLY SOLD — photo cards from SOLD_CARDS. Street name and city only. -->
   <section class="section" id="soldSec" style="margin-top:48px" hidden>
@@ -820,15 +821,19 @@ body.page-search #cities .sec-sub{margin:4px 0 0;max-width:62ch}
     return !!(raw && t && (Date.now() - t) <= 7 * 86400000);
   }
 
-  // Default order. Every home is featured, so: homes near the visitor first (their picked city, "Near me",
-  // or a keyless approximate lookup; see visitor-near.js), then newest listed first, then complete listings.
+  // Real seller photos sort ahead of Street View-only homes. hasPhoto is recorded
+  // at build time (scripts/card_photos.py); the page does not probe image files.
+  function hasRealPhoto(h){
+    return !!(h && (h.hasPhoto === true || h.hasPhoto === "true" || h.hasPhoto === 1));
+  }
   function completeFirst(a, b){
-    return (photoReady.has(b.id) - photoReady.has(a.id)) || ((b.address?1:0) - (a.address?1:0));
+    return ((b.address?1:0) - (a.address?1:0));
   }
   function defaultOrder(){
-    if (window.VisitorNear) return VisitorNear.compare(completeFirst);
+    const photo = (a, b) => (hasRealPhoto(b) - hasRealPhoto(a));
     const t = h => Date.parse(((typeof LISTED_ON !== "undefined" ? LISTED_ON : (window.LISTED_ON || {}))[h.id]) || "") || 0;
-    return (a, b) => (t(b) - t(a)) || completeFirst(a, b);
+    const inner = window.VisitorNear ? VisitorNear.compare(completeFirst) : ((a, b) => (t(b) - t(a)) || completeFirst(a, b));
+    return (a, b) => photo(a, b) || inner(a, b);
   }
 
   // filter options — built from whatever is in homes.js
@@ -869,15 +874,20 @@ body.page-search #cities .sec-sub{margin:4px 0 0;max-width:62ch}
       h.baths ? `${h.baths} ba` : "",
       (h.sqft && Number(h.sqft)) ? `${Number(h.sqft).toLocaleString()} sqft` : ""
     ].filter(Boolean).join(" | ");
-    const photoSrc = h.heroPhoto || `images/${h.id}.jpg`;   // drop images/<id>.jpg in and it shows automatically
     const pending = isPending(h);
     const tag = pending ? "" : ((opts && opts.featured && h.featured) ? "Featured" : featureTag(h));
     const where = [h.address, h.city, h.state].filter(Boolean).join(", ");
+    const w = Number(h.cardWidth) || 480, ht = Number(h.cardHeight) || 360;
+    const eager = !!(opts && opts.eager);
+    const img = h.cardPhoto
+      ? `<img src="${h.cardPhoto}" alt="Home in ${h.city}, ${h.state}" width="${w}" height="${ht}" ${eager ? 'fetchpriority="high" decoding="sync"' : 'loading="lazy" decoding="async"'}>`
+      : "";
+    const street = h.cardPhoto && !hasRealPhoto(h);
     return `
     <a class="card${h.contractor?" is-cs":""}${pending?" is-pending":""}" data-hid="${h.id}" href="${encodeURIComponent(h.id)}.html">
       <div class="card-face" style="background:linear-gradient(135deg,${a},${b})">
-        <img src="${photoSrc}" alt="Home in ${h.city}, ${h.state}" loading="lazy" data-sv="images/sv/${h.id}.jpg" style="opacity:0;transition:opacity .3s ease" onload="this.style.opacity=1" onerror="window.__svFallback(this)">
-        <span class="sv-badge" hidden>Street view · © Google</span>
+        ${img}
+        <span class="sv-badge"${street ? "" : " hidden"}>Street view · © Google</span>
         ${(h.photos||[]).length>1?`<button type="button" class="pg pv" aria-label="Previous photo">‹</button><button type="button" class="pg nx" aria-label="Next photo">›</button><span class="pdots">${Array.from({length:Math.min(6,(h.photos||[]).length)},(_,k)=>`<i${k?"":" class=\"on\""}></i>`).join("")}</span>`:""}
         ${pending ? `<span class="status-tag pending">Pending</span>` : (tag ? `<span class="z-feat">${tag}</span>` : "")}
         ${window.HomesCart?HomesCart.heart(h):""}
@@ -892,8 +902,6 @@ body.page-search #cities .sec-sub{margin:4px 0 0;max-width:62ch}
     </a>`;
   }
 
-  // homes that actually have a cover photo load into this set, then sort to the top
-  const photoReady = new Set();
   const PER_PAGE = 12;   // a short, scannable page; the pager does the rest
   let page = 1;
 
@@ -931,7 +939,7 @@ body.page-search #cities .sec-sub{margin:4px 0 0;max-width:62ch}
     const num = (v, fallback=0) => Number(v) || fallback;
     if (sort === "monthly-asc")   list.sort((a,b) => num(a.monthlyPayment,Infinity) - num(b.monthlyPayment,Infinity));
     else if (sort === "down-asc") list.sort((a,b) => num(a.moveIn,Infinity) - num(b.moveIn,Infinity));  // "Ask us" ($0) sorts last
-    else list.sort(defaultOrder());  // Featured (every home is): near the visitor first, then newest listed first
+    else list.sort(defaultOrder());  // real photos first, then near the visitor, then newest listed
     return window.HomesMap ? HomesMap.applyGeo(list) : list;
   }
 
@@ -940,7 +948,8 @@ body.page-search #cities .sec-sub{margin:4px 0 0;max-width:62ch}
     const pages = Math.max(1, Math.ceil(shown.length / PER_PAGE));
     if (page > pages) page = 1;
     const slice = shown.slice((page-1)*PER_PAGE, page*PER_PAGE);
-    $("cards").innerHTML = slice.map(h => cardHTML(h)).join("");
+    $("cards").innerHTML = slice.map((h, i) => cardHTML(h, {eager: i === 0})).join("");
+    $("cards").style.minHeight = shown.length ? "" : "0";
     $("empty").style.display = shown.length ? "none" : "block";
     const start = shown.length ? (page-1)*PER_PAGE+1 : 0;
     const end = Math.min(page*PER_PAGE, shown.length);
@@ -1051,7 +1060,7 @@ body.page-search #cities .sec-sub{margin:4px 0 0;max-width:62ch}
     ["mouseover","touchstart"].forEach(ev => box.addEventListener(ev, e => { const c = e.target.closest && e.target.closest(".card"); if(c) prime(c); }, {passive:true}));
     function go(card, d){
       const h = byId(card.dataset.hid); if(!h) return; const list = pics(h); if(list.length < 2) return;
-      const img = card.querySelector(".card-face img");
+      const img = card.querySelector(".card-face img"); if(!img) return;
       let i = ((Number(card.dataset.pi)||0) + d + list.length) % list.length;
       for(let s=0; s<list.length && i>0 && isCoverDup(img, card, list[i]); s++) i = (i + d + list.length) % list.length;   // skip a photo that is the cover again
       card.dataset.pi = i; img.removeAttribute("data-sv"); img.style.opacity = 1; img.src = list[i];
@@ -1243,15 +1252,6 @@ body.page-search #cities .sec-sub{margin:4px 0 0;max-width:62ch}
     }
     if (!location.hash) requestAnimationFrame(() => sec.scrollIntoView({ block: "start" }));
   })();
-  // detect which homes have a real cover photo (no homes.js editing needed — just
-  // drop images/<id>.jpg and it auto-prioritizes), then re-sort photo homes to the top
-  Promise.allSettled(LISTINGS.map(h => new Promise(res => {
-    const im = new Image();
-    im.onload  = () => { if (im.naturalWidth > 1) photoReady.add(h.id); res(); };
-    im.onerror = () => res();
-    im.src = h.heroPhoto || `images/${h.id}.jpg`;
-  }))).then(() => { render(); revealHash(); });
-
   // scroll reveal (respects reduced-motion via CSS)
   if ("IntersectionObserver" in window){
     const io = new IntersectionObserver((entries)=>{

@@ -37,7 +37,7 @@
 :root{
   --paper:#f4f7fc; --card:#ffffff; --ink:#16213a; --ink-soft:#5b6577; --line:#e2e8f2;
   --pine:#15315e; --pine-deep:#0f2444; --lime:#ffffff; --honey:#e23b3b; --honey-soft:#eaf1fb;
-  --go:#e23b3b; --go-hover:#c92f2f; --radius:18px;
+  --go:#d43333; --go-hover:#b82a2a; --radius:18px;
 }
 html{scroll-behavior:smooth}
 body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
@@ -83,6 +83,8 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
 .seo-city{margin:0 0 12px}
 .seo-city a{color:var(--pine);font-weight:700}
 .subhead{font-size:18px;color:var(--ink-soft);max-width:40ch}
+.condition-line{font-size:16px;font-weight:600;margin:0 0 8px}
+.condition-line .k{font-family:'DM Mono',monospace;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft);font-weight:500;margin-right:6px}
 
 /* ── DEAL STRIP ──────────────────────────────────────────── */
 .deal-strip{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin:22px 0 8px}
@@ -183,7 +185,7 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
 .tl-tray{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--pine);color:#fff;padding:12px 16px;display:none;align-items:center;justify-content:space-between;gap:12px;box-shadow:0 -4px 18px rgba(0,0,0,.18);font-family:'DM Sans',sans-serif}
 .tl-tray.show{display:flex}
 .tl-tray span{font-weight:700;font-size:15px}
-.tl-tray button{font:800 14px 'DM Sans',sans-serif;border:none;border-radius:999px;padding:10px 18px;background:var(--go,#e23b3b);color:#fff;cursor:pointer}
+.tl-tray button{font:800 14px 'DM Sans',sans-serif;border:none;border-radius:999px;padding:10px 18px;background:var(--go,#d43333);color:#fff;cursor:pointer}
 .tl-modal{position:fixed;inset:0;z-index:60;background:rgba(10,20,40,.55);display:none;align-items:flex-end;justify-content:center}
 .tl-modal.show{display:flex}
 .tl-box{background:var(--card,#fff);width:100%;max-width:460px;max-height:92vh;overflow:auto;border-radius:18px 18px 0 0;padding:20px 18px 24px;font-family:'DM Sans',sans-serif}
@@ -194,7 +196,7 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
 .tl-box label.f{font-family:'DM Mono',monospace;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-soft);margin-bottom:-4px}
 .tl-box input[type=text],.tl-box input[type=tel],.tl-box input[type=email],.tl-box select{font:inherit;font-size:16px;border:1.5px solid var(--line);border-radius:12px;padding:12px;width:100%;background:var(--paper)}
 .tl-two{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.tl-box .go{font:800 16px 'DM Sans',sans-serif;border:none;border-radius:999px;padding:14px;background:var(--go,#e23b3b);color:#fff;cursor:pointer}
+.tl-box .go{font:800 16px 'DM Sans',sans-serif;border:none;border-radius:999px;padding:14px;background:var(--go,#d43333);color:#fff;cursor:pointer}
 .tl-box .x{background:none;border:none;color:var(--ink-soft);font-size:14px;cursor:pointer;align-self:center}
 body.tl-pad{padding-bottom:70px}
 .other-homes{margin-top:22px;text-align:center}
@@ -275,6 +277,7 @@ body.tl-pad{padding-bottom:70px}
     
     <p class="prop-addr" id="propAddr" style="font-weight:600;font-size:17px;color:var(--pine,#15315e);margin:2px 0 6px"></p>
     <p class="prop-specs" id="propSpecs" style="display:flex;gap:10px;flex-wrap:wrap;font-weight:600;font-size:16px;color:var(--ink);margin:0 0 8px"></p>
+    <p class="condition-line" id="conditionLine" hidden></p>
     <p class="subhead" id="subhead"></p>
     <div id="csBanner" hidden style="background:#fff7ed;border:1.5px solid #fdba74;border-radius:14px;padding:14px 16px;margin:0 0 16px;color:#7c2d12">
       <strong style="display:block;font-size:16px;margin-bottom:4px">🔨 Contractor Special — needs major repairs</strong>
@@ -465,7 +468,8 @@ document.addEventListener("DOMContentLoaded", function(){
     const crmBook = id => `https://owner.getownerfinancedhomes.com/book?home=${encodeURIComponent(id)}&lang=en`;
     const book = id => (typeof bookHref === "function" ? bookHref(id) : crmBook(id));
     const canBook = h => !/^pending$/i.test(String(h.status||"").trim());
-    const card = (h, tag) => `<div class="kl-card"><a class="ph" href="${h.id}.html"><img src="${h.heroPhoto||"images/"+h.id+".jpg"}" alt="Home in ${h.city}, ${h.state}" loading="lazy" onerror="if(!this.dataset.t){this.dataset.t=1;this.src='images/sv/${h.id}.jpg'}else{this.remove()}">${tag?`<em>${tag}</em>`:""}</a><div class="bd"><span class="pay">${m(h.monthlyPayment)}/mo</span><b>${h.address}</b><span class="sp">${h.city}, ${h.state} · ${h.beds} bd · ${h.baths} ba</span><span class="sp">${m(h.moveIn)} to move in</span><div class="row"><a href="${h.id}.html">View</a>${canBook(h)?`<a href="${book(h.id)}">Book a Tour</a>`:`<span>Pending</span>`}</div></div></div>`;
+    const cardImg = h => h.cardPhoto ? `<img src="${h.cardPhoto}" alt="Home in ${h.city}, ${h.state}" width="${Number(h.cardWidth)||480}" height="${Number(h.cardHeight)||360}" loading="lazy" decoding="async">` : "";
+    const card = (h, tag) => `<div class="kl-card"><a class="ph" href="${h.id}.html">${cardImg(h)}${tag?`<em>${tag}</em>`:""}</a><div class="bd"><span class="pay">${m(h.monthlyPayment)}/mo</span><b>${h.address}</b><span class="sp">${h.city}, ${h.state} · ${h.beds} bd · ${h.baths} ba</span><span class="sp">${m(h.moveIn)} to move in</span><div class="row"><a href="${h.id}.html">View</a>${canBook(h)?`<a href="${book(h.id)}">Book a Tour</a>`:`<span>Pending</span>`}</div></div></div>`;
     if (rail.length){
       $("klRail").innerHTML = card(home, "This home") + rail.map(h => card(h, h.city === home.city ? "" : h.city)).join("");
       $("klMore").hidden = false;
@@ -508,6 +512,17 @@ document.addEventListener("DOMContentLoaded", function(){
     C.baths ? `<span>${C.baths} bath${Number(C.baths)===1?"":"s"}</span>` : "",
     C.sqft ? `<span style="font-weight:500;color:var(--ink-soft)">${Number(C.sqft).toLocaleString()} sqft</span>` : ""
   ].filter(Boolean).join(`<span style="color:var(--line)">·</span>`);
+  (function(){
+    const line = $("conditionLine");
+    if (!line) return;
+    const text = String(C.condition == null ? "" : C.condition).trim();
+    if (!text) { line.hidden = true; line.replaceChildren(); return; }
+    const k = document.createElement("span");
+    k.className = "k";
+    k.textContent = "Condition";
+    line.replaceChildren(k, document.createTextNode(" " + text));
+    line.hidden = false;
+  })();
   (function(){
     const addrText = [C.address, `${C.city}, ${C.state}${C.zip?" "+C.zip:""}`].filter(Boolean).join(", ");
     const mapQ = encodeURIComponent(addrText);
@@ -558,32 +573,41 @@ document.addEventListener("DOMContentLoaded", function(){
   if (moveInText) $("dMoveIn").textContent = moveInText;
   if (shown(C.lockedPrice)) $("dPrice").textContent = shown(C.lockedPrice);
 
-  // hero photo — uses heroPhoto if set, otherwise auto-tries images/<id>.jpg;
-  // falls back to the branded navy face + city label if there's no photo.
+  // hero photo. hasPhoto / cardPhoto come from scripts/card_photos.py, so a home
+  // with no seller photo does not request a missing cover (that 404'd on every load).
   (function(){
     const img = $("heroImg");
     const sv = `images/sv/${C.id}.jpg`;
-    img.src = C.heroPhoto || `images/${C.id}.jpg`;
-    img.alt = `Home for sale in ${C.city}, ${C.state}`;
-    img.hidden = false;
-    img.onload = ()=>{ $("heroFallback").style.display = "none"; $("heroCity").style.display="none"; };
-    // real seller photo → Google Street View curb shot (labeled) → branded navy face
-    img.onerror = ()=>{
-      if(!img.dataset.svTried){
-        img.dataset.svTried = 1;
-        img.onload = ()=>{ $("heroFallback").style.display="none"; $("heroCity").style.display="none"; $("heroSvBadge").hidden = false; };
-        img.src = sv;
-      } else {
-        img.hidden = true; $("heroSvBadge").hidden = true;
-        // no photo and no Street View image yet: link to Street View itself (Google Maps URLs,
-        // keyless and free, opens on Google's own site; no image is copied)
-        const L = $("heroSvLink");
-        L.href = (C.lat && C.lng)
-          ? `https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${C.lat},${C.lng}`
-          : "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(`${C.address||""}, ${C.city}, ${C.state} ${C.zip||""}`);
-        L.hidden = false;
-      }
+    const real = C.hasPhoto === true || C.hasPhoto === "true" || C.hasPhoto === 1;
+    const known = C.hasPhoto === true || C.hasPhoto === false || C.hasPhoto === "true" || C.hasPhoto === "false" || C.hasPhoto === 0 || C.hasPhoto === 1;
+    const showFace = () => { $("heroFallback").style.display = "none"; $("heroCity").style.display = "none"; };
+    const showLink = () => {
+      img.hidden = true; $("heroSvBadge").hidden = true;
+      const L = $("heroSvLink");
+      L.href = (C.lat && C.lng)
+        ? `https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${C.lat},${C.lng}`
+        : "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(`${C.address||""}, ${C.city}, ${C.state} ${C.zip||""}`);
+      L.hidden = false;
     };
+    img.alt = `Home for sale in ${C.city}, ${C.state}`;
+    if (real) {
+      img.hidden = false;
+      img.onload = showFace;
+      img.onerror = () => { if (!img.dataset.svTried) { img.dataset.svTried = 1; img.onload = () => { showFace(); $("heroSvBadge").hidden = false; }; img.src = sv; } else showLink(); };
+      img.src = C.heroPhoto || `images/${C.id}.jpg`;
+    } else if (known && C.cardPhoto) {
+      img.hidden = false;
+      img.onload = () => { showFace(); $("heroSvBadge").hidden = false; };
+      img.onerror = showLink;
+      img.src = sv;
+    } else if (known) {
+      showLink();
+    } else {
+      img.hidden = false;
+      img.onload = showFace;
+      img.onerror = () => { if (!img.dataset.svTried) { img.dataset.svTried = 1; img.onload = () => { showFace(); $("heroSvBadge").hidden = false; }; img.src = sv; } else showLink(); };
+      img.src = C.heroPhoto || `images/${C.id}.jpg`;
+    }
   })();
 
   const terms = [
@@ -613,6 +637,8 @@ document.addEventListener("DOMContentLoaded", function(){
   };
   if (C.photos && C.photos.length){
     g.innerHTML = C.photos.map(src=>tile(src, true)).join("");
+  } else if (typeof C.photoCount === "number") {
+    $("gallerySection").hidden = true;
   } else {
     // probe -1.jpg, -2.jpg… in order (same contiguous rule the generator uses) and stop at
     // the first miss; only photos that really exist become tiles. Nothing at all → the
@@ -692,12 +718,15 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 </script>
 <style>
-#stickyTour{position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;align-items:center;gap:12px;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--line,#dfe6f0);box-shadow:0 -6px 22px rgba(15,36,68,.12);transform:translateY(110%);transition:transform .25s}
-#stickyTour.on{transform:none}
-#stickyTour .st-p{flex:1;min-width:0;font:800 20px 'Bricolage Grotesque',sans-serif;color:var(--pine,#15315e);line-height:1.1}
+#stickyTour{position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;align-items:center;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--line,#dfe6f0);box-shadow:0 -6px 22px rgba(15,36,68,.12)}
+#stickyTour[hidden]{display:none}
+#stickyTour .st-p{flex:1;min-width:0;font:800 18px 'Bricolage Grotesque',sans-serif;color:var(--pine,#15315e);line-height:1.1}
 #stickyTour .st-p small{display:block;font:500 11px 'DM Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft,#5b6b82)}
-#stickyTour a{flex:0 0 auto;background:var(--go,#e23b3b);color:#fff;text-decoration:none;font:700 15px 'DM Sans',sans-serif;padding:13px 18px;border-radius:12px}
-@media(min-width:900px){#stickyTour{left:auto;right:24px;bottom:24px;border:1px solid var(--line,#dfe6f0);border-radius:16px;max-width:460px}}
+#stickyTour a{flex:0 0 auto;text-decoration:none;font:700 15px 'DM Sans',sans-serif;padding:12px 14px;border-radius:12px;text-align:center}
+#stickyTour a.st-go{background:var(--go,#d43333);color:#fff}
+#stickyTour a.st-sms{background:#fff;color:var(--pine,#15315e);border:1.5px solid var(--line,#d5dbe6)}
+@media(max-width:899px){body.page-home{padding-bottom:84px}#stickyTour{transform:none}}
+@media(min-width:900px){#stickyTour{left:auto;right:24px;bottom:24px;border:1px solid var(--line,#dfe6f0);border-radius:16px;max-width:520px;transform:translateY(110%);transition:transform .25s}#stickyTour.on{transform:none}}
 #lb{position:fixed;inset:0;z-index:200;background:rgba(8,16,30,.94);display:none;align-items:center;justify-content:center;touch-action:pan-y}
 #lb.on{display:flex}
 #lb img{max-width:100%;max-height:86vh;object-fit:contain;user-select:none}
@@ -706,16 +735,42 @@ document.addEventListener("DOMContentLoaded", function(){
 #lb .ct{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:#cfd9ea;font:500 13px 'DM Mono',monospace}
 #gallery img,#heroImg{cursor:zoom-in}
 </style>
-<div id="stickyTour" aria-hidden="true"><div class="st-p"><span id="stPay"></span><small id="stLab"></small></div><a id="stBtn" href="#"></a></div>
+<div id="stickyTour" aria-hidden="true"><div class="st-p"><span id="stPay"></span><small id="stLab"></small></div><a id="stSms" class="st-sms" href="#" hidden>Text us</a><a id="stBtn" class="st-go" href="#">Book a Tour</a></div>
 <div id="lb" role="dialog" aria-modal="true"><button class="x" aria-label="Close">&#10005;</button><button class="pv" aria-label="Previous">&#8249;</button><img alt=""><button class="nx" aria-label="Next">&#8250;</button><div class="ct"></div></div>
 <script>
 document.addEventListener("DOMContentLoaded", function(){
   const $=id=>document.getElementById(id);
-  // sticky "Schedule a tour" — appears once the main button scrolls out of view
-  const main=$("ctaText"), bar=$("stickyTour");
-  function fill(){ $("stBtn").href=main.href; $("stBtn").textContent=main.textContent; $("stPay").textContent=($("dMonthly").textContent||"").trim(); $("stLab").textContent=($("dMonthly").nextElementSibling||{}).textContent||""; }
-  if(main && "IntersectionObserver" in window){
-    new IntersectionObserver(es=>{ fill(); const out=!es[0].isIntersecting && es[0].boundingClientRect.top<0; bar.classList.toggle("on",out); bar.setAttribute("aria-hidden",out?"false":"true"); }).observe(main);
+  // Phones show Book a Tour (and Text us, when that link is already on the page) from load.
+  // Wider screens still wait until the main button scrolls away.
+  const main=$("ctaText"), bar=$("stickyTour"), sms=$("ctaSms");
+  const phone = matchMedia("(max-width:899px)").matches;
+  function fill(){
+    if (!main || !bar) return false;
+    $("stBtn").href = main.href;
+    $("stBtn").textContent = main.textContent || "Book a Tour";
+    $("stPay").textContent = ($("dMonthly").textContent||"").trim();
+    $("stLab").textContent = (($("dMonthly").nextElementSibling||{}).textContent)||"";
+    const stSms = $("stSms");
+    if (stSms) {
+      const href = sms ? String(sms.getAttribute("href") || "") : "";
+      if (sms && !sms.hidden && href.indexOf("sms:") === 0) { stSms.href = sms.href; stSms.hidden = false; }
+      else stSms.hidden = true;
+    }
+    return true;
+  }
+  if (!fill()) {
+    if (bar) { bar.hidden = true; bar.setAttribute("aria-hidden", "true"); }
+  } else if (phone) {
+    bar.hidden = false;
+    bar.classList.add("on");
+    bar.setAttribute("aria-hidden", "false");
+  } else if ("IntersectionObserver" in window) {
+    new IntersectionObserver(es => {
+      fill();
+      const out = !es[0].isIntersecting && es[0].boundingClientRect.top < 0;
+      bar.classList.toggle("on", out);
+      bar.setAttribute("aria-hidden", out ? "false" : "true");
+    }).observe(main);
   }
   // full-screen photo viewer with swipe + arrows
   const lb=$("lb"), im=lb.querySelector("img"), ct=lb.querySelector(".ct"); let list=[], i=0;

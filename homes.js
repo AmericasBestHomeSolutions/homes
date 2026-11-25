@@ -36,6 +36,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    [],
+    hasPhoto: false,
+    photoCount: 0,
+    cardPhoto: "images/cards/eaststlouis-il-2008-61st.webp",
+    cardWidth: 480,
+    cardHeight: 480,
   },
   {
     id: "eaststlouis-il-1640-50th",
@@ -58,6 +63,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/eaststlouis-il-1640-50th-1.jpg", "images/eaststlouis-il-1640-50th-2.jpg", "images/eaststlouis-il-1640-50th-3.jpg", "images/eaststlouis-il-1640-50th-4.jpg", "images/eaststlouis-il-1640-50th-5.jpg", "images/eaststlouis-il-1640-50th-6.jpg", "images/eaststlouis-il-1640-50th-7.jpg", "images/eaststlouis-il-1640-50th-8.jpg", "images/eaststlouis-il-1640-50th-9.jpg", "images/eaststlouis-il-1640-50th-10.jpg", "images/eaststlouis-il-1640-50th-11.jpg", "images/eaststlouis-il-1640-50th-12.jpg", "images/eaststlouis-il-1640-50th-13.jpg", "images/eaststlouis-il-1640-50th-14.jpg", "images/eaststlouis-il-1640-50th-15.jpg", "images/eaststlouis-il-1640-50th-16.jpg", "images/eaststlouis-il-1640-50th-17.jpg", "images/eaststlouis-il-1640-50th-18.jpg", "images/eaststlouis-il-1640-50th-19.jpg", "images/eaststlouis-il-1640-50th-20.jpg", "images/eaststlouis-il-1640-50th-21.jpg", "images/eaststlouis-il-1640-50th-22.jpg", "images/eaststlouis-il-1640-50th-23.jpg", "images/eaststlouis-il-1640-50th-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/eaststlouis-il-1640-50th.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "decatur-il-1527-decatur",
@@ -83,6 +93,11 @@ const HOMES = [
     features: { backyard: "yes", fenced_yard: "yes", garage: "yes", off_street_parking: "yes", storage_shed: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-1527-decatur-1.jpg", "images/decatur-il-1527-decatur-2.jpg", "images/decatur-il-1527-decatur-3.jpg", "images/decatur-il-1527-decatur-4.jpg", "images/decatur-il-1527-decatur-5.jpg", "images/decatur-il-1527-decatur-6.jpg", "images/decatur-il-1527-decatur-7.jpg", "images/decatur-il-1527-decatur-8.jpg", "images/decatur-il-1527-decatur-9.jpg", "images/decatur-il-1527-decatur-10.jpg", "images/decatur-il-1527-decatur-11.jpg", "images/decatur-il-1527-decatur-12.jpg", "images/decatur-il-1527-decatur-13.jpg", "images/decatur-il-1527-decatur-14.jpg", "images/decatur-il-1527-decatur-15.jpg", "images/decatur-il-1527-decatur-16.jpg", "images/decatur-il-1527-decatur-17.jpg"],
+    hasPhoto: true,
+    photoCount: 18,
+    cardPhoto: "images/cards/decatur-il-1527-decatur.webp",
+    cardWidth: 480,
+    cardHeight: 637,
   },
   {
     id: "eaststlouis-il-2636-market",
@@ -105,6 +120,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/eaststlouis-il-2636-market-1.jpg", "images/eaststlouis-il-2636-market-2.jpg", "images/eaststlouis-il-2636-market-3.jpg", "images/eaststlouis-il-2636-market-4.jpg", "images/eaststlouis-il-2636-market-5.jpg", "images/eaststlouis-il-2636-market-6.jpg", "images/eaststlouis-il-2636-market-7.jpg", "images/eaststlouis-il-2636-market-8.jpg", "images/eaststlouis-il-2636-market-9.jpg", "images/eaststlouis-il-2636-market-10.jpg", "images/eaststlouis-il-2636-market-11.jpg", "images/eaststlouis-il-2636-market-12.jpg", "images/eaststlouis-il-2636-market-13.jpg", "images/eaststlouis-il-2636-market-14.jpg", "images/eaststlouis-il-2636-market-15.jpg", "images/eaststlouis-il-2636-market-16.jpg", "images/eaststlouis-il-2636-market-17.jpg", "images/eaststlouis-il-2636-market-18.jpg", "images/eaststlouis-il-2636-market-19.jpg", "images/eaststlouis-il-2636-market-20.jpg", "images/eaststlouis-il-2636-market-21.jpg"],
+    hasPhoto: true,
+    photoCount: 22,
+    cardPhoto: "images/cards/eaststlouis-il-2636-market.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "cleveland-oh-2847-98th",
@@ -128,6 +148,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/cleveland-oh-2847-98th-1.jpg", "images/cleveland-oh-2847-98th-2.jpg", "images/cleveland-oh-2847-98th-3.jpg", "images/cleveland-oh-2847-98th-4.jpg", "images/cleveland-oh-2847-98th-5.jpg", "images/cleveland-oh-2847-98th-6.jpg", "images/cleveland-oh-2847-98th-7.jpg", "images/cleveland-oh-2847-98th-8.jpg", "images/cleveland-oh-2847-98th-9.jpg", "images/cleveland-oh-2847-98th-10.jpg", "images/cleveland-oh-2847-98th-11.jpg", "images/cleveland-oh-2847-98th-12.jpg", "images/cleveland-oh-2847-98th-13.jpg", "images/cleveland-oh-2847-98th-14.jpg", "images/cleveland-oh-2847-98th-15.jpg", "images/cleveland-oh-2847-98th-16.jpg", "images/cleveland-oh-2847-98th-17.jpg", "images/cleveland-oh-2847-98th-18.jpg", "images/cleveland-oh-2847-98th-19.jpg", "images/cleveland-oh-2847-98th-20.jpg", "images/cleveland-oh-2847-98th-21.jpg", "images/cleveland-oh-2847-98th-22.jpg", "images/cleveland-oh-2847-98th-23.jpg", "images/cleveland-oh-2847-98th-24.jpg", "images/cleveland-oh-2847-98th-25.jpg", "images/cleveland-oh-2847-98th-26.jpg", "images/cleveland-oh-2847-98th-27.jpg", "images/cleveland-oh-2847-98th-28.jpg", "images/cleveland-oh-2847-98th-29.jpg"],
+    hasPhoto: true,
+    photoCount: 30,
+    cardPhoto: "images/cards/cleveland-oh-2847-98th.webp",
+    cardWidth: 480,
+    cardHeight: 449,
   },
   {
     id: "nokomis-il-304-spruce",
@@ -151,6 +176,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/nokomis-il-304-spruce-1.jpg", "images/nokomis-il-304-spruce-2.jpg", "images/nokomis-il-304-spruce-3.jpg", "images/nokomis-il-304-spruce-4.jpg", "images/nokomis-il-304-spruce-5.jpg", "images/nokomis-il-304-spruce-6.jpg", "images/nokomis-il-304-spruce-7.jpg", "images/nokomis-il-304-spruce-8.jpg", "images/nokomis-il-304-spruce-9.jpg", "images/nokomis-il-304-spruce-10.jpg", "images/nokomis-il-304-spruce-11.jpg", "images/nokomis-il-304-spruce-12.jpg", "images/nokomis-il-304-spruce-13.jpg", "images/nokomis-il-304-spruce-14.jpg", "images/nokomis-il-304-spruce-15.jpg", "images/nokomis-il-304-spruce-16.jpg", "images/nokomis-il-304-spruce-17.jpg", "images/nokomis-il-304-spruce-18.jpg", "images/nokomis-il-304-spruce-19.jpg", "images/nokomis-il-304-spruce-20.jpg", "images/nokomis-il-304-spruce-21.jpg", "images/nokomis-il-304-spruce-22.jpg", "images/nokomis-il-304-spruce-23.jpg", "images/nokomis-il-304-spruce-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/nokomis-il-304-spruce.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "washingtonpark-il-5617-warren",
@@ -175,6 +205,11 @@ const HOMES = [
     features: { basement: "yes" },
     heroPhoto: "",
     photos:    ["images/washingtonpark-il-5617-warren-1.jpg", "images/washingtonpark-il-5617-warren-2.jpg", "images/washingtonpark-il-5617-warren-3.jpg", "images/washingtonpark-il-5617-warren-4.jpg", "images/washingtonpark-il-5617-warren-5.jpg", "images/washingtonpark-il-5617-warren-6.jpg", "images/washingtonpark-il-5617-warren-7.jpg", "images/washingtonpark-il-5617-warren-8.jpg", "images/washingtonpark-il-5617-warren-9.jpg", "images/washingtonpark-il-5617-warren-10.jpg", "images/washingtonpark-il-5617-warren-11.jpg", "images/washingtonpark-il-5617-warren-12.jpg", "images/washingtonpark-il-5617-warren-13.jpg", "images/washingtonpark-il-5617-warren-14.jpg", "images/washingtonpark-il-5617-warren-15.jpg", "images/washingtonpark-il-5617-warren-16.jpg", "images/washingtonpark-il-5617-warren-17.jpg", "images/washingtonpark-il-5617-warren-18.jpg", "images/washingtonpark-il-5617-warren-19.jpg", "images/washingtonpark-il-5617-warren-20.jpg", "images/washingtonpark-il-5617-warren-21.jpg", "images/washingtonpark-il-5617-warren-22.jpg", "images/washingtonpark-il-5617-warren-23.jpg", "images/washingtonpark-il-5617-warren-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/washingtonpark-il-5617-warren.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "stlouis-mo-2114-lexa",
@@ -197,6 +232,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-2114-lexa-1.jpg", "images/stlouis-mo-2114-lexa-2.jpg", "images/stlouis-mo-2114-lexa-3.jpg", "images/stlouis-mo-2114-lexa-4.jpg", "images/stlouis-mo-2114-lexa-5.jpg", "images/stlouis-mo-2114-lexa-6.jpg", "images/stlouis-mo-2114-lexa-7.jpg", "images/stlouis-mo-2114-lexa-8.jpg", "images/stlouis-mo-2114-lexa-9.jpg", "images/stlouis-mo-2114-lexa-10.jpg", "images/stlouis-mo-2114-lexa-11.jpg", "images/stlouis-mo-2114-lexa-12.jpg", "images/stlouis-mo-2114-lexa-13.jpg", "images/stlouis-mo-2114-lexa-14.jpg", "images/stlouis-mo-2114-lexa-15.jpg"],
+    hasPhoto: true,
+    photoCount: 16,
+    cardPhoto: "images/cards/stlouis-mo-2114-lexa.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "peoria-il-422-louisa",
@@ -220,6 +260,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/peoria-il-422-louisa-1.jpg", "images/peoria-il-422-louisa-2.jpg", "images/peoria-il-422-louisa-3.jpg", "images/peoria-il-422-louisa-4.jpg", "images/peoria-il-422-louisa-5.jpg", "images/peoria-il-422-louisa-6.jpg", "images/peoria-il-422-louisa-7.jpg", "images/peoria-il-422-louisa-8.jpg", "images/peoria-il-422-louisa-9.jpg", "images/peoria-il-422-louisa-10.jpg", "images/peoria-il-422-louisa-11.jpg", "images/peoria-il-422-louisa-12.jpg", "images/peoria-il-422-louisa-13.jpg", "images/peoria-il-422-louisa-14.jpg", "images/peoria-il-422-louisa-15.jpg", "images/peoria-il-422-louisa-16.jpg", "images/peoria-il-422-louisa-17.jpg", "images/peoria-il-422-louisa-18.jpg", "images/peoria-il-422-louisa-19.jpg", "images/peoria-il-422-louisa-20.jpg", "images/peoria-il-422-louisa-21.jpg", "images/peoria-il-422-louisa-22.jpg", "images/peoria-il-422-louisa-23.jpg", "images/peoria-il-422-louisa-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/peoria-il-422-louisa.webp",
+    cardWidth: 480,
+    cardHeight: 637,
   },
   {
     id: "decatur-il-2132-church",
@@ -243,6 +288,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-2132-church-1.jpg", "images/decatur-il-2132-church-2.jpg", "images/decatur-il-2132-church-3.jpg", "images/decatur-il-2132-church-4.jpg", "images/decatur-il-2132-church-5.jpg", "images/decatur-il-2132-church-6.jpg", "images/decatur-il-2132-church-7.jpg", "images/decatur-il-2132-church-8.jpg", "images/decatur-il-2132-church-9.jpg", "images/decatur-il-2132-church-10.jpg", "images/decatur-il-2132-church-11.jpg", "images/decatur-il-2132-church-12.jpg", "images/decatur-il-2132-church-13.jpg", "images/decatur-il-2132-church-14.jpg", "images/decatur-il-2132-church-15.jpg", "images/decatur-il-2132-church-16.jpg", "images/decatur-il-2132-church-17.jpg", "images/decatur-il-2132-church-18.jpg", "images/decatur-il-2132-church-19.jpg", "images/decatur-il-2132-church-20.jpg", "images/decatur-il-2132-church-21.jpg", "images/decatur-il-2132-church-22.jpg", "images/decatur-il-2132-church-23.jpg"],
+    hasPhoto: true,
+    photoCount: 24,
+    cardPhoto: "images/cards/decatur-il-2132-church.webp",
+    cardWidth: 480,
+    cardHeight: 853,
   },
   {
     id: "cahokia-il-11-delores",
@@ -267,6 +317,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/cahokia-il-11-delores-1.jpg", "images/cahokia-il-11-delores-2.jpg", "images/cahokia-il-11-delores-3.jpg", "images/cahokia-il-11-delores-4.jpg", "images/cahokia-il-11-delores-5.jpg", "images/cahokia-il-11-delores-6.jpg", "images/cahokia-il-11-delores-7.jpg", "images/cahokia-il-11-delores-8.jpg", "images/cahokia-il-11-delores-9.jpg", "images/cahokia-il-11-delores-10.jpg", "images/cahokia-il-11-delores-11.jpg", "images/cahokia-il-11-delores-12.jpg", "images/cahokia-il-11-delores-13.jpg", "images/cahokia-il-11-delores-14.jpg", "images/cahokia-il-11-delores-15.jpg", "images/cahokia-il-11-delores-16.jpg", "images/cahokia-il-11-delores-17.jpg", "images/cahokia-il-11-delores-18.jpg", "images/cahokia-il-11-delores-19.jpg", "images/cahokia-il-11-delores-20.jpg", "images/cahokia-il-11-delores-21.jpg", "images/cahokia-il-11-delores-22.jpg", "images/cahokia-il-11-delores-23.jpg", "images/cahokia-il-11-delores-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/cahokia-il-11-delores.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "jackson-ms-35223524-martin",
@@ -289,6 +344,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/jackson-ms-35223524-martin-1.jpg", "images/jackson-ms-35223524-martin-2.jpg", "images/jackson-ms-35223524-martin-3.jpg", "images/jackson-ms-35223524-martin-4.jpg", "images/jackson-ms-35223524-martin-5.jpg", "images/jackson-ms-35223524-martin-6.jpg", "images/jackson-ms-35223524-martin-7.jpg", "images/jackson-ms-35223524-martin-8.jpg", "images/jackson-ms-35223524-martin-9.jpg", "images/jackson-ms-35223524-martin-10.jpg"],
+    hasPhoto: true,
+    photoCount: 11,
+    cardPhoto: "images/cards/jackson-ms-35223524-martin.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "eaststlouis-il-1422-54th",
@@ -311,6 +371,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/eaststlouis-il-1422-54th-1.jpg", "images/eaststlouis-il-1422-54th-2.jpg", "images/eaststlouis-il-1422-54th-3.jpg", "images/eaststlouis-il-1422-54th-4.jpg", "images/eaststlouis-il-1422-54th-5.jpg", "images/eaststlouis-il-1422-54th-6.jpg", "images/eaststlouis-il-1422-54th-7.jpg", "images/eaststlouis-il-1422-54th-8.jpg", "images/eaststlouis-il-1422-54th-9.jpg", "images/eaststlouis-il-1422-54th-10.jpg", "images/eaststlouis-il-1422-54th-11.jpg", "images/eaststlouis-il-1422-54th-12.jpg", "images/eaststlouis-il-1422-54th-13.jpg", "images/eaststlouis-il-1422-54th-14.jpg", "images/eaststlouis-il-1422-54th-15.jpg", "images/eaststlouis-il-1422-54th-16.jpg", "images/eaststlouis-il-1422-54th-17.jpg", "images/eaststlouis-il-1422-54th-18.jpg", "images/eaststlouis-il-1422-54th-19.jpg", "images/eaststlouis-il-1422-54th-20.jpg", "images/eaststlouis-il-1422-54th-21.jpg", "images/eaststlouis-il-1422-54th-22.jpg", "images/eaststlouis-il-1422-54th-23.jpg", "images/eaststlouis-il-1422-54th-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/eaststlouis-il-1422-54th.webp",
+    cardWidth: 480,
+    cardHeight: 438,
   },
   {
     id: "peoria-il-1829-stanley",
@@ -335,6 +400,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/peoria-il-1829-stanley-1.jpg", "images/peoria-il-1829-stanley-2.jpg", "images/peoria-il-1829-stanley-3.jpg", "images/peoria-il-1829-stanley-4.jpg", "images/peoria-il-1829-stanley-5.jpg", "images/peoria-il-1829-stanley-6.jpg", "images/peoria-il-1829-stanley-7.jpg", "images/peoria-il-1829-stanley-8.jpg", "images/peoria-il-1829-stanley-9.jpg", "images/peoria-il-1829-stanley-10.jpg", "images/peoria-il-1829-stanley-11.jpg", "images/peoria-il-1829-stanley-12.jpg", "images/peoria-il-1829-stanley-13.jpg", "images/peoria-il-1829-stanley-14.jpg", "images/peoria-il-1829-stanley-15.jpg", "images/peoria-il-1829-stanley-16.jpg", "images/peoria-il-1829-stanley-17.jpg"],
+    hasPhoto: true,
+    photoCount: 18,
+    cardPhoto: "images/cards/peoria-il-1829-stanley.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "decatur-il-1236-clay",
@@ -357,6 +427,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1236-clay-1.jpg", "images/decatur-il-1236-clay-2.jpg", "images/decatur-il-1236-clay-3.jpg", "images/decatur-il-1236-clay-4.jpg", "images/decatur-il-1236-clay-5.jpg", "images/decatur-il-1236-clay-6.jpg", "images/decatur-il-1236-clay-7.jpg", "images/decatur-il-1236-clay-8.jpg", "images/decatur-il-1236-clay-9.jpg", "images/decatur-il-1236-clay-10.jpg"],
+    hasPhoto: true,
+    photoCount: 11,
+    cardPhoto: "images/cards/decatur-il-1236-clay.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "alton-il-3305-franor",
@@ -382,6 +457,11 @@ const HOMES = [
     features: { garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/alton-il-3305-franor-1.jpg", "images/alton-il-3305-franor-2.jpg", "images/alton-il-3305-franor-3.jpg", "images/alton-il-3305-franor-4.jpg", "images/alton-il-3305-franor-5.jpg", "images/alton-il-3305-franor-6.jpg", "images/alton-il-3305-franor-7.jpg", "images/alton-il-3305-franor-8.jpg", "images/alton-il-3305-franor-9.jpg", "images/alton-il-3305-franor-10.jpg", "images/alton-il-3305-franor-11.jpg", "images/alton-il-3305-franor-12.jpg", "images/alton-il-3305-franor-13.jpg", "images/alton-il-3305-franor-14.jpg", "images/alton-il-3305-franor-15.jpg", "images/alton-il-3305-franor-16.jpg", "images/alton-il-3305-franor-17.jpg", "images/alton-il-3305-franor-18.jpg", "images/alton-il-3305-franor-19.jpg"],
+    hasPhoto: true,
+    photoCount: 20,
+    cardPhoto: "images/cards/alton-il-3305-franor.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "stlouis-mo-2028-prairei",
@@ -407,6 +487,11 @@ const HOMES = [
     features: { basement: "yes" },
     heroPhoto: "",
     photos:    ["images/stlouis-mo-2028-prairei-1.jpg", "images/stlouis-mo-2028-prairei-2.jpg", "images/stlouis-mo-2028-prairei-3.jpg", "images/stlouis-mo-2028-prairei-4.jpg", "images/stlouis-mo-2028-prairei-5.jpg", "images/stlouis-mo-2028-prairei-6.jpg", "images/stlouis-mo-2028-prairei-7.jpg", "images/stlouis-mo-2028-prairei-8.jpg", "images/stlouis-mo-2028-prairei-9.jpg", "images/stlouis-mo-2028-prairei-10.jpg", "images/stlouis-mo-2028-prairei-11.jpg", "images/stlouis-mo-2028-prairei-12.jpg", "images/stlouis-mo-2028-prairei-13.jpg", "images/stlouis-mo-2028-prairei-14.jpg", "images/stlouis-mo-2028-prairei-15.jpg", "images/stlouis-mo-2028-prairei-16.jpg", "images/stlouis-mo-2028-prairei-17.jpg", "images/stlouis-mo-2028-prairei-18.jpg", "images/stlouis-mo-2028-prairei-19.jpg", "images/stlouis-mo-2028-prairei-20.jpg", "images/stlouis-mo-2028-prairei-21.jpg", "images/stlouis-mo-2028-prairei-22.jpg", "images/stlouis-mo-2028-prairei-23.jpg", "images/stlouis-mo-2028-prairei-24.jpg", "images/stlouis-mo-2028-prairei-25.jpg", "images/stlouis-mo-2028-prairei-26.jpg", "images/stlouis-mo-2028-prairei-27.jpg", "images/stlouis-mo-2028-prairei-28.jpg", "images/stlouis-mo-2028-prairei-29.jpg"],
+    hasPhoto: true,
+    photoCount: 30,
+    cardPhoto: "images/cards/stlouis-mo-2028-prairei.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "peoria-il-800-greenlawn",
@@ -429,6 +514,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/peoria-il-800-greenlawn-1.jpg", "images/peoria-il-800-greenlawn-2.jpg", "images/peoria-il-800-greenlawn-3.jpg", "images/peoria-il-800-greenlawn-4.jpg", "images/peoria-il-800-greenlawn-5.jpg", "images/peoria-il-800-greenlawn-6.jpg", "images/peoria-il-800-greenlawn-7.jpg", "images/peoria-il-800-greenlawn-8.jpg", "images/peoria-il-800-greenlawn-9.jpg", "images/peoria-il-800-greenlawn-10.jpg", "images/peoria-il-800-greenlawn-11.jpg", "images/peoria-il-800-greenlawn-12.jpg", "images/peoria-il-800-greenlawn-13.jpg", "images/peoria-il-800-greenlawn-14.jpg", "images/peoria-il-800-greenlawn-15.jpg", "images/peoria-il-800-greenlawn-16.jpg", "images/peoria-il-800-greenlawn-17.jpg", "images/peoria-il-800-greenlawn-18.jpg", "images/peoria-il-800-greenlawn-19.jpg", "images/peoria-il-800-greenlawn-20.jpg", "images/peoria-il-800-greenlawn-21.jpg", "images/peoria-il-800-greenlawn-22.jpg", "images/peoria-il-800-greenlawn-23.jpg", "images/peoria-il-800-greenlawn-24.jpg", "images/peoria-il-800-greenlawn-25.jpg"],
+    hasPhoto: true,
+    photoCount: 26,
+    cardPhoto: "images/cards/peoria-il-800-greenlawn.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-1646-wood",
@@ -452,6 +542,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1646-wood-1.jpg", "images/decatur-il-1646-wood-2.jpg", "images/decatur-il-1646-wood-3.jpg", "images/decatur-il-1646-wood-4.jpg", "images/decatur-il-1646-wood-5.jpg", "images/decatur-il-1646-wood-6.jpg", "images/decatur-il-1646-wood-7.jpg", "images/decatur-il-1646-wood-8.jpg", "images/decatur-il-1646-wood-9.jpg", "images/decatur-il-1646-wood-10.jpg", "images/decatur-il-1646-wood-11.jpg", "images/decatur-il-1646-wood-12.jpg", "images/decatur-il-1646-wood-13.jpg", "images/decatur-il-1646-wood-14.jpg", "images/decatur-il-1646-wood-15.jpg", "images/decatur-il-1646-wood-16.jpg", "images/decatur-il-1646-wood-17.jpg", "images/decatur-il-1646-wood-18.jpg"],
+    hasPhoto: true,
+    photoCount: 19,
+    cardPhoto: "images/cards/decatur-il-1646-wood.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "eaststlouis-il-5538-avon",
@@ -477,6 +572,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/eaststlouis-il-5538-avon-1.jpg", "images/eaststlouis-il-5538-avon-2.jpg", "images/eaststlouis-il-5538-avon-3.jpg", "images/eaststlouis-il-5538-avon-4.jpg", "images/eaststlouis-il-5538-avon-5.jpg", "images/eaststlouis-il-5538-avon-6.jpg", "images/eaststlouis-il-5538-avon-7.jpg", "images/eaststlouis-il-5538-avon-8.jpg", "images/eaststlouis-il-5538-avon-9.jpg", "images/eaststlouis-il-5538-avon-10.jpg", "images/eaststlouis-il-5538-avon-11.jpg", "images/eaststlouis-il-5538-avon-12.jpg", "images/eaststlouis-il-5538-avon-13.jpg", "images/eaststlouis-il-5538-avon-14.jpg", "images/eaststlouis-il-5538-avon-15.jpg", "images/eaststlouis-il-5538-avon-16.jpg", "images/eaststlouis-il-5538-avon-17.jpg", "images/eaststlouis-il-5538-avon-18.jpg", "images/eaststlouis-il-5538-avon-19.jpg", "images/eaststlouis-il-5538-avon-20.jpg", "images/eaststlouis-il-5538-avon-21.jpg", "images/eaststlouis-il-5538-avon-22.jpg", "images/eaststlouis-il-5538-avon-23.jpg", "images/eaststlouis-il-5538-avon-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/eaststlouis-il-5538-avon.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-347-stone",
@@ -501,6 +601,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-347-stone-1.jpg", "images/decatur-il-347-stone-2.jpg", "images/decatur-il-347-stone-3.jpg", "images/decatur-il-347-stone-4.jpg", "images/decatur-il-347-stone-5.jpg", "images/decatur-il-347-stone-6.jpg", "images/decatur-il-347-stone-7.jpg", "images/decatur-il-347-stone-8.jpg", "images/decatur-il-347-stone-9.jpg", "images/decatur-il-347-stone-10.jpg", "images/decatur-il-347-stone-11.jpg", "images/decatur-il-347-stone-12.jpg", "images/decatur-il-347-stone-13.jpg", "images/decatur-il-347-stone-14.jpg", "images/decatur-il-347-stone-15.jpg", "images/decatur-il-347-stone-16.jpg", "images/decatur-il-347-stone-17.jpg", "images/decatur-il-347-stone-18.jpg", "images/decatur-il-347-stone-19.jpg", "images/decatur-il-347-stone-20.jpg", "images/decatur-il-347-stone-21.jpg", "images/decatur-il-347-stone-22.jpg", "images/decatur-il-347-stone-23.jpg", "images/decatur-il-347-stone-24.jpg", "images/decatur-il-347-stone-25.jpg", "images/decatur-il-347-stone-26.jpg"],
+    hasPhoto: true,
+    photoCount: 27,
+    cardPhoto: "images/cards/decatur-il-347-stone.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-2827-hickory",
@@ -526,6 +631,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-2827-hickory-1.jpg", "images/decatur-il-2827-hickory-2.jpg", "images/decatur-il-2827-hickory-3.jpg", "images/decatur-il-2827-hickory-4.jpg", "images/decatur-il-2827-hickory-5.jpg", "images/decatur-il-2827-hickory-6.jpg", "images/decatur-il-2827-hickory-7.jpg", "images/decatur-il-2827-hickory-8.jpg", "images/decatur-il-2827-hickory-9.jpg", "images/decatur-il-2827-hickory-10.jpg", "images/decatur-il-2827-hickory-11.jpg", "images/decatur-il-2827-hickory-12.jpg", "images/decatur-il-2827-hickory-13.jpg", "images/decatur-il-2827-hickory-14.jpg", "images/decatur-il-2827-hickory-15.jpg", "images/decatur-il-2827-hickory-16.jpg", "images/decatur-il-2827-hickory-17.jpg", "images/decatur-il-2827-hickory-18.jpg", "images/decatur-il-2827-hickory-19.jpg", "images/decatur-il-2827-hickory-20.jpg", "images/decatur-il-2827-hickory-21.jpg", "images/decatur-il-2827-hickory-22.jpg", "images/decatur-il-2827-hickory-23.jpg"],
+    hasPhoto: true,
+    photoCount: 24,
+    cardPhoto: "images/cards/decatur-il-2827-hickory.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "eaststlouis-il-3511-converse",
@@ -550,6 +660,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/eaststlouis-il-3511-converse-1.jpg", "images/eaststlouis-il-3511-converse-2.jpg", "images/eaststlouis-il-3511-converse-3.jpg", "images/eaststlouis-il-3511-converse-4.jpg", "images/eaststlouis-il-3511-converse-5.jpg", "images/eaststlouis-il-3511-converse-6.jpg", "images/eaststlouis-il-3511-converse-7.jpg", "images/eaststlouis-il-3511-converse-8.jpg", "images/eaststlouis-il-3511-converse-9.jpg", "images/eaststlouis-il-3511-converse-10.jpg", "images/eaststlouis-il-3511-converse-11.jpg", "images/eaststlouis-il-3511-converse-12.jpg", "images/eaststlouis-il-3511-converse-13.jpg", "images/eaststlouis-il-3511-converse-14.jpg", "images/eaststlouis-il-3511-converse-15.jpg", "images/eaststlouis-il-3511-converse-16.jpg", "images/eaststlouis-il-3511-converse-17.jpg", "images/eaststlouis-il-3511-converse-18.jpg", "images/eaststlouis-il-3511-converse-19.jpg", "images/eaststlouis-il-3511-converse-20.jpg", "images/eaststlouis-il-3511-converse-21.jpg", "images/eaststlouis-il-3511-converse-22.jpg", "images/eaststlouis-il-3511-converse-23.jpg", "images/eaststlouis-il-3511-converse-24.jpg", "images/eaststlouis-il-3511-converse-25.jpg"],
+    hasPhoto: true,
+    photoCount: 26,
+    cardPhoto: "images/cards/eaststlouis-il-3511-converse.webp",
+    cardWidth: 160,
+    cardHeight: 120,
   },
   {
     id: "decatur-il-835-whitmer",
@@ -573,6 +688,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-835-whitmer-1.jpg", "images/decatur-il-835-whitmer-2.jpg", "images/decatur-il-835-whitmer-3.jpg", "images/decatur-il-835-whitmer-4.jpg", "images/decatur-il-835-whitmer-5.jpg", "images/decatur-il-835-whitmer-6.jpg", "images/decatur-il-835-whitmer-7.jpg", "images/decatur-il-835-whitmer-8.jpg", "images/decatur-il-835-whitmer-9.jpg", "images/decatur-il-835-whitmer-10.jpg", "images/decatur-il-835-whitmer-11.jpg", "images/decatur-il-835-whitmer-12.jpg", "images/decatur-il-835-whitmer-13.jpg", "images/decatur-il-835-whitmer-14.jpg", "images/decatur-il-835-whitmer-15.jpg", "images/decatur-il-835-whitmer-16.jpg", "images/decatur-il-835-whitmer-17.jpg", "images/decatur-il-835-whitmer-18.jpg", "images/decatur-il-835-whitmer-19.jpg", "images/decatur-il-835-whitmer-20.jpg"],
+    hasPhoto: true,
+    photoCount: 21,
+    cardPhoto: "images/cards/decatur-il-835-whitmer.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "jackson-ms-1546-david",
@@ -598,6 +718,11 @@ const HOMES = [
     features: { backyard: "yes", storage_shed: "yes" },
     heroPhoto: "",
     photos:    ["images/jackson-ms-1546-david-1.jpg", "images/jackson-ms-1546-david-2.jpg", "images/jackson-ms-1546-david-3.jpg", "images/jackson-ms-1546-david-4.jpg", "images/jackson-ms-1546-david-5.jpg", "images/jackson-ms-1546-david-6.jpg", "images/jackson-ms-1546-david-7.jpg", "images/jackson-ms-1546-david-8.jpg", "images/jackson-ms-1546-david-9.jpg", "images/jackson-ms-1546-david-10.jpg", "images/jackson-ms-1546-david-11.jpg", "images/jackson-ms-1546-david-12.jpg", "images/jackson-ms-1546-david-13.jpg", "images/jackson-ms-1546-david-14.jpg", "images/jackson-ms-1546-david-15.jpg", "images/jackson-ms-1546-david-16.jpg", "images/jackson-ms-1546-david-17.jpg", "images/jackson-ms-1546-david-18.jpg", "images/jackson-ms-1546-david-19.jpg", "images/jackson-ms-1546-david-20.jpg", "images/jackson-ms-1546-david-21.jpg"],
+    hasPhoto: true,
+    photoCount: 22,
+    cardPhoto: "images/cards/jackson-ms-1546-david.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-1908-union",
@@ -623,6 +748,11 @@ const HOMES = [
     features: { basement: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-1908-union-1.jpg", "images/decatur-il-1908-union-2.jpg", "images/decatur-il-1908-union-3.jpg", "images/decatur-il-1908-union-4.jpg", "images/decatur-il-1908-union-5.jpg", "images/decatur-il-1908-union-6.jpg", "images/decatur-il-1908-union-7.jpg", "images/decatur-il-1908-union-8.jpg", "images/decatur-il-1908-union-9.jpg", "images/decatur-il-1908-union-10.jpg", "images/decatur-il-1908-union-11.jpg", "images/decatur-il-1908-union-12.jpg", "images/decatur-il-1908-union-13.jpg", "images/decatur-il-1908-union-14.jpg", "images/decatur-il-1908-union-15.jpg", "images/decatur-il-1908-union-16.jpg", "images/decatur-il-1908-union-17.jpg", "images/decatur-il-1908-union-18.jpg", "images/decatur-il-1908-union-19.jpg", "images/decatur-il-1908-union-20.jpg", "images/decatur-il-1908-union-21.jpg", "images/decatur-il-1908-union-22.jpg", "images/decatur-il-1908-union-23.jpg"],
+    hasPhoto: true,
+    photoCount: 24,
+    cardPhoto: "images/cards/decatur-il-1908-union.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-1303-whitmer",
@@ -648,6 +778,11 @@ const HOMES = [
     features: { backyard: "yes", fenced_yard: "yes", basement: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-1303-whitmer-1.jpg", "images/decatur-il-1303-whitmer-2.jpg", "images/decatur-il-1303-whitmer-3.jpg", "images/decatur-il-1303-whitmer-4.jpg", "images/decatur-il-1303-whitmer-5.jpg", "images/decatur-il-1303-whitmer-6.jpg", "images/decatur-il-1303-whitmer-7.jpg", "images/decatur-il-1303-whitmer-8.jpg", "images/decatur-il-1303-whitmer-9.jpg", "images/decatur-il-1303-whitmer-10.jpg", "images/decatur-il-1303-whitmer-11.jpg", "images/decatur-il-1303-whitmer-12.jpg", "images/decatur-il-1303-whitmer-13.jpg", "images/decatur-il-1303-whitmer-14.jpg", "images/decatur-il-1303-whitmer-15.jpg"],
+    hasPhoto: true,
+    photoCount: 16,
+    cardPhoto: "images/cards/decatur-il-1303-whitmer.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "peoria-il-1610-lydia",
@@ -671,6 +806,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/peoria-il-1610-lydia-1.jpg", "images/peoria-il-1610-lydia-2.jpg", "images/peoria-il-1610-lydia-3.jpg", "images/peoria-il-1610-lydia-4.jpg", "images/peoria-il-1610-lydia-5.jpg", "images/peoria-il-1610-lydia-6.jpg", "images/peoria-il-1610-lydia-7.jpg", "images/peoria-il-1610-lydia-8.jpg", "images/peoria-il-1610-lydia-9.jpg", "images/peoria-il-1610-lydia-10.jpg", "images/peoria-il-1610-lydia-11.jpg", "images/peoria-il-1610-lydia-12.jpg", "images/peoria-il-1610-lydia-13.jpg", "images/peoria-il-1610-lydia-14.jpg", "images/peoria-il-1610-lydia-15.jpg", "images/peoria-il-1610-lydia-16.jpg", "images/peoria-il-1610-lydia-17.jpg", "images/peoria-il-1610-lydia-18.jpg", "images/peoria-il-1610-lydia-19.jpg", "images/peoria-il-1610-lydia-20.jpg", "images/peoria-il-1610-lydia-21.jpg", "images/peoria-il-1610-lydia-22.jpg"],
+    hasPhoto: true,
+    photoCount: 23,
+    cardPhoto: "images/cards/peoria-il-1610-lydia.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-515-boyd",
@@ -695,6 +835,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-515-boyd-1.jpg", "images/decatur-il-515-boyd-2.jpg", "images/decatur-il-515-boyd-3.jpg", "images/decatur-il-515-boyd-4.jpg", "images/decatur-il-515-boyd-5.jpg", "images/decatur-il-515-boyd-6.jpg", "images/decatur-il-515-boyd-7.jpg", "images/decatur-il-515-boyd-8.jpg", "images/decatur-il-515-boyd-9.jpg", "images/decatur-il-515-boyd-10.jpg", "images/decatur-il-515-boyd-11.jpg", "images/decatur-il-515-boyd-12.jpg", "images/decatur-il-515-boyd-13.jpg", "images/decatur-il-515-boyd-14.jpg", "images/decatur-il-515-boyd-15.jpg", "images/decatur-il-515-boyd-16.jpg", "images/decatur-il-515-boyd-17.jpg", "images/decatur-il-515-boyd-18.jpg", "images/decatur-il-515-boyd-19.jpg"],
+    hasPhoto: true,
+    photoCount: 20,
+    cardPhoto: "images/cards/decatur-il-515-boyd.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "eaststlouis-il-3720-walnut",
@@ -719,6 +864,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/eaststlouis-il-3720-walnut-1.jpg", "images/eaststlouis-il-3720-walnut-2.jpg", "images/eaststlouis-il-3720-walnut-3.jpg", "images/eaststlouis-il-3720-walnut-4.jpg", "images/eaststlouis-il-3720-walnut-5.jpg", "images/eaststlouis-il-3720-walnut-6.jpg"],
+    hasPhoto: true,
+    photoCount: 7,
+    cardPhoto: "images/cards/eaststlouis-il-3720-walnut.webp",
+    cardWidth: 480,
+    cardHeight: 641,
   },
   {
     id: "decatur-il-1365-walnut",
@@ -744,6 +894,11 @@ const HOMES = [
     features: { backyard: "yes", basement: "yes", central_air: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-1365-walnut-1.jpg", "images/decatur-il-1365-walnut-2.jpg", "images/decatur-il-1365-walnut-3.jpg", "images/decatur-il-1365-walnut-4.jpg", "images/decatur-il-1365-walnut-5.jpg", "images/decatur-il-1365-walnut-6.jpg", "images/decatur-il-1365-walnut-7.jpg", "images/decatur-il-1365-walnut-8.jpg", "images/decatur-il-1365-walnut-9.jpg", "images/decatur-il-1365-walnut-10.jpg", "images/decatur-il-1365-walnut-11.jpg", "images/decatur-il-1365-walnut-12.jpg", "images/decatur-il-1365-walnut-13.jpg", "images/decatur-il-1365-walnut-14.jpg", "images/decatur-il-1365-walnut-15.jpg", "images/decatur-il-1365-walnut-16.jpg", "images/decatur-il-1365-walnut-17.jpg", "images/decatur-il-1365-walnut-18.jpg", "images/decatur-il-1365-walnut-19.jpg", "images/decatur-il-1365-walnut-20.jpg", "images/decatur-il-1365-walnut-21.jpg", "images/decatur-il-1365-walnut-22.jpg", "images/decatur-il-1365-walnut-23.jpg", "images/decatur-il-1365-walnut-24.jpg", "images/decatur-il-1365-walnut-25.jpg", "images/decatur-il-1365-walnut-26.jpg", "images/decatur-il-1365-walnut-27.jpg", "images/decatur-il-1365-walnut-28.jpg", "images/decatur-il-1365-walnut-29.jpg", "images/decatur-il-1365-walnut-30.jpg", "images/decatur-il-1365-walnut-31.jpg", "images/decatur-il-1365-walnut-32.jpg", "images/decatur-il-1365-walnut-33.jpg", "images/decatur-il-1365-walnut-34.jpg", "images/decatur-il-1365-walnut-35.jpg", "images/decatur-il-1365-walnut-36.jpg"],
+    hasPhoto: true,
+    photoCount: 37,
+    cardPhoto: "images/cards/decatur-il-1365-walnut.webp",
+    cardWidth: 480,
+    cardHeight: 626,
   },
   {
     id: "flint-mi-3501-milbourne",
@@ -768,6 +923,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/flint-mi-3501-milbourne-1.jpg", "images/flint-mi-3501-milbourne-2.jpg", "images/flint-mi-3501-milbourne-3.jpg", "images/flint-mi-3501-milbourne-4.jpg", "images/flint-mi-3501-milbourne-5.jpg", "images/flint-mi-3501-milbourne-6.jpg", "images/flint-mi-3501-milbourne-7.jpg", "images/flint-mi-3501-milbourne-8.jpg", "images/flint-mi-3501-milbourne-9.jpg", "images/flint-mi-3501-milbourne-10.jpg", "images/flint-mi-3501-milbourne-11.jpg", "images/flint-mi-3501-milbourne-12.jpg", "images/flint-mi-3501-milbourne-13.jpg", "images/flint-mi-3501-milbourne-14.jpg", "images/flint-mi-3501-milbourne-15.jpg", "images/flint-mi-3501-milbourne-16.jpg", "images/flint-mi-3501-milbourne-17.jpg", "images/flint-mi-3501-milbourne-18.jpg", "images/flint-mi-3501-milbourne-19.jpg"],
+    hasPhoto: true,
+    photoCount: 20,
+    cardPhoto: "images/cards/flint-mi-3501-milbourne.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "stlouis-mo-5811-helen",
@@ -791,6 +951,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-5811-helen-1.jpg", "images/stlouis-mo-5811-helen-2.jpg", "images/stlouis-mo-5811-helen-3.jpg", "images/stlouis-mo-5811-helen-4.jpg", "images/stlouis-mo-5811-helen-5.jpg", "images/stlouis-mo-5811-helen-6.jpg", "images/stlouis-mo-5811-helen-7.jpg", "images/stlouis-mo-5811-helen-8.jpg", "images/stlouis-mo-5811-helen-9.jpg", "images/stlouis-mo-5811-helen-10.jpg", "images/stlouis-mo-5811-helen-11.jpg", "images/stlouis-mo-5811-helen-12.jpg", "images/stlouis-mo-5811-helen-13.jpg", "images/stlouis-mo-5811-helen-14.jpg", "images/stlouis-mo-5811-helen-15.jpg", "images/stlouis-mo-5811-helen-16.jpg", "images/stlouis-mo-5811-helen-17.jpg", "images/stlouis-mo-5811-helen-18.jpg", "images/stlouis-mo-5811-helen-19.jpg", "images/stlouis-mo-5811-helen-20.jpg"],
+    hasPhoto: true,
+    photoCount: 21,
+    cardPhoto: "images/cards/stlouis-mo-5811-helen.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-1103-prairie",
@@ -814,6 +979,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1103-prairie-1.jpg", "images/decatur-il-1103-prairie-2.jpg", "images/decatur-il-1103-prairie-3.jpg", "images/decatur-il-1103-prairie-4.jpg", "images/decatur-il-1103-prairie-5.jpg", "images/decatur-il-1103-prairie-6.jpg", "images/decatur-il-1103-prairie-7.jpg", "images/decatur-il-1103-prairie-8.jpg", "images/decatur-il-1103-prairie-9.jpg", "images/decatur-il-1103-prairie-10.jpg", "images/decatur-il-1103-prairie-11.jpg", "images/decatur-il-1103-prairie-12.jpg", "images/decatur-il-1103-prairie-13.jpg", "images/decatur-il-1103-prairie-14.jpg", "images/decatur-il-1103-prairie-15.jpg", "images/decatur-il-1103-prairie-16.jpg", "images/decatur-il-1103-prairie-17.jpg", "images/decatur-il-1103-prairie-18.jpg", "images/decatur-il-1103-prairie-19.jpg", "images/decatur-il-1103-prairie-20.jpg", "images/decatur-il-1103-prairie-21.jpg", "images/decatur-il-1103-prairie-22.jpg", "images/decatur-il-1103-prairie-23.jpg", "images/decatur-il-1103-prairie-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/decatur-il-1103-prairie.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-1286-vanderhoof",
@@ -840,6 +1010,11 @@ const HOMES = [
     features: { backyard: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-1286-vanderhoof-1.jpg", "images/decatur-il-1286-vanderhoof-2.jpg", "images/decatur-il-1286-vanderhoof-3.jpg", "images/decatur-il-1286-vanderhoof-4.jpg", "images/decatur-il-1286-vanderhoof-5.jpg", "images/decatur-il-1286-vanderhoof-6.jpg", "images/decatur-il-1286-vanderhoof-7.jpg", "images/decatur-il-1286-vanderhoof-8.jpg", "images/decatur-il-1286-vanderhoof-9.jpg", "images/decatur-il-1286-vanderhoof-10.jpg", "images/decatur-il-1286-vanderhoof-11.jpg", "images/decatur-il-1286-vanderhoof-12.jpg", "images/decatur-il-1286-vanderhoof-13.jpg", "images/decatur-il-1286-vanderhoof-14.jpg", "images/decatur-il-1286-vanderhoof-15.jpg", "images/decatur-il-1286-vanderhoof-16.jpg", "images/decatur-il-1286-vanderhoof-17.jpg", "images/decatur-il-1286-vanderhoof-18.jpg", "images/decatur-il-1286-vanderhoof-19.jpg", "images/decatur-il-1286-vanderhoof-20.jpg", "images/decatur-il-1286-vanderhoof-21.jpg", "images/decatur-il-1286-vanderhoof-22.jpg", "images/decatur-il-1286-vanderhoof-23.jpg", "images/decatur-il-1286-vanderhoof-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/decatur-il-1286-vanderhoof.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "cahokia-il-1320-williams",
@@ -863,6 +1038,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/cahokia-il-1320-williams-1.jpg", "images/cahokia-il-1320-williams-2.jpg", "images/cahokia-il-1320-williams-3.jpg", "images/cahokia-il-1320-williams-4.jpg", "images/cahokia-il-1320-williams-5.jpg", "images/cahokia-il-1320-williams-6.jpg", "images/cahokia-il-1320-williams-7.jpg", "images/cahokia-il-1320-williams-8.jpg", "images/cahokia-il-1320-williams-9.jpg", "images/cahokia-il-1320-williams-10.jpg", "images/cahokia-il-1320-williams-11.jpg", "images/cahokia-il-1320-williams-12.jpg", "images/cahokia-il-1320-williams-13.jpg", "images/cahokia-il-1320-williams-14.jpg", "images/cahokia-il-1320-williams-15.jpg", "images/cahokia-il-1320-williams-16.jpg", "images/cahokia-il-1320-williams-17.jpg", "images/cahokia-il-1320-williams-18.jpg", "images/cahokia-il-1320-williams-19.jpg"],
+    hasPhoto: true,
+    photoCount: 20,
+    cardPhoto: "images/cards/cahokia-il-1320-williams.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "stlouis-mo-3738-sylvan",
@@ -887,6 +1067,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-3738-sylvan-1.jpg", "images/stlouis-mo-3738-sylvan-2.jpg", "images/stlouis-mo-3738-sylvan-3.jpg", "images/stlouis-mo-3738-sylvan-4.jpg", "images/stlouis-mo-3738-sylvan-5.jpg", "images/stlouis-mo-3738-sylvan-6.jpg", "images/stlouis-mo-3738-sylvan-7.jpg", "images/stlouis-mo-3738-sylvan-8.jpg", "images/stlouis-mo-3738-sylvan-9.jpg"],
+    hasPhoto: true,
+    photoCount: 10,
+    cardPhoto: "images/cards/stlouis-mo-3738-sylvan.webp",
+    cardWidth: 480,
+    cardHeight: 293,
   },
   {
     id: "evansville-in-731-florida",
@@ -911,6 +1096,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/evansville-in-731-florida-1.jpg", "images/evansville-in-731-florida-2.jpg", "images/evansville-in-731-florida-3.jpg", "images/evansville-in-731-florida-4.jpg", "images/evansville-in-731-florida-5.jpg", "images/evansville-in-731-florida-6.jpg", "images/evansville-in-731-florida-7.jpg", "images/evansville-in-731-florida-8.jpg", "images/evansville-in-731-florida-9.jpg", "images/evansville-in-731-florida-10.jpg", "images/evansville-in-731-florida-11.jpg", "images/evansville-in-731-florida-12.jpg", "images/evansville-in-731-florida-13.jpg", "images/evansville-in-731-florida-14.jpg", "images/evansville-in-731-florida-15.jpg", "images/evansville-in-731-florida-16.jpg", "images/evansville-in-731-florida-17.jpg"],
+    hasPhoto: true,
+    photoCount: 18,
+    cardPhoto: "images/cards/evansville-in-731-florida.webp",
+    cardWidth: 480,
+    cardHeight: 320,
   },
   {
     id: "rossville-il-304-gilbert",
@@ -935,6 +1125,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/rossville-il-304-gilbert-1.jpg", "images/rossville-il-304-gilbert-2.jpg", "images/rossville-il-304-gilbert-3.jpg", "images/rossville-il-304-gilbert-4.jpg", "images/rossville-il-304-gilbert-5.jpg", "images/rossville-il-304-gilbert-6.jpg", "images/rossville-il-304-gilbert-7.jpg", "images/rossville-il-304-gilbert-8.jpg", "images/rossville-il-304-gilbert-9.jpg", "images/rossville-il-304-gilbert-10.jpg", "images/rossville-il-304-gilbert-11.jpg", "images/rossville-il-304-gilbert-12.jpg"],
+    hasPhoto: true,
+    photoCount: 13,
+    cardPhoto: "images/cards/rossville-il-304-gilbert.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "stlouis-mo-5346-janet",
@@ -959,6 +1154,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-5346-janet-1.jpg", "images/stlouis-mo-5346-janet-2.jpg", "images/stlouis-mo-5346-janet-3.jpg", "images/stlouis-mo-5346-janet-4.jpg", "images/stlouis-mo-5346-janet-5.jpg", "images/stlouis-mo-5346-janet-6.jpg", "images/stlouis-mo-5346-janet-7.jpg", "images/stlouis-mo-5346-janet-8.jpg", "images/stlouis-mo-5346-janet-9.jpg", "images/stlouis-mo-5346-janet-10.jpg", "images/stlouis-mo-5346-janet-11.jpg", "images/stlouis-mo-5346-janet-12.jpg", "images/stlouis-mo-5346-janet-13.jpg", "images/stlouis-mo-5346-janet-14.jpg", "images/stlouis-mo-5346-janet-15.jpg", "images/stlouis-mo-5346-janet-16.jpg", "images/stlouis-mo-5346-janet-17.jpg", "images/stlouis-mo-5346-janet-18.jpg", "images/stlouis-mo-5346-janet-19.jpg"],
+    hasPhoto: true,
+    photoCount: 20,
+    cardPhoto: "images/cards/stlouis-mo-5346-janet.webp",
+    cardWidth: 480,
+    cardHeight: 307,
   },
   {
     id: "decatur-il-785-cantrell",
@@ -984,6 +1184,11 @@ const HOMES = [
     features: { garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-785-cantrell-1.jpg", "images/decatur-il-785-cantrell-2.jpg", "images/decatur-il-785-cantrell-3.jpg", "images/decatur-il-785-cantrell-4.jpg", "images/decatur-il-785-cantrell-5.jpg", "images/decatur-il-785-cantrell-6.jpg", "images/decatur-il-785-cantrell-7.jpg", "images/decatur-il-785-cantrell-8.jpg", "images/decatur-il-785-cantrell-9.jpg", "images/decatur-il-785-cantrell-10.jpg", "images/decatur-il-785-cantrell-11.jpg", "images/decatur-il-785-cantrell-12.jpg", "images/decatur-il-785-cantrell-13.jpg", "images/decatur-il-785-cantrell-14.jpg", "images/decatur-il-785-cantrell-15.jpg", "images/decatur-il-785-cantrell-16.jpg", "images/decatur-il-785-cantrell-17.jpg", "images/decatur-il-785-cantrell-18.jpg", "images/decatur-il-785-cantrell-19.jpg", "images/decatur-il-785-cantrell-20.jpg", "images/decatur-il-785-cantrell-21.jpg", "images/decatur-il-785-cantrell-22.jpg", "images/decatur-il-785-cantrell-23.jpg", "images/decatur-il-785-cantrell-24.jpg", "images/decatur-il-785-cantrell-25.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/decatur-il-785-cantrell.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-1439-jasper",
@@ -1007,6 +1212,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1439-jasper-1.jpg", "images/decatur-il-1439-jasper-2.jpg", "images/decatur-il-1439-jasper-3.jpg", "images/decatur-il-1439-jasper-4.jpg", "images/decatur-il-1439-jasper-5.jpg", "images/decatur-il-1439-jasper-6.jpg", "images/decatur-il-1439-jasper-7.jpg", "images/decatur-il-1439-jasper-8.jpg", "images/decatur-il-1439-jasper-9.jpg"],
+    hasPhoto: true,
+    photoCount: 10,
+    cardPhoto: "images/cards/decatur-il-1439-jasper.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "stlouis-mo-32-connolly",
@@ -1031,6 +1241,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-32-connolly-1.jpg", "images/stlouis-mo-32-connolly-2.jpg", "images/stlouis-mo-32-connolly-3.jpg", "images/stlouis-mo-32-connolly-4.jpg", "images/stlouis-mo-32-connolly-5.jpg", "images/stlouis-mo-32-connolly-6.jpg", "images/stlouis-mo-32-connolly-7.jpg", "images/stlouis-mo-32-connolly-8.jpg", "images/stlouis-mo-32-connolly-9.jpg", "images/stlouis-mo-32-connolly-10.jpg", "images/stlouis-mo-32-connolly-11.jpg", "images/stlouis-mo-32-connolly-12.jpg", "images/stlouis-mo-32-connolly-13.jpg", "images/stlouis-mo-32-connolly-14.jpg", "images/stlouis-mo-32-connolly-15.jpg", "images/stlouis-mo-32-connolly-16.jpg", "images/stlouis-mo-32-connolly-17.jpg", "images/stlouis-mo-32-connolly-18.jpg", "images/stlouis-mo-32-connolly-19.jpg", "images/stlouis-mo-32-connolly-20.jpg", "images/stlouis-mo-32-connolly-21.jpg", "images/stlouis-mo-32-connolly-22.jpg", "images/stlouis-mo-32-connolly-23.jpg", "images/stlouis-mo-32-connolly-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/stlouis-mo-32-connolly.webp",
+    cardWidth: 480,
+    cardHeight: 658,
   },
   {
     id: "decatur-il-1746-woodford",
@@ -1055,6 +1270,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1746-woodford-1.jpg", "images/decatur-il-1746-woodford-2.jpg", "images/decatur-il-1746-woodford-3.jpg", "images/decatur-il-1746-woodford-4.jpg", "images/decatur-il-1746-woodford-5.jpg", "images/decatur-il-1746-woodford-6.jpg", "images/decatur-il-1746-woodford-7.jpg", "images/decatur-il-1746-woodford-8.jpg", "images/decatur-il-1746-woodford-9.jpg", "images/decatur-il-1746-woodford-10.jpg", "images/decatur-il-1746-woodford-11.jpg", "images/decatur-il-1746-woodford-12.jpg", "images/decatur-il-1746-woodford-13.jpg", "images/decatur-il-1746-woodford-14.jpg", "images/decatur-il-1746-woodford-15.jpg", "images/decatur-il-1746-woodford-16.jpg", "images/decatur-il-1746-woodford-17.jpg", "images/decatur-il-1746-woodford-18.jpg", "images/decatur-il-1746-woodford-19.jpg", "images/decatur-il-1746-woodford-20.jpg", "images/decatur-il-1746-woodford-21.jpg", "images/decatur-il-1746-woodford-22.jpg", "images/decatur-il-1746-woodford-23.jpg", "images/decatur-il-1746-woodford-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/decatur-il-1746-woodford.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "augusta-ga-1903-heckle",
@@ -1080,6 +1300,11 @@ const HOMES = [
     features: { backyard: "yes", fenced_yard: "yes" },
     heroPhoto: "",
     photos:    ["images/augusta-ga-1903-heckle-1.jpg", "images/augusta-ga-1903-heckle-2.jpg", "images/augusta-ga-1903-heckle-3.jpg", "images/augusta-ga-1903-heckle-4.jpg", "images/augusta-ga-1903-heckle-5.jpg", "images/augusta-ga-1903-heckle-6.jpg", "images/augusta-ga-1903-heckle-7.jpg", "images/augusta-ga-1903-heckle-8.jpg", "images/augusta-ga-1903-heckle-9.jpg", "images/augusta-ga-1903-heckle-10.jpg", "images/augusta-ga-1903-heckle-11.jpg", "images/augusta-ga-1903-heckle-12.jpg", "images/augusta-ga-1903-heckle-13.jpg", "images/augusta-ga-1903-heckle-14.jpg", "images/augusta-ga-1903-heckle-15.jpg", "images/augusta-ga-1903-heckle-16.jpg", "images/augusta-ga-1903-heckle-17.jpg", "images/augusta-ga-1903-heckle-18.jpg", "images/augusta-ga-1903-heckle-19.jpg", "images/augusta-ga-1903-heckle-20.jpg", "images/augusta-ga-1903-heckle-21.jpg", "images/augusta-ga-1903-heckle-22.jpg", "images/augusta-ga-1903-heckle-23.jpg", "images/augusta-ga-1903-heckle-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/augusta-ga-1903-heckle.webp",
+    cardWidth: 480,
+    cardHeight: 270,
   },
   {
     id: "augusta-ga-408-colorado",
@@ -1105,6 +1330,11 @@ const HOMES = [
     features: { backyard: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/augusta-ga-408-colorado-1.jpg", "images/augusta-ga-408-colorado-2.jpg", "images/augusta-ga-408-colorado-3.jpg", "images/augusta-ga-408-colorado-4.jpg", "images/augusta-ga-408-colorado-5.jpg", "images/augusta-ga-408-colorado-6.jpg", "images/augusta-ga-408-colorado-7.jpg", "images/augusta-ga-408-colorado-8.jpg", "images/augusta-ga-408-colorado-9.jpg", "images/augusta-ga-408-colorado-10.jpg", "images/augusta-ga-408-colorado-11.jpg", "images/augusta-ga-408-colorado-12.jpg"],
+    hasPhoto: true,
+    photoCount: 13,
+    cardPhoto: "images/cards/augusta-ga-408-colorado.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "augusta-ga-1947-ellis",
@@ -1130,6 +1360,11 @@ const HOMES = [
     features: { backyard: "yes", fenced_yard: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/augusta-ga-1947-ellis-1.jpg", "images/augusta-ga-1947-ellis-2.jpg", "images/augusta-ga-1947-ellis-3.jpg", "images/augusta-ga-1947-ellis-4.jpg", "images/augusta-ga-1947-ellis-5.jpg", "images/augusta-ga-1947-ellis-6.jpg", "images/augusta-ga-1947-ellis-7.jpg", "images/augusta-ga-1947-ellis-8.jpg", "images/augusta-ga-1947-ellis-9.jpg", "images/augusta-ga-1947-ellis-10.jpg", "images/augusta-ga-1947-ellis-11.jpg", "images/augusta-ga-1947-ellis-12.jpg", "images/augusta-ga-1947-ellis-13.jpg", "images/augusta-ga-1947-ellis-14.jpg", "images/augusta-ga-1947-ellis-15.jpg", "images/augusta-ga-1947-ellis-16.jpg", "images/augusta-ga-1947-ellis-17.jpg", "images/augusta-ga-1947-ellis-18.jpg", "images/augusta-ga-1947-ellis-19.jpg", "images/augusta-ga-1947-ellis-20.jpg", "images/augusta-ga-1947-ellis-21.jpg", "images/augusta-ga-1947-ellis-22.jpg", "images/augusta-ga-1947-ellis-23.jpg", "images/augusta-ga-1947-ellis-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/augusta-ga-1947-ellis.webp",
+    cardWidth: 450,
+    cardHeight: 600,
   },
   {
     id: "belleville-il-233-11th",
@@ -1155,6 +1390,11 @@ const HOMES = [
     features: { garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/belleville-il-233-11th-1.jpg", "images/belleville-il-233-11th-2.jpg", "images/belleville-il-233-11th-3.jpg", "images/belleville-il-233-11th-4.jpg", "images/belleville-il-233-11th-5.jpg", "images/belleville-il-233-11th-6.jpg", "images/belleville-il-233-11th-7.jpg", "images/belleville-il-233-11th-8.jpg", "images/belleville-il-233-11th-9.jpg", "images/belleville-il-233-11th-10.jpg", "images/belleville-il-233-11th-11.jpg", "images/belleville-il-233-11th-12.jpg", "images/belleville-il-233-11th-13.jpg", "images/belleville-il-233-11th-14.jpg", "images/belleville-il-233-11th-15.jpg", "images/belleville-il-233-11th-16.jpg", "images/belleville-il-233-11th-17.jpg", "images/belleville-il-233-11th-18.jpg", "images/belleville-il-233-11th-19.jpg", "images/belleville-il-233-11th-20.jpg", "images/belleville-il-233-11th-21.jpg", "images/belleville-il-233-11th-22.jpg", "images/belleville-il-233-11th-23.jpg", "images/belleville-il-233-11th-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/belleville-il-233-11th.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "granitecity-il-1734-spruce",
@@ -1178,6 +1418,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/granitecity-il-1734-spruce-1.jpg", "images/granitecity-il-1734-spruce-2.jpg", "images/granitecity-il-1734-spruce-3.jpg", "images/granitecity-il-1734-spruce-4.jpg", "images/granitecity-il-1734-spruce-5.jpg", "images/granitecity-il-1734-spruce-6.jpg", "images/granitecity-il-1734-spruce-7.jpg", "images/granitecity-il-1734-spruce-8.jpg", "images/granitecity-il-1734-spruce-9.jpg", "images/granitecity-il-1734-spruce-10.jpg", "images/granitecity-il-1734-spruce-11.jpg", "images/granitecity-il-1734-spruce-12.jpg", "images/granitecity-il-1734-spruce-13.jpg", "images/granitecity-il-1734-spruce-14.jpg", "images/granitecity-il-1734-spruce-15.jpg", "images/granitecity-il-1734-spruce-16.jpg", "images/granitecity-il-1734-spruce-17.jpg", "images/granitecity-il-1734-spruce-18.jpg", "images/granitecity-il-1734-spruce-19.jpg", "images/granitecity-il-1734-spruce-20.jpg", "images/granitecity-il-1734-spruce-21.jpg", "images/granitecity-il-1734-spruce-22.jpg", "images/granitecity-il-1734-spruce-23.jpg", "images/granitecity-il-1734-spruce-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/granitecity-il-1734-spruce.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "cahokia-il-107-judith",
@@ -1202,6 +1447,11 @@ const HOMES = [
     features: { garage: "no" },
     heroPhoto: "",
     photos:    ["images/cahokia-il-107-judith-1.jpg", "images/cahokia-il-107-judith-2.jpg", "images/cahokia-il-107-judith-3.jpg", "images/cahokia-il-107-judith-4.jpg", "images/cahokia-il-107-judith-5.jpg", "images/cahokia-il-107-judith-6.jpg", "images/cahokia-il-107-judith-7.jpg", "images/cahokia-il-107-judith-8.jpg", "images/cahokia-il-107-judith-9.jpg", "images/cahokia-il-107-judith-10.jpg", "images/cahokia-il-107-judith-11.jpg", "images/cahokia-il-107-judith-12.jpg", "images/cahokia-il-107-judith-13.jpg", "images/cahokia-il-107-judith-14.jpg", "images/cahokia-il-107-judith-15.jpg", "images/cahokia-il-107-judith-16.jpg", "images/cahokia-il-107-judith-17.jpg", "images/cahokia-il-107-judith-18.jpg", "images/cahokia-il-107-judith-19.jpg", "images/cahokia-il-107-judith-20.jpg", "images/cahokia-il-107-judith-21.jpg", "images/cahokia-il-107-judith-22.jpg", "images/cahokia-il-107-judith-23.jpg", "images/cahokia-il-107-judith-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/cahokia-il-107-judith.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "flint-mi-628-home",
@@ -1227,6 +1477,11 @@ const HOMES = [
     features: { backyard: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/flint-mi-628-home-1.jpg", "images/flint-mi-628-home-2.jpg", "images/flint-mi-628-home-3.jpg", "images/flint-mi-628-home-4.jpg", "images/flint-mi-628-home-5.jpg", "images/flint-mi-628-home-6.jpg", "images/flint-mi-628-home-7.jpg", "images/flint-mi-628-home-8.jpg", "images/flint-mi-628-home-9.jpg", "images/flint-mi-628-home-10.jpg", "images/flint-mi-628-home-11.jpg", "images/flint-mi-628-home-12.jpg", "images/flint-mi-628-home-13.jpg", "images/flint-mi-628-home-14.jpg", "images/flint-mi-628-home-15.jpg", "images/flint-mi-628-home-16.jpg", "images/flint-mi-628-home-17.jpg", "images/flint-mi-628-home-18.jpg", "images/flint-mi-628-home-19.jpg", "images/flint-mi-628-home-20.jpg", "images/flint-mi-628-home-21.jpg", "images/flint-mi-628-home-22.jpg"],
+    hasPhoto: true,
+    photoCount: 23,
+    cardPhoto: "images/cards/flint-mi-628-home.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "springfield-il-2949-foxbridge",
@@ -1250,6 +1505,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/springfield-il-2949-foxbridge-1.jpg", "images/springfield-il-2949-foxbridge-2.jpg", "images/springfield-il-2949-foxbridge-3.jpg", "images/springfield-il-2949-foxbridge-4.jpg", "images/springfield-il-2949-foxbridge-5.jpg", "images/springfield-il-2949-foxbridge-6.jpg", "images/springfield-il-2949-foxbridge-7.jpg", "images/springfield-il-2949-foxbridge-8.jpg", "images/springfield-il-2949-foxbridge-9.jpg", "images/springfield-il-2949-foxbridge-10.jpg", "images/springfield-il-2949-foxbridge-11.jpg", "images/springfield-il-2949-foxbridge-12.jpg", "images/springfield-il-2949-foxbridge-13.jpg", "images/springfield-il-2949-foxbridge-14.jpg", "images/springfield-il-2949-foxbridge-15.jpg", "images/springfield-il-2949-foxbridge-16.jpg", "images/springfield-il-2949-foxbridge-17.jpg", "images/springfield-il-2949-foxbridge-18.jpg"],
+    hasPhoto: true,
+    photoCount: 19,
+    cardPhoto: "images/cards/springfield-il-2949-foxbridge.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "decatur-il-989-packard",
@@ -1275,6 +1535,11 @@ const HOMES = [
     features: { backyard: "yes", basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-989-packard-1.jpg", "images/decatur-il-989-packard-2.jpg", "images/decatur-il-989-packard-3.jpg", "images/decatur-il-989-packard-4.jpg", "images/decatur-il-989-packard-5.jpg", "images/decatur-il-989-packard-6.jpg", "images/decatur-il-989-packard-7.jpg", "images/decatur-il-989-packard-8.jpg", "images/decatur-il-989-packard-9.jpg", "images/decatur-il-989-packard-10.jpg", "images/decatur-il-989-packard-11.jpg", "images/decatur-il-989-packard-12.jpg", "images/decatur-il-989-packard-13.jpg", "images/decatur-il-989-packard-14.jpg", "images/decatur-il-989-packard-15.jpg", "images/decatur-il-989-packard-16.jpg", "images/decatur-il-989-packard-17.jpg", "images/decatur-il-989-packard-18.jpg", "images/decatur-il-989-packard-19.jpg"],
+    hasPhoto: true,
+    photoCount: 20,
+    cardPhoto: "images/cards/decatur-il-989-packard.webp",
+    cardWidth: 480,
+    cardHeight: 362,
   },
   {
     id: "flint-mi-5210-dupont",
@@ -1300,6 +1565,11 @@ const HOMES = [
     features: { basement: "yes" },
     heroPhoto: "",
     photos:    ["images/flint-mi-5210-dupont-1.jpg", "images/flint-mi-5210-dupont-2.jpg", "images/flint-mi-5210-dupont-3.jpg", "images/flint-mi-5210-dupont-4.jpg", "images/flint-mi-5210-dupont-5.jpg", "images/flint-mi-5210-dupont-6.jpg", "images/flint-mi-5210-dupont-7.jpg", "images/flint-mi-5210-dupont-8.jpg", "images/flint-mi-5210-dupont-9.jpg", "images/flint-mi-5210-dupont-10.jpg", "images/flint-mi-5210-dupont-11.jpg", "images/flint-mi-5210-dupont-12.jpg"],
+    hasPhoto: true,
+    photoCount: 13,
+    cardPhoto: "images/cards/flint-mi-5210-dupont.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "eaststlouis-il-1847-56th",
@@ -1323,6 +1593,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/eaststlouis-il-1847-56th-1.jpg", "images/eaststlouis-il-1847-56th-2.jpg", "images/eaststlouis-il-1847-56th-3.jpg", "images/eaststlouis-il-1847-56th-4.jpg", "images/eaststlouis-il-1847-56th-5.jpg", "images/eaststlouis-il-1847-56th-6.jpg", "images/eaststlouis-il-1847-56th-7.jpg", "images/eaststlouis-il-1847-56th-8.jpg", "images/eaststlouis-il-1847-56th-9.jpg", "images/eaststlouis-il-1847-56th-10.jpg", "images/eaststlouis-il-1847-56th-11.jpg", "images/eaststlouis-il-1847-56th-12.jpg", "images/eaststlouis-il-1847-56th-13.jpg", "images/eaststlouis-il-1847-56th-14.jpg", "images/eaststlouis-il-1847-56th-15.jpg", "images/eaststlouis-il-1847-56th-16.jpg", "images/eaststlouis-il-1847-56th-17.jpg", "images/eaststlouis-il-1847-56th-18.jpg", "images/eaststlouis-il-1847-56th-19.jpg", "images/eaststlouis-il-1847-56th-20.jpg", "images/eaststlouis-il-1847-56th-21.jpg", "images/eaststlouis-il-1847-56th-22.jpg", "images/eaststlouis-il-1847-56th-23.jpg", "images/eaststlouis-il-1847-56th-24.jpg", "images/eaststlouis-il-1847-56th-25.jpg", "images/eaststlouis-il-1847-56th-26.jpg", "images/eaststlouis-il-1847-56th-27.jpg", "images/eaststlouis-il-1847-56th-28.jpg", "images/eaststlouis-il-1847-56th-29.jpg"],
+    hasPhoto: true,
+    photoCount: 30,
+    cardPhoto: "images/cards/eaststlouis-il-1847-56th.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "montgomery-al-3120-lower",
@@ -1347,6 +1622,11 @@ const HOMES = [
     features: { basement: "no" },
     heroPhoto: "",
     photos:    ["images/montgomery-al-3120-lower-1.jpg", "images/montgomery-al-3120-lower-2.jpg", "images/montgomery-al-3120-lower-3.jpg", "images/montgomery-al-3120-lower-4.jpg", "images/montgomery-al-3120-lower-5.jpg", "images/montgomery-al-3120-lower-6.jpg", "images/montgomery-al-3120-lower-7.jpg", "images/montgomery-al-3120-lower-8.jpg", "images/montgomery-al-3120-lower-9.jpg", "images/montgomery-al-3120-lower-10.jpg", "images/montgomery-al-3120-lower-11.jpg", "images/montgomery-al-3120-lower-12.jpg", "images/montgomery-al-3120-lower-13.jpg", "images/montgomery-al-3120-lower-14.jpg", "images/montgomery-al-3120-lower-15.jpg", "images/montgomery-al-3120-lower-16.jpg", "images/montgomery-al-3120-lower-17.jpg", "images/montgomery-al-3120-lower-18.jpg", "images/montgomery-al-3120-lower-19.jpg", "images/montgomery-al-3120-lower-20.jpg", "images/montgomery-al-3120-lower-21.jpg", "images/montgomery-al-3120-lower-22.jpg", "images/montgomery-al-3120-lower-23.jpg", "images/montgomery-al-3120-lower-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/montgomery-al-3120-lower.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "eaststlouis-il-5050-hallows",
@@ -1372,6 +1652,11 @@ const HOMES = [
     features: { backyard: "yes" },
     heroPhoto: "",
     photos:    ["images/eaststlouis-il-5050-hallows-1.jpg", "images/eaststlouis-il-5050-hallows-2.jpg", "images/eaststlouis-il-5050-hallows-3.jpg", "images/eaststlouis-il-5050-hallows-4.jpg", "images/eaststlouis-il-5050-hallows-5.jpg", "images/eaststlouis-il-5050-hallows-6.jpg", "images/eaststlouis-il-5050-hallows-7.jpg", "images/eaststlouis-il-5050-hallows-8.jpg", "images/eaststlouis-il-5050-hallows-9.jpg", "images/eaststlouis-il-5050-hallows-10.jpg", "images/eaststlouis-il-5050-hallows-11.jpg", "images/eaststlouis-il-5050-hallows-12.jpg", "images/eaststlouis-il-5050-hallows-13.jpg", "images/eaststlouis-il-5050-hallows-14.jpg", "images/eaststlouis-il-5050-hallows-15.jpg", "images/eaststlouis-il-5050-hallows-16.jpg", "images/eaststlouis-il-5050-hallows-17.jpg", "images/eaststlouis-il-5050-hallows-18.jpg", "images/eaststlouis-il-5050-hallows-19.jpg", "images/eaststlouis-il-5050-hallows-20.jpg", "images/eaststlouis-il-5050-hallows-21.jpg", "images/eaststlouis-il-5050-hallows-22.jpg", "images/eaststlouis-il-5050-hallows-23.jpg", "images/eaststlouis-il-5050-hallows-24.jpg", "images/eaststlouis-il-5050-hallows-25.jpg", "images/eaststlouis-il-5050-hallows-26.jpg", "images/eaststlouis-il-5050-hallows-27.jpg", "images/eaststlouis-il-5050-hallows-28.jpg", "images/eaststlouis-il-5050-hallows-29.jpg"],
+    hasPhoto: true,
+    photoCount: 30,
+    cardPhoto: "images/cards/eaststlouis-il-5050-hallows.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-1963-31st",
@@ -1397,6 +1682,11 @@ const HOMES = [
     features: { garage: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-1963-31st-1.jpg", "images/decatur-il-1963-31st-2.jpg", "images/decatur-il-1963-31st-3.jpg", "images/decatur-il-1963-31st-4.jpg", "images/decatur-il-1963-31st-5.jpg", "images/decatur-il-1963-31st-6.jpg", "images/decatur-il-1963-31st-7.jpg", "images/decatur-il-1963-31st-8.jpg", "images/decatur-il-1963-31st-9.jpg", "images/decatur-il-1963-31st-10.jpg", "images/decatur-il-1963-31st-11.jpg", "images/decatur-il-1963-31st-12.jpg", "images/decatur-il-1963-31st-13.jpg", "images/decatur-il-1963-31st-14.jpg", "images/decatur-il-1963-31st-15.jpg", "images/decatur-il-1963-31st-16.jpg", "images/decatur-il-1963-31st-17.jpg", "images/decatur-il-1963-31st-18.jpg", "images/decatur-il-1963-31st-19.jpg", "images/decatur-il-1963-31st-20.jpg", "images/decatur-il-1963-31st-21.jpg", "images/decatur-il-1963-31st-22.jpg", "images/decatur-il-1963-31st-23.jpg"],
+    hasPhoto: true,
+    photoCount: 24,
+    cardPhoto: "images/cards/decatur-il-1963-31st.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-1263-green",
@@ -1420,6 +1710,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1263-green-1.jpg", "images/decatur-il-1263-green-2.jpg", "images/decatur-il-1263-green-3.jpg", "images/decatur-il-1263-green-4.jpg", "images/decatur-il-1263-green-5.jpg", "images/decatur-il-1263-green-6.jpg", "images/decatur-il-1263-green-7.jpg", "images/decatur-il-1263-green-8.jpg", "images/decatur-il-1263-green-9.jpg", "images/decatur-il-1263-green-10.jpg", "images/decatur-il-1263-green-11.jpg", "images/decatur-il-1263-green-12.jpg", "images/decatur-il-1263-green-13.jpg", "images/decatur-il-1263-green-14.jpg", "images/decatur-il-1263-green-15.jpg", "images/decatur-il-1263-green-16.jpg", "images/decatur-il-1263-green-17.jpg", "images/decatur-il-1263-green-18.jpg", "images/decatur-il-1263-green-19.jpg", "images/decatur-il-1263-green-20.jpg"],
+    hasPhoto: true,
+    photoCount: 21,
+    cardPhoto: "images/cards/decatur-il-1263-green.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "macomb-il-437-pierce",
@@ -1445,6 +1740,11 @@ const HOMES = [
     features: { basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/macomb-il-437-pierce-1.jpg", "images/macomb-il-437-pierce-2.jpg", "images/macomb-il-437-pierce-3.jpg", "images/macomb-il-437-pierce-4.jpg", "images/macomb-il-437-pierce-5.jpg", "images/macomb-il-437-pierce-6.jpg", "images/macomb-il-437-pierce-7.jpg", "images/macomb-il-437-pierce-8.jpg", "images/macomb-il-437-pierce-9.jpg", "images/macomb-il-437-pierce-10.jpg", "images/macomb-il-437-pierce-11.jpg", "images/macomb-il-437-pierce-12.jpg", "images/macomb-il-437-pierce-13.jpg", "images/macomb-il-437-pierce-14.jpg", "images/macomb-il-437-pierce-15.jpg", "images/macomb-il-437-pierce-16.jpg", "images/macomb-il-437-pierce-17.jpg", "images/macomb-il-437-pierce-18.jpg", "images/macomb-il-437-pierce-19.jpg", "images/macomb-il-437-pierce-20.jpg", "images/macomb-il-437-pierce-21.jpg", "images/macomb-il-437-pierce-22.jpg", "images/macomb-il-437-pierce-23.jpg", "images/macomb-il-437-pierce-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/macomb-il-437-pierce.webp",
+    cardWidth: 480,
+    cardHeight: 637,
   },
   {
     id: "bethalto-il-319-corbin",
@@ -1470,6 +1770,11 @@ const HOMES = [
     features: { basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/bethalto-il-319-corbin-1.jpg", "images/bethalto-il-319-corbin-2.jpg", "images/bethalto-il-319-corbin-3.jpg", "images/bethalto-il-319-corbin-4.jpg", "images/bethalto-il-319-corbin-5.jpg", "images/bethalto-il-319-corbin-6.jpg", "images/bethalto-il-319-corbin-7.jpg", "images/bethalto-il-319-corbin-8.jpg", "images/bethalto-il-319-corbin-9.jpg", "images/bethalto-il-319-corbin-10.jpg"],
+    hasPhoto: true,
+    photoCount: 11,
+    cardPhoto: "images/cards/bethalto-il-319-corbin.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "eaststlouis-il-541-27th",
@@ -1495,6 +1800,11 @@ const HOMES = [
     features: { backyard: "yes" },
     heroPhoto: "",
     photos:    ["images/eaststlouis-il-541-27th-1.jpg", "images/eaststlouis-il-541-27th-2.jpg", "images/eaststlouis-il-541-27th-3.jpg", "images/eaststlouis-il-541-27th-4.jpg", "images/eaststlouis-il-541-27th-5.jpg", "images/eaststlouis-il-541-27th-6.jpg", "images/eaststlouis-il-541-27th-7.jpg"],
+    hasPhoto: true,
+    photoCount: 8,
+    cardPhoto: "images/cards/eaststlouis-il-541-27th.webp",
+    cardWidth: 480,
+    cardHeight: 215,
   },
   {
     id: "eaststlouis-il-517-31st",
@@ -1521,6 +1831,11 @@ const HOMES = [
     features: { backyard: "yes" },
     heroPhoto: "",
     photos:    ["images/eaststlouis-il-517-31st-1.jpg", "images/eaststlouis-il-517-31st-2.jpg", "images/eaststlouis-il-517-31st-3.jpg", "images/eaststlouis-il-517-31st-4.jpg", "images/eaststlouis-il-517-31st-5.jpg", "images/eaststlouis-il-517-31st-6.jpg", "images/eaststlouis-il-517-31st-7.jpg", "images/eaststlouis-il-517-31st-8.jpg", "images/eaststlouis-il-517-31st-9.jpg", "images/eaststlouis-il-517-31st-10.jpg", "images/eaststlouis-il-517-31st-11.jpg", "images/eaststlouis-il-517-31st-12.jpg", "images/eaststlouis-il-517-31st-13.jpg", "images/eaststlouis-il-517-31st-14.jpg", "images/eaststlouis-il-517-31st-15.jpg", "images/eaststlouis-il-517-31st-16.jpg", "images/eaststlouis-il-517-31st-17.jpg", "images/eaststlouis-il-517-31st-18.jpg", "images/eaststlouis-il-517-31st-19.jpg", "images/eaststlouis-il-517-31st-20.jpg", "images/eaststlouis-il-517-31st-21.jpg", "images/eaststlouis-il-517-31st-22.jpg", "images/eaststlouis-il-517-31st-23.jpg", "images/eaststlouis-il-517-31st-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/eaststlouis-il-517-31st.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-2618-garfield",
@@ -1545,6 +1860,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-2618-garfield-1.jpg", "images/decatur-il-2618-garfield-2.jpg", "images/decatur-il-2618-garfield-3.jpg", "images/decatur-il-2618-garfield-4.jpg", "images/decatur-il-2618-garfield-5.jpg", "images/decatur-il-2618-garfield-6.jpg", "images/decatur-il-2618-garfield-7.jpg", "images/decatur-il-2618-garfield-8.jpg", "images/decatur-il-2618-garfield-9.jpg", "images/decatur-il-2618-garfield-10.jpg", "images/decatur-il-2618-garfield-11.jpg", "images/decatur-il-2618-garfield-12.jpg", "images/decatur-il-2618-garfield-13.jpg", "images/decatur-il-2618-garfield-14.jpg", "images/decatur-il-2618-garfield-15.jpg", "images/decatur-il-2618-garfield-16.jpg", "images/decatur-il-2618-garfield-17.jpg", "images/decatur-il-2618-garfield-18.jpg", "images/decatur-il-2618-garfield-19.jpg", "images/decatur-il-2618-garfield-20.jpg", "images/decatur-il-2618-garfield-21.jpg", "images/decatur-il-2618-garfield-22.jpg", "images/decatur-il-2618-garfield-23.jpg", "images/decatur-il-2618-garfield-24.jpg", "images/decatur-il-2618-garfield-25.jpg", "images/decatur-il-2618-garfield-26.jpg", "images/decatur-il-2618-garfield-27.jpg", "images/decatur-il-2618-garfield-28.jpg", "images/decatur-il-2618-garfield-29.jpg"],
+    hasPhoto: true,
+    photoCount: 30,
+    cardPhoto: "images/cards/decatur-il-2618-garfield.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "carbondale-il-521-davis",
@@ -1569,6 +1889,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/carbondale-il-521-davis-1.jpg", "images/carbondale-il-521-davis-2.jpg", "images/carbondale-il-521-davis-3.jpg", "images/carbondale-il-521-davis-4.jpg", "images/carbondale-il-521-davis-5.jpg", "images/carbondale-il-521-davis-6.jpg"],
+    hasPhoto: true,
+    photoCount: 7,
+    cardPhoto: "images/cards/carbondale-il-521-davis.webp",
+    cardWidth: 480,
+    cardHeight: 399,
   },
   {
     id: "decatur-il-923-king",
@@ -1594,6 +1919,11 @@ const HOMES = [
     features: { backyard: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-923-king-1.jpg", "images/decatur-il-923-king-2.jpg", "images/decatur-il-923-king-3.jpg", "images/decatur-il-923-king-4.jpg", "images/decatur-il-923-king-5.jpg", "images/decatur-il-923-king-6.jpg", "images/decatur-il-923-king-7.jpg", "images/decatur-il-923-king-8.jpg", "images/decatur-il-923-king-9.jpg", "images/decatur-il-923-king-10.jpg", "images/decatur-il-923-king-11.jpg", "images/decatur-il-923-king-12.jpg", "images/decatur-il-923-king-13.jpg", "images/decatur-il-923-king-14.jpg", "images/decatur-il-923-king-15.jpg", "images/decatur-il-923-king-16.jpg", "images/decatur-il-923-king-17.jpg", "images/decatur-il-923-king-18.jpg", "images/decatur-il-923-king-19.jpg"],
+    hasPhoto: true,
+    photoCount: 20,
+    cardPhoto: "images/cards/decatur-il-923-king.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "stlouis-mo-10135-baron",
@@ -1619,6 +1949,11 @@ const HOMES = [
     features: { backyard: "yes", fenced_yard: "yes", basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/stlouis-mo-10135-baron-1.jpg", "images/stlouis-mo-10135-baron-2.jpg", "images/stlouis-mo-10135-baron-3.jpg", "images/stlouis-mo-10135-baron-4.jpg", "images/stlouis-mo-10135-baron-5.jpg", "images/stlouis-mo-10135-baron-6.jpg", "images/stlouis-mo-10135-baron-7.jpg", "images/stlouis-mo-10135-baron-8.jpg", "images/stlouis-mo-10135-baron-9.jpg", "images/stlouis-mo-10135-baron-10.jpg", "images/stlouis-mo-10135-baron-11.jpg", "images/stlouis-mo-10135-baron-12.jpg", "images/stlouis-mo-10135-baron-13.jpg", "images/stlouis-mo-10135-baron-14.jpg", "images/stlouis-mo-10135-baron-15.jpg", "images/stlouis-mo-10135-baron-16.jpg", "images/stlouis-mo-10135-baron-17.jpg", "images/stlouis-mo-10135-baron-18.jpg", "images/stlouis-mo-10135-baron-19.jpg", "images/stlouis-mo-10135-baron-20.jpg", "images/stlouis-mo-10135-baron-21.jpg", "images/stlouis-mo-10135-baron-22.jpg", "images/stlouis-mo-10135-baron-23.jpg", "images/stlouis-mo-10135-baron-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/stlouis-mo-10135-baron.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "eaststlouis-il-556-wimmer",
@@ -1645,6 +1980,11 @@ const HOMES = [
     features: { backyard: "yes", basement: "yes" },
     heroPhoto: "",
     photos:    ["images/eaststlouis-il-556-wimmer-1.jpg", "images/eaststlouis-il-556-wimmer-2.jpg", "images/eaststlouis-il-556-wimmer-3.jpg", "images/eaststlouis-il-556-wimmer-4.jpg", "images/eaststlouis-il-556-wimmer-5.jpg", "images/eaststlouis-il-556-wimmer-6.jpg", "images/eaststlouis-il-556-wimmer-7.jpg", "images/eaststlouis-il-556-wimmer-8.jpg", "images/eaststlouis-il-556-wimmer-9.jpg", "images/eaststlouis-il-556-wimmer-10.jpg", "images/eaststlouis-il-556-wimmer-11.jpg", "images/eaststlouis-il-556-wimmer-12.jpg", "images/eaststlouis-il-556-wimmer-13.jpg", "images/eaststlouis-il-556-wimmer-14.jpg", "images/eaststlouis-il-556-wimmer-15.jpg", "images/eaststlouis-il-556-wimmer-16.jpg", "images/eaststlouis-il-556-wimmer-17.jpg", "images/eaststlouis-il-556-wimmer-18.jpg", "images/eaststlouis-il-556-wimmer-19.jpg", "images/eaststlouis-il-556-wimmer-20.jpg"],
+    hasPhoto: true,
+    photoCount: 21,
+    cardPhoto: "images/cards/eaststlouis-il-556-wimmer.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "granitecity-il-2820-ralph",
@@ -1668,6 +2008,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/granitecity-il-2820-ralph-1.jpg", "images/granitecity-il-2820-ralph-2.jpg", "images/granitecity-il-2820-ralph-3.jpg", "images/granitecity-il-2820-ralph-4.jpg", "images/granitecity-il-2820-ralph-5.jpg", "images/granitecity-il-2820-ralph-6.jpg", "images/granitecity-il-2820-ralph-7.jpg", "images/granitecity-il-2820-ralph-8.jpg", "images/granitecity-il-2820-ralph-9.jpg", "images/granitecity-il-2820-ralph-10.jpg", "images/granitecity-il-2820-ralph-11.jpg", "images/granitecity-il-2820-ralph-12.jpg", "images/granitecity-il-2820-ralph-13.jpg", "images/granitecity-il-2820-ralph-14.jpg", "images/granitecity-il-2820-ralph-15.jpg", "images/granitecity-il-2820-ralph-16.jpg", "images/granitecity-il-2820-ralph-17.jpg", "images/granitecity-il-2820-ralph-18.jpg", "images/granitecity-il-2820-ralph-19.jpg", "images/granitecity-il-2820-ralph-20.jpg", "images/granitecity-il-2820-ralph-21.jpg", "images/granitecity-il-2820-ralph-22.jpg", "images/granitecity-il-2820-ralph-23.jpg", "images/granitecity-il-2820-ralph-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/granitecity-il-2820-ralph.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "peoria-il-1709-faraday",
@@ -1694,6 +2039,11 @@ const HOMES = [
     features: { garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/peoria-il-1709-faraday-1.jpg", "images/peoria-il-1709-faraday-2.jpg", "images/peoria-il-1709-faraday-3.jpg", "images/peoria-il-1709-faraday-4.jpg", "images/peoria-il-1709-faraday-5.jpg", "images/peoria-il-1709-faraday-6.jpg", "images/peoria-il-1709-faraday-7.jpg", "images/peoria-il-1709-faraday-8.jpg", "images/peoria-il-1709-faraday-9.jpg", "images/peoria-il-1709-faraday-10.jpg", "images/peoria-il-1709-faraday-11.jpg", "images/peoria-il-1709-faraday-12.jpg", "images/peoria-il-1709-faraday-13.jpg", "images/peoria-il-1709-faraday-14.jpg", "images/peoria-il-1709-faraday-15.jpg"],
+    hasPhoto: true,
+    photoCount: 16,
+    cardPhoto: "images/cards/peoria-il-1709-faraday.webp",
+    cardWidth: 480,
+    cardHeight: 366,
   },
   {
     id: "eastalton-il-136-illinois",
@@ -1719,6 +2069,11 @@ const HOMES = [
     features: { backyard: "yes", basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/eastalton-il-136-illinois-1.jpg", "images/eastalton-il-136-illinois-2.jpg", "images/eastalton-il-136-illinois-3.jpg", "images/eastalton-il-136-illinois-4.jpg", "images/eastalton-il-136-illinois-5.jpg", "images/eastalton-il-136-illinois-6.jpg", "images/eastalton-il-136-illinois-7.jpg", "images/eastalton-il-136-illinois-8.jpg", "images/eastalton-il-136-illinois-9.jpg", "images/eastalton-il-136-illinois-10.jpg", "images/eastalton-il-136-illinois-11.jpg"],
+    hasPhoto: true,
+    photoCount: 12,
+    cardPhoto: "images/cards/eastalton-il-136-illinois.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "woodriver-il-46-eckhard",
@@ -1745,6 +2100,11 @@ const HOMES = [
     features: { backyard: "yes", fenced_yard: "yes" },
     heroPhoto: "",
     photos:    ["images/woodriver-il-46-eckhard-1.jpg", "images/woodriver-il-46-eckhard-2.jpg", "images/woodriver-il-46-eckhard-3.jpg", "images/woodriver-il-46-eckhard-4.jpg", "images/woodriver-il-46-eckhard-5.jpg", "images/woodriver-il-46-eckhard-6.jpg", "images/woodriver-il-46-eckhard-7.jpg", "images/woodriver-il-46-eckhard-8.jpg", "images/woodriver-il-46-eckhard-9.jpg", "images/woodriver-il-46-eckhard-10.jpg", "images/woodriver-il-46-eckhard-11.jpg", "images/woodriver-il-46-eckhard-12.jpg", "images/woodriver-il-46-eckhard-13.jpg", "images/woodriver-il-46-eckhard-14.jpg", "images/woodriver-il-46-eckhard-15.jpg", "images/woodriver-il-46-eckhard-16.jpg", "images/woodriver-il-46-eckhard-17.jpg", "images/woodriver-il-46-eckhard-18.jpg", "images/woodriver-il-46-eckhard-19.jpg", "images/woodriver-il-46-eckhard-20.jpg", "images/woodriver-il-46-eckhard-21.jpg", "images/woodriver-il-46-eckhard-22.jpg", "images/woodriver-il-46-eckhard-23.jpg", "images/woodriver-il-46-eckhard-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/woodriver-il-46-eckhard.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-1749-college",
@@ -1770,6 +2130,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1749-college-1.jpg", "images/decatur-il-1749-college-2.jpg", "images/decatur-il-1749-college-3.jpg", "images/decatur-il-1749-college-4.jpg", "images/decatur-il-1749-college-5.jpg", "images/decatur-il-1749-college-6.jpg", "images/decatur-il-1749-college-7.jpg", "images/decatur-il-1749-college-8.jpg", "images/decatur-il-1749-college-9.jpg", "images/decatur-il-1749-college-10.jpg", "images/decatur-il-1749-college-11.jpg"],
+    hasPhoto: true,
+    photoCount: 12,
+    cardPhoto: "images/cards/decatur-il-1749-college.webp",
+    cardWidth: 480,
+    cardHeight: 327,
   },
   {
     id: "jackson-ms-1753-mcgee",
@@ -1794,6 +2159,11 @@ const HOMES = [
     features: { backyard: "yes" },
     heroPhoto: "",
     photos:    ["images/jackson-ms-1753-mcgee-1.jpg", "images/jackson-ms-1753-mcgee-2.jpg", "images/jackson-ms-1753-mcgee-3.jpg", "images/jackson-ms-1753-mcgee-4.jpg", "images/jackson-ms-1753-mcgee-5.jpg", "images/jackson-ms-1753-mcgee-6.jpg", "images/jackson-ms-1753-mcgee-7.jpg", "images/jackson-ms-1753-mcgee-8.jpg", "images/jackson-ms-1753-mcgee-9.jpg", "images/jackson-ms-1753-mcgee-10.jpg", "images/jackson-ms-1753-mcgee-11.jpg", "images/jackson-ms-1753-mcgee-12.jpg", "images/jackson-ms-1753-mcgee-13.jpg", "images/jackson-ms-1753-mcgee-14.jpg", "images/jackson-ms-1753-mcgee-15.jpg", "images/jackson-ms-1753-mcgee-16.jpg", "images/jackson-ms-1753-mcgee-17.jpg", "images/jackson-ms-1753-mcgee-18.jpg", "images/jackson-ms-1753-mcgee-19.jpg", "images/jackson-ms-1753-mcgee-20.jpg", "images/jackson-ms-1753-mcgee-21.jpg", "images/jackson-ms-1753-mcgee-22.jpg", "images/jackson-ms-1753-mcgee-23.jpg", "images/jackson-ms-1753-mcgee-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/jackson-ms-1753-mcgee.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "eaststlouis-il-826-82nd",
@@ -1819,6 +2189,11 @@ const HOMES = [
     features: { backyard: "yes", fenced_yard: "yes" },
     heroPhoto: "",
     photos:    ["images/eaststlouis-il-826-82nd-1.jpg", "images/eaststlouis-il-826-82nd-2.jpg", "images/eaststlouis-il-826-82nd-3.jpg", "images/eaststlouis-il-826-82nd-4.jpg", "images/eaststlouis-il-826-82nd-5.jpg", "images/eaststlouis-il-826-82nd-6.jpg", "images/eaststlouis-il-826-82nd-7.jpg", "images/eaststlouis-il-826-82nd-8.jpg", "images/eaststlouis-il-826-82nd-9.jpg", "images/eaststlouis-il-826-82nd-10.jpg", "images/eaststlouis-il-826-82nd-11.jpg", "images/eaststlouis-il-826-82nd-12.jpg", "images/eaststlouis-il-826-82nd-13.jpg"],
+    hasPhoto: true,
+    photoCount: 14,
+    cardPhoto: "images/cards/eaststlouis-il-826-82nd.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "cahokia-il-731-saint",
@@ -1842,6 +2217,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/cahokia-il-731-saint-1.jpg", "images/cahokia-il-731-saint-2.jpg", "images/cahokia-il-731-saint-3.jpg", "images/cahokia-il-731-saint-4.jpg", "images/cahokia-il-731-saint-5.jpg", "images/cahokia-il-731-saint-6.jpg", "images/cahokia-il-731-saint-7.jpg", "images/cahokia-il-731-saint-8.jpg", "images/cahokia-il-731-saint-9.jpg", "images/cahokia-il-731-saint-10.jpg", "images/cahokia-il-731-saint-11.jpg", "images/cahokia-il-731-saint-12.jpg", "images/cahokia-il-731-saint-13.jpg"],
+    hasPhoto: true,
+    photoCount: 14,
+    cardPhoto: "images/cards/cahokia-il-731-saint.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "detroit-mi-15871-fairmount",
@@ -1866,6 +2246,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/detroit-mi-15871-fairmount-1.jpg", "images/detroit-mi-15871-fairmount-2.jpg", "images/detroit-mi-15871-fairmount-3.jpg", "images/detroit-mi-15871-fairmount-4.jpg", "images/detroit-mi-15871-fairmount-5.jpg", "images/detroit-mi-15871-fairmount-6.jpg", "images/detroit-mi-15871-fairmount-7.jpg", "images/detroit-mi-15871-fairmount-8.jpg", "images/detroit-mi-15871-fairmount-9.jpg", "images/detroit-mi-15871-fairmount-10.jpg", "images/detroit-mi-15871-fairmount-11.jpg", "images/detroit-mi-15871-fairmount-12.jpg", "images/detroit-mi-15871-fairmount-13.jpg", "images/detroit-mi-15871-fairmount-14.jpg", "images/detroit-mi-15871-fairmount-15.jpg", "images/detroit-mi-15871-fairmount-16.jpg", "images/detroit-mi-15871-fairmount-17.jpg", "images/detroit-mi-15871-fairmount-18.jpg", "images/detroit-mi-15871-fairmount-19.jpg"],
+    hasPhoto: true,
+    photoCount: 20,
+    cardPhoto: "images/cards/detroit-mi-15871-fairmount.webp",
+    cardWidth: 480,
+    cardHeight: 606,
   },
   {
     id: "decatur-il-1435-woodford",
@@ -1892,6 +2277,11 @@ const HOMES = [
     features: { basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-1435-woodford-1.jpg", "images/decatur-il-1435-woodford-2.jpg", "images/decatur-il-1435-woodford-3.jpg", "images/decatur-il-1435-woodford-4.jpg", "images/decatur-il-1435-woodford-5.jpg", "images/decatur-il-1435-woodford-6.jpg", "images/decatur-il-1435-woodford-7.jpg", "images/decatur-il-1435-woodford-8.jpg", "images/decatur-il-1435-woodford-9.jpg", "images/decatur-il-1435-woodford-10.jpg", "images/decatur-il-1435-woodford-11.jpg", "images/decatur-il-1435-woodford-12.jpg", "images/decatur-il-1435-woodford-13.jpg", "images/decatur-il-1435-woodford-14.jpg", "images/decatur-il-1435-woodford-15.jpg", "images/decatur-il-1435-woodford-16.jpg", "images/decatur-il-1435-woodford-17.jpg"],
+    hasPhoto: true,
+    photoCount: 18,
+    cardPhoto: "images/cards/decatur-il-1435-woodford.webp",
+    cardWidth: 480,
+    cardHeight: 270,
   },
   {
     id: "decatur-il-1353-morgan",
@@ -1916,6 +2306,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1353-morgan-1.jpg", "images/decatur-il-1353-morgan-2.jpg", "images/decatur-il-1353-morgan-3.jpg", "images/decatur-il-1353-morgan-4.jpg", "images/decatur-il-1353-morgan-5.jpg", "images/decatur-il-1353-morgan-6.jpg", "images/decatur-il-1353-morgan-7.jpg", "images/decatur-il-1353-morgan-8.jpg", "images/decatur-il-1353-morgan-9.jpg", "images/decatur-il-1353-morgan-10.jpg", "images/decatur-il-1353-morgan-11.jpg", "images/decatur-il-1353-morgan-12.jpg", "images/decatur-il-1353-morgan-13.jpg", "images/decatur-il-1353-morgan-14.jpg", "images/decatur-il-1353-morgan-15.jpg", "images/decatur-il-1353-morgan-16.jpg", "images/decatur-il-1353-morgan-17.jpg"],
+    hasPhoto: true,
+    photoCount: 18,
+    cardPhoto: "images/cards/decatur-il-1353-morgan.webp",
+    cardWidth: 478,
+    cardHeight: 640,
   },
   {
     id: "jackson-ms-293-cameron",
@@ -1939,6 +2334,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/jackson-ms-293-cameron-1.jpg", "images/jackson-ms-293-cameron-2.jpg", "images/jackson-ms-293-cameron-3.jpg", "images/jackson-ms-293-cameron-4.jpg", "images/jackson-ms-293-cameron-5.jpg", "images/jackson-ms-293-cameron-6.jpg"],
+    hasPhoto: true,
+    photoCount: 7,
+    cardPhoto: "images/cards/jackson-ms-293-cameron.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "saginaw-mi-2128-fordney",
@@ -1962,6 +2362,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/saginaw-mi-2128-fordney-1.jpg", "images/saginaw-mi-2128-fordney-2.jpg", "images/saginaw-mi-2128-fordney-3.jpg", "images/saginaw-mi-2128-fordney-4.jpg", "images/saginaw-mi-2128-fordney-5.jpg", "images/saginaw-mi-2128-fordney-6.jpg", "images/saginaw-mi-2128-fordney-7.jpg", "images/saginaw-mi-2128-fordney-8.jpg", "images/saginaw-mi-2128-fordney-9.jpg", "images/saginaw-mi-2128-fordney-10.jpg", "images/saginaw-mi-2128-fordney-11.jpg", "images/saginaw-mi-2128-fordney-12.jpg", "images/saginaw-mi-2128-fordney-13.jpg", "images/saginaw-mi-2128-fordney-14.jpg", "images/saginaw-mi-2128-fordney-15.jpg", "images/saginaw-mi-2128-fordney-16.jpg", "images/saginaw-mi-2128-fordney-17.jpg", "images/saginaw-mi-2128-fordney-18.jpg", "images/saginaw-mi-2128-fordney-19.jpg", "images/saginaw-mi-2128-fordney-20.jpg", "images/saginaw-mi-2128-fordney-21.jpg", "images/saginaw-mi-2128-fordney-22.jpg", "images/saginaw-mi-2128-fordney-23.jpg", "images/saginaw-mi-2128-fordney-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/saginaw-mi-2128-fordney.webp",
+    cardWidth: 480,
+    cardHeight: 270,
   },
   {
     id: "evansville-in-2317-fulton",
@@ -1985,6 +2390,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/evansville-in-2317-fulton-1.jpg", "images/evansville-in-2317-fulton-2.jpg", "images/evansville-in-2317-fulton-3.jpg", "images/evansville-in-2317-fulton-4.jpg", "images/evansville-in-2317-fulton-5.jpg", "images/evansville-in-2317-fulton-6.jpg", "images/evansville-in-2317-fulton-7.jpg", "images/evansville-in-2317-fulton-8.jpg", "images/evansville-in-2317-fulton-9.jpg", "images/evansville-in-2317-fulton-10.jpg", "images/evansville-in-2317-fulton-11.jpg", "images/evansville-in-2317-fulton-12.jpg", "images/evansville-in-2317-fulton-13.jpg", "images/evansville-in-2317-fulton-14.jpg", "images/evansville-in-2317-fulton-15.jpg", "images/evansville-in-2317-fulton-16.jpg", "images/evansville-in-2317-fulton-17.jpg", "images/evansville-in-2317-fulton-18.jpg", "images/evansville-in-2317-fulton-19.jpg", "images/evansville-in-2317-fulton-20.jpg", "images/evansville-in-2317-fulton-21.jpg", "images/evansville-in-2317-fulton-22.jpg", "images/evansville-in-2317-fulton-23.jpg", "images/evansville-in-2317-fulton-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/evansville-in-2317-fulton.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "oblong-il-807-illinois",
@@ -2008,6 +2418,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/oblong-il-807-illinois-1.jpg", "images/oblong-il-807-illinois-2.jpg", "images/oblong-il-807-illinois-3.jpg", "images/oblong-il-807-illinois-4.jpg", "images/oblong-il-807-illinois-5.jpg", "images/oblong-il-807-illinois-6.jpg", "images/oblong-il-807-illinois-7.jpg", "images/oblong-il-807-illinois-8.jpg", "images/oblong-il-807-illinois-9.jpg"],
+    hasPhoto: true,
+    photoCount: 10,
+    cardPhoto: "images/cards/oblong-il-807-illinois.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "decatur-il-2055-church",
@@ -2033,6 +2448,11 @@ const HOMES = [
     features: { backyard: "yes", basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-2055-church-1.jpg", "images/decatur-il-2055-church-2.jpg", "images/decatur-il-2055-church-3.jpg", "images/decatur-il-2055-church-4.jpg", "images/decatur-il-2055-church-5.jpg", "images/decatur-il-2055-church-6.jpg", "images/decatur-il-2055-church-7.jpg", "images/decatur-il-2055-church-8.jpg", "images/decatur-il-2055-church-9.jpg", "images/decatur-il-2055-church-10.jpg", "images/decatur-il-2055-church-11.jpg", "images/decatur-il-2055-church-12.jpg", "images/decatur-il-2055-church-13.jpg", "images/decatur-il-2055-church-14.jpg", "images/decatur-il-2055-church-15.jpg", "images/decatur-il-2055-church-16.jpg", "images/decatur-il-2055-church-17.jpg", "images/decatur-il-2055-church-18.jpg", "images/decatur-il-2055-church-19.jpg", "images/decatur-il-2055-church-20.jpg", "images/decatur-il-2055-church-21.jpg", "images/decatur-il-2055-church-22.jpg", "images/decatur-il-2055-church-23.jpg", "images/decatur-il-2055-church-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/decatur-il-2055-church.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "stlouis-mo-4021-green",
@@ -2059,6 +2479,11 @@ const HOMES = [
     features: { basement: "yes" },
     heroPhoto: "",
     photos:    ["images/stlouis-mo-4021-green-1.jpg", "images/stlouis-mo-4021-green-2.jpg", "images/stlouis-mo-4021-green-3.jpg", "images/stlouis-mo-4021-green-4.jpg", "images/stlouis-mo-4021-green-5.jpg", "images/stlouis-mo-4021-green-6.jpg", "images/stlouis-mo-4021-green-7.jpg", "images/stlouis-mo-4021-green-8.jpg", "images/stlouis-mo-4021-green-9.jpg", "images/stlouis-mo-4021-green-10.jpg", "images/stlouis-mo-4021-green-11.jpg", "images/stlouis-mo-4021-green-12.jpg", "images/stlouis-mo-4021-green-13.jpg", "images/stlouis-mo-4021-green-14.jpg", "images/stlouis-mo-4021-green-15.jpg", "images/stlouis-mo-4021-green-16.jpg", "images/stlouis-mo-4021-green-17.jpg", "images/stlouis-mo-4021-green-18.jpg", "images/stlouis-mo-4021-green-19.jpg", "images/stlouis-mo-4021-green-20.jpg", "images/stlouis-mo-4021-green-21.jpg", "images/stlouis-mo-4021-green-22.jpg", "images/stlouis-mo-4021-green-23.jpg"],
+    hasPhoto: true,
+    photoCount: 24,
+    cardPhoto: "images/cards/stlouis-mo-4021-green.webp",
+    cardWidth: 480,
+    cardHeight: 551,
   },
   {
     id: "stlouis-mo-5556-floy",
@@ -2082,6 +2507,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-5556-floy-1.jpg", "images/stlouis-mo-5556-floy-2.jpg", "images/stlouis-mo-5556-floy-3.jpg", "images/stlouis-mo-5556-floy-4.jpg", "images/stlouis-mo-5556-floy-5.jpg", "images/stlouis-mo-5556-floy-6.jpg", "images/stlouis-mo-5556-floy-7.jpg", "images/stlouis-mo-5556-floy-8.jpg", "images/stlouis-mo-5556-floy-9.jpg", "images/stlouis-mo-5556-floy-10.jpg", "images/stlouis-mo-5556-floy-11.jpg", "images/stlouis-mo-5556-floy-12.jpg", "images/stlouis-mo-5556-floy-13.jpg", "images/stlouis-mo-5556-floy-14.jpg", "images/stlouis-mo-5556-floy-15.jpg", "images/stlouis-mo-5556-floy-16.jpg", "images/stlouis-mo-5556-floy-17.jpg", "images/stlouis-mo-5556-floy-18.jpg", "images/stlouis-mo-5556-floy-19.jpg", "images/stlouis-mo-5556-floy-20.jpg", "images/stlouis-mo-5556-floy-21.jpg", "images/stlouis-mo-5556-floy-22.jpg", "images/stlouis-mo-5556-floy-23.jpg", "images/stlouis-mo-5556-floy-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/stlouis-mo-5556-floy.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-1942-church",
@@ -2107,6 +2537,11 @@ const HOMES = [
     features: { basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-1942-church-1.jpg", "images/decatur-il-1942-church-2.jpg", "images/decatur-il-1942-church-3.jpg", "images/decatur-il-1942-church-4.jpg", "images/decatur-il-1942-church-5.jpg", "images/decatur-il-1942-church-6.jpg", "images/decatur-il-1942-church-7.jpg", "images/decatur-il-1942-church-8.jpg", "images/decatur-il-1942-church-9.jpg", "images/decatur-il-1942-church-10.jpg", "images/decatur-il-1942-church-11.jpg", "images/decatur-il-1942-church-12.jpg", "images/decatur-il-1942-church-13.jpg", "images/decatur-il-1942-church-14.jpg", "images/decatur-il-1942-church-15.jpg", "images/decatur-il-1942-church-16.jpg", "images/decatur-il-1942-church-17.jpg", "images/decatur-il-1942-church-18.jpg", "images/decatur-il-1942-church-19.jpg", "images/decatur-il-1942-church-20.jpg", "images/decatur-il-1942-church-21.jpg"],
+    hasPhoto: true,
+    photoCount: 22,
+    cardPhoto: "images/cards/decatur-il-1942-church.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-1428-gulick",
@@ -2133,6 +2568,11 @@ const HOMES = [
     features: { basement: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-1428-gulick-1.jpg", "images/decatur-il-1428-gulick-2.jpg", "images/decatur-il-1428-gulick-3.jpg", "images/decatur-il-1428-gulick-4.jpg", "images/decatur-il-1428-gulick-5.jpg", "images/decatur-il-1428-gulick-6.jpg", "images/decatur-il-1428-gulick-7.jpg", "images/decatur-il-1428-gulick-8.jpg", "images/decatur-il-1428-gulick-9.jpg", "images/decatur-il-1428-gulick-10.jpg", "images/decatur-il-1428-gulick-11.jpg", "images/decatur-il-1428-gulick-12.jpg", "images/decatur-il-1428-gulick-13.jpg", "images/decatur-il-1428-gulick-14.jpg", "images/decatur-il-1428-gulick-15.jpg", "images/decatur-il-1428-gulick-16.jpg", "images/decatur-il-1428-gulick-17.jpg", "images/decatur-il-1428-gulick-18.jpg", "images/decatur-il-1428-gulick-19.jpg", "images/decatur-il-1428-gulick-20.jpg", "images/decatur-il-1428-gulick-21.jpg"],
+    hasPhoto: true,
+    photoCount: 22,
+    cardPhoto: "images/cards/decatur-il-1428-gulick.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "stlouis-mo-6580-saint",
@@ -2158,6 +2598,11 @@ const HOMES = [
     features: { basement: "yes" },
     heroPhoto: "",
     photos:    ["images/stlouis-mo-6580-saint-1.jpg", "images/stlouis-mo-6580-saint-2.jpg", "images/stlouis-mo-6580-saint-3.jpg", "images/stlouis-mo-6580-saint-4.jpg", "images/stlouis-mo-6580-saint-5.jpg", "images/stlouis-mo-6580-saint-6.jpg", "images/stlouis-mo-6580-saint-7.jpg", "images/stlouis-mo-6580-saint-8.jpg", "images/stlouis-mo-6580-saint-9.jpg", "images/stlouis-mo-6580-saint-10.jpg", "images/stlouis-mo-6580-saint-11.jpg", "images/stlouis-mo-6580-saint-12.jpg", "images/stlouis-mo-6580-saint-13.jpg", "images/stlouis-mo-6580-saint-14.jpg", "images/stlouis-mo-6580-saint-15.jpg", "images/stlouis-mo-6580-saint-16.jpg", "images/stlouis-mo-6580-saint-17.jpg", "images/stlouis-mo-6580-saint-18.jpg", "images/stlouis-mo-6580-saint-19.jpg", "images/stlouis-mo-6580-saint-20.jpg", "images/stlouis-mo-6580-saint-21.jpg", "images/stlouis-mo-6580-saint-22.jpg", "images/stlouis-mo-6580-saint-23.jpg", "images/stlouis-mo-6580-saint-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/stlouis-mo-6580-saint.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "eaststlouis-il-516-84th",
@@ -2181,6 +2626,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/eaststlouis-il-516-84th-1.jpg", "images/eaststlouis-il-516-84th-2.jpg", "images/eaststlouis-il-516-84th-3.jpg", "images/eaststlouis-il-516-84th-4.jpg", "images/eaststlouis-il-516-84th-5.jpg", "images/eaststlouis-il-516-84th-6.jpg", "images/eaststlouis-il-516-84th-7.jpg", "images/eaststlouis-il-516-84th-8.jpg", "images/eaststlouis-il-516-84th-9.jpg", "images/eaststlouis-il-516-84th-10.jpg", "images/eaststlouis-il-516-84th-11.jpg", "images/eaststlouis-il-516-84th-12.jpg", "images/eaststlouis-il-516-84th-13.jpg", "images/eaststlouis-il-516-84th-14.jpg", "images/eaststlouis-il-516-84th-15.jpg", "images/eaststlouis-il-516-84th-16.jpg", "images/eaststlouis-il-516-84th-17.jpg", "images/eaststlouis-il-516-84th-18.jpg", "images/eaststlouis-il-516-84th-19.jpg"],
+    hasPhoto: true,
+    photoCount: 20,
+    cardPhoto: "images/cards/eaststlouis-il-516-84th.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "bethany-il-120-crowder",
@@ -2207,6 +2657,11 @@ const HOMES = [
     features: { backyard: "yes", central_air: "yes" },
     heroPhoto: "",
     photos:    ["images/bethany-il-120-crowder-1.jpg", "images/bethany-il-120-crowder-2.jpg", "images/bethany-il-120-crowder-3.jpg", "images/bethany-il-120-crowder-4.jpg", "images/bethany-il-120-crowder-5.jpg", "images/bethany-il-120-crowder-6.jpg", "images/bethany-il-120-crowder-7.jpg", "images/bethany-il-120-crowder-8.jpg", "images/bethany-il-120-crowder-9.jpg", "images/bethany-il-120-crowder-10.jpg", "images/bethany-il-120-crowder-11.jpg", "images/bethany-il-120-crowder-12.jpg", "images/bethany-il-120-crowder-13.jpg", "images/bethany-il-120-crowder-14.jpg", "images/bethany-il-120-crowder-15.jpg", "images/bethany-il-120-crowder-16.jpg", "images/bethany-il-120-crowder-17.jpg", "images/bethany-il-120-crowder-18.jpg", "images/bethany-il-120-crowder-19.jpg", "images/bethany-il-120-crowder-20.jpg", "images/bethany-il-120-crowder-21.jpg", "images/bethany-il-120-crowder-22.jpg", "images/bethany-il-120-crowder-23.jpg", "images/bethany-il-120-crowder-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/bethany-il-120-crowder.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-1175-division",
@@ -2232,6 +2687,11 @@ const HOMES = [
     features: { backyard: "yes", fenced_yard: "yes", basement: "yes", central_air: "yes", storage_shed: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-1175-division-1.jpg", "images/decatur-il-1175-division-2.jpg", "images/decatur-il-1175-division-3.jpg", "images/decatur-il-1175-division-4.jpg", "images/decatur-il-1175-division-5.jpg", "images/decatur-il-1175-division-6.jpg", "images/decatur-il-1175-division-7.jpg", "images/decatur-il-1175-division-8.jpg", "images/decatur-il-1175-division-9.jpg", "images/decatur-il-1175-division-10.jpg", "images/decatur-il-1175-division-11.jpg", "images/decatur-il-1175-division-12.jpg", "images/decatur-il-1175-division-13.jpg", "images/decatur-il-1175-division-14.jpg", "images/decatur-il-1175-division-15.jpg", "images/decatur-il-1175-division-16.jpg", "images/decatur-il-1175-division-17.jpg", "images/decatur-il-1175-division-18.jpg", "images/decatur-il-1175-division-19.jpg", "images/decatur-il-1175-division-20.jpg", "images/decatur-il-1175-division-21.jpg", "images/decatur-il-1175-division-22.jpg", "images/decatur-il-1175-division-23.jpg", "images/decatur-il-1175-division-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/decatur-il-1175-division.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-1421-sedgwick",
@@ -2257,6 +2717,11 @@ const HOMES = [
     features: { backyard: "yes", fenced_yard: "yes", basement: "yes", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-1421-sedgwick-1.jpg", "images/decatur-il-1421-sedgwick-2.jpg", "images/decatur-il-1421-sedgwick-3.jpg", "images/decatur-il-1421-sedgwick-4.jpg", "images/decatur-il-1421-sedgwick-5.jpg", "images/decatur-il-1421-sedgwick-6.jpg", "images/decatur-il-1421-sedgwick-7.jpg", "images/decatur-il-1421-sedgwick-8.jpg", "images/decatur-il-1421-sedgwick-9.jpg", "images/decatur-il-1421-sedgwick-10.jpg", "images/decatur-il-1421-sedgwick-11.jpg", "images/decatur-il-1421-sedgwick-12.jpg", "images/decatur-il-1421-sedgwick-13.jpg", "images/decatur-il-1421-sedgwick-14.jpg", "images/decatur-il-1421-sedgwick-15.jpg", "images/decatur-il-1421-sedgwick-16.jpg", "images/decatur-il-1421-sedgwick-17.jpg", "images/decatur-il-1421-sedgwick-18.jpg", "images/decatur-il-1421-sedgwick-19.jpg", "images/decatur-il-1421-sedgwick-20.jpg", "images/decatur-il-1421-sedgwick-21.jpg", "images/decatur-il-1421-sedgwick-22.jpg", "images/decatur-il-1421-sedgwick-23.jpg", "images/decatur-il-1421-sedgwick-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/decatur-il-1421-sedgwick.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "peoria-il-1205-sheridan",
@@ -2282,6 +2747,11 @@ const HOMES = [
     features: { basement: "yes" },
     heroPhoto: "",
     photos:    ["images/peoria-il-1205-sheridan-1.jpg", "images/peoria-il-1205-sheridan-2.jpg", "images/peoria-il-1205-sheridan-3.jpg", "images/peoria-il-1205-sheridan-4.jpg", "images/peoria-il-1205-sheridan-5.jpg", "images/peoria-il-1205-sheridan-6.jpg", "images/peoria-il-1205-sheridan-7.jpg", "images/peoria-il-1205-sheridan-8.jpg", "images/peoria-il-1205-sheridan-9.jpg", "images/peoria-il-1205-sheridan-10.jpg", "images/peoria-il-1205-sheridan-11.jpg", "images/peoria-il-1205-sheridan-12.jpg", "images/peoria-il-1205-sheridan-13.jpg", "images/peoria-il-1205-sheridan-14.jpg", "images/peoria-il-1205-sheridan-15.jpg", "images/peoria-il-1205-sheridan-16.jpg", "images/peoria-il-1205-sheridan-17.jpg", "images/peoria-il-1205-sheridan-18.jpg", "images/peoria-il-1205-sheridan-19.jpg", "images/peoria-il-1205-sheridan-20.jpg", "images/peoria-il-1205-sheridan-21.jpg", "images/peoria-il-1205-sheridan-22.jpg", "images/peoria-il-1205-sheridan-23.jpg", "images/peoria-il-1205-sheridan-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/peoria-il-1205-sheridan.webp",
+    cardWidth: 480,
+    cardHeight: 637,
   },
   {
     id: "decatur-il-765-division",
@@ -2305,6 +2775,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-765-division-1.jpg", "images/decatur-il-765-division-2.jpg", "images/decatur-il-765-division-3.jpg", "images/decatur-il-765-division-4.jpg", "images/decatur-il-765-division-5.jpg", "images/decatur-il-765-division-6.jpg", "images/decatur-il-765-division-7.jpg", "images/decatur-il-765-division-8.jpg", "images/decatur-il-765-division-9.jpg", "images/decatur-il-765-division-10.jpg", "images/decatur-il-765-division-11.jpg", "images/decatur-il-765-division-12.jpg", "images/decatur-il-765-division-13.jpg", "images/decatur-il-765-division-14.jpg", "images/decatur-il-765-division-15.jpg", "images/decatur-il-765-division-16.jpg", "images/decatur-il-765-division-17.jpg", "images/decatur-il-765-division-18.jpg", "images/decatur-il-765-division-19.jpg", "images/decatur-il-765-division-20.jpg", "images/decatur-il-765-division-21.jpg", "images/decatur-il-765-division-22.jpg", "images/decatur-il-765-division-23.jpg", "images/decatur-il-765-division-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/decatur-il-765-division.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "cottagehills-il-66-franklin",
@@ -2330,6 +2805,11 @@ const HOMES = [
     features: { backyard: "yes", basement: "no" },
     heroPhoto: "",
     photos:    ["images/cottagehills-il-66-franklin-1.jpg", "images/cottagehills-il-66-franklin-2.jpg", "images/cottagehills-il-66-franklin-3.jpg", "images/cottagehills-il-66-franklin-4.jpg", "images/cottagehills-il-66-franklin-5.jpg", "images/cottagehills-il-66-franklin-6.jpg", "images/cottagehills-il-66-franklin-7.jpg", "images/cottagehills-il-66-franklin-8.jpg", "images/cottagehills-il-66-franklin-9.jpg", "images/cottagehills-il-66-franklin-10.jpg", "images/cottagehills-il-66-franklin-11.jpg", "images/cottagehills-il-66-franklin-12.jpg", "images/cottagehills-il-66-franklin-13.jpg", "images/cottagehills-il-66-franklin-14.jpg", "images/cottagehills-il-66-franklin-15.jpg", "images/cottagehills-il-66-franklin-16.jpg", "images/cottagehills-il-66-franklin-17.jpg", "images/cottagehills-il-66-franklin-18.jpg", "images/cottagehills-il-66-franklin-19.jpg", "images/cottagehills-il-66-franklin-20.jpg", "images/cottagehills-il-66-franklin-21.jpg", "images/cottagehills-il-66-franklin-22.jpg", "images/cottagehills-il-66-franklin-23.jpg"],
+    hasPhoto: true,
+    photoCount: 24,
+    cardPhoto: "images/cards/cottagehills-il-66-franklin.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "peoria-il-2309-malone",
@@ -2353,6 +2833,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/peoria-il-2309-malone-1.jpg", "images/peoria-il-2309-malone-2.jpg", "images/peoria-il-2309-malone-3.jpg", "images/peoria-il-2309-malone-4.jpg", "images/peoria-il-2309-malone-5.jpg", "images/peoria-il-2309-malone-6.jpg", "images/peoria-il-2309-malone-7.jpg", "images/peoria-il-2309-malone-8.jpg", "images/peoria-il-2309-malone-9.jpg", "images/peoria-il-2309-malone-10.jpg", "images/peoria-il-2309-malone-11.jpg", "images/peoria-il-2309-malone-12.jpg", "images/peoria-il-2309-malone-13.jpg", "images/peoria-il-2309-malone-14.jpg", "images/peoria-il-2309-malone-15.jpg", "images/peoria-il-2309-malone-16.jpg", "images/peoria-il-2309-malone-17.jpg", "images/peoria-il-2309-malone-18.jpg", "images/peoria-il-2309-malone-19.jpg", "images/peoria-il-2309-malone-20.jpg", "images/peoria-il-2309-malone-21.jpg", "images/peoria-il-2309-malone-22.jpg", "images/peoria-il-2309-malone-23.jpg", "images/peoria-il-2309-malone-24.jpg"],
+    hasPhoto: true,
+    photoCount: 24,
+    cardPhoto: "images/cards/peoria-il-2309-malone.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "cahokia-il-34-saint",
@@ -2376,6 +2861,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/cahokia-il-34-saint-1.jpg", "images/cahokia-il-34-saint-2.jpg", "images/cahokia-il-34-saint-3.jpg", "images/cahokia-il-34-saint-4.jpg", "images/cahokia-il-34-saint-5.jpg", "images/cahokia-il-34-saint-6.jpg", "images/cahokia-il-34-saint-7.jpg", "images/cahokia-il-34-saint-8.jpg", "images/cahokia-il-34-saint-9.jpg", "images/cahokia-il-34-saint-10.jpg", "images/cahokia-il-34-saint-11.jpg", "images/cahokia-il-34-saint-12.jpg", "images/cahokia-il-34-saint-13.jpg", "images/cahokia-il-34-saint-14.jpg", "images/cahokia-il-34-saint-15.jpg", "images/cahokia-il-34-saint-16.jpg", "images/cahokia-il-34-saint-17.jpg", "images/cahokia-il-34-saint-18.jpg", "images/cahokia-il-34-saint-19.jpg", "images/cahokia-il-34-saint-20.jpg", "images/cahokia-il-34-saint-21.jpg", "images/cahokia-il-34-saint-22.jpg", "images/cahokia-il-34-saint-23.jpg", "images/cahokia-il-34-saint-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/cahokia-il-34-saint.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "stlouis-mo-6211-bircher",
@@ -2400,6 +2890,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-6211-bircher-1.jpg", "images/stlouis-mo-6211-bircher-2.jpg", "images/stlouis-mo-6211-bircher-3.jpg", "images/stlouis-mo-6211-bircher-4.jpg", "images/stlouis-mo-6211-bircher-5.jpg", "images/stlouis-mo-6211-bircher-6.jpg", "images/stlouis-mo-6211-bircher-7.jpg", "images/stlouis-mo-6211-bircher-8.jpg", "images/stlouis-mo-6211-bircher-9.jpg", "images/stlouis-mo-6211-bircher-10.jpg", "images/stlouis-mo-6211-bircher-11.jpg", "images/stlouis-mo-6211-bircher-12.jpg", "images/stlouis-mo-6211-bircher-13.jpg", "images/stlouis-mo-6211-bircher-14.jpg", "images/stlouis-mo-6211-bircher-15.jpg", "images/stlouis-mo-6211-bircher-16.jpg"],
+    hasPhoto: true,
+    photoCount: 17,
+    cardPhoto: "images/cards/stlouis-mo-6211-bircher.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "stlouis-mo-2207-oakdale",
@@ -2425,6 +2920,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-2207-oakdale-1.jpg", "images/stlouis-mo-2207-oakdale-2.jpg", "images/stlouis-mo-2207-oakdale-3.jpg", "images/stlouis-mo-2207-oakdale-4.jpg", "images/stlouis-mo-2207-oakdale-5.jpg", "images/stlouis-mo-2207-oakdale-6.jpg", "images/stlouis-mo-2207-oakdale-7.jpg", "images/stlouis-mo-2207-oakdale-8.jpg", "images/stlouis-mo-2207-oakdale-9.jpg", "images/stlouis-mo-2207-oakdale-10.jpg", "images/stlouis-mo-2207-oakdale-11.jpg", "images/stlouis-mo-2207-oakdale-12.jpg", "images/stlouis-mo-2207-oakdale-13.jpg", "images/stlouis-mo-2207-oakdale-14.jpg", "images/stlouis-mo-2207-oakdale-15.jpg", "images/stlouis-mo-2207-oakdale-16.jpg", "images/stlouis-mo-2207-oakdale-17.jpg", "images/stlouis-mo-2207-oakdale-18.jpg", "images/stlouis-mo-2207-oakdale-19.jpg", "images/stlouis-mo-2207-oakdale-20.jpg", "images/stlouis-mo-2207-oakdale-21.jpg", "images/stlouis-mo-2207-oakdale-22.jpg", "images/stlouis-mo-2207-oakdale-23.jpg", "images/stlouis-mo-2207-oakdale-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/stlouis-mo-2207-oakdale.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "cahokiaheights-il-30-delores",
@@ -2448,6 +2948,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/cahokiaheights-il-30-delores-1.jpg", "images/cahokiaheights-il-30-delores-2.jpg", "images/cahokiaheights-il-30-delores-3.jpg", "images/cahokiaheights-il-30-delores-4.jpg", "images/cahokiaheights-il-30-delores-5.jpg", "images/cahokiaheights-il-30-delores-6.jpg", "images/cahokiaheights-il-30-delores-7.jpg", "images/cahokiaheights-il-30-delores-8.jpg", "images/cahokiaheights-il-30-delores-9.jpg", "images/cahokiaheights-il-30-delores-10.jpg", "images/cahokiaheights-il-30-delores-11.jpg", "images/cahokiaheights-il-30-delores-12.jpg", "images/cahokiaheights-il-30-delores-13.jpg", "images/cahokiaheights-il-30-delores-14.jpg"],
+    hasPhoto: true,
+    photoCount: 15,
+    cardPhoto: "images/cards/cahokiaheights-il-30-delores.webp",
+    cardWidth: 480,
+    cardHeight: 641,
   },
   {
     id: "peoria-il-2421-lincoln",
@@ -2472,6 +2977,11 @@ const HOMES = [
     features: { central_air: "no" },
     heroPhoto: "",
     photos:    ["images/peoria-il-2421-lincoln-1.jpg", "images/peoria-il-2421-lincoln-2.jpg", "images/peoria-il-2421-lincoln-3.jpg", "images/peoria-il-2421-lincoln-4.jpg", "images/peoria-il-2421-lincoln-5.jpg", "images/peoria-il-2421-lincoln-6.jpg", "images/peoria-il-2421-lincoln-7.jpg", "images/peoria-il-2421-lincoln-8.jpg", "images/peoria-il-2421-lincoln-9.jpg", "images/peoria-il-2421-lincoln-10.jpg", "images/peoria-il-2421-lincoln-11.jpg", "images/peoria-il-2421-lincoln-12.jpg", "images/peoria-il-2421-lincoln-13.jpg", "images/peoria-il-2421-lincoln-14.jpg", "images/peoria-il-2421-lincoln-15.jpg", "images/peoria-il-2421-lincoln-16.jpg", "images/peoria-il-2421-lincoln-17.jpg", "images/peoria-il-2421-lincoln-18.jpg", "images/peoria-il-2421-lincoln-19.jpg", "images/peoria-il-2421-lincoln-20.jpg", "images/peoria-il-2421-lincoln-21.jpg", "images/peoria-il-2421-lincoln-22.jpg"],
+    hasPhoto: true,
+    photoCount: 23,
+    cardPhoto: "images/cards/peoria-il-2421-lincoln.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "peoria-il-3214-proctor",
@@ -2498,6 +3008,11 @@ const HOMES = [
     features: { backyard: "yes", fenced_yard: "yes" },
     heroPhoto: "",
     photos:    ["images/peoria-il-3214-proctor-1.jpg", "images/peoria-il-3214-proctor-2.jpg", "images/peoria-il-3214-proctor-3.jpg", "images/peoria-il-3214-proctor-4.jpg", "images/peoria-il-3214-proctor-5.jpg", "images/peoria-il-3214-proctor-6.jpg", "images/peoria-il-3214-proctor-7.jpg", "images/peoria-il-3214-proctor-8.jpg", "images/peoria-il-3214-proctor-9.jpg", "images/peoria-il-3214-proctor-10.jpg", "images/peoria-il-3214-proctor-11.jpg", "images/peoria-il-3214-proctor-12.jpg", "images/peoria-il-3214-proctor-13.jpg", "images/peoria-il-3214-proctor-14.jpg", "images/peoria-il-3214-proctor-15.jpg", "images/peoria-il-3214-proctor-16.jpg", "images/peoria-il-3214-proctor-17.jpg", "images/peoria-il-3214-proctor-18.jpg", "images/peoria-il-3214-proctor-19.jpg", "images/peoria-il-3214-proctor-20.jpg"],
+    hasPhoto: true,
+    photoCount: 21,
+    cardPhoto: "images/cards/peoria-il-3214-proctor.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "stlouis-mo-2125-68th",
@@ -2521,6 +3036,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-2125-68th-1.jpg", "images/stlouis-mo-2125-68th-2.jpg", "images/stlouis-mo-2125-68th-3.jpg", "images/stlouis-mo-2125-68th-4.jpg", "images/stlouis-mo-2125-68th-5.jpg", "images/stlouis-mo-2125-68th-6.jpg", "images/stlouis-mo-2125-68th-7.jpg", "images/stlouis-mo-2125-68th-8.jpg"],
+    hasPhoto: true,
+    photoCount: 9,
+    cardPhoto: "images/cards/stlouis-mo-2125-68th.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-1143-william",
@@ -2546,6 +3066,11 @@ const HOMES = [
     features: { basement: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-1143-william-1.jpg", "images/decatur-il-1143-william-2.jpg", "images/decatur-il-1143-william-3.jpg", "images/decatur-il-1143-william-4.jpg", "images/decatur-il-1143-william-5.jpg", "images/decatur-il-1143-william-6.jpg", "images/decatur-il-1143-william-7.jpg", "images/decatur-il-1143-william-8.jpg", "images/decatur-il-1143-william-9.jpg", "images/decatur-il-1143-william-10.jpg", "images/decatur-il-1143-william-11.jpg", "images/decatur-il-1143-william-12.jpg", "images/decatur-il-1143-william-13.jpg", "images/decatur-il-1143-william-14.jpg", "images/decatur-il-1143-william-15.jpg", "images/decatur-il-1143-william-16.jpg", "images/decatur-il-1143-william-17.jpg", "images/decatur-il-1143-william-18.jpg", "images/decatur-il-1143-william-19.jpg", "images/decatur-il-1143-william-20.jpg", "images/decatur-il-1143-william-21.jpg", "images/decatur-il-1143-william-22.jpg", "images/decatur-il-1143-william-23.jpg", "images/decatur-il-1143-william-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/decatur-il-1143-william.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "detroit-mi-15344-blackstone",
@@ -2572,6 +3097,11 @@ const HOMES = [
     features: { backyard: "yes", basement: "no", garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/detroit-mi-15344-blackstone-1.jpg", "images/detroit-mi-15344-blackstone-2.jpg", "images/detroit-mi-15344-blackstone-3.jpg", "images/detroit-mi-15344-blackstone-4.jpg", "images/detroit-mi-15344-blackstone-5.jpg", "images/detroit-mi-15344-blackstone-6.jpg", "images/detroit-mi-15344-blackstone-7.jpg", "images/detroit-mi-15344-blackstone-8.jpg", "images/detroit-mi-15344-blackstone-9.jpg", "images/detroit-mi-15344-blackstone-10.jpg", "images/detroit-mi-15344-blackstone-11.jpg", "images/detroit-mi-15344-blackstone-12.jpg", "images/detroit-mi-15344-blackstone-13.jpg", "images/detroit-mi-15344-blackstone-14.jpg", "images/detroit-mi-15344-blackstone-15.jpg", "images/detroit-mi-15344-blackstone-16.jpg", "images/detroit-mi-15344-blackstone-17.jpg", "images/detroit-mi-15344-blackstone-18.jpg", "images/detroit-mi-15344-blackstone-19.jpg", "images/detroit-mi-15344-blackstone-20.jpg", "images/detroit-mi-15344-blackstone-21.jpg", "images/detroit-mi-15344-blackstone-22.jpg"],
+    hasPhoto: true,
+    photoCount: 23,
+    cardPhoto: "images/cards/detroit-mi-15344-blackstone.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "eaststlouis-il-5807-forest",
@@ -2597,6 +3127,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/eaststlouis-il-5807-forest-1.jpg", "images/eaststlouis-il-5807-forest-2.jpg", "images/eaststlouis-il-5807-forest-3.jpg", "images/eaststlouis-il-5807-forest-4.jpg", "images/eaststlouis-il-5807-forest-5.jpg", "images/eaststlouis-il-5807-forest-6.jpg", "images/eaststlouis-il-5807-forest-7.jpg", "images/eaststlouis-il-5807-forest-8.jpg", "images/eaststlouis-il-5807-forest-9.jpg", "images/eaststlouis-il-5807-forest-10.jpg", "images/eaststlouis-il-5807-forest-11.jpg", "images/eaststlouis-il-5807-forest-12.jpg", "images/eaststlouis-il-5807-forest-13.jpg", "images/eaststlouis-il-5807-forest-14.jpg", "images/eaststlouis-il-5807-forest-15.jpg", "images/eaststlouis-il-5807-forest-16.jpg", "images/eaststlouis-il-5807-forest-17.jpg", "images/eaststlouis-il-5807-forest-18.jpg", "images/eaststlouis-il-5807-forest-19.jpg", "images/eaststlouis-il-5807-forest-20.jpg", "images/eaststlouis-il-5807-forest-21.jpg", "images/eaststlouis-il-5807-forest-22.jpg", "images/eaststlouis-il-5807-forest-23.jpg", "images/eaststlouis-il-5807-forest-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/eaststlouis-il-5807-forest.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-1645-walnut",
@@ -2623,6 +3158,11 @@ const HOMES = [
     features: { backyard: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-1645-walnut-1.jpg", "images/decatur-il-1645-walnut-2.jpg", "images/decatur-il-1645-walnut-3.jpg", "images/decatur-il-1645-walnut-4.jpg", "images/decatur-il-1645-walnut-5.jpg", "images/decatur-il-1645-walnut-6.jpg", "images/decatur-il-1645-walnut-7.jpg", "images/decatur-il-1645-walnut-8.jpg", "images/decatur-il-1645-walnut-9.jpg", "images/decatur-il-1645-walnut-10.jpg", "images/decatur-il-1645-walnut-11.jpg", "images/decatur-il-1645-walnut-12.jpg", "images/decatur-il-1645-walnut-13.jpg", "images/decatur-il-1645-walnut-14.jpg", "images/decatur-il-1645-walnut-15.jpg", "images/decatur-il-1645-walnut-16.jpg", "images/decatur-il-1645-walnut-17.jpg", "images/decatur-il-1645-walnut-18.jpg", "images/decatur-il-1645-walnut-19.jpg", "images/decatur-il-1645-walnut-20.jpg", "images/decatur-il-1645-walnut-21.jpg", "images/decatur-il-1645-walnut-22.jpg", "images/decatur-il-1645-walnut-23.jpg", "images/decatur-il-1645-walnut-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/decatur-il-1645-walnut.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "centralia-il-1119-brookside",
@@ -2646,6 +3186,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/centralia-il-1119-brookside-1.jpg", "images/centralia-il-1119-brookside-2.jpg", "images/centralia-il-1119-brookside-3.jpg", "images/centralia-il-1119-brookside-4.jpg", "images/centralia-il-1119-brookside-5.jpg", "images/centralia-il-1119-brookside-6.jpg", "images/centralia-il-1119-brookside-7.jpg", "images/centralia-il-1119-brookside-8.jpg", "images/centralia-il-1119-brookside-9.jpg", "images/centralia-il-1119-brookside-10.jpg", "images/centralia-il-1119-brookside-11.jpg", "images/centralia-il-1119-brookside-12.jpg", "images/centralia-il-1119-brookside-13.jpg", "images/centralia-il-1119-brookside-14.jpg", "images/centralia-il-1119-brookside-15.jpg", "images/centralia-il-1119-brookside-16.jpg", "images/centralia-il-1119-brookside-17.jpg"],
+    hasPhoto: true,
+    photoCount: 18,
+    cardPhoto: "images/cards/centralia-il-1119-brookside.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "centreville-il-112-88th",
@@ -2671,6 +3216,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/centreville-il-112-88th-1.jpg", "images/centreville-il-112-88th-2.jpg", "images/centreville-il-112-88th-3.jpg", "images/centreville-il-112-88th-4.jpg", "images/centreville-il-112-88th-5.jpg", "images/centreville-il-112-88th-6.jpg", "images/centreville-il-112-88th-7.jpg", "images/centreville-il-112-88th-8.jpg", "images/centreville-il-112-88th-9.jpg", "images/centreville-il-112-88th-10.jpg", "images/centreville-il-112-88th-11.jpg", "images/centreville-il-112-88th-12.jpg", "images/centreville-il-112-88th-13.jpg", "images/centreville-il-112-88th-14.jpg", "images/centreville-il-112-88th-15.jpg", "images/centreville-il-112-88th-16.jpg", "images/centreville-il-112-88th-17.jpg", "images/centreville-il-112-88th-18.jpg", "images/centreville-il-112-88th-19.jpg", "images/centreville-il-112-88th-20.jpg", "images/centreville-il-112-88th-21.jpg", "images/centreville-il-112-88th-22.jpg", "images/centreville-il-112-88th-23.jpg", "images/centreville-il-112-88th-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/centreville-il-112-88th.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "decatur-il-2081-college",
@@ -2697,6 +3247,11 @@ const HOMES = [
     features: { central_air: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-2081-college-1.jpg", "images/decatur-il-2081-college-2.jpg", "images/decatur-il-2081-college-3.jpg", "images/decatur-il-2081-college-4.jpg", "images/decatur-il-2081-college-5.jpg", "images/decatur-il-2081-college-6.jpg", "images/decatur-il-2081-college-7.jpg", "images/decatur-il-2081-college-8.jpg", "images/decatur-il-2081-college-9.jpg", "images/decatur-il-2081-college-10.jpg", "images/decatur-il-2081-college-11.jpg", "images/decatur-il-2081-college-12.jpg", "images/decatur-il-2081-college-13.jpg", "images/decatur-il-2081-college-14.jpg", "images/decatur-il-2081-college-15.jpg", "images/decatur-il-2081-college-16.jpg", "images/decatur-il-2081-college-17.jpg", "images/decatur-il-2081-college-18.jpg"],
+    hasPhoto: true,
+    photoCount: 19,
+    cardPhoto: "images/cards/decatur-il-2081-college.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "stlouis-mo-5532-robin",
@@ -2722,6 +3277,11 @@ const HOMES = [
     features: { backyard: "yes", basement: "yes" },
     heroPhoto: "",
     photos:    ["images/stlouis-mo-5532-robin-1.jpg", "images/stlouis-mo-5532-robin-2.jpg", "images/stlouis-mo-5532-robin-3.jpg", "images/stlouis-mo-5532-robin-4.jpg", "images/stlouis-mo-5532-robin-5.jpg", "images/stlouis-mo-5532-robin-6.jpg", "images/stlouis-mo-5532-robin-7.jpg", "images/stlouis-mo-5532-robin-8.jpg", "images/stlouis-mo-5532-robin-9.jpg", "images/stlouis-mo-5532-robin-10.jpg", "images/stlouis-mo-5532-robin-11.jpg", "images/stlouis-mo-5532-robin-12.jpg", "images/stlouis-mo-5532-robin-13.jpg", "images/stlouis-mo-5532-robin-14.jpg", "images/stlouis-mo-5532-robin-15.jpg", "images/stlouis-mo-5532-robin-16.jpg", "images/stlouis-mo-5532-robin-17.jpg", "images/stlouis-mo-5532-robin-18.jpg", "images/stlouis-mo-5532-robin-19.jpg", "images/stlouis-mo-5532-robin-20.jpg", "images/stlouis-mo-5532-robin-21.jpg", "images/stlouis-mo-5532-robin-22.jpg", "images/stlouis-mo-5532-robin-23.jpg", "images/stlouis-mo-5532-robin-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/stlouis-mo-5532-robin.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-125-16th",
@@ -2746,6 +3306,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-125-16th-1.jpg", "images/decatur-il-125-16th-2.jpg", "images/decatur-il-125-16th-3.jpg", "images/decatur-il-125-16th-4.jpg", "images/decatur-il-125-16th-5.jpg", "images/decatur-il-125-16th-6.jpg", "images/decatur-il-125-16th-7.jpg", "images/decatur-il-125-16th-8.jpg", "images/decatur-il-125-16th-9.jpg", "images/decatur-il-125-16th-10.jpg", "images/decatur-il-125-16th-11.jpg", "images/decatur-il-125-16th-12.jpg"],
+    hasPhoto: true,
+    photoCount: 13,
+    cardPhoto: "images/cards/decatur-il-125-16th.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "decatur-il-2015-union",
@@ -2772,6 +3337,11 @@ const HOMES = [
     features: { basement: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-2015-union-1.jpg", "images/decatur-il-2015-union-2.jpg", "images/decatur-il-2015-union-3.jpg", "images/decatur-il-2015-union-4.jpg", "images/decatur-il-2015-union-5.jpg", "images/decatur-il-2015-union-6.jpg", "images/decatur-il-2015-union-7.jpg", "images/decatur-il-2015-union-8.jpg", "images/decatur-il-2015-union-9.jpg", "images/decatur-il-2015-union-10.jpg", "images/decatur-il-2015-union-11.jpg", "images/decatur-il-2015-union-12.jpg", "images/decatur-il-2015-union-13.jpg", "images/decatur-il-2015-union-14.jpg", "images/decatur-il-2015-union-15.jpg", "images/decatur-il-2015-union-16.jpg", "images/decatur-il-2015-union-17.jpg", "images/decatur-il-2015-union-18.jpg", "images/decatur-il-2015-union-19.jpg", "images/decatur-il-2015-union-20.jpg", "images/decatur-il-2015-union-21.jpg", "images/decatur-il-2015-union-22.jpg", "images/decatur-il-2015-union-23.jpg", "images/decatur-il-2015-union-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/decatur-il-2015-union.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-1931-edwards",
@@ -2796,6 +3366,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1931-edwards-1.jpg", "images/decatur-il-1931-edwards-2.jpg", "images/decatur-il-1931-edwards-3.jpg", "images/decatur-il-1931-edwards-4.jpg", "images/decatur-il-1931-edwards-5.jpg", "images/decatur-il-1931-edwards-6.jpg", "images/decatur-il-1931-edwards-7.jpg", "images/decatur-il-1931-edwards-8.jpg", "images/decatur-il-1931-edwards-9.jpg", "images/decatur-il-1931-edwards-10.jpg", "images/decatur-il-1931-edwards-11.jpg", "images/decatur-il-1931-edwards-12.jpg", "images/decatur-il-1931-edwards-13.jpg", "images/decatur-il-1931-edwards-14.jpg", "images/decatur-il-1931-edwards-15.jpg", "images/decatur-il-1931-edwards-16.jpg", "images/decatur-il-1931-edwards-17.jpg", "images/decatur-il-1931-edwards-18.jpg", "images/decatur-il-1931-edwards-19.jpg", "images/decatur-il-1931-edwards-20.jpg"],
+    hasPhoto: true,
+    photoCount: 21,
+    cardPhoto: "images/cards/decatur-il-1931-edwards.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "jacksonville-ar-201-gray",
@@ -2821,6 +3396,11 @@ const HOMES = [
     features: { off_street_parking: "yes", central_air: "yes" },
     heroPhoto: "",
     photos:    ["images/jacksonville-ar-201-gray-1.jpg", "images/jacksonville-ar-201-gray-2.jpg", "images/jacksonville-ar-201-gray-3.jpg", "images/jacksonville-ar-201-gray-4.jpg", "images/jacksonville-ar-201-gray-5.jpg", "images/jacksonville-ar-201-gray-6.jpg", "images/jacksonville-ar-201-gray-7.jpg", "images/jacksonville-ar-201-gray-8.jpg", "images/jacksonville-ar-201-gray-9.jpg", "images/jacksonville-ar-201-gray-10.jpg", "images/jacksonville-ar-201-gray-11.jpg", "images/jacksonville-ar-201-gray-12.jpg", "images/jacksonville-ar-201-gray-13.jpg", "images/jacksonville-ar-201-gray-14.jpg", "images/jacksonville-ar-201-gray-15.jpg", "images/jacksonville-ar-201-gray-16.jpg", "images/jacksonville-ar-201-gray-17.jpg", "images/jacksonville-ar-201-gray-18.jpg", "images/jacksonville-ar-201-gray-19.jpg", "images/jacksonville-ar-201-gray-20.jpg", "images/jacksonville-ar-201-gray-21.jpg", "images/jacksonville-ar-201-gray-22.jpg", "images/jacksonville-ar-201-gray-23.jpg"],
+    hasPhoto: true,
+    photoCount: 24,
+    cardPhoto: "images/cards/jacksonville-ar-201-gray.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "stlouis-mo-3520-paris",
@@ -2844,6 +3424,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-3520-paris-1.jpg", "images/stlouis-mo-3520-paris-2.jpg", "images/stlouis-mo-3520-paris-3.jpg", "images/stlouis-mo-3520-paris-4.jpg", "images/stlouis-mo-3520-paris-5.jpg", "images/stlouis-mo-3520-paris-6.jpg", "images/stlouis-mo-3520-paris-7.jpg", "images/stlouis-mo-3520-paris-8.jpg", "images/stlouis-mo-3520-paris-9.jpg", "images/stlouis-mo-3520-paris-10.jpg", "images/stlouis-mo-3520-paris-11.jpg", "images/stlouis-mo-3520-paris-12.jpg", "images/stlouis-mo-3520-paris-13.jpg", "images/stlouis-mo-3520-paris-14.jpg", "images/stlouis-mo-3520-paris-15.jpg", "images/stlouis-mo-3520-paris-16.jpg", "images/stlouis-mo-3520-paris-17.jpg", "images/stlouis-mo-3520-paris-18.jpg", "images/stlouis-mo-3520-paris-19.jpg", "images/stlouis-mo-3520-paris-20.jpg", "images/stlouis-mo-3520-paris-21.jpg", "images/stlouis-mo-3520-paris-22.jpg", "images/stlouis-mo-3520-paris-23.jpg", "images/stlouis-mo-3520-paris-24.jpg", "images/stlouis-mo-3520-paris-25.jpg", "images/stlouis-mo-3520-paris-26.jpg", "images/stlouis-mo-3520-paris-27.jpg", "images/stlouis-mo-3520-paris-28.jpg", "images/stlouis-mo-3520-paris-29.jpg", "images/stlouis-mo-3520-paris-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/stlouis-mo-3520-paris.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "eaststlouis-il-724-82nd",
@@ -2868,6 +3453,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/eaststlouis-il-724-82nd-1.jpg", "images/eaststlouis-il-724-82nd-2.jpg", "images/eaststlouis-il-724-82nd-3.jpg", "images/eaststlouis-il-724-82nd-4.jpg", "images/eaststlouis-il-724-82nd-5.jpg", "images/eaststlouis-il-724-82nd-6.jpg", "images/eaststlouis-il-724-82nd-7.jpg", "images/eaststlouis-il-724-82nd-8.jpg", "images/eaststlouis-il-724-82nd-9.jpg", "images/eaststlouis-il-724-82nd-10.jpg", "images/eaststlouis-il-724-82nd-11.jpg", "images/eaststlouis-il-724-82nd-12.jpg", "images/eaststlouis-il-724-82nd-13.jpg", "images/eaststlouis-il-724-82nd-14.jpg", "images/eaststlouis-il-724-82nd-15.jpg", "images/eaststlouis-il-724-82nd-16.jpg", "images/eaststlouis-il-724-82nd-17.jpg", "images/eaststlouis-il-724-82nd-18.jpg", "images/eaststlouis-il-724-82nd-19.jpg", "images/eaststlouis-il-724-82nd-20.jpg", "images/eaststlouis-il-724-82nd-21.jpg", "images/eaststlouis-il-724-82nd-22.jpg", "images/eaststlouis-il-724-82nd-23.jpg", "images/eaststlouis-il-724-82nd-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/eaststlouis-il-724-82nd.webp",
+    cardWidth: 480,
+    cardHeight: 361,
   },
   {
     id: "jackson-ms-4228-johnson",
@@ -2892,6 +3482,11 @@ const HOMES = [
     features: { backyard: "yes", off_street_parking: "yes", storage_shed: "yes" },
     heroPhoto: "",
     photos:    ["images/jackson-ms-4228-johnson-1.jpg", "images/jackson-ms-4228-johnson-2.jpg", "images/jackson-ms-4228-johnson-3.jpg", "images/jackson-ms-4228-johnson-4.jpg", "images/jackson-ms-4228-johnson-5.jpg", "images/jackson-ms-4228-johnson-6.jpg", "images/jackson-ms-4228-johnson-7.jpg", "images/jackson-ms-4228-johnson-8.jpg", "images/jackson-ms-4228-johnson-9.jpg", "images/jackson-ms-4228-johnson-10.jpg", "images/jackson-ms-4228-johnson-11.jpg", "images/jackson-ms-4228-johnson-12.jpg", "images/jackson-ms-4228-johnson-13.jpg", "images/jackson-ms-4228-johnson-14.jpg", "images/jackson-ms-4228-johnson-15.jpg", "images/jackson-ms-4228-johnson-16.jpg", "images/jackson-ms-4228-johnson-17.jpg", "images/jackson-ms-4228-johnson-18.jpg", "images/jackson-ms-4228-johnson-19.jpg", "images/jackson-ms-4228-johnson-20.jpg", "images/jackson-ms-4228-johnson-21.jpg", "images/jackson-ms-4228-johnson-22.jpg", "images/jackson-ms-4228-johnson-23.jpg", "images/jackson-ms-4228-johnson-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/jackson-ms-4228-johnson.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "eaststlouis-il-351-26th",
@@ -2917,6 +3512,11 @@ const HOMES = [
     features: { garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/eaststlouis-il-351-26th-1.jpg", "images/eaststlouis-il-351-26th-2.jpg", "images/eaststlouis-il-351-26th-3.jpg", "images/eaststlouis-il-351-26th-4.jpg", "images/eaststlouis-il-351-26th-5.jpg", "images/eaststlouis-il-351-26th-6.jpg", "images/eaststlouis-il-351-26th-7.jpg", "images/eaststlouis-il-351-26th-8.jpg", "images/eaststlouis-il-351-26th-9.jpg", "images/eaststlouis-il-351-26th-10.jpg", "images/eaststlouis-il-351-26th-11.jpg", "images/eaststlouis-il-351-26th-12.jpg", "images/eaststlouis-il-351-26th-13.jpg", "images/eaststlouis-il-351-26th-14.jpg", "images/eaststlouis-il-351-26th-15.jpg", "images/eaststlouis-il-351-26th-16.jpg", "images/eaststlouis-il-351-26th-17.jpg", "images/eaststlouis-il-351-26th-18.jpg", "images/eaststlouis-il-351-26th-19.jpg", "images/eaststlouis-il-351-26th-20.jpg", "images/eaststlouis-il-351-26th-21.jpg", "images/eaststlouis-il-351-26th-22.jpg", "images/eaststlouis-il-351-26th-23.jpg"],
+    hasPhoto: true,
+    photoCount: 24,
+    cardPhoto: "images/cards/eaststlouis-il-351-26th.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "decatur-il-1828-main",
@@ -2939,6 +3539,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1828-main-1.jpg", "images/decatur-il-1828-main-2.jpg", "images/decatur-il-1828-main-3.jpg", "images/decatur-il-1828-main-4.jpg", "images/decatur-il-1828-main-5.jpg", "images/decatur-il-1828-main-6.jpg", "images/decatur-il-1828-main-7.jpg", "images/decatur-il-1828-main-8.jpg", "images/decatur-il-1828-main-9.jpg", "images/decatur-il-1828-main-10.jpg", "images/decatur-il-1828-main-11.jpg", "images/decatur-il-1828-main-12.jpg", "images/decatur-il-1828-main-13.jpg", "images/decatur-il-1828-main-14.jpg", "images/decatur-il-1828-main-15.jpg", "images/decatur-il-1828-main-16.jpg", "images/decatur-il-1828-main-17.jpg", "images/decatur-il-1828-main-18.jpg", "images/decatur-il-1828-main-19.jpg", "images/decatur-il-1828-main-20.jpg", "images/decatur-il-1828-main-21.jpg", "images/decatur-il-1828-main-22.jpg", "images/decatur-il-1828-main-23.jpg", "images/decatur-il-1828-main-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/decatur-il-1828-main.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "eaststlouis-il-6000-old",
@@ -2962,6 +3567,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/eaststlouis-il-6000-old-1.jpg", "images/eaststlouis-il-6000-old-2.jpg", "images/eaststlouis-il-6000-old-3.jpg", "images/eaststlouis-il-6000-old-4.jpg", "images/eaststlouis-il-6000-old-5.jpg", "images/eaststlouis-il-6000-old-6.jpg", "images/eaststlouis-il-6000-old-7.jpg", "images/eaststlouis-il-6000-old-8.jpg", "images/eaststlouis-il-6000-old-9.jpg", "images/eaststlouis-il-6000-old-10.jpg", "images/eaststlouis-il-6000-old-11.jpg", "images/eaststlouis-il-6000-old-12.jpg", "images/eaststlouis-il-6000-old-13.jpg", "images/eaststlouis-il-6000-old-14.jpg", "images/eaststlouis-il-6000-old-15.jpg", "images/eaststlouis-il-6000-old-16.jpg", "images/eaststlouis-il-6000-old-17.jpg", "images/eaststlouis-il-6000-old-18.jpg", "images/eaststlouis-il-6000-old-19.jpg", "images/eaststlouis-il-6000-old-20.jpg", "images/eaststlouis-il-6000-old-21.jpg", "images/eaststlouis-il-6000-old-22.jpg", "images/eaststlouis-il-6000-old-23.jpg", "images/eaststlouis-il-6000-old-24.jpg", "images/eaststlouis-il-6000-old-25.jpg", "images/eaststlouis-il-6000-old-26.jpg", "images/eaststlouis-il-6000-old-27.jpg", "images/eaststlouis-il-6000-old-28.jpg", "images/eaststlouis-il-6000-old-29.jpg"],
+    hasPhoto: true,
+    photoCount: 30,
+    cardPhoto: "images/cards/eaststlouis-il-6000-old.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "lewistown-il-714-adams",
@@ -2986,6 +3596,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/lewistown-il-714-adams-1.jpg", "images/lewistown-il-714-adams-2.jpg", "images/lewistown-il-714-adams-3.jpg", "images/lewistown-il-714-adams-4.jpg", "images/lewistown-il-714-adams-5.jpg", "images/lewistown-il-714-adams-6.jpg", "images/lewistown-il-714-adams-7.jpg", "images/lewistown-il-714-adams-8.jpg"],
+    hasPhoto: true,
+    photoCount: 9,
+    cardPhoto: "images/cards/lewistown-il-714-adams.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "cahokia-il-1922-harvest",
@@ -3008,6 +3623,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/cahokia-il-1922-harvest-1.jpg", "images/cahokia-il-1922-harvest-2.jpg", "images/cahokia-il-1922-harvest-3.jpg", "images/cahokia-il-1922-harvest-4.jpg", "images/cahokia-il-1922-harvest-5.jpg", "images/cahokia-il-1922-harvest-6.jpg", "images/cahokia-il-1922-harvest-7.jpg", "images/cahokia-il-1922-harvest-8.jpg", "images/cahokia-il-1922-harvest-9.jpg", "images/cahokia-il-1922-harvest-10.jpg", "images/cahokia-il-1922-harvest-11.jpg", "images/cahokia-il-1922-harvest-12.jpg", "images/cahokia-il-1922-harvest-13.jpg", "images/cahokia-il-1922-harvest-14.jpg", "images/cahokia-il-1922-harvest-15.jpg", "images/cahokia-il-1922-harvest-16.jpg", "images/cahokia-il-1922-harvest-17.jpg", "images/cahokia-il-1922-harvest-18.jpg", "images/cahokia-il-1922-harvest-19.jpg", "images/cahokia-il-1922-harvest-20.jpg", "images/cahokia-il-1922-harvest-21.jpg", "images/cahokia-il-1922-harvest-22.jpg", "images/cahokia-il-1922-harvest-23.jpg", "images/cahokia-il-1922-harvest-24.jpg", "images/cahokia-il-1922-harvest-25.jpg", "images/cahokia-il-1922-harvest-26.jpg", "images/cahokia-il-1922-harvest-27.jpg", "images/cahokia-il-1922-harvest-28.jpg", "images/cahokia-il-1922-harvest-29.jpg", "images/cahokia-il-1922-harvest-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/cahokia-il-1922-harvest.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-132-23rd",
@@ -3033,6 +3653,11 @@ const HOMES = [
     features: { garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-132-23rd-1.jpg", "images/decatur-il-132-23rd-2.jpg", "images/decatur-il-132-23rd-3.jpg", "images/decatur-il-132-23rd-4.jpg", "images/decatur-il-132-23rd-5.jpg", "images/decatur-il-132-23rd-6.jpg", "images/decatur-il-132-23rd-7.jpg", "images/decatur-il-132-23rd-8.jpg", "images/decatur-il-132-23rd-9.jpg", "images/decatur-il-132-23rd-10.jpg", "images/decatur-il-132-23rd-11.jpg", "images/decatur-il-132-23rd-12.jpg", "images/decatur-il-132-23rd-13.jpg", "images/decatur-il-132-23rd-14.jpg", "images/decatur-il-132-23rd-15.jpg", "images/decatur-il-132-23rd-16.jpg", "images/decatur-il-132-23rd-17.jpg", "images/decatur-il-132-23rd-18.jpg", "images/decatur-il-132-23rd-19.jpg", "images/decatur-il-132-23rd-20.jpg", "images/decatur-il-132-23rd-21.jpg", "images/decatur-il-132-23rd-22.jpg", "images/decatur-il-132-23rd-23.jpg", "images/decatur-il-132-23rd-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/decatur-il-132-23rd.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "peoria-il-1811-millman",
@@ -3056,6 +3681,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/peoria-il-1811-millman-1.jpg", "images/peoria-il-1811-millman-2.jpg", "images/peoria-il-1811-millman-3.jpg", "images/peoria-il-1811-millman-4.jpg", "images/peoria-il-1811-millman-5.jpg", "images/peoria-il-1811-millman-6.jpg", "images/peoria-il-1811-millman-7.jpg", "images/peoria-il-1811-millman-8.jpg", "images/peoria-il-1811-millman-9.jpg", "images/peoria-il-1811-millman-10.jpg", "images/peoria-il-1811-millman-11.jpg", "images/peoria-il-1811-millman-12.jpg", "images/peoria-il-1811-millman-13.jpg", "images/peoria-il-1811-millman-14.jpg", "images/peoria-il-1811-millman-15.jpg", "images/peoria-il-1811-millman-16.jpg", "images/peoria-il-1811-millman-17.jpg", "images/peoria-il-1811-millman-18.jpg", "images/peoria-il-1811-millman-19.jpg", "images/peoria-il-1811-millman-20.jpg", "images/peoria-il-1811-millman-21.jpg", "images/peoria-il-1811-millman-22.jpg", "images/peoria-il-1811-millman-23.jpg", "images/peoria-il-1811-millman-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/peoria-il-1811-millman.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "stlouis-mo-5341-goodfellow",
@@ -3080,6 +3710,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-5341-goodfellow-1.jpg", "images/stlouis-mo-5341-goodfellow-2.jpg", "images/stlouis-mo-5341-goodfellow-3.jpg", "images/stlouis-mo-5341-goodfellow-4.jpg", "images/stlouis-mo-5341-goodfellow-5.jpg", "images/stlouis-mo-5341-goodfellow-6.jpg", "images/stlouis-mo-5341-goodfellow-7.jpg", "images/stlouis-mo-5341-goodfellow-8.jpg", "images/stlouis-mo-5341-goodfellow-9.jpg", "images/stlouis-mo-5341-goodfellow-10.jpg", "images/stlouis-mo-5341-goodfellow-11.jpg", "images/stlouis-mo-5341-goodfellow-12.jpg", "images/stlouis-mo-5341-goodfellow-13.jpg", "images/stlouis-mo-5341-goodfellow-14.jpg", "images/stlouis-mo-5341-goodfellow-15.jpg", "images/stlouis-mo-5341-goodfellow-16.jpg", "images/stlouis-mo-5341-goodfellow-17.jpg", "images/stlouis-mo-5341-goodfellow-18.jpg", "images/stlouis-mo-5341-goodfellow-19.jpg", "images/stlouis-mo-5341-goodfellow-20.jpg", "images/stlouis-mo-5341-goodfellow-21.jpg", "images/stlouis-mo-5341-goodfellow-22.jpg", "images/stlouis-mo-5341-goodfellow-23.jpg", "images/stlouis-mo-5341-goodfellow-24.jpg", "images/stlouis-mo-5341-goodfellow-25.jpg", "images/stlouis-mo-5341-goodfellow-26.jpg", "images/stlouis-mo-5341-goodfellow-27.jpg", "images/stlouis-mo-5341-goodfellow-28.jpg", "images/stlouis-mo-5341-goodfellow-29.jpg", "images/stlouis-mo-5341-goodfellow-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/stlouis-mo-5341-goodfellow.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "carbondale-il-303-sycamore",
@@ -3103,6 +3738,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/carbondale-il-303-sycamore-1.jpg", "images/carbondale-il-303-sycamore-2.jpg", "images/carbondale-il-303-sycamore-3.jpg", "images/carbondale-il-303-sycamore-4.jpg", "images/carbondale-il-303-sycamore-5.jpg", "images/carbondale-il-303-sycamore-6.jpg", "images/carbondale-il-303-sycamore-7.jpg", "images/carbondale-il-303-sycamore-8.jpg", "images/carbondale-il-303-sycamore-9.jpg", "images/carbondale-il-303-sycamore-10.jpg", "images/carbondale-il-303-sycamore-11.jpg", "images/carbondale-il-303-sycamore-12.jpg", "images/carbondale-il-303-sycamore-13.jpg", "images/carbondale-il-303-sycamore-14.jpg", "images/carbondale-il-303-sycamore-15.jpg", "images/carbondale-il-303-sycamore-16.jpg", "images/carbondale-il-303-sycamore-17.jpg", "images/carbondale-il-303-sycamore-18.jpg", "images/carbondale-il-303-sycamore-19.jpg", "images/carbondale-il-303-sycamore-20.jpg", "images/carbondale-il-303-sycamore-21.jpg", "images/carbondale-il-303-sycamore-22.jpg", "images/carbondale-il-303-sycamore-23.jpg", "images/carbondale-il-303-sycamore-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/carbondale-il-303-sycamore.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "duquoin-il-322-cole",
@@ -3128,6 +3768,11 @@ const HOMES = [
     features: { backyard: "yes" },
     heroPhoto: "",
     photos:    ["images/duquoin-il-322-cole-1.jpg", "images/duquoin-il-322-cole-2.jpg", "images/duquoin-il-322-cole-3.jpg", "images/duquoin-il-322-cole-4.jpg", "images/duquoin-il-322-cole-5.jpg"],
+    hasPhoto: true,
+    photoCount: 6,
+    cardPhoto: "images/cards/duquoin-il-322-cole.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "stlouis-mo-4121-clara",
@@ -3151,6 +3796,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-4121-clara-1.jpg", "images/stlouis-mo-4121-clara-2.jpg", "images/stlouis-mo-4121-clara-3.jpg", "images/stlouis-mo-4121-clara-4.jpg", "images/stlouis-mo-4121-clara-5.jpg", "images/stlouis-mo-4121-clara-6.jpg", "images/stlouis-mo-4121-clara-7.jpg", "images/stlouis-mo-4121-clara-8.jpg", "images/stlouis-mo-4121-clara-9.jpg", "images/stlouis-mo-4121-clara-10.jpg", "images/stlouis-mo-4121-clara-11.jpg", "images/stlouis-mo-4121-clara-12.jpg", "images/stlouis-mo-4121-clara-13.jpg", "images/stlouis-mo-4121-clara-14.jpg", "images/stlouis-mo-4121-clara-15.jpg", "images/stlouis-mo-4121-clara-16.jpg", "images/stlouis-mo-4121-clara-17.jpg", "images/stlouis-mo-4121-clara-18.jpg", "images/stlouis-mo-4121-clara-19.jpg", "images/stlouis-mo-4121-clara-20.jpg", "images/stlouis-mo-4121-clara-21.jpg", "images/stlouis-mo-4121-clara-22.jpg", "images/stlouis-mo-4121-clara-23.jpg", "images/stlouis-mo-4121-clara-24.jpg", "images/stlouis-mo-4121-clara-25.jpg", "images/stlouis-mo-4121-clara-26.jpg", "images/stlouis-mo-4121-clara-27.jpg", "images/stlouis-mo-4121-clara-28.jpg", "images/stlouis-mo-4121-clara-29.jpg", "images/stlouis-mo-4121-clara-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/stlouis-mo-4121-clara.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "stlouis-mo-5152-maffitt",
@@ -3176,6 +3826,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-5152-maffitt-1.jpg", "images/stlouis-mo-5152-maffitt-2.jpg", "images/stlouis-mo-5152-maffitt-3.jpg", "images/stlouis-mo-5152-maffitt-4.jpg", "images/stlouis-mo-5152-maffitt-5.jpg", "images/stlouis-mo-5152-maffitt-6.jpg", "images/stlouis-mo-5152-maffitt-7.jpg", "images/stlouis-mo-5152-maffitt-8.jpg", "images/stlouis-mo-5152-maffitt-9.jpg", "images/stlouis-mo-5152-maffitt-10.jpg", "images/stlouis-mo-5152-maffitt-11.jpg", "images/stlouis-mo-5152-maffitt-12.jpg", "images/stlouis-mo-5152-maffitt-13.jpg", "images/stlouis-mo-5152-maffitt-14.jpg", "images/stlouis-mo-5152-maffitt-15.jpg", "images/stlouis-mo-5152-maffitt-16.jpg", "images/stlouis-mo-5152-maffitt-17.jpg", "images/stlouis-mo-5152-maffitt-18.jpg", "images/stlouis-mo-5152-maffitt-19.jpg", "images/stlouis-mo-5152-maffitt-20.jpg", "images/stlouis-mo-5152-maffitt-21.jpg", "images/stlouis-mo-5152-maffitt-22.jpg", "images/stlouis-mo-5152-maffitt-23.jpg", "images/stlouis-mo-5152-maffitt-24.jpg", "images/stlouis-mo-5152-maffitt-25.jpg", "images/stlouis-mo-5152-maffitt-26.jpg", "images/stlouis-mo-5152-maffitt-27.jpg", "images/stlouis-mo-5152-maffitt-28.jpg", "images/stlouis-mo-5152-maffitt-29.jpg", "images/stlouis-mo-5152-maffitt-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/stlouis-mo-5152-maffitt.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "flint-mi-1206-markham",
@@ -3201,6 +3856,11 @@ const HOMES = [
     features: { backyard: "yes", off_street_parking: "yes", storage_shed: "yes" },
     heroPhoto: "",
     photos:    ["images/flint-mi-1206-markham-1.jpg", "images/flint-mi-1206-markham-2.jpg", "images/flint-mi-1206-markham-3.jpg", "images/flint-mi-1206-markham-4.jpg", "images/flint-mi-1206-markham-5.jpg", "images/flint-mi-1206-markham-6.jpg", "images/flint-mi-1206-markham-7.jpg", "images/flint-mi-1206-markham-8.jpg", "images/flint-mi-1206-markham-9.jpg", "images/flint-mi-1206-markham-10.jpg", "images/flint-mi-1206-markham-11.jpg", "images/flint-mi-1206-markham-12.jpg", "images/flint-mi-1206-markham-13.jpg", "images/flint-mi-1206-markham-14.jpg", "images/flint-mi-1206-markham-15.jpg", "images/flint-mi-1206-markham-16.jpg", "images/flint-mi-1206-markham-17.jpg", "images/flint-mi-1206-markham-18.jpg", "images/flint-mi-1206-markham-19.jpg", "images/flint-mi-1206-markham-20.jpg", "images/flint-mi-1206-markham-21.jpg", "images/flint-mi-1206-markham-22.jpg", "images/flint-mi-1206-markham-23.jpg", "images/flint-mi-1206-markham-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/flint-mi-1206-markham.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-1344-condit",
@@ -3223,6 +3883,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1344-condit-1.jpg", "images/decatur-il-1344-condit-2.jpg", "images/decatur-il-1344-condit-3.jpg", "images/decatur-il-1344-condit-4.jpg", "images/decatur-il-1344-condit-5.jpg", "images/decatur-il-1344-condit-6.jpg", "images/decatur-il-1344-condit-7.jpg", "images/decatur-il-1344-condit-8.jpg", "images/decatur-il-1344-condit-9.jpg", "images/decatur-il-1344-condit-10.jpg", "images/decatur-il-1344-condit-11.jpg", "images/decatur-il-1344-condit-12.jpg", "images/decatur-il-1344-condit-13.jpg", "images/decatur-il-1344-condit-14.jpg", "images/decatur-il-1344-condit-15.jpg", "images/decatur-il-1344-condit-16.jpg"],
+    hasPhoto: true,
+    photoCount: 17,
+    cardPhoto: "images/cards/decatur-il-1344-condit.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "cahokia-il-1106-st",
@@ -3247,6 +3912,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/cahokia-il-1106-st-1.jpg", "images/cahokia-il-1106-st-2.jpg", "images/cahokia-il-1106-st-3.jpg", "images/cahokia-il-1106-st-4.jpg", "images/cahokia-il-1106-st-5.jpg", "images/cahokia-il-1106-st-6.jpg", "images/cahokia-il-1106-st-7.jpg", "images/cahokia-il-1106-st-8.jpg", "images/cahokia-il-1106-st-9.jpg", "images/cahokia-il-1106-st-10.jpg", "images/cahokia-il-1106-st-11.jpg", "images/cahokia-il-1106-st-12.jpg", "images/cahokia-il-1106-st-13.jpg", "images/cahokia-il-1106-st-14.jpg", "images/cahokia-il-1106-st-15.jpg", "images/cahokia-il-1106-st-16.jpg", "images/cahokia-il-1106-st-17.jpg", "images/cahokia-il-1106-st-18.jpg", "images/cahokia-il-1106-st-19.jpg", "images/cahokia-il-1106-st-20.jpg", "images/cahokia-il-1106-st-21.jpg", "images/cahokia-il-1106-st-22.jpg", "images/cahokia-il-1106-st-23.jpg", "images/cahokia-il-1106-st-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/cahokia-il-1106-st.webp",
+    cardWidth: 480,
+    cardHeight: 643,
   },
   {
     id: "stlouis-mo-4521-oakwood",
@@ -3269,6 +3939,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-4521-oakwood-1.jpg", "images/stlouis-mo-4521-oakwood-2.jpg", "images/stlouis-mo-4521-oakwood-3.jpg", "images/stlouis-mo-4521-oakwood-4.jpg", "images/stlouis-mo-4521-oakwood-5.jpg", "images/stlouis-mo-4521-oakwood-6.jpg", "images/stlouis-mo-4521-oakwood-7.jpg", "images/stlouis-mo-4521-oakwood-8.jpg", "images/stlouis-mo-4521-oakwood-9.jpg", "images/stlouis-mo-4521-oakwood-10.jpg", "images/stlouis-mo-4521-oakwood-11.jpg", "images/stlouis-mo-4521-oakwood-12.jpg", "images/stlouis-mo-4521-oakwood-13.jpg", "images/stlouis-mo-4521-oakwood-14.jpg", "images/stlouis-mo-4521-oakwood-15.jpg", "images/stlouis-mo-4521-oakwood-16.jpg", "images/stlouis-mo-4521-oakwood-17.jpg", "images/stlouis-mo-4521-oakwood-18.jpg", "images/stlouis-mo-4521-oakwood-19.jpg", "images/stlouis-mo-4521-oakwood-20.jpg", "images/stlouis-mo-4521-oakwood-21.jpg", "images/stlouis-mo-4521-oakwood-22.jpg", "images/stlouis-mo-4521-oakwood-23.jpg", "images/stlouis-mo-4521-oakwood-24.jpg", "images/stlouis-mo-4521-oakwood-25.jpg", "images/stlouis-mo-4521-oakwood-26.jpg", "images/stlouis-mo-4521-oakwood-27.jpg", "images/stlouis-mo-4521-oakwood-28.jpg", "images/stlouis-mo-4521-oakwood-29.jpg", "images/stlouis-mo-4521-oakwood-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/stlouis-mo-4521-oakwood.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "stlouis-mo-19-harvey",
@@ -3292,6 +3967,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-19-harvey-1.jpg", "images/stlouis-mo-19-harvey-2.jpg", "images/stlouis-mo-19-harvey-3.jpg", "images/stlouis-mo-19-harvey-4.jpg", "images/stlouis-mo-19-harvey-5.jpg", "images/stlouis-mo-19-harvey-6.jpg", "images/stlouis-mo-19-harvey-7.jpg", "images/stlouis-mo-19-harvey-8.jpg", "images/stlouis-mo-19-harvey-9.jpg"],
+    hasPhoto: true,
+    photoCount: 10,
+    cardPhoto: "images/cards/stlouis-mo-19-harvey.webp",
+    cardWidth: 480,
+    cardHeight: 361,
   },
   {
     id: "stlouis-mo-4546-pope",
@@ -3314,6 +3994,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-4546-pope-1.jpg", "images/stlouis-mo-4546-pope-2.jpg", "images/stlouis-mo-4546-pope-3.jpg", "images/stlouis-mo-4546-pope-4.jpg", "images/stlouis-mo-4546-pope-5.jpg", "images/stlouis-mo-4546-pope-6.jpg", "images/stlouis-mo-4546-pope-7.jpg", "images/stlouis-mo-4546-pope-8.jpg", "images/stlouis-mo-4546-pope-9.jpg", "images/stlouis-mo-4546-pope-10.jpg", "images/stlouis-mo-4546-pope-11.jpg", "images/stlouis-mo-4546-pope-12.jpg", "images/stlouis-mo-4546-pope-13.jpg", "images/stlouis-mo-4546-pope-14.jpg", "images/stlouis-mo-4546-pope-15.jpg", "images/stlouis-mo-4546-pope-16.jpg", "images/stlouis-mo-4546-pope-17.jpg", "images/stlouis-mo-4546-pope-18.jpg", "images/stlouis-mo-4546-pope-19.jpg", "images/stlouis-mo-4546-pope-20.jpg", "images/stlouis-mo-4546-pope-21.jpg", "images/stlouis-mo-4546-pope-22.jpg", "images/stlouis-mo-4546-pope-23.jpg", "images/stlouis-mo-4546-pope-24.jpg", "images/stlouis-mo-4546-pope-25.jpg", "images/stlouis-mo-4546-pope-26.jpg"],
+    hasPhoto: true,
+    photoCount: 27,
+    cardPhoto: "images/cards/stlouis-mo-4546-pope.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "stlouis-mo-4043-camellia",
@@ -3336,6 +4021,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-4043-camellia-1.jpg", "images/stlouis-mo-4043-camellia-2.jpg", "images/stlouis-mo-4043-camellia-3.jpg", "images/stlouis-mo-4043-camellia-4.jpg", "images/stlouis-mo-4043-camellia-5.jpg", "images/stlouis-mo-4043-camellia-6.jpg", "images/stlouis-mo-4043-camellia-7.jpg", "images/stlouis-mo-4043-camellia-8.jpg", "images/stlouis-mo-4043-camellia-9.jpg", "images/stlouis-mo-4043-camellia-10.jpg", "images/stlouis-mo-4043-camellia-11.jpg", "images/stlouis-mo-4043-camellia-12.jpg", "images/stlouis-mo-4043-camellia-13.jpg", "images/stlouis-mo-4043-camellia-14.jpg", "images/stlouis-mo-4043-camellia-15.jpg", "images/stlouis-mo-4043-camellia-16.jpg", "images/stlouis-mo-4043-camellia-17.jpg", "images/stlouis-mo-4043-camellia-18.jpg", "images/stlouis-mo-4043-camellia-19.jpg", "images/stlouis-mo-4043-camellia-20.jpg", "images/stlouis-mo-4043-camellia-21.jpg"],
+    hasPhoto: true,
+    photoCount: 22,
+    cardPhoto: "images/cards/stlouis-mo-4043-camellia.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "stlouis-mo-5657-roosevelt",
@@ -3358,6 +4048,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-5657-roosevelt-1.jpg", "images/stlouis-mo-5657-roosevelt-2.jpg", "images/stlouis-mo-5657-roosevelt-3.jpg", "images/stlouis-mo-5657-roosevelt-4.jpg", "images/stlouis-mo-5657-roosevelt-5.jpg", "images/stlouis-mo-5657-roosevelt-6.jpg", "images/stlouis-mo-5657-roosevelt-7.jpg", "images/stlouis-mo-5657-roosevelt-8.jpg", "images/stlouis-mo-5657-roosevelt-9.jpg", "images/stlouis-mo-5657-roosevelt-10.jpg", "images/stlouis-mo-5657-roosevelt-11.jpg", "images/stlouis-mo-5657-roosevelt-12.jpg", "images/stlouis-mo-5657-roosevelt-13.jpg", "images/stlouis-mo-5657-roosevelt-14.jpg", "images/stlouis-mo-5657-roosevelt-15.jpg", "images/stlouis-mo-5657-roosevelt-16.jpg", "images/stlouis-mo-5657-roosevelt-17.jpg", "images/stlouis-mo-5657-roosevelt-18.jpg", "images/stlouis-mo-5657-roosevelt-19.jpg", "images/stlouis-mo-5657-roosevelt-20.jpg", "images/stlouis-mo-5657-roosevelt-21.jpg", "images/stlouis-mo-5657-roosevelt-22.jpg", "images/stlouis-mo-5657-roosevelt-23.jpg", "images/stlouis-mo-5657-roosevelt-24.jpg", "images/stlouis-mo-5657-roosevelt-25.jpg", "images/stlouis-mo-5657-roosevelt-26.jpg", "images/stlouis-mo-5657-roosevelt-27.jpg", "images/stlouis-mo-5657-roosevelt-28.jpg", "images/stlouis-mo-5657-roosevelt-29.jpg", "images/stlouis-mo-5657-roosevelt-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/stlouis-mo-5657-roosevelt.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "cahokia-il-608-saint",
@@ -3380,6 +4075,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/cahokia-il-608-saint-1.jpg", "images/cahokia-il-608-saint-2.jpg", "images/cahokia-il-608-saint-3.jpg", "images/cahokia-il-608-saint-4.jpg", "images/cahokia-il-608-saint-5.jpg", "images/cahokia-il-608-saint-6.jpg", "images/cahokia-il-608-saint-7.jpg", "images/cahokia-il-608-saint-8.jpg", "images/cahokia-il-608-saint-9.jpg", "images/cahokia-il-608-saint-10.jpg", "images/cahokia-il-608-saint-11.jpg", "images/cahokia-il-608-saint-12.jpg", "images/cahokia-il-608-saint-13.jpg", "images/cahokia-il-608-saint-14.jpg", "images/cahokia-il-608-saint-15.jpg", "images/cahokia-il-608-saint-16.jpg", "images/cahokia-il-608-saint-17.jpg", "images/cahokia-il-608-saint-18.jpg", "images/cahokia-il-608-saint-19.jpg", "images/cahokia-il-608-saint-20.jpg", "images/cahokia-il-608-saint-21.jpg", "images/cahokia-il-608-saint-22.jpg", "images/cahokia-il-608-saint-23.jpg"],
+    hasPhoto: true,
+    photoCount: 24,
+    cardPhoto: "images/cards/cahokia-il-608-saint.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "stlouis-mo-5645-hodiamont",
@@ -3402,6 +4102,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-5645-hodiamont-1.jpg", "images/stlouis-mo-5645-hodiamont-2.jpg", "images/stlouis-mo-5645-hodiamont-3.jpg", "images/stlouis-mo-5645-hodiamont-4.jpg", "images/stlouis-mo-5645-hodiamont-5.jpg", "images/stlouis-mo-5645-hodiamont-6.jpg", "images/stlouis-mo-5645-hodiamont-7.jpg", "images/stlouis-mo-5645-hodiamont-8.jpg", "images/stlouis-mo-5645-hodiamont-9.jpg", "images/stlouis-mo-5645-hodiamont-10.jpg", "images/stlouis-mo-5645-hodiamont-11.jpg", "images/stlouis-mo-5645-hodiamont-12.jpg", "images/stlouis-mo-5645-hodiamont-13.jpg", "images/stlouis-mo-5645-hodiamont-14.jpg", "images/stlouis-mo-5645-hodiamont-15.jpg", "images/stlouis-mo-5645-hodiamont-16.jpg", "images/stlouis-mo-5645-hodiamont-17.jpg", "images/stlouis-mo-5645-hodiamont-18.jpg", "images/stlouis-mo-5645-hodiamont-19.jpg", "images/stlouis-mo-5645-hodiamont-20.jpg", "images/stlouis-mo-5645-hodiamont-21.jpg", "images/stlouis-mo-5645-hodiamont-22.jpg", "images/stlouis-mo-5645-hodiamont-23.jpg", "images/stlouis-mo-5645-hodiamont-24.jpg", "images/stlouis-mo-5645-hodiamont-25.jpg", "images/stlouis-mo-5645-hodiamont-26.jpg", "images/stlouis-mo-5645-hodiamont-27.jpg", "images/stlouis-mo-5645-hodiamont-28.jpg", "images/stlouis-mo-5645-hodiamont-29.jpg", "images/stlouis-mo-5645-hodiamont-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/stlouis-mo-5645-hodiamont.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "madison-il-1541-5th",
@@ -3424,6 +4129,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/madison-il-1541-5th-1.jpg", "images/madison-il-1541-5th-2.jpg", "images/madison-il-1541-5th-3.jpg", "images/madison-il-1541-5th-4.jpg", "images/madison-il-1541-5th-5.jpg", "images/madison-il-1541-5th-6.jpg", "images/madison-il-1541-5th-7.jpg", "images/madison-il-1541-5th-8.jpg", "images/madison-il-1541-5th-9.jpg", "images/madison-il-1541-5th-10.jpg", "images/madison-il-1541-5th-11.jpg", "images/madison-il-1541-5th-12.jpg", "images/madison-il-1541-5th-13.jpg", "images/madison-il-1541-5th-14.jpg", "images/madison-il-1541-5th-15.jpg", "images/madison-il-1541-5th-16.jpg", "images/madison-il-1541-5th-17.jpg", "images/madison-il-1541-5th-18.jpg", "images/madison-il-1541-5th-19.jpg", "images/madison-il-1541-5th-20.jpg", "images/madison-il-1541-5th-21.jpg", "images/madison-il-1541-5th-22.jpg", "images/madison-il-1541-5th-23.jpg", "images/madison-il-1541-5th-24.jpg", "images/madison-il-1541-5th-25.jpg", "images/madison-il-1541-5th-26.jpg", "images/madison-il-1541-5th-27.jpg", "images/madison-il-1541-5th-28.jpg", "images/madison-il-1541-5th-29.jpg", "images/madison-il-1541-5th-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/madison-il-1541-5th.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "madison-il-1532-5th",
@@ -3446,6 +4156,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/madison-il-1532-5th-1.jpg", "images/madison-il-1532-5th-2.jpg", "images/madison-il-1532-5th-3.jpg", "images/madison-il-1532-5th-4.jpg", "images/madison-il-1532-5th-5.jpg", "images/madison-il-1532-5th-6.jpg", "images/madison-il-1532-5th-7.jpg", "images/madison-il-1532-5th-8.jpg", "images/madison-il-1532-5th-9.jpg", "images/madison-il-1532-5th-10.jpg", "images/madison-il-1532-5th-11.jpg", "images/madison-il-1532-5th-12.jpg", "images/madison-il-1532-5th-13.jpg", "images/madison-il-1532-5th-14.jpg", "images/madison-il-1532-5th-15.jpg", "images/madison-il-1532-5th-16.jpg", "images/madison-il-1532-5th-17.jpg", "images/madison-il-1532-5th-18.jpg", "images/madison-il-1532-5th-19.jpg", "images/madison-il-1532-5th-20.jpg", "images/madison-il-1532-5th-21.jpg", "images/madison-il-1532-5th-22.jpg", "images/madison-il-1532-5th-23.jpg", "images/madison-il-1532-5th-24.jpg", "images/madison-il-1532-5th-25.jpg", "images/madison-il-1532-5th-26.jpg", "images/madison-il-1532-5th-27.jpg", "images/madison-il-1532-5th-28.jpg", "images/madison-il-1532-5th-29.jpg"],
+    hasPhoto: true,
+    photoCount: 30,
+    cardPhoto: "images/cards/madison-il-1532-5th.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "stlouis-mo-610r-fremont",
@@ -3468,6 +4183,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-610r-fremont-1.jpg", "images/stlouis-mo-610r-fremont-2.jpg", "images/stlouis-mo-610r-fremont-3.jpg", "images/stlouis-mo-610r-fremont-4.jpg", "images/stlouis-mo-610r-fremont-5.jpg", "images/stlouis-mo-610r-fremont-6.jpg", "images/stlouis-mo-610r-fremont-7.jpg", "images/stlouis-mo-610r-fremont-8.jpg", "images/stlouis-mo-610r-fremont-9.jpg", "images/stlouis-mo-610r-fremont-10.jpg", "images/stlouis-mo-610r-fremont-11.jpg", "images/stlouis-mo-610r-fremont-12.jpg"],
+    hasPhoto: true,
+    photoCount: 12,
+    cardPhoto: "images/cards/stlouis-mo-610r-fremont.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "stlouis-mo-3742-melba",
@@ -3490,6 +4210,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-3742-melba-1.jpg", "images/stlouis-mo-3742-melba-2.jpg", "images/stlouis-mo-3742-melba-3.jpg", "images/stlouis-mo-3742-melba-4.jpg", "images/stlouis-mo-3742-melba-5.jpg", "images/stlouis-mo-3742-melba-6.jpg", "images/stlouis-mo-3742-melba-7.jpg", "images/stlouis-mo-3742-melba-8.jpg", "images/stlouis-mo-3742-melba-9.jpg", "images/stlouis-mo-3742-melba-10.jpg", "images/stlouis-mo-3742-melba-11.jpg", "images/stlouis-mo-3742-melba-12.jpg", "images/stlouis-mo-3742-melba-13.jpg", "images/stlouis-mo-3742-melba-14.jpg", "images/stlouis-mo-3742-melba-15.jpg", "images/stlouis-mo-3742-melba-16.jpg", "images/stlouis-mo-3742-melba-17.jpg", "images/stlouis-mo-3742-melba-18.jpg", "images/stlouis-mo-3742-melba-19.jpg", "images/stlouis-mo-3742-melba-20.jpg", "images/stlouis-mo-3742-melba-21.jpg", "images/stlouis-mo-3742-melba-22.jpg", "images/stlouis-mo-3742-melba-23.jpg", "images/stlouis-mo-3742-melba-24.jpg", "images/stlouis-mo-3742-melba-25.jpg", "images/stlouis-mo-3742-melba-26.jpg"],
+    hasPhoto: true,
+    photoCount: 27,
+    cardPhoto: "images/cards/stlouis-mo-3742-melba.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "stlouis-mo-6041-harney",
@@ -3512,6 +4237,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-6041-harney-1.jpg", "images/stlouis-mo-6041-harney-2.jpg", "images/stlouis-mo-6041-harney-3.jpg", "images/stlouis-mo-6041-harney-4.jpg", "images/stlouis-mo-6041-harney-5.jpg", "images/stlouis-mo-6041-harney-6.jpg", "images/stlouis-mo-6041-harney-7.jpg", "images/stlouis-mo-6041-harney-8.jpg", "images/stlouis-mo-6041-harney-9.jpg", "images/stlouis-mo-6041-harney-10.jpg", "images/stlouis-mo-6041-harney-11.jpg", "images/stlouis-mo-6041-harney-12.jpg", "images/stlouis-mo-6041-harney-13.jpg", "images/stlouis-mo-6041-harney-14.jpg", "images/stlouis-mo-6041-harney-15.jpg", "images/stlouis-mo-6041-harney-16.jpg", "images/stlouis-mo-6041-harney-17.jpg", "images/stlouis-mo-6041-harney-18.jpg", "images/stlouis-mo-6041-harney-19.jpg", "images/stlouis-mo-6041-harney-20.jpg", "images/stlouis-mo-6041-harney-21.jpg", "images/stlouis-mo-6041-harney-22.jpg", "images/stlouis-mo-6041-harney-23.jpg", "images/stlouis-mo-6041-harney-24.jpg", "images/stlouis-mo-6041-harney-25.jpg", "images/stlouis-mo-6041-harney-26.jpg", "images/stlouis-mo-6041-harney-27.jpg", "images/stlouis-mo-6041-harney-28.jpg", "images/stlouis-mo-6041-harney-29.jpg", "images/stlouis-mo-6041-harney-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/stlouis-mo-6041-harney.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-1096-green",
@@ -3534,6 +4264,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1096-green-1.jpg", "images/decatur-il-1096-green-2.jpg", "images/decatur-il-1096-green-3.jpg", "images/decatur-il-1096-green-4.jpg", "images/decatur-il-1096-green-5.jpg", "images/decatur-il-1096-green-6.jpg", "images/decatur-il-1096-green-7.jpg", "images/decatur-il-1096-green-8.jpg", "images/decatur-il-1096-green-9.jpg", "images/decatur-il-1096-green-10.jpg", "images/decatur-il-1096-green-11.jpg", "images/decatur-il-1096-green-12.jpg", "images/decatur-il-1096-green-13.jpg", "images/decatur-il-1096-green-14.jpg", "images/decatur-il-1096-green-15.jpg", "images/decatur-il-1096-green-16.jpg", "images/decatur-il-1096-green-17.jpg", "images/decatur-il-1096-green-18.jpg", "images/decatur-il-1096-green-19.jpg", "images/decatur-il-1096-green-20.jpg", "images/decatur-il-1096-green-21.jpg", "images/decatur-il-1096-green-22.jpg", "images/decatur-il-1096-green-23.jpg", "images/decatur-il-1096-green-24.jpg", "images/decatur-il-1096-green-25.jpg", "images/decatur-il-1096-green-26.jpg"],
+    hasPhoto: true,
+    photoCount: 27,
+    cardPhoto: "images/cards/decatur-il-1096-green.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-442-division",
@@ -3556,6 +4291,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-442-division-1.jpg", "images/decatur-il-442-division-2.jpg", "images/decatur-il-442-division-3.jpg", "images/decatur-il-442-division-4.jpg", "images/decatur-il-442-division-5.jpg", "images/decatur-il-442-division-6.jpg", "images/decatur-il-442-division-7.jpg", "images/decatur-il-442-division-8.jpg", "images/decatur-il-442-division-9.jpg", "images/decatur-il-442-division-10.jpg", "images/decatur-il-442-division-11.jpg", "images/decatur-il-442-division-12.jpg", "images/decatur-il-442-division-13.jpg", "images/decatur-il-442-division-14.jpg", "images/decatur-il-442-division-15.jpg", "images/decatur-il-442-division-16.jpg", "images/decatur-il-442-division-17.jpg", "images/decatur-il-442-division-18.jpg", "images/decatur-il-442-division-19.jpg", "images/decatur-il-442-division-20.jpg", "images/decatur-il-442-division-21.jpg", "images/decatur-il-442-division-22.jpg", "images/decatur-il-442-division-23.jpg", "images/decatur-il-442-division-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/decatur-il-442-division.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-941-waggoner",
@@ -3578,6 +4318,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-941-waggoner-1.jpg", "images/decatur-il-941-waggoner-2.jpg", "images/decatur-il-941-waggoner-3.jpg", "images/decatur-il-941-waggoner-4.jpg", "images/decatur-il-941-waggoner-5.jpg", "images/decatur-il-941-waggoner-6.jpg", "images/decatur-il-941-waggoner-7.jpg", "images/decatur-il-941-waggoner-8.jpg", "images/decatur-il-941-waggoner-9.jpg", "images/decatur-il-941-waggoner-10.jpg", "images/decatur-il-941-waggoner-11.jpg", "images/decatur-il-941-waggoner-12.jpg", "images/decatur-il-941-waggoner-13.jpg", "images/decatur-il-941-waggoner-14.jpg", "images/decatur-il-941-waggoner-15.jpg", "images/decatur-il-941-waggoner-16.jpg", "images/decatur-il-941-waggoner-17.jpg", "images/decatur-il-941-waggoner-18.jpg", "images/decatur-il-941-waggoner-19.jpg", "images/decatur-il-941-waggoner-20.jpg", "images/decatur-il-941-waggoner-21.jpg", "images/decatur-il-941-waggoner-22.jpg", "images/decatur-il-941-waggoner-23.jpg", "images/decatur-il-941-waggoner-24.jpg", "images/decatur-il-941-waggoner-25.jpg", "images/decatur-il-941-waggoner-26.jpg", "images/decatur-il-941-waggoner-27.jpg", "images/decatur-il-941-waggoner-28.jpg", "images/decatur-il-941-waggoner-29.jpg", "images/decatur-il-941-waggoner-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/decatur-il-941-waggoner.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "stlouis-mo-5621-sunbury",
@@ -3600,6 +4345,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-5621-sunbury-1.jpg", "images/stlouis-mo-5621-sunbury-2.jpg", "images/stlouis-mo-5621-sunbury-3.jpg", "images/stlouis-mo-5621-sunbury-4.jpg", "images/stlouis-mo-5621-sunbury-5.jpg", "images/stlouis-mo-5621-sunbury-6.jpg", "images/stlouis-mo-5621-sunbury-7.jpg", "images/stlouis-mo-5621-sunbury-8.jpg", "images/stlouis-mo-5621-sunbury-9.jpg", "images/stlouis-mo-5621-sunbury-10.jpg", "images/stlouis-mo-5621-sunbury-11.jpg", "images/stlouis-mo-5621-sunbury-12.jpg", "images/stlouis-mo-5621-sunbury-13.jpg", "images/stlouis-mo-5621-sunbury-14.jpg", "images/stlouis-mo-5621-sunbury-15.jpg", "images/stlouis-mo-5621-sunbury-16.jpg", "images/stlouis-mo-5621-sunbury-17.jpg", "images/stlouis-mo-5621-sunbury-18.jpg", "images/stlouis-mo-5621-sunbury-19.jpg", "images/stlouis-mo-5621-sunbury-20.jpg", "images/stlouis-mo-5621-sunbury-21.jpg", "images/stlouis-mo-5621-sunbury-22.jpg", "images/stlouis-mo-5621-sunbury-23.jpg", "images/stlouis-mo-5621-sunbury-24.jpg", "images/stlouis-mo-5621-sunbury-25.jpg", "images/stlouis-mo-5621-sunbury-26.jpg", "images/stlouis-mo-5621-sunbury-27.jpg", "images/stlouis-mo-5621-sunbury-28.jpg", "images/stlouis-mo-5621-sunbury-29.jpg", "images/stlouis-mo-5621-sunbury-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/stlouis-mo-5621-sunbury.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "stlouis-mo-127-elkan",
@@ -3622,6 +4372,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-127-elkan-1.jpg", "images/stlouis-mo-127-elkan-2.jpg", "images/stlouis-mo-127-elkan-3.jpg", "images/stlouis-mo-127-elkan-4.jpg", "images/stlouis-mo-127-elkan-5.jpg", "images/stlouis-mo-127-elkan-6.jpg", "images/stlouis-mo-127-elkan-7.jpg", "images/stlouis-mo-127-elkan-8.jpg", "images/stlouis-mo-127-elkan-9.jpg", "images/stlouis-mo-127-elkan-10.jpg", "images/stlouis-mo-127-elkan-11.jpg", "images/stlouis-mo-127-elkan-12.jpg", "images/stlouis-mo-127-elkan-13.jpg", "images/stlouis-mo-127-elkan-14.jpg", "images/stlouis-mo-127-elkan-15.jpg", "images/stlouis-mo-127-elkan-16.jpg", "images/stlouis-mo-127-elkan-17.jpg", "images/stlouis-mo-127-elkan-18.jpg", "images/stlouis-mo-127-elkan-19.jpg", "images/stlouis-mo-127-elkan-20.jpg", "images/stlouis-mo-127-elkan-21.jpg", "images/stlouis-mo-127-elkan-22.jpg", "images/stlouis-mo-127-elkan-23.jpg", "images/stlouis-mo-127-elkan-24.jpg", "images/stlouis-mo-127-elkan-25.jpg", "images/stlouis-mo-127-elkan-26.jpg", "images/stlouis-mo-127-elkan-27.jpg", "images/stlouis-mo-127-elkan-28.jpg", "images/stlouis-mo-127-elkan-29.jpg", "images/stlouis-mo-127-elkan-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/stlouis-mo-127-elkan.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "peoria-il-2049-gale",
@@ -3644,6 +4399,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/peoria-il-2049-gale-1.jpg", "images/peoria-il-2049-gale-2.jpg", "images/peoria-il-2049-gale-3.jpg", "images/peoria-il-2049-gale-4.jpg", "images/peoria-il-2049-gale-5.jpg", "images/peoria-il-2049-gale-6.jpg", "images/peoria-il-2049-gale-7.jpg", "images/peoria-il-2049-gale-8.jpg", "images/peoria-il-2049-gale-9.jpg", "images/peoria-il-2049-gale-10.jpg", "images/peoria-il-2049-gale-11.jpg", "images/peoria-il-2049-gale-12.jpg", "images/peoria-il-2049-gale-13.jpg", "images/peoria-il-2049-gale-14.jpg", "images/peoria-il-2049-gale-15.jpg"],
+    hasPhoto: true,
+    photoCount: 16,
+    cardPhoto: "images/cards/peoria-il-2049-gale.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "eastalton-il-336-goulding",
@@ -3666,6 +4426,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/eastalton-il-336-goulding-1.jpg", "images/eastalton-il-336-goulding-2.jpg", "images/eastalton-il-336-goulding-3.jpg", "images/eastalton-il-336-goulding-4.jpg", "images/eastalton-il-336-goulding-5.jpg", "images/eastalton-il-336-goulding-6.jpg", "images/eastalton-il-336-goulding-7.jpg", "images/eastalton-il-336-goulding-8.jpg", "images/eastalton-il-336-goulding-9.jpg", "images/eastalton-il-336-goulding-10.jpg", "images/eastalton-il-336-goulding-11.jpg", "images/eastalton-il-336-goulding-12.jpg", "images/eastalton-il-336-goulding-13.jpg", "images/eastalton-il-336-goulding-14.jpg", "images/eastalton-il-336-goulding-15.jpg", "images/eastalton-il-336-goulding-16.jpg", "images/eastalton-il-336-goulding-17.jpg", "images/eastalton-il-336-goulding-18.jpg", "images/eastalton-il-336-goulding-19.jpg", "images/eastalton-il-336-goulding-20.jpg", "images/eastalton-il-336-goulding-21.jpg", "images/eastalton-il-336-goulding-22.jpg", "images/eastalton-il-336-goulding-23.jpg", "images/eastalton-il-336-goulding-24.jpg", "images/eastalton-il-336-goulding-25.jpg", "images/eastalton-il-336-goulding-26.jpg", "images/eastalton-il-336-goulding-27.jpg", "images/eastalton-il-336-goulding-28.jpg", "images/eastalton-il-336-goulding-29.jpg", "images/eastalton-il-336-goulding-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/eastalton-il-336-goulding.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "stlouis-mo-6582-saint",
@@ -3688,6 +4453,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-6582-saint-1.jpg", "images/stlouis-mo-6582-saint-2.jpg", "images/stlouis-mo-6582-saint-3.jpg", "images/stlouis-mo-6582-saint-4.jpg", "images/stlouis-mo-6582-saint-5.jpg", "images/stlouis-mo-6582-saint-6.jpg", "images/stlouis-mo-6582-saint-7.jpg", "images/stlouis-mo-6582-saint-8.jpg", "images/stlouis-mo-6582-saint-9.jpg", "images/stlouis-mo-6582-saint-10.jpg", "images/stlouis-mo-6582-saint-11.jpg", "images/stlouis-mo-6582-saint-12.jpg", "images/stlouis-mo-6582-saint-13.jpg", "images/stlouis-mo-6582-saint-14.jpg", "images/stlouis-mo-6582-saint-15.jpg", "images/stlouis-mo-6582-saint-16.jpg", "images/stlouis-mo-6582-saint-17.jpg", "images/stlouis-mo-6582-saint-18.jpg", "images/stlouis-mo-6582-saint-19.jpg", "images/stlouis-mo-6582-saint-20.jpg", "images/stlouis-mo-6582-saint-21.jpg", "images/stlouis-mo-6582-saint-22.jpg", "images/stlouis-mo-6582-saint-23.jpg", "images/stlouis-mo-6582-saint-24.jpg", "images/stlouis-mo-6582-saint-25.jpg", "images/stlouis-mo-6582-saint-26.jpg", "images/stlouis-mo-6582-saint-27.jpg", "images/stlouis-mo-6582-saint-28.jpg", "images/stlouis-mo-6582-saint-29.jpg", "images/stlouis-mo-6582-saint-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/stlouis-mo-6582-saint.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-752-miller",
@@ -3711,6 +4481,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-752-miller-1.jpg", "images/decatur-il-752-miller-2.jpg", "images/decatur-il-752-miller-3.jpg", "images/decatur-il-752-miller-4.jpg", "images/decatur-il-752-miller-5.jpg", "images/decatur-il-752-miller-6.jpg", "images/decatur-il-752-miller-7.jpg", "images/decatur-il-752-miller-8.jpg", "images/decatur-il-752-miller-9.jpg", "images/decatur-il-752-miller-10.jpg", "images/decatur-il-752-miller-11.jpg", "images/decatur-il-752-miller-12.jpg", "images/decatur-il-752-miller-13.jpg", "images/decatur-il-752-miller-14.jpg", "images/decatur-il-752-miller-15.jpg", "images/decatur-il-752-miller-16.jpg", "images/decatur-il-752-miller-17.jpg", "images/decatur-il-752-miller-18.jpg", "images/decatur-il-752-miller-19.jpg", "images/decatur-il-752-miller-20.jpg", "images/decatur-il-752-miller-21.jpg", "images/decatur-il-752-miller-22.jpg", "images/decatur-il-752-miller-23.jpg", "images/decatur-il-752-miller-24.jpg", "images/decatur-il-752-miller-25.jpg", "images/decatur-il-752-miller-26.jpg"],
+    hasPhoto: true,
+    photoCount: 27,
+    cardPhoto: "images/cards/decatur-il-752-miller.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "stlouis-mo-8521-clifton",
@@ -3734,6 +4509,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-8521-clifton-1.jpg", "images/stlouis-mo-8521-clifton-2.jpg", "images/stlouis-mo-8521-clifton-3.jpg", "images/stlouis-mo-8521-clifton-4.jpg", "images/stlouis-mo-8521-clifton-5.jpg", "images/stlouis-mo-8521-clifton-6.jpg", "images/stlouis-mo-8521-clifton-7.jpg", "images/stlouis-mo-8521-clifton-8.jpg", "images/stlouis-mo-8521-clifton-9.jpg", "images/stlouis-mo-8521-clifton-10.jpg", "images/stlouis-mo-8521-clifton-11.jpg", "images/stlouis-mo-8521-clifton-12.jpg", "images/stlouis-mo-8521-clifton-13.jpg", "images/stlouis-mo-8521-clifton-14.jpg", "images/stlouis-mo-8521-clifton-15.jpg", "images/stlouis-mo-8521-clifton-16.jpg", "images/stlouis-mo-8521-clifton-17.jpg", "images/stlouis-mo-8521-clifton-18.jpg", "images/stlouis-mo-8521-clifton-19.jpg", "images/stlouis-mo-8521-clifton-20.jpg", "images/stlouis-mo-8521-clifton-21.jpg", "images/stlouis-mo-8521-clifton-22.jpg", "images/stlouis-mo-8521-clifton-23.jpg", "images/stlouis-mo-8521-clifton-24.jpg", "images/stlouis-mo-8521-clifton-25.jpg", "images/stlouis-mo-8521-clifton-26.jpg", "images/stlouis-mo-8521-clifton-27.jpg", "images/stlouis-mo-8521-clifton-28.jpg", "images/stlouis-mo-8521-clifton-29.jpg", "images/stlouis-mo-8521-clifton-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/stlouis-mo-8521-clifton.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "stlouis-mo-2726-belt",
@@ -3757,6 +4537,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    [],
+    hasPhoto: false,
+    photoCount: 0,
+    cardPhoto: "images/cards/stlouis-mo-2726-belt.webp",
+    cardWidth: 480,
+    cardHeight: 480,
   },
   {
     id: "stlouis-mo-1338-gregan",
@@ -3780,6 +4565,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-1338-gregan-1.jpg", "images/stlouis-mo-1338-gregan-2.jpg", "images/stlouis-mo-1338-gregan-3.jpg", "images/stlouis-mo-1338-gregan-4.jpg", "images/stlouis-mo-1338-gregan-5.jpg", "images/stlouis-mo-1338-gregan-6.jpg", "images/stlouis-mo-1338-gregan-7.jpg", "images/stlouis-mo-1338-gregan-8.jpg", "images/stlouis-mo-1338-gregan-9.jpg", "images/stlouis-mo-1338-gregan-10.jpg", "images/stlouis-mo-1338-gregan-11.jpg", "images/stlouis-mo-1338-gregan-12.jpg", "images/stlouis-mo-1338-gregan-13.jpg", "images/stlouis-mo-1338-gregan-14.jpg", "images/stlouis-mo-1338-gregan-15.jpg", "images/stlouis-mo-1338-gregan-16.jpg", "images/stlouis-mo-1338-gregan-17.jpg", "images/stlouis-mo-1338-gregan-18.jpg", "images/stlouis-mo-1338-gregan-19.jpg", "images/stlouis-mo-1338-gregan-20.jpg", "images/stlouis-mo-1338-gregan-21.jpg", "images/stlouis-mo-1338-gregan-22.jpg", "images/stlouis-mo-1338-gregan-23.jpg", "images/stlouis-mo-1338-gregan-24.jpg", "images/stlouis-mo-1338-gregan-25.jpg", "images/stlouis-mo-1338-gregan-26.jpg", "images/stlouis-mo-1338-gregan-27.jpg", "images/stlouis-mo-1338-gregan-28.jpg", "images/stlouis-mo-1338-gregan-29.jpg", "images/stlouis-mo-1338-gregan-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/stlouis-mo-1338-gregan.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "eaststlouis-il-1534-55th",
@@ -3802,6 +4592,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/eaststlouis-il-1534-55th-1.jpg", "images/eaststlouis-il-1534-55th-2.jpg", "images/eaststlouis-il-1534-55th-3.jpg", "images/eaststlouis-il-1534-55th-4.jpg", "images/eaststlouis-il-1534-55th-5.jpg", "images/eaststlouis-il-1534-55th-6.jpg", "images/eaststlouis-il-1534-55th-7.jpg", "images/eaststlouis-il-1534-55th-8.jpg", "images/eaststlouis-il-1534-55th-9.jpg", "images/eaststlouis-il-1534-55th-10.jpg", "images/eaststlouis-il-1534-55th-11.jpg", "images/eaststlouis-il-1534-55th-12.jpg", "images/eaststlouis-il-1534-55th-13.jpg", "images/eaststlouis-il-1534-55th-14.jpg", "images/eaststlouis-il-1534-55th-15.jpg", "images/eaststlouis-il-1534-55th-16.jpg", "images/eaststlouis-il-1534-55th-17.jpg"],
+    hasPhoto: true,
+    photoCount: 18,
+    cardPhoto: "images/cards/eaststlouis-il-1534-55th.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "stlouis-mo-5333-jennings",
@@ -3824,6 +4619,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-5333-jennings-1.jpg", "images/stlouis-mo-5333-jennings-2.jpg", "images/stlouis-mo-5333-jennings-3.jpg", "images/stlouis-mo-5333-jennings-4.jpg", "images/stlouis-mo-5333-jennings-5.jpg", "images/stlouis-mo-5333-jennings-6.jpg", "images/stlouis-mo-5333-jennings-7.jpg", "images/stlouis-mo-5333-jennings-8.jpg", "images/stlouis-mo-5333-jennings-9.jpg", "images/stlouis-mo-5333-jennings-10.jpg", "images/stlouis-mo-5333-jennings-11.jpg", "images/stlouis-mo-5333-jennings-12.jpg", "images/stlouis-mo-5333-jennings-13.jpg", "images/stlouis-mo-5333-jennings-14.jpg", "images/stlouis-mo-5333-jennings-15.jpg", "images/stlouis-mo-5333-jennings-16.jpg", "images/stlouis-mo-5333-jennings-17.jpg", "images/stlouis-mo-5333-jennings-18.jpg", "images/stlouis-mo-5333-jennings-19.jpg", "images/stlouis-mo-5333-jennings-20.jpg", "images/stlouis-mo-5333-jennings-21.jpg", "images/stlouis-mo-5333-jennings-22.jpg", "images/stlouis-mo-5333-jennings-23.jpg", "images/stlouis-mo-5333-jennings-24.jpg", "images/stlouis-mo-5333-jennings-25.jpg", "images/stlouis-mo-5333-jennings-26.jpg", "images/stlouis-mo-5333-jennings-27.jpg", "images/stlouis-mo-5333-jennings-28.jpg", "images/stlouis-mo-5333-jennings-29.jpg", "images/stlouis-mo-5333-jennings-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/stlouis-mo-5333-jennings.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-234-home",
@@ -3846,6 +4646,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-234-home-1.jpg", "images/decatur-il-234-home-2.jpg", "images/decatur-il-234-home-3.jpg", "images/decatur-il-234-home-4.jpg", "images/decatur-il-234-home-5.jpg", "images/decatur-il-234-home-6.jpg", "images/decatur-il-234-home-7.jpg", "images/decatur-il-234-home-8.jpg", "images/decatur-il-234-home-9.jpg", "images/decatur-il-234-home-10.jpg", "images/decatur-il-234-home-11.jpg", "images/decatur-il-234-home-12.jpg"],
+    hasPhoto: true,
+    photoCount: 13,
+    cardPhoto: "images/cards/decatur-il-234-home.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "toledo-oh-1428-ave",
@@ -3868,6 +4673,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/toledo-oh-1428-ave-1.jpg", "images/toledo-oh-1428-ave-2.jpg", "images/toledo-oh-1428-ave-3.jpg", "images/toledo-oh-1428-ave-4.jpg", "images/toledo-oh-1428-ave-5.jpg", "images/toledo-oh-1428-ave-6.jpg", "images/toledo-oh-1428-ave-7.jpg", "images/toledo-oh-1428-ave-8.jpg", "images/toledo-oh-1428-ave-9.jpg", "images/toledo-oh-1428-ave-10.jpg", "images/toledo-oh-1428-ave-11.jpg", "images/toledo-oh-1428-ave-12.jpg", "images/toledo-oh-1428-ave-13.jpg", "images/toledo-oh-1428-ave-14.jpg", "images/toledo-oh-1428-ave-15.jpg", "images/toledo-oh-1428-ave-16.jpg", "images/toledo-oh-1428-ave-17.jpg", "images/toledo-oh-1428-ave-18.jpg", "images/toledo-oh-1428-ave-19.jpg", "images/toledo-oh-1428-ave-20.jpg", "images/toledo-oh-1428-ave-21.jpg", "images/toledo-oh-1428-ave-22.jpg", "images/toledo-oh-1428-ave-23.jpg", "images/toledo-oh-1428-ave-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/toledo-oh-1428-ave.webp",
+    cardWidth: 480,
+    cardHeight: 472,
   },
   {
     id: "decatur-il-1174-king",
@@ -3890,6 +4700,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1174-king-1.jpg", "images/decatur-il-1174-king-2.jpg", "images/decatur-il-1174-king-3.jpg", "images/decatur-il-1174-king-4.jpg", "images/decatur-il-1174-king-5.jpg", "images/decatur-il-1174-king-6.jpg", "images/decatur-il-1174-king-7.jpg", "images/decatur-il-1174-king-8.jpg", "images/decatur-il-1174-king-9.jpg", "images/decatur-il-1174-king-10.jpg", "images/decatur-il-1174-king-11.jpg", "images/decatur-il-1174-king-12.jpg", "images/decatur-il-1174-king-13.jpg", "images/decatur-il-1174-king-14.jpg", "images/decatur-il-1174-king-15.jpg", "images/decatur-il-1174-king-16.jpg", "images/decatur-il-1174-king-17.jpg", "images/decatur-il-1174-king-18.jpg", "images/decatur-il-1174-king-19.jpg", "images/decatur-il-1174-king-20.jpg", "images/decatur-il-1174-king-21.jpg", "images/decatur-il-1174-king-22.jpg", "images/decatur-il-1174-king-23.jpg", "images/decatur-il-1174-king-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/decatur-il-1174-king.webp",
+    cardWidth: 480,
+    cardHeight: 329,
   },
   {
     id: "muncie-in-1630-elm",
@@ -3912,6 +4727,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/muncie-in-1630-elm-1.jpg", "images/muncie-in-1630-elm-2.jpg", "images/muncie-in-1630-elm-3.jpg", "images/muncie-in-1630-elm-4.jpg", "images/muncie-in-1630-elm-5.jpg", "images/muncie-in-1630-elm-6.jpg", "images/muncie-in-1630-elm-7.jpg", "images/muncie-in-1630-elm-8.jpg", "images/muncie-in-1630-elm-9.jpg", "images/muncie-in-1630-elm-10.jpg", "images/muncie-in-1630-elm-11.jpg", "images/muncie-in-1630-elm-12.jpg", "images/muncie-in-1630-elm-13.jpg", "images/muncie-in-1630-elm-14.jpg", "images/muncie-in-1630-elm-15.jpg", "images/muncie-in-1630-elm-16.jpg", "images/muncie-in-1630-elm-17.jpg", "images/muncie-in-1630-elm-18.jpg", "images/muncie-in-1630-elm-19.jpg", "images/muncie-in-1630-elm-20.jpg", "images/muncie-in-1630-elm-21.jpg", "images/muncie-in-1630-elm-22.jpg", "images/muncie-in-1630-elm-23.jpg", "images/muncie-in-1630-elm-24.jpg", "images/muncie-in-1630-elm-25.jpg", "images/muncie-in-1630-elm-26.jpg", "images/muncie-in-1630-elm-27.jpg", "images/muncie-in-1630-elm-28.jpg", "images/muncie-in-1630-elm-29.jpg"],
+    hasPhoto: true,
+    photoCount: 30,
+    cardPhoto: "images/cards/muncie-in-1630-elm.webp",
+    cardWidth: 480,
+    cardHeight: 270,
   },
   {
     id: "decatur-il-1237-johns",
@@ -3934,6 +4754,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1237-johns-1.jpg", "images/decatur-il-1237-johns-2.jpg", "images/decatur-il-1237-johns-3.jpg", "images/decatur-il-1237-johns-4.jpg", "images/decatur-il-1237-johns-5.jpg", "images/decatur-il-1237-johns-6.jpg", "images/decatur-il-1237-johns-7.jpg", "images/decatur-il-1237-johns-8.jpg", "images/decatur-il-1237-johns-9.jpg", "images/decatur-il-1237-johns-10.jpg", "images/decatur-il-1237-johns-11.jpg", "images/decatur-il-1237-johns-12.jpg", "images/decatur-il-1237-johns-13.jpg", "images/decatur-il-1237-johns-14.jpg", "images/decatur-il-1237-johns-15.jpg", "images/decatur-il-1237-johns-16.jpg", "images/decatur-il-1237-johns-17.jpg", "images/decatur-il-1237-johns-18.jpg", "images/decatur-il-1237-johns-19.jpg", "images/decatur-il-1237-johns-20.jpg", "images/decatur-il-1237-johns-21.jpg", "images/decatur-il-1237-johns-22.jpg", "images/decatur-il-1237-johns-23.jpg", "images/decatur-il-1237-johns-24.jpg", "images/decatur-il-1237-johns-25.jpg", "images/decatur-il-1237-johns-26.jpg", "images/decatur-il-1237-johns-27.jpg", "images/decatur-il-1237-johns-28.jpg", "images/decatur-il-1237-johns-29.jpg", "images/decatur-il-1237-johns-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/decatur-il-1237-johns.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "peoria-il-2807-nevada",
@@ -3956,6 +4781,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/peoria-il-2807-nevada-1.jpg", "images/peoria-il-2807-nevada-2.jpg", "images/peoria-il-2807-nevada-3.jpg", "images/peoria-il-2807-nevada-4.jpg", "images/peoria-il-2807-nevada-5.jpg", "images/peoria-il-2807-nevada-6.jpg", "images/peoria-il-2807-nevada-7.jpg", "images/peoria-il-2807-nevada-8.jpg", "images/peoria-il-2807-nevada-9.jpg", "images/peoria-il-2807-nevada-10.jpg", "images/peoria-il-2807-nevada-11.jpg", "images/peoria-il-2807-nevada-12.jpg", "images/peoria-il-2807-nevada-13.jpg", "images/peoria-il-2807-nevada-14.jpg", "images/peoria-il-2807-nevada-15.jpg", "images/peoria-il-2807-nevada-16.jpg", "images/peoria-il-2807-nevada-17.jpg", "images/peoria-il-2807-nevada-18.jpg", "images/peoria-il-2807-nevada-19.jpg", "images/peoria-il-2807-nevada-20.jpg", "images/peoria-il-2807-nevada-21.jpg"],
+    hasPhoto: true,
+    photoCount: 22,
+    cardPhoto: "images/cards/peoria-il-2807-nevada.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "stlouis-mo-212-cameron",
@@ -3978,6 +4808,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-212-cameron-1.jpg", "images/stlouis-mo-212-cameron-2.jpg", "images/stlouis-mo-212-cameron-3.jpg", "images/stlouis-mo-212-cameron-4.jpg", "images/stlouis-mo-212-cameron-5.jpg", "images/stlouis-mo-212-cameron-6.jpg", "images/stlouis-mo-212-cameron-7.jpg", "images/stlouis-mo-212-cameron-8.jpg", "images/stlouis-mo-212-cameron-9.jpg", "images/stlouis-mo-212-cameron-10.jpg", "images/stlouis-mo-212-cameron-11.jpg", "images/stlouis-mo-212-cameron-12.jpg", "images/stlouis-mo-212-cameron-13.jpg", "images/stlouis-mo-212-cameron-14.jpg", "images/stlouis-mo-212-cameron-15.jpg", "images/stlouis-mo-212-cameron-16.jpg", "images/stlouis-mo-212-cameron-17.jpg", "images/stlouis-mo-212-cameron-18.jpg", "images/stlouis-mo-212-cameron-19.jpg", "images/stlouis-mo-212-cameron-20.jpg", "images/stlouis-mo-212-cameron-21.jpg", "images/stlouis-mo-212-cameron-22.jpg", "images/stlouis-mo-212-cameron-23.jpg", "images/stlouis-mo-212-cameron-24.jpg", "images/stlouis-mo-212-cameron-25.jpg", "images/stlouis-mo-212-cameron-26.jpg", "images/stlouis-mo-212-cameron-27.jpg", "images/stlouis-mo-212-cameron-28.jpg", "images/stlouis-mo-212-cameron-29.jpg", "images/stlouis-mo-212-cameron-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/stlouis-mo-212-cameron.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "carbondale-il-501-carico",
@@ -4000,6 +4835,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/carbondale-il-501-carico-1.jpg", "images/carbondale-il-501-carico-2.jpg", "images/carbondale-il-501-carico-3.jpg", "images/carbondale-il-501-carico-4.jpg", "images/carbondale-il-501-carico-5.jpg", "images/carbondale-il-501-carico-6.jpg", "images/carbondale-il-501-carico-7.jpg", "images/carbondale-il-501-carico-8.jpg", "images/carbondale-il-501-carico-9.jpg", "images/carbondale-il-501-carico-10.jpg", "images/carbondale-il-501-carico-11.jpg", "images/carbondale-il-501-carico-12.jpg"],
+    hasPhoto: true,
+    photoCount: 13,
+    cardPhoto: "images/cards/carbondale-il-501-carico.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "stlouis-mo-4527-davison",
@@ -4022,6 +4862,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-4527-davison-1.jpg", "images/stlouis-mo-4527-davison-2.jpg", "images/stlouis-mo-4527-davison-3.jpg", "images/stlouis-mo-4527-davison-4.jpg", "images/stlouis-mo-4527-davison-5.jpg", "images/stlouis-mo-4527-davison-6.jpg", "images/stlouis-mo-4527-davison-7.jpg", "images/stlouis-mo-4527-davison-8.jpg", "images/stlouis-mo-4527-davison-9.jpg", "images/stlouis-mo-4527-davison-10.jpg", "images/stlouis-mo-4527-davison-11.jpg", "images/stlouis-mo-4527-davison-12.jpg", "images/stlouis-mo-4527-davison-13.jpg", "images/stlouis-mo-4527-davison-14.jpg", "images/stlouis-mo-4527-davison-15.jpg", "images/stlouis-mo-4527-davison-16.jpg", "images/stlouis-mo-4527-davison-17.jpg", "images/stlouis-mo-4527-davison-18.jpg", "images/stlouis-mo-4527-davison-19.jpg", "images/stlouis-mo-4527-davison-20.jpg", "images/stlouis-mo-4527-davison-21.jpg", "images/stlouis-mo-4527-davison-22.jpg", "images/stlouis-mo-4527-davison-23.jpg", "images/stlouis-mo-4527-davison-24.jpg", "images/stlouis-mo-4527-davison-25.jpg", "images/stlouis-mo-4527-davison-26.jpg", "images/stlouis-mo-4527-davison-27.jpg", "images/stlouis-mo-4527-davison-28.jpg", "images/stlouis-mo-4527-davison-29.jpg", "images/stlouis-mo-4527-davison-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/stlouis-mo-4527-davison.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "stlouis-mo-4718-labadie",
@@ -4044,6 +4889,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-4718-labadie-1.jpg", "images/stlouis-mo-4718-labadie-2.jpg", "images/stlouis-mo-4718-labadie-3.jpg", "images/stlouis-mo-4718-labadie-4.jpg", "images/stlouis-mo-4718-labadie-5.jpg", "images/stlouis-mo-4718-labadie-6.jpg", "images/stlouis-mo-4718-labadie-7.jpg", "images/stlouis-mo-4718-labadie-8.jpg", "images/stlouis-mo-4718-labadie-9.jpg", "images/stlouis-mo-4718-labadie-10.jpg", "images/stlouis-mo-4718-labadie-11.jpg", "images/stlouis-mo-4718-labadie-12.jpg", "images/stlouis-mo-4718-labadie-13.jpg", "images/stlouis-mo-4718-labadie-14.jpg", "images/stlouis-mo-4718-labadie-15.jpg", "images/stlouis-mo-4718-labadie-16.jpg", "images/stlouis-mo-4718-labadie-17.jpg", "images/stlouis-mo-4718-labadie-18.jpg", "images/stlouis-mo-4718-labadie-19.jpg", "images/stlouis-mo-4718-labadie-20.jpg", "images/stlouis-mo-4718-labadie-21.jpg", "images/stlouis-mo-4718-labadie-22.jpg", "images/stlouis-mo-4718-labadie-23.jpg", "images/stlouis-mo-4718-labadie-24.jpg", "images/stlouis-mo-4718-labadie-25.jpg", "images/stlouis-mo-4718-labadie-26.jpg", "images/stlouis-mo-4718-labadie-27.jpg", "images/stlouis-mo-4718-labadie-28.jpg", "images/stlouis-mo-4718-labadie-29.jpg", "images/stlouis-mo-4718-labadie-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/stlouis-mo-4718-labadie.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "stlouis-mo-1332-woodruff",
@@ -4066,6 +4916,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-1332-woodruff-1.jpg", "images/stlouis-mo-1332-woodruff-2.jpg", "images/stlouis-mo-1332-woodruff-3.jpg", "images/stlouis-mo-1332-woodruff-4.jpg", "images/stlouis-mo-1332-woodruff-5.jpg", "images/stlouis-mo-1332-woodruff-6.jpg", "images/stlouis-mo-1332-woodruff-7.jpg", "images/stlouis-mo-1332-woodruff-8.jpg", "images/stlouis-mo-1332-woodruff-9.jpg", "images/stlouis-mo-1332-woodruff-10.jpg", "images/stlouis-mo-1332-woodruff-11.jpg", "images/stlouis-mo-1332-woodruff-12.jpg", "images/stlouis-mo-1332-woodruff-13.jpg", "images/stlouis-mo-1332-woodruff-14.jpg", "images/stlouis-mo-1332-woodruff-15.jpg", "images/stlouis-mo-1332-woodruff-16.jpg", "images/stlouis-mo-1332-woodruff-17.jpg", "images/stlouis-mo-1332-woodruff-18.jpg", "images/stlouis-mo-1332-woodruff-19.jpg", "images/stlouis-mo-1332-woodruff-20.jpg", "images/stlouis-mo-1332-woodruff-21.jpg", "images/stlouis-mo-1332-woodruff-22.jpg", "images/stlouis-mo-1332-woodruff-23.jpg", "images/stlouis-mo-1332-woodruff-24.jpg", "images/stlouis-mo-1332-woodruff-25.jpg", "images/stlouis-mo-1332-woodruff-26.jpg", "images/stlouis-mo-1332-woodruff-27.jpg"],
+    hasPhoto: true,
+    photoCount: 28,
+    cardPhoto: "images/cards/stlouis-mo-1332-woodruff.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-1905-college",
@@ -4088,6 +4943,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1905-college-1.jpg", "images/decatur-il-1905-college-2.jpg", "images/decatur-il-1905-college-3.jpg", "images/decatur-il-1905-college-4.jpg", "images/decatur-il-1905-college-5.jpg", "images/decatur-il-1905-college-6.jpg", "images/decatur-il-1905-college-7.jpg", "images/decatur-il-1905-college-8.jpg", "images/decatur-il-1905-college-9.jpg", "images/decatur-il-1905-college-10.jpg", "images/decatur-il-1905-college-11.jpg", "images/decatur-il-1905-college-12.jpg", "images/decatur-il-1905-college-13.jpg", "images/decatur-il-1905-college-14.jpg", "images/decatur-il-1905-college-15.jpg", "images/decatur-il-1905-college-16.jpg", "images/decatur-il-1905-college-17.jpg", "images/decatur-il-1905-college-18.jpg", "images/decatur-il-1905-college-19.jpg", "images/decatur-il-1905-college-20.jpg", "images/decatur-il-1905-college-21.jpg", "images/decatur-il-1905-college-22.jpg", "images/decatur-il-1905-college-23.jpg", "images/decatur-il-1905-college-24.jpg", "images/decatur-il-1905-college-25.jpg", "images/decatur-il-1905-college-26.jpg", "images/decatur-il-1905-college-27.jpg", "images/decatur-il-1905-college-28.jpg", "images/decatur-il-1905-college-29.jpg", "images/decatur-il-1905-college-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/decatur-il-1905-college.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "stlouis-mo-5338-claxton",
@@ -4111,6 +4971,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-5338-claxton-1.jpg", "images/stlouis-mo-5338-claxton-2.jpg", "images/stlouis-mo-5338-claxton-3.jpg", "images/stlouis-mo-5338-claxton-4.jpg", "images/stlouis-mo-5338-claxton-5.jpg", "images/stlouis-mo-5338-claxton-6.jpg", "images/stlouis-mo-5338-claxton-7.jpg", "images/stlouis-mo-5338-claxton-8.jpg", "images/stlouis-mo-5338-claxton-9.jpg", "images/stlouis-mo-5338-claxton-10.jpg", "images/stlouis-mo-5338-claxton-11.jpg", "images/stlouis-mo-5338-claxton-12.jpg", "images/stlouis-mo-5338-claxton-13.jpg", "images/stlouis-mo-5338-claxton-14.jpg", "images/stlouis-mo-5338-claxton-15.jpg", "images/stlouis-mo-5338-claxton-16.jpg", "images/stlouis-mo-5338-claxton-17.jpg", "images/stlouis-mo-5338-claxton-18.jpg", "images/stlouis-mo-5338-claxton-19.jpg", "images/stlouis-mo-5338-claxton-20.jpg", "images/stlouis-mo-5338-claxton-21.jpg", "images/stlouis-mo-5338-claxton-22.jpg", "images/stlouis-mo-5338-claxton-23.jpg", "images/stlouis-mo-5338-claxton-24.jpg", "images/stlouis-mo-5338-claxton-25.jpg", "images/stlouis-mo-5338-claxton-26.jpg", "images/stlouis-mo-5338-claxton-27.jpg", "images/stlouis-mo-5338-claxton-28.jpg", "images/stlouis-mo-5338-claxton-29.jpg", "images/stlouis-mo-5338-claxton-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/stlouis-mo-5338-claxton.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "montgomery-al-801-patton",
@@ -4133,6 +4998,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/montgomery-al-801-patton-1.jpg", "images/montgomery-al-801-patton-2.jpg", "images/montgomery-al-801-patton-3.jpg", "images/montgomery-al-801-patton-4.jpg", "images/montgomery-al-801-patton-5.jpg", "images/montgomery-al-801-patton-6.jpg", "images/montgomery-al-801-patton-7.jpg", "images/montgomery-al-801-patton-8.jpg", "images/montgomery-al-801-patton-9.jpg", "images/montgomery-al-801-patton-10.jpg", "images/montgomery-al-801-patton-11.jpg", "images/montgomery-al-801-patton-12.jpg", "images/montgomery-al-801-patton-13.jpg", "images/montgomery-al-801-patton-14.jpg", "images/montgomery-al-801-patton-15.jpg", "images/montgomery-al-801-patton-16.jpg", "images/montgomery-al-801-patton-17.jpg", "images/montgomery-al-801-patton-18.jpg", "images/montgomery-al-801-patton-19.jpg", "images/montgomery-al-801-patton-20.jpg", "images/montgomery-al-801-patton-21.jpg", "images/montgomery-al-801-patton-22.jpg", "images/montgomery-al-801-patton-23.jpg", "images/montgomery-al-801-patton-24.jpg", "images/montgomery-al-801-patton-25.jpg", "images/montgomery-al-801-patton-26.jpg", "images/montgomery-al-801-patton-27.jpg", "images/montgomery-al-801-patton-28.jpg", "images/montgomery-al-801-patton-29.jpg", "images/montgomery-al-801-patton-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/montgomery-al-801-patton.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "decatur-il-1929-prairie",
@@ -4156,6 +5026,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1929-prairie-1.jpg", "images/decatur-il-1929-prairie-2.jpg", "images/decatur-il-1929-prairie-3.jpg", "images/decatur-il-1929-prairie-4.jpg", "images/decatur-il-1929-prairie-5.jpg", "images/decatur-il-1929-prairie-6.jpg", "images/decatur-il-1929-prairie-7.jpg", "images/decatur-il-1929-prairie-8.jpg", "images/decatur-il-1929-prairie-9.jpg", "images/decatur-il-1929-prairie-10.jpg", "images/decatur-il-1929-prairie-11.jpg", "images/decatur-il-1929-prairie-12.jpg", "images/decatur-il-1929-prairie-13.jpg", "images/decatur-il-1929-prairie-14.jpg", "images/decatur-il-1929-prairie-15.jpg", "images/decatur-il-1929-prairie-16.jpg", "images/decatur-il-1929-prairie-17.jpg", "images/decatur-il-1929-prairie-18.jpg", "images/decatur-il-1929-prairie-19.jpg", "images/decatur-il-1929-prairie-20.jpg", "images/decatur-il-1929-prairie-21.jpg", "images/decatur-il-1929-prairie-22.jpg", "images/decatur-il-1929-prairie-23.jpg", "images/decatur-il-1929-prairie-24.jpg", "images/decatur-il-1929-prairie-25.jpg", "images/decatur-il-1929-prairie-26.jpg", "images/decatur-il-1929-prairie-27.jpg", "images/decatur-il-1929-prairie-28.jpg"],
+    hasPhoto: true,
+    photoCount: 29,
+    cardPhoto: "images/cards/decatur-il-1929-prairie.webp",
+    cardWidth: 480,
+    cardHeight: 853,
   },
   {
     id: "peoria-il-1825-idaho",
@@ -4178,6 +5053,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/peoria-il-1825-idaho-1.jpg", "images/peoria-il-1825-idaho-2.jpg", "images/peoria-il-1825-idaho-3.jpg", "images/peoria-il-1825-idaho-4.jpg", "images/peoria-il-1825-idaho-5.jpg", "images/peoria-il-1825-idaho-6.jpg", "images/peoria-il-1825-idaho-7.jpg", "images/peoria-il-1825-idaho-8.jpg", "images/peoria-il-1825-idaho-9.jpg", "images/peoria-il-1825-idaho-10.jpg", "images/peoria-il-1825-idaho-11.jpg", "images/peoria-il-1825-idaho-12.jpg", "images/peoria-il-1825-idaho-13.jpg", "images/peoria-il-1825-idaho-14.jpg", "images/peoria-il-1825-idaho-15.jpg", "images/peoria-il-1825-idaho-16.jpg", "images/peoria-il-1825-idaho-17.jpg", "images/peoria-il-1825-idaho-18.jpg", "images/peoria-il-1825-idaho-19.jpg", "images/peoria-il-1825-idaho-20.jpg", "images/peoria-il-1825-idaho-21.jpg", "images/peoria-il-1825-idaho-22.jpg", "images/peoria-il-1825-idaho-23.jpg", "images/peoria-il-1825-idaho-24.jpg", "images/peoria-il-1825-idaho-25.jpg", "images/peoria-il-1825-idaho-26.jpg", "images/peoria-il-1825-idaho-27.jpg", "images/peoria-il-1825-idaho-28.jpg", "images/peoria-il-1825-idaho-29.jpg", "images/peoria-il-1825-idaho-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/peoria-il-1825-idaho.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "stlouis-mo-2154-68th",
@@ -4200,6 +5080,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-2154-68th-1.jpg", "images/stlouis-mo-2154-68th-2.jpg", "images/stlouis-mo-2154-68th-3.jpg", "images/stlouis-mo-2154-68th-4.jpg", "images/stlouis-mo-2154-68th-5.jpg", "images/stlouis-mo-2154-68th-6.jpg", "images/stlouis-mo-2154-68th-7.jpg", "images/stlouis-mo-2154-68th-8.jpg", "images/stlouis-mo-2154-68th-9.jpg", "images/stlouis-mo-2154-68th-10.jpg", "images/stlouis-mo-2154-68th-11.jpg", "images/stlouis-mo-2154-68th-12.jpg", "images/stlouis-mo-2154-68th-13.jpg", "images/stlouis-mo-2154-68th-14.jpg", "images/stlouis-mo-2154-68th-15.jpg", "images/stlouis-mo-2154-68th-16.jpg", "images/stlouis-mo-2154-68th-17.jpg", "images/stlouis-mo-2154-68th-18.jpg"],
+    hasPhoto: true,
+    photoCount: 19,
+    cardPhoto: "images/cards/stlouis-mo-2154-68th.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "stlouis-mo-5044-claxton",
@@ -4222,6 +5107,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-5044-claxton-1.jpg", "images/stlouis-mo-5044-claxton-2.jpg", "images/stlouis-mo-5044-claxton-3.jpg", "images/stlouis-mo-5044-claxton-4.jpg", "images/stlouis-mo-5044-claxton-5.jpg", "images/stlouis-mo-5044-claxton-6.jpg", "images/stlouis-mo-5044-claxton-7.jpg", "images/stlouis-mo-5044-claxton-8.jpg", "images/stlouis-mo-5044-claxton-9.jpg", "images/stlouis-mo-5044-claxton-10.jpg", "images/stlouis-mo-5044-claxton-11.jpg", "images/stlouis-mo-5044-claxton-12.jpg", "images/stlouis-mo-5044-claxton-13.jpg", "images/stlouis-mo-5044-claxton-14.jpg", "images/stlouis-mo-5044-claxton-15.jpg", "images/stlouis-mo-5044-claxton-16.jpg", "images/stlouis-mo-5044-claxton-17.jpg", "images/stlouis-mo-5044-claxton-18.jpg", "images/stlouis-mo-5044-claxton-19.jpg", "images/stlouis-mo-5044-claxton-20.jpg", "images/stlouis-mo-5044-claxton-21.jpg", "images/stlouis-mo-5044-claxton-22.jpg", "images/stlouis-mo-5044-claxton-23.jpg", "images/stlouis-mo-5044-claxton-24.jpg", "images/stlouis-mo-5044-claxton-25.jpg", "images/stlouis-mo-5044-claxton-26.jpg", "images/stlouis-mo-5044-claxton-27.jpg", "images/stlouis-mo-5044-claxton-28.jpg", "images/stlouis-mo-5044-claxton-29.jpg", "images/stlouis-mo-5044-claxton-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/stlouis-mo-5044-claxton.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-660-van",
@@ -4244,6 +5134,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-660-van-1.jpg", "images/decatur-il-660-van-2.jpg", "images/decatur-il-660-van-3.jpg", "images/decatur-il-660-van-4.jpg", "images/decatur-il-660-van-5.jpg", "images/decatur-il-660-van-6.jpg", "images/decatur-il-660-van-7.jpg", "images/decatur-il-660-van-8.jpg", "images/decatur-il-660-van-9.jpg"],
+    hasPhoto: true,
+    photoCount: 10,
+    cardPhoto: "images/cards/decatur-il-660-van.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "nokomis-il-524-albert",
@@ -4266,6 +5161,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/nokomis-il-524-albert-1.jpg", "images/nokomis-il-524-albert-2.jpg", "images/nokomis-il-524-albert-3.jpg", "images/nokomis-il-524-albert-4.jpg", "images/nokomis-il-524-albert-5.jpg", "images/nokomis-il-524-albert-6.jpg", "images/nokomis-il-524-albert-7.jpg", "images/nokomis-il-524-albert-8.jpg", "images/nokomis-il-524-albert-9.jpg", "images/nokomis-il-524-albert-10.jpg", "images/nokomis-il-524-albert-11.jpg", "images/nokomis-il-524-albert-12.jpg", "images/nokomis-il-524-albert-13.jpg", "images/nokomis-il-524-albert-14.jpg", "images/nokomis-il-524-albert-15.jpg", "images/nokomis-il-524-albert-16.jpg", "images/nokomis-il-524-albert-17.jpg", "images/nokomis-il-524-albert-18.jpg", "images/nokomis-il-524-albert-19.jpg"],
+    hasPhoto: true,
+    photoCount: 20,
+    cardPhoto: "images/cards/nokomis-il-524-albert.webp",
+    cardWidth: 480,
+    cardHeight: 348,
   },
   {
     id: "decatur-il-1444-clay",
@@ -4288,6 +5188,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1444-clay-1.jpg", "images/decatur-il-1444-clay-2.jpg", "images/decatur-il-1444-clay-3.jpg", "images/decatur-il-1444-clay-4.jpg", "images/decatur-il-1444-clay-5.jpg", "images/decatur-il-1444-clay-6.jpg", "images/decatur-il-1444-clay-7.jpg", "images/decatur-il-1444-clay-8.jpg"],
+    hasPhoto: true,
+    photoCount: 9,
+    cardPhoto: "images/cards/decatur-il-1444-clay.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "decatur-il-1112-main",
@@ -4310,6 +5215,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1112-main-1.jpg", "images/decatur-il-1112-main-2.jpg", "images/decatur-il-1112-main-3.jpg", "images/decatur-il-1112-main-4.jpg", "images/decatur-il-1112-main-5.jpg", "images/decatur-il-1112-main-6.jpg", "images/decatur-il-1112-main-7.jpg", "images/decatur-il-1112-main-8.jpg", "images/decatur-il-1112-main-9.jpg", "images/decatur-il-1112-main-10.jpg", "images/decatur-il-1112-main-11.jpg", "images/decatur-il-1112-main-12.jpg"],
+    hasPhoto: true,
+    photoCount: 13,
+    cardPhoto: "images/cards/decatur-il-1112-main.webp",
+    cardWidth: 480,
+    cardHeight: 517,
   },
   {
     id: "decatur-il-1825-church",
@@ -4335,6 +5245,11 @@ const HOMES = [
     features: { garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-1825-church-1.jpg", "images/decatur-il-1825-church-2.jpg", "images/decatur-il-1825-church-3.jpg", "images/decatur-il-1825-church-4.jpg", "images/decatur-il-1825-church-5.jpg", "images/decatur-il-1825-church-6.jpg", "images/decatur-il-1825-church-7.jpg", "images/decatur-il-1825-church-8.jpg", "images/decatur-il-1825-church-9.jpg", "images/decatur-il-1825-church-10.jpg", "images/decatur-il-1825-church-11.jpg", "images/decatur-il-1825-church-12.jpg", "images/decatur-il-1825-church-13.jpg", "images/decatur-il-1825-church-14.jpg", "images/decatur-il-1825-church-15.jpg", "images/decatur-il-1825-church-16.jpg", "images/decatur-il-1825-church-17.jpg", "images/decatur-il-1825-church-18.jpg", "images/decatur-il-1825-church-19.jpg", "images/decatur-il-1825-church-20.jpg", "images/decatur-il-1825-church-21.jpg"],
+    hasPhoto: true,
+    photoCount: 22,
+    cardPhoto: "images/cards/decatur-il-1825-church.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "stlouis-mo-1924-belt",
@@ -4357,6 +5272,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-1924-belt-1.jpg", "images/stlouis-mo-1924-belt-2.jpg", "images/stlouis-mo-1924-belt-3.jpg", "images/stlouis-mo-1924-belt-4.jpg", "images/stlouis-mo-1924-belt-5.jpg", "images/stlouis-mo-1924-belt-6.jpg", "images/stlouis-mo-1924-belt-7.jpg", "images/stlouis-mo-1924-belt-8.jpg", "images/stlouis-mo-1924-belt-9.jpg", "images/stlouis-mo-1924-belt-10.jpg", "images/stlouis-mo-1924-belt-11.jpg", "images/stlouis-mo-1924-belt-12.jpg", "images/stlouis-mo-1924-belt-13.jpg", "images/stlouis-mo-1924-belt-14.jpg", "images/stlouis-mo-1924-belt-15.jpg", "images/stlouis-mo-1924-belt-16.jpg", "images/stlouis-mo-1924-belt-17.jpg", "images/stlouis-mo-1924-belt-18.jpg", "images/stlouis-mo-1924-belt-19.jpg", "images/stlouis-mo-1924-belt-20.jpg", "images/stlouis-mo-1924-belt-21.jpg", "images/stlouis-mo-1924-belt-22.jpg", "images/stlouis-mo-1924-belt-23.jpg", "images/stlouis-mo-1924-belt-24.jpg", "images/stlouis-mo-1924-belt-25.jpg", "images/stlouis-mo-1924-belt-26.jpg", "images/stlouis-mo-1924-belt-27.jpg", "images/stlouis-mo-1924-belt-28.jpg", "images/stlouis-mo-1924-belt-29.jpg", "images/stlouis-mo-1924-belt-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/stlouis-mo-1924-belt.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-957-view",
@@ -4383,6 +5303,11 @@ const HOMES = [
     features: { backyard: "yes", basement: "yes", garage: "yes", off_street_parking: "yes", central_air: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-957-view-1.jpg", "images/decatur-il-957-view-2.jpg", "images/decatur-il-957-view-3.jpg", "images/decatur-il-957-view-4.jpg", "images/decatur-il-957-view-5.jpg", "images/decatur-il-957-view-6.jpg", "images/decatur-il-957-view-7.jpg", "images/decatur-il-957-view-8.jpg", "images/decatur-il-957-view-9.jpg", "images/decatur-il-957-view-10.jpg", "images/decatur-il-957-view-11.jpg", "images/decatur-il-957-view-12.jpg", "images/decatur-il-957-view-13.jpg", "images/decatur-il-957-view-14.jpg", "images/decatur-il-957-view-15.jpg", "images/decatur-il-957-view-16.jpg", "images/decatur-il-957-view-17.jpg", "images/decatur-il-957-view-18.jpg", "images/decatur-il-957-view-19.jpg", "images/decatur-il-957-view-20.jpg"],
+    hasPhoto: true,
+    photoCount: 21,
+    cardPhoto: "images/cards/decatur-il-957-view.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-825-elm",
@@ -4409,6 +5334,11 @@ const HOMES = [
     features: { basement: "yes", central_air: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-825-elm-1.jpg", "images/decatur-il-825-elm-2.jpg", "images/decatur-il-825-elm-3.jpg", "images/decatur-il-825-elm-4.jpg", "images/decatur-il-825-elm-5.jpg", "images/decatur-il-825-elm-6.jpg", "images/decatur-il-825-elm-7.jpg", "images/decatur-il-825-elm-8.jpg", "images/decatur-il-825-elm-9.jpg"],
+    hasPhoto: true,
+    photoCount: 10,
+    cardPhoto: "images/cards/decatur-il-825-elm.webp",
+    cardWidth: 480,
+    cardHeight: 272,
   },
   {
     id: "stlouis-mo-5515-alcott",
@@ -4432,6 +5362,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-5515-alcott-1.jpg", "images/stlouis-mo-5515-alcott-2.jpg", "images/stlouis-mo-5515-alcott-3.jpg", "images/stlouis-mo-5515-alcott-4.jpg", "images/stlouis-mo-5515-alcott-5.jpg", "images/stlouis-mo-5515-alcott-6.jpg", "images/stlouis-mo-5515-alcott-7.jpg", "images/stlouis-mo-5515-alcott-8.jpg", "images/stlouis-mo-5515-alcott-9.jpg", "images/stlouis-mo-5515-alcott-10.jpg", "images/stlouis-mo-5515-alcott-11.jpg", "images/stlouis-mo-5515-alcott-12.jpg", "images/stlouis-mo-5515-alcott-13.jpg", "images/stlouis-mo-5515-alcott-14.jpg"],
+    hasPhoto: true,
+    photoCount: 15,
+    cardPhoto: "images/cards/stlouis-mo-5515-alcott.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-1509-william",
@@ -4456,6 +5391,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1509-william-1.jpg", "images/decatur-il-1509-william-2.jpg", "images/decatur-il-1509-william-3.jpg", "images/decatur-il-1509-william-4.jpg", "images/decatur-il-1509-william-5.jpg", "images/decatur-il-1509-william-6.jpg", "images/decatur-il-1509-william-7.jpg", "images/decatur-il-1509-william-8.jpg", "images/decatur-il-1509-william-9.jpg", "images/decatur-il-1509-william-10.jpg", "images/decatur-il-1509-william-11.jpg", "images/decatur-il-1509-william-12.jpg", "images/decatur-il-1509-william-13.jpg", "images/decatur-il-1509-william-14.jpg", "images/decatur-il-1509-william-15.jpg", "images/decatur-il-1509-william-16.jpg", "images/decatur-il-1509-william-17.jpg", "images/decatur-il-1509-william-18.jpg", "images/decatur-il-1509-william-19.jpg", "images/decatur-il-1509-william-20.jpg", "images/decatur-il-1509-william-21.jpg", "images/decatur-il-1509-william-22.jpg", "images/decatur-il-1509-william-23.jpg", "images/decatur-il-1509-william-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/decatur-il-1509-william.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-345-18th",
@@ -4481,6 +5421,11 @@ const HOMES = [
     features: { backyard: "yes", fenced_yard: "yes", basement: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-345-18th-1.jpg", "images/decatur-il-345-18th-2.jpg", "images/decatur-il-345-18th-3.jpg", "images/decatur-il-345-18th-4.jpg", "images/decatur-il-345-18th-5.jpg", "images/decatur-il-345-18th-6.jpg", "images/decatur-il-345-18th-7.jpg", "images/decatur-il-345-18th-8.jpg", "images/decatur-il-345-18th-9.jpg"],
+    hasPhoto: true,
+    photoCount: 10,
+    cardPhoto: "images/cards/decatur-il-345-18th.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "detroit-mi-19459-harned",
@@ -4503,6 +5448,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    [],
+    hasPhoto: false,
+    photoCount: 0,
+    cardPhoto: "images/cards/detroit-mi-19459-harned.webp",
+    cardWidth: 480,
+    cardHeight: 480,
   },
   {
     id: "decatur-il-1305-whitmer",
@@ -4526,6 +5476,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1305-whitmer-1.jpg", "images/decatur-il-1305-whitmer-2.jpg", "images/decatur-il-1305-whitmer-3.jpg", "images/decatur-il-1305-whitmer-4.jpg", "images/decatur-il-1305-whitmer-5.jpg", "images/decatur-il-1305-whitmer-6.jpg", "images/decatur-il-1305-whitmer-7.jpg", "images/decatur-il-1305-whitmer-8.jpg"],
+    hasPhoto: true,
+    photoCount: 9,
+    cardPhoto: "images/cards/decatur-il-1305-whitmer.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-1971-cantrell",
@@ -4549,6 +5504,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1971-cantrell-1.jpg", "images/decatur-il-1971-cantrell-2.jpg", "images/decatur-il-1971-cantrell-3.jpg", "images/decatur-il-1971-cantrell-4.jpg", "images/decatur-il-1971-cantrell-5.jpg", "images/decatur-il-1971-cantrell-6.jpg", "images/decatur-il-1971-cantrell-7.jpg", "images/decatur-il-1971-cantrell-8.jpg", "images/decatur-il-1971-cantrell-9.jpg", "images/decatur-il-1971-cantrell-10.jpg", "images/decatur-il-1971-cantrell-11.jpg", "images/decatur-il-1971-cantrell-12.jpg", "images/decatur-il-1971-cantrell-13.jpg", "images/decatur-il-1971-cantrell-14.jpg", "images/decatur-il-1971-cantrell-15.jpg", "images/decatur-il-1971-cantrell-16.jpg", "images/decatur-il-1971-cantrell-17.jpg", "images/decatur-il-1971-cantrell-18.jpg", "images/decatur-il-1971-cantrell-19.jpg", "images/decatur-il-1971-cantrell-20.jpg", "images/decatur-il-1971-cantrell-21.jpg", "images/decatur-il-1971-cantrell-22.jpg", "images/decatur-il-1971-cantrell-23.jpg"],
+    hasPhoto: true,
+    photoCount: 24,
+    cardPhoto: "images/cards/decatur-il-1971-cantrell.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-2616-logan",
@@ -4572,6 +5532,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-2616-logan-1.jpg", "images/decatur-il-2616-logan-2.jpg", "images/decatur-il-2616-logan-3.jpg", "images/decatur-il-2616-logan-4.jpg", "images/decatur-il-2616-logan-5.jpg", "images/decatur-il-2616-logan-6.jpg", "images/decatur-il-2616-logan-7.jpg", "images/decatur-il-2616-logan-8.jpg", "images/decatur-il-2616-logan-9.jpg", "images/decatur-il-2616-logan-10.jpg", "images/decatur-il-2616-logan-11.jpg", "images/decatur-il-2616-logan-12.jpg", "images/decatur-il-2616-logan-13.jpg", "images/decatur-il-2616-logan-14.jpg", "images/decatur-il-2616-logan-15.jpg", "images/decatur-il-2616-logan-16.jpg", "images/decatur-il-2616-logan-17.jpg", "images/decatur-il-2616-logan-18.jpg", "images/decatur-il-2616-logan-19.jpg", "images/decatur-il-2616-logan-20.jpg"],
+    hasPhoto: true,
+    photoCount: 21,
+    cardPhoto: "images/cards/decatur-il-2616-logan.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "stlouis-mo-2525-tyrell",
@@ -4595,6 +5560,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-2525-tyrell-1.jpg", "images/stlouis-mo-2525-tyrell-2.jpg", "images/stlouis-mo-2525-tyrell-3.jpg", "images/stlouis-mo-2525-tyrell-4.jpg", "images/stlouis-mo-2525-tyrell-5.jpg", "images/stlouis-mo-2525-tyrell-6.jpg", "images/stlouis-mo-2525-tyrell-7.jpg", "images/stlouis-mo-2525-tyrell-8.jpg", "images/stlouis-mo-2525-tyrell-9.jpg", "images/stlouis-mo-2525-tyrell-10.jpg", "images/stlouis-mo-2525-tyrell-11.jpg", "images/stlouis-mo-2525-tyrell-12.jpg", "images/stlouis-mo-2525-tyrell-13.jpg", "images/stlouis-mo-2525-tyrell-14.jpg", "images/stlouis-mo-2525-tyrell-15.jpg", "images/stlouis-mo-2525-tyrell-16.jpg", "images/stlouis-mo-2525-tyrell-17.jpg", "images/stlouis-mo-2525-tyrell-18.jpg", "images/stlouis-mo-2525-tyrell-19.jpg", "images/stlouis-mo-2525-tyrell-20.jpg"],
+    hasPhoto: true,
+    photoCount: 21,
+    cardPhoto: "images/cards/stlouis-mo-2525-tyrell.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "detroit-mi-8577-mark",
@@ -4618,6 +5588,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/detroit-mi-8577-mark-1.jpg", "images/detroit-mi-8577-mark-2.jpg", "images/detroit-mi-8577-mark-3.jpg", "images/detroit-mi-8577-mark-4.jpg", "images/detroit-mi-8577-mark-5.jpg", "images/detroit-mi-8577-mark-6.jpg", "images/detroit-mi-8577-mark-7.jpg", "images/detroit-mi-8577-mark-8.jpg", "images/detroit-mi-8577-mark-9.jpg", "images/detroit-mi-8577-mark-10.jpg", "images/detroit-mi-8577-mark-11.jpg", "images/detroit-mi-8577-mark-12.jpg", "images/detroit-mi-8577-mark-13.jpg", "images/detroit-mi-8577-mark-14.jpg", "images/detroit-mi-8577-mark-15.jpg", "images/detroit-mi-8577-mark-16.jpg", "images/detroit-mi-8577-mark-17.jpg", "images/detroit-mi-8577-mark-18.jpg"],
+    hasPhoto: true,
+    photoCount: 19,
+    cardPhoto: "images/cards/detroit-mi-8577-mark.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "peoria-il-2012-marquette",
@@ -4641,6 +5616,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/peoria-il-2012-marquette-1.jpg", "images/peoria-il-2012-marquette-2.jpg", "images/peoria-il-2012-marquette-3.jpg", "images/peoria-il-2012-marquette-4.jpg", "images/peoria-il-2012-marquette-5.jpg", "images/peoria-il-2012-marquette-6.jpg", "images/peoria-il-2012-marquette-7.jpg", "images/peoria-il-2012-marquette-8.jpg", "images/peoria-il-2012-marquette-9.jpg", "images/peoria-il-2012-marquette-10.jpg"],
+    hasPhoto: true,
+    photoCount: 11,
+    cardPhoto: "images/cards/peoria-il-2012-marquette.webp",
+    cardWidth: 480,
+    cardHeight: 637,
   },
   {
     id: "peoria-il-2315-ann",
@@ -4664,6 +5644,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/peoria-il-2315-ann-1.jpg", "images/peoria-il-2315-ann-2.jpg", "images/peoria-il-2315-ann-3.jpg", "images/peoria-il-2315-ann-4.jpg", "images/peoria-il-2315-ann-5.jpg", "images/peoria-il-2315-ann-6.jpg", "images/peoria-il-2315-ann-7.jpg", "images/peoria-il-2315-ann-8.jpg", "images/peoria-il-2315-ann-9.jpg", "images/peoria-il-2315-ann-10.jpg", "images/peoria-il-2315-ann-11.jpg", "images/peoria-il-2315-ann-12.jpg", "images/peoria-il-2315-ann-13.jpg", "images/peoria-il-2315-ann-14.jpg", "images/peoria-il-2315-ann-15.jpg", "images/peoria-il-2315-ann-16.jpg", "images/peoria-il-2315-ann-17.jpg", "images/peoria-il-2315-ann-18.jpg", "images/peoria-il-2315-ann-19.jpg", "images/peoria-il-2315-ann-20.jpg", "images/peoria-il-2315-ann-21.jpg", "images/peoria-il-2315-ann-22.jpg", "images/peoria-il-2315-ann-23.jpg", "images/peoria-il-2315-ann-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/peoria-il-2315-ann.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-1822-decatur",
@@ -4687,6 +5672,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1822-decatur-1.jpg", "images/decatur-il-1822-decatur-2.jpg", "images/decatur-il-1822-decatur-3.jpg", "images/decatur-il-1822-decatur-4.jpg", "images/decatur-il-1822-decatur-5.jpg", "images/decatur-il-1822-decatur-6.jpg", "images/decatur-il-1822-decatur-7.jpg", "images/decatur-il-1822-decatur-8.jpg", "images/decatur-il-1822-decatur-9.jpg", "images/decatur-il-1822-decatur-10.jpg", "images/decatur-il-1822-decatur-11.jpg", "images/decatur-il-1822-decatur-12.jpg", "images/decatur-il-1822-decatur-13.jpg", "images/decatur-il-1822-decatur-14.jpg", "images/decatur-il-1822-decatur-15.jpg", "images/decatur-il-1822-decatur-16.jpg", "images/decatur-il-1822-decatur-17.jpg", "images/decatur-il-1822-decatur-18.jpg", "images/decatur-il-1822-decatur-19.jpg", "images/decatur-il-1822-decatur-20.jpg", "images/decatur-il-1822-decatur-21.jpg", "images/decatur-il-1822-decatur-22.jpg", "images/decatur-il-1822-decatur-23.jpg", "images/decatur-il-1822-decatur-24.jpg", "images/decatur-il-1822-decatur-25.jpg", "images/decatur-il-1822-decatur-26.jpg", "images/decatur-il-1822-decatur-27.jpg", "images/decatur-il-1822-decatur-28.jpg", "images/decatur-il-1822-decatur-29.jpg", "images/decatur-il-1822-decatur-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/decatur-il-1822-decatur.webp",
+    cardWidth: 480,
+    cardHeight: 853,
   },
   {
     id: "stlouis-mo-5319-claxton",
@@ -4710,6 +5700,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-5319-claxton-1.jpg", "images/stlouis-mo-5319-claxton-2.jpg", "images/stlouis-mo-5319-claxton-3.jpg", "images/stlouis-mo-5319-claxton-4.jpg", "images/stlouis-mo-5319-claxton-5.jpg", "images/stlouis-mo-5319-claxton-6.jpg", "images/stlouis-mo-5319-claxton-7.jpg", "images/stlouis-mo-5319-claxton-8.jpg", "images/stlouis-mo-5319-claxton-9.jpg", "images/stlouis-mo-5319-claxton-10.jpg", "images/stlouis-mo-5319-claxton-11.jpg", "images/stlouis-mo-5319-claxton-12.jpg", "images/stlouis-mo-5319-claxton-13.jpg", "images/stlouis-mo-5319-claxton-14.jpg", "images/stlouis-mo-5319-claxton-15.jpg", "images/stlouis-mo-5319-claxton-16.jpg", "images/stlouis-mo-5319-claxton-17.jpg", "images/stlouis-mo-5319-claxton-18.jpg", "images/stlouis-mo-5319-claxton-19.jpg", "images/stlouis-mo-5319-claxton-20.jpg", "images/stlouis-mo-5319-claxton-21.jpg", "images/stlouis-mo-5319-claxton-22.jpg", "images/stlouis-mo-5319-claxton-23.jpg", "images/stlouis-mo-5319-claxton-24.jpg", "images/stlouis-mo-5319-claxton-25.jpg", "images/stlouis-mo-5319-claxton-26.jpg", "images/stlouis-mo-5319-claxton-27.jpg", "images/stlouis-mo-5319-claxton-28.jpg", "images/stlouis-mo-5319-claxton-29.jpg", "images/stlouis-mo-5319-claxton-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/stlouis-mo-5319-claxton.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "flint-mi-205-dayton",
@@ -4733,6 +5728,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/flint-mi-205-dayton-1.jpg", "images/flint-mi-205-dayton-2.jpg", "images/flint-mi-205-dayton-3.jpg", "images/flint-mi-205-dayton-4.jpg", "images/flint-mi-205-dayton-5.jpg", "images/flint-mi-205-dayton-6.jpg", "images/flint-mi-205-dayton-7.jpg", "images/flint-mi-205-dayton-8.jpg", "images/flint-mi-205-dayton-9.jpg", "images/flint-mi-205-dayton-10.jpg", "images/flint-mi-205-dayton-11.jpg"],
+    hasPhoto: true,
+    photoCount: 12,
+    cardPhoto: "images/cards/flint-mi-205-dayton.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "winchester-in-542-wall",
@@ -4756,6 +5756,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/winchester-in-542-wall-1.jpg", "images/winchester-in-542-wall-2.jpg", "images/winchester-in-542-wall-3.jpg", "images/winchester-in-542-wall-4.jpg", "images/winchester-in-542-wall-5.jpg"],
+    hasPhoto: true,
+    photoCount: 5,
+    cardPhoto: "images/cards/winchester-in-542-wall.webp",
+    cardWidth: 480,
+    cardHeight: 357,
   },
   {
     id: "decatur-il-1578-union",
@@ -4779,6 +5784,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1578-union-1.jpg", "images/decatur-il-1578-union-2.jpg", "images/decatur-il-1578-union-3.jpg", "images/decatur-il-1578-union-4.jpg", "images/decatur-il-1578-union-5.jpg", "images/decatur-il-1578-union-6.jpg", "images/decatur-il-1578-union-7.jpg", "images/decatur-il-1578-union-8.jpg", "images/decatur-il-1578-union-9.jpg", "images/decatur-il-1578-union-10.jpg", "images/decatur-il-1578-union-11.jpg", "images/decatur-il-1578-union-12.jpg", "images/decatur-il-1578-union-13.jpg", "images/decatur-il-1578-union-14.jpg", "images/decatur-il-1578-union-15.jpg", "images/decatur-il-1578-union-16.jpg", "images/decatur-il-1578-union-17.jpg", "images/decatur-il-1578-union-18.jpg", "images/decatur-il-1578-union-19.jpg", "images/decatur-il-1578-union-20.jpg", "images/decatur-il-1578-union-21.jpg", "images/decatur-il-1578-union-22.jpg", "images/decatur-il-1578-union-23.jpg", "images/decatur-il-1578-union-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/decatur-il-1578-union.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "decatur-il-1947-sir",
@@ -4802,6 +5812,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1947-sir-1.jpg", "images/decatur-il-1947-sir-2.jpg", "images/decatur-il-1947-sir-3.jpg", "images/decatur-il-1947-sir-4.jpg", "images/decatur-il-1947-sir-5.jpg", "images/decatur-il-1947-sir-6.jpg", "images/decatur-il-1947-sir-7.jpg", "images/decatur-il-1947-sir-8.jpg", "images/decatur-il-1947-sir-9.jpg", "images/decatur-il-1947-sir-10.jpg", "images/decatur-il-1947-sir-11.jpg", "images/decatur-il-1947-sir-12.jpg", "images/decatur-il-1947-sir-13.jpg", "images/decatur-il-1947-sir-14.jpg", "images/decatur-il-1947-sir-15.jpg", "images/decatur-il-1947-sir-16.jpg", "images/decatur-il-1947-sir-17.jpg", "images/decatur-il-1947-sir-18.jpg", "images/decatur-il-1947-sir-19.jpg", "images/decatur-il-1947-sir-20.jpg", "images/decatur-il-1947-sir-21.jpg", "images/decatur-il-1947-sir-22.jpg", "images/decatur-il-1947-sir-23.jpg", "images/decatur-il-1947-sir-24.jpg", "images/decatur-il-1947-sir-25.jpg", "images/decatur-il-1947-sir-26.jpg", "images/decatur-il-1947-sir-27.jpg", "images/decatur-il-1947-sir-28.jpg", "images/decatur-il-1947-sir-29.jpg", "images/decatur-il-1947-sir-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/decatur-il-1947-sir.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "decatur-il-1373-university",
@@ -4825,6 +5840,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1373-university-1.jpg", "images/decatur-il-1373-university-2.jpg", "images/decatur-il-1373-university-3.jpg", "images/decatur-il-1373-university-4.jpg", "images/decatur-il-1373-university-5.jpg", "images/decatur-il-1373-university-6.jpg", "images/decatur-il-1373-university-7.jpg", "images/decatur-il-1373-university-8.jpg", "images/decatur-il-1373-university-9.jpg", "images/decatur-il-1373-university-10.jpg"],
+    hasPhoto: true,
+    photoCount: 11,
+    cardPhoto: "images/cards/decatur-il-1373-university.webp",
+    cardWidth: 480,
+    cardHeight: 480,
   },
   {
     id: "cahokia-il-1613-parklane",
@@ -4848,6 +5868,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/cahokia-il-1613-parklane-1.jpg", "images/cahokia-il-1613-parklane-2.jpg", "images/cahokia-il-1613-parklane-3.jpg", "images/cahokia-il-1613-parklane-4.jpg", "images/cahokia-il-1613-parklane-5.jpg", "images/cahokia-il-1613-parklane-6.jpg", "images/cahokia-il-1613-parklane-7.jpg", "images/cahokia-il-1613-parklane-8.jpg", "images/cahokia-il-1613-parklane-9.jpg", "images/cahokia-il-1613-parklane-10.jpg", "images/cahokia-il-1613-parklane-11.jpg", "images/cahokia-il-1613-parklane-12.jpg", "images/cahokia-il-1613-parklane-13.jpg", "images/cahokia-il-1613-parklane-14.jpg", "images/cahokia-il-1613-parklane-15.jpg", "images/cahokia-il-1613-parklane-16.jpg", "images/cahokia-il-1613-parklane-17.jpg", "images/cahokia-il-1613-parklane-18.jpg", "images/cahokia-il-1613-parklane-19.jpg", "images/cahokia-il-1613-parklane-20.jpg", "images/cahokia-il-1613-parklane-21.jpg", "images/cahokia-il-1613-parklane-22.jpg", "images/cahokia-il-1613-parklane-23.jpg", "images/cahokia-il-1613-parklane-24.jpg", "images/cahokia-il-1613-parklane-25.jpg", "images/cahokia-il-1613-parklane-26.jpg", "images/cahokia-il-1613-parklane-27.jpg", "images/cahokia-il-1613-parklane-28.jpg", "images/cahokia-il-1613-parklane-29.jpg", "images/cahokia-il-1613-parklane-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/cahokia-il-1613-parklane.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "saginaw-mi-505-yale",
@@ -4871,6 +5896,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/saginaw-mi-505-yale-1.jpg", "images/saginaw-mi-505-yale-2.jpg", "images/saginaw-mi-505-yale-3.jpg", "images/saginaw-mi-505-yale-4.jpg", "images/saginaw-mi-505-yale-5.jpg", "images/saginaw-mi-505-yale-6.jpg", "images/saginaw-mi-505-yale-7.jpg", "images/saginaw-mi-505-yale-8.jpg", "images/saginaw-mi-505-yale-9.jpg", "images/saginaw-mi-505-yale-10.jpg", "images/saginaw-mi-505-yale-11.jpg", "images/saginaw-mi-505-yale-12.jpg", "images/saginaw-mi-505-yale-13.jpg", "images/saginaw-mi-505-yale-14.jpg", "images/saginaw-mi-505-yale-15.jpg", "images/saginaw-mi-505-yale-16.jpg", "images/saginaw-mi-505-yale-17.jpg", "images/saginaw-mi-505-yale-18.jpg", "images/saginaw-mi-505-yale-19.jpg", "images/saginaw-mi-505-yale-20.jpg", "images/saginaw-mi-505-yale-21.jpg", "images/saginaw-mi-505-yale-22.jpg", "images/saginaw-mi-505-yale-23.jpg", "images/saginaw-mi-505-yale-24.jpg", "images/saginaw-mi-505-yale-25.jpg", "images/saginaw-mi-505-yale-26.jpg", "images/saginaw-mi-505-yale-27.jpg", "images/saginaw-mi-505-yale-28.jpg", "images/saginaw-mi-505-yale-29.jpg", "images/saginaw-mi-505-yale-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/saginaw-mi-505-yale.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "decatur-il-1771-union",
@@ -4894,6 +5924,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1771-union-1.jpg", "images/decatur-il-1771-union-2.jpg", "images/decatur-il-1771-union-3.jpg", "images/decatur-il-1771-union-4.jpg", "images/decatur-il-1771-union-5.jpg", "images/decatur-il-1771-union-6.jpg", "images/decatur-il-1771-union-7.jpg", "images/decatur-il-1771-union-8.jpg", "images/decatur-il-1771-union-9.jpg", "images/decatur-il-1771-union-10.jpg", "images/decatur-il-1771-union-11.jpg", "images/decatur-il-1771-union-12.jpg", "images/decatur-il-1771-union-13.jpg"],
+    hasPhoto: true,
+    photoCount: 14,
+    cardPhoto: "images/cards/decatur-il-1771-union.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "montgomery-al-298-broadway",
@@ -4917,6 +5952,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/montgomery-al-298-broadway-1.jpg", "images/montgomery-al-298-broadway-2.jpg", "images/montgomery-al-298-broadway-3.jpg", "images/montgomery-al-298-broadway-4.jpg", "images/montgomery-al-298-broadway-5.jpg", "images/montgomery-al-298-broadway-6.jpg", "images/montgomery-al-298-broadway-7.jpg", "images/montgomery-al-298-broadway-8.jpg", "images/montgomery-al-298-broadway-9.jpg", "images/montgomery-al-298-broadway-10.jpg", "images/montgomery-al-298-broadway-11.jpg", "images/montgomery-al-298-broadway-12.jpg", "images/montgomery-al-298-broadway-13.jpg", "images/montgomery-al-298-broadway-14.jpg", "images/montgomery-al-298-broadway-15.jpg", "images/montgomery-al-298-broadway-16.jpg", "images/montgomery-al-298-broadway-17.jpg", "images/montgomery-al-298-broadway-18.jpg", "images/montgomery-al-298-broadway-19.jpg", "images/montgomery-al-298-broadway-20.jpg", "images/montgomery-al-298-broadway-21.jpg", "images/montgomery-al-298-broadway-22.jpg", "images/montgomery-al-298-broadway-23.jpg", "images/montgomery-al-298-broadway-24.jpg", "images/montgomery-al-298-broadway-25.jpg", "images/montgomery-al-298-broadway-26.jpg", "images/montgomery-al-298-broadway-27.jpg", "images/montgomery-al-298-broadway-28.jpg", "images/montgomery-al-298-broadway-29.jpg", "images/montgomery-al-298-broadway-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/montgomery-al-298-broadway.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "alton-il-2420-alby",
@@ -4939,6 +5979,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/alton-il-2420-alby-1.jpg", "images/alton-il-2420-alby-2.jpg", "images/alton-il-2420-alby-3.jpg", "images/alton-il-2420-alby-4.jpg", "images/alton-il-2420-alby-5.jpg", "images/alton-il-2420-alby-6.jpg", "images/alton-il-2420-alby-7.jpg", "images/alton-il-2420-alby-8.jpg", "images/alton-il-2420-alby-9.jpg", "images/alton-il-2420-alby-10.jpg", "images/alton-il-2420-alby-11.jpg", "images/alton-il-2420-alby-12.jpg", "images/alton-il-2420-alby-13.jpg", "images/alton-il-2420-alby-14.jpg", "images/alton-il-2420-alby-15.jpg", "images/alton-il-2420-alby-16.jpg", "images/alton-il-2420-alby-17.jpg", "images/alton-il-2420-alby-18.jpg", "images/alton-il-2420-alby-19.jpg", "images/alton-il-2420-alby-20.jpg", "images/alton-il-2420-alby-21.jpg", "images/alton-il-2420-alby-22.jpg", "images/alton-il-2420-alby-23.jpg", "images/alton-il-2420-alby-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/alton-il-2420-alby.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "springfield-il-1132-oak",
@@ -4961,6 +6006,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/springfield-il-1132-oak-1.jpg", "images/springfield-il-1132-oak-2.jpg", "images/springfield-il-1132-oak-3.jpg", "images/springfield-il-1132-oak-4.jpg", "images/springfield-il-1132-oak-5.jpg", "images/springfield-il-1132-oak-6.jpg", "images/springfield-il-1132-oak-7.jpg"],
+    hasPhoto: true,
+    photoCount: 8,
+    cardPhoto: "images/cards/springfield-il-1132-oak.webp",
+    cardWidth: 270,
+    cardHeight: 360,
   },
   {
     id: "galesburg-il-343-pine",
@@ -4983,6 +6033,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/galesburg-il-343-pine-1.jpg", "images/galesburg-il-343-pine-2.jpg", "images/galesburg-il-343-pine-3.jpg", "images/galesburg-il-343-pine-4.jpg", "images/galesburg-il-343-pine-5.jpg", "images/galesburg-il-343-pine-6.jpg", "images/galesburg-il-343-pine-7.jpg", "images/galesburg-il-343-pine-8.jpg", "images/galesburg-il-343-pine-9.jpg", "images/galesburg-il-343-pine-10.jpg", "images/galesburg-il-343-pine-11.jpg", "images/galesburg-il-343-pine-12.jpg", "images/galesburg-il-343-pine-13.jpg", "images/galesburg-il-343-pine-14.jpg", "images/galesburg-il-343-pine-15.jpg", "images/galesburg-il-343-pine-16.jpg", "images/galesburg-il-343-pine-17.jpg", "images/galesburg-il-343-pine-18.jpg", "images/galesburg-il-343-pine-19.jpg", "images/galesburg-il-343-pine-20.jpg", "images/galesburg-il-343-pine-21.jpg", "images/galesburg-il-343-pine-22.jpg", "images/galesburg-il-343-pine-23.jpg", "images/galesburg-il-343-pine-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/galesburg-il-343-pine.webp",
+    cardWidth: 480,
+    cardHeight: 637,
   },
   {
     id: "nokomis-il-623-spruce",
@@ -5005,6 +6060,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/nokomis-il-623-spruce-1.jpg", "images/nokomis-il-623-spruce-2.jpg", "images/nokomis-il-623-spruce-3.jpg", "images/nokomis-il-623-spruce-4.jpg", "images/nokomis-il-623-spruce-5.jpg", "images/nokomis-il-623-spruce-6.jpg", "images/nokomis-il-623-spruce-7.jpg", "images/nokomis-il-623-spruce-8.jpg", "images/nokomis-il-623-spruce-9.jpg", "images/nokomis-il-623-spruce-10.jpg"],
+    hasPhoto: true,
+    photoCount: 11,
+    cardPhoto: "images/cards/nokomis-il-623-spruce.webp",
+    cardWidth: 480,
+    cardHeight: 216,
   },
   {
     id: "hillsdale-mo-2123-rosebud",
@@ -5027,6 +6087,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/hillsdale-mo-2123-rosebud-1.jpg", "images/hillsdale-mo-2123-rosebud-2.jpg", "images/hillsdale-mo-2123-rosebud-3.jpg", "images/hillsdale-mo-2123-rosebud-4.jpg", "images/hillsdale-mo-2123-rosebud-5.jpg", "images/hillsdale-mo-2123-rosebud-6.jpg", "images/hillsdale-mo-2123-rosebud-7.jpg", "images/hillsdale-mo-2123-rosebud-8.jpg", "images/hillsdale-mo-2123-rosebud-9.jpg", "images/hillsdale-mo-2123-rosebud-10.jpg", "images/hillsdale-mo-2123-rosebud-11.jpg", "images/hillsdale-mo-2123-rosebud-12.jpg", "images/hillsdale-mo-2123-rosebud-13.jpg", "images/hillsdale-mo-2123-rosebud-14.jpg", "images/hillsdale-mo-2123-rosebud-15.jpg", "images/hillsdale-mo-2123-rosebud-16.jpg", "images/hillsdale-mo-2123-rosebud-17.jpg", "images/hillsdale-mo-2123-rosebud-18.jpg", "images/hillsdale-mo-2123-rosebud-19.jpg", "images/hillsdale-mo-2123-rosebud-20.jpg", "images/hillsdale-mo-2123-rosebud-21.jpg", "images/hillsdale-mo-2123-rosebud-22.jpg", "images/hillsdale-mo-2123-rosebud-23.jpg", "images/hillsdale-mo-2123-rosebud-24.jpg", "images/hillsdale-mo-2123-rosebud-25.jpg", "images/hillsdale-mo-2123-rosebud-26.jpg", "images/hillsdale-mo-2123-rosebud-27.jpg", "images/hillsdale-mo-2123-rosebud-28.jpg", "images/hillsdale-mo-2123-rosebud-29.jpg", "images/hillsdale-mo-2123-rosebud-30.jpg"],
+    hasPhoto: true,
+    photoCount: 31,
+    cardPhoto: "images/cards/hillsdale-mo-2123-rosebud.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "peoria-il-1815-butler",
@@ -5049,6 +6114,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/peoria-il-1815-butler-1.jpg", "images/peoria-il-1815-butler-2.jpg", "images/peoria-il-1815-butler-3.jpg", "images/peoria-il-1815-butler-4.jpg", "images/peoria-il-1815-butler-5.jpg", "images/peoria-il-1815-butler-6.jpg", "images/peoria-il-1815-butler-7.jpg", "images/peoria-il-1815-butler-8.jpg", "images/peoria-il-1815-butler-9.jpg", "images/peoria-il-1815-butler-10.jpg", "images/peoria-il-1815-butler-11.jpg", "images/peoria-il-1815-butler-12.jpg", "images/peoria-il-1815-butler-13.jpg", "images/peoria-il-1815-butler-14.jpg", "images/peoria-il-1815-butler-15.jpg", "images/peoria-il-1815-butler-16.jpg", "images/peoria-il-1815-butler-17.jpg", "images/peoria-il-1815-butler-18.jpg"],
+    hasPhoto: true,
+    photoCount: 19,
+    cardPhoto: "images/cards/peoria-il-1815-butler.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "macomb-il-526-chandler",
@@ -5071,6 +6141,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/macomb-il-526-chandler-1.jpg", "images/macomb-il-526-chandler-2.jpg", "images/macomb-il-526-chandler-3.jpg", "images/macomb-il-526-chandler-4.jpg", "images/macomb-il-526-chandler-5.jpg", "images/macomb-il-526-chandler-6.jpg", "images/macomb-il-526-chandler-7.jpg", "images/macomb-il-526-chandler-8.jpg", "images/macomb-il-526-chandler-9.jpg", "images/macomb-il-526-chandler-10.jpg", "images/macomb-il-526-chandler-11.jpg", "images/macomb-il-526-chandler-12.jpg", "images/macomb-il-526-chandler-13.jpg", "images/macomb-il-526-chandler-14.jpg", "images/macomb-il-526-chandler-15.jpg", "images/macomb-il-526-chandler-16.jpg", "images/macomb-il-526-chandler-17.jpg", "images/macomb-il-526-chandler-18.jpg", "images/macomb-il-526-chandler-19.jpg", "images/macomb-il-526-chandler-20.jpg", "images/macomb-il-526-chandler-21.jpg", "images/macomb-il-526-chandler-22.jpg"],
+    hasPhoto: true,
+    photoCount: 23,
+    cardPhoto: "images/cards/macomb-il-526-chandler.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "newbern-nc-2000-aycock",
@@ -5093,6 +6168,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/newbern-nc-2000-aycock-1.jpg", "images/newbern-nc-2000-aycock-2.jpg", "images/newbern-nc-2000-aycock-3.jpg", "images/newbern-nc-2000-aycock-4.jpg", "images/newbern-nc-2000-aycock-5.jpg", "images/newbern-nc-2000-aycock-6.jpg", "images/newbern-nc-2000-aycock-7.jpg", "images/newbern-nc-2000-aycock-8.jpg", "images/newbern-nc-2000-aycock-9.jpg", "images/newbern-nc-2000-aycock-10.jpg", "images/newbern-nc-2000-aycock-11.jpg", "images/newbern-nc-2000-aycock-12.jpg", "images/newbern-nc-2000-aycock-13.jpg", "images/newbern-nc-2000-aycock-14.jpg", "images/newbern-nc-2000-aycock-15.jpg", "images/newbern-nc-2000-aycock-16.jpg", "images/newbern-nc-2000-aycock-17.jpg", "images/newbern-nc-2000-aycock-18.jpg", "images/newbern-nc-2000-aycock-19.jpg"],
+    hasPhoto: true,
+    photoCount: 20,
+    cardPhoto: "images/cards/newbern-nc-2000-aycock.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "decatur-il-1375-maple",
@@ -5118,6 +6198,11 @@ const HOMES = [
     features: { basement: "yes" },
     heroPhoto: "",
     photos:    ["images/decatur-il-1375-maple-1.jpg", "images/decatur-il-1375-maple-2.jpg", "images/decatur-il-1375-maple-3.jpg", "images/decatur-il-1375-maple-4.jpg", "images/decatur-il-1375-maple-5.jpg", "images/decatur-il-1375-maple-6.jpg", "images/decatur-il-1375-maple-7.jpg", "images/decatur-il-1375-maple-8.jpg", "images/decatur-il-1375-maple-9.jpg", "images/decatur-il-1375-maple-10.jpg", "images/decatur-il-1375-maple-11.jpg", "images/decatur-il-1375-maple-12.jpg", "images/decatur-il-1375-maple-13.jpg", "images/decatur-il-1375-maple-14.jpg", "images/decatur-il-1375-maple-15.jpg", "images/decatur-il-1375-maple-16.jpg", "images/decatur-il-1375-maple-17.jpg", "images/decatur-il-1375-maple-18.jpg", "images/decatur-il-1375-maple-19.jpg", "images/decatur-il-1375-maple-20.jpg", "images/decatur-il-1375-maple-21.jpg", "images/decatur-il-1375-maple-22.jpg", "images/decatur-il-1375-maple-23.jpg", "images/decatur-il-1375-maple-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/decatur-il-1375-maple.webp",
+    cardWidth: 480,
+    cardHeight: 480,
   },
   {
     id: "decatur-il-1553-hickory",
@@ -5140,6 +6225,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1553-hickory-1.jpg", "images/decatur-il-1553-hickory-2.jpg", "images/decatur-il-1553-hickory-3.jpg", "images/decatur-il-1553-hickory-4.jpg", "images/decatur-il-1553-hickory-5.jpg", "images/decatur-il-1553-hickory-6.jpg", "images/decatur-il-1553-hickory-7.jpg", "images/decatur-il-1553-hickory-8.jpg", "images/decatur-il-1553-hickory-9.jpg", "images/decatur-il-1553-hickory-10.jpg", "images/decatur-il-1553-hickory-11.jpg", "images/decatur-il-1553-hickory-12.jpg", "images/decatur-il-1553-hickory-13.jpg", "images/decatur-il-1553-hickory-14.jpg", "images/decatur-il-1553-hickory-15.jpg", "images/decatur-il-1553-hickory-16.jpg", "images/decatur-il-1553-hickory-17.jpg", "images/decatur-il-1553-hickory-18.jpg", "images/decatur-il-1553-hickory-19.jpg", "images/decatur-il-1553-hickory-20.jpg", "images/decatur-il-1553-hickory-21.jpg", "images/decatur-il-1553-hickory-22.jpg", "images/decatur-il-1553-hickory-23.jpg", "images/decatur-il-1553-hickory-24.jpg", "images/decatur-il-1553-hickory-25.jpg", "images/decatur-il-1553-hickory-26.jpg", "images/decatur-il-1553-hickory-27.jpg", "images/decatur-il-1553-hickory-28.jpg", "images/decatur-il-1553-hickory-29.jpg"],
+    hasPhoto: true,
+    photoCount: 30,
+    cardPhoto: "images/cards/decatur-il-1553-hickory.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-1665-union",
@@ -5162,6 +6252,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    [],
+    hasPhoto: false,
+    photoCount: 0,
+    cardPhoto: "images/cards/decatur-il-1665-union.webp",
+    cardWidth: 480,
+    cardHeight: 480,
   },
   {
     id: "decatur-il-1690-johns",
@@ -5185,6 +6280,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1690-johns-1.jpg", "images/decatur-il-1690-johns-2.jpg", "images/decatur-il-1690-johns-3.jpg", "images/decatur-il-1690-johns-4.jpg", "images/decatur-il-1690-johns-5.jpg", "images/decatur-il-1690-johns-6.jpg", "images/decatur-il-1690-johns-7.jpg", "images/decatur-il-1690-johns-8.jpg", "images/decatur-il-1690-johns-9.jpg", "images/decatur-il-1690-johns-10.jpg", "images/decatur-il-1690-johns-11.jpg", "images/decatur-il-1690-johns-12.jpg", "images/decatur-il-1690-johns-13.jpg", "images/decatur-il-1690-johns-14.jpg", "images/decatur-il-1690-johns-15.jpg", "images/decatur-il-1690-johns-16.jpg", "images/decatur-il-1690-johns-17.jpg", "images/decatur-il-1690-johns-18.jpg", "images/decatur-il-1690-johns-19.jpg", "images/decatur-il-1690-johns-20.jpg", "images/decatur-il-1690-johns-21.jpg", "images/decatur-il-1690-johns-22.jpg", "images/decatur-il-1690-johns-23.jpg", "images/decatur-il-1690-johns-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/decatur-il-1690-johns.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "urbana-il-2002-country",
@@ -5210,6 +6310,11 @@ const HOMES = [
     features: { garage: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/urbana-il-2002-country-1.jpg", "images/urbana-il-2002-country-2.jpg", "images/urbana-il-2002-country-3.jpg", "images/urbana-il-2002-country-4.jpg", "images/urbana-il-2002-country-5.jpg", "images/urbana-il-2002-country-6.jpg", "images/urbana-il-2002-country-7.jpg", "images/urbana-il-2002-country-8.jpg", "images/urbana-il-2002-country-9.jpg", "images/urbana-il-2002-country-10.jpg", "images/urbana-il-2002-country-11.jpg", "images/urbana-il-2002-country-12.jpg", "images/urbana-il-2002-country-13.jpg", "images/urbana-il-2002-country-14.jpg", "images/urbana-il-2002-country-15.jpg", "images/urbana-il-2002-country-16.jpg", "images/urbana-il-2002-country-17.jpg", "images/urbana-il-2002-country-18.jpg", "images/urbana-il-2002-country-19.jpg", "images/urbana-il-2002-country-20.jpg", "images/urbana-il-2002-country-21.jpg", "images/urbana-il-2002-country-22.jpg", "images/urbana-il-2002-country-23.jpg", "images/urbana-il-2002-country-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/urbana-il-2002-country.webp",
+    cardWidth: 480,
+    cardHeight: 320,
   },
   {
     id: "stlouis-mo-8800-jordan",
@@ -5234,6 +6339,11 @@ const HOMES = [
     features: { backyard: "yes", fenced_yard: "yes", off_street_parking: "yes" },
     heroPhoto: "",
     photos:    ["images/stlouis-mo-8800-jordan-1.jpg", "images/stlouis-mo-8800-jordan-2.jpg", "images/stlouis-mo-8800-jordan-3.jpg", "images/stlouis-mo-8800-jordan-4.jpg", "images/stlouis-mo-8800-jordan-5.jpg", "images/stlouis-mo-8800-jordan-6.jpg", "images/stlouis-mo-8800-jordan-7.jpg", "images/stlouis-mo-8800-jordan-8.jpg", "images/stlouis-mo-8800-jordan-9.jpg", "images/stlouis-mo-8800-jordan-10.jpg", "images/stlouis-mo-8800-jordan-11.jpg", "images/stlouis-mo-8800-jordan-12.jpg", "images/stlouis-mo-8800-jordan-13.jpg", "images/stlouis-mo-8800-jordan-14.jpg", "images/stlouis-mo-8800-jordan-15.jpg", "images/stlouis-mo-8800-jordan-16.jpg"],
+    hasPhoto: true,
+    photoCount: 17,
+    cardPhoto: "images/cards/stlouis-mo-8800-jordan.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-2448-wood",
@@ -5256,6 +6366,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-2448-wood-1.jpg", "images/decatur-il-2448-wood-2.jpg", "images/decatur-il-2448-wood-3.jpg", "images/decatur-il-2448-wood-4.jpg"],
+    hasPhoto: true,
+    photoCount: 5,
+    cardPhoto: "images/cards/decatur-il-2448-wood.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "belleville-il-621-bernard",
@@ -5278,6 +6393,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    [],
+    hasPhoto: false,
+    photoCount: 0,
+    cardPhoto: "images/cards/belleville-il-621-bernard.webp",
+    cardWidth: 480,
+    cardHeight: 480,
   },
   {
     id: "belleville-il-304-revere",
@@ -5300,6 +6420,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    [],
+    hasPhoto: false,
+    photoCount: 0,
+    cardPhoto: "images/cards/belleville-il-304-revere.webp",
+    cardWidth: 480,
+    cardHeight: 480,
   },
   {
     id: "belleville-il-308-revere",
@@ -5322,6 +6447,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    [],
+    hasPhoto: false,
+    photoCount: 0,
+    cardPhoto: "images/cards/belleville-il-308-revere.webp",
+    cardWidth: 480,
+    cardHeight: 480,
   },
   {
     id: "stlouis-mo-4627-maffitt",
@@ -5344,6 +6474,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    [],
+    hasPhoto: false,
+    photoCount: 0,
+    cardPhoto: "images/cards/stlouis-mo-4627-maffitt.webp",
+    cardWidth: 480,
+    cardHeight: 480,
   },
   {
     id: "stlouis-mo-222-manning",
@@ -5366,6 +6501,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    [],
+    hasPhoto: false,
+    photoCount: 0,
+    cardPhoto: "images/cards/stlouis-mo-222-manning.webp",
+    cardWidth: 480,
+    cardHeight: 480,
   },
   {
     id: "stlouis-mo-7534-blanding",
@@ -5388,6 +6528,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    [],
+    hasPhoto: false,
+    photoCount: 0,
+    cardPhoto: "images/cards/stlouis-mo-7534-blanding.webp",
+    cardWidth: 480,
+    cardHeight: 480,
   },
   {
     id: "decatur-il-1012-wood",
@@ -5410,6 +6555,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    [],
+    hasPhoto: false,
+    photoCount: 0,
+    cardPhoto: "images/cards/decatur-il-1012-wood.webp",
+    cardWidth: 480,
+    cardHeight: 480,
   },
   {
     id: "stlouis-mo-7316-park",
@@ -5432,6 +6582,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    [],
+    hasPhoto: false,
+    photoCount: 0,
+    cardPhoto: "images/cards/stlouis-mo-7316-park.webp",
+    cardWidth: 480,
+    cardHeight: 480,
   },
   {
     id: "stlouis-mo-5657-park",
@@ -5454,6 +6609,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    [],
+    hasPhoto: false,
+    photoCount: 0,
+    cardPhoto: "images/cards/stlouis-mo-5657-park.webp",
+    cardWidth: 480,
+    cardHeight: 480,
   },
   {
     id: "stlouis-mo-5359-maffit",
@@ -5476,6 +6636,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    [],
+    hasPhoto: false,
+    photoCount: 0,
+    cardPhoto: "images/cards/stlouis-mo-5359-maffit.webp",
+    cardWidth: 480,
+    cardHeight: 480,
   },
   {
     id: "springfield-il-1921-edwards",
@@ -5498,6 +6663,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    [],
+    hasPhoto: false,
+    photoCount: 0,
+    cardPhoto: "images/cards/springfield-il-1921-edwards.webp",
+    cardWidth: 480,
+    cardHeight: 480,
   },
   {
     id: "decatur-il-927-street",
@@ -5520,6 +6690,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-927-street-1.jpg", "images/decatur-il-927-street-2.jpg", "images/decatur-il-927-street-3.jpg", "images/decatur-il-927-street-4.jpg"],
+    hasPhoto: true,
+    photoCount: 5,
+    cardPhoto: "images/cards/decatur-il-927-street.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "decatur-il-1042-pine",
@@ -5542,6 +6717,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    [],
+    hasPhoto: false,
+    photoCount: 0,
+    cardPhoto: "images/cards/decatur-il-1042-pine.webp",
+    cardWidth: 480,
+    cardHeight: 480,
   },
   {
     id: "canton-il-204-5th",
@@ -5564,6 +6744,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    [],
+    hasPhoto: false,
+    photoCount: 0,
+    cardPhoto: "images/cards/canton-il-204-5th.webp",
+    cardWidth: 480,
+    cardHeight: 480,
   },
   {
     id: "decatur-il-1712-church",
@@ -5586,6 +6771,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    [],
+    hasPhoto: false,
+    photoCount: 0,
+    cardPhoto: "images/cards/decatur-il-1712-church.webp",
+    cardWidth: 480,
+    cardHeight: 480,
   },
   {
     id: "jackson-ms-2112-paden",
@@ -5608,6 +6798,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    [],
+    hasPhoto: false,
+    photoCount: 0,
+    cardPhoto: "images/cards/jackson-ms-2112-paden.webp",
+    cardWidth: 480,
+    cardHeight: 480,
   },
   {
     id: "flint-mi-2832-clement",
@@ -5630,6 +6825,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    [],
+    hasPhoto: false,
+    photoCount: 0,
+    cardPhoto: "images/cards/flint-mi-2832-clement.webp",
+    cardWidth: 480,
+    cardHeight: 480,
   },
   {
     id: "decatur-il-1527-oakland",
@@ -5653,6 +6853,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-1527-oakland-1.jpg", "images/decatur-il-1527-oakland-2.jpg", "images/decatur-il-1527-oakland-3.jpg", "images/decatur-il-1527-oakland-4.jpg", "images/decatur-il-1527-oakland-5.jpg", "images/decatur-il-1527-oakland-6.jpg", "images/decatur-il-1527-oakland-7.jpg", "images/decatur-il-1527-oakland-8.jpg", "images/decatur-il-1527-oakland-9.jpg", "images/decatur-il-1527-oakland-10.jpg", "images/decatur-il-1527-oakland-11.jpg", "images/decatur-il-1527-oakland-12.jpg", "images/decatur-il-1527-oakland-13.jpg", "images/decatur-il-1527-oakland-14.jpg", "images/decatur-il-1527-oakland-15.jpg", "images/decatur-il-1527-oakland-16.jpg", "images/decatur-il-1527-oakland-17.jpg"],
+    hasPhoto: true,
+    photoCount: 18,
+    cardPhoto: "images/cards/decatur-il-1527-oakland.webp",
+    cardWidth: 480,
+    cardHeight: 637,
   },
   {
     id: "stlouis-mo-8401-broadway",
@@ -5676,6 +6881,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/stlouis-mo-8401-broadway-1.jpg", "images/stlouis-mo-8401-broadway-2.jpg", "images/stlouis-mo-8401-broadway-3.jpg", "images/stlouis-mo-8401-broadway-4.jpg", "images/stlouis-mo-8401-broadway-5.jpg", "images/stlouis-mo-8401-broadway-6.jpg", "images/stlouis-mo-8401-broadway-7.jpg", "images/stlouis-mo-8401-broadway-8.jpg", "images/stlouis-mo-8401-broadway-9.jpg", "images/stlouis-mo-8401-broadway-10.jpg", "images/stlouis-mo-8401-broadway-11.jpg", "images/stlouis-mo-8401-broadway-12.jpg", "images/stlouis-mo-8401-broadway-13.jpg", "images/stlouis-mo-8401-broadway-14.jpg", "images/stlouis-mo-8401-broadway-15.jpg"],
+    hasPhoto: true,
+    photoCount: 16,
+    cardPhoto: "images/cards/stlouis-mo-8401-broadway.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "witt-il-529-2nd",
@@ -5699,6 +6909,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/witt-il-529-2nd-1.jpg", "images/witt-il-529-2nd-2.jpg", "images/witt-il-529-2nd-3.jpg", "images/witt-il-529-2nd-4.jpg", "images/witt-il-529-2nd-5.jpg", "images/witt-il-529-2nd-6.jpg", "images/witt-il-529-2nd-7.jpg", "images/witt-il-529-2nd-8.jpg", "images/witt-il-529-2nd-9.jpg", "images/witt-il-529-2nd-10.jpg", "images/witt-il-529-2nd-11.jpg", "images/witt-il-529-2nd-12.jpg", "images/witt-il-529-2nd-13.jpg", "images/witt-il-529-2nd-14.jpg", "images/witt-il-529-2nd-15.jpg", "images/witt-il-529-2nd-16.jpg", "images/witt-il-529-2nd-17.jpg", "images/witt-il-529-2nd-18.jpg", "images/witt-il-529-2nd-19.jpg", "images/witt-il-529-2nd-20.jpg", "images/witt-il-529-2nd-21.jpg", "images/witt-il-529-2nd-22.jpg", "images/witt-il-529-2nd-23.jpg", "images/witt-il-529-2nd-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/witt-il-529-2nd.webp",
+    cardWidth: 480,
+    cardHeight: 640,
   },
   {
     id: "cahokia-il-5-denovion",
@@ -5721,6 +6936,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    [],
+    hasPhoto: false,
+    photoCount: 0,
+    cardPhoto: "images/cards/cahokia-il-5-denovion.webp",
+    cardWidth: 480,
+    cardHeight: 480,
   },
   {
     id: "cahokiaheights-il-6-drexel",
@@ -5743,6 +6963,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    [],
+    hasPhoto: false,
+    photoCount: 0,
+    cardPhoto: "images/cards/cahokiaheights-il-6-drexel.webp",
+    cardWidth: 480,
+    cardHeight: 480,
   },
   {
     id: "decatur-il-1010-cleveland",
@@ -5765,6 +6990,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    [],
+    hasPhoto: false,
+    photoCount: 0,
+    cardPhoto: "images/cards/decatur-il-1010-cleveland.webp",
+    cardWidth: 480,
+    cardHeight: 480,
   },
   {
     id: "decatur-il-1600-john",
@@ -5787,6 +7017,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    [],
+    hasPhoto: false,
+    photoCount: 0,
+    cardPhoto: "images/cards/decatur-il-1600-john.webp",
+    cardWidth: 480,
+    cardHeight: 480,
   },
   {
     id: "decatur-il-305-maffit",
@@ -5809,6 +7044,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    ["images/decatur-il-305-maffit-1.jpg", "images/decatur-il-305-maffit-2.jpg", "images/decatur-il-305-maffit-3.jpg", "images/decatur-il-305-maffit-4.jpg", "images/decatur-il-305-maffit-5.jpg", "images/decatur-il-305-maffit-6.jpg", "images/decatur-il-305-maffit-7.jpg", "images/decatur-il-305-maffit-8.jpg", "images/decatur-il-305-maffit-9.jpg", "images/decatur-il-305-maffit-10.jpg", "images/decatur-il-305-maffit-11.jpg", "images/decatur-il-305-maffit-12.jpg", "images/decatur-il-305-maffit-13.jpg", "images/decatur-il-305-maffit-14.jpg", "images/decatur-il-305-maffit-15.jpg", "images/decatur-il-305-maffit-16.jpg", "images/decatur-il-305-maffit-17.jpg", "images/decatur-il-305-maffit-18.jpg", "images/decatur-il-305-maffit-19.jpg", "images/decatur-il-305-maffit-20.jpg", "images/decatur-il-305-maffit-21.jpg", "images/decatur-il-305-maffit-22.jpg", "images/decatur-il-305-maffit-23.jpg", "images/decatur-il-305-maffit-24.jpg"],
+    hasPhoto: true,
+    photoCount: 25,
+    cardPhoto: "images/cards/decatur-il-305-maffit.webp",
+    cardWidth: 480,
+    cardHeight: 360,
   },
   {
     id: "decatur-il-346-18th",
@@ -5831,6 +7071,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    [],
+    hasPhoto: false,
+    photoCount: 0,
+    cardPhoto: "images/cards/decatur-il-346-18th.webp",
+    cardWidth: 480,
+    cardHeight: 480,
   },
   {
     id: "eaststlouis-il-249-61st",
@@ -5853,6 +7098,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    [],
+    hasPhoto: false,
+    photoCount: 0,
+    cardPhoto: "images/cards/eaststlouis-il-249-61st.webp",
+    cardWidth: 480,
+    cardHeight: 480,
   },
   {
     id: "harrisburg-il-210-park",
@@ -5875,6 +7125,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    [],
+    hasPhoto: false,
+    photoCount: 0,
+    cardPhoto: "images/cards/harrisburg-il-210-park.webp",
+    cardWidth: 480,
+    cardHeight: 480,
   },
   {
     id: "stlouis-mo-1801-engelholm",
@@ -5897,6 +7152,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    [],
+    hasPhoto: false,
+    photoCount: 0,
+    cardPhoto: "images/cards/stlouis-mo-1801-engelholm.webp",
+    cardWidth: 480,
+    cardHeight: 480,
   },
   {
     id: "stlouis-mo-4519-june",
@@ -5920,6 +7180,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    [],
+    hasPhoto: false,
+    photoCount: 0,
+    cardPhoto: "images/cards/stlouis-mo-4519-june.webp",
+    cardWidth: 480,
+    cardHeight: 480,
   },
   {
     id: "toledo-oh-2-riverside",
@@ -5942,6 +7207,11 @@ const HOMES = [
 
     heroPhoto: "",
     photos:    [],
+    hasPhoto: false,
+    photoCount: 0,
+    cardPhoto: "images/cards/toledo-oh-2-riverside.webp",
+    cardWidth: 480,
+    cardHeight: 480,
   },
 ];
 

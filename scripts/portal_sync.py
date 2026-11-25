@@ -55,6 +55,10 @@ Offline: --portal-json / --crm-json (lists of row dicts) instead of the Sheets A
 
 Afterwards run the site's own post-pass (scripts/refresh_listings.py or
 scripts/build_casas.py) so pages are rebuilt from home.html and dates are stamped.
+This pass also writes card thumbnails and the photo manifest (scripts/card_photos.py)
+after Street View, then rebuilds city-page order so seller photos stay ahead of
+Street View-only homes. refresh_listings.py does that same photo pass again; the
+cache skips photos that have not changed.
 apply() then rebuilds titles, visible terms, city pages, hreflang and the sitemap
 through scripts/seo_pages.py (the Spanish site passes lang="es"). The casas layout
 pass must call seo_pages.rebuild(root, "es") after it rewrites pages, or it will
@@ -308,11 +312,15 @@ def direct_rows(feed: list[dict] | None) -> list[dict]:
         if not status or not g("address") or not g("state"):
             continue
         photos = [u for u in (h.get("photos") or []) if isinstance(u, str) and u.startswith("https://")]
-        out.append({"Portal PROP id": "DIRECT", "Address": g("address"), "City": g("city"), "State": g("state"),
-                    "Zip": g("zip"), "Status": status, "Beds": g("beds"), "Baths": g("baths"), "Sqft": g("sqft"),
-                    "Price": g("price"), "Down payment": g("down"), "Monthly payment": g("monthly"),
-                    "Date listed": g("listed"), "Portal photos": " ".join(album_links(" ".join(photos))),
-                    "Photo links": "", "Direct note": g("note")[:400], "Direct note es": g("note_es")[:400]})
+        row = {"Portal PROP id": "DIRECT", "Address": g("address"), "City": g("city"), "State": g("state"),
+               "Zip": g("zip"), "Status": status, "Beds": g("beds"), "Baths": g("baths"), "Sqft": g("sqft"),
+               "Price": g("price"), "Down payment": g("down"), "Monthly payment": g("monthly"),
+               "Date listed": g("listed"), "Portal photos": " ".join(album_links(" ".join(photos))),
+               "Photo links": "", "Direct note": g("note")[:400], "Direct note es": g("note_es")[:400]}
+        cond = condition_of(h)
+        if cond:
+            row["Condition"] = cond
+        out.append(row)
     return out
 
 
@@ -323,6 +331,9 @@ def whitelist(rows: list[dict]) -> list[dict]:
             r["Photo links"] = " ".join(photo_links(src["Listing note"]))
         if not r["Portal photos"] and src.get("Photos link"):
             r["Portal photos"] = " ".join(album_links(src["Photos link"]))
+        cond = condition_of(src)
+        if cond:
+            r["Condition"] = cond
     return out
 
 
@@ -775,6 +786,30 @@ def set_field(block: str, key: str, value) -> str:
                   lambda m: m.group(1) + rendered + m.group(3), block, count=1)
 
 
+def ensure_field(block: str, key: str, value) -> str:
+    """Set key, or insert it when the home block does not have that line yet."""
+    if re.search(rf"\n    {key}:", block):
+        return set_field(block, key, value)
+    rendered = json.dumps(value) if isinstance(value, str) else str(value)
+    needle = "\n  },"
+    index = block.rfind(needle)
+    if index < 0:
+        return block
+    return block[:index] + f"\n    {key}: {rendered}," + block[index:]
+
+
+def condition_of(row: dict) -> str:
+    """A condition string only when the feed actually has that field. Descriptions are not mined."""
+    for key in ("Condition", "condition", "Home condition", "Property condition"):
+        val = row.get(key)
+        if val is None:
+            continue
+        text = str(val).strip()
+        if text:
+            return text
+    return ""
+
+
 def reprice_text(text: str, swaps: dict[int, int]) -> str:
     """Swap old dollar amounts for new ones in one pass, so $2,000->$3,000 and $3,000->$1,000 don't collide."""
     if not swaps:
@@ -871,6 +906,8 @@ def new_block(r: dict, lang: str, coords) -> str:
         lines += [f"    description: {json.dumps(copy_es(r), ensure_ascii=False)},", '    descriptionLang: "es",']
     else:
         lines.append(f"    copy:        {json.dumps(copy_en(r))},")
+    if r.get("condition"):
+        lines.append(f"    condition:   {json.dumps(r['condition'])},")
     lines += [f"    city:  {json.dumps(r['city'])},", f"    state: {json.dumps(r['state'])},",
               f"    beds:  {r['beds']},", f"    baths: {r['baths']},",
               f"    sqft:  {json.dumps(str(r['sqft']) if r['sqft'] else '')},"]
@@ -1021,7 +1058,10 @@ def plan(root: Path, portal_rows: list[dict], crm_rows: list[dict], wa: list[dic
                     text = direct_copy(block, row)
                     if text:
                         item["copy"] = text
-                if diffs or "copy" in item:
+                cond = condition_of(row)
+                if cond and (field(block, "condition") or "") != cond:
+                    item["condition"] = cond
+                if diffs or "copy" in item or "condition" in item:
                     out["update"].append(item)
             continue
         if status.lower() != "available":
@@ -1040,11 +1080,15 @@ def plan(root: Path, portal_rows: list[dict], crm_rows: list[dict], wa: list[dic
             continue
         if hid in crm_closed:
             out["relist"].append(f"{hid}  portal Available, CRM_Properties says {crm_closed[hid]}")
-        out["add"].append({"id": hid, "pid": row["Portal PROP id"], "address": row["Address"], "city": row["City"],
-                           "state": row["State"].strip().upper(), "zip": row["Zip"], "beds": num(row["Beds"]) or 0,
-                           "baths": num(row["Baths"]) or 0, "sqft": num(row["Sqft"]), "price": price,
-                           "down": down or 0, "monthly": monthly,
-                           "note": row.get("Direct note", ""), "note_es": row.get("Direct note es", "")})
+        added = {"id": hid, "pid": row["Portal PROP id"], "address": row["Address"], "city": row["City"],
+                 "state": row["State"].strip().upper(), "zip": row["Zip"], "beds": num(row["Beds"]) or 0,
+                 "baths": num(row["Baths"]) or 0, "sqft": num(row["Sqft"]), "price": price,
+                 "down": down or 0, "monthly": monthly,
+                 "note": row.get("Direct note", ""), "note_es": row.get("Direct note es", "")}
+        cond = condition_of(row)
+        if cond:
+            added["condition"] = cond
+        out["add"].append(added)
         out["photos"].append(photo_item(hid, row))
     out["add"].sort(key=lambda r: r["id"])
     feed_closes(out, site, status_feed, portal_sids, pending_sids)
@@ -1152,6 +1196,8 @@ def apply(root: Path, p: dict, lang: str, geocoder=geocode) -> None:
         if u.get("copy"):
             block = re.sub(r'(\n    (?:copy|description):\s*)("(?:\\.|[^"\\])*")',
                            lambda mm: mm.group(1) + json.dumps(u["copy"], ensure_ascii=False), block, count=1)
+        if u.get("condition"):
+            block = ensure_field(block, "condition", u["condition"])
         text = text.replace(m.group(0), block, 1)
         page = root / f"{u['id']}.html"
         if page.is_file() and swaps:
@@ -1300,6 +1346,10 @@ def summary(p: dict) -> str:
         lines += ["", "Held by the CRM (CRM Sold / Pending beats the portal's Available; fix the CRM_Properties row if it is wrong):"] + [f"  {h}" for h in p["held"]]
     if p.get("cards_dropped"):
         lines += ["", "Sold cards taken down: " + "; ".join(p["cards_dropped"])]
+    cards = p.get("cards") or {}
+    if cards:
+        lines += ["", f"Card photos: {cards.get('encoded', 0)} encoded, {cards.get('cached', 0)} unchanged, "
+                  f"{cards.get('real', 0)} with seller photos, {cards.get('street', 0)} street view only"]
     if p["hand"]:
         lines += ["", "Check by hand:"] + [f"  {h}" for h in p["hand"]]
     return "\n".join(lines) + "\n"
@@ -1367,6 +1417,10 @@ def main(argv=None) -> int:
         apply(a.site, p, a.lang)
     if not a.dry_run:
         p["streetview"] = streetview_into(a.site)
+        import card_photos
+        p["cards"] = card_photos.sync(a.site)
+        import seo_pages
+        seo_pages.rebuild(a.site, a.lang)
     elif a.dry_run:
         for x in pending:
             print(f"* {x['id']}  photos from {len(x['links'])} link(s)")

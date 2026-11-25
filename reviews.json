@@ -5,5 +5,12 @@
   "name": "Logan, Decatur",
   "kind": "buyer",
   "date": "10/9/2026"
+ },
+ {
+  "stars": 5,
+  "text": "The process was simple and very straightforward! Joe was great to work with and made sure he was there for every step! If you’re looking for a home to buy without a traditional loan, this is the way to go!",
+  "name": "Trinity, Decatur",
+  "kind": "buyer",
+  "date": "10/15/2026"
  }
 ]

@@ -30,7 +30,8 @@
   --ink:#16213a;
   --ink-soft:#5b6577;
   --line:#e2e8f2;
-  --pine:#15315e;
+  --brand-primary:#15315e; --brand-accent:#d32f2f;
+  --pine:var(--brand-primary);
   --pine-deep:#0f2444;
   --lime:#ffffff;
   --honey:#e23b3b;
@@ -179,6 +180,8 @@ body{
       <span class="bn">Americas Best Home Solutions<small>Owner Financing</small></span>
     </a>
     <nav class="topnav" aria-label="Site">
+      <a class="nav-account" href="/account/?lang=en">My account: tours and paperwork</a>
+      <a class="nav-es nav-lang" href="https://casasconfinanciamiento.com/como-funciona.html">Español</a>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="siteMenu"><span class="nav-bars" aria-hidden="true"></span><span class="nav-word">Menu</span></button>
       <div class="site-menu" id="siteMenu">
         <a href="/#listings">Homes</a>
@@ -186,7 +189,6 @@ body{
         <a href="/#why-buy">Why buy vs rent</a>
         <a href="/about">About us</a>
         <a href="/#faq">FAQ</a>
-        <a class="nav-es" href="https://casasconfinanciamiento.com/como-funciona.html">Español</a>
       </div>
     </nav>
   </header>
@@ -194,6 +196,23 @@ body{
   <!-- INTRO -->
   <h1 class="headline">How it works, <em>in plain English.</em></h1>
   <p class="subhead">Owner financing lets you own a home without a bank. Here's exactly how it works — and what it means to be the homeowner.</p>
+  <section class="section">
+    <h2 class="sec-title">Steps to the keys</h2>
+    <p class="lede">The owner of the home is the seller. There is no bank and no mortgage application. You sign a written agreement. The price is fixed. You pay the down payment posted on the home. The term is 30 years. Final terms are confirmed in your paperwork.</p>
+    <p class="lede"><!-- finance-stats:start -->The lowest down payment on an available home is $500. 181 available homes are $2,500 down or less.<!-- finance-stats:end --></p>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><div class="body"><h3>Tour and pick the home</h3><p>Walk through it in person and decide if it is the one.</p></div></div>
+      <div class="step"><div class="n">2</div><div class="body"><h3>We send a welcome packet</h3><p>You get the packet for the home you picked.</p></div></div>
+      <div class="step"><div class="n">3</div><div class="body"><h3>You send the down payment or deposit</h3><p>Cash before the keys is the down payment listed on the home.</p></div></div>
+      <div class="step"><div class="n">4</div><div class="body"><h3>We do the paperwork</h3><p>The written agreement spells out the price, the down payment, and the monthly payment.</p></div></div>
+      <div class="step"><div class="n">5</div><div class="body"><h3>Keys</h3><p>In Illinois there is a 3-day right of rescission after signing, then keys. In other states, keys right away after signing.</p></div></div>
+    </div>
+    <h2 class="sec-title" style="margin-top:28px">What you need to buy</h2>
+    <p class="lede">No bank loan needed. We keep it simple: if the down payment and monthly payment fit your budget, we'll walk you through the next steps.</p>
+    <p class="lede">What you need: a valid ID, the down payment, and a monthly payment that fits your budget.</p>
+  </section>
+  <script>(function(){if(/[?&]preview=1(?:&|$)/.test(location.search))document.documentElement.classList.add("preview");})();</script>
+  <style>.joe-slot[hidden]{display:none !important}html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(--brand-primary,#15315e);border-radius:12px;padding:12px 14px;margin:10px 0}</style>
 
   <!-- VIDEO -->
   <div class="video-wrap" id="videoWrap" style="display:none">

@@ -148,6 +148,25 @@ point of the mechanism, so it can be proven later what a given person agreed to.
 - Changing something that must apply to all 150 listing pages is a generator change,
   not 150 edits.
 
+## Home facts (`data/home-facts.json`)
+
+The generator (`scripts/seo_pages.py`, via `scripts/listing_facts.py`) reads this file and
+bakes three blocks into each listing page: cash to get the keys, monthly payment and terms,
+and condition. It is the same file in the casas repo. Prices, down payment, monthly payment,
+and status never go here — those stay in `homes.js` from the portal sync.
+
+```json
+{"version": 1, "updated": "YYYY-MM-DD",
+ "homes": {"<home id>": {
+   "condition": {"furnace|plumbing|electrical|roof|foundation":
+      {"status": "verified|reported|unknown", "en": "...", "es": "...", "source": "...", "as_of": "YYYY-MM-DD"}},
+   "fit": {"family_en": null, "family_es": null, "rental_en": null, "rental_es": null}}}}
+```
+
+A missing value renders as "Not yet known". Seeded rows come only from a home's `contractor`
+note, and only when that note names the system. Those rows are `reported`, never `verified`.
+Descriptions are not mined. Numbers stay out of this file except an amount someone has confirmed.
+
 ## Excluded homes (junk / duplicate ids)
 `data/excluded-homes.json` lists site ids that must never be on the site (e.g. `decatur-il-decatur`,
 no street address; the two garbled 210 N 17th St condo ids). The Mac's master list keeps producing

@@ -9,12 +9,15 @@
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
+  /* JOE-INPUT: brand-colors */
+  --brand-primary:#15315e;
+  --brand-accent:#d32f2f;
   --paper:#f4f7fc;
   --card:#ffffff;
   --ink:#16213a;
   --ink-soft:#5b6577;
   --line:#e2e8f2;
-  --pine:#15315e;
+  --pine:var(--brand-primary);
   --pine-deep:#0f2444;
   --honey:#e23b3b;
   --honey-soft:#eaf1fb;
@@ -23,6 +26,7 @@
   --radius:18px;
 }
 html{scroll-behavior:smooth}
+.joe-intro img{width:200px;height:auto;aspect-ratio:600/717;border-radius:16px;display:block;margin:0 0 12px}
 body{
   background:var(--paper);color:var(--ink);
   font-family:'DM Sans',system-ui,sans-serif;font-size:17px;line-height:1.6;

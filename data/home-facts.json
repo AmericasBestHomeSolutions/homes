@@ -1,0 +1,273 @@
+{
+  "version": 1,
+  "updated": "2026-11-25",
+  "homes": {
+    "cleveland-oh-2847-98th": {
+      "condition": {
+        "roof": {
+          "status": "reported",
+          "en": "Slate roof needs repair or replacement (duplex)",
+          "es": "El techo de pizarra necesita reparación o reemplazo (dúplex)",
+          "source": "listing note",
+          "as_of": "2026-11-25"
+        }
+      },
+      "fit": {
+        "family_en": null,
+        "family_es": null,
+        "rental_en": null,
+        "rental_es": null
+      }
+    },
+    "decatur-il-2132-church": {
+      "condition": {
+        "electrical": {
+          "status": "reported",
+          "en": "No electrical (copper wiring taken)",
+          "es": "No hay instalación eléctrica (se llevaron el cableado de cobre)",
+          "source": "listing note",
+          "as_of": "2026-11-25"
+        },
+        "furnace": {
+          "status": "reported",
+          "en": "Furnace needs work",
+          "es": "La calefacción necesita trabajo",
+          "source": "listing note",
+          "as_of": "2026-11-25"
+        }
+      },
+      "fit": {
+        "family_en": null,
+        "family_es": null,
+        "rental_en": null,
+        "rental_es": null
+      }
+    },
+    "decatur-il-1646-wood": {
+      "condition": {
+        "roof": {
+          "status": "reported",
+          "en": "Roof needs some repair",
+          "es": "El techo necesita algo de reparación",
+          "source": "listing note",
+          "as_of": "2026-11-25"
+        },
+        "electrical": {
+          "status": "reported",
+          "en": "Wiring pulled from the fuse box",
+          "es": "El cableado fue retirado de la caja de fusibles",
+          "source": "listing note",
+          "as_of": "2026-11-25"
+        }
+      },
+      "fit": {
+        "family_en": null,
+        "family_es": null,
+        "rental_en": null,
+        "rental_es": null
+      }
+    },
+    "eaststlouis-il-5538-avon": {
+      "condition": {
+        "roof": {
+          "status": "reported",
+          "en": "Hole in the roof that needs repair",
+          "es": "Hay un agujero en el techo que necesita reparación",
+          "source": "listing note",
+          "as_of": "2026-11-25"
+        }
+      },
+      "fit": {
+        "family_en": null,
+        "family_es": null,
+        "rental_en": null,
+        "rental_es": null
+      }
+    },
+    "decatur-il-2827-hickory": {
+      "condition": {
+        "plumbing": {
+          "status": "reported",
+          "en": "Needs a new roof, new electrical and plumbing, drywall, and a rebuilt kitchen and bath",
+          "es": "Necesita un techo nuevo, electricidad y plomería nuevas, tablaroca, y una cocina y un baño reconstruidos",
+          "source": "listing note",
+          "as_of": "2026-11-25"
+        },
+        "electrical": {
+          "status": "reported",
+          "en": "Needs a new roof, new electrical and plumbing, drywall, and a rebuilt kitchen and bath",
+          "es": "Necesita un techo nuevo, electricidad y plomería nuevas, tablaroca, y una cocina y un baño reconstruidos",
+          "source": "listing note",
+          "as_of": "2026-11-25"
+        },
+        "roof": {
+          "status": "reported",
+          "en": "Needs a new roof, new electrical and plumbing, drywall, and a rebuilt kitchen and bath",
+          "es": "Necesita un techo nuevo, electricidad y plomería nuevas, tablaroca, y una cocina y un baño reconstruidos",
+          "source": "listing note",
+          "as_of": "2026-11-25"
+        }
+      },
+      "fit": {
+        "family_en": null,
+        "family_es": null,
+        "rental_en": null,
+        "rental_es": null
+      }
+    },
+    "peoria-il-1709-faraday": {
+      "condition": {
+        "plumbing": {
+          "status": "reported",
+          "en": "Plumbing needs a licensed plumber",
+          "es": "La plomería necesita un plomero con licencia",
+          "source": "listing note",
+          "as_of": "2026-11-25"
+        },
+        "electrical": {
+          "status": "reported",
+          "en": "Full electrical rewire",
+          "es": "Hay que volver a cablear toda la electricidad",
+          "source": "listing note",
+          "as_of": "2026-11-25"
+        }
+      },
+      "fit": {
+        "family_en": null,
+        "family_es": null,
+        "rental_en": null,
+        "rental_es": null
+      }
+    },
+    "stlouis-mo-6580-saint": {
+      "condition": {
+        "electrical": {
+          "status": "reported",
+          "en": "Electric meter removed and power is off; Electrical service must be updated before power can be restored",
+          "es": "Quitaron el medidor eléctrico y no hay luz; Hay que actualizar el servicio eléctrico antes de restablecer la luz",
+          "source": "listing note",
+          "as_of": "2026-11-25"
+        }
+      },
+      "fit": {
+        "family_en": null,
+        "family_es": null,
+        "rental_en": null,
+        "rental_es": null
+      }
+    },
+    "peoria-il-1205-sheridan": {
+      "condition": {
+        "foundation": {
+          "status": "reported",
+          "en": "Basement needs foundation repair",
+          "es": "El sótano necesita reparación de los cimientos",
+          "source": "listing note",
+          "as_of": "2026-11-25"
+        }
+      },
+      "fit": {
+        "family_en": null,
+        "family_es": null,
+        "rental_en": null,
+        "rental_es": null
+      }
+    },
+    "stlouis-mo-2207-oakdale": {
+      "condition": {
+        "furnace": {
+          "status": "reported",
+          "en": "Plumbing, HVAC and electrical all need work from licensed pros",
+          "es": "La plomería, la calefacción y la electricidad necesitan trabajo de profesionales con licencia",
+          "source": "listing note",
+          "as_of": "2026-11-25"
+        },
+        "plumbing": {
+          "status": "reported",
+          "en": "Plumbing, HVAC and electrical all need work from licensed pros",
+          "es": "La plomería, la calefacción y la electricidad necesitan trabajo de profesionales con licencia",
+          "source": "listing note",
+          "as_of": "2026-11-25"
+        },
+        "electrical": {
+          "status": "reported",
+          "en": "Plumbing, HVAC and electrical all need work from licensed pros",
+          "es": "La plomería, la calefacción y la electricidad necesitan trabajo de profesionales con licencia",
+          "source": "listing note",
+          "as_of": "2026-11-25"
+        }
+      },
+      "fit": {
+        "family_en": null,
+        "family_es": null,
+        "rental_en": null,
+        "rental_es": null
+      }
+    },
+    "eaststlouis-il-5807-forest": {
+      "condition": {
+        "furnace": {
+          "status": "reported",
+          "en": "Needs plumbing work, a new furnace and AC unit, and new siding",
+          "es": "Necesita trabajo de plomería, una calefacción y un aire acondicionado nuevos, y revestimiento nuevo",
+          "source": "listing note",
+          "as_of": "2026-11-25"
+        },
+        "plumbing": {
+          "status": "reported",
+          "en": "Needs plumbing work, a new furnace and AC unit, and new siding",
+          "es": "Necesita trabajo de plomería, una calefacción y un aire acondicionado nuevos, y revestimiento nuevo",
+          "source": "listing note",
+          "as_of": "2026-11-25"
+        }
+      },
+      "fit": {
+        "family_en": null,
+        "family_es": null,
+        "rental_en": null,
+        "rental_es": null
+      }
+    },
+    "decatur-il-1645-walnut": {
+      "condition": {
+        "plumbing": {
+          "status": "reported",
+          "en": "Needs plumbing, electrical and mechanicals",
+          "es": "Necesita plomería, electricidad y sistemas mecánicos",
+          "source": "listing note",
+          "as_of": "2026-11-25"
+        },
+        "electrical": {
+          "status": "reported",
+          "en": "Needs plumbing, electrical and mechanicals",
+          "es": "Necesita plomería, electricidad y sistemas mecánicos",
+          "source": "listing note",
+          "as_of": "2026-11-25"
+        }
+      },
+      "fit": {
+        "family_en": null,
+        "family_es": null,
+        "rental_en": null,
+        "rental_es": null
+      }
+    },
+    "centreville-il-112-88th": {
+      "condition": {
+        "electrical": {
+          "status": "reported",
+          "en": "Needs electrical and mechanical work",
+          "es": "Necesita trabajo eléctrico y mecánico",
+          "source": "listing note",
+          "as_of": "2026-11-25"
+        }
+      },
+      "fit": {
+        "family_en": null,
+        "family_es": null,
+        "rental_en": null,
+        "rental_es": null
+      }
+    }
+  }
+}

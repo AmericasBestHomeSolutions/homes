@@ -1,6 +1,9 @@
 /* Shared header menu. Loaded on every public page.
    Desktop: a row of links. Narrow screens: a Menu button that opens them. */
-.topnav{position:relative;display:flex;align-items:center;gap:8px;flex-wrap:nowrap}
+:root{--brand-primary:#15315e;--brand-accent:#d32f2f}
+.topnav{position:relative;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.nav-account,.nav-lang{min-height:48px;display:inline-flex;align-items:center;font-weight:800;color:var(--brand-primary,#15315e);text-decoration:none;padding:0 8px}
+.nav-lang{border:1.5px solid var(--line,#e2e8f2);border-radius:999px;padding:0 12px;background:#fff}
 .topnav a.call,.topnav #navCall{display:none !important}
 .nav-toggle{
   display:none;align-items:center;gap:8px;border:1.5px solid var(--line,#e2e8f2);

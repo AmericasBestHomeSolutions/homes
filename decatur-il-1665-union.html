@@ -24,7 +24,7 @@
 <script type="application/ld+json" id="seo-jsonld">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://getownerfinancedhomes.com/#organization","name":"Americas Best Home Solutions","legalName":"Americas Best Home Solutions LLC","url":"https://getownerfinancedhomes.com/","logo":"https://getownerfinancedhomes.com/images/brand/logo-mark-480.png","email":"admin@americasbesthomesolutions.com","address":{"@type":"PostalAddress","streetAddress":"30 N Gould St, Ste R","addressLocality":"Sheridan","addressRegion":"WY","postalCode":"82801","addressCountry":"US"}},{"@type":"Offer","@id":"https://getownerfinancedhomes.com/decatur-il-1665-union.html#offer","url":"https://getownerfinancedhomes.com/decatur-il-1665-union.html","priceCurrency":"USD","price":"74900","availability":"https://schema.org/InStock","itemOffered":{"@id":"https://getownerfinancedhomes.com/decatur-il-1665-union.html#home"},"seller":{"@id":"https://getownerfinancedhomes.com/#organization"},"description":"Down payment $2,500. Monthly payment $895. 30-year owner financing (contract for deed)"},{"@type":"RealEstateListing","@id":"https://getownerfinancedhomes.com/decatur-il-1665-union.html#listing","name":"1665 N Union St, Decatur, IL — $74,900, $2,500 down, $895/mo","url":"https://getownerfinancedhomes.com/decatur-il-1665-union.html","description":"Owner-financed home at 1665 N Union St, Decatur, IL. Purchase price $74,900. Down payment $2,500. Monthly payment $895. 3 beds, 1.5 baths. 700 square feet. 30-year owner financing (contract for deed).","mainEntity":{"@id":"https://getownerfinancedhomes.com/decatur-il-1665-union.html#home"},"image":"https://getownerfinancedhomes.com/images/_share-default.jpg","offers":{"@id":"https://getownerfinancedhomes.com/decatur-il-1665-union.html#offer"}},{"@type":"House","@id":"https://getownerfinancedhomes.com/decatur-il-1665-union.html#home","name":"1665 N Union St, Decatur, IL","address":{"@type":"PostalAddress","addressCountry":"US","streetAddress":"1665 N Union St","addressLocality":"Decatur","addressRegion":"IL"},"numberOfBedrooms":3,"numberOfBathroomsTotal":1.5,"floorSize":{"@type":"QuantitativeValue","value":700,"unitCode":"FTK"},"geo":{"@type":"GeoCoordinates","latitude":39.859205,"longitude":-88.959298}},{"@type":"BreadcrumbList","@id":"https://getownerfinancedhomes.com/decatur-il-1665-union.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Homes","item":"https://getownerfinancedhomes.com/"},{"@type":"ListItem","position":2,"name":"Owner Financed Homes in Decatur, IL","item":"https://getownerfinancedhomes.com/decatur-il.html"},{"@type":"ListItem","position":3,"name":"1665 N Union St","item":"https://getownerfinancedhomes.com/decatur-il-1665-union.html"}]}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=optional" rel="stylesheet">
 
 <!-- ════════════════════════════════════════════════════════════════════════
      AMERICAS BEST HOME SOLUTIONS — PROPERTY PAGE (template — serves EVERY home)
@@ -35,8 +35,10 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
+  /* JOE-INPUT: brand-colors — navy and red until Joe supplies his palette. */
+  --brand-primary:#15315e; --brand-accent:#d32f2f;
   --paper:#f4f7fc; --card:#ffffff; --ink:#16213a; --ink-soft:#5b6577; --line:#e2e8f2;
-  --pine:#15315e; --pine-deep:#0f2444; --lime:#ffffff; --honey:#e23b3b; --honey-soft:#eaf1fb;
+  --pine:var(--brand-primary); --pine-deep:#0f2444; --lime:#ffffff; --honey:var(--brand-accent); --honey-soft:#eaf1fb;
   --go:#d43333; --go-hover:#b82a2a; --radius:18px;
 }
 html{scroll-behavior:smooth}
@@ -223,6 +225,33 @@ body.tl-pad{padding-bottom:70px}
 </style>
 <link rel="stylesheet" href="site.css">
 <link rel="stylesheet" href="nav.css">
+<script>(function(){if(/[?&]preview=1(?:&|$)/.test(location.search))document.documentElement.classList.add("preview");})();</script>
+<style>
+.tours-open,.account-link{margin:8px 0 0;font-size:15px}
+.account-link a{font-weight:800;color:var(--brand-primary,#15315e)}
+.buyer-eval{display:grid;gap:14px;margin:18px 0 8px}
+.eval-block{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px}
+.eval-block h2{font-family:'Bricolage Grotesque',sans-serif;font-size:22px;line-height:1.15;margin:0 0 8px}
+.eval-copy{margin:0 0 10px}
+.eval-lines,.cond-rows,.fit-card ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.eval-lines li,.cond-rows li{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.eval-lines .k,.cond-name{font-weight:700;flex:1 1 42%;min-width:0}
+.eval-lines .v,.cond-state{flex:1 1 50%;text-align:right;min-width:8em}
+.eval-total{margin:10px 0 0;font-weight:800}
+.cond-rows li{align-items:flex-start}
+.cond-ic{flex:0 0 1.4em;font-weight:800}
+.cond-state{text-align:right}
+.fit-grid{display:grid;gap:10px}
+.fit-card{border:1px solid var(--line);border-radius:14px;padding:12px}
+.fit-card h3{margin:0 0 6px;font-size:17px}
+.fit-note,.qualify-line{font-size:15px;margin:8px 0 0}
+.key-steps{margin:0 0 8px 1.2em}
+.joe-intro img{width:160px;height:auto;border-radius:16px;display:block}
+.joe-slot[hidden]{display:none !important}
+html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(--brand-primary,#15315e);border-radius:12px;padding:12px 14px;margin:10px 0;background:#fff}
+.nav-account,.nav-lang{min-height:48px;display:inline-flex;align-items:center}
+</style>
+<link rel="preload" as="image" href="images/cards/decatur-il-1665-union-480.webp" fetchpriority="high"/>
 </head>
 <body class="page-home">
 
@@ -239,6 +268,8 @@ body.tl-pad{padding-bottom:70px}
       <span class="bn">Americas Best Home Solutions<small>Owner Financing</small></span>
     </a>
     <nav class="topnav" aria-label="Site">
+      <a class="nav-account" href="/account/?lang=en">My account: tours and paperwork</a>
+      <a class="nav-es nav-lang" href="https://casasconfinanciamiento.com/">Español</a>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="siteMenu"><span class="nav-bars" aria-hidden="true"></span><span class="nav-word">Menu</span></button>
       <div class="site-menu" id="siteMenu">
         <a href="/#listings">Homes</a>
@@ -246,7 +277,6 @@ body.tl-pad{padding-bottom:70px}
         <a href="/#why-buy">Why buy vs rent</a>
         <a href="/about">About us</a>
         <a href="/#faq">FAQ</a>
-        <a class="nav-es" href="https://casasconfinanciamiento.com/decatur-il-1665-union.html">Español</a>
       </div>
     </nav>
   </header>
@@ -260,9 +290,9 @@ body.tl-pad{padding-bottom:70px}
   <section class="hero">
     <div class="hero-photo" id="heroFace">
       <span class="status-tag" id="statusTag">Available</span>
-      <img id="heroImg" alt="" hidden>
+      <img id="heroImg" alt="Home for sale in Decatur, IL" src="images/cards/decatur-il-1665-union-480.webp" fetchpriority="high" width="480" height="480">
       <span class="badge-new" id="newBadge" hidden>New</span>
-      <span class="sv-badge" id="heroSvBadge" hidden>Street view · © Google</span>
+      <span class="sv-badge" id="heroSvBadge">Street view · © Google</span>
       <a class="sv-link" id="heroSvLink" href="#" target="_blank" rel="noopener" hidden>See the street in Google Street View →</a>
       <svg class="fallback" id="heroFallback" width="92" height="92" viewBox="0 0 24 24" fill="none" stroke="#a9c4e8" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9h14v-9"/><path d="M10 19v-5h4v5"/>
@@ -292,10 +322,21 @@ body.tl-pad{padding-bottom:70px}
     </div>
 
     <div class="cta-group">
-      <a class="btn btn-primary" id="ctaText" href="#">Book a Tour</a>
+      <a class="btn btn-primary" id="ctaText" href="#">Book a tour</a>
       <a class="btn btn-secondary" id="ctaSms" href="#" hidden>Have a question? Text us</a>
     </div>
+    <p class="tours-open" id="toursOpen">Tours open: pick your time on the next screen. No password.</p>
+    <p class="account-link"><a href="/account/?lang=en">My account: tours and paperwork</a></p>
     <p class="cta-note" id="ctaNote"></p>
+    <!-- buyer-eval:start -->
+<div class="buyer-eval" id="buyerEval" data-baked="1">
+<p class="qualify-line">No bank loan needed. We keep it simple: if the down payment and monthly payment fit your budget, we&#x27;ll walk you through the next steps.</p>
+<section class="eval-block" id="cashKeys"><h2>Cash to get the keys</h2><ul class="eval-lines"><li><span class="k">Down payment</span><span class="v">$2,500</span></li></ul><p class="eval-total">Final terms are confirmed in your paperwork.</p></section>
+<section class="eval-block" id="termsBlock"><h2>Your monthly payment and terms</h2><ul class="eval-lines"><li><span class="k">Monthly payment</span><span class="v">$895</span></li><li><span class="k">Fixed price</span><span class="v">$74,900</span></li><li><span class="k">Term</span><span class="v">30-year owner financing (contract for deed)</span></li></ul><p class="eval-total">Final terms are confirmed in your paperwork.</p></section>
+<section class="eval-block" id="keysBlock"><h2>Steps to the keys</h2><ol class="key-steps"><li>Tour the home and pick it</li><li>We send a welcome packet</li><li>You send the down payment or deposit</li><li>We do the paperwork</li><li>Keys</li></ol><p>In Illinois there is a 3-day right of rescission after signing, then keys.</p></section>
+<section class="eval-block" id="conditionBlock"><h2>Condition: sold as-is</h2><p class="eval-copy">Every home is sold as-is. It needs some work, and the price reflects that. You handle the repairs. Walk through the home before you sign.</p><ul class="cond-rows"><li class="cond-unknown"><span class="cond-ic" aria-hidden="true">?</span><span class="cond-name">Furnace / heating</span><span class="cond-state">Not yet known</span></li><li class="cond-unknown"><span class="cond-ic" aria-hidden="true">?</span><span class="cond-name">Plumbing</span><span class="cond-state">Not yet known</span></li><li class="cond-unknown"><span class="cond-ic" aria-hidden="true">?</span><span class="cond-name">Electrical</span><span class="cond-state">Not yet known</span></li><li class="cond-unknown"><span class="cond-ic" aria-hidden="true">?</span><span class="cond-name">Roof</span><span class="cond-state">Not yet known</span></li><li class="cond-unknown"><span class="cond-ic" aria-hidden="true">?</span><span class="cond-name">Foundation</span><span class="cond-state">Not yet known</span></li></ul></section>
+<section class="eval-block" id="fitBlock"><h2>How this home could fit</h2><div class="fit-grid"><article class="fit-card"><h3>For a family</h3><ul><li>3 bedrooms</li><li>1.5 bathrooms</li><li>700 sqft</li><li>$74,900 price</li><li>$895/mo</li></ul><p class="fit-note">An illustration from this listing&#x27;s own facts, not a buyer&#x27;s story.</p></article><article class="fit-card"><h3>To renovate and rent</h3><ul><li>Purchase price $74,900</li><li>Monthly payment $895</li></ul><p class="fit-note">An illustration from this listing&#x27;s own facts, not a buyer&#x27;s story.</p></article></div></section></div>
+<!-- buyer-eval:end -->
     <ul class="why-compact">
       <li>You own from day one</li>
       <li>Your payment stays put</li>
@@ -398,7 +439,7 @@ body.tl-pad{padding-bottom:70px}
     <h2 id="closerTitle"></h2>
     <p id="closerLead">Book a tour and we'll set up a time to walk through it. No pressure, no bank.</p>
     <div class="cta-group" style="max-width:400px;margin:0 auto">
-      <a class="btn btn-primary" id="ctaText2" href="#">Book a Tour</a>
+      <a class="btn btn-primary" id="ctaText2" href="#">Book a tour</a>
       <a class="btn btn-secondary" id="ctaSms2" href="#" hidden>Have a question? Text us</a>
     </div>
   </section>
@@ -590,7 +631,11 @@ document.addEventListener("DOMContentLoaded", function(){
       L.hidden = false;
     };
     img.alt = `Home for sale in ${C.city}, ${C.state}`;
-    if (real) {
+    if (img.getAttribute("src")) {
+      img.hidden = false;
+      showFace();
+      if (!real && known) $("heroSvBadge").hidden = false;
+    } else if (real) {
       img.hidden = false;
       img.onload = showFace;
       img.onerror = () => { if (!img.dataset.svTried) { img.dataset.svTried = 1; img.onload = () => { showFace(); $("heroSvBadge").hidden = false; }; img.src = sv; } else showLink(); };
@@ -654,16 +699,15 @@ document.addEventListener("DOMContentLoaded", function(){
   }
 
   if (pending) {
-    const pendingNote = "This home is pending. A deposit has been placed, so new tours are not open.";
+    const similar = "/?q=" + encodeURIComponent([C.city, C.state].filter(Boolean).join(", ")) + "#nearby";
     ["ctaText","ctaText2"].forEach(id => {
       const el = $(id);
       if (!el) return;
-      const note = document.createElement("p");
-      note.className = "pending-note";
-      note.textContent = pendingNote;
-      el.replaceWith(note);
+      el.textContent = "Tours closed: see similar homes";
+      el.href = similar;
     });
-    $("ctaNote").textContent = "";
+    if ($("toursOpen")) $("toursOpen").hidden = true;
+    $("ctaNote").textContent = "This home is pending. A deposit has been placed, so new tours are not open.";
     $("closerTitle").textContent = "This home is pending";
     if ($("closerLead")) $("closerLead").textContent = "A deposit has been placed, so new tours are not open.";
     const step = document.querySelector("#nextSec .step h3");
@@ -722,7 +766,7 @@ document.addEventListener("DOMContentLoaded", function(){
 #stickyTour[hidden]{display:none}
 #stickyTour .st-p{flex:1;min-width:0;font:800 18px 'Bricolage Grotesque',sans-serif;color:var(--pine,#15315e);line-height:1.1}
 #stickyTour .st-p small{display:block;font:500 11px 'DM Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft,#5b6b82)}
-#stickyTour a{flex:0 0 auto;text-decoration:none;font:700 15px 'DM Sans',sans-serif;padding:12px 14px;border-radius:12px;text-align:center}
+#stickyTour a{flex:0 0 auto;text-decoration:none;font:700 15px 'DM Sans',sans-serif;padding:12px 14px;border-radius:12px;text-align:center;min-height:48px;min-width:48px;display:inline-flex;align-items:center;justify-content:center}
 #stickyTour a.st-go{background:var(--go,#d43333);color:#fff}
 #stickyTour a.st-sms{background:#fff;color:var(--pine,#15315e);border:1.5px solid var(--line,#d5dbe6)}
 @media(max-width:899px){body.page-home{padding-bottom:84px}#stickyTour{transform:none}}
@@ -735,7 +779,7 @@ document.addEventListener("DOMContentLoaded", function(){
 #lb .ct{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:#cfd9ea;font:500 13px 'DM Mono',monospace}
 #gallery img,#heroImg{cursor:zoom-in}
 </style>
-<div id="stickyTour" aria-hidden="true"><div class="st-p"><span id="stPay"></span><small id="stLab"></small></div><a id="stSms" class="st-sms" href="#" hidden>Text us</a><a id="stBtn" class="st-go" href="#">Book a Tour</a></div>
+<div id="stickyTour" aria-hidden="true"><div class="st-p"><span id="stPay"></span><small id="stLab">price</small></div><a id="stSms" class="st-sms" href="#" hidden>Text us</a><a id="stBtn" class="st-go" href="#">Book a tour</a></div>
 <div id="lb" role="dialog" aria-modal="true"><button class="x" aria-label="Close">&#10005;</button><button class="pv" aria-label="Previous">&#8249;</button><img alt=""><button class="nx" aria-label="Next">&#8250;</button><div class="ct"></div></div>
 <script>
 document.addEventListener("DOMContentLoaded", function(){
@@ -747,9 +791,9 @@ document.addEventListener("DOMContentLoaded", function(){
   function fill(){
     if (!main || !bar) return false;
     $("stBtn").href = main.href;
-    $("stBtn").textContent = main.textContent || "Book a Tour";
-    $("stPay").textContent = ($("dMonthly").textContent||"").trim();
-    $("stLab").textContent = (($("dMonthly").nextElementSibling||{}).textContent)||"";
+    $("stBtn").textContent = main.textContent || "Book a tour";
+    $("stPay").textContent = ($("dPrice").textContent||"").trim();
+    $("stLab").textContent = "price";
     const stSms = $("stSms");
     if (stSms) {
       const href = sms ? String(sms.getAttribute("href") || "") : "";

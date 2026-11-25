@@ -13,7 +13,7 @@ const CONTACT = {
   makeWebhook: "https://hook.us2.make.com/h9jsckkipxxm4ngezfzldtflx4y2efo9",
 };
 
-/* --- the homes (254 live, rebuilt from master published 2026-11-14) --- */
+/* --- the homes (253 live, rebuilt from master published 2026-11-14) --- */
 const HOMES = [
   {
     id: "eaststlouis-il-2008-61st",
@@ -3654,37 +3654,6 @@ const HOMES = [
     hasPhoto: true,
     photoCount: 25,
     cardPhoto: "images/cards/carbondale-il-303-sycamore-480.webp",
-    cardWidth: 480,
-    cardHeight: 640,
-    cardW320: 320,
-  },
-  {
-    id: "duquoin-il-322-cole",
-    address:     "322 West Cole Street",
-    zip:         "62833",
-    description: "This is a fantastic, spacious property in Illinois with a huge yard and plenty of outdoor space!. The property originally consisted of two separate lots, which the previous owner combined into one large parcel. After purchasing the property, I divided it back into two separate lots.. The house itself is large and offers great potential.. One of the biggest highlights is the BRAND-NEW ROOF! There are some minor water stains on the ceiling near the front entrance from a previous roof leak. However, the roof has now been completely replace",
-    copy:        "$975 a month and $2,200 to move in gets you three bedrooms and two baths in Du Quoin, IL. This is a large house with real potential, and the roof has been completely replaced, so the biggest worry overhead is already taken care of. Out back, the yard is yours to use however you like: a garden, a grill, a quiet cup of coffee as the sun goes down. And nobody else gets a say in whether you stay. The purchase price is $89,000, settled in writing the day you sign, with owner financing and no bank anywhere in the picture. The home is sold as-is, so come walk through every room and make up your mind in person. Homes at this payment don't wait around. Book a Tour now and grab a showing time before someone else does.",
-    city:  "Du Quoin",
-    state: "IL",
-    beds:  3,
-    baths: 2,
-    sqft:  "",
-    lat:   38.019512,
-    lng:   -89.244178,
-    geo:   "exact",
-    status: "Available",
-
-    monthlyPayment: 975,
-    moveIn:         2200,
-    lockedPrice:    89000,
-    termText:       "30-year owner financing (contract for deed)",
-
-    features: { backyard: "yes" },
-    heroPhoto: "",
-    photos:    ["images/duquoin-il-322-cole-1.jpg", "images/duquoin-il-322-cole-2.jpg", "images/duquoin-il-322-cole-3.jpg", "images/duquoin-il-322-cole-4.jpg", "images/duquoin-il-322-cole-5.jpg"],
-    hasPhoto: true,
-    photoCount: 6,
-    cardPhoto: "images/cards/duquoin-il-322-cole-480.webp",
     cardWidth: 480,
     cardHeight: 640,
     cardW320: 320,

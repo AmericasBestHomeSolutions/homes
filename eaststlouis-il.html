@@ -29,7 +29,16 @@
 .city-list .meta{display:block;color:var(--ink-soft);font-size:15px;margin-top:3px}
 .city-list .pending{display:inline-block;margin-left:8px;background:#c2410c;color:#fff;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border-radius:999px;padding:2px 8px;vertical-align:2px}
 .city-back{margin:8px 0 28px}
+.buyer-panel{display:grid;gap:10px;margin:0 0 18px}
+.buyer-panel label{display:grid;gap:4px;font-size:13px;font-weight:700;color:var(--ink-soft,#5b6577)}
+.buyer-panel input,.buyer-panel select{font:600 16px "DM Sans",system-ui,sans-serif;padding:12px;border-radius:12px;border:1.5px solid var(--line);min-height:48px;background:#fff;color:var(--ink,#16213a)}
+.buyer-budgets{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.buyer-group{margin:18px 0}
+.buyer-group h2{font-size:20px;margin:0 0 8px}
+.joe-slot[hidden]{display:none !important}
+html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(--brand-primary,#15315e);border-radius:12px;padding:12px 14px;margin:10px 0}
 </style>
+<script>(function(){if(/[?&]preview=1(?:&|$)/.test(location.search))document.documentElement.classList.add("preview");})();</script>
 <script type="application/ld+json" id="seo-jsonld">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://getownerfinancedhomes.com/#organization","name":"Americas Best Home Solutions","legalName":"Americas Best Home Solutions LLC","url":"https://getownerfinancedhomes.com/","logo":"https://getownerfinancedhomes.com/images/brand/logo-mark-480.png","email":"admin@americasbesthomesolutions.com","address":{"@type":"PostalAddress","streetAddress":"30 N Gould St, Ste R","addressLocality":"Sheridan","addressRegion":"WY","postalCode":"82801","addressCountry":"US"}},{"@type":"CollectionPage","@id":"https://getownerfinancedhomes.com/eaststlouis-il.html#page","name":"Owner Financed Homes in East St. Louis, IL","url":"https://getownerfinancedhomes.com/eaststlouis-il.html","description":"21 owner-financed homes in East St. Louis, IL. Each listing shows the address, purchase price, down payment, and monthly payment. No bank.","isPartOf":{"@id":"https://getownerfinancedhomes.com/#website"},"mainEntity":{"@id":"https://getownerfinancedhomes.com/eaststlouis-il.html#list"}},{"@type":"ItemList","@id":"https://getownerfinancedhomes.com/eaststlouis-il.html#list","numberOfItems":21,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://getownerfinancedhomes.com/eaststlouis-il-1422-54th.html","name":"1422 N 54th St"},{"@type":"ListItem","position":2,"url":"https://getownerfinancedhomes.com/eaststlouis-il-1534-55th.html","name":"1534 N 55th St"},{"@type":"ListItem","position":3,"url":"https://getownerfinancedhomes.com/eaststlouis-il-1640-50th.html","name":"1640 N 50th Street"},{"@type":"ListItem","position":4,"url":"https://getownerfinancedhomes.com/eaststlouis-il-1847-56th.html","name":"1847 N 56th St"},{"@type":"ListItem","position":5,"url":"https://getownerfinancedhomes.com/eaststlouis-il-2636-market.html","name":"2636 Market Ave"},{"@type":"ListItem","position":6,"url":"https://getownerfinancedhomes.com/eaststlouis-il-351-26th.html","name":"351 N 26th St"},{"@type":"ListItem","position":7,"url":"https://getownerfinancedhomes.com/eaststlouis-il-3511-converse.html","name":"3511 Converse Ave"},{"@type":"ListItem","position":8,"url":"https://getownerfinancedhomes.com/eaststlouis-il-3720-walnut.html","name":"3720 Walnut Ave"},{"@type":"ListItem","position":9,"url":"https://getownerfinancedhomes.com/eaststlouis-il-5050-hallows.html","name":"5050 Hallows Avenue"},{"@type":"ListItem","position":10,"url":"https://getownerfinancedhomes.com/eaststlouis-il-516-84th.html","name":"516 N 84th Street"},{"@type":"ListItem","position":11,"url":"https://getownerfinancedhomes.com/eaststlouis-il-517-31st.html","name":"517 N 31st Street"},{"@type":"ListItem","position":12,"url":"https://getownerfinancedhomes.com/eaststlouis-il-541-27th.html","name":"541 North 27th Street"},{"@type":"ListItem","position":13,"url":"https://getownerfinancedhomes.com/eaststlouis-il-5538-avon.html","name":"5538 Avon Pl"},{"@type":"ListItem","position":14,"url":"https://getownerfinancedhomes.com/eaststlouis-il-556-wimmer.html","name":"556 Wimmer Pl"},{"@type":"ListItem","position":15,"url":"https://getownerfinancedhomes.com/eaststlouis-il-5807-forest.html","name":"5807 Forest Blvd"},{"@type":"ListItem","position":16,"url":"https://getownerfinancedhomes.com/eaststlouis-il-6000-old.html","name":"6000 Old Missouri Ave"},{"@type":"ListItem","position":17,"url":"https://getownerfinancedhomes.com/eaststlouis-il-826-82nd.html","name":"826 North 82nd Street"},{"@type":"ListItem","position":18,"url":"https://getownerfinancedhomes.com/eaststlouis-il-2008-61st.html","name":"2008 N 61st St"},{"@type":"ListItem","position":19,"url":"https://getownerfinancedhomes.com/eaststlouis-il-249-61st.html","name":"249 North 61st Street"},{"@type":"ListItem","position":20,"url":"https://getownerfinancedhomes.com/eaststlouis-il-4416-state.html","name":"4416 State St"},{"@type":"ListItem","position":21,"url":"https://getownerfinancedhomes.com/eaststlouis-il-459-21st.html","name":"459 N 21st St"}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Homes","item":"https://getownerfinancedhomes.com/"},{"@type":"ListItem","position":2,"name":"Owner Financed Homes in East St. Louis, IL","item":"https://getownerfinancedhomes.com/eaststlouis-il.html"}]}]}</script>
 </head>
 <body>
@@ -55,36 +64,63 @@
       </div>
     </nav>
   </header>
+  <form class="buyer-panel" id="buyerSearch" action="/" method="get" data-city="East St. Louis" data-state="IL">
+    <label>City or ZIP
+      <input id="fQ" name="q" type="search" value="East St. Louis, IL" autocomplete="off" enterkeyhint="search">
+    </label>
+    <div class="buyer-budgets">
+      <label>Max down payment
+        <select id="fDown" name="down">
+          <option value="">Any</option>
+          <option value="1000">$1,000</option><option value="1500">$1,500</option>
+          <option value="2000">$2,000</option><option value="2500">$2,500</option>
+          <option value="3000">$3,000</option><option value="4000">$4,000</option>
+          <option value="5000">$5,000</option>
+        </select>
+      </label>
+      <label>Max monthly
+        <select id="fPayMax" name="payMax">
+          <option value="">Any</option>
+          <option value="500">$500</option><option value="600">$600</option><option value="700">$700</option>
+          <option value="800">$800</option><option value="900">$900</option><option value="1000">$1,000</option>
+          <option value="1100">$1,100</option><option value="1200">$1,200</option><option value="1300">$1,300</option>
+          <option value="1400">$1,400</option><option value="1500">$1,500</option>
+        </select>
+      </label>
+    </div>
+  </form>
   <section class="phead">
     <span class="eyebrow">Owner financing</span>
     <h1>Owner Financed Homes in East St. Louis, IL</h1>
     <p class="lead">21 owner-financed homes in East St. Louis, IL. Every listing below shows the address, purchase price, down payment, and monthly payment. No bank and no mortgage application.</p>
   </section>
-  <ul class="city-list">
-      <li><a href="/eaststlouis-il-1422-54th.html">1422 N 54th St</a><span class="meta">East St. Louis, IL · $80,000 price · $2,500 down · $800/mo · 3 beds, 1 bath</span></li>
-      <li><a href="/eaststlouis-il-1534-55th.html">1534 N 55th St</a><span class="meta">East St. Louis, IL · $59,000 price · $1,000 down · $775/mo · 2 beds, 1 bath</span></li>
-      <li><a href="/eaststlouis-il-1640-50th.html">1640 N 50th Street</a><span class="meta">East St. Louis, IL · $74,000 price · $2,000 down · $850/mo · 2 beds, 1 bath</span></li>
-      <li><a href="/eaststlouis-il-1847-56th.html">1847 N 56th St</a><span class="meta">East St. Louis, IL · $62,500 price · $1,000 down · $600/mo · 1 bed, 1 bath</span></li>
-      <li><a href="/eaststlouis-il-2636-market.html">2636 Market Ave</a><span class="meta">East St. Louis, IL · $69,000 price · $2,000 down · $865/mo · 3 beds, 2 baths</span></li>
-      <li><a href="/eaststlouis-il-351-26th.html">351 N 26th St</a><span class="meta">East St. Louis, IL · $110,000 price · $3,000 down · $1,125/mo · 3 beds, 2.5 baths</span></li>
-      <li><a href="/eaststlouis-il-3511-converse.html">3511 Converse Ave</a><span class="meta">East St. Louis, IL · $69,500 price · $1,500 down · $835/mo · 3 beds, 1 bath</span></li>
-      <li><a href="/eaststlouis-il-3720-walnut.html">3720 Walnut Ave</a><span class="meta">East St. Louis, IL · $74,900 price · $2,500 down · $900/mo · 2 beds, 1 bath</span></li>
-      <li><a href="/eaststlouis-il-5050-hallows.html">5050 Hallows Avenue</a><span class="meta">East St. Louis, IL · $76,500 price · $3,000 down · $800/mo · 2 beds, 2 baths</span></li>
-      <li><a href="/eaststlouis-il-516-84th.html">516 N 84th Street</a><span class="meta">East St. Louis, IL · $69,000 price · $2,000 down · $725/mo · 3 beds, 1 bath</span></li>
-      <li><a href="/eaststlouis-il-517-31st.html">517 N 31st Street</a><span class="meta">East St. Louis, IL · $79,000 price · $2,500 down · $899/mo · 3 beds, 1 bath</span></li>
-      <li><a href="/eaststlouis-il-541-27th.html">541 North 27th Street</a><span class="meta">East St. Louis, IL · $79,500 price · $3,000 down · $787/mo · 2 beds, 1 bath</span></li>
-      <li><a href="/eaststlouis-il-5538-avon.html">5538 Avon Pl</a><span class="meta">East St. Louis, IL · $64,000 price · $1,000 down · $740/mo · 3 beds, 1 bath</span></li>
-      <li><a href="/eaststlouis-il-556-wimmer.html">556 Wimmer Pl</a><span class="meta">East St. Louis, IL · $37,000 price · $1,000 down · $525/mo · 2 beds, 1 bath</span></li>
-      <li><a href="/eaststlouis-il-5807-forest.html">5807 Forest Blvd</a><span class="meta">East St. Louis, IL · $34,900 price · $1,500 down · $425/mo · 2 beds, 1 bath</span></li>
-      <li><a href="/eaststlouis-il-6000-old.html">6000 Old Missouri Ave</a><span class="meta">East St. Louis, IL · $56,000 price · $2,000 down · $650/mo · 2 beds, 1 bath</span></li>
-      <li><a href="/eaststlouis-il-826-82nd.html">826 North 82nd Street</a><span class="meta">East St. Louis, IL · $69,000 price · $2,000 down · $725/mo · 3 beds, 1 bath</span></li>
-      <li><a href="/eaststlouis-il-2008-61st.html">2008 N 61st St</a><span class="meta">East St. Louis, IL · $45,000 price · $1,000 down · $500/mo · 1 bed, 1 bath</span></li>
-      <li><a href="/eaststlouis-il-249-61st.html">249 North 61st Street</a><span class="meta">East Saint Louis, IL · $80,000 price · $2,500 down · $875/mo · 3 beds, 1 bath</span></li>
-      <li><a href="/eaststlouis-il-4416-state.html">4416 State St</a><span class="meta">East Saint Louis, IL · $85,000 price · $2,000 down · $925/mo · 2 beds, 1 bath</span></li>
-      <li><a href="/eaststlouis-il-459-21st.html">459 N 21st St</a><span class="meta">East Saint Louis, IL · $85,500 price · $2,000 down · $900/mo · 2 beds, 1 bath</span></li>
+  <ul class="city-list" id="cityHomes">
+      <li data-id="eaststlouis-il-1422-54th" data-down="2500" data-pay="800" data-status="Available" data-photo="1"><a href="/eaststlouis-il-1422-54th.html">1422 N 54th St</a><span class="meta">East St. Louis, IL · $80,000 price · $2,500 down · $800/mo · 3 beds, 1 bath</span></li>
+      <li data-id="eaststlouis-il-1534-55th" data-down="1000" data-pay="775" data-status="Available" data-photo="1"><a href="/eaststlouis-il-1534-55th.html">1534 N 55th St</a><span class="meta">East St. Louis, IL · $59,000 price · $1,000 down · $775/mo · 2 beds, 1 bath</span></li>
+      <li data-id="eaststlouis-il-1640-50th" data-down="2000" data-pay="850" data-status="Available" data-photo="1"><a href="/eaststlouis-il-1640-50th.html">1640 N 50th Street</a><span class="meta">East St. Louis, IL · $74,000 price · $2,000 down · $850/mo · 2 beds, 1 bath</span></li>
+      <li data-id="eaststlouis-il-1847-56th" data-down="1000" data-pay="600" data-status="Available" data-photo="1"><a href="/eaststlouis-il-1847-56th.html">1847 N 56th St</a><span class="meta">East St. Louis, IL · $62,500 price · $1,000 down · $600/mo · 1 bed, 1 bath</span></li>
+      <li data-id="eaststlouis-il-2636-market" data-down="2000" data-pay="865" data-status="Available" data-photo="1"><a href="/eaststlouis-il-2636-market.html">2636 Market Ave</a><span class="meta">East St. Louis, IL · $69,000 price · $2,000 down · $865/mo · 3 beds, 2 baths</span></li>
+      <li data-id="eaststlouis-il-351-26th" data-down="3000" data-pay="1125" data-status="Available" data-photo="1"><a href="/eaststlouis-il-351-26th.html">351 N 26th St</a><span class="meta">East St. Louis, IL · $110,000 price · $3,000 down · $1,125/mo · 3 beds, 2.5 baths</span></li>
+      <li data-id="eaststlouis-il-3511-converse" data-down="1500" data-pay="835" data-status="Available" data-photo="1"><a href="/eaststlouis-il-3511-converse.html">3511 Converse Ave</a><span class="meta">East St. Louis, IL · $69,500 price · $1,500 down · $835/mo · 3 beds, 1 bath</span></li>
+      <li data-id="eaststlouis-il-3720-walnut" data-down="2500" data-pay="900" data-status="Available" data-photo="1"><a href="/eaststlouis-il-3720-walnut.html">3720 Walnut Ave</a><span class="meta">East St. Louis, IL · $74,900 price · $2,500 down · $900/mo · 2 beds, 1 bath</span></li>
+      <li data-id="eaststlouis-il-5050-hallows" data-down="3000" data-pay="800" data-status="Available" data-photo="1"><a href="/eaststlouis-il-5050-hallows.html">5050 Hallows Avenue</a><span class="meta">East St. Louis, IL · $76,500 price · $3,000 down · $800/mo · 2 beds, 2 baths</span></li>
+      <li data-id="eaststlouis-il-516-84th" data-down="2000" data-pay="725" data-status="Available" data-photo="1"><a href="/eaststlouis-il-516-84th.html">516 N 84th Street</a><span class="meta">East St. Louis, IL · $69,000 price · $2,000 down · $725/mo · 3 beds, 1 bath</span></li>
+      <li data-id="eaststlouis-il-517-31st" data-down="2500" data-pay="899" data-status="Available" data-photo="1"><a href="/eaststlouis-il-517-31st.html">517 N 31st Street</a><span class="meta">East St. Louis, IL · $79,000 price · $2,500 down · $899/mo · 3 beds, 1 bath</span></li>
+      <li data-id="eaststlouis-il-541-27th" data-down="3000" data-pay="787" data-status="Available" data-photo="1"><a href="/eaststlouis-il-541-27th.html">541 North 27th Street</a><span class="meta">East St. Louis, IL · $79,500 price · $3,000 down · $787/mo · 2 beds, 1 bath</span></li>
+      <li data-id="eaststlouis-il-5538-avon" data-down="1000" data-pay="740" data-status="Available" data-photo="1"><a href="/eaststlouis-il-5538-avon.html">5538 Avon Pl</a><span class="meta">East St. Louis, IL · $64,000 price · $1,000 down · $740/mo · 3 beds, 1 bath</span></li>
+      <li data-id="eaststlouis-il-556-wimmer" data-down="1000" data-pay="525" data-status="Available" data-photo="1"><a href="/eaststlouis-il-556-wimmer.html">556 Wimmer Pl</a><span class="meta">East St. Louis, IL · $37,000 price · $1,000 down · $525/mo · 2 beds, 1 bath</span></li>
+      <li data-id="eaststlouis-il-5807-forest" data-down="1500" data-pay="425" data-status="Available" data-photo="1"><a href="/eaststlouis-il-5807-forest.html">5807 Forest Blvd</a><span class="meta">East St. Louis, IL · $34,900 price · $1,500 down · $425/mo · 2 beds, 1 bath</span></li>
+      <li data-id="eaststlouis-il-6000-old" data-down="2000" data-pay="650" data-status="Available" data-photo="1"><a href="/eaststlouis-il-6000-old.html">6000 Old Missouri Ave</a><span class="meta">East St. Louis, IL · $56,000 price · $2,000 down · $650/mo · 2 beds, 1 bath</span></li>
+      <li data-id="eaststlouis-il-826-82nd" data-down="2000" data-pay="725" data-status="Available" data-photo="1"><a href="/eaststlouis-il-826-82nd.html">826 North 82nd Street</a><span class="meta">East St. Louis, IL · $69,000 price · $2,000 down · $725/mo · 3 beds, 1 bath</span></li>
+      <li data-id="eaststlouis-il-2008-61st" data-down="1000" data-pay="500" data-status="Available" data-photo="0"><a href="/eaststlouis-il-2008-61st.html">2008 N 61st St</a><span class="meta">East St. Louis, IL · $45,000 price · $1,000 down · $500/mo · 1 bed, 1 bath</span></li>
+      <li data-id="eaststlouis-il-249-61st" data-down="2500" data-pay="875" data-status="Available" data-photo="0"><a href="/eaststlouis-il-249-61st.html">249 North 61st Street</a><span class="meta">East Saint Louis, IL · $80,000 price · $2,500 down · $875/mo · 3 beds, 1 bath</span></li>
+      <li data-id="eaststlouis-il-4416-state" data-down="2000" data-pay="925" data-status="Available" data-photo="0"><a href="/eaststlouis-il-4416-state.html">4416 State St</a><span class="meta">East Saint Louis, IL · $85,000 price · $2,000 down · $925/mo · 2 beds, 1 bath</span></li>
+      <li data-id="eaststlouis-il-459-21st" data-down="2000" data-pay="900" data-status="Available" data-photo="0"><a href="/eaststlouis-il-459-21st.html">459 N 21st St</a><span class="meta">East Saint Louis, IL · $85,500 price · $2,000 down · $900/mo · 2 beds, 1 bath</span></li>
   </ul>
+  <div id="buyerExtra"></div>
   <p class="city-back"><a href="/">Browse all homes</a></p>
 </div>
+<script src="/buyer-search.js" defer></script>
 <script src="/site-chrome.js"></script>
 </body>
 </html>

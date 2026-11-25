@@ -29,7 +29,16 @@
 .city-list .meta{display:block;color:var(--ink-soft);font-size:15px;margin-top:3px}
 .city-list .pending{display:inline-block;margin-left:8px;background:#c2410c;color:#fff;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border-radius:999px;padding:2px 8px;vertical-align:2px}
 .city-back{margin:8px 0 28px}
+.buyer-panel{display:grid;gap:10px;margin:0 0 18px}
+.buyer-panel label{display:grid;gap:4px;font-size:13px;font-weight:700;color:var(--ink-soft,#5b6577)}
+.buyer-panel input,.buyer-panel select{font:600 16px "DM Sans",system-ui,sans-serif;padding:12px;border-radius:12px;border:1.5px solid var(--line);min-height:48px;background:#fff;color:var(--ink,#16213a)}
+.buyer-budgets{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.buyer-group{margin:18px 0}
+.buyer-group h2{font-size:20px;margin:0 0 8px}
+.joe-slot[hidden]{display:none !important}
+html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(--brand-primary,#15315e);border-radius:12px;padding:12px 14px;margin:10px 0}
 </style>
+<script>(function(){if(/[?&]preview=1(?:&|$)/.test(location.search))document.documentElement.classList.add("preview");})();</script>
 <script type="application/ld+json" id="seo-jsonld">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://getownerfinancedhomes.com/#organization","name":"Americas Best Home Solutions","legalName":"Americas Best Home Solutions LLC","url":"https://getownerfinancedhomes.com/","logo":"https://getownerfinancedhomes.com/images/brand/logo-mark-480.png","email":"admin@americasbesthomesolutions.com","address":{"@type":"PostalAddress","streetAddress":"30 N Gould St, Ste R","addressLocality":"Sheridan","addressRegion":"WY","postalCode":"82801","addressCountry":"US"}},{"@type":"CollectionPage","@id":"https://getownerfinancedhomes.com/saginaw-mi.html#page","name":"Owner Financed Homes in Saginaw, MI","url":"https://getownerfinancedhomes.com/saginaw-mi.html","description":"2 owner-financed homes in Saginaw, MI. Each listing shows the address, purchase price, down payment, and monthly payment. No bank.","isPartOf":{"@id":"https://getownerfinancedhomes.com/#website"},"mainEntity":{"@id":"https://getownerfinancedhomes.com/saginaw-mi.html#list"}},{"@type":"ItemList","@id":"https://getownerfinancedhomes.com/saginaw-mi.html#list","numberOfItems":2,"itemListElement":[{"@type":"ListItem","position":1,"url":"https://getownerfinancedhomes.com/saginaw-mi-2128-fordney.html","name":"2128 Fordney St,"},{"@type":"ListItem","position":2,"url":"https://getownerfinancedhomes.com/saginaw-mi-505-yale.html","name":"505 Yale Street"}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Homes","item":"https://getownerfinancedhomes.com/"},{"@type":"ListItem","position":2,"name":"Owner Financed Homes in Saginaw, MI","item":"https://getownerfinancedhomes.com/saginaw-mi.html"}]}]}</script>
 </head>
 <body>
@@ -55,17 +64,44 @@
       </div>
     </nav>
   </header>
+  <form class="buyer-panel" id="buyerSearch" action="/" method="get" data-city="Saginaw" data-state="MI">
+    <label>City or ZIP
+      <input id="fQ" name="q" type="search" value="Saginaw, MI" autocomplete="off" enterkeyhint="search">
+    </label>
+    <div class="buyer-budgets">
+      <label>Max down payment
+        <select id="fDown" name="down">
+          <option value="">Any</option>
+          <option value="1000">$1,000</option><option value="1500">$1,500</option>
+          <option value="2000">$2,000</option><option value="2500">$2,500</option>
+          <option value="3000">$3,000</option><option value="4000">$4,000</option>
+          <option value="5000">$5,000</option>
+        </select>
+      </label>
+      <label>Max monthly
+        <select id="fPayMax" name="payMax">
+          <option value="">Any</option>
+          <option value="500">$500</option><option value="600">$600</option><option value="700">$700</option>
+          <option value="800">$800</option><option value="900">$900</option><option value="1000">$1,000</option>
+          <option value="1100">$1,100</option><option value="1200">$1,200</option><option value="1300">$1,300</option>
+          <option value="1400">$1,400</option><option value="1500">$1,500</option>
+        </select>
+      </label>
+    </div>
+  </form>
   <section class="phead">
     <span class="eyebrow">Owner financing</span>
     <h1>Owner Financed Homes in Saginaw, MI</h1>
     <p class="lead">2 owner-financed homes in Saginaw, MI. Every listing below shows the address, purchase price, down payment, and monthly payment. No bank and no mortgage application.</p>
   </section>
-  <ul class="city-list">
-      <li><a href="/saginaw-mi-2128-fordney.html">2128 Fordney St,</a><span class="meta">Saginaw, MI · $101,065 price · $4,000 down · $1,150/mo · 3 beds, 1 bath</span></li>
-      <li><a href="/saginaw-mi-505-yale.html">505 Yale Street</a><span class="meta">Saginaw, MI · $157,500 price · $4,000 down · $1,750/mo · 3 beds, 2 baths</span></li>
+  <ul class="city-list" id="cityHomes">
+      <li data-id="saginaw-mi-2128-fordney" data-down="4000" data-pay="1150" data-status="Available" data-photo="1"><a href="/saginaw-mi-2128-fordney.html">2128 Fordney St,</a><span class="meta">Saginaw, MI · $101,065 price · $4,000 down · $1,150/mo · 3 beds, 1 bath</span></li>
+      <li data-id="saginaw-mi-505-yale" data-down="4000" data-pay="1750" data-status="Available" data-photo="1"><a href="/saginaw-mi-505-yale.html">505 Yale Street</a><span class="meta">Saginaw, MI · $157,500 price · $4,000 down · $1,750/mo · 3 beds, 2 baths</span></li>
   </ul>
+  <div id="buyerExtra"></div>
   <p class="city-back"><a href="/">Browse all homes</a></p>
 </div>
+<script src="/buyer-search.js" defer></script>
 <script src="/site-chrome.js"></script>
 </body>
 </html>

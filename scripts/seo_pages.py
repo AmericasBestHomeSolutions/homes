@@ -28,6 +28,7 @@ import json
 import re
 from datetime import date
 from pathlib import Path
+from urllib.parse import quote
 
 # Keep these in step with scripts/portal_sync.py SITES.
 DOMAINS = {
@@ -467,6 +468,20 @@ def _replace_once(page: str, pattern: str, repl: str, flags=0) -> str:
     return new if n else page
 
 
+def _book_path(root: Path, home_id: str, lang: str) -> str:
+    """Public /book/<slug> (or /agendar/) so the tour button works before homes.js loads."""
+    directory = "agendar" if lang == "es" else "book"
+    slug = home_id
+    path = root / "data" / "book-links.json"
+    if path.is_file():
+        slugs = json.loads(path.read_text(encoding="utf-8")).get("slugs") or {}
+        for short, hid in slugs.items():
+            if hid == home_id:
+                slug = short
+                break
+    return f"/{directory}/{slug}"
+
+
 def write_listing(root: Path, home: dict, lang: str, template: str | None = None) -> str:
     """Fill home.html with this home's title, H1, facts, and tags. Returns the HTML."""
     template = template if template is not None else (root / "home.html").read_text(encoding="utf-8")
@@ -490,7 +505,7 @@ def write_listing(root: Path, home: dict, lang: str, template: str | None = None
                          lambda m: m.group(1) + "\n" + tags)
     other = DOMAINS[OTHER[lang]]
     counterpart = f"{other}/{home['id']}.html"
-    page = _replace_once(page, r'(<a class="nav-es" href=")[^"]*(")',
+    page = _replace_once(page, r'(<a class="nav-es[^"]*" href=")[^"]*(")',
                          lambda m: m.group(1) + counterpart + m.group(2))
     if ".seo-facts{" not in page and "</style>" in page:
         page = page.replace("</style>", FACTS_CSS + "\n</style>", 1)
@@ -510,6 +525,18 @@ def write_listing(root: Path, home: dict, lang: str, template: str | None = None
     label = status if pending else available
     if pending:
         page = page.replace('class="status-tag" id="statusTag"', 'class="status-tag pending" id="statusTag"', 1)
+        page = page.replace('id="toursOpen"', 'id="toursOpen" hidden', 1)
+        closed = "Visitas cerradas: ver casas parecidas" if lang == "es" else "Tours closed: see similar homes"
+        page = page.replace(">Book a tour</a>", ">" + closed + "</a>")
+        similar = "/" + "?q=" + html.escape(f"{city}, {state}", quote=True) + "#nearby" if city and state else "/#nearby"
+        page = page.replace('id="ctaText" href="#"', f'id="ctaText" href="{similar}"', 1)
+        page = page.replace('id="ctaText2" href="#"', f'id="ctaText2" href="{similar}"', 1)
+        page = page.replace('id="stBtn" class="st-go" href="#"', f'id="stBtn" class="st-go" href="{similar}"', 1)
+    else:
+        href = _book_path(root, home["id"], lang)
+        page = page.replace('id="ctaText" href="#"', f'id="ctaText" href="{href}"', 1)
+        page = page.replace('id="ctaText2" href="#"', f'id="ctaText2" href="{href}"', 1)
+        page = page.replace('id="stBtn" class="st-go" href="#"', f'id="stBtn" class="st-go" href="{href}"', 1)
     page = _replace_once(page, r'(id="statusTag"[^>]*>)[^<]*', lambda m: m.group(1) + label)
     page = _replace_once(page, r'(<div class="num" id="dMonthly">)[^<]*',
                          lambda m: m.group(1) + esc(money(home.get("monthlyPayment"))))
@@ -517,6 +544,40 @@ def write_listing(root: Path, home: dict, lang: str, template: str | None = None
                          lambda m: m.group(1) + esc(money(home.get("moveIn"))))
     page = _replace_once(page, r'(<div class="num" id="dPrice">)[^<]*',
                          lambda m: m.group(1) + esc(money(home.get("lockedPrice"))))
+    # Address, beds, and the tour note are on the first screen. Bake them so
+    # filling them in after load does not push the price row down.
+    zipc = clean_zip(home.get("zip"))
+    loc = ", ".join(p for p in (city, state) if p)
+    if zipc:
+        loc = (loc + " " + zipc).strip()
+    addr_text = ", ".join(p for p in ((home.get("address") or "").strip(), loc) if p)
+    if addr_text and 'id="propAddr"' in page:
+        map_label = "Ver en el mapa" if lang == "es" else "View on map"
+        addr_html = (esc(addr_text) + ' <a href="https://www.google.com/maps/search/?api=1&amp;query='
+                     + esc(quote(addr_text)) + '" target="_blank" rel="noopener" '
+                     'style="font-weight:500;font-size:14px;color:var(--go,#e23b3b);text-decoration:none;white-space:nowrap;margin-left:6px">'
+                     + esc(map_label) + " &#8599;</a>")
+        page = _replace_once(page, r'(<p class="prop-addr" id="propAddr"[^>]*>).*?</p>',
+                             lambda m: m.group(1) + addr_html + "</p>", re.S)
+    if 'id="propSpecs"' in page:
+        size = bed_bath(home, lang)
+        sq = sqft_of(home)
+        parts = []
+        if size:
+            parts.append(f"<span>{esc(size)}</span>")
+        if sq:
+            unit = "pies cuadrados" if lang == "es" else "sqft"
+            parts.append(f'<span style="font-weight:500;color:var(--ink-soft)">{sq:,.0f} {unit}</span>')
+        if parts:
+            specs = '<span style="color:var(--line)">·</span>'.join(parts)
+            page = _replace_once(page, r'(<p class="prop-specs" id="propSpecs"[^>]*>).*?</p>',
+                                 lambda m: m.group(1) + specs + "</p>", re.S)
+    if pending and 'id="ctaNote"' in page:
+        note = ("Esta casa está pendiente. Ya hay un depósito, así que no hay visitas nuevas."
+                if lang == "es" else
+                "This home is pending. A deposit has been placed, so new tours are not open.")
+        page = _replace_once(page, r'(<p class="cta-note" id="ctaNote">).*?</p>',
+                             lambda m: m.group(1) + esc(note) + "</p>", re.S)
     if 'id="conditionLine"' in page:
         cond = str(home.get("condition") or "").strip()
         if cond:
@@ -539,11 +600,78 @@ def write_listing(root: Path, home: dict, lang: str, template: str | None = None
     terms_tag = f'<script type="application/json" id="seo-terms">{json_ld(rows)}</script>'
     page = re.sub(r'\n?<script type="application/json" id="seo-terms">.*?</script>', "", page, count=1, flags=re.S)
     page = page.replace('<div class="terms" id="termsList">', terms_tag + '\n<div class="terms" id="termsList">', 1)
+    photo_flag = str(home.get("hasPhoto") or "").strip().lower()
+    hid = home["id"]
+    cards = root / "images" / "cards"
+    sizes = "(max-width: 860px) calc(100vw - 40px), 680px"
+    webp_parts, jpg_parts = [], []
+    if (cards / f"{hid}-320.webp").is_file():
+        webp_parts.append(f"images/cards/{hid}-320.webp 320w")
+    if (cards / f"{hid}-480.webp").is_file():
+        webp_parts.append(f"images/cards/{hid}-480.webp 480w")
+    if (cards / f"{hid}-320.jpg").is_file():
+        jpg_parts.append(f"images/cards/{hid}-320.jpg 320w")
+    if (cards / f"{hid}-480.jpg").is_file():
+        jpg_parts.append(f"images/cards/{hid}-480.jpg 480w")
+    hero_src = ""
+    if webp_parts:
+        hero_src = webp_parts[-1].split(" ")[0]
+    elif photo_flag in {"true", "1", "yes"} and (root / "images" / f"{hid}.jpg").is_file():
+        hero_src = f"images/{hid}.jpg"
+    elif photo_flag in {"false", "0"} and (root / "images" / "sv" / f"{hid}.jpg").is_file():
+        hero_src = f"images/sv/{hid}.jpg"
+    if hero_src:
+        try:
+            width = int(float(home.get("cardWidth") or 480))
+            height = int(float(home.get("cardHeight") or 360))
+        except (TypeError, ValueError):
+            width, height = 480, 360
+        if width <= 0:
+            width = 480
+        if height <= 0:
+            height = 360
+        alt = esc(f"Home for sale in {home.get('city') or ''}, {home.get('state') or ''}")
+        chosen = webp_parts or jpg_parts
+        srcset = f' srcset="{esc(", ".join(chosen))}" sizes="{sizes}"' if chosen else ""
+        source = ""
+        if webp_parts:
+            source = f'<source type="image/webp" srcset="{esc(", ".join(webp_parts))}" sizes="{sizes}">'
+        img = (f'<picture>{source}<img id="heroImg" alt="{alt}" src="{esc(hero_src)}"{srcset} '
+               f'width="{width}" height="{height}" fetchpriority="high"></picture>')
+        page = _replace_once(page, r'<img id="heroImg"[^>]*>', lambda _m, img=img: img)
+        if photo_flag in {"false", "0"}:
+            page = page.replace('id="heroSvBadge" hidden', 'id="heroSvBadge"', 1)
+        page = re.sub(r'\n?<link rel="preload" as="image"[^>]*>', "", page)
+        if webp_parts:
+            preload = (f'<link rel="preload" as="image" type="image/webp" fetchpriority="high" '
+                       f'href="{esc(hero_src)}" imagesrcset="{esc(", ".join(webp_parts))}" imagesizes="{sizes}"/>')
+        else:
+            preload = f'<link rel="preload" as="image" fetchpriority="high" href="{esc(hero_src)}"/>'
+        page = page.replace(
+            '<meta name="viewport" content="width=device-width, initial-scale=1.0"/>',
+            '<meta name="viewport" content="width=device-width, initial-scale=1.0"/>\n' + preload,
+            1,
+        )
+    if "<!-- buyer-eval:start -->" in page:
+        import listing_facts
+        baked = dict(home)
+        baked["_down_text"] = money(home.get("moveIn"))
+        baked["_monthly_text"] = money(home.get("monthlyPayment"))
+        baked["_price_text"] = money(home.get("lockedPrice"))
+        block_html = listing_facts.eval_html(baked, listing_facts.load(root), lang)
+        page = re.sub(
+            r"<!-- buyer-eval:start -->[\s\S]*?<!-- buyer-eval:end -->",
+            "<!-- buyer-eval:start -->\n" + block_html + "\n<!-- buyer-eval:end -->",
+            page,
+            count=1,
+        )
     if "DOMContentLoaded" in page:
         for src in ("listed-dates.js", "book-links.js", "homes.js", "homes-map.js", "homes-cart.js", "site-chrome.js"):
             page = page.replace(f'<script src="{src}"></script>', f'<script src="{src}" defer></script>')
     marker = '<script src="homes.js" defer></script>' if '<script src="homes.js" defer></script>' in page else '<script src="homes.js"></script>'
-    if 'window.__HOME_ID__="' not in page and marker in page:
+    if 'window.__HOME_ID__="' not in page and "<!-- home-id -->" in page:
+        page = page.replace("<!-- home-id -->", f'<script>window.__HOME_ID__="{esc(home["id"])}";</script>', 1)
+    elif 'window.__HOME_ID__="' not in page and marker in page:
         page = page.replace(marker, f'<script>window.__HOME_ID__="{esc(home["id"])}";</script>\n' + marker, 1)
     page = re.sub(r'\n?<script id="seo-restore">.*?</script>', "", page, count=1, flags=re.S)
     if "</body>" in page:
@@ -561,6 +689,13 @@ def _field(block: str, key: str):
     if raw in {"", "null"}:
         return None
     return raw
+
+
+def _features_of(block: str) -> dict:
+    match = re.search(r"\n    features:\s*\{([^}]*)\}", block)
+    if not match:
+        return {}
+    return {key: value for key, value in re.findall(r"([A-Za-z0-9_]+)\s*:\s*\"([^\"]*)\"", match.group(1))}
 
 
 def _photos(block: str) -> list[str]:
@@ -602,6 +737,12 @@ def load_homes(root: Path) -> list[dict]:
             "lat": _field(block, "lat"),
             "lng": _field(block, "lng"),
             "photos": _photos(block),
+            "contractor": _field(block, "contractor") or "",
+            "features": _features_of(block),
+            "hasPhoto": _field(block, "hasPhoto"),
+            "cardPhoto": _field(block, "cardPhoto") or "",
+            "cardWidth": _field(block, "cardWidth"),
+            "cardHeight": _field(block, "cardHeight"),
         }
         homes.append(home)
     return homes
@@ -637,6 +778,9 @@ def normalize(row: dict, lang: str) -> dict:
         "lat": pick("lat"),
         "lng": pick("lng"),
         "photos": row.get("photos") or [],
+        "contractor": pick("contractor") or "",
+        "features": row.get("features") if isinstance(row.get("features"), dict) else {},
+        "hasPhoto": pick("hasPhoto"),
     }
 
 
@@ -708,8 +852,13 @@ def _city_page(group: dict, lang: str) -> str:
         pending = str(home.get("status") or "").strip().lower() == "pending"
         flag = f' <span class="pending">{pending_word}</span>' if pending else ""
         href = f"/{home['id']}.html"
+        down_n = num(home.get("moveIn"))
+        pay_n = num(home.get("monthlyPayment"))
+        photo = "1" if str(home.get("hasPhoto") or "").strip().lower() in {"1", "true", "yes"} else "0"
         items.append(
-            f'<li><a href="{esc(href)}">{esc(home.get("address") or home["id"])}</a>{flag}'
+            f'<li data-id="{esc(home["id"])}" data-down="{"" if down_n is None else down_n}" '
+            f'data-pay="{"" if pay_n is None else pay_n}" data-status="{esc(str(home.get("status") or "Available"))}" '
+            f'data-photo="{photo}"><a href="{esc(href)}">{esc(home.get("address") or home["id"])}</a>{flag}'
             f'<span class="meta">{esc(" · ".join(bits))}</span></li>')
     list_items = []
     for i, home in enumerate(group["homes"], 1):
@@ -779,7 +928,16 @@ def _city_page(group: dict, lang: str) -> str:
 .city-list .meta{{display:block;color:var(--ink-soft);font-size:15px;margin-top:3px}}
 .city-list .pending{{display:inline-block;margin-left:8px;background:#c2410c;color:#fff;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;border-radius:999px;padding:2px 8px;vertical-align:2px}}
 .city-back{{margin:8px 0 28px}}
+.buyer-panel{{display:grid;gap:10px;margin:0 0 18px}}
+.buyer-panel label{{display:grid;gap:4px;font-size:13px;font-weight:700;color:var(--ink-soft,#5b6577)}}
+.buyer-panel input,.buyer-panel select{{font:600 16px "DM Sans",system-ui,sans-serif;padding:12px;border-radius:12px;border:1.5px solid var(--line);min-height:48px;background:#fff;color:var(--ink,#16213a)}}
+.buyer-budgets{{display:grid;grid-template-columns:1fr 1fr;gap:10px}}
+.buyer-group{{margin:18px 0}}
+.buyer-group h2{{font-size:20px;margin:0 0 8px}}
+.joe-slot[hidden]{{display:none !important}}
+html.preview .joe-slot[hidden]{{display:block !important;border:1.5px dashed var(--brand-primary,#15315e);border-radius:12px;padding:12px 14px;margin:10px 0}}
 </style>
+<script>(function(){{if(/[?&]preview=1(?:&|$)/.test(location.search))document.documentElement.classList.add("preview");}})();</script>
 <script type="application/ld+json" id="seo-jsonld">{json_ld(graph)}</script>
 </head>
 <body>
@@ -802,16 +960,43 @@ def _city_page(group: dict, lang: str) -> str:
       </div>
     </nav>
   </header>
+  <form class="buyer-panel" id="buyerSearch" action="/" method="get" data-city="{esc(city)}" data-state="{esc(state)}">
+    <label>{'Ciudad o código postal' if lang == 'es' else 'City or ZIP'}
+      <input id="fQ" name="q" type="search" value="{esc(city)}, {esc(state)}" autocomplete="off" enterkeyhint="search">
+    </label>
+    <div class="buyer-budgets">
+      <label>{'Enganche máximo' if lang == 'es' else 'Max down payment'}
+        <select id="fDown" name="down">
+          <option value="">{'Cualquiera' if lang == 'es' else 'Any'}</option>
+          <option value="1000">$1,000</option><option value="1500">$1,500</option>
+          <option value="2000">$2,000</option><option value="2500">$2,500</option>
+          <option value="3000">$3,000</option><option value="4000">$4,000</option>
+          <option value="5000">$5,000</option>
+        </select>
+      </label>
+      <label>{'Mensualidad máxima' if lang == 'es' else 'Max monthly'}
+        <select id="fPayMax" name="payMax">
+          <option value="">{'Cualquiera' if lang == 'es' else 'Any'}</option>
+          <option value="500">$500</option><option value="600">$600</option><option value="700">$700</option>
+          <option value="800">$800</option><option value="900">$900</option><option value="1000">$1,000</option>
+          <option value="1100">$1,100</option><option value="1200">$1,200</option><option value="1300">$1,300</option>
+          <option value="1400">$1,400</option><option value="1500">$1,500</option>
+        </select>
+      </label>
+    </div>
+  </form>
   <section class="phead">
     <span class="eyebrow">{esc(eyebrow)}</span>
     <h1>{esc(h1)}</h1>
     <p class="lead">{esc(lead)}</p>
   </section>
-  <ul class="city-list">
+  <ul class="city-list" id="cityHomes">
       {rows}
   </ul>
+  <div id="buyerExtra"></div>
   <p class="city-back"><a href="/">{esc(browse)}</a></p>
 </div>
+<script src="/buyer-search.js" defer></script>
 <script src="/site-chrome.js"></script>
 </body>
 </html>
@@ -967,6 +1152,56 @@ def _drop_stale_cities(root: Path, keep: set[str]) -> list[str]:
     return removed
 
 
+def _write_buyer_index(root: Path, homes: list[dict]) -> bool:
+    """Compact catalog for city-page search. Fetched only after the visitor changes the search."""
+    rows = []
+    for home in homes:
+        try:
+            lat, lng = float(home.get("lat")), float(home.get("lng"))
+        except (TypeError, ValueError):
+            lat, lng = None, None
+        rows.append({
+            "id": home.get("id") or "",
+            "address": home.get("address") or "",
+            "city": home.get("city") or "",
+            "state": home.get("state") or "",
+            "zip": clean_zip(home.get("zip")),
+            "moveIn": num(home.get("moveIn")),
+            "monthlyPayment": num(home.get("monthlyPayment")),
+            "lockedPrice": num(home.get("lockedPrice")),
+            "status": home.get("status") or "Available",
+            "lat": lat,
+            "lng": lng,
+            "hasPhoto": str(home.get("hasPhoto") or "").strip().lower() in {"1", "true", "yes"},
+        })
+    path = Path(root) / "data" / "buyer-index.json"
+    path.parent.mkdir(exist_ok=True)
+    return _write_if_changed(path, json.dumps({"homes": rows}, separators=(",", ":")))
+
+
+def _stamp_finance(root: Path, homes: list[dict], lang: str) -> bool:
+    import listing_facts
+    _lowest, _count, line = listing_facts.finance_line(homes, lang)
+    if not line:
+        return False
+    changed = False
+    names = ("index.html", "how-it-works.html") if lang == "en" else ("index.html", "como-funciona.html")
+    for name in names:
+        path = Path(root) / name
+        if not path.is_file() or "<!-- finance-stats:start -->" not in path.read_text(encoding="utf-8"):
+            continue
+        text = path.read_text(encoding="utf-8")
+        new = re.sub(
+            r"<!-- finance-stats:start -->[\s\S]*?<!-- finance-stats:end -->",
+            "<!-- finance-stats:start -->" + esc(line) + "<!-- finance-stats:end -->",
+            text,
+            count=1,
+        )
+        if _write_if_changed(path, new):
+            changed = True
+    return changed
+
+
 def rebuild(root: Path, lang: str = "en") -> str:
     root = Path(root)
     if not (root / "home.html").is_file() or not (root / "homes.js").is_file():
@@ -1003,7 +1238,10 @@ def rebuild(root: Path, lang: str = "en") -> str:
         entries.append((loc, lastmod, "0.7", en, es))
         city_names.append(slug)
     _drop_stale_cities(root, set(city_names))
-    if _stamp_cities_on_index(root, groups, lang):
+    _write_buyer_index(root, homes)
+    index_changed = bool(_stamp_cities_on_index(root, groups, lang))
+    index_changed = _stamp_finance(root, homes, lang) or index_changed
+    if index_changed:
         index_loc = domain + "/"
         entries = [(loc, today if loc == index_loc else last, pri, en, es) for loc, last, pri, en, es in entries]
     for home in homes:
@@ -1093,7 +1331,8 @@ def validate(root: Path, lang: str = "en") -> list[str]:
             errors.append(f"hreflang mismatch on {home['id']}: {hrefs}")
         if f'{other}/{home["id"]}.html' not in text:
             errors.append(f"language switcher missing counterpart on {home['id']}")
-        if 'src="homes.js" defer' not in text and "DOMContentLoaded" in (root / "home.html").read_text(encoding="utf-8"):
+        boots_late = '"homes.js"' in text and ('addEventListener("load"' in text or "setTimeout(" in text)
+        if 'src="homes.js" defer' not in text and not boots_late and "DOMContentLoaded" in (root / "home.html").read_text(encoding="utf-8"):
             errors.append(f"homes.js is not deferred on {home['id']}")
         try:
             docs = _ld_types(text)

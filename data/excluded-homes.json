@@ -14,5 +14,6 @@
   {"id": "decatur-il-1871-lawrence", "reason": "Not in Cameron's portal; Joe says likely sold, Oct 31", "added": "2026-10-31"},
   {"id": "middletown-oh-3117-finley", "reason": "Seller collected a down payment; off market. Joe, Nov 2 5:46 PM ET", "added": "2026-11-02"},
   {"id": "cahokia-il-1", "reason": "No street address (only '1'); not in the portal listings view. Removed 2026-11-19.", "added": "2026-11-19"},
-  {"id": "ildecatur-il-1929-prairie", "reason": "Duplicate of decatur-il-1929-prairie. Portal row PROP-001736 is the real 1929 E Prairie St listing; this second id came from the city being pasted into the address. Removed 2026-11-19.", "added": "2026-11-19"}
+  {"id": "ildecatur-il-1929-prairie", "reason": "Duplicate of decatur-il-1929-prairie. Portal row PROP-001736 is the real 1929 E Prairie St listing; this second id came from the city being pasted into the address. Removed 2026-11-19.", "added": "2026-11-19"},
+  {"id": "duquoin-il-322-cole", "reason": "Joe, Nov 25 2026: exclude the Du Quoin property from the buyer sites", "added": "2026-11-25"}
 ]

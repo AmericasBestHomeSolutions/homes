@@ -44,5 +44,24 @@ class T(unittest.TestCase):
         with tempfile.TemporaryDirectory() as d:
             self.assertEqual(excluded_homes.apply(Path(d), "en"), [])
 
+    def test_portal_sync_never_readds_an_excluded_id(self):
+        import portal_sync as ps
+        with tempfile.TemporaryDirectory() as d:
+            root = Path(d)
+            (root / "data").mkdir()
+            (root / "homes.js").write_text(
+                'const HOMES = [\n  {\n    id: "peoria-il-55-new",\n    address:     "55 New St",\n    city:  "Peoria",\n    state: "IL",\n    status: "Available",\n  },\n];\nconst SOLD_CARDS = [\n];\n',
+                encoding="utf-8")
+            (root / "data" / "excluded-homes.json").write_text(json.dumps([{"id": "peoria-il-55-new", "reason": "test"}]))
+            (root / "peoria-il-55-new.html").write_text("live page")
+            self.assertEqual(excluded_homes.apply(root, "en"), ["peoria-il-55-new"])
+            self.assertNotIn("peoria-il-55-new", (root / "homes.js").read_text())
+            row = {"Portal PROP id": "PROP-9", "Address": "55 New St", "City": "Peoria", "State": "IL", "Zip": "61602",
+                   "Beds": "3", "Baths": "1", "Sqft": "900", "Price": "60000", "Down payment": "2000",
+                   "Monthly payment": "700", "Status": "Available", "Photos link": "", "Direct note": "", "Direct note es": ""}
+            plan = ps.plan(root, [row], [])
+            self.assertEqual(plan["add"], [])
+            self.assertTrue(any("excluded-homes.json" in line for line in plan["hand"]))
+
 if __name__ == "__main__":
     unittest.main()

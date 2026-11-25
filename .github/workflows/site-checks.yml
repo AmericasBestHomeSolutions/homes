@@ -15,3 +15,14 @@ jobs:
           python-version: "3.12"
       - name: book_links tests
         run: python3 scripts/test_book_links.py
+      - name: card photo tests need Pillow
+        run: python3 -m pip install Pillow
+      - name: buyer search, facts, exclusion, placeholders
+        run: |
+          python3 scripts/test_excluded_homes.py
+          python3 scripts/test_home_facts.py
+          python3 scripts/test_consistency.py
+          python3 scripts/test_placeholders.py
+          python3 scripts/test_buyer_search.py
+          python3 scripts/test_seo_pages.py
+          python3 scripts/test_card_photos.py

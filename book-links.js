@@ -113,7 +113,6 @@ const BOOK_HREF = {
   "decatur-il-989-packard": "/book/989-packard",
   "detroit-mi-15871-fairmount": "/book/15871-fairmount",
   "detroit-mi-8577-mark": "/book/8577-mark",
-  "duquoin-il-322-cole": "/book/322-cole",
   "eastalton-il-136-illinois": "/book/136-illinois",
   "eastalton-il-336-goulding": "/book/336-goulding",
   "eaststlouis-il-1422-54th": "/book/1422-54th",

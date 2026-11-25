@@ -1029,6 +1029,9 @@ def plan(root: Path, portal_rows: list[dict], crm_rows: list[dict], wa: list[dic
         price, down, monthly = num(row["Price"]), num(row["Down payment"]), num(row["Monthly payment"])
         crm_status = "" if row.get("Portal PROP id") == "DIRECT" else crm_wins.get(sid) or crm_wins.get(hid)
         if sid in site:
+            if sid in excluded or hid in excluded:
+                out["hand"].append(f"{row['Address']}, {row['City']} ({sid}): in data/excluded-homes.json; left off the site")
+                continue
             block = site[sid].group(0)
             if status.lower() == "available" and crm_status:   # the CRM's Sold / Pending beats the portal's Available
                 why = "pending" if re.search(r"(?i)pending", str(crm_status)) and not re.search(r"(?i)sold|deposit", str(crm_status)) else "sold"

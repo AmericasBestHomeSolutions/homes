@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="preload" as="image" type="image/webp" fetchpriority="high" href="images/cards/washingtonpark-il-5617-warren-480.webp" imagesrcset="images/cards/washingtonpark-il-5617-warren-320.webp 320w, images/cards/washingtonpark-il-5617-warren-480.webp 480w" imagesizes="(max-width: 860px) calc(100vw - 40px), 680px"/>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path d='M24 3 41 9V23C41 33 33 41 24 45 15 41 7 33 7 23V9Z' fill='%2315315e'/><path d='M15 26 24 18 33 26Z' fill='%23e23b3b'/><rect x='17.5' y='26' width='13' height='9' fill='white'/><rect x='22' y='30' width='4' height='5' fill='%2315315e'/></svg>"/>
 <title>5617 Warren Ave., Washington Park, IL — $59,900 · $1,400 down · $672/mo | Owner Financed</title>
 <meta name="description" content="Owner-financed home at 5617 Warren Ave., Washington Park, IL. Purchase price $59,900. Down payment $1,400. Monthly payment $672. 2 beds, 1 bath. 780 square feet. 30-year owner financing (contract for deed)."/>
@@ -22,9 +23,6 @@
 <meta name="twitter:description" content="Owner-financed home at 5617 Warren Ave., Washington Park, IL. Purchase price $59,900. Down payment $1,400. Monthly payment $672. 2 beds, 1 bath. 780 square feet. 30-year owner financing (contract for deed)."/>
 <meta name="twitter:image" content="https://getownerfinancedhomes.com/images/washingtonpark-il-5617-warren.jpg"/>
 <script type="application/ld+json" id="seo-jsonld">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://getownerfinancedhomes.com/#organization","name":"Americas Best Home Solutions","legalName":"Americas Best Home Solutions LLC","url":"https://getownerfinancedhomes.com/","logo":"https://getownerfinancedhomes.com/images/brand/logo-mark-480.png","email":"admin@americasbesthomesolutions.com","address":{"@type":"PostalAddress","streetAddress":"30 N Gould St, Ste R","addressLocality":"Sheridan","addressRegion":"WY","postalCode":"82801","addressCountry":"US"}},{"@type":"Offer","@id":"https://getownerfinancedhomes.com/washingtonpark-il-5617-warren.html#offer","url":"https://getownerfinancedhomes.com/washingtonpark-il-5617-warren.html","priceCurrency":"USD","price":"59900","availability":"https://schema.org/InStock","itemOffered":{"@id":"https://getownerfinancedhomes.com/washingtonpark-il-5617-warren.html#home"},"seller":{"@id":"https://getownerfinancedhomes.com/#organization"},"description":"Down payment $1,400. Monthly payment $672. 30-year owner financing (contract for deed)"},{"@type":"RealEstateListing","@id":"https://getownerfinancedhomes.com/washingtonpark-il-5617-warren.html#listing","name":"5617 Warren Ave., Washington Park, IL — $59,900, $1,400 down, $672/mo","url":"https://getownerfinancedhomes.com/washingtonpark-il-5617-warren.html","description":"Owner-financed home at 5617 Warren Ave., Washington Park, IL. Purchase price $59,900. Down payment $1,400. Monthly payment $672. 2 beds, 1 bath. 780 square feet. 30-year owner financing (contract for deed).","mainEntity":{"@id":"https://getownerfinancedhomes.com/washingtonpark-il-5617-warren.html#home"},"image":"https://getownerfinancedhomes.com/images/washingtonpark-il-5617-warren.jpg","offers":{"@id":"https://getownerfinancedhomes.com/washingtonpark-il-5617-warren.html#offer"}},{"@type":"House","@id":"https://getownerfinancedhomes.com/washingtonpark-il-5617-warren.html#home","name":"5617 Warren Ave., Washington Park, IL","address":{"@type":"PostalAddress","addressCountry":"US","streetAddress":"5617 Warren Ave.","addressLocality":"Washington Park","addressRegion":"IL","postalCode":"62204"},"numberOfBedrooms":2,"numberOfBathroomsTotal":1,"floorSize":{"@type":"QuantitativeValue","value":780,"unitCode":"FTK"},"geo":{"@type":"GeoCoordinates","latitude":38.628284,"longitude":-90.092615}},{"@type":"BreadcrumbList","@id":"https://getownerfinancedhomes.com/washingtonpark-il-5617-warren.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Homes","item":"https://getownerfinancedhomes.com/"},{"@type":"ListItem","position":2,"name":"Owner Financed Homes in Washington Park, IL","item":"https://getownerfinancedhomes.com/washingtonpark-il.html"},{"@type":"ListItem","position":3,"name":"5617 Warren Ave.","item":"https://getownerfinancedhomes.com/washingtonpark-il-5617-warren.html"}]}]}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- ════════════════════════════════════════════════════════════════════════
      AMERICAS BEST HOME SOLUTIONS — PROPERTY PAGE (template — serves EVERY home)
@@ -35,8 +33,10 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
+  /* JOE-INPUT: brand-colors — navy and red until Joe supplies his palette. */
+  --brand-primary:#15315e; --brand-accent:#d32f2f;
   --paper:#f4f7fc; --card:#ffffff; --ink:#16213a; --ink-soft:#5b6577; --line:#e2e8f2;
-  --pine:#15315e; --pine-deep:#0f2444; --lime:#ffffff; --honey:#e23b3b; --honey-soft:#eaf1fb;
+  --pine:var(--brand-primary); --pine-deep:#0f2444; --lime:#ffffff; --honey:var(--brand-accent); --honey-soft:#eaf1fb;
   --go:#d43333; --go-hover:#b82a2a; --radius:18px;
 }
 html{scroll-behavior:smooth}
@@ -63,7 +63,16 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
 /* ── HERO ────────────────────────────────────────────────── */
 .hero{margin-top:2px}
 .hero-photo{position:relative;width:100%;aspect-ratio:16/10;border-radius:var(--radius);overflow:hidden;background:linear-gradient(135deg,#15315e,#2f5c96);display:flex;align-items:center;justify-content:center}
+.hero-photo picture{position:absolute;inset:0;display:block;z-index:1}
 .hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.deal-strip{min-height:84px}
+.headline{min-height:2.6em}
+#propAddr{min-height:2.4em}
+#propSpecs{min-height:1.6em}
+#subhead{min-height:4.5em}
+#ctaNote{min-height:2.4em}
+.cta-group{min-height:120px}
+#hcHero{min-height:48px}
 .hero-photo img[hidden]{display:none}
 .hero-photo .fallback{opacity:.9}
 .hero-photo .sv-badge{position:absolute;right:14px;bottom:14px;z-index:3;font-family:'DM Mono',monospace;font-size:10px;letter-spacing:.5px;background:rgba(11,20,40,.62);color:#fff;padding:5px 9px;border-radius:999px}
@@ -223,6 +232,32 @@ body.tl-pad{padding-bottom:70px}
 </style>
 <link rel="stylesheet" href="site.css">
 <link rel="stylesheet" href="nav.css">
+<script>(function(){if(/[?&]preview=1(?:&|$)/.test(location.search))document.documentElement.classList.add("preview");})();</script>
+<style>
+.tours-open,.account-link{margin:8px 0 0;font-size:15px}
+.account-link a{font-weight:800;color:var(--brand-primary,#15315e)}
+.buyer-eval{display:grid;gap:14px;margin:18px 0 8px}
+.eval-block{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px}
+.eval-block h2{font-family:'Bricolage Grotesque',sans-serif;font-size:22px;line-height:1.15;margin:0 0 8px}
+.eval-copy{margin:0 0 10px}
+.eval-lines,.cond-rows,.fit-card ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.eval-lines li,.cond-rows li{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.eval-lines .k,.cond-name{font-weight:700;flex:1 1 42%;min-width:0}
+.eval-lines .v,.cond-state{flex:1 1 50%;text-align:right;min-width:8em}
+.eval-total{margin:10px 0 0;font-weight:800}
+.cond-rows li{align-items:flex-start}
+.cond-ic{flex:0 0 1.4em;font-weight:800}
+.cond-state{text-align:right}
+.fit-grid{display:grid;gap:10px}
+.fit-card{border:1px solid var(--line);border-radius:14px;padding:12px}
+.fit-card h3{margin:0 0 6px;font-size:17px}
+.fit-note,.qualify-line{font-size:15px;margin:8px 0 0}
+.key-steps{margin:0 0 8px 1.2em}
+.joe-intro img{width:160px;height:auto;border-radius:16px;display:block}
+.joe-slot[hidden]{display:none !important}
+html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(--brand-primary,#15315e);border-radius:12px;padding:12px 14px;margin:10px 0;background:#fff}
+.nav-account,.nav-lang{min-height:48px;display:inline-flex;align-items:center}
+</style>
 </head>
 <body class="page-home">
 
@@ -239,6 +274,8 @@ body.tl-pad{padding-bottom:70px}
       <span class="bn">Americas Best Home Solutions<small>Owner Financing</small></span>
     </a>
     <nav class="topnav" aria-label="Site">
+      <a class="nav-account" href="/account/?lang=en">My account: tours and paperwork</a>
+      <a class="nav-es nav-lang" href="https://casasconfinanciamiento.com/washingtonpark-il-5617-warren.html">Español</a>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="siteMenu"><span class="nav-bars" aria-hidden="true"></span><span class="nav-word">Menu</span></button>
       <div class="site-menu" id="siteMenu">
         <a href="/#listings">Homes</a>
@@ -246,7 +283,6 @@ body.tl-pad{padding-bottom:70px}
         <a href="/#why-buy">Why buy vs rent</a>
         <a href="/about">About us</a>
         <a href="/#faq">FAQ</a>
-        <a class="nav-es" href="https://casasconfinanciamiento.com/washingtonpark-il-5617-warren.html">Español</a>
       </div>
     </nav>
   </header>
@@ -260,7 +296,7 @@ body.tl-pad{padding-bottom:70px}
   <section class="hero">
     <div class="hero-photo" id="heroFace">
       <span class="status-tag" id="statusTag">Available</span>
-      <img id="heroImg" alt="" hidden>
+      <picture><source type="image/webp" srcset="images/cards/washingtonpark-il-5617-warren-320.webp 320w, images/cards/washingtonpark-il-5617-warren-480.webp 480w" sizes="(max-width: 860px) calc(100vw - 40px), 680px"><img id="heroImg" alt="Home for sale in Washington Park, IL" src="images/cards/washingtonpark-il-5617-warren-480.webp" srcset="images/cards/washingtonpark-il-5617-warren-320.webp 320w, images/cards/washingtonpark-il-5617-warren-480.webp 480w" sizes="(max-width: 860px) calc(100vw - 40px), 680px" width="480" height="640" fetchpriority="high"></picture>
       <span class="badge-new" id="newBadge" hidden>New</span>
       <span class="sv-badge" id="heroSvBadge" hidden>Street view · © Google</span>
       <a class="sv-link" id="heroSvLink" href="#" target="_blank" rel="noopener" hidden>See the street in Google Street View →</a>
@@ -275,10 +311,10 @@ body.tl-pad{padding-bottom:70px}
 <p class="seo-city" id="seoCity"><a href="/washingtonpark-il.html">Owner financed homes in Washington Park, IL</a></p>
     
     
-    <p class="prop-addr" id="propAddr" style="font-weight:600;font-size:17px;color:var(--pine,#15315e);margin:2px 0 6px"></p>
-    <p class="prop-specs" id="propSpecs" style="display:flex;gap:10px;flex-wrap:wrap;font-weight:600;font-size:16px;color:var(--ink);margin:0 0 8px"></p>
+    <p class="prop-addr" id="propAddr" style="font-weight:600;font-size:17px;color:var(--pine,#15315e);margin:2px 0 6px">5617 Warren Ave., Washington Park, IL 62204 <a href="https://www.google.com/maps/search/?api=1&amp;query=5617%20Warren%20Ave.%2C%20Washington%20Park%2C%20IL%2062204" target="_blank" rel="noopener" style="font-weight:500;font-size:14px;color:var(--go,#e23b3b);text-decoration:none;white-space:nowrap;margin-left:6px">View on map &#8599;</a></p>
+    <p class="prop-specs" id="propSpecs" style="display:flex;gap:10px;flex-wrap:wrap;font-weight:600;font-size:16px;color:var(--ink);margin:0 0 8px"><span>2 beds, 1 bath</span><span style="color:var(--line)">·</span><span style="font-weight:500;color:var(--ink-soft)">780 sqft</span></p>
     <p class="condition-line" id="conditionLine" hidden></p>
-    <p class="subhead" id="subhead"></p>
+    <p class="subhead" id="subhead">This is buying, not renting. A fixed monthly payment close to rent — and every 1st of the month, it's building toward a home that's yours.</p>
     <div id="csBanner" hidden style="background:#fff7ed;border:1.5px solid #fdba74;border-radius:14px;padding:14px 16px;margin:0 0 16px;color:#7c2d12">
       <strong style="display:block;font-size:16px;margin-bottom:4px">🔨 Contractor Special — needs major repairs</strong>
       <span id="csWhat" style="display:block;font-weight:600"></span>
@@ -292,10 +328,22 @@ body.tl-pad{padding-bottom:70px}
     </div>
 
     <div class="cta-group">
-      <a class="btn btn-primary" id="ctaText" href="#">Book a Tour</a>
+      <a class="btn btn-primary" id="ctaText" href="/book/5617-warren">Book a tour</a>
       <a class="btn btn-secondary" id="ctaSms" href="#" hidden>Have a question? Text us</a>
     </div>
-    <p class="cta-note" id="ctaNote"></p>
+    <p class="tours-open" id="toursOpen">Tours open: pick your time on the next screen. No password.</p>
+    <p class="account-link"><a href="/account/?lang=en">My account: tours and paperwork</a></p>
+    <p class="cta-note" id="ctaNote">Tours are in person. Pick a time and we'll meet you there.</p>
+    <div class="hc-hero" id="hcHero"></div>
+    <!-- buyer-eval:start -->
+<div class="buyer-eval" id="buyerEval" data-baked="1">
+<p class="qualify-line">No bank loan needed. We keep it simple: if the down payment and monthly payment fit your budget, we&#x27;ll walk you through the next steps.</p>
+<section class="eval-block" id="cashKeys"><h2>Cash to get the keys</h2><ul class="eval-lines"><li><span class="k">Down payment</span><span class="v">$1,400</span></li></ul><p class="eval-total">Final terms are confirmed in your paperwork.</p></section>
+<section class="eval-block" id="termsBlock"><h2>Your monthly payment and terms</h2><ul class="eval-lines"><li><span class="k">Monthly payment</span><span class="v">$672</span></li><li><span class="k">Fixed price</span><span class="v">$59,900</span></li><li><span class="k">Term</span><span class="v">30-year owner financing (contract for deed)</span></li></ul><p class="eval-total">Final terms are confirmed in your paperwork.</p></section>
+<section class="eval-block" id="keysBlock"><h2>Steps to the keys</h2><ol class="key-steps"><li>Tour the home and pick it</li><li>We send a welcome packet</li><li>You send the down payment or deposit</li><li>We do the paperwork</li><li>Keys</li></ol><p>In Illinois there is a 3-day right of rescission after signing, then keys.</p></section>
+<section class="eval-block" id="conditionBlock"><h2>Condition: sold as-is</h2><p class="eval-copy">Every home is sold as-is. It needs some work, and the price reflects that. You handle the repairs. Walk through the home before you sign.</p><ul class="cond-rows"><li class="cond-unknown"><span class="cond-ic" aria-hidden="true">?</span><span class="cond-name">Furnace / heating</span><span class="cond-state">Not yet known</span></li><li class="cond-unknown"><span class="cond-ic" aria-hidden="true">?</span><span class="cond-name">Plumbing</span><span class="cond-state">Not yet known</span></li><li class="cond-unknown"><span class="cond-ic" aria-hidden="true">?</span><span class="cond-name">Electrical</span><span class="cond-state">Not yet known</span></li><li class="cond-unknown"><span class="cond-ic" aria-hidden="true">?</span><span class="cond-name">Roof</span><span class="cond-state">Not yet known</span></li><li class="cond-unknown"><span class="cond-ic" aria-hidden="true">?</span><span class="cond-name">Foundation</span><span class="cond-state">Not yet known</span></li></ul></section>
+<section class="eval-block" id="fitBlock"><h2>How this home could fit</h2><div class="fit-grid"><article class="fit-card"><h3>For a family</h3><ul><li>2 bedrooms</li><li>1 bathroom</li><li>780 sqft</li><li>Basement</li><li>$59,900 price</li><li>$672/mo</li></ul><p class="fit-note">An illustration from this listing&#x27;s own facts, not a buyer&#x27;s story.</p></article><article class="fit-card"><h3>To renovate and rent</h3><ul><li>Purchase price $59,900</li><li>Monthly payment $672</li></ul><p class="fit-note">An illustration from this listing&#x27;s own facts, not a buyer&#x27;s story.</p></article></div></section></div>
+<!-- buyer-eval:end -->
     <ul class="why-compact">
       <li>You own from day one</li>
       <li>Your payment stays put</li>
@@ -398,7 +446,7 @@ body.tl-pad{padding-bottom:70px}
     <h2 id="closerTitle"></h2>
     <p id="closerLead">Book a tour and we'll set up a time to walk through it. No pressure, no bank.</p>
     <div class="cta-group" style="max-width:400px;margin:0 auto">
-      <a class="btn btn-primary" id="ctaText2" href="#">Book a Tour</a>
+      <a class="btn btn-primary" id="ctaText2" href="/book/5617-warren">Book a tour</a>
       <a class="btn btn-secondary" id="ctaSms2" href="#" hidden>Have a question? Text us</a>
     </div>
   </section>
@@ -423,14 +471,11 @@ body.tl-pad{padding-bottom:70px}
 
 </div>
 
-<script src="listed-dates.js" defer></script>
-<script src="book-links.js" defer></script>
 <script>window.__HOME_ID__="washingtonpark-il-5617-warren";</script>
-<script src="homes.js" defer></script>
 <script>
 /* ---------- render (don't edit — home data lives in homes.js) ---------- */
-/* Waits until deferred homes.js has run. Keep the title/H1 formula in step with scripts/seo_pages.py. */
-document.addEventListener("DOMContentLoaded", function(){
+/* Runs after the load event so the hero photo can paint first. */
+function startListing(){
   const wantedId = window.__HOME_ID__ || new URLSearchParams(location.search).get("home");
   const home = (typeof HOMES !== "undefined") ? HOMES.find(h => h.id === wantedId) : null;
   // Sold homes leave the public page. Pending stays visible, with tours turned off below.
@@ -506,8 +551,8 @@ document.addEventListener("DOMContentLoaded", function(){
       $("seoCity").innerHTML = `<a href="/${citySlug(C.city)}-${String(C.state).toLowerCase()}.html">${label}</a>`;
     }
   }
-  $("subhead").textContent = "This is buying, not renting. A fixed monthly payment close to rent — and every 1st of the month, it's building toward a home that's yours.";
-  $("propSpecs").innerHTML = [
+  if (!$("subhead").textContent.trim()) $("subhead").textContent = "This is buying, not renting. A fixed monthly payment close to rent — and every 1st of the month, it's building toward a home that's yours.";
+  if (!$("propSpecs").textContent.trim()) $("propSpecs").innerHTML = [
     C.beds ? `<span>${C.beds} bed${Number(C.beds)===1?"":"s"}</span>` : "",
     C.baths ? `<span>${C.baths} bath${Number(C.baths)===1?"":"s"}</span>` : "",
     C.sqft ? `<span style="font-weight:500;color:var(--ink-soft)">${Number(C.sqft).toLocaleString()} sqft</span>` : ""
@@ -524,9 +569,11 @@ document.addEventListener("DOMContentLoaded", function(){
     line.hidden = false;
   })();
   (function(){
+    if (!$("propAddr").textContent.trim()) {
     const addrText = [C.address, `${C.city}, ${C.state}${C.zip?" "+C.zip:""}`].filter(Boolean).join(", ");
     const mapQ = encodeURIComponent(addrText);
     $("propAddr").innerHTML = `${addrText} <a href="https://www.google.com/maps/search/?api=1&query=${mapQ}" target="_blank" rel="noopener" style="font-weight:500;font-size:14px;color:var(--go,#e23b3b);text-decoration:none;white-space:nowrap;margin-left:6px">View on map &#8599;</a>`;
+    }
   })();
   // written page copy (site_copy.py); falls back to the notes only for a home held for review
   if (C.copy || C.description) { $("aboutDesc").textContent = C.copy || C.description; $("aboutHomeSec").hidden = false; }
@@ -590,7 +637,11 @@ document.addEventListener("DOMContentLoaded", function(){
       L.hidden = false;
     };
     img.alt = `Home for sale in ${C.city}, ${C.state}`;
-    if (real) {
+    if (img.getAttribute("src")) {
+      img.hidden = false;
+      showFace();
+      if (!real && known) $("heroSvBadge").hidden = false;
+    } else if (real) {
       img.hidden = false;
       img.onload = showFace;
       img.onerror = () => { if (!img.dataset.svTried) { img.dataset.svTried = 1; img.onload = () => { showFace(); $("heroSvBadge").hidden = false; }; img.src = sv; } else showLink(); };
@@ -654,16 +705,15 @@ document.addEventListener("DOMContentLoaded", function(){
   }
 
   if (pending) {
-    const pendingNote = "This home is pending. A deposit has been placed, so new tours are not open.";
+    const similar = "/?q=" + encodeURIComponent([C.city, C.state].filter(Boolean).join(", ")) + "#nearby";
     ["ctaText","ctaText2"].forEach(id => {
       const el = $(id);
       if (!el) return;
-      const note = document.createElement("p");
-      note.className = "pending-note";
-      note.textContent = pendingNote;
-      el.replaceWith(note);
+      el.textContent = "Tours closed: see similar homes";
+      el.href = similar;
     });
-    $("ctaNote").textContent = "";
+    if ($("toursOpen")) $("toursOpen").hidden = true;
+    $("ctaNote").textContent = "This home is pending. A deposit has been placed, so new tours are not open.";
     $("closerTitle").textContent = "This home is pending";
     if ($("closerLead")) $("closerLead").textContent = "A deposit has been placed, so new tours are not open.";
     const step = document.querySelector("#nextSec .step h3");
@@ -673,7 +723,7 @@ document.addEventListener("DOMContentLoaded", function(){
     }
   } else {
     ["ctaText","ctaText2"].forEach(id=>$(id).href = (typeof bookHref === "function" ? bookHref(C.id) : `https://owner.getownerfinancedhomes.com/book?home=${encodeURIComponent(C.id)}&lang=en`));
-    $("ctaNote").textContent = "Tours are in person. Pick a time and we'll meet you there.";
+    if (!$("ctaNote").textContent.trim()) $("ctaNote").textContent = "Tours are in person. Pick a time and we'll meet you there.";
     // Second choice: "Text us". The text carries this home's page link, because the CRM's
     // inbound-tour-reply-v1 only answers a text that has getownerfinancedhomes.com/<id>.html in it.
     const tel = String(C.phone||"").replace(/[^\d+]/g,"");
@@ -692,13 +742,25 @@ document.addEventListener("DOMContentLoaded", function(){
   } else {
     document.querySelectorAll(".reveal").forEach(el=>el.classList.add("in"));
   }
-});
+  const stBtn = document.getElementById("stBtn");
+  const cta = document.getElementById("ctaText");
+  if (stBtn && cta) { stBtn.href = cta.href; stBtn.textContent = cta.textContent; }
+  document.dispatchEvent(new Event("listing-ready"));
+}
+setTimeout(function () {
+  var srcs = ["listed-dates.js", "book-links.js", "homes.js", "homes-map.js", "homes-cart.js", "site-chrome.js"];
+  var left = srcs.length;
+  srcs.forEach(function (src) {
+    var s = document.createElement("script");
+    s.src = src;
+    s.async = false;
+    s.onload = s.onerror = function () { if (--left === 0) startListing(); };
+    document.body.appendChild(s);
+  });
+}, 2500);
 </script>
-<script src="homes-map.js" defer></script>
-<script src="homes-cart.js" defer></script>
-<script src="site-chrome.js" defer></script>
 <script>
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("listing-ready", function(){
   const id = window.__HOME_ID__ || new URLSearchParams(location.search).get("home");
   const raw = (window.LISTED_ON || {})[id];
   const t = Date.parse(raw || "");
@@ -707,13 +769,13 @@ document.addEventListener("DOMContentLoaded", function(){
 });
 </script>
 <script>
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("listing-ready", function(){
   const id = window.__HOME_ID__ || new URLSearchParams(location.search).get("home");
   const h = (typeof HOMES !== "undefined") ? HOMES.find(x => x.id === id) : null;
   if (!h || !window.HomesMap) return;
   const q = encodeURIComponent([h.address, h.city, h.state, h.zip].filter(Boolean).join(", "));
   document.getElementById("mapGoogle").href = "https://www.google.com/maps/search/?api=1&query=" + q;
-  if (window.HomesCart){ const n = document.getElementById("ctaNote"); if (n) n.insertAdjacentHTML("afterend", '<div class="hc-hero">' + HomesCart.heart(h, true) + HomesCart.compare(h) + '</div>'); HomesCart.sync(); }
+  if (window.HomesCart){ const slot = document.getElementById("hcHero") || document.getElementById("ctaNote"); if (slot) { if (slot.id === "hcHero") slot.innerHTML = HomesCart.heart(h, true) + HomesCart.compare(h); else slot.insertAdjacentHTML("afterend", '<div class="hc-hero">' + HomesCart.heart(h, true) + HomesCart.compare(h) + '</div>'); } HomesCart.sync(); }
   HomesMap.mini({ el: document.getElementById("mapEl"), home: h, section: document.getElementById("mapSec"), note: document.getElementById("mapNote") });
 });
 </script>
@@ -722,7 +784,7 @@ document.addEventListener("DOMContentLoaded", function(){
 #stickyTour[hidden]{display:none}
 #stickyTour .st-p{flex:1;min-width:0;font:800 18px 'Bricolage Grotesque',sans-serif;color:var(--pine,#15315e);line-height:1.1}
 #stickyTour .st-p small{display:block;font:500 11px 'DM Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft,#5b6b82)}
-#stickyTour a{flex:0 0 auto;text-decoration:none;font:700 15px 'DM Sans',sans-serif;padding:12px 14px;border-radius:12px;text-align:center}
+#stickyTour a{flex:0 0 auto;text-decoration:none;font:700 15px 'DM Sans',sans-serif;padding:12px 14px;border-radius:12px;text-align:center;min-height:48px;min-width:48px;display:inline-flex;align-items:center;justify-content:center}
 #stickyTour a.st-go{background:var(--go,#d43333);color:#fff}
 #stickyTour a.st-sms{background:#fff;color:var(--pine,#15315e);border:1.5px solid var(--line,#d5dbe6)}
 @media(max-width:899px){body.page-home{padding-bottom:84px}#stickyTour{transform:none}}
@@ -735,7 +797,7 @@ document.addEventListener("DOMContentLoaded", function(){
 #lb .ct{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:#cfd9ea;font:500 13px 'DM Mono',monospace}
 #gallery img,#heroImg{cursor:zoom-in}
 </style>
-<div id="stickyTour" aria-hidden="true"><div class="st-p"><span id="stPay"></span><small id="stLab"></small></div><a id="stSms" class="st-sms" href="#" hidden>Text us</a><a id="stBtn" class="st-go" href="#">Book a Tour</a></div>
+<div id="stickyTour" aria-hidden="true"><div class="st-p"><span id="stPay"></span><small id="stLab">price</small></div><a id="stSms" class="st-sms" href="#" hidden>Text us</a><a id="stBtn" class="st-go" href="/book/5617-warren">Book a tour</a></div>
 <div id="lb" role="dialog" aria-modal="true"><button class="x" aria-label="Close">&#10005;</button><button class="pv" aria-label="Previous">&#8249;</button><img alt=""><button class="nx" aria-label="Next">&#8250;</button><div class="ct"></div></div>
 <script>
 document.addEventListener("DOMContentLoaded", function(){
@@ -747,9 +809,9 @@ document.addEventListener("DOMContentLoaded", function(){
   function fill(){
     if (!main || !bar) return false;
     $("stBtn").href = main.href;
-    $("stBtn").textContent = main.textContent || "Book a Tour";
-    $("stPay").textContent = ($("dMonthly").textContent||"").trim();
-    $("stLab").textContent = (($("dMonthly").nextElementSibling||{}).textContent)||"";
+    $("stBtn").textContent = main.textContent || "Book a tour";
+    $("stPay").textContent = ($("dPrice").textContent||"").trim();
+    $("stLab").textContent = "price";
     const stSms = $("stSms");
     if (stSms) {
       const href = sms ? String(sms.getAttribute("href") || "") : "";

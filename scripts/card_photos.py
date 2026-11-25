@@ -388,6 +388,7 @@ def public_homes(root: Path) -> list[dict]:
             "status": status,
             "monthlyPayment": ps.field(block, "monthlyPayment"),
             "moveIn": ps.field(block, "moveIn"),
+            "lockedPrice": ps.field(block, "lockedPrice"),
             "hasPhoto": ps.field(block, "hasPhoto"),
             "cardPhoto": ps.field(block, "cardPhoto") or "",
             "cardWidth": num("cardWidth"),
@@ -473,7 +474,24 @@ def _tag(home: dict, listed: dict[str, str], today: date) -> str:
     return ""
 
 
-def _card_html(home: dict, index: int, listed: dict[str, str], today: date) -> str:
+def _page_lang(root: Path) -> str:
+    return "es" if (root / "como-funciona.html").is_file() else "en"
+
+
+def _book_href(home: dict, lang: str, slugs: dict[str, str]) -> tuple[str, str]:
+    pending = str(home.get("status") or "").strip().lower() == "pending"
+    city, state = home.get("city") or "", home.get("state") or ""
+    if pending:
+        query = html.escape(f"{city}, {state}", quote=True)
+        label = "Visitas cerradas: ver casas parecidas" if lang == "es" else "Tours closed: see similar homes"
+        return f"/?q={query}#nearby", label
+    slug = slugs.get(home["id"]) or home["id"]
+    prefix = "/agendar/" if lang == "es" else "/book/"
+    label = "Agendar una visita" if lang == "es" else "Book a tour"
+    return prefix + slug, label
+
+
+def _card_html(home: dict, index: int, listed: dict[str, str], today: date, lang: str = "en", book: tuple[str, str] | None = None) -> str:
     city, state = home.get("city") or "", home.get("state") or ""
     pending = str(home.get("status") or "").strip().lower() == "pending"
     classes = "card"
@@ -516,15 +534,30 @@ def _card_html(home: dict, index: int, listed: dict[str, str], today: date) -> s
         f'<button type="button" class="hc-heart" data-save="{html.escape(home["id"], quote=True)}" '
         f'aria-pressed="false" aria-label="Save" title="Save"><span class="hc-ic">♡</span></button>'
     )
-    price = _money(home.get("monthlyPayment"))
+    monthly = _money(home.get("monthlyPayment"))
     down = _money(home.get("moveIn"))
-    down_html = f'<div class="card-down">{down} down</div>' if down else ""
+    purchase = _money(home.get("lockedPrice"))
+    if lang == "es":
+        per, down_word, avail = "/mes", "de enganche", "Disponible ahora"
+        pending_word = "Pendiente: visitas cerradas"
+        price_word = "precio"
+    else:
+        per, down_word, avail = "/mo", "down", "Available now"
+        pending_word = "Pending: tours closed"
+        price_word = "price"
+    down_html = f'<div class="card-down">{down} {down_word}</div>' if down else ""
+    price_html = f'<div class="card-ask">{purchase} {price_word}</div>' if purchase else ""
+    avail_html = f'<div class="card-avail">{pending_word if pending else avail}</div>'
+    href, book_label = book or ("", "")
+    book_html = f'<a class="card-book" href="{html.escape(href, quote=True)}">{html.escape(book_label)}</a>' if href else ""
     return (
-        f'<a class="{classes}" data-hid="{html.escape(home["id"], quote=True)}" data-static="1" href="{html.escape(home["id"], quote=True)}.html">'
+        f'<article class="{classes}" data-hid="{html.escape(home["id"], quote=True)}" data-static="1">'
+        f'<a class="card-open" href="{html.escape(home["id"], quote=True)}.html">'
         f'<div class="card-face" style="background:linear-gradient(135deg,{a},{b})">{picture}{badge}{dots}{flag}{heart}</div>'
-        f'<div class="card-body"><div class="card-price"><span class="num">{price}</span><span class="per">/mo</span></div>'
+        f'<div class="card-body"><div class="card-price"><span class="num">{monthly}</span><span class="per">{per}</span></div>'
+        f'{price_html}'
         f'<div class="card-specs">{html.escape(" | ".join(bits))}</div>'
-        f'<div class="card-where">{html.escape(where)}</div>{down_html}</div></a>'
+        f'<div class="card-where">{html.escape(where)}</div>{down_html}{avail_html}</div></a>{book_html}</article>'
     )
 
 
@@ -561,7 +594,16 @@ def stamp_first_screen(root: Path, limit: int = FIRST_SCREEN, today: date | None
     if len(homes) < limit:
         homes = default_order(root)[:limit]
     listed = _listed(root)
-    cards = "\n".join(_card_html(home, i, listed, today) for i, home in enumerate(homes))
+    lang = _page_lang(root)
+    try:
+        import book_links
+        slugs = book_links.links(root)
+    except Exception:
+        slugs = {}
+    cards = "\n".join(
+        _card_html(home, i, listed, today, lang, _book_href(home, lang, slugs))
+        for i, home in enumerate(homes)
+    )
     preloads = "\n".join(link for link in (_preload(home) for home in homes[:EAGER_CARDS]) if link)
     text = index.read_text(encoding="utf-8")
     text = _replace_marked(text, "<!-- lcp-preload:start -->", "<!-- lcp-preload:end -->", preloads,

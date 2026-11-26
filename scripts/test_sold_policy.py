@@ -249,7 +249,7 @@ for (const token of forbidden) {
   if (html.includes(token)) bad.push("english card contains " + token);
 }
 if (/<a[\s>]/.test(html)) bad.push("card is a link");
-if (!html.includes("Monroe St")) bad.push("missing street");
+if (html.includes("Monroe")) bad.push("street leaked: " + html);
 if (!html.includes("Decatur, IL")) bad.push("missing city");
 if (!html.includes(">Sold<")) bad.push("missing badge");
 if (html.includes("images/decatur") || /src="[^"]*\d/.test(html)) bad.push("photo src leaked");
@@ -260,8 +260,7 @@ const ordinal = SoldCards.renderSection([{
   street: "412 N 51st St", city: "Decatur", state: "IL", sold_on: "2026-10-17",
   photo: "images/sold/abcdefghijklmnop.jpg"
 }], "en");
-if (!ordinal.includes("51st St")) bad.push("ordinal street missing: " + ordinal);
-if (/N 51st/.test(ordinal)) bad.push("compass kept on numbered street: " + ordinal);
+if (ordinal.includes("51st") || ordinal.includes("412")) bad.push("street leaked: " + ordinal);
 if (!/October\s+2026/.test(ordinal)) bad.push("sold_on month missing: " + ordinal);
 if (!ordinal.includes("Sold")) bad.push("sold date line missing: " + ordinal);
 if (SoldCards.safePhoto("images/decatur-il-1755-monroe-1.jpg")) bad.push("unsafe photo accepted");

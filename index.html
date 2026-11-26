@@ -129,7 +129,7 @@ body{
 .trust-card p{font-size:14px;color:var(--ink-soft);line-height:1.5}
 
 /* ── STEPS ───────────────────────────────────────────────── */
-.steps{display:grid;gap:14px;grid-template-columns:repeat(4,1fr)}
+.steps{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
 @media (max-width:760px){ .steps{grid-template-columns:1fr 1fr} }
 @media (max-width:420px){ .steps{grid-template-columns:1fr} }
 .step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 18px}
@@ -203,10 +203,7 @@ body{
 #soldSec .sold-label{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:18px;letter-spacing:-.3px;color:var(--pine);line-height:1.25;margin:0}
 #soldSec .sold-label .dot{color:var(--ink-soft);font-weight:600}
 #soldSec .sold-when{margin:4px 0 0;font-family:'DM Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)}
-@media (min-width:800px){
-  #soldSec .sold-strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));overflow:visible;max-width:100%;scroll-snap-type:none}
-  #soldSec .sold-card{flex:none;width:auto;max-width:100%}
-}
+#soldSec .sold-card{flex-basis:220px;width:220px;max-width:220px}
 
 .of-tag{position:absolute;top:12px;right:12px;z-index:3;font-family:'DM Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;background:rgba(0,0,0,.28);color:#fff;padding:5px 9px;border-radius:999px}
 .card-body{padding:16px 18px 20px;display:flex;flex-direction:column;flex:1}
@@ -361,17 +358,46 @@ body.page-search .hdr-search{display:none}
 <style>
 /* After site.css so the buyer search is the first screen on a phone. */
 body.page-search,body.page-search .topbar,body.page-search .buyer-panel,body.page-search #listings,body.page-search #listings *{font-family:system-ui,sans-serif !important}
-body.page-search .buyer-panel{min-height:204px}
-@media(min-width:861px){
-  body.page-search .zhead-row{min-height:96px}
-  body.page-search .topbar{min-height:235px}
-}
-body.page-search #listings{min-height:1680px !important}
-body.page-search #cards{min-height:1480px !important}
+body.page-search .buyer-panel{min-height:0}
+body.page-search .zhead-row{min-height:56px;flex-wrap:nowrap}
+body.page-search .topbar{min-height:64px}
 @media(max-width:860px){
-  #listings{min-height:3800px}
-  #cards{min-height:3400px}
+  body.page-search .topbar{padding:6px 8px}
+  body.page-search .zhead-row{gap:6px}
+  body.page-search .brand{flex:1 1 auto;min-width:0;overflow:hidden;display:flex;align-items:center;gap:6px}
+  body.page-search .brand .mark{width:22px;height:22px;flex:none}
+  body.page-search .brand .bn{font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  body.page-search .topnav{flex:0 0 auto;flex-wrap:nowrap !important;gap:2px}
+  body.page-search .nav-account,body.page-search .nav-lang,body.page-search .nav-toggle{font-size:12px;padding:0 7px;min-height:36px}
 }
+body.page-search #listings{min-height:520px !important}
+body.page-search #cards{min-height:460px !important}
+body.page-search .buyer-intro{display:none !important}
+.chip-label{font:800 12px system-ui,sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#5b6577;margin-top:4px}
+.range-chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 6px;-webkit-overflow-scrolling:touch}
+.range-chips button{flex:0 0 auto;min-height:44px;padding:0 14px;border-radius:999px;border:1.5px solid var(--line,#d5dbe6);background:#fff;font:700 14px system-ui,sans-serif;color:var(--pine,#15315e);cursor:pointer}
+.range-chips button[aria-pressed="true"]{background:var(--pine,#15315e);color:#fff;border-color:var(--pine,#15315e)}
+.chip-clear{justify-self:start;min-height:44px;padding:0 4px;border:0;background:transparent;color:var(--pine,#15315e);font:800 14px system-ui,sans-serif;text-decoration:underline;cursor:pointer}
+body.page-search .buyer-panel{position:static;background:#fff}
+.range-chips[hidden],.chip-label[hidden],.filter-slim[hidden]{display:none !important}
+.filter-slim{position:fixed;z-index:28;left:8px;right:8px;top:var(--zhead,64px);height:56px;max-height:56px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 14px;border:1px solid var(--line,#e2e8f2);border-radius:14px;background:#fff;box-shadow:0 8px 22px rgba(15,36,68,.12);color:var(--pine,#15315e);font:700 14px system-ui,sans-serif;text-align:left}
+.filter-slim #filterSlimText{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.filter-slim #filterSlimEdit{flex:0 0 auto;min-height:36px;padding:0 12px;border-radius:999px;background:var(--pine,#15315e);color:#fff;display:inline-flex;align-items:center}
+body.page-search .view-toggle{position:static !important;left:auto !important;bottom:auto !important;transform:none !important;margin:12px 16px 20px;z-index:1}
+#stickyTour{z-index:80}
+body.page-search .city-pills{display:flex !important;flex-wrap:nowrap !important;overflow-x:auto;scroll-snap-type:x mandatory;gap:8px;padding-bottom:10px}
+body.page-search .city-pills a{flex:0 0 auto;scroll-snap-align:start;min-height:44px}
+body.page-search #cards{display:flex !important;flex-direction:row;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 16px 18px;grid-template-columns:none !important}
+body.page-search #cards>.card{flex:0 0 min(78vw,300px);width:min(78vw,300px);scroll-snap-align:start;min-height:420px}
+body.page-search #cards.rows{flex-direction:column;overflow:visible;gap:22px}
+.row-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 16px}
+.row-head h2{margin:0;font-size:22px;font-weight:800}
+.row-nav{display:none;gap:8px}
+@media(min-width:861px){.row-nav{display:flex}}
+.row-arrow{width:44px;height:44px;border-radius:999px;border:1.5px solid var(--line,#d5dbe6);background:#fff;font-size:22px;cursor:pointer}
+.row-scroller{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px 16px 8px;scroll-padding-inline:16px;-webkit-overflow-scrolling:touch}
+.row-scroller .card{flex:0 0 min(78vw,300px);width:min(78vw,300px);scroll-snap-align:start;min-height:420px}
+.row-hint{margin:0 16px 4px;font-size:13px;color:#5b6577}
 .buyer-intro{min-height:220px}
 .card{min-height:520px}
 body.page-search .hdr-search{display:none !important}
@@ -396,10 +422,10 @@ body.page-search .hdr-search{display:none !important}
         <rect x="17.5" y="26" width="13" height="9" fill="#ffffff"/>
         <rect x="22" y="30" width="4" height="5" fill="#15315e"/>
       </svg>
-      <span class="bn">Americas Best Home Solutions<small>getownerfinancedhomes.com</small></span>
+      <span class="bn">Americas Best<span class="brand-rest"> Home Solutions</span><small>getownerfinancedhomes.com</small></span>
     </a>
     <nav class="topnav" aria-label="Site">
-      <a class="nav-account" href="/account/?lang=en">My account: tours and paperwork</a>
+      <a class="nav-account" href="/account/?lang=en" aria-label="My account: tours and paperwork"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 19.2c1.4-3 3.8-4.4 7-4.4s5.6 1.4 7 4.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>My account</span></a>
       <a class="nav-es nav-lang" href="https://casasconfinanciamiento.com/">Español</a>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="siteMenu"><span class="nav-bars" aria-hidden="true"></span><span class="nav-word">Menu</span></button>
       <div class="site-menu" id="siteMenu">
@@ -464,30 +490,40 @@ body.page-search .hdr-search{display:none !important}
       <input id="fQ" name="q" type="search" inputmode="search" autocomplete="off" enterkeyhint="search" list="qHints" placeholder="City or ZIP" aria-label="City or ZIP">
     </label>
     <datalist id="qHints"></datalist>
-    <div class="buyer-budgets">
-      <label>Max down payment
-        <select id="buyerDown" aria-label="Max down payment">
-          <option value="">Any</option>
-          <option value="1000">$1,000</option>
-          <option value="1500">$1,500</option>
-          <option value="2000">$2,000</option>
-          <option value="2500">$2,500</option>
-          <option value="3000">$3,000</option>
-          <option value="4000">$4,000</option>
-          <option value="5000">$5,000</option>
-        </select>
-      </label>
-      <label>Max monthly
-        <select id="buyerPay" aria-label="Max monthly">
-          <option value="">Any</option>
-          <option value="500">$500</option><option value="600">$600</option><option value="700">$700</option>
-          <option value="800">$800</option><option value="900">$900</option><option value="1000">$1,000</option>
-          <option value="1100">$1,100</option><option value="1200">$1,200</option><option value="1300">$1,300</option>
-          <option value="1400">$1,400</option><option value="1500">$1,500</option>
-        </select>
-      </label>
+    <input type="hidden" id="chipDownMin" value="">
+    <input type="hidden" id="chipDownMax" value="">
+    <input type="hidden" id="chipPayMin" value="">
+    <input type="hidden" id="chipPayMax" value="">
+    <input type="hidden" id="bedsMin" value="">
+    <div class="chip-label">Down payment</div>
+    <div class="range-chips" data-min="chipDownMin" data-max="chipDownMax" role="radiogroup" aria-label="Down payment">
+      <button type="button" data-min="" data-max="" aria-pressed="true">Any</button>
+      <button type="button" data-min="" data-max="1999">Under $2,000</button>
+      <button type="button" data-min="2000" data-max="4000">$2,000–$4,000</button>
+      <button type="button" data-min="4000" data-max="">$4,000+</button>
     </div>
+    <div class="chip-label">Monthly payment</div>
+    <div class="range-chips" data-min="chipPayMin" data-max="chipPayMax" role="radiogroup" aria-label="Monthly payment">
+      <button type="button" data-min="" data-max="" aria-pressed="true">Any</button>
+      <button type="button" data-min="" data-max="799">Under $800</button>
+      <button type="button" data-min="800" data-max="1000">$800–$1,000</button>
+      <button type="button" data-min="1000" data-max="1300">$1,000–$1,300</button>
+      <button type="button" data-min="1300" data-max="">$1,300+</button>
+    </div>
+    <div class="chip-label" id="bedLabel" hidden>BEDROOMS</div>
+    <div class="range-chips" id="bedChips" data-min="bedsMin" data-max="" role="radiogroup" aria-label="Bedrooms" hidden>
+      <button type="button" data-min="" data-max="" aria-pressed="true">Any</button>
+      <button type="button" data-min="1" data-max="">1+</button>
+      <button type="button" data-min="2" data-max="">2+</button>
+      <button type="button" data-min="3" data-max="">3+</button>
+      <button type="button" data-min="4" data-max="">4+</button>
+    </div>
+    <button type="button" class="chip-clear" id="clearBuyer">Clear filters</button>
   </form>
+  <button type="button" id="filterSlim" class="filter-slim" hidden>
+    <span id="filterSlimText">Find a home</span>
+    <span id="filterSlimEdit">Filters</span>
+  </button>
 
   <section class="section" id="listings">
     <div class="cards" id="cards">
@@ -515,8 +551,8 @@ body.page-search .hdr-search{display:none !important}
     <nav class="pager" id="pager" style="display:none;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap;margin-top:28px"></nav>
 
     <div class="empty" id="empty">
-      <h3>Nothing matches those filters — yet</h3>
-      <p>New homes come in every week. Clear a filter chip or widen the monthly or down-payment range.</p>
+      <h3>Nothing in that range</h3>
+      <p>Try a wider down payment or monthly payment, fewer bedrooms, or another city. Nearby homes and homes just over your budget show up here when we have them.</p>
     </div>
   </section>
 
@@ -584,23 +620,6 @@ body.page-search .hdr-search{display:none !important}
     <div class="cards" id="featuredCards"></div>
   </section>
 
-  <section class="trust-block" id="how-financing">
-    <h2>Steps to the keys</h2>
-    <p>The owner of the home is the seller. There is no bank and no mortgage application. The price is fixed, you pay the posted down payment, and the term is 30 years.</p>
-    <p><!-- finance-stats:start -->The lowest down payment on an available home is $500. 181 available homes are $2,500 down or less.<!-- finance-stats:end --></p>
-    <ol class="trust-steps">
-      <li>Tour the home and pick it.</li>
-      <li>We send a welcome packet.</li>
-      <li>You send the down payment or deposit.</li>
-      <li>We do the paperwork.</li>
-      <li>Keys. In Illinois there is a 3-day right of rescission after signing, then keys. In other states, keys right away after signing.</li>
-    </ol>
-  </section>
-  <section class="trust-block" id="what-you-need">
-    <h2>What you need to buy</h2>
-    <p>No bank loan needed. We keep it simple: if the down payment and monthly payment fit your budget, we'll walk you through the next steps.</p>
-    <p>What you need: a valid ID, the down payment, and a monthly payment that fits your budget.</p>
-  </section>
   <section class="trust-block joe-intro" id="joe-intro">
     <picture>
       <source type="image/webp" srcset="/images/joe-headshot-600.webp">
@@ -710,7 +729,7 @@ body.page-search .hdr-search{display:none !important}
       <div class="trust-card">
         <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e23b3b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
         <h3>Your payment stays put</h3>
-        <p>A fixed monthly payment, in writing. It doesn't climb every year the way rent does — the only thing that could ever move it is a change in property taxes or insurance, and that's spelled out in your terms.</p>
+        <p>A monthly payment, in writing. It does not climb every year the way rent does. Final terms are confirmed in your paperwork.</p>
       </div>
       <div class="trust-card">
         <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#e23b3b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
@@ -724,14 +743,17 @@ body.page-search .hdr-search{display:none !important}
   <section class="section reveal" id="how">
     <div class="sec-head">
       <div class="sec-label">Simple from start to keys</div>
-      <h2 class="sec-title">Own your home in 4 steps</h2>
-      <p class="sec-sub">No long approvals. No runaround. Here's the whole path.</p>
+      <h2 class="sec-title">Steps to the keys</h2>
+      <p class="sec-sub">No bank loan needed. If the down payment and monthly payment fit your budget, we'll walk you through the next steps. Final terms are confirmed in your paperwork.</p>
+      <p class="sec-sub"><!-- finance-stats:start -->The lowest down payment on an available home is $500. 181 available homes are $2,500 down or less.<!-- finance-stats:end --></p>
     </div>
     <div class="steps">
-      <div class="step"><div class="n">1</div><h3>Pick a home</h3><p>Browse the list and book a tour on the home you want to walk through.</p></div>
-      <div class="step"><div class="n">2</div><h3>Tour a home</h3><p>Pick a home you like and we'll set up a time to walk through it together.</p></div>
-      <div class="step"><div class="n">3</div><h3>Sign a simple agreement</h3><p>We finance it ourselves with a contract for deed — plain language, no surprises.</p></div>
-      <div class="step"><div class="n">4</div><h3>Get the keys</h3><p>Make your move-in payment and the home is yours to live in from day one.</p></div>
+      <div class="step"><div class="n">1</div><h3>Pick a home and tour it</h3><p>Choose a home and walk through it in person.</p></div>
+      <div class="step"><div class="n">2</div><h3>We send a welcome packet</h3><p>You get the packet for the home you picked.</p></div>
+      <div class="step"><div class="n">3</div><h3>You send the down payment or deposit</h3><p>Cash before the keys is the down payment listed on the home.</p></div>
+      <div class="step"><div class="n">4</div><h3>We do the paperwork</h3><p>The written agreement is where the terms are confirmed.</p></div>
+      <div class="step"><div class="n">5</div><h3>Get the keys</h3><p>In Illinois there is a 3-day right of rescission after signing, then keys. In other states, keys right after signing.</p></div>
+      <div class="step"><div class="n">✓</div><h3>What you need</h3><p>A valid ID, the down payment, and a monthly payment that fits your budget.</p></div>
     </div>
     <p style="text-align:center;margin-top:18px"><a href="how-it-works.html" style="font-weight:700;color:var(--pine);text-decoration:none;border-bottom:2px solid var(--go);padding-bottom:2px">See exactly how owner financing works →</a></p>
   </section>
@@ -861,7 +883,7 @@ body.page-search .hdr-search{display:none !important}
     <h2>You're buying — not renting</h2>
     <div class="benefits">
       <article><h3>You own from day one</h3><p>Your name is on the agreement the day you sign. You're the homeowner, not a tenant.</p></article>
-      <article><h3>Your payment stays put</h3><p>A fixed monthly payment, in writing. It doesn't climb every year the way rent does — the only thing that could ever move it is a change in property taxes or insurance, and that's spelled out in your terms.</p></article>
+      <article><h3>Your payment stays put</h3><p>A monthly payment, in writing. It does not climb every year the way rent does. Final terms are confirmed in your paperwork.</p></article>
       <article><h3>A payment close to rent</h3><p>Own a home for about what you'd pay a landlord — and it builds toward something that's yours.</p></article>
       <article><h3>No bank in the way</h3><p>No mortgage application and no bank approval deciding whether you get a home.</p></article>
     </div>
@@ -993,8 +1015,9 @@ function startHomePage(){
   }
   function cardHTML(h, opts){
     const [a,b] = faceFor(h.city + h.state);
+    const bedsN = Number(h.beds) || 0;
     const specs = [
-      h.beds ? `${h.beds} bd${Number(h.beds)===1?"":"s"}` : "",
+      bedsN ? `${bedsN} bd${bedsN===1?"":"s"}` : "beds not listed",
       h.baths ? `${h.baths} ba` : "",
       (h.sqft && Number(h.sqft)) ? `${Number(h.sqft).toLocaleString()} sqft` : ""
     ].filter(Boolean).join(" | ");
@@ -1115,29 +1138,87 @@ function startHomePage(){
     if (!type && h.contractor) return false;
     return true;
   }
-  function paintGroups(result){
-    const blocks = [];
-    const primary = result.primary.filter(passSheet);
-    const over = result.over.filter(passSheet);
-    const nearby = result.nearby.filter(passSheet);
-    if (primary.length) blocks.push(primary.map(h => cardHTML(h)).join(""));
-    if (over.length) blocks.push(`<h2 class="buyer-group" id="just-over">Just over your budget</h2>` + over.map(h => cardHTML(h)).join(""));
-    if (nearby.length) blocks.push(`<h2 class="buyer-group" id="nearby">Nearby homes in your budget</h2>` + nearby.map(h => cardHTML(h)).join(""));
-    $("cards").innerHTML = blocks.join("") || "";
-    const total = primary.length + over.length + nearby.length;
+  function rowHTML(title, id, homes){
+    if (!homes.length) return "";
+    const cards = homes.map((h, i) => cardHTML(h, {eager: i < 1 && id === "row-available"})).join("");
+    return `<section class="home-row" id="${id}"><div class="row-head"><h2>${title}</h2><div class="row-nav"><button type="button" class="row-arrow" data-dir="-1" aria-label="Previous homes">‹</button><button type="button" class="row-arrow" data-dir="1" aria-label="Next homes">›</button></div></div><p class="row-hint">Swipe sideways. The next home is partly in view.</p><div class="row-scroller" tabindex="0" aria-label="${title}">${cards}</div></section>`;
+  }
+  function wireRows(){
+    document.querySelectorAll(".row-arrow").forEach(btn => {
+      if (btn.dataset.wired) return;
+      btn.dataset.wired = "1";
+      btn.addEventListener("click", () => {
+        const scroller = btn.closest(".home-row").querySelector(".row-scroller");
+        const card = scroller && scroller.querySelector(".card");
+        const width = card ? card.getBoundingClientRect().width + 12 : 300;
+        scroller.scrollBy({left: width * Number(btn.dataset.dir), behavior: "smooth"});
+      });
+    });
+  }
+  function showBedChips(on){
+    const box = $("bedChips"), label = $("bedLabel");
+    if (box) box.hidden = !on;
+    if (label) label.hidden = !on;
+  }
+  function budgetLimits(){
+    return window.BuyerSearch ? BuyerSearch.limitsOf({
+      downMin: $("chipDownMin") && $("chipDownMin").value,
+      downMax: $("chipDownMax") && $("chipDownMax").value,
+      payMin: $("chipPayMin") && $("chipPayMin").value,
+      payMax: $("chipPayMax") && $("chipPayMax").value,
+      bedsMin: $("bedsMin") && $("bedsMin").value
+    }) : {downMin:0,downMax:0,payMin:0,payMax:0,bedsMin:0};
+  }
+  function inRange(h, limits){
+    const down = Number(h.moveIn)||0, pay = Number(h.monthlyPayment)||0, beds = Number(h.beds)||0;
+    if (limits.downMax && down > limits.downMax) return false;
+    if (limits.downMin && down < limits.downMin) return false;
+    if (limits.payMax && pay > limits.payMax) return false;
+    if (limits.payMin && pay < limits.payMin) return false;
+    if (limits.bedsMin && (!beds || beds < limits.bedsMin)) return false;
+    return true;
+  }
+  function paintRows(sections){
+    staticFresh = false;
+    $("cards").classList.add("rows");
+    $("cards").innerHTML = sections.filter(Boolean).join("");
+    const total = $("cards").querySelectorAll(".card").length;
     $("empty").style.display = total ? "none" : "block";
     $("count").textContent = total ? `${total} home${total===1?"":"s"}` : "";
     $("pager").style.display = "none";
+    wireRows();
     if (window.HomesCart) HomesCart.sync();
+    return total;
+  }
+  function paintGroups(result){
+    const limits = budgetLimits();
+    const primary = result.primary.filter(h => passSheet(h) && inRange(h, limits));
+    const over = result.over.filter(h => passSheet(h) && (!limits.bedsMin || (Number(h.beds)||0) >= limits.bedsMin));
+    const nearby = result.nearby.filter(h => passSheet(h) && inRange(h, limits));
+    const available = primary.filter(h => !isPending(h));
+    const pending = primary.filter(isPending);
+    const place = result.place || {};
+    const cityName = place.city || "your search";
+    paintRows([
+      rowHTML(available.length ? `Available in ${cityName}` : "Available now", "row-available", available),
+      rowHTML("Pending", "row-pending", pending),
+      rowHTML("Nearby homes in your budget", "nearby", nearby),
+      rowHTML("Just over your budget", "just-over", over)
+    ]);
   }
   function render(scroll){
     const place = window.BuyerSearch ? BuyerSearch.resolvePlace($("fQ").value, LISTINGS) : null;
     if (place && (place.kind === "city" || place.kind === "zip")) {
       const draw = (zipIndex) => {
+        const limits = budgetLimits();
+        showBedChips(place.kind === "city");
         const result = BuyerSearch.groups(LISTINGS, {
           place: place,
-          downMax: $("fDown").value,
-          payMax: $("fPayMax").value,
+          downMin: limits.downMin,
+          downMax: limits.downMax,
+          payMin: limits.payMin,
+          payMax: limits.payMax,
+          bedsMin: place.kind === "city" ? limits.bedsMin : 0,
           zipIndex: zipIndex || window.__zipIndex || null
         });
         if (!result) return false;
@@ -1158,7 +1239,24 @@ function startHomePage(){
         return;
       }
     }
-    const shown = filtered();
+    showBedChips(false);
+    const limits = budgetLimits();
+    const shown = filtered().filter(h => inRange(h, limits));
+    if (!$("fQ").value.trim() && !$("fState").value && !$("fCity").value) {
+      const available = shown.filter(h => !isPending(h));
+      const pending = shown.filter(isPending);
+      paintRows([
+        rowHTML("Available now", "row-available", available),
+        rowHTML("Pending", "row-pending", pending)
+      ]);
+      const goBtn = $("sheetGo"); if (goBtn) goBtn.textContent = shown.length ? `Show ${shown.length} home${shown.length===1?"":"s"}` : "No homes match";
+      if (window.HomesMap) HomesMap.update(shown);
+      chips();
+      const head0 = document.querySelector("body.page-search .topbar");
+      if (head0) document.documentElement.style.setProperty("--zhead", (head0.offsetHeight + 8) + "px");
+      if (scroll) document.getElementById("listings").scrollIntoView({block:"start", behavior:"smooth"});
+      return;
+    }
     const pages = Math.max(1, Math.ceil(shown.length / PER_PAGE));
     if (page > pages) page = 1;
     const slice = shown.slice((page-1)*PER_PAGE, page*PER_PAGE);
@@ -1229,12 +1327,24 @@ function startHomePage(){
     if (p.get("beds") && !p.get("bedsMin") && !p.get("bedsMax")) p.set("bedsMin", p.get("beds"));   // older links: beds=3 meant 3+
     FILTER_IDS.forEach(id => {
       const v = p.get(URL_KEYS[id]);
-      if (v != null){ $(id).value = v; if ($(id).value !== v) $(id).value = ""; }  // ignore stale/unknown values
+      if (v != null && $(id)){ $(id).value = v; if ($(id).value !== v) $(id).value = ""; }  // ignore stale/unknown values
+    });
+    const chipsFromURL = { chipDownMin:"downMin", chipDownMax:"downMax", chipPayMin:"payMin", chipPayMax:"payMax", bedsMin:"beds" };
+    Object.entries(chipsFromURL).forEach(([id, key]) => { if (p.get(key) != null && $(id)) $(id).value = p.get(key); });
+    document.querySelectorAll("#buyerSearch .range-chips").forEach(group => {
+      const min = group.dataset.min && $(group.dataset.min) ? $(group.dataset.min).value : "";
+      const max = group.dataset.max && $(group.dataset.max) ? $(group.dataset.max).value : "";
+      group.querySelectorAll("button").forEach(b => {
+        const match = (b.dataset.min || "") === min && (!group.dataset.max || (b.dataset.max || "") === max);
+        b.setAttribute("aria-pressed", match ? "true" : "false");
+      });
     });
   }
   function syncURL(){
     const p = new URLSearchParams();
-    Object.entries(URL_KEYS).forEach(([id,key]) => { const v = $(id).value; if (v) p.set(key, v); });
+    Object.entries(URL_KEYS).forEach(([id,key]) => { const el = $(id); if (el && el.value) p.set(key, el.value); });
+    const chipsToURL = { chipDownMin:"downMin", chipDownMax:"downMax", chipPayMin:"payMin", chipPayMax:"payMax", bedsMin:"beds" };
+    Object.entries(chipsToURL).forEach(([id, key]) => { const el = $(id); if (el && el.value) p.set(key, el.value); });
     if (window.HomesMap) HomesMap.toURL(p);
     const qs = p.toString();
     history.replaceState(null, "", qs ? "?" + qs : location.pathname);
@@ -1263,19 +1373,67 @@ function startHomePage(){
   (function(){
     const q = $("fQ"), dl = $("qHints"); let t;
     q.addEventListener("input", () => { clearTimeout(t); t = setTimeout(() => { page = 1; render(false); syncURL(); chips(); }, 160); });
-    const mirror = (from, to) => {
-      const el = $(from), dest = $(to);
-      if (!el || !dest) return;
-      el.addEventListener("change", () => {
-        if ([...dest.options].some(o => o.value === el.value)) dest.value = el.value;
-        else if (from.startsWith("buyer")) dest.value = el.value;
-        page = 1; render(false); syncURL(); chips();
+    if (window.BuyerSearch) BuyerSearch.bindChips(document.getElementById("buyerSearch"));
+    (function(){
+      const panel = document.getElementById("buyerSearch");
+      const slim = $("filterSlim");
+      const slimText = $("filterSlimText");
+      const slimEdit = $("filterSlimEdit");
+      if (!panel || !slim) return;
+      const short = {
+        "Under $2,000": "Under $2k down",
+        "$2,000–$4,000": "$2k–$4k down",
+        "$4,000+": "$4k+ down",
+        "Under $800": "Under $800/mo",
+        "$800–$1,000": "$800–$1k/mo",
+        "$1,000–$1,300": "$1k–$1.3k/mo",
+        "$1,300+": "$1.3k+/mo"
+      };
+      function pressed(group){
+        const btn = group && group.querySelector('[aria-pressed="true"]');
+        return btn ? btn.textContent.trim() : "Any";
+      }
+      function paintSlim(){
+        const bits = [];
+        const q = ($("fQ").value || "").trim();
+        if (q) bits.push(q.split(",")[0]);
+        const down = pressed(document.querySelector('[data-max="chipDownMax"]'));
+        const pay = pressed(document.querySelector('[data-max="chipPayMax"]'));
+        const beds = pressed($("bedChips"));
+        if (down && down !== "Any") bits.push(short[down] || down);
+        if (pay && pay !== "Any") bits.push(short[pay] || pay);
+        if (beds && beds !== "Any" && $("bedChips") && !$("bedChips").hidden) bits.push(beds + " beds");
+        slimText.textContent = bits.length ? bits.join(" · ") : "Find a home";
+        slimEdit.textContent = bits.length ? "Edit" : "Filters";
+      }
+      const head = document.querySelector("body.page-search .topbar");
+      const watch = new IntersectionObserver(function(entries){
+        const away = !entries[0].isIntersecting;
+        slim.hidden = !away;
+        if (away) paintSlim();
+      }, { rootMargin: "-8px 0px 0px 0px", threshold: 0 });
+      watch.observe(panel);
+      slim.addEventListener("click", function(){
+        panel.scrollIntoView({ behavior: "smooth", block: "start" });
       });
-    };
-    mirror("buyerDown", "fDown");
-    mirror("buyerPay", "fPayMax");
-    mirror("fDown", "buyerDown");
-    mirror("fPayMax", "buyerPay");
+      panel.addEventListener("change", paintSlim);
+      panel.addEventListener("input", paintSlim);
+      if (head && "ResizeObserver" in window) {
+        new ResizeObserver(function(){
+          document.documentElement.style.setProperty("--zhead", (head.offsetHeight + 8) + "px");
+        }).observe(head);
+      }
+    })();
+    const searchForm = document.getElementById("buyerSearch");
+    if (searchForm) searchForm.addEventListener("change", () => { page = 1; render(false); syncURL(); chips(); });
+    const clearBuyer = $("clearBuyer");
+    if (clearBuyer) clearBuyer.addEventListener("click", () => {
+      ["chipDownMin","chipDownMax","chipPayMin","chipPayMax","bedsMin","fQ"].forEach(id => { if ($(id)) $(id).value = ""; });
+      document.querySelectorAll("#buyerSearch .range-chips").forEach(group => {
+        group.querySelectorAll("button").forEach((b, i) => b.setAttribute("aria-pressed", i === 0 ? "true" : "false"));
+      });
+      page = 1; render(false); syncURL(); chips();
+    });
     q.addEventListener("keydown", e => { if (e.key === "Enter"){ q.blur(); render(true); } });
     const cities = [...new Set(LISTINGS.map(h => h.city + ", " + h.state))].sort();
     dl.innerHTML = cities.map(c => `<option value="${c}">`).join("");

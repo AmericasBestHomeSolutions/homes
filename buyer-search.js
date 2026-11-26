@@ -50,10 +50,35 @@
     return !!(home && (home.hasPhoto === true || home.hasPhoto === "true" || home.hasPhoto === 1));
   }
 
-  function inBudget(home, downMax, payMax) {
+  function positive(value) {
+    var n = num(value);
+    return isFinite(n) && n > 0 ? n : 0;
+  }
+
+  function limitsOf(opts) {
+    opts = opts || {};
+    return {
+      downMin: positive(opts.downMin),
+      downMax: positive(opts.downMax),
+      payMin: positive(opts.payMin),
+      payMax: positive(opts.payMax),
+      bedsMin: positive(opts.bedsMin)
+    };
+  }
+
+  function knownBeds(home) {
+    var beds = num(home && home.beds);
+    return isFinite(beds) && beds > 0 ? beds : 0;
+  }
+
+  function inBudget(home, limits) {
+    limits = limits || {};
     var down = num(home.moveIn), pay = num(home.monthlyPayment);
-    if (downMax && (!isFinite(down) || down > downMax)) return false;
-    if (payMax && (!isFinite(pay) || pay > payMax)) return false;
+    if (limits.downMax && (!isFinite(down) || down > limits.downMax)) return false;
+    if (limits.downMin && (!isFinite(down) || down < limits.downMin)) return false;
+    if (limits.payMax && (!isFinite(pay) || pay > limits.payMax)) return false;
+    if (limits.payMin && (!isFinite(pay) || pay < limits.payMin)) return false;
+    if (limits.bedsMin && knownBeds(home) < limits.bedsMin) return false;
     return true;
   }
 
@@ -126,25 +151,23 @@
   function groups(listings, opts) {
     opts = opts || {};
     var place = opts.place || resolvePlace(opts.q, listings);
-    var downMax = num(opts.downMax), payMax = num(opts.payMax);
-    if (!isFinite(downMax) || downMax <= 0) downMax = 0;
-    if (!isFinite(payMax) || payMax <= 0) payMax = 0;
+    var limits = limitsOf(opts);
     var primary = [], nearby = [], over = [], center = null;
     if (place.kind === "city") {
       var inCity = (listings || []).filter(function (home) { return sameCity(home, place); });
       center = centroid(inCity);
-      primary = inCity.filter(function (home) { return inBudget(home, downMax, payMax); });
+      primary = inCity.filter(function (home) { return inBudget(home, limits); });
       primary.sort(byAvailThenDistance(center));
       var availableHere = primary.filter(isAvailable);
       if (!availableHere.some(hasPhoto)) {
         over = inCity.filter(function (home) {
-          return isAvailable(home) && hasPhoto(home) && !inBudget(home, downMax, payMax);
+          return isAvailable(home) && hasPhoto(home) && !inBudget(home, limits);
         });
         over.sort(byAvailThenDistance(center));
       }
       if (availableHere.length < 3 && center) {
         nearby = (listings || []).filter(function (home) {
-          if (!isAvailable(home) || sameCity(home, place) || !inBudget(home, downMax, payMax)) return false;
+          if (!isAvailable(home) || sameCity(home, place) || !inBudget(home, limits)) return false;
           var point = coords(home);
           return !!(point && haversine(center, point) <= NEAR_MILES);
         });
@@ -155,7 +178,7 @@
       var hit = zipIndex[place.zip];
       center = hit ? { lat: Number(hit[0]), lng: Number(hit[1]) } : null;
       primary = (listings || []).filter(function (home) {
-        if (!inBudget(home, downMax, payMax)) return false;
+        if (!inBudget(home, limits)) return false;
         if (cleanZip(home.zip) === place.zip) return true;
         if (!center || cleanZip(home.zip)) return false;
         var point = coords(home);
@@ -166,7 +189,7 @@
         var seen = {};
         primary.forEach(function (home) { seen[home.id] = 1; });
         nearby = (listings || []).filter(function (home) {
-          if (!isAvailable(home) || seen[home.id] || !inBudget(home, downMax, payMax)) return false;
+          if (!isAvailable(home) || seen[home.id] || !inBudget(home, limits)) return false;
           var point = coords(home);
           return !!(point && haversine(center, point) <= NEAR_MILES);
         });
@@ -192,25 +215,90 @@
     return zipPromise;
   }
 
+  function esc(value) {
+    return String(value == null ? "" : value).replace(/[&<>"]/g, function (ch) {
+      return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[ch];
+    });
+  }
+
+  function moneyText(value) {
+    var n = num(value);
+    if (!isFinite(n) || n <= 0) return "";
+    return "$" + Math.round(n).toLocaleString();
+  }
+
+  function readLimits(form) {
+    function val(id) {
+      var el = form.querySelector("#" + id);
+      return el ? el.value : "";
+    }
+    return limitsOf({
+      downMin: val("chipDownMin") || val("downMin"),
+      downMax: val("chipDownMax") || val("fDown"),
+      payMin: val("chipPayMin") || val("payMin"),
+      payMax: val("chipPayMax") || val("fPayMax"),
+      bedsMin: val("bedsMin")
+    });
+  }
+
+  function bindChips(form) {
+    if (!form || form.dataset.chips === "1") return;
+    form.dataset.chips = "1";
+    form.querySelectorAll(".range-chips").forEach(function (group) {
+      group.addEventListener("click", function (event) {
+        var btn = event.target.closest("button");
+        if (!btn || !group.contains(btn)) return;
+        group.querySelectorAll("button").forEach(function (other) {
+          other.setAttribute("aria-pressed", other === btn ? "true" : "false");
+        });
+        var minId = group.getAttribute("data-min");
+        var maxId = group.getAttribute("data-max");
+        if (minId) {
+          var minEl = form.querySelector("#" + minId);
+          if (minEl) minEl.value = btn.getAttribute("data-min") || "";
+        }
+        if (maxId) {
+          var maxEl = form.querySelector("#" + maxId);
+          if (maxEl) maxEl.value = btn.getAttribute("data-max") || "";
+        }
+        form.dispatchEvent(new Event("change", { bubbles: true }));
+      });
+    });
+  }
+
+  function miniCard(home, es) {
+    var beds = knownBeds(home);
+    var pending = isPending(home);
+    var bedLabel = beds
+      ? (es ? (beds + (beds === 1 ? " recámara" : " recámaras")) : (beds + (beds === 1 ? " bed" : " beds")))
+      : (es ? "recámaras no indicadas" : "beds not listed");
+    var photo = home.hasPhoto
+      ? '<img src="/images/cards/' + esc(home.id) + '-480.webp" alt="" width="480" height="360" loading="lazy" decoding="async">'
+      : "";
+    var miles = home._miles == null ? "" : (es ? "a unas " + home._miles + " millas" : "about " + home._miles + " miles away");
+    var bits = [moneyText(home.lockedPrice), moneyText(home.moveIn) ? moneyText(home.moveIn) + (es ? " enganche" : " down") : "", moneyText(home.monthlyPayment) ? moneyText(home.monthlyPayment) + (es ? "/mes" : "/mo") : ""].filter(Boolean);
+    var avail = pending ? (es ? "Pendiente: visitas cerradas" : "Pending: tours closed") : (es ? "Disponible ahora" : "Available now");
+    return '<article class="swipe-card" data-down="' + esc(home.moveIn || "") + '" data-pay="' + esc(home.monthlyPayment || "") + '" data-beds="' + esc(beds || "") + '" data-status="' + esc(home.status || "") + '" data-photo="' + (home.hasPhoto ? "1" : "0") + '"><a href="/' + esc(home.id) + '.html">' + photo + '<p class="where">' + esc(home.address || home.id) + '</p><p class="meta">' + esc(bits.join(" · ")) + '</p><p class="meta">' + esc(bedLabel + (miles ? " · " + miles : "")) + '</p><p class="avail">' + esc(avail) + '</p></a></article>';
+  }
+
   function mountCity() {
     var form = document.getElementById("buyerSearch");
     var list = document.getElementById("cityHomes");
     if (!form || !list || form.dataset.bound === "1") return;
     form.dataset.bound = "1";
+    bindChips(form);
     var es = (document.documentElement.lang || "en") === "es";
     var extra = document.getElementById("buyerExtra");
-    function budget() {
-      return { downMax: form.querySelector("#fDown").value, payMax: form.querySelector("#fPayMax").value };
-    }
+    var empty = document.getElementById("cityEmpty");
     function applyLocal() {
-      var limits = budget();
-      var downMax = num(limits.downMax), payMax = num(limits.payMax);
-      if (!isFinite(downMax) || downMax <= 0) downMax = 0;
-      if (!isFinite(payMax) || payMax <= 0) payMax = 0;
+      var limits = readLimits(form);
       var availableShown = 0, photoShown = false;
       Array.prototype.forEach.call(list.children, function (li) {
-        var down = num(li.getAttribute("data-down")), pay = num(li.getAttribute("data-pay"));
-        var ok = (!downMax || (isFinite(down) && down <= downMax)) && (!payMax || (isFinite(pay) && pay <= payMax));
+        var ok = inBudget({
+          moveIn: li.getAttribute("data-down"),
+          monthlyPayment: li.getAttribute("data-pay"),
+          beds: li.getAttribute("data-beds")
+        }, limits);
         li.hidden = !ok;
         var pending = /pending/i.test(li.getAttribute("data-status") || "");
         if (ok && !pending) {
@@ -218,21 +306,26 @@
           if (li.getAttribute("data-photo") === "1") photoShown = true;
         }
       });
+      if (empty) empty.hidden = availableShown > 0 || list.querySelector(":scope > :not([hidden])");
       if (!extra) return;
       var over = "";
       if (!photoShown) {
         Array.prototype.forEach.call(list.children, function (li) {
           if (li.hidden && !/pending/i.test(li.getAttribute("data-status") || "") && li.getAttribute("data-photo") === "1") {
-            over += '<li>' + li.innerHTML + '</li>';
+            over += li.outerHTML.replace(' hidden=""', "").replace(" hidden", "");
           }
         });
       }
       var heading = es ? "Apenas sobre su presupuesto" : "Just over your budget";
-      extra.innerHTML = over ? '<section class="buyer-group"><h2>' + heading + '</h2><ul class="city-list">' + over + '</ul></section>' : "";
-      if (availableShown < 3) loadNearby(downMax, payMax);
+      extra.innerHTML = over ? '<section class="buyer-group"><h2>' + heading + '</h2><div class="row-scroller">' + over + '</div></section>' : "";
+      if (availableShown < 3) loadNearby(limits);
+      else {
+        var near = extra.querySelector("#nearby");
+        if (near) near.remove();
+      }
     }
     var catalog = null;
-    function loadNearby(downMax, payMax) {
+    function loadNearby(limits) {
       var query = (form.querySelector("#fQ").value || "").trim();
       var place = resolvePlace(query, catalog || [{ city: form.dataset.city, state: form.dataset.state }]);
       if (place.kind !== "city") {
@@ -240,14 +333,17 @@
         return;
       }
       var run = function (homes) {
-        var result = groups(homes, { place: place, downMax: downMax, payMax: payMax });
+        var result = groups(homes, {
+          place: place,
+          downMin: limits.downMin, downMax: limits.downMax,
+          payMin: limits.payMin, payMax: limits.payMax,
+          bedsMin: limits.bedsMin
+        });
         if (!result || !extra) return;
-        var items = result.nearby.map(function (home) {
-          var miles = home._miles == null ? "" : (es ? "a unas " + home._miles + " millas" : "about " + home._miles + " miles away");
-          return '<li><a href="/' + home.id + '.html">' + (home.address || home.id) + '</a><span class="meta">' + miles + '</span></li>';
-        }).join("");
+        var items = result.nearby.map(function (home) { return miniCard(home, es); }).join("");
         var title = es ? "Casas cercanas en su presupuesto" : "Nearby homes in your budget";
-        var block = items ? '<section class="buyer-group" id="nearby"><h2>' + title + '</h2><ul class="city-list">' + items + '</ul></section>' : "";
+        var note = es ? "Nada en ese rango en esta ciudad. Estas casas cercanas sí caben." : "Nothing in that range here. These nearby homes fit.";
+        var block = items ? '<section class="buyer-group" id="nearby"><h2>' + title + '</h2><p class="row-hint">' + note + '</p><div class="row-scroller">' + items + '</div></section>' : "";
         if (extra.querySelector("#nearby")) extra.querySelector("#nearby").outerHTML = block;
         else extra.insertAdjacentHTML("beforeend", block);
       };
@@ -262,6 +358,22 @@
     form.addEventListener("input", function (event) {
       if (event.target && event.target.id === "fQ") applyLocal();
     });
+    var clearBtn = form.querySelector("#clearBuyer");
+    if (clearBtn && !clearBtn.dataset.wired) {
+      clearBtn.dataset.wired = "1";
+      clearBtn.addEventListener("click", function () {
+        ["chipDownMin", "chipDownMax", "chipPayMin", "chipPayMax", "bedsMin", "downMin", "fDown", "payMin", "fPayMax"].forEach(function (id) {
+          var el = form.querySelector("#" + id);
+          if (el && el.type === "hidden") el.value = "";
+        });
+        form.querySelectorAll(".range-chips").forEach(function (group) {
+          group.querySelectorAll("button").forEach(function (b, i) {
+            b.setAttribute("aria-pressed", i === 0 ? "true" : "false");
+          });
+        });
+        applyLocal();
+      });
+    }
   }
 
   root.BuyerSearch = {
@@ -272,6 +384,10 @@
     loadZips: loadZips,
     hasPhoto: hasPhoto,
     isPending: isPending,
+    knownBeds: knownBeds,
+    limitsOf: limitsOf,
+    bindChips: bindChips,
+    readLimits: readLimits,
     mountCity: mountCity,
     NEAR_MILES: NEAR_MILES,
     ZIP_MILES: ZIP_MILES

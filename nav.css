@@ -14,6 +14,14 @@
 .site-menu{display:flex;align-items:center;gap:2px;flex-wrap:wrap}
 .site-menu a{font-size:14px;font-weight:700;color:var(--ink-soft,#5b6577);text-decoration:none;padding:8px 10px;border-radius:10px;white-space:nowrap}
 .site-menu a:hover,.site-menu a[aria-current="page"]{color:var(--pine,#15315e);background:#eef2f9}
+@media (max-width:860px){
+  .zhead-row,.topnav{flex-wrap:nowrap}
+  .brand{min-width:0}
+  .brand .bn{font-size:14px;white-space:nowrap}
+  .brand-rest,.brand .bn small{display:none}
+  .nav-account,.nav-lang,.nav-toggle{white-space:nowrap;flex:0 0 auto;gap:4px;padding-left:6px;padding-right:6px;font-size:13px}
+  .nav-account svg{flex:0 0 auto}
+}
 @media (max-width:980px){
   .nav-toggle{display:inline-flex}
   .site-menu{

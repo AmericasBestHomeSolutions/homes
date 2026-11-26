@@ -254,10 +254,10 @@ html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(
         <rect x="17.5" y="26" width="13" height="9" fill="#ffffff"/>
         <rect x="22" y="30" width="4" height="5" fill="#15315e"/>
       </svg>
-      <span class="bn">Americas Best Home Solutions<small>Owner Financing</small></span>
+      <span class="bn">Americas Best<span class="brand-rest"> Home Solutions</span><small>Owner Financing</small></span>
     </a>
     <nav class="topnav" aria-label="Site">
-      <a class="nav-account" href="/account/?lang=en">My account: tours and paperwork</a>
+      <a class="nav-account" href="/account/?lang=en" aria-label="My account: tours and paperwork"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 19.2c1.4-3 3.8-4.4 7-4.4s5.6 1.4 7 4.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>My account</span></a>
       <a class="nav-es nav-lang" href="https://casasconfinanciamiento.com/">Español</a>
       <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="siteMenu"><span class="nav-bars" aria-hidden="true"></span><span class="nav-word">Menu</span></button>
       <div class="site-menu" id="siteMenu">
@@ -403,7 +403,7 @@ html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(
     <h2 class="sec-title">It's not renting</h2>
     <div class="why">
       <div class="why-card"><h3>You're buying, not renting</h3><p>Your name is on the purchase agreement from day one. You're the buyer, not a tenant — every payment builds toward owning it outright.</p></div>
-      <div class="why-card"><h3>Your payment stays put</h3><p>A fixed monthly payment, in writing. It doesn't climb every year like rent — only a change in property taxes or insurance could ever move it, and that's spelled out in your terms.</p></div>
+      <div class="why-card"><h3>Your payment stays put</h3><p>A monthly payment, in writing. It does not climb every year the way rent does. Final terms are confirmed in your paperwork.</p></div>
       <div class="why-card"><h3>A payment close to rent</h3><p>About what you hand a landlord today — except every 1st of the month, this one is building toward a home with your name on it.</p></div>
     </div>
   </section>
@@ -549,7 +549,10 @@ function startListing(){
     }
   })();
   // written page copy (site_copy.py); falls back to the notes only for a home held for review
-  if (C.copy || C.description) { $("aboutDesc").textContent = C.copy || C.description; $("aboutHomeSec").hidden = false; }
+  if ($("aboutDesc") && !$("aboutDesc").textContent.trim() && (C.copy || C.description)) {
+    $("aboutDesc").textContent = C.copy || C.description;
+    $("aboutHomeSec").hidden = false;
+  }
 
   // Property features — yes/no flags pulled from the listing notes (unknown omitted).
   // Honest framing: these come from the written description, not a verified inspection.
@@ -753,7 +756,7 @@ document.addEventListener("listing-ready", function(){
 });
 </script>
 <style>
-#stickyTour{position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;align-items:center;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--line,#dfe6f0);box-shadow:0 -6px 22px rgba(15,36,68,.12)}
+#stickyTour{position:fixed;left:0;right:0;bottom:0;z-index:80;display:flex;align-items:center;gap:8px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--line,#dfe6f0);box-shadow:0 -6px 22px rgba(15,36,68,.12)}
 #stickyTour[hidden]{display:none}
 #stickyTour .st-p{flex:1;min-width:0;font:800 18px 'Bricolage Grotesque',sans-serif;color:var(--pine,#15315e);line-height:1.1}
 #stickyTour .st-p small{display:block;font:500 11px 'DM Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft,#5b6b82)}

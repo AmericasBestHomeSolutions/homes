@@ -267,7 +267,7 @@ def eval_html(home: dict, facts_doc: dict, lang: str) -> str:
         cash_title, down_label = "Dinero para recibir las llaves", "Enganche"
         paperwork = "Las condiciones finales se confirman en sus documentos."
         month_title = "Su pago mensual y las condiciones"
-        month_l, price_l, term_l = "Pago mensual", "Precio fijo", "Plazo"
+        month_l, price_l = "Pago mensual", "Precio"
         qualify = "No hace falta un préstamo bancario. Lo mantenemos simple: si el enganche y el pago mensual caben en su presupuesto, le acompañamos en los siguientes pasos."
         cond_title = "Condición: se vende como está"
         cond_copy = ("Cada casa se vende como está. Necesita algo de trabajo y el precio lo refleja. "
@@ -277,11 +277,11 @@ def eval_html(home: dict, facts_doc: dict, lang: str) -> str:
         illustrate = "Es un ejemplo con los datos de este anuncio, no la historia de un comprador."
         keys_title = "Pasos hasta las llaves"
         keys = [
-            "Recorra la casa y elíjala",
+            "Elija una casa y visítela",
             "Le enviamos un paquete de bienvenida",
             "Usted envía el enganche o el depósito",
             "Hacemos los documentos",
-            "Las llaves",
+            "Reciba las llaves",
         ]
         if state == "IL":
             keys_note = "En Illinois hay 3 días para rescindir después de firmar, y después recibe las llaves."
@@ -291,7 +291,7 @@ def eval_html(home: dict, facts_doc: dict, lang: str) -> str:
         cash_title, down_label = "Cash to get the keys", "Down payment"
         paperwork = "Final terms are confirmed in your paperwork."
         month_title = "Your monthly payment and terms"
-        month_l, price_l, term_l = "Monthly payment", "Fixed price", "Term"
+        month_l, price_l = "Monthly payment", "Price"
         qualify = "No bank loan needed. We keep it simple: if the down payment and monthly payment fit your budget, we'll walk you through the next steps."
         cond_title = "Condition: sold as-is"
         cond_copy = ("Every home is sold as-is. It needs some work, and the price reflects that. "
@@ -301,11 +301,11 @@ def eval_html(home: dict, facts_doc: dict, lang: str) -> str:
         illustrate = "An illustration from this listing's own facts, not a buyer's story."
         keys_title = "Steps to the keys"
         keys = [
-            "Tour the home and pick it",
+            "Pick a home and tour it",
             "We send a welcome packet",
             "You send the down payment or deposit",
             "We do the paperwork",
-            "Keys",
+            "Get the keys",
         ]
         if state == "IL":
             keys_note = "In Illinois there is a 3-day right of rescission after signing, then keys."
@@ -356,7 +356,6 @@ def eval_html(home: dict, facts_doc: dict, lang: str) -> str:
         f'<section class="eval-block" id="termsBlock"><h2>{_esc(month_title)}</h2><ul class="eval-lines">'
         f'{_row(month_l, monthly) if monthly else ""}'
         f'{_row(price_l, price) if price else ""}'
-        f'{_row(term_l, term) if term else ""}'
         f'</ul><p class="eval-total">{_esc(paperwork)}</p></section>\n'
         f'<section class="eval-block" id="keysBlock"><h2>{_esc(keys_title)}</h2>'
         f'<ol class="key-steps">{key_items}</ol><p>{_esc(keys_note)}</p></section>\n'

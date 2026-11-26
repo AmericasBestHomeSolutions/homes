@@ -16,6 +16,82 @@ import re
 from pathlib import Path
 
 PATH = Path("data") / "home-facts.json"
+
+# Joe confirmed both on 2026-11-26. Rebuilding publishes the hold sentence
+# and the Wyoming office address in the scam answer, the listing note, and
+# the question sheet.
+CONFIRM_TOUR_BEFORE_PAY = True
+CONFIRM_WYOMING_ADDRESS = True
+
+
+def scam_answer(lang: str = "en") -> str:
+    """Buyer-facing scam answer. Hold and office lines follow the flags above."""
+    if lang == "es":
+        parts = [
+            "La empresa de este sitio es Americas Best Home Solutions LLC.",
+            "Joseph Hernandez es el director ejecutivo y su foto está en este sitio.",
+            "Las reseñas son de Logan y Trinity, en Decatur.",
+            "Usted visita la casa en persona primero.",
+            "Usted firma los documentos antes de recibir las llaves.",
+            "Puede escribir a admin@americasbesthomesolutions.com.",
+        ]
+        if CONFIRM_TOUR_BEFORE_PAY:
+            parts.insert(3, "Usted visita la casa en persona antes de pagar algo para reservarla.")
+        if CONFIRM_WYOMING_ADDRESS:
+            parts.insert(1, "La oficina está en 30 N Gould St, Ste R, Sheridan, WY 82801.")
+        return " ".join(parts)
+    parts = [
+        "Americas Best Home Solutions LLC is the company on this site.",
+        "Joseph Hernandez is the Executive Director, and his photo is on this site.",
+        "The buyer reviews are from Logan and Trinity in Decatur.",
+        "You tour the home in person first.",
+        "You sign the paperwork before you get the keys.",
+        "You can write admin@americasbesthomesolutions.com.",
+    ]
+    if CONFIRM_TOUR_BEFORE_PAY:
+        parts.insert(3, "You tour the home in person before you pay anything to hold it.")
+    if CONFIRM_WYOMING_ADDRESS:
+        parts.insert(1, "The office address is 30 N Gould St, Ste R, Sheridan, WY 82801.")
+    return " ".join(parts)
+
+
+def walkthrough_line(lang: str = "en") -> str:
+    """Navy-block line. Hold and office sentences follow the flags above."""
+    if lang == "es":
+        line = (
+            'Cada casa se recorre en persona, y no le pediremos dinero para "apartar" una casa en la que no ha estado.'
+            if CONFIRM_TOUR_BEFORE_PAY
+            else "Cada casa se recorre en persona antes de decidir."
+        )
+        if CONFIRM_WYOMING_ADDRESS:
+            line += " La oficina está en 30 N Gould St, Ste R, Sheridan, WY 82801."
+        return line
+    line = (
+        'Every home is walked in person, and you\'ll never be asked for money to "hold" a home you haven\'t stood in.'
+        if CONFIRM_TOUR_BEFORE_PAY
+        else "Every home is walked in person before you decide."
+    )
+    if CONFIRM_WYOMING_ADDRESS:
+        line += " The office address is 30 N Gould St, Ste R, Sheridan, WY 82801."
+    return line
+
+
+def pets_qa(lang: str = "en") -> tuple[str, str]:
+    """Question and answer for the sheet and the FAQ."""
+    if lang == "es":
+        return ("¿Se permiten mascotas?", "Sí, se permiten mascotas.")
+    return ("Are pets allowed?", "Yes, pets are allowed.")
+
+
+def hold_line(lang: str = "en") -> str:
+    """Extra listing sentence. Empty unless CONFIRM_TOUR_BEFORE_PAY is True."""
+    if not CONFIRM_TOUR_BEFORE_PAY:
+        return ""
+    if lang == "es":
+        return "No le pediremos dinero para apartar una casa que no ha visto."
+    return "We'll never ask for money to hold a home you haven't seen."
+
+
 SYSTEMS = ("furnace", "plumbing", "electrical", "roof", "foundation")
 SYSTEM_LABELS = {
     "en": {
@@ -252,6 +328,13 @@ def _fit_facts(home: dict, lang: str) -> list[str]:
     return facts
 
 
+def qualify_sentence(lang: str = "en") -> str:
+    """Soft qualify line. English stays the published sentence."""
+    if lang == "es":
+        return "una identificación válida, el enganche y un pago mensual que se ajuste a su presupuesto"
+    return "No bank loan needed. We keep it simple: if the down payment and monthly payment fit your budget, we'll walk you through the next steps."
+
+
 def eval_html(home: dict, facts_doc: dict, lang: str) -> str:
     """The three blocks under the price row. Static HTML, no post-load injection."""
     lang = "es" if lang == "es" else "en"
@@ -268,7 +351,7 @@ def eval_html(home: dict, facts_doc: dict, lang: str) -> str:
         paperwork = "Las condiciones finales se confirman en sus documentos."
         month_title = "Su pago mensual y las condiciones"
         month_l, price_l = "Pago mensual", "Precio"
-        qualify = "No hace falta un préstamo bancario. Lo mantenemos simple: si el enganche y el pago mensual caben en su presupuesto, le acompañamos en los siguientes pasos."
+        qualify = qualify_sentence("es")
         cond_title = "Condición: se vende como está"
         cond_copy = ("Cada casa se vende como está. Necesita algo de trabajo y el precio lo refleja. "
                      "Usted se encarga de las reparaciones. Recorra la casa antes de firmar.")
@@ -287,12 +370,14 @@ def eval_html(home: dict, facts_doc: dict, lang: str) -> str:
             keys_note = "En Illinois hay 3 días para rescindir después de firmar, y después recibe las llaves."
         else:
             keys_note = f"En {state}, las llaves se entregan enseguida después de firmar." if state else "En los demás estados, las llaves se entregan enseguida después de firmar."
+        scam_q = "¿Es esto una estafa?"
+        scam_a = scam_answer("es")
     else:
         cash_title, down_label = "Cash to get the keys", "Down payment"
         paperwork = "Final terms are confirmed in your paperwork."
         month_title = "Your monthly payment and terms"
         month_l, price_l = "Monthly payment", "Price"
-        qualify = "No bank loan needed. We keep it simple: if the down payment and monthly payment fit your budget, we'll walk you through the next steps."
+        qualify = qualify_sentence("en")
         cond_title = "Condition: sold as-is"
         cond_copy = ("Every home is sold as-is. It needs some work, and the price reflects that. "
                      "You handle the repairs. Walk through the home before you sign.")
@@ -311,6 +396,8 @@ def eval_html(home: dict, facts_doc: dict, lang: str) -> str:
             keys_note = "In Illinois there is a 3-day right of rescission after signing, then keys."
         else:
             keys_note = f"In {state}, keys right away after signing." if state else "In other states, keys right away after signing."
+        scam_q = "Is this a scam?"
+        scam_a = scam_answer("en")
 
     cash_rows = []
     if down:
@@ -347,16 +434,17 @@ def eval_html(home: dict, facts_doc: dict, lang: str) -> str:
             f'<div class="fit-grid">{family_html}{rental_html}</div></section>'
         )
     key_items = "".join(f"<li>{_esc(step)}</li>" for step in keys)
+    price_small = f'<p class="price-small">{_esc(price_l)} {_esc(price)}</p>' if price else ""
     return (
         '<div class="buyer-eval" id="buyerEval" data-baked="1">\n'
         f'<p class="qualify-line">{_esc(qualify)}</p>\n'
         f'<section class="eval-block" id="cashKeys"><h2>{_esc(cash_title)}</h2>'
         f'<ul class="eval-lines">{"".join(cash_rows)}</ul>'
+        f'{price_small}'
         f'<p class="eval-total">{_esc(paperwork)}</p></section>\n'
-        f'<section class="eval-block" id="termsBlock"><h2>{_esc(month_title)}</h2><ul class="eval-lines">'
-        f'{_row(month_l, monthly) if monthly else ""}'
-        f'{_row(price_l, price) if price else ""}'
-        f'</ul><p class="eval-total">{_esc(paperwork)}</p></section>\n'
+        f'<details class="scam-note" id="scamNote"><summary>{_esc(scam_q)}</summary>'
+        f'<p>{_esc(scam_a)}</p></details>\n'
+        f'<script type="application/ld+json">{json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": scam_q, "acceptedAnswer": {"@type": "Answer", "text": scam_a}}]}, ensure_ascii=False).replace("<", "\\u003c")}</script>\n'
         f'<section class="eval-block" id="keysBlock"><h2>{_esc(keys_title)}</h2>'
         f'<ol class="key-steps">{key_items}</ol><p>{_esc(keys_note)}</p></section>\n'
         f'<section class="eval-block" id="conditionBlock"><h2>{_esc(cond_title)}</h2>'

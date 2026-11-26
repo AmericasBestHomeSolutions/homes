@@ -54,7 +54,7 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
 #propSpecs{min-height:1.6em}
 #subhead{min-height:4.5em}
 #ctaNote{min-height:2.4em}
-.cta-group{min-height:120px}
+.cta-group{min-height:0}
 #hcHero{min-height:48px}
 .hero-photo img[hidden]{display:none}
 .hero-photo .fallback{opacity:.9}
@@ -88,8 +88,9 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
 .deal-cell.hero-cell .lab{color:#a9c4e8}
 
 /* ── CTA BUTTONS ─────────────────────────────────────────── */
-.cta-group{display:flex;gap:10px;margin:18px 0 6px;flex-wrap:wrap}
-.cta-group .btn-secondary{flex-basis:100%;font-size:15px;padding:12px 16px}
+.cta-group{display:flex;gap:10px;margin:10px 0 6px;flex-wrap:wrap}
+.cta-group .btn-secondary{display:none !important}
+.cta-group .btn-primary{flex:1 1 100%;height:56px;min-height:56px;max-height:60px;display:flex;align-items:center;justify-content:center;padding:0 18px}
 .btn{flex:1;min-width:150px;text-align:center;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:700;font-size:17px;padding:16px 18px;border-radius:14px;transition:transform .12s ease,background .15s ease}
 .btn-primary{background:var(--go);color:#fff}
 .btn-primary:hover{background:var(--go-hover)}
@@ -132,9 +133,19 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
 .why-card h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:18px;margin-bottom:4px;color:var(--pine)}
 .why-card p{font-size:15px;color:#44566f}
 
-.gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.gallery .tile{aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:#eaeef5;display:flex;align-items:center;justify-content:center}
+.photo-row{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 0 12px;-webkit-overflow-scrolling:touch}
+.photo-row .hero-photo,.photo-row .tile{flex:0 0 88%;scroll-snap-align:start;aspect-ratio:4/3;max-height:42vh}
+.gallery{display:contents}
+.gallery .tile{border-radius:12px;overflow:hidden;background:#eaeef5;display:flex;align-items:center;justify-content:center}
 .gallery .tile img{width:100%;height:100%;object-fit:cover;display:block}
+.deal-cell.price-cell{display:none}
+.deal-strip{grid-template-columns:1.4fr 1fr}
+.price-small{margin:8px 0 0;font-size:13px;color:#5b6577}
+@media(min-width:900px){
+  .photo-row{display:grid;grid-template-columns:2fr 1fr 1fr;overflow:visible;scroll-snap-type:none}
+  .photo-row .hero-photo{grid-column:1;grid-row:1 / span 2;max-height:none;min-height:360px;aspect-ratio:auto}
+  .photo-row .tile{flex:none;max-height:none;aspect-ratio:4/3}
+}
 .gallery .ph{font-family:'DM Mono',monospace;font-size:11px;color:#97a0b2;letter-spacing:1px}
 
 .lead{margin-top:48px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px 22px;text-align:center}
@@ -206,7 +217,8 @@ body.tl-pad{padding-bottom:70px}
 .foot{margin:48px 0 34px;text-align:center;color:var(--ink-soft);font-size:13px;line-height:1.7}
 .foot .fb{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:18px;color:var(--pine);letter-spacing:-.4px;margin-bottom:4px}
 .foot .fcontact a{color:var(--pine);font-weight:600;text-decoration:none}
-.foot .legal{max-width:60ch;margin:12px auto 0;font-size:12px;color:#8b93a3}
+.foot .legal{max-width:60ch;margin:12px auto 0;font-size:12px;color:#3d4a5c}
+.h1-place{display:block;font-size:.62em;font-weight:700;color:#3d4a5c;margin-top:4px}
 
 .reveal{opacity:0;transform:translateY(16px)}
 .reveal.in{opacity:1;transform:none;transition:opacity .6s ease,transform .6s ease}
@@ -220,6 +232,9 @@ body.tl-pad{padding-bottom:70px}
 .tours-open,.account-link{margin:8px 0 0;font-size:15px}
 .account-link a{font-weight:800;color:var(--brand-primary,#15315e)}
 .buyer-eval{display:grid;gap:14px;margin:18px 0 8px}
+.scam-note{background:#fff;border:1px solid var(--line,#d5dbe6);border-radius:16px;padding:12px 14px}
+.scam-note summary{font-weight:800;cursor:pointer}
+.scam-note p{margin:8px 0 0;line-height:1.5}
 .eval-block{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px}
 .eval-block h2{font-family:'Bricolage Grotesque',sans-serif;font-size:22px;line-height:1.15;margin:0 0 8px}
 .eval-copy{margin:0 0 10px}
@@ -247,7 +262,7 @@ html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(
 <div class="wrap">
 
   <header class="topbar">
-    <a class="brand" href="index.html" aria-label="Americas Best Home Solutions — home">
+      <a class="brand" href="index.html" aria-label="Americas Best Home Solutions">
       <svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
         <path d="M24 3 41 9V23C41 33 33 41 24 45 15 41 7 33 7 23V9Z" fill="#15315e"/>
         <path d="M15 26 24 18 33 26Z" fill="#e23b3b"/>
@@ -277,6 +292,7 @@ html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(
 
   <!-- HERO -->
   <section class="hero">
+    <div class="photo-row" id="photoRow">
     <div class="hero-photo" id="heroFace">
       <span class="status-tag" id="statusTag">Available</span>
       <img id="heroImg" alt="" hidden width="480" height="360">
@@ -288,6 +304,19 @@ html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(
       </svg>
       <div class="fcity" id="heroCity"></div>
     </div>
+    <div class="gallery" id="gallery"></div>
+    </div>
+
+    <div class="deal-strip">
+      <div class="deal-cell hero-cell"><div class="num" id="dMonthly"></div><div class="lab">per month</div></div>
+      <div class="deal-cell"><div class="num" id="dMoveIn"></div><div class="lab">to move in</div></div>
+      <div class="deal-cell price-cell"><div class="num" id="dPrice"></div><div class="lab">price</div></div>
+    </div>
+    <div class="cta-group">
+      <a class="btn btn-primary" id="ctaText" href="#">Book a tour</a>
+      <a class="btn btn-secondary" id="ctaSms" href="#" hidden>Have a question? Text us</a>
+    </div>
+    <p class="tours-open" id="toursOpen">Tours open: pick your time on the next screen. No password.</p>
 
     <h1 class="headline" id="headline"></h1>
     <p class="seo-facts" id="seoFacts"></p>
@@ -295,24 +324,13 @@ html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(
     <p class="prop-addr" id="propAddr" style="font-weight:600;font-size:17px;color:var(--pine,#15315e);margin:2px 0 6px"></p>
     <p class="prop-specs" id="propSpecs" style="display:flex;gap:10px;flex-wrap:wrap;font-weight:600;font-size:16px;color:var(--ink);margin:0 0 8px"></p>
     <p class="condition-line" id="conditionLine" hidden></p>
-    <p class="subhead" id="subhead">This is buying, not renting. A fixed monthly payment close to rent — and every 1st of the month, it's building toward a home that's yours.</p>
+    <p class="subhead" id="subhead">This is buying, not renting. A monthly payment you agree to in writing, and every 1st of the month it builds toward a home that's yours. What your monthly payment includes is confirmed in your paperwork.</p>
     <div id="csBanner" hidden style="background:#fff7ed;border:1.5px solid #fdba74;border-radius:14px;padding:14px 16px;margin:0 0 16px;color:#7c2d12">
       <strong style="display:block;font-size:16px;margin-bottom:4px">🔨 Contractor Special — needs major repairs</strong>
       <span id="csWhat" style="display:block;font-weight:600"></span>
       <span style="display:block;font-size:14px;margin-top:4px">This home is for investors and contractors. It needs structural or systems work, sold as-is. Inspect it yourself and price the repairs before you commit.</span>
     </div>
 
-    <div class="deal-strip">
-      <div class="deal-cell hero-cell"><div class="num" id="dMonthly"></div><div class="lab">per month</div></div>
-      <div class="deal-cell"><div class="num" id="dMoveIn"></div><div class="lab">to move in</div></div>
-      <div class="deal-cell"><div class="num" id="dPrice"></div><div class="lab">price</div></div>
-    </div>
-
-    <div class="cta-group">
-      <a class="btn btn-primary" id="ctaText" href="#">Book a tour</a>
-      <a class="btn btn-secondary" id="ctaSms" href="#" hidden>Have a question? Text us</a>
-    </div>
-    <p class="tours-open" id="toursOpen">Tours open: pick your time on the next screen. No password.</p>
     <p class="account-link"><a href="/account/?lang=en">My account: tours and paperwork</a></p>
     <p class="cta-note" id="ctaNote">Tours are in person. Pick a time and we'll meet you there.</p>
     <div class="hc-hero" id="hcHero"></div>
@@ -324,13 +342,6 @@ html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(
       <li>A payment close to rent</li>
       <li>No bank in the way</li>
     </ul>
-  </section>
-
-  <!-- GALLERY -->
-  <section class="section reveal" id="gallerySection">
-    <div class="sec-label">Take a look</div>
-    <h2 class="sec-title">Inside the home</h2>
-    <div class="gallery" id="gallery"></div>
   </section>
 
   <!-- ABOUT THIS HOME -->
@@ -389,9 +400,9 @@ html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(
     <div class="sec-label">What happens when you reach out</div>
     <h2 class="sec-title">No runaround. Here's the whole path.</h2>
     <div class="steps">
-      <div class="step"><div class="n">01</div><div class="body"><h3>Book a tour</h3><p>Pick a time on this page. A real person confirms — usually the same day.</p></div></div>
+      <div class="step"><div class="n">01</div><div class="body"><h3>Book a tour</h3><p>Pick a time on this page. A real person confirms the time.</p></div></div>
       <div class="step"><div class="n">02</div><div class="body"><h3>Walk the home in person</h3><p>Tours are in person, not by video — you see it exactly as it is. We ask everyone for a photo ID before a showing; it's how we keep a log of who's been through the home.</p></div></div>
-      <div class="step"><div class="n">03</div><div class="body"><h3>Your terms in writing</h3><p>The numbers above — price, down payment, monthly payment, fixed rate, no prepayment penalty — come to you as a plain written breakdown with your down payment invoice. We'll never ask for money to "hold" a home you haven't seen.</p></div></div>
+      <div class="step"><div class="n">03</div><div class="body"><h3>Your terms in writing</h3><p>The price, down payment, and monthly payment come to you in a plain written breakdown. Final terms are confirmed in your paperwork. What your monthly payment includes is confirmed in your paperwork. <!-- hold-line:start -->We'll never ask for money to hold a home you haven't seen.<!-- hold-line:end --></p></div></div>
       <div class="step"><div class="n">04</div><div class="body"><h3>Move-in payment, then keys</h3><p>From that day, every monthly payment goes toward owning the home — at the price you agreed to.</p></div></div>
     </div>
     <p class="other-homes" style="margin-top:16px"><a href="how-it-works.html">Want the full rundown? See how owner financing works →</a></p>
@@ -429,7 +440,7 @@ html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(
     <!-- Address and email stay in the HTML. The phone number is used only by the
          "Text us" button (second choice under Book a Tour, Joe 2026-11-12). -->
     <div class="fb">Americas Best Home Solutions</div>
-    <p class="fcontact" style="opacity:.78;margin-top:2px">getownerfinancedhomes.com is operated by <a href="https://americasbesthomesolutions.com">Americas Best Home Solutions LLC</a></p>
+    <p class="fcontact" style="margin-top:2px">getownerfinancedhomes.com is operated by <a href="https://americasbesthomesolutions.com">Americas Best Home Solutions LLC</a></p>
     <address class="fcontact" style="font-style:normal;margin-top:8px">
       30 N Gould St, Ste R, Sheridan, WY 82801<br>
       <a href="mailto:admin@americasbesthomesolutions.com">admin@americasbesthomesolutions.com</a>
@@ -506,11 +517,20 @@ function startListing(){
   const seoPlace = () => [C.address, [C.city, C.state].filter(Boolean).join(", ")].filter(Boolean).join(", ");
   const seoBits = () => [shown(C.lockedPrice), shown(C.moveIn) ? shown(C.moveIn) + (es ? " de enganche" : " down") : "", shown(C.monthlyPayment) ? shown(C.monthlyPayment) + (es ? "/mes" : "/mo") : ""].filter(Boolean);
   const seoTitle = () => seoPlace() + (seoBits().length ? " — " + seoBits().join(" · ") : "") + " | " + (es ? "Financiamiento del dueño" : "Owner Financed");
-  const seoH1 = () => seoPlace() + (seoBits().length ? " — " + seoBits().join(", ") : "");
+  const seoH1 = () => C.address || seoPlace();
 
   if (document.documentElement.getAttribute("data-seo") !== "1") {
     document.title = seoTitle();
-    if ($("headline")) $("headline").textContent = seoH1();
+    if ($("headline")) {
+      $("headline").textContent = seoH1();
+      const where = [C.city, C.state].filter(Boolean).join(", ");
+      if (where && C.address) {
+        const place = document.createElement("span");
+        place.className = "h1-place";
+        place.textContent = where;
+        $("headline").appendChild(place);
+      }
+    }
     if ($("seoFacts") && !$("seoFacts").textContent) {
       const bits = [es ? `Casa con financiamiento del dueño en ${seoPlace()}.` : `Owner-financed home at ${seoPlace()}.`];
       if (shown(C.lockedPrice)) bits.push((es ? "Precio de compra " : "Purchase price ") + shown(C.lockedPrice) + ".");
@@ -524,7 +544,7 @@ function startListing(){
       $("seoCity").innerHTML = `<a href="/${citySlug(C.city)}-${String(C.state).toLowerCase()}.html">${label}</a>`;
     }
   }
-  if (!$("subhead").textContent.trim()) $("subhead").textContent = "This is buying, not renting. A fixed monthly payment close to rent — and every 1st of the month, it's building toward a home that's yours.";
+  if (!$("subhead").textContent.trim()) $("subhead").textContent = "This is buying, not renting. A monthly payment you agree to in writing, and every 1st of the month it builds toward a home that's yours. What your monthly payment includes is confirmed in your paperwork.";
   if (!$("propSpecs").textContent.trim()) $("propSpecs").innerHTML = [
     C.beds ? `<span>${C.beds} bed${Number(C.beds)===1?"":"s"}</span>` : "",
     C.baths ? `<span>${C.baths} bath${Number(C.baths)===1?"":"s"}</span>` : "",
@@ -665,16 +685,14 @@ function startListing(){
   if (C.photos && C.photos.length){
     g.innerHTML = C.photos.map(src=>tile(src, true)).join("");
   } else if (typeof C.photoCount === "number") {
-    $("gallerySection").hidden = true;
   } else {
     // probe -1.jpg, -2.jpg… in order (same contiguous rule the generator uses) and stop at
     // the first miss; only photos that really exist become tiles. Nothing at all → the
-    // section hides, so a photoless home doesn't open with a heading over an empty grid.
-    $("gallerySection").hidden = true;
+    // hero photo stays, so a photoless home doesn't open with an empty grid.
     (function probe(i){
       if (i > MAX_GALLERY) return;
       const src = `images/${C.id}-${i}.jpg`, im = new Image();
-      im.onload  = () => { g.insertAdjacentHTML("beforeend", tile(src, false)); $("gallerySection").hidden = false; probe(i+1); };
+      im.onload  = () => { g.insertAdjacentHTML("beforeend", tile(src, false)); probe(i+1); };
       im.onerror = () => {};
       im.src = src;
     })(1);
@@ -751,7 +769,7 @@ document.addEventListener("listing-ready", function(){
   if (!h || !window.HomesMap) return;
   const q = encodeURIComponent([h.address, h.city, h.state, h.zip].filter(Boolean).join(", "));
   document.getElementById("mapGoogle").href = "https://www.google.com/maps/search/?api=1&query=" + q;
-  if (window.HomesCart){ const slot = document.getElementById("hcHero") || document.getElementById("ctaNote"); if (slot) { if (slot.id === "hcHero") slot.innerHTML = HomesCart.heart(h, true) + HomesCart.compare(h); else slot.insertAdjacentHTML("afterend", '<div class="hc-hero">' + HomesCart.heart(h, true) + HomesCart.compare(h) + '</div>'); } HomesCart.sync(); }
+  if (window.HomesCart){ const slot = document.getElementById("hcHero") || document.getElementById("ctaNote"); const bits = HomesCart.heart(h, true) + (HomesCart.tour ? HomesCart.tour(h) : "") + HomesCart.compare(h); if (slot) { if (slot.id === "hcHero") slot.innerHTML = bits; else slot.insertAdjacentHTML("afterend", '<div class="hc-hero">' + bits + '</div>'); } HomesCart.sync(); }
   HomesMap.mini({ el: document.getElementById("mapEl"), home: h, section: document.getElementById("mapSec"), note: document.getElementById("mapNote") });
 });
 </script>
@@ -761,8 +779,15 @@ document.addEventListener("listing-ready", function(){
 #stickyTour .st-p{flex:1;min-width:0;font:800 18px 'Bricolage Grotesque',sans-serif;color:var(--pine,#15315e);line-height:1.1}
 #stickyTour .st-p small{display:block;font:500 11px 'DM Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft,#5b6b82)}
 #stickyTour a{flex:0 0 auto;text-decoration:none;font:700 15px 'DM Sans',sans-serif;padding:12px 14px;border-radius:12px;text-align:center;min-height:48px;min-width:48px;display:inline-flex;align-items:center;justify-content:center}
-#stickyTour a.st-go{background:var(--go,#d43333);color:#fff}
-#stickyTour a.st-sms{background:#fff;color:var(--pine,#15315e);border:1.5px solid var(--line,#d5dbe6)}
+#stickyTour a.st-go{background:#C62F2A;color:#fff;font-size:16px;padding:12px 16px}
+#stickyTour .st-ask{flex:0 0 auto;border:0;background:transparent;color:#15315e;font:600 13px system-ui,sans-serif;text-decoration:underline;padding:8px 4px;cursor:pointer}
+#askSheet{border:0;border-radius:18px 18px 0 0;padding:16px 16px 24px;width:min(560px,100%);max-height:80vh;overflow:auto}
+#askSheet::backdrop{background:rgba(15,36,68,.45)}
+#askSheet h2{margin:0 0 8px;font-size:22px}
+#askSheet details{border-top:1px solid #e2e8f2;padding:10px 0}
+#askSheet summary{font-weight:700;cursor:pointer}
+#askSheet p{margin:8px 0 0;line-height:1.45}
+#askSheet .ask-text{display:inline-block;margin-top:12px;font-weight:700}
 @media(max-width:899px){body.page-home{padding-bottom:84px}#stickyTour{transform:none}}
 @media(min-width:900px){#stickyTour{left:auto;right:24px;bottom:24px;border:1px solid var(--line,#dfe6f0);border-radius:16px;max-width:520px;transform:translateY(110%);transition:transform .25s}#stickyTour.on{transform:none}}
 #lb{position:fixed;inset:0;z-index:200;background:rgba(8,16,30,.94);display:none;align-items:center;justify-content:center;touch-action:pan-y}
@@ -773,7 +798,19 @@ document.addEventListener("listing-ready", function(){
 #lb .ct{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:#cfd9ea;font:500 13px 'DM Mono',monospace}
 #gallery img,#heroImg{cursor:zoom-in}
 </style>
-<div id="stickyTour" aria-hidden="true"><div class="st-p"><span id="stPay"></span><small id="stLab">price</small></div><a id="stSms" class="st-sms" href="#" hidden>Text us</a><a id="stBtn" class="st-go" href="#">Book a tour</a></div>
+<div id="stickyTour" hidden aria-hidden="true"><div class="st-p"><span id="stPay"></span><small id="stLab">per month</small></div><button type="button" id="stAsk" class="st-ask">Have a question?</button><a id="stBtn" class="st-go" href="#">Book a tour</a></div>
+<dialog id="askSheet">
+  <h2>Quick answers</h2>
+  <details open><summary>Is this a scam?</summary><p id="scamSheetAnswer">Americas Best Home Solutions LLC is the company on this site. The office address is 30 N Gould St, Ste R, Sheridan, WY 82801. Joseph Hernandez is the Executive Director, and his photo is on this site. The buyer reviews are from Logan and Trinity in Decatur. You tour the home in person before you pay anything to hold it. You tour the home in person first. You sign the paperwork before you get the keys. You can write admin@americasbesthomesolutions.com.</p></details>
+  <details id="petsSheet"><summary>Are pets allowed?</summary><p id="petsSheetAnswer">Yes, pets are allowed.</p></details>
+  <details><summary>What does the monthly payment include?</summary><p>What your monthly payment includes is confirmed in your paperwork.</p></details>
+  <details><summary>Do I need credit, or an ID?</summary><p>Bring a valid ID. There is no bank and no mortgage application. You need the down payment and a monthly payment that fits your budget.</p></details>
+  <details><summary>Who handles repairs?</summary><p>Every home is sold as-is. It needs some work, and the price reflects that. You handle the repairs. Walk through the home before you sign.</p></details>
+  <details><summary>When do I get the keys?</summary><p>In Illinois there is a 3-day right of rescission after signing, then keys. In other states, keys right after signing.</p></details>
+  <details><summary>Can I tour first?</summary><p>You tour the home in person first.</p></details>
+  <p><a id="askText" class="ask-text" href="#" hidden>Still have a question? Text us</a></p>
+  <form method="dialog"><button type="submit">Close</button></form>
+</dialog>
 <div id="lb" role="dialog" aria-modal="true"><button class="x" aria-label="Close">&#10005;</button><button class="pv" aria-label="Previous">&#8249;</button><img alt=""><button class="nx" aria-label="Next">&#8250;</button><div class="ct"></div></div>
 <script>
 document.addEventListener("DOMContentLoaded", function(){
@@ -786,30 +823,36 @@ document.addEventListener("DOMContentLoaded", function(){
     if (!main || !bar) return false;
     $("stBtn").href = main.href;
     $("stBtn").textContent = main.textContent || "Book a tour";
-    $("stPay").textContent = ($("dPrice").textContent||"").trim();
-    $("stLab").textContent = "price";
-    const stSms = $("stSms");
-    if (stSms) {
-      const href = sms ? String(sms.getAttribute("href") || "") : "";
-      if (sms && !sms.hidden && href.indexOf("sms:") === 0) { stSms.href = sms.href; stSms.hidden = false; }
-      else stSms.hidden = true;
-    }
+    const monthly = ($("dMonthly") && $("dMonthly").textContent || "").trim();
+    const down = ($("dMoveIn") && $("dMoveIn").textContent || "").trim();
+    $("stPay").textContent = monthly;
+    $("stLab").textContent = down ? down + " down" : "per month";
+    const ask = $("askText");
+    const href = sms ? String(sms.getAttribute("href") || "") : "";
+    if (ask && href.indexOf("sms:") === 0) { ask.href = sms.href; ask.hidden = false; }
     return true;
   }
+  const askBtn = $("stAsk"), sheet = $("askSheet");
+  if (askBtn && sheet) askBtn.addEventListener("click", () => { fill(); sheet.showModal(); });
+  function showBar(on){
+    if (!bar) return;
+    bar.hidden = !on;
+    bar.classList.toggle("on", on);
+    bar.setAttribute("aria-hidden", on ? "false" : "true");
+    bar.querySelectorAll("a, button").forEach(el => { el.tabIndex = on ? 0 : -1; });
+  }
   if (!fill()) {
-    if (bar) { bar.hidden = true; bar.setAttribute("aria-hidden", "true"); }
+    showBar(false);
   } else if (phone) {
-    bar.hidden = false;
-    bar.classList.add("on");
-    bar.setAttribute("aria-hidden", "false");
+    showBar(true);
   } else if ("IntersectionObserver" in window) {
+    showBar(false);
     new IntersectionObserver(es => {
       fill();
       const out = !es[0].isIntersecting && es[0].boundingClientRect.top < 0;
-      bar.classList.toggle("on", out);
-      bar.setAttribute("aria-hidden", out ? "false" : "true");
+      showBar(out);
     }).observe(main);
-  }
+  } else showBar(true);
   // full-screen photo viewer with swipe + arrows
   const lb=$("lb"), im=lb.querySelector("img"), ct=lb.querySelector(".ct"); let list=[], i=0;
   const show=n=>{ i=(n+list.length)%list.length; im.src=list[i]; ct.textContent=(i+1)+" / "+list.length; };

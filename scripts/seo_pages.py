@@ -67,6 +67,7 @@ STATIC = {
 FACTS_CSS = """
 .headline{font-size:clamp(24px,5.2vw,34px);line-height:1.15;letter-spacing:-.5px}
 .seo-facts{font-size:17px;line-height:1.55;color:var(--ink,#16213a);margin:0 0 8px;max-width:52ch}
+.h1-place{display:block;font-size:.62em;font-weight:700;color:#3d4a5c;margin-top:4px}
 .seo-city{margin:0 0 12px}
 .seo-city a{color:var(--pine,#15315e);font-weight:700}
 """.strip()
@@ -87,9 +88,18 @@ document.addEventListener("DOMContentLoaded", function () {
   if (root.getAttribute("data-seo") !== "1") return;
   var title = root.getAttribute("data-seo-title");
   if (title) document.title = title;
-  var h1 = root.getAttribute("data-seo-h1");
   var headline = document.getElementById("headline");
-  if (headline && h1) headline.textContent = h1;
+  var street = root.getAttribute("data-seo-street");
+  var where = root.getAttribute("data-seo-where");
+  if (headline && street) {
+    headline.textContent = street;
+    if (where) {
+      var place = document.createElement("span");
+      place.className = "h1-place";
+      place.textContent = where;
+      headline.appendChild(place);
+    }
+  }
   [["dMonthly", "data-seo-monthly"], ["dMoveIn", "data-seo-down"], ["dPrice", "data-seo-price"]].forEach(function (pair) {
     if (!root.hasAttribute(pair[1])) return;
     var node = document.getElementById(pair[0]);
@@ -210,19 +220,24 @@ def page_title(home: dict, lang: str) -> str:
 
 
 def page_h1(home: dict, lang: str) -> str:
-    bits = money_bits(home, lang)
-    tail = (" — " + ", ".join(bits)) if bits else ""
-    return f"{place(home)}{tail}"
+    """Visible heading: street, then city and state. The price stays in the title."""
+    addr = esc((home.get("address") or "").strip())
+    city = (home.get("city") or "").strip()
+    state = (home.get("state") or "").strip().upper()
+    loc = esc(", ".join(part for part in (city, state) if part))
+    if addr and loc:
+        return f'{addr}<span class="h1-place">{loc}</span>'
+    return addr or loc
 
 
-def facts_text(home: dict, lang: str) -> str:
+def facts_text(home: dict, lang: str, include_price: bool = True) -> str:
     where = place(home)
     price, down, monthly = money(home.get("lockedPrice")), money(home.get("moveIn")), money(home.get("monthlyPayment"))
     size, sq = bed_bath(home, lang), sqft_of(home)
     pending = str(home.get("status") or "").strip().lower() == "pending"
     if lang == "es":
         parts = [f"Casa con financiamiento del dueño en {where}."]
-        if price:
+        if include_price and price:
             parts.append(f"Precio de compra {price}.")
         if down:
             parts.append(f"Enganche {down}.")
@@ -236,7 +251,7 @@ def facts_text(home: dict, lang: str) -> str:
             parts.append("Esta casa está pendiente.")
         return " ".join(parts)
     parts = [f"Owner-financed home at {where}."]
-    if price:
+    if include_price and price:
         parts.append(f"Purchase price {price}.")
     if down:
         parts.append(f"Down payment {down}.")
@@ -258,7 +273,7 @@ def page_description(home: dict, lang: str) -> str:
 # Sentences that state a term, a rate, taxes, or insurance are not shown.
 # The written agreement is where those points are confirmed.
 _SENSITIVE_COPY = re.compile(
-    r"30\s*-?\s*years?|30\s*años|treinta\s+años|fixed[\s-]*price|precio\s+fijo|"
+    r"30\s*-?\s*years?|30\s*años|treinta\s+años|fixed[\s-]*price|fixed monthly|precio\s+fijo|"
     r"(?:the\s+)?price\s+is\s+fixed|interest\s+rate|tasa\s+de\s+inter[eé]s|"
     r"property\s+tax(?:es)?|\btaxes\b|\bimpuestos?\b|\binsurance\b|\bseguro\b",
     re.IGNORECASE,
@@ -493,11 +508,13 @@ def _book_path(root: Path, home_id: str, lang: str) -> str:
 def write_listing(root: Path, home: dict, lang: str, template: str | None = None) -> str:
     """Fill home.html with this home's title, H1, facts, and tags. Returns the HTML."""
     template = template if template is not None else (root / "home.html").read_text(encoding="utf-8")
-    title, h1, facts = page_title(home, lang), page_h1(home, lang), facts_text(home, lang)
+    title, h1, facts = page_title(home, lang), page_h1(home, lang), facts_text(home, lang, include_price=False)
     desc = page_description(home, lang)
     city, state = (home.get("city") or "").strip(), (home.get("state") or "").strip().upper()
+    street = (home.get("address") or "").strip()
+    where = ", ".join(part for part in ((home.get("city") or "").strip(), (home.get("state") or "").strip().upper()) if part)
     html_open = (f'<html lang="{lang}" data-seo="1"'
-                 f' data-seo-title="{esc(title)}" data-seo-h1="{esc(h1)}"'
+                 f' data-seo-title="{esc(title)}" data-seo-street="{esc(street)}" data-seo-where="{esc(where)}"'
                  f' data-seo-monthly="{esc(money(home.get("monthlyPayment")))}"'
                  f' data-seo-down="{esc(money(home.get("moveIn")))}"'
                  f' data-seo-price="{esc(money(home.get("lockedPrice")))}"')
@@ -524,7 +541,7 @@ def write_listing(root: Path, home: dict, lang: str, template: str | None = None
         label = (f"Casas con financiamiento del dueño en {city}, {state}" if lang == "es"
                  else f"Owner financed homes in {city}, {state}")
         city_html = f'\n<p class="seo-city" id="seoCity"><a href="/{city_file(city, state)}">{esc(label)}</a></p>'
-    block = (f'<h1 class="headline" id="headline">{esc(h1)}</h1>'
+    block = (f'<h1 class="headline" id="headline">{h1}</h1>'
              f'\n<p class="seo-facts" id="seoFacts">{esc(facts)}</p>{city_html}')
     page = _replace_once(page, r'<h1 class="headline" id="headline">.*?</h1>', lambda _m: block, re.S)
     status = "Pendiente" if lang == "es" else "Pending"
@@ -951,7 +968,12 @@ def _city_page(group: dict, lang: str) -> str:
 .range-chips button{{flex:0 0 auto;min-height:44px;padding:0 14px;border-radius:999px;border:1.5px solid var(--line,#d5dbe6);background:#fff;font:700 14px system-ui,sans-serif;color:#15315e;cursor:pointer}}
 .range-chips button[aria-pressed="true"]{{background:#15315e;color:#fff}}
 .row-scroller{{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:8px 0 16px}}
+.buyer-panel{{position:sticky;top:56px;z-index:20;background:var(--paper,#f5f7fb)}}
 .swipe-card{{flex:0 0 min(78vw,280px);scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}}
+@media (max-width:860px){{
+  #cityHomes{{flex-direction:column;overflow:visible;scroll-snap-type:none}}
+  .swipe-card{{flex:1 1 auto;width:100%;max-width:none}}
+}}
 .swipe-card a{{color:inherit;text-decoration:none;display:block}}
 .swipe-card img{{width:100%;aspect-ratio:4/3;object-fit:cover;display:block;background:#e6eef8}}
 .swipe-card .where{{font-weight:800;margin:10px 12px 4px}}
@@ -1236,11 +1258,211 @@ def _stamp_finance(root: Path, homes: list[dict], lang: str) -> bool:
     return changed
 
 
+def pick_weekly_hero(homes: list[dict], today: date | None = None) -> dict | None:
+    """Available home with a landscape photo. The ISO week picks which one, in id order."""
+    today = today or date.today()
+    pool = []
+    for home in homes:
+        if str(home.get("status") or "").strip().lower() == "pending":
+            continue
+        if str(home.get("hasPhoto") or "").strip().lower() not in {"1", "true", "yes"}:
+            continue
+        try:
+            width = float(home.get("cardWidth") or 0)
+            height = float(home.get("cardHeight") or 0)
+        except (TypeError, ValueError):
+            continue
+        if width > 0 and width >= height:
+            pool.append(home)
+    pool.sort(key=lambda home: home.get("id") or "")
+    if not pool:
+        return None
+    return pool[today.isocalendar().week % len(pool)]
+
+
+def _stamp_weekly_hero(root: Path, homes: list[dict], lang: str = "en") -> bool:
+    home = pick_weekly_hero(homes)
+    index = Path(root) / "index.html"
+    if home is None or not index.is_file():
+        return False
+    text = index.read_text(encoding="utf-8")
+    if "<!-- weekly-hero:start -->" not in text:
+        return False
+    def place(value: object) -> str:
+        return str(value or "").strip().strip(",").strip()
+
+    lead = "Una casa real que puede visitar" if lang == "es" else "A real home you can tour"
+    caption = lead + ": " + ", ".join(
+        part for part in (place(home.get("address")), place(home.get("city")), place(home.get("state"))) if part
+    )
+    block = (
+        "<!-- weekly-hero:start -->\n"
+        f'<figure class="week-hero"><img src="images/cards/{esc(home["id"])}-480.webp" alt="{esc(caption)}" '
+        f'width="480" height="360" fetchpriority="high"><figcaption>{esc(caption)}</figcaption></figure>\n'
+        "<!-- weekly-hero:end -->"
+    )
+    new = re.sub(r"<!-- weekly-hero:start -->[\s\S]*?<!-- weekly-hero:end -->", lambda _m: block, text, count=1)
+    return _write_if_changed(index, new)
+
+
+def map_available(homes: list[dict]) -> tuple[list[dict], set[tuple[str, str]]]:
+    """Homes the homepage map pins on arrival.
+
+    Same rules as the map: not pending, not Du Quoin, numeric coordinates.
+    The type filter defaults to lighter work, so contractor specials are not in that set.
+    """
+    kept = []
+    for home in homes:
+        if str(home.get("status") or "").strip().lower() == "pending":
+            continue
+        if (home.get("id") or "") == "duquoin-il-322-cole":
+            continue
+        if str(home.get("contractor") or "").strip():
+            continue
+        try:
+            lat = float(home.get("lat"))
+            lng = float(home.get("lng"))
+        except (TypeError, ValueError):
+            continue
+        if lat != lat or lng != lng:
+            continue
+        kept.append(home)
+    towns = set()
+    for home in kept:
+        city = (home.get("city") or "").strip()
+        state = (home.get("state") or "").strip().upper()
+        if city and state:
+            towns.add((city, state))
+    return kept, towns
+
+
+def _stamp_inventory(root: Path, homes: list[dict], lang: str = "en") -> None:
+    import listing_facts
+    kept, towns = map_available(homes)
+    index = root / "index.html"
+    if not index.is_file():
+        return
+    text = index.read_text(encoding="utf-8")
+    text = re.sub(r'(<span id="otHomes">)[^<]*(</span>)', rf'\g<1>{len(kept)}\2', text, count=1)
+    text = re.sub(r'(<span id="otCities">)[^<]*(</span>)', rf'\g<1>{len(towns)}\2', text, count=1)
+    walk = listing_facts.walkthrough_line(lang)
+    text = re.sub(r'(<span id="otWalk">)[^<]*(</span>)', rf'\g<1>{walk}\2', text, count=1)
+    index.write_text(text, encoding="utf-8")
+    hold = listing_facts.hold_line(lang)
+    home_tpl = root / "home.html"
+    if home_tpl.is_file():
+        page = home_tpl.read_text(encoding="utf-8")
+        page = re.sub(
+            r"<!-- hold-line:start -->.*?<!-- hold-line:end -->",
+            f"<!-- hold-line:start -->{hold}<!-- hold-line:end -->",
+            page,
+            count=1,
+            flags=re.S,
+        )
+        home_tpl.write_text(page, encoding="utf-8")
+
+
+_DOWN_COVER = re.compile(
+    r"[ \t]*<details[^>]*>\s*<summary>\s*(?:What does the down payment cover\?|¿Qué cubre el enganche\?)\s*</summary>.*?</details>\n?",
+    re.S,
+)
+
+
+def _stamp_buyer_questions(root: Path, lang: str = "en") -> None:
+    """Pets answer in the sheet and FAQ, and drop the down-payment question."""
+    import listing_facts
+    lang = "es" if lang == "es" else "en"
+    question, answer = listing_facts.pets_qa(lang)
+    question, answer = esc(question), esc(answer)
+    if lang == "es":
+        names = ("home.html", "index.html", "como-funciona.html")
+        sheet_id, faq_id = "petsSheetAnswerEs", "petsAnswerEs"
+        sheet_anchor = r'(<p id="scamSheetAnswerEs">.*?</p></details>)'
+        faq_anchor = r'(<details id="scamFaq">.*?</details>)'
+        faq_fallback = r'(<details>\s*<summary>[^<]*</summary>\s*<div class="ans" id="scamAnswerEs">.*?</div>\s*</details>)'
+    else:
+        names = ("home.html", "index.html", "how-it-works.html")
+        sheet_id, faq_id = "petsSheetAnswer", "petsAnswer"
+        sheet_anchor = r'(<p id="scamSheetAnswer">.*?</p></details>)'
+        faq_anchor = r'(<details id="scamFaq">.*?</details>)'
+        faq_fallback = r'(<details>\s*<summary>[^<]*</summary>\s*<div class="ans" id="scamAnswer">.*?</div>\s*</details>)'
+    sheet = f'<details id="petsSheet"><summary>{question}</summary><p id="{sheet_id}">{answer}</p></details>'
+    faq = f'<details id="petsFaq"><summary>{question}</summary><p class="ans" id="{faq_id}">{answer}</p></details>'
+    for name in names:
+        path = root / name
+        if not path.is_file():
+            continue
+        text = path.read_text(encoding="utf-8")
+        new = _DOWN_COVER.sub("", text)
+        if 'id="petsSheet"' in new:
+            new = re.sub(
+                rf'(<details id="petsSheet"><summary>)(.*?)(</summary><p id="{sheet_id}">)(.*?)(</p></details>)',
+                lambda m: m.group(1) + question + m.group(3) + answer + m.group(5),
+                new,
+                count=1,
+                flags=re.S,
+            )
+        elif 'id="askSheet"' in new:
+            new = re.sub(sheet_anchor, lambda m: m.group(1) + "\n  " + sheet, new, count=1, flags=re.S)
+        if 'id="petsFaq"' in new:
+            new = re.sub(
+                rf'(<details id="petsFaq"><summary>)(.*?)(</summary><p class="ans" id="{faq_id}">)(.*?)(</p></details>)',
+                lambda m: m.group(1) + question + m.group(3) + answer + m.group(5),
+                new,
+                count=1,
+                flags=re.S,
+            )
+        elif 'id="scamFaq"' in new:
+            new = re.sub(faq_anchor, lambda m: m.group(1) + "\n      " + faq, new, count=1, flags=re.S)
+        elif 'id="scamAnswer"' in new or 'id="scamAnswerEs"' in new:
+            new = re.sub(faq_fallback, lambda m: m.group(1) + "\n      " + faq, new, count=1, flags=re.S)
+        if new != text:
+            path.write_text(new, encoding="utf-8")
+
+
+def _stamp_scam_copy(root: Path, lang: str = "en") -> None:
+    """Write the scam answer from listing_facts flags into the pages that show it."""
+    import listing_facts
+    lang = "es" if lang == "es" else "en"
+    answer = listing_facts.scam_answer(lang)
+    escaped = answer.replace("\\", "\\\\").replace('"', '\\"')
+    if lang == "es":
+        names = ("home.html", "index.html", "como-funciona.html")
+        id_pat = r'(id="scam(?:Answer|SheetAnswer)Es">)(.*?)(</)'
+        q_pat = r'("name":"¿Es esto una estafa\?","acceptedAnswer":\{"@type":"Answer","text":")((?:\\.|[^"\\])*)(")'
+    else:
+        names = ("home.html", "index.html", "how-it-works.html")
+        id_pat = r'(id="scam(?:Answer|SheetAnswer)">)(.*?)(</)'
+        q_pat = r'("name":"Is this a scam\?","acceptedAnswer":\{"@type":"Answer","text":")((?:\\.|[^"\\])*)(")'
+    for name in names:
+        path = root / name
+        if not path.is_file():
+            continue
+        text = path.read_text(encoding="utf-8")
+        new = re.sub(
+            id_pat,
+            lambda m: m.group(1) + answer + m.group(3),
+            text,
+            flags=re.S,
+        )
+        new = re.sub(
+            q_pat,
+            lambda m: m.group(1) + escaped + m.group(3),
+            new,
+            count=1,
+        )
+        if new != text:
+            path.write_text(new, encoding="utf-8")
+
+
 def rebuild(root: Path, lang: str = "en") -> str:
     root = Path(root)
     if not (root / "home.html").is_file() or not (root / "homes.js").is_file():
         return "seo: skipped (home.html or homes.js missing)"
+    _stamp_scam_copy(root, lang)
+    _stamp_buyer_questions(root, lang)
     homes = load_homes(root)
+    _stamp_inventory(root, homes, lang)
     template = (root / "home.html").read_text(encoding="utf-8")
     today = date.today().isoformat()
     sm = root / "sitemap.xml"
@@ -1275,6 +1497,7 @@ def rebuild(root: Path, lang: str = "en") -> str:
     _write_buyer_index(root, homes)
     index_changed = bool(_stamp_cities_on_index(root, groups, lang))
     index_changed = _stamp_finance(root, homes, lang) or index_changed
+    index_changed = _stamp_weekly_hero(root, homes, lang) or index_changed
     if index_changed:
         index_loc = domain + "/"
         entries = [(loc, today if loc == index_loc else last, pri, en, es) for loc, last, pri, en, es in entries]
@@ -1344,13 +1567,13 @@ def validate(root: Path, lang: str = "en") -> list[str]:
             errors.append(f"empty h1 on {home['id']}")
         facts_m = re.search(r'<p class="seo-facts" id="seoFacts">(.*?)</p>', text, re.S)
         facts = html.unescape(facts_m.group(1)) if facts_m else ""
-        visible = h1 + " " + facts
+        visible = text
         for label, value in (("price", money(home.get("lockedPrice"))),
                              ("down", money(home.get("moveIn"))),
                              ("monthly", money(home.get("monthlyPayment")))):
             if value and value not in visible:
                 errors.append(f"{home['id']} visible text missing {label} {value}")
-        if "$0" in visible:
+        if "$0" in (h1 + " " + facts):
             errors.append(f"{home['id']} shows $0")
         desc_m = re.search(r'<meta name="description" content="([^"]*)"', text)
         desc = html.unescape(desc_m.group(1)) if desc_m else ""

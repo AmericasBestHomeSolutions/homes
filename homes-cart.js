@@ -17,6 +17,9 @@
     cmpHint:"Elija al menos 2 casas con «Comparar» para verlas lado a lado.", cmpFull:"Puede comparar hasta 4 casas — quite una primero.",
     saveFull:"Puede guardar hasta 30 casas — quite una primero.", remove:"Quitar", view:"Ver casa", tour:"Visita",
     reqTours:"Pedir visitas", yourTours:"Sus visitas", book:"Agende una visita", name:"Nombre", phone:"Teléfono", email:"Correo", pref:"Mejor día y hora",
+    tourAdd:"Agregar a la lista de visitas", tourOn:"En su lista de visitas", tourList:n=>`Lista de visitas (${n})`,
+    tourLead:"Reserve cada casa en su propia página, una después de la otra. El sitio de reservas toma una casa por vez.",
+    tourNext:"Reservar esta visita",
     anyDay:"Cualquier día", anyTime:"Cualquier hora", times:["Mañana (9–12)","Tarde (12–4)","Noche (4–7)"],
     send:"Pedir estas visitas", sending:"Enviando…", back:"← Volver", close:"Seguir viendo",
     thanksH:"¡Listo — gracias!", thanksP:"Nos comunicaremos pronto para fijar una hora para estas casas.",
@@ -34,6 +37,9 @@
     cmpHint:"Pick at least 2 homes with “Compare” to see them side by side.", cmpFull:"You can compare up to 4 homes — remove one first.",
     saveFull:"You can save up to 30 homes — remove one first.", remove:"Remove", view:"View home", tour:"Tour",
     reqTours:"Request tours", yourTours:"Your tours", book:"Book a Tour", name:"Name", phone:"Phone", email:"Email", pref:"Best day & time",
+    tourAdd:"Add to tour list", tourOn:"On your tour list", tourList:n=>`Tour list (${n})`,
+    tourLead:"Book each home on its own page, one after another. The booking site takes one home at a time.",
+    tourNext:"Book this tour",
     anyDay:"Any day", anyTime:"Any time", times:["Morning (9–12)","Afternoon (12–4)","Evening (4–7)"],
     send:"Request these tours", sending:"Sending…", back:"← Back", close:"Keep browsing",
     thanksH:"Got it — thank you!", thanksP:"We'll be in touch shortly to lock in a time for these homes.",
@@ -47,7 +53,7 @@
     locale:"en-US"
   };
   const FEAT_ORDER = ["backyard","fenced_yard","basement","garage","off_street_parking","central_air","storage_shed","attic"];
-  const KS = "savedHomes", KC = "compareHomes", MAXS = 30, MAXC = 4, MAXT = 5;
+  const KS = "savedHomes", KC = "compareHomes", KT = "tourList", MAXS = 30, MAXC = 4, MAXT = 5;
 
   const offMarket = h => /^sold$/i.test(String((h && h.status) || "").trim());
   const ALL = () => (typeof HOMES !== "undefined" ? HOMES : []).filter(h => !offMarket(h));
@@ -58,7 +64,7 @@
   const load = k => { try { return JSON.parse(localStorage.getItem(k)||"[]").filter(id => typeof id === "string"); } catch(e){ return []; } };
   const store = (k, a) => { try { localStorage.setItem(k, JSON.stringify(a)); } catch(e){} };
   const live = a => a.filter(byId);                 // drop homes that have since sold
-  let saved = live(load(KS)), cmp = live(load(KC)), tourSel = null, tab = "saved", view = "list";
+  let saved = live(load(KS)), cmp = live(load(KC)), tours = live(load(KT)), tourSel = null, tab = "saved", view = "list";
   const label = h => [h.address, h.city, h.state].filter(Boolean).join(", ");
   const isPend = h => /pend/i.test(String((h && h.status) || ""));
   const photo = h => h.heroPhoto || `images/${h.id}.jpg`;
@@ -77,7 +83,7 @@
     .card-body .hc-cmpbtn{margin-top:10px}
     .hc-hero{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:12px 0 0}
     .hc-hero .hc-heart{box-shadow:none;border:1.5px solid var(--line,#e2e8f2);background:#fff}
-    .hc-tray{position:fixed;right:14px;bottom:14px;z-index:55;display:none;gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:calc(100vw - 28px)}
+    .hc-tray{position:fixed;right:14px;bottom:96px;z-index:90;display:none;gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:calc(100vw - 28px)}
     .hc-tray.show{display:flex} body.tl-pad .hc-tray{bottom:84px}
     .hc-tray button{font:700 14px 'DM Sans',system-ui,sans-serif;border:0;border-radius:999px;padding:12px 18px;min-height:46px;cursor:pointer;box-shadow:0 4px 16px rgba(15,36,68,.35);background:var(--pine,#15315e);color:#fff}
     .hc-tray button.alt{background:#fff;color:var(--pine,#15315e);border:1.5px solid var(--pine,#15315e)}
@@ -94,7 +100,9 @@
     .hc-tabs{display:inline-flex;border:1.5px solid var(--pine,#15315e);border-radius:12px;overflow:hidden;margin-bottom:14px}
     .hc-tabs button{font:600 14px 'DM Sans',sans-serif;padding:10px 16px;border:0;background:#fff;color:var(--pine,#15315e);cursor:pointer;min-height:42px}
     .hc-tabs button.on{background:var(--pine,#15315e);color:#fff}
-    .hc-item{display:grid;grid-template-columns:84px 1fr;gap:12px;align-items:center;border:1px solid var(--line,#e2e8f2);border-radius:14px;padding:10px;margin:8px 0}
+    .hc-item{display:grid;grid-template-columns:84px minmax(0,1fr);gap:12px;align-items:center;border:1px solid var(--line,#e2e8f2);border-radius:14px;padding:10px;margin:8px 0}
+    .hc-item .ad{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .hc-item .hc-acts{display:flex;gap:10px;align-items:center;flex-wrap:nowrap;margin-top:6px}
     .hc-th{width:84px;height:70px;border-radius:10px;object-fit:cover;background:linear-gradient(135deg,#15315e,#2f5c96)}
     .hc-item .pr{font-weight:800;font-size:18px;color:var(--pine,#15315e)} .hc-item .pr small{font-weight:500;font-size:13px;color:var(--ink-soft,#5b6577)}
     .hc-item .ad{font-size:14px;color:var(--ink-soft,#5b6577)} .hc-item .sp{font-size:13.5px}
@@ -126,6 +134,16 @@
   /* ---------- render helpers used by the pages ---------- */
   const heart = (h, withText) => `<button type="button" class="hc-heart" data-save="${esc(h.id)}" aria-pressed="false" aria-label="${T.save}" title="${T.save}"><span class="hc-ic">♡</span>${withText?`<span class="hc-tx" style="font:700 14px 'DM Sans',sans-serif;margin-left:6px">${T.save}</span>`:""}</button>`;
   const compare = h => `<button type="button" class="hc-cmpbtn" data-cmp="${esc(h.id)}" aria-pressed="false"><span class="hc-ic">⇄</span> <span class="hc-tx">${T.cmp}</span></button>`;
+  const tour = h => `<button type="button" class="hc-tourbtn" data-tour="${esc(h.id)}" aria-pressed="false"><span class="hc-tx">${T.tourAdd}</span></button>`;
+  function bookPath(id){
+    if (typeof BOOK_HREF !== "undefined" && BOOK_HREF && BOOK_HREF[id]) return BOOK_HREF[id];
+    return encodeURIComponent(id) + ".html";
+  }
+  function toggleTour(id){
+    if (tours.includes(id)) tours = tours.filter(x => x !== id);
+    else { if (tours.length >= MAXT){ alert(T.maxTours); return; } tours.push(id); }
+    store(KT, tours); sync(true);
+  }
 
   /* ---------- state changes ---------- */
   function toggleSave(id){
@@ -174,9 +192,10 @@
   function ensureTray(){
     if ($("hcTray")) return;
     const t = document.createElement("div"); t.className = "hc-tray"; t.id = "hcTray";
-    t.innerHTML = `<button type="button" id="hcOpenSaved"><b>♥</b> <span id="hcSavedN"></span></button><button type="button" class="alt" id="hcOpenCmp" hidden><b>⇄</b> <span id="hcCmpN"></span></button>`;
+    t.innerHTML = `<button type="button" id="hcOpenSaved"><b>♥</b> <span id="hcSavedN"></span></button><button type="button" id="hcOpenTour" hidden><span id="hcTourN"></span></button><button type="button" class="alt" id="hcOpenCmp" hidden><b>⇄</b> <span id="hcCmpN"></span></button>`;
     document.body.appendChild(t);
     $("hcOpenSaved").onclick = () => openPanel("saved");
+    $("hcOpenTour").onclick = () => openPanel("tour");
     $("hcOpenCmp").onclick = () => openPanel("cmp");
   }
   function sync(bump){
@@ -187,6 +206,11 @@
       const ic = b.querySelector(".hc-ic"); if (ic) ic.textContent = on ? "♥" : "♡";
       const tx = b.querySelector(".hc-tx"); if (tx) tx.textContent = on ? T.saved : T.save;
     });
+    document.querySelectorAll("[data-tour]").forEach(b => {
+      const on = tours.includes(b.dataset.tour);
+      b.classList.toggle("on", on); b.setAttribute("aria-pressed", on);
+      const tx = b.querySelector(".hc-tx"); if (tx) tx.textContent = on ? T.tourOn : T.tourAdd;
+    });
     document.querySelectorAll("[data-cmp]").forEach(b => {
       const on = cmp.includes(b.dataset.cmp);
       b.classList.toggle("on", on); b.setAttribute("aria-pressed", on);
@@ -195,8 +219,9 @@
     ensureTray();
     $("hcSavedN").textContent = `${T.mine} (${saved.length})`;
     $("hcCmpN").textContent = `${T.cmpN} (${cmp.length})`;
-    $("hcOpenSaved").hidden = !saved.length; $("hcOpenCmp").hidden = !cmp.length;
-    $("hcTray").classList.toggle("show", saved.length > 0 || cmp.length > 0);
+    $("hcTourN").textContent = T.tourList(tours.length);
+    $("hcOpenSaved").hidden = !saved.length; $("hcOpenCmp").hidden = !cmp.length; $("hcOpenTour").hidden = !tours.length;
+    $("hcTray").classList.toggle("show", saved.length > 0 || cmp.length > 0 || tours.length > 0);
     if (bump){ const b = $("hcOpenSaved"); b.classList.remove("bump"); void b.offsetWidth; b.classList.add("bump"); }
     if ($("hcModal") && $("hcModal").classList.contains("show") && view === "list") renderPanel();
   }
@@ -217,9 +242,20 @@
     const body = $("hcBody");
     const head = `<div class="hc-head"><h3>${T.mine}</h3><button class="hc-x" type="button" data-hc="close" aria-label="Close">×</button></div>
       <div class="hc-tabs"><button type="button" class="${tab==="saved"?"on":""}" data-hc="tab-saved">♥ ${T.tabSaved} (${saved.length})</button><button type="button" class="${tab==="cmp"?"on":""}" data-hc="tab-cmp">⇄ ${T.tabCmp} (${cmp.length})</button></div>`;
-    body.innerHTML = head + (tab === "saved" ? savedHTML() : cmpHTML());
+    body.innerHTML = head + (tab === "tour" ? tourHTML() : tab === "saved" ? savedHTML() : cmpHTML());
   }
 
+  function tourHTML(){
+    if (!tours.length) return `<div class="hc-empty">${T.tourLead}</div>`;
+    const items = tours.map((id) => { const h = byId(id);
+      return `<div class="hc-item">${thumb(h)}<div>
+        <div class="ad">${esc(label(h))}</div>
+        <div class="pr">${money(h.monthlyPayment)}<small>${T.mo}</small></div>
+        <div class="hc-acts">${isPend(h) ? `<span>${esc(T.pendNote)}</span>` : `<a class="hc-book" href="${bookPath(id)}">${T.tourNext}</a>`}
+        <button type="button" class="rm" data-hc="rm-tour" data-id="${esc(id)}">${T.remove}</button></div></div></div>`;
+    }).join("");
+    return `<p class="hc-note">${T.tourLead}</p>` + items;
+  }
   function savedHTML(){
     if (!saved.length) return `<div class="hc-empty">${T.empty}</div>`;
     const items = saved.map(id => { const h = byId(id);
@@ -267,7 +303,9 @@
   /* ---------- events ---------- */
   document.addEventListener("click", e => {
     const s = e.target.closest("[data-save]"), c = e.target.closest("[data-cmp]"), a = e.target.closest("[data-hc]");
+    const tourBtn = e.target.closest("[data-tour]");
     if (s){ e.preventDefault(); e.stopPropagation(); toggleSave(s.dataset.save); return; }
+    if (tourBtn){ e.preventDefault(); e.stopPropagation(); toggleTour(tourBtn.dataset.tour); return; }
     if (c){ e.preventDefault(); e.stopPropagation(); toggleCmp(c.dataset.cmp); return; }
     if (!a) return;
     const k = a.dataset.hc;
@@ -275,6 +313,8 @@
     else if (k === "tab-saved"){ tab = "saved"; renderPanel(); }
     else if (k === "tab-cmp"){ tab = "cmp"; renderPanel(); }
     else if (k === "rm"){ saved = saved.filter(x => x !== a.dataset.id); store(KS, saved); tourSel = null; sync(); }
+    else if (k === "rm-tour"){ tours = tours.filter(x => x !== a.dataset.id); store(KT, tours); sync(); }
+    else if (k === "tab-tour"){ tab = "tour"; renderPanel(); }
     else if (k === "rm-cmp"){ cmp = cmp.filter(x => x !== a.dataset.id); store(KC, cmp); sync(); }
     else if (k === "clear-cmp"){ cmp = []; store(KC, cmp); sync(); }
   }, true);
@@ -385,5 +425,5 @@
   function init(){ addStyle(); adoptKey(); sync(); if (buyerKey()) pullSaved(); }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
 
-  window.HomesCart = { heart, compare, sync, open: openPanel, isSaved: id => saved.includes(id), alert: openAlert, alertLabel: TA.btn };
+  window.HomesCart = { heart, compare, tour, sync, open: openPanel, isSaved: id => saved.includes(id), alert: openAlert, alertLabel: TA.btn };
 })();

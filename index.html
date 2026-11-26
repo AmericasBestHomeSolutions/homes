@@ -28,6 +28,7 @@
 <link rel="alternate" hreflang="es" href="https://casasconfinanciamiento.com/"/>
 <link rel="alternate" hreflang="x-default" href="https://getownerfinancedhomes.com/"/>
 <script type="application/ld+json" id="seo-org">{"@context":"https://schema.org","@type":"Organization","@id":"https://getownerfinancedhomes.com/#organization","name":"Americas Best Home Solutions","legalName":"Americas Best Home Solutions LLC","url":"https://getownerfinancedhomes.com/","logo":"https://getownerfinancedhomes.com/images/brand/logo-mark-480.png","email":"admin@americasbesthomesolutions.com","address":{"@type":"PostalAddress","streetAddress":"30 N Gould St, Ste R","addressLocality":"Sheridan","addressRegion":"WY","postalCode":"82801","addressCountry":"US"}}</script>
+<script type="application/ld+json" id="seo-faq">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this a scam?","acceptedAnswer":{"@type":"Answer","text":"Americas Best Home Solutions LLC is the company on this site. The office address is 30 N Gould St, Ste R, Sheridan, WY 82801. Joseph Hernandez is the Executive Director, and his photo is on this site. The buyer reviews are from Logan and Trinity in Decatur. You tour the home in person before you pay anything to hold it. You tour the home in person first. You sign the paperwork before you get the keys. You can write admin@americasbesthomesolutions.com."}}]}</script>
 
 <!-- ════════════════════════════════════════════════════════════════════════
      AMERICAS BEST HOME SOLUTIONS — BROWSE ALL HOMES (home page)
@@ -111,13 +112,23 @@ body{
 .sec-sub{color:var(--ink-soft);margin-top:8px;font-size:16px}
 
 /* ── ONE TEAM, ONE NUMBER ────────────────────────────────── */
-.oneteam{margin-top:44px;background:var(--pine);color:#fff;border-radius:22px;padding:34px 26px}
-.oneteam-inner{max-width:620px;margin:0 auto}
-.oneteam h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(22px,4.6vw,30px);letter-spacing:-.5px;line-height:1.12;margin-bottom:18px}
-.oneteam ul{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:22px}
-.oneteam li{display:flex;gap:10px;align-items:flex-start;font-size:15.5px;line-height:1.5;color:#dbe7f6}
-.oneteam li strong{color:#fff}
-.oneteam li .m{flex-shrink:0;width:20px;height:20px;border-radius:6px;background:rgba(255,255,255,.15);color:#7ee8a2;display:flex;align-items:center;justify-content:center;margin-top:2px;font-weight:800;font-size:12px}
+.meet-joe{display:grid;grid-template-columns:1fr;margin:12px 16px;border-radius:22px;overflow:hidden;border:1px solid #d5deea;background:#fff;scroll-margin-top:calc(var(--zhead, 80px) + 72px)}
+.meet-bio{padding:20px 18px;display:flex;flex-direction:column;gap:8px}
+.meet-bio img{width:148px;height:auto;border-radius:16px}
+.meet-bio h3{margin:0;font-size:22px;line-height:1.2}
+.meet-bio p{margin:0}
+.meet-role{font-size:13px;line-height:1.4;color:#5b6577}
+.meet-bio a{font-weight:700}
+.meet-navy{background:#15315e;color:#fff;padding:22px 18px;height:100%}
+.meet-navy h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(22px,3vw,28px);letter-spacing:-.4px;line-height:1.15;margin:8px 0 14px;color:#fff}
+.meet-navy ul{list-style:none;display:flex;flex-direction:column;gap:12px;margin:0}
+.meet-navy li{display:flex;gap:10px;align-items:flex-start;font-size:15.5px;line-height:1.45;color:#dbe7f6}
+.meet-navy li strong{color:#fff}
+.meet-navy li .m{flex-shrink:0;width:20px;height:20px;border-radius:6px;background:rgba(255,255,255,.15);color:#7ee8a2;display:flex;align-items:center;justify-content:center;margin-top:2px;font-weight:800;font-size:12px}
+@media(min-width:900px){
+  .meet-joe{grid-template-columns:1fr 1fr;align-items:stretch;scroll-margin-top:var(--zhead, 80px)}
+  .meet-bio img{width:220px}
+}
 
 /* ── TRUST BAND ──────────────────────────────────────────── */
 .trust{display:grid;gap:14px;grid-template-columns:repeat(4,1fr)}
@@ -338,13 +349,13 @@ body.page-search #cities .sec-sub{margin:4px 0 0;max-width:62ch}
 .buyer-group{margin:8px 0 18px;grid-column:1 / -1}
 .buyer-group h2{font-family:'Bricolage Grotesque',sans-serif;font-size:22px;margin:0 0 8px}
 .card-ask,.card-avail{font-size:14px;font-weight:700;margin-top:4px}
-.card-book{display:inline-flex;align-items:center;justify-content:center;min-height:48px;margin:8px 12px 12px;padding:0 14px;border-radius:12px;background:var(--go,#d43333);color:#fff;font-weight:800;text-decoration:none}
+.card-book{display:none !important}
 .card{display:flex;flex-direction:column}
 .card-open{color:inherit;text-decoration:none}
 .joe-slot[hidden]{display:none !important}
 html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(--brand-primary,#15315e);border-radius:12px;padding:12px 14px;margin:10px 0;background:#fff}
 .trust-block{margin:28px 16px}
-.trust-block h2{font-family:'Bricolage Grotesque',sans-serif;font-size:26px;margin:0 0 8px}
+.trust-block h2,.trust-block h3{font-family:system-ui,sans-serif;font-size:26px;font-weight:800;margin:0 0 8px}
 .trust-steps{display:grid;gap:10px;margin-top:10px}
 .trust-steps article{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px}
 body.page-search .hdr-search{display:none}
@@ -372,7 +383,32 @@ body.page-search .topbar{min-height:64px}
 }
 body.page-search #listings{min-height:520px !important}
 body.page-search #cards{min-height:460px !important}
-body.page-search .buyer-intro{display:none !important}
+body.page-search .buyer-intro,
+body.page-search .hero,
+body.page-search #why-strip,
+body.page-search #featuredSec,
+body.page-search #why-buy,
+body.page-search .about,
+body.page-search .legit,
+body.page-search #story,
+body.page-search #trustBand{display:none !important}
+.card-book{display:none !important}
+a.st-go,.btn-primary{background:#C62F2A}
+.see-all{display:flex;align-items:center;justify-content:center;min-height:300px;flex:0 0 min(78vw,300px);background:#E6EEFA;color:#15315e;font-weight:800;text-decoration:none;border-radius:16px;padding:16px;text-align:center}
+.hero-promise{margin:12px 16px 8px;font-size:22px;font-weight:800;line-height:1.25;color:#0F2444}
+.week-hero{margin:0 16px 12px}
+.week-hero img{width:100%;height:140px;object-fit:cover;object-position:50% 60%;border-radius:16px;display:block}
+body.page-search #how .step{padding:8px 10px;gap:8px}
+body.page-search #how .steps{gap:6px}
+body.page-search #how .step h3{font-size:15px;margin:0}
+body.page-search #how .step p{font-size:13px;margin:0}
+body.page-search #how,body.page-search #faq,body.page-search #reviews,body.page-search #joe-intro,body.page-search #cities,body.page-search #soldSec{margin-top:8px}
+body.page-search #how{margin-top:8px}
+body.page-search .joe-intro img{width:88px !important}
+body.page-search .week-hero img{height:100px}
+body.page-search .row-scroller .card{min-height:340px}
+body.page-search #faq .ans{font-size:15px}
+.week-hero figcaption{font-size:13px;color:#5b6577;margin-top:6px}
 .chip-label{font:800 12px system-ui,sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#5b6577;margin-top:4px}
 .range-chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 6px;-webkit-overflow-scrolling:touch}
 .range-chips button{flex:0 0 auto;min-height:44px;padding:0 14px;border-radius:999px;border:1.5px solid var(--line,#d5dbe6);background:#fff;font:700 14px system-ui,sans-serif;color:var(--pine,#15315e);cursor:pointer}
@@ -383,7 +419,21 @@ body.page-search .buyer-panel{position:static;background:#fff}
 .filter-slim{position:fixed;z-index:28;left:8px;right:8px;top:var(--zhead,64px);height:56px;max-height:56px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 14px;border:1px solid var(--line,#e2e8f2);border-radius:14px;background:#fff;box-shadow:0 8px 22px rgba(15,36,68,.12);color:var(--pine,#15315e);font:700 14px system-ui,sans-serif;text-align:left}
 .filter-slim #filterSlimText{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .filter-slim #filterSlimEdit{flex:0 0 auto;min-height:36px;padding:0 12px;border-radius:999px;background:var(--pine,#15315e);color:#fff;display:inline-flex;align-items:center}
+@media(min-width:861px){
+  body.page-search .filter-slim{display:none !important}
+}
+.filter-backdrop{display:none}
+body.sheet-open .filter-backdrop{display:block;position:fixed;inset:0;background:rgba(15,36,68,.45);z-index:70}
+body.sheet-open #buyerSearch{position:fixed;z-index:80;background:#fff;overflow:auto;box-shadow:0 16px 48px rgba(15,36,68,.22)}
+@media(max-width:860px){
+  body.sheet-open #buyerSearch{left:0;right:0;bottom:0;top:auto;max-height:86vh;border-radius:18px 18px 0 0;padding-bottom:24px}
+}
+@media(min-width:861px){
+  body.sheet-open #buyerSearch{top:72px;left:50%;width:min(560px,92vw);max-height:78vh;border-radius:16px;transform:translateX(-50%)}
+}
 body.page-search .view-toggle{position:static !important;left:auto !important;bottom:auto !important;transform:none !important;margin:12px 16px 20px;z-index:1}
+body.page-search #listings > div:has(#hmWrap){display:block;width:100%}
+body.page-search #hmWrap,body.page-search #hmMapEl{width:100%;height:520px;min-height:420px}
 #stickyTour{z-index:80}
 body.page-search .city-pills{display:flex !important;flex-wrap:nowrap !important;overflow-x:auto;scroll-snap-type:x mandatory;gap:8px;padding-bottom:10px}
 body.page-search .city-pills a{flex:0 0 auto;scroll-snap-align:start;min-height:44px}
@@ -484,6 +534,10 @@ body.page-search .hdr-search{display:none !important}
     </div>
   </header>
 
+  <p class="hero-promise">See the down payment and the monthly payment, then tour the home.</p>
+  <!-- weekly-hero:start -->
+<figure class="week-hero"><img src="images/cards/oblong-il-807-illinois-480.webp" alt="A real home you can tour: 807 W Illinois St, Oblong, IL" width="480" height="360" fetchpriority="high"><figcaption>A real home you can tour: 807 W Illinois St, Oblong, IL</figcaption></figure>
+<!-- weekly-hero:end -->
   <form class="buyer-panel" id="buyerSearch" action="/" method="get">
     <h1>Find a home</h1>
     <label>City or ZIP
@@ -520,6 +574,7 @@ body.page-search .hdr-search{display:none !important}
     </div>
     <button type="button" class="chip-clear" id="clearBuyer">Clear filters</button>
   </form>
+  <div class="filter-backdrop" id="filterBackdrop" hidden></div>
   <button type="button" id="filterSlim" class="filter-slim" hidden>
     <span id="filterSlimText">Find a home</span>
     <span id="filterSlimEdit">Filters</span>
@@ -561,7 +616,7 @@ body.page-search .hdr-search{display:none !important}
     <div class="hero-inner">
       <span class="eyebrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M12 2 3 7v6c0 5 3.8 8.4 9 11 5.2-2.6 9-6 9-11V7l-9-5z"/></svg> Owner Financing · No Bank Needed</span>
       <h1>Own the home.<br><em>Skip the bank.</em></h1>
-      <p class="hero-lead">Owner-financed homes across Illinois, Missouri, Michigan, Alabama &amp; more — a fixed monthly payment close to what you're handing a landlord right now. The difference: on the 1st of the month, this one comes back to you as a home that's yours.</p>
+      <p class="hero-lead">Owner-financed homes across Illinois, Missouri, Michigan, Alabama and more. See the down payment and the monthly payment on every home, then tour it in person.</p>
       <p class="reassure">Your past doesn't have to decide your future. If you've been turned away by banks, this was built for you.</p>
       <div class="hero-cta">
         <a class="btn btn-lime" href="#listings">See the homes</a>
@@ -620,15 +675,26 @@ body.page-search .hdr-search{display:none !important}
     <div class="cards" id="featuredCards"></div>
   </section>
 
-  <section class="trust-block joe-intro" id="joe-intro">
-    <picture>
-      <source type="image/webp" srcset="/images/joe-headshot-600.webp">
-      <img src="/images/joe-headshot-600.jpg" alt="Joseph Hernandez" width="600" height="717" loading="lazy" decoding="async">
-    </picture>
-    <h2>Joseph Hernandez, Executive Director</h2>
-    <p>Executive Director, Americas Best Home Solutions · Owner-Financed Homes · Bilingual EN/ES</p>
-    <p>I'm Joseph Hernandez. I help families get into homes they can own without a bank loan. Every home here is sold as-is and priced for the work it needs, and you'll deal with me and my team directly from your first tour to your keys.</p>
-    <p><a href="/how-it-works">How it works</a> · <a href="https://www.linkedin.com/in/joseph-hernandez-9511958">Connect on LinkedIn</a></p>
+  <section class="meet-joe" id="joe-intro">
+    <article class="meet-bio">
+      <picture>
+        <source type="image/webp" srcset="/images/joe-headshot-600.webp">
+        <img src="/images/joe-headshot-600.jpg" alt="Joseph Hernandez" width="600" height="717" loading="lazy" decoding="async">
+      </picture>
+      <h3>Joseph Hernandez, Executive Director</h3>
+      <p class="meet-role">Americas Best Home Solutions · Owner-Financed Homes · Bilingual EN/ES</p>
+      <p>I help families get into homes they can own without a bank loan. Every home here is sold as-is and priced for the work it needs, and you'll deal with me and my team directly from your first tour to your keys.</p>
+      <p><a href="/how-it-works">How it works</a> · <a href="https://www.linkedin.com/in/joseph-hernandez-9511958">Connect on LinkedIn</a></p>
+    </article>
+    <article class="meet-navy" id="oneTeam">
+      <div class="sec-label" style="color:#ffb3b3">Who you'll be talking to</div>
+      <h2>One number. One team. Every home on this site.</h2>
+      <ul>
+        <li><span class="m">✓</span><span><strong>You'll know exactly who you're dealing with.</strong> Book a tour and you meet the same people who unlock the door and walk you through it.</span></li>
+        <li><span class="m">✓</span><span><strong>You see it with your own eyes before you decide.</strong> <span id="otWalk">Every home is walked in person, and you'll never be asked for money to "hold" a home you haven't stood in. The office address is 30 N Gould St, Ste R, Sheridan, WY 82801.</span></span></li>
+        <li><span class="m">✓</span><span><strong>If the one you wanted sells, you're not starting over.</strong> <span id="otHomes">230</span> homes across <span id="otCities">45</span> towns. Tell us what you need and we'll send you the next one.</span></li>
+      </ul>
+    </article>
   </section>
 
   <!-- city-landings:start -->
@@ -692,25 +758,8 @@ body.page-search .hdr-search{display:none !important}
     <div class="sold-strip" id="soldStrip"></div>
   </section>
 
-  <!-- ONE TEAM, ONE NUMBER — these homes get posted in a few places; here they're all
-       in one, with one team who answers. Numbers below are filled from homes.js. -->
-  <section class="oneteam reveal">
-    <div class="oneteam-inner">
-      <div class="sec-label" style="color:#ffb3b3">Who you'll be talking to</div>
-      <h2>One number. One team. Every home on this site.</h2>
-      <ul>
-        <li><span class="m">✓</span><span><strong>You'll know exactly who you're dealing with.</strong> Book a tour and you meet the same people who unlock the door and walk you through it — usually the same day.</span></li>
-        <li><span class="m">✓</span><span><strong>You see it with your own eyes before you decide.</strong> Every home is walked in person, and you'll never be asked for money to "hold" a home you haven't stood in.</span></li>
-        <li><span class="m">✓</span><span><strong>If the one you wanted sells, you're not starting over.</strong> <span id="otHomes">—</span> homes across <span id="otCities">—</span> towns, refreshed every week — tell us what you need and we'll send you the next one.</span></li>
-      </ul>
-      <div class="hero-cta">
-        <a class="btn btn-lime" href="/#listings">See the homes</a>
-      </div>
-    </div>
-  </section>
-
   <!-- TRUST BAND -->
-  <section class="section reveal">
+  <section class="section reveal" id="trustBand">
     <div class="sec-head">
       <div class="sec-label">Why people choose us</div>
       <h2 class="sec-title">A real path to owning — <br>without the bank in the way</h2>
@@ -744,7 +793,6 @@ body.page-search .hdr-search{display:none !important}
     <div class="sec-head">
       <div class="sec-label">Simple from start to keys</div>
       <h2 class="sec-title">Steps to the keys</h2>
-      <p class="sec-sub">No bank loan needed. If the down payment and monthly payment fit your budget, we'll walk you through the next steps. Final terms are confirmed in your paperwork.</p>
       <p class="sec-sub"><!-- finance-stats:start -->The lowest down payment on an available home is $500. 181 available homes are $2,500 down or less.<!-- finance-stats:end --></p>
     </div>
     <div class="steps">
@@ -756,6 +804,20 @@ body.page-search .hdr-search{display:none !important}
       <div class="step"><div class="n">✓</div><h3>What you need</h3><p>A valid ID, the down payment, and a monthly payment that fits your budget.</p></div>
     </div>
     <p style="text-align:center;margin-top:18px"><a href="how-it-works.html" style="font-weight:700;color:var(--pine);text-decoration:none;border-bottom:2px solid var(--go);padding-bottom:2px">See exactly how owner financing works →</a></p>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="sec-head">
+      <div class="sec-label">Questions</div>
+      <h3 class="sec-title">Straight answers</h3>
+    </div>
+    <div class="faq">
+      <details id="scamFaq">
+        <summary>Is this a scam?</summary>
+        <p class="ans" id="scamAnswer">Americas Best Home Solutions LLC is the company on this site. The office address is 30 N Gould St, Ste R, Sheridan, WY 82801. Joseph Hernandez is the Executive Director, and his photo is on this site. The buyer reviews are from Logan and Trinity in Decatur. You tour the home in person before you pay anything to hold it. You tour the home in person first. You sign the paperwork before you get the keys. You can write admin@americasbesthomesolutions.com.</p>
+      </details>
+      <details id="petsFaq"><summary>Are pets allowed?</summary><p class="ans" id="petsAnswer">Yes, pets are allowed.</p></details>
+    </div>
   </section>
 
   <!-- TESTIMONIALS — removed 2026-09-24 (Joe): the old quotes were invented drafts. Add a section back here ONLY with real buyers' words (first name + city), after real closings. -->
@@ -801,7 +863,7 @@ body.page-search .hdr-search{display:none !important}
           <li><span class="m">✕</span>Your money is gone on the 1st — you'll never see it again</li>
           <li><span class="m">✕</span>You're paying off the <em>landlord's</em> property, not yours</li>
           <li><span class="m">✕</span>Rent goes up, and you can't stop it</li>
-          <li><span class="m">✕</span>After 10, 20, 30 years — nothing to show for it</li>
+          <li><span class="m">✕</span>After many years of rent, nothing to show for it</li>
           <li><span class="m">✕</span>Nothing that's yours to keep</li>
         </ul>
       </div>
@@ -809,17 +871,16 @@ body.page-search .hdr-search{display:none !important}
         <h3>When you own</h3>
         <ul>
           <li><span class="m">✓</span>Every payment pulls toward a home that's <strong>yours</strong></li>
-          <li><span class="m">✓</span>Your monthly payment is <strong>fixed, in writing</strong> — it doesn't climb every year like rent</li>
+          <li><span class="m">✓</span>Your monthly payment is written down — it doesn't climb every year like rent</li>
           <li><span class="m">✓</span>Paint it, fix it, make it yours — it's your property</li>
           <li><span class="m">✓</span>An asset — something <strong>truly yours</strong>, to keep for the long run</li>
-          <li><span class="m">✓</span>If your neighborhood rises in value, that upside is <strong>yours</strong></li>
+          <li><span class="m">✓</span>You keep the home you agreed to buy</li>
         </ul>
       </div>
     </div>
     <div class="opp-story">
       <h3>The part nobody tells you</h3>
-      <p>Here's what we've watched happen, market after market: the neighborhoods where we offer these homes don't stay down forever. Over the years, many of them turn around. Banks that once said "no" to the area start lending there again. And the buyers who stuck with it — who kept making that monthly payment — are the ones holding a home at the price they agreed to years earlier, in a neighborhood now worth more. Some have refinanced. Some have sold and walked away ahead. Every one of them owned something real.</p>
-      <p>That's why we treat this as a golden opportunity — and why we don't offer it to just anyone. We take on a limited number of buyers at a time, and we look for serious people who understand the responsibility that comes with the keys, and want the reward that comes with it.</p>
+      <p>What your monthly payment includes is confirmed in your paperwork. Final terms are confirmed in your paperwork.</p>
       <p>Nobody can promise you the future. But one thing is certain: <strong>rent never pays you back.</strong></p>
       <p class="fine">Every home and market is different — past experiences aren't a guarantee of future value. What's guaranteed is what's in your written agreement: your price and your terms.</p>
     </div>
@@ -849,7 +910,7 @@ body.page-search .hdr-search{display:none !important}
     <div class="sig">— The team at Americas Best Home Solutions</div>
     <div class="chips">
       <span class="chip">Payments comparable to rent</span>
-      <span class="chip">Fixed payment, in writing</span>
+      <span class="chip">Payment agreed in writing</span>
       <span class="chip">Homes in IL · MO · MI · AL</span>
     </div>
     <a class="abtn" href="/#listings">See the homes</a>
@@ -888,7 +949,7 @@ body.page-search .hdr-search{display:none !important}
       <article><h3>No bank in the way</h3><p>No mortgage application and no bank approval deciding whether you get a home.</p></article>
     </div>
     <p class="lede">Your past doesn't have to decide your future. If you've been turned away by banks, this was built for you.</p>
-    <div class="faq" id="faq">
+    <div class="faq">
       <details open><summary>Is this the same as renting?</summary><p class="ans">No. When you rent, the money is gone and the home stays the landlord's. Here, you're the buyer from day one and every payment goes toward owning the home at the price you agreed to.</p></details>
       <details><summary>Do I need a bank to buy one of these homes?</summary><p class="ans">No — there's no bank and no mortgage application. The home's owner is the seller, so the purchase is agreed in a written contract between you and the owner. We market the home and guide you through the process.</p></details>
       <details><summary>What do I pay to move in?</summary><p class="ans">Each home lists its move-in payment and monthly payment right on its page. There are no hidden numbers — we go over all of it with you before anything is signed.</p></details>
@@ -897,7 +958,7 @@ body.page-search .hdr-search{display:none !important}
   </section>
   <footer class="foot">
     <div class="fb">Americas Best Home Solutions</div>
-    <p class="fcontact" style="opacity:.78;margin-top:2px">getownerfinancedhomes.com is operated by <a href="https://americasbesthomesolutions.com">Americas Best Home Solutions LLC</a></p>
+    <p class="fcontact" style="margin-top:2px">getownerfinancedhomes.com is operated by <a href="https://americasbesthomesolutions.com">Americas Best Home Solutions LLC</a></p>
     <address class="fcontact" style="font-style:normal;margin-top:8px">
       30 N Gould St, Ste R, Sheridan, WY 82801<br>
       <a href="mailto:admin@americasbesthomesolutions.com">admin@americasbesthomesolutions.com</a>
@@ -1001,8 +1062,10 @@ function startHomePage(){
   const availableCount = LISTINGS.filter(h => !isPending(h)).length;
   $("statHomes").textContent = availableCount;
   $("statCities").textContent = allCities.length;
-  $("otHomes").textContent = availableCount;
-  $("otCities").textContent = allCities.length;
+  const mapHomes = LISTINGS.filter(h => !isPending(h) && h.id !== "duquoin-il-322-cole" && typeof h.lat === "number" && typeof h.lng === "number" && !h.contractor);
+  const mapTowns = new Set(mapHomes.map(h => (h.city || "") + "|" + (h.state || "")).filter(key => key !== "|"));
+  if ($("otHomes")) $("otHomes").textContent = String(mapHomes.length);
+  if ($("otCities")) $("otCities").textContent = String(mapTowns.size);
 
   function featureTag(h){
     if (isNewHome(h)) return "New";
@@ -1056,6 +1119,7 @@ function startHomePage(){
         ${(h.photos||[]).length>1?`<button type="button" class="pg pv" aria-label="Previous photo">‹</button><button type="button" class="pg nx" aria-label="Next photo">›</button><span class="pdots">${Array.from({length:Math.min(6,(h.photos||[]).length)},(_,k)=>`<i${k?"":" class=\"on\""}></i>`).join("")}</span>`:""}
         ${pending ? `<span class="status-tag pending">Pending</span>` : (tag ? `<span class="z-feat">${tag}</span>` : "")}
         ${window.HomesCart?HomesCart.heart(h):""}
+        ${window.HomesCart&&HomesCart.tour?HomesCart.tour(h):""}
       </div>
       <div class="card-body">
         <div class="card-price"><span class="num">${money(h.monthlyPayment)}</span><span class="per">/mo</span></div>
@@ -1067,7 +1131,6 @@ function startHomePage(){
         ${miles}
       </div>
       </a>
-      <a class="card-book" href="${bookHrefFor}">${bookLabel}</a>
     </article>`;
   }
 
@@ -1140,8 +1203,10 @@ function startHomePage(){
   }
   function rowHTML(title, id, homes){
     if (!homes.length) return "";
-    const cards = homes.map((h, i) => cardHTML(h, {eager: i < 1 && id === "row-available"})).join("");
-    return `<section class="home-row" id="${id}"><div class="row-head"><h2>${title}</h2><div class="row-nav"><button type="button" class="row-arrow" data-dir="-1" aria-label="Previous homes">‹</button><button type="button" class="row-arrow" data-dir="1" aria-label="Next homes">›</button></div></div><p class="row-hint">Swipe sideways. The next home is partly in view.</p><div class="row-scroller" tabindex="0" aria-label="${title}">${cards}</div></section>`;
+    const shown = homes.slice(0, 12);
+    const cards = shown.map((h, i) => cardHTML(h, {eager: i < 1 && id === "row-available"})).join("");
+    const more = homes.length > 12 ? `<a class="card see-all" href="/#cities">See all ${homes.length} homes</a>` : "";
+    return `<section class="home-row" id="${id}"><div class="row-head"><h2>${title}</h2><div class="row-nav"><button type="button" class="row-arrow" data-dir="-1" aria-label="Previous homes">‹</button><button type="button" class="row-arrow" data-dir="1" aria-label="Next homes">›</button></div></div><p class="row-hint">Swipe sideways. The next home is partly in view.</p><div class="row-scroller" tabindex="0" aria-label="${title}">${cards}${more}</div></section>`;
   }
   function wireRows(){
     document.querySelectorAll(".row-arrow").forEach(btn => {
@@ -1205,6 +1270,16 @@ function startHomePage(){
       rowHTML("Nearby homes in your budget", "nearby", nearby),
       rowHTML("Just over your budget", "just-over", over)
     ]);
+    return available;
+  }
+  function mapPins(list){
+    return (list || []).filter(h => !isPending(h) && h.id !== "duquoin-il-322-cole" && typeof h.lat === "number" && typeof h.lng === "number");
+  }
+  function showCount(list){
+    const pins = mapPins(list);
+    const n = pins.length;
+    if ($("count")) $("count").textContent = n ? `${n} home${n===1?"":"s"}` : "";
+    if (window.HomesMap) HomesMap.update(pins);
   }
   function render(scroll){
     const place = window.BuyerSearch ? BuyerSearch.resolvePlace($("fQ").value, LISTINGS) : null;
@@ -1223,7 +1298,7 @@ function startHomePage(){
         });
         if (!result) return false;
         staticFresh = false;
-        paintGroups(result);
+        showCount(paintGroups(result));
         return true;
       };
       if (place.kind === "zip" && !window.__zipIndex && BuyerSearch.loadZips) {
@@ -1250,7 +1325,7 @@ function startHomePage(){
         rowHTML("Pending", "row-pending", pending)
       ]);
       const goBtn = $("sheetGo"); if (goBtn) goBtn.textContent = shown.length ? `Show ${shown.length} home${shown.length===1?"":"s"}` : "No homes match";
-      if (window.HomesMap) HomesMap.update(shown);
+      showCount(shown);
       chips();
       const head0 = document.querySelector("body.page-search .topbar");
       if (head0) document.documentElement.style.setProperty("--zhead", (head0.offsetHeight + 8) + "px");
@@ -1277,7 +1352,7 @@ function startHomePage(){
       : "";
     renderPager(pages);
     const goBtn = $("sheetGo"); if (goBtn) goBtn.textContent = shown.length ? `Show ${shown.length} home${shown.length===1?"":"s"}` : "No homes match";
-    if (window.HomesMap) HomesMap.update(shown);
+    showCount(shown);
     if (window.HomesCart) HomesCart.sync();
     chips();
     const head = document.querySelector("body.page-search .topbar");
@@ -1413,8 +1488,23 @@ function startHomePage(){
         if (away) paintSlim();
       }, { rootMargin: "-8px 0px 0px 0px", threshold: 0 });
       watch.observe(panel);
-      slim.addEventListener("click", function(){
-        panel.scrollIntoView({ behavior: "smooth", block: "start" });
+      const backdrop = $("filterBackdrop");
+      function openSheet(){
+        document.body.classList.add("sheet-open");
+        if (backdrop) backdrop.hidden = false;
+        panel.setAttribute("role", "dialog");
+        panel.setAttribute("aria-modal", "true");
+      }
+      function closeSheet(){
+        document.body.classList.remove("sheet-open");
+        if (backdrop) backdrop.hidden = true;
+        panel.removeAttribute("role");
+        panel.removeAttribute("aria-modal");
+      }
+      slim.addEventListener("click", openSheet);
+      if (backdrop) backdrop.addEventListener("click", closeSheet);
+      document.addEventListener("keydown", function(event){
+        if (event.key === "Escape") closeSheet();
       });
       panel.addEventListener("change", paintSlim);
       panel.addEventListener("input", paintSlim);
@@ -1434,7 +1524,12 @@ function startHomePage(){
       });
       page = 1; render(false); syncURL(); chips();
     });
-    q.addEventListener("keydown", e => { if (e.key === "Enter"){ q.blur(); render(true); } });
+    q.addEventListener("keydown", e => {
+      if (e.key !== "Enter") return;
+      const hit = window.BuyerSearch && BuyerSearch.uniqueListing(q.value, LISTINGS);
+      if (hit) { location.href = hit.id + ".html"; return; }
+      q.blur(); render(true);
+    });
     const cities = [...new Set(LISTINGS.map(h => h.city + ", " + h.state))].sort();
     dl.innerHTML = cities.map(c => `<option value="${c}">`).join("");
   })();
@@ -1560,7 +1655,7 @@ function startHomePage(){
       left.append(cards, $("pager"), $("empty")); right.append(wrap); split.append(left, right);
     }
     document.addEventListener("click", (e) => {
-      if (e.target.closest && e.target.closest("#mapToggle, #hmMap")) buildSplit();
+      if (e.target.closest && e.target.closest("#mapToggle")) buildSplit();
     }, true);
   })();
   chips();
@@ -1582,6 +1677,8 @@ function startHomePage(){
     };
     // Search: apply, put the sheet and the keyboard away, and (phones) jump to the results
     const search = () => {
+      const hit = window.BuyerSearch && BuyerSearch.uniqueListing($("fQ").value, LISTINGS);
+      if (hit) { location.href = hit.id + ".html"; return; }
       page = 1; render(false); syncURL(); setSheet(false);
       if (document.activeElement && document.activeElement.blur && document.activeElement.id === "fQ") document.activeElement.blur();
       if (phone()) $("listings").scrollIntoView({block:"start", behavior:"smooth"});
@@ -1620,6 +1717,10 @@ function startHomePage(){
     });
   })();
   applyURL();
+  (function(){
+    const hit = window.BuyerSearch && BuyerSearch.uniqueListing($("fQ") && $("fQ").value, LISTINGS);
+    if (hit) location.replace(hit.id + ".html");
+  })();
   ["fDown","fPayMax"].forEach(id => {
     const other = id === "fDown" ? "buyerDown" : "buyerPay";
     if ($(other) && [...$(other).options].some(o => o.value === $(id).value)) $(other).value = $(id).value;

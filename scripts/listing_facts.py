@@ -17,15 +17,15 @@ from pathlib import Path
 
 PATH = Path("data") / "home-facts.json"
 
-# Joe has not confirmed these two sentences. Leave them False until he does.
-# Turning one line to True and rebuilding publishes that sentence in the scam
-# answer, the listing note, and the question sheet.
-CONFIRM_TOUR_BEFORE_PAY = False
-CONFIRM_WYOMING_ADDRESS = False
+# Joe confirmed both on 2026-11-26. Rebuilding publishes the hold sentence
+# and the Wyoming office address in the scam answer, the listing note, and
+# the question sheet.
+CONFIRM_TOUR_BEFORE_PAY = True
+CONFIRM_WYOMING_ADDRESS = True
 
 
 def scam_answer(lang: str = "en") -> str:
-    """Buyer-facing scam answer. The two unconfirmed lines stay off."""
+    """Buyer-facing scam answer. Hold and office lines follow the flags above."""
     if lang == "es":
         parts = [
             "La empresa de este sitio es Americas Best Home Solutions LLC.",
@@ -56,14 +56,31 @@ def scam_answer(lang: str = "en") -> str:
 
 
 def walkthrough_line(lang: str = "en") -> str:
-    """Navy-block line. The hold-money sentence stays off until Joe confirms it."""
+    """Navy-block line. Hold and office sentences follow the flags above."""
     if lang == "es":
-        if CONFIRM_TOUR_BEFORE_PAY:
-            return 'Cada casa se recorre en persona, y no le pediremos dinero para "apartar" una casa en la que no ha estado.'
-        return "Cada casa se recorre en persona antes de decidir."
-    if CONFIRM_TOUR_BEFORE_PAY:
-        return 'Every home is walked in person, and you\'ll never be asked for money to "hold" a home you haven\'t stood in.'
-    return "Every home is walked in person before you decide."
+        line = (
+            'Cada casa se recorre en persona, y no le pediremos dinero para "apartar" una casa en la que no ha estado.'
+            if CONFIRM_TOUR_BEFORE_PAY
+            else "Cada casa se recorre en persona antes de decidir."
+        )
+        if CONFIRM_WYOMING_ADDRESS:
+            line += " La oficina está en 30 N Gould St, Ste R, Sheridan, WY 82801."
+        return line
+    line = (
+        'Every home is walked in person, and you\'ll never be asked for money to "hold" a home you haven\'t stood in.'
+        if CONFIRM_TOUR_BEFORE_PAY
+        else "Every home is walked in person before you decide."
+    )
+    if CONFIRM_WYOMING_ADDRESS:
+        line += " The office address is 30 N Gould St, Ste R, Sheridan, WY 82801."
+    return line
+
+
+def pets_qa(lang: str = "en") -> tuple[str, str]:
+    """Question and answer for the sheet and the FAQ."""
+    if lang == "es":
+        return ("¿Se permiten mascotas?", "Sí, se permiten mascotas.")
+    return ("Are pets allowed?", "Yes, pets are allowed.")
 
 
 def hold_line(lang: str = "en") -> str:

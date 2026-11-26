@@ -1362,6 +1362,64 @@ def _stamp_inventory(root: Path, homes: list[dict], lang: str = "en") -> None:
         home_tpl.write_text(page, encoding="utf-8")
 
 
+_DOWN_COVER = re.compile(
+    r"[ \t]*<details[^>]*>\s*<summary>\s*(?:What does the down payment cover\?|¿Qué cubre el enganche\?)\s*</summary>.*?</details>\n?",
+    re.S,
+)
+
+
+def _stamp_buyer_questions(root: Path, lang: str = "en") -> None:
+    """Pets answer in the sheet and FAQ, and drop the down-payment question."""
+    import listing_facts
+    lang = "es" if lang == "es" else "en"
+    question, answer = listing_facts.pets_qa(lang)
+    question, answer = esc(question), esc(answer)
+    if lang == "es":
+        names = ("home.html", "index.html", "como-funciona.html")
+        sheet_id, faq_id = "petsSheetAnswerEs", "petsAnswerEs"
+        sheet_anchor = r'(<p id="scamSheetAnswerEs">.*?</p></details>)'
+        faq_anchor = r'(<details id="scamFaq">.*?</details>)'
+        faq_fallback = r'(<details>\s*<summary>[^<]*</summary>\s*<div class="ans" id="scamAnswerEs">.*?</div>\s*</details>)'
+    else:
+        names = ("home.html", "index.html", "how-it-works.html")
+        sheet_id, faq_id = "petsSheetAnswer", "petsAnswer"
+        sheet_anchor = r'(<p id="scamSheetAnswer">.*?</p></details>)'
+        faq_anchor = r'(<details id="scamFaq">.*?</details>)'
+        faq_fallback = r'(<details>\s*<summary>[^<]*</summary>\s*<div class="ans" id="scamAnswer">.*?</div>\s*</details>)'
+    sheet = f'<details id="petsSheet"><summary>{question}</summary><p id="{sheet_id}">{answer}</p></details>'
+    faq = f'<details id="petsFaq"><summary>{question}</summary><p class="ans" id="{faq_id}">{answer}</p></details>'
+    for name in names:
+        path = root / name
+        if not path.is_file():
+            continue
+        text = path.read_text(encoding="utf-8")
+        new = _DOWN_COVER.sub("", text)
+        if 'id="petsSheet"' in new:
+            new = re.sub(
+                rf'(<details id="petsSheet"><summary>)(.*?)(</summary><p id="{sheet_id}">)(.*?)(</p></details>)',
+                lambda m: m.group(1) + question + m.group(3) + answer + m.group(5),
+                new,
+                count=1,
+                flags=re.S,
+            )
+        elif 'id="askSheet"' in new:
+            new = re.sub(sheet_anchor, lambda m: m.group(1) + "\n  " + sheet, new, count=1, flags=re.S)
+        if 'id="petsFaq"' in new:
+            new = re.sub(
+                rf'(<details id="petsFaq"><summary>)(.*?)(</summary><p class="ans" id="{faq_id}">)(.*?)(</p></details>)',
+                lambda m: m.group(1) + question + m.group(3) + answer + m.group(5),
+                new,
+                count=1,
+                flags=re.S,
+            )
+        elif 'id="scamFaq"' in new:
+            new = re.sub(faq_anchor, lambda m: m.group(1) + "\n      " + faq, new, count=1, flags=re.S)
+        elif 'id="scamAnswer"' in new or 'id="scamAnswerEs"' in new:
+            new = re.sub(faq_fallback, lambda m: m.group(1) + "\n      " + faq, new, count=1, flags=re.S)
+        if new != text:
+            path.write_text(new, encoding="utf-8")
+
+
 def _stamp_scam_copy(root: Path, lang: str = "en") -> None:
     """Write the scam answer from listing_facts flags into the pages that show it."""
     import listing_facts
@@ -1402,6 +1460,7 @@ def rebuild(root: Path, lang: str = "en") -> str:
     if not (root / "home.html").is_file() or not (root / "homes.js").is_file():
         return "seo: skipped (home.html or homes.js missing)"
     _stamp_scam_copy(root, lang)
+    _stamp_buyer_questions(root, lang)
     homes = load_homes(root)
     _stamp_inventory(root, homes, lang)
     template = (root / "home.html").read_text(encoding="utf-8")

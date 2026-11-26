@@ -16,6 +16,43 @@ import re
 from pathlib import Path
 
 PATH = Path("data") / "home-facts.json"
+
+# Joe has not confirmed these two sentences. Leave them False until he does.
+# Turning one line to True and rebuilding publishes that sentence in the scam
+# answer, the listing note, and the question sheet.
+CONFIRM_TOUR_BEFORE_PAY = False
+CONFIRM_WYOMING_ADDRESS = False
+
+
+def scam_answer(lang: str = "en") -> str:
+    """Buyer-facing scam answer. The two unconfirmed lines stay off."""
+    if lang == "es":
+        parts = [
+            "La empresa de este sitio es Americas Best Home Solutions LLC.",
+            "Joseph Hernandez es el director ejecutivo y su foto está en este sitio.",
+            "Las reseñas son de Logan y Trinity, en Decatur.",
+            "Usted visita la casa en persona primero.",
+            "Usted firma los documentos antes de recibir las llaves.",
+            "Puede escribir a admin@americasbesthomesolutions.com.",
+        ]
+        if CONFIRM_TOUR_BEFORE_PAY:
+            parts.insert(3, "Usted visita la casa en persona antes de pagar algo para reservarla.")
+        if CONFIRM_WYOMING_ADDRESS:
+            parts.insert(1, "La oficina está en 30 N Gould St, Ste R, Sheridan, WY 82801.")
+        return " ".join(parts)
+    parts = [
+        "Americas Best Home Solutions LLC is the company on this site.",
+        "Joseph Hernandez is the Executive Director, and his photo is on this site.",
+        "The buyer reviews are from Logan and Trinity in Decatur.",
+        "You tour the home in person first.",
+        "You sign the paperwork before you get the keys.",
+        "You can write admin@americasbesthomesolutions.com.",
+    ]
+    if CONFIRM_TOUR_BEFORE_PAY:
+        parts.insert(3, "You tour the home in person before you pay anything to hold it.")
+    if CONFIRM_WYOMING_ADDRESS:
+        parts.insert(1, "The office address is 30 N Gould St, Ste R, Sheridan, WY 82801.")
+    return " ".join(parts)
 SYSTEMS = ("furnace", "plumbing", "electrical", "roof", "foundation")
 SYSTEM_LABELS = {
     "en": {
@@ -288,7 +325,7 @@ def eval_html(home: dict, facts_doc: dict, lang: str) -> str:
         else:
             keys_note = f"En {state}, las llaves se entregan enseguida después de firmar." if state else "En los demás estados, las llaves se entregan enseguida después de firmar."
         scam_q = "¿Es esto una estafa?"
-        scam_a = ("Usted visita la casa antes de pagar algo para reservarla. La empresa de este sitio es Americas Best Home Solutions LLC. Joseph Hernandez es el director ejecutivo, con su foto y las reseñas de compradores de Decatur en la página principal. Usted firma los documentos antes de recibir las llaves.")
+        scam_a = scam_answer("es")
     else:
         cash_title, down_label = "Cash to get the keys", "Down payment"
         paperwork = "Final terms are confirmed in your paperwork."
@@ -314,7 +351,7 @@ def eval_html(home: dict, facts_doc: dict, lang: str) -> str:
         else:
             keys_note = f"In {state}, keys right away after signing." if state else "In other states, keys right away after signing."
         scam_q = "Is this a scam?"
-        scam_a = ("You tour the home before you pay anything to hold it. Americas Best Home Solutions LLC is the company on this site. Joseph Hernandez is the Executive Director, with his photo and the Decatur buyer reviews on the homepage. You sign the paperwork before you get the keys.")
+        scam_a = scam_answer("en")
 
     cash_rows = []
     if down:

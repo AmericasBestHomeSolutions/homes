@@ -100,7 +100,9 @@
     .hc-tabs{display:inline-flex;border:1.5px solid var(--pine,#15315e);border-radius:12px;overflow:hidden;margin-bottom:14px}
     .hc-tabs button{font:600 14px 'DM Sans',sans-serif;padding:10px 16px;border:0;background:#fff;color:var(--pine,#15315e);cursor:pointer;min-height:42px}
     .hc-tabs button.on{background:var(--pine,#15315e);color:#fff}
-    .hc-item{display:grid;grid-template-columns:84px 1fr;gap:12px;align-items:center;border:1px solid var(--line,#e2e8f2);border-radius:14px;padding:10px;margin:8px 0}
+    .hc-item{display:grid;grid-template-columns:84px minmax(0,1fr);gap:12px;align-items:center;border:1px solid var(--line,#e2e8f2);border-radius:14px;padding:10px;margin:8px 0}
+    .hc-item .ad{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .hc-item .hc-acts{display:flex;gap:10px;align-items:center;flex-wrap:nowrap;margin-top:6px}
     .hc-th{width:84px;height:70px;border-radius:10px;object-fit:cover;background:linear-gradient(135deg,#15315e,#2f5c96)}
     .hc-item .pr{font-weight:800;font-size:18px;color:var(--pine,#15315e)} .hc-item .pr small{font-weight:500;font-size:13px;color:var(--ink-soft,#5b6577)}
     .hc-item .ad{font-size:14px;color:var(--ink-soft,#5b6577)} .hc-item .sp{font-size:13.5px}
@@ -190,7 +192,7 @@
   function ensureTray(){
     if ($("hcTray")) return;
     const t = document.createElement("div"); t.className = "hc-tray"; t.id = "hcTray";
-    t.innerHTML = `<button type="button" id="hcOpenSaved"><b>♥</b> <span id="hcSavedN"></span></button><button type="button" id="hcOpenTour" hidden><b>Tour</b> <span id="hcTourN"></span></button><button type="button" class="alt" id="hcOpenCmp" hidden><b>⇄</b> <span id="hcCmpN"></span></button>`;
+    t.innerHTML = `<button type="button" id="hcOpenSaved"><b>♥</b> <span id="hcSavedN"></span></button><button type="button" id="hcOpenTour" hidden><span id="hcTourN"></span></button><button type="button" class="alt" id="hcOpenCmp" hidden><b>⇄</b> <span id="hcCmpN"></span></button>`;
     document.body.appendChild(t);
     $("hcOpenSaved").onclick = () => openPanel("saved");
     $("hcOpenTour").onclick = () => openPanel("tour");
@@ -245,9 +247,10 @@
 
   function tourHTML(){
     if (!tours.length) return `<div class="hc-empty">${T.tourLead}</div>`;
-    const items = tours.map((id, i) => { const h = byId(id);
-      return `<div class="hc-item"><div><div class="pr">${i + 1}. ${money(h.monthlyPayment)}<small>${T.mo}</small></div>
+    const items = tours.map((id) => { const h = byId(id);
+      return `<div class="hc-item">${thumb(h)}<div>
         <div class="ad">${esc(label(h))}</div>
+        <div class="pr">${money(h.monthlyPayment)}<small>${T.mo}</small></div>
         <div class="hc-acts">${isPend(h) ? `<span>${esc(T.pendNote)}</span>` : `<a class="hc-book" href="${bookPath(id)}">${T.tourNext}</a>`}
         <button type="button" class="rm" data-hc="rm-tour" data-id="${esc(id)}">${T.remove}</button></div></div></div>`;
     }).join("");

@@ -240,7 +240,8 @@ class Templates(unittest.TestCase):
     def test_listing_template_has_hidden_condition_and_mobile_bar(self):
         text = (ROOT / "home.html").read_text(encoding="utf-8")
         self.assertIn('id="conditionLine" hidden', text)
-        self.assertIn('id="stSms"', text)
+        self.assertIn('id="stAsk"', text)
+        self.assertIn("Still have a question? Text us", text)
         self.assertIn("max-width:899px", text)
         self.assertIn("--go:#d43333", text)
 

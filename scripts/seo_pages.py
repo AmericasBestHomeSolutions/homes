@@ -1271,8 +1271,11 @@ def _stamp_weekly_hero(root: Path, homes: list[dict]) -> bool:
     text = index.read_text(encoding="utf-8")
     if "<!-- weekly-hero:start -->" not in text:
         return False
+    def place(value: object) -> str:
+        return str(value or "").strip().strip(",").strip()
+
     caption = "A real home you can tour: " + ", ".join(
-        part for part in (home.get("address") or "", home.get("city") or "", home.get("state") or "") if part
+        part for part in (place(home.get("address")), place(home.get("city")), place(home.get("state"))) if part
     )
     block = (
         "<!-- weekly-hero:start -->\n"

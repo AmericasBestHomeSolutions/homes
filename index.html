@@ -112,13 +112,22 @@ body{
 .sec-sub{color:var(--ink-soft);margin-top:8px;font-size:16px}
 
 /* ── ONE TEAM, ONE NUMBER ────────────────────────────────── */
-.oneteam{margin-top:44px;background:var(--pine);color:#fff;border-radius:22px;padding:34px 26px}
-.oneteam-inner{max-width:620px;margin:0 auto}
-.oneteam h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(22px,4.6vw,30px);letter-spacing:-.5px;line-height:1.12;margin-bottom:18px}
-.oneteam ul{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:22px}
-.oneteam li{display:flex;gap:10px;align-items:flex-start;font-size:15.5px;line-height:1.5;color:#dbe7f6}
-.oneteam li strong{color:#fff}
-.oneteam li .m{flex-shrink:0;width:20px;height:20px;border-radius:6px;background:rgba(255,255,255,.15);color:#7ee8a2;display:flex;align-items:center;justify-content:center;margin-top:2px;font-weight:800;font-size:12px}
+.meet-joe{display:grid;grid-template-columns:1fr;margin:12px 16px;border-radius:22px;overflow:hidden;border:1px solid #d5deea;background:#fff;scroll-margin-top:calc(var(--zhead, 80px) + 72px)}
+.meet-bio{padding:20px 18px;display:flex;flex-direction:column;gap:8px}
+.meet-bio img{width:120px;height:auto;border-radius:16px}
+.meet-bio h3{margin:0;font-size:22px;line-height:1.2}
+.meet-bio p{margin:0}
+.meet-bio a{font-weight:700}
+.meet-navy{background:#15315e;color:#fff;padding:22px 18px;height:100%}
+.meet-navy h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(22px,3vw,28px);letter-spacing:-.4px;line-height:1.15;margin:8px 0 14px;color:#fff}
+.meet-navy ul{list-style:none;display:flex;flex-direction:column;gap:12px;margin:0}
+.meet-navy li{display:flex;gap:10px;align-items:flex-start;font-size:15.5px;line-height:1.45;color:#dbe7f6}
+.meet-navy li strong{color:#fff}
+.meet-navy li .m{flex-shrink:0;width:20px;height:20px;border-radius:6px;background:rgba(255,255,255,.15);color:#7ee8a2;display:flex;align-items:center;justify-content:center;margin-top:2px;font-weight:800;font-size:12px}
+@media(min-width:900px){
+  .meet-joe{grid-template-columns:1fr 1fr;align-items:stretch}
+  .meet-bio img{width:160px}
+}
 
 /* ── TRUST BAND ──────────────────────────────────────────── */
 .trust{display:grid;gap:14px;grid-template-columns:repeat(4,1fr)}
@@ -377,7 +386,6 @@ body.page-search .buyer-intro,
 body.page-search .hero,
 body.page-search #why-strip,
 body.page-search #featuredSec,
-body.page-search .oneteam,
 body.page-search #why-buy,
 body.page-search .about,
 body.page-search .legit,
@@ -663,14 +671,25 @@ body.page-search .hdr-search{display:none !important}
     <div class="cards" id="featuredCards"></div>
   </section>
 
-  <section class="trust-block joe-intro" id="joe-intro">
-    <picture>
-      <source type="image/webp" srcset="/images/joe-headshot-600.webp">
-      <img src="/images/joe-headshot-600.jpg" alt="Joseph Hernandez" width="600" height="717" loading="lazy" decoding="async">
-    </picture>
-    <h3>Joseph Hernandez, Executive Director</h3>
-    <p>I'm Joseph Hernandez. You deal with me from the first tour to the keys.</p>
-    <p><a href="/how-it-works">How it works</a> · <a href="https://www.linkedin.com/in/joseph-hernandez-9511958">Connect on LinkedIn</a></p>
+  <section class="meet-joe" id="joe-intro">
+    <article class="meet-bio">
+      <picture>
+        <source type="image/webp" srcset="/images/joe-headshot-600.webp">
+        <img src="/images/joe-headshot-600.jpg" alt="Joseph Hernandez" width="600" height="717" loading="lazy" decoding="async">
+      </picture>
+      <h3>Joseph Hernandez, Executive Director</h3>
+      <p>I'm Joseph Hernandez. You deal with me from the first tour to the keys.</p>
+      <p><a href="/how-it-works">How it works</a> · <a href="https://www.linkedin.com/in/joseph-hernandez-9511958">Connect on LinkedIn</a></p>
+    </article>
+    <article class="meet-navy" id="oneTeam">
+      <div class="sec-label" style="color:#ffb3b3">Who you'll be talking to</div>
+      <h2>One number. One team. Every home on this site.</h2>
+      <ul>
+        <li><span class="m">✓</span><span><strong>You'll know exactly who you're dealing with.</strong> Book a tour and you meet the same people who unlock the door and walk you through it.</span></li>
+        <li><span class="m">✓</span><span><strong>You see it with your own eyes before you decide.</strong> <span id="otWalk">Every home is walked in person before you decide.</span></span></li>
+        <li><span class="m">✓</span><span><strong>If the one you wanted sells, you're not starting over.</strong> <span id="otHomes">230</span> homes across <span id="otCities">45</span> towns. Tell us what you need and we'll send you the next one.</span></li>
+      </ul>
+    </article>
   </section>
 
   <!-- city-landings:start -->
@@ -732,23 +751,6 @@ body.page-search .hdr-search{display:none !important}
   <section class="section" id="soldSec" style="margin-top:48px" hidden>
     <div class="spot-head"><h2 id="soldHeading">Recently sold</h2><span class="spot-sub" id="soldSub">These homes found their buyer. The next one could be yours.</span></div>
     <div class="sold-strip" id="soldStrip"></div>
-  </section>
-
-  <!-- ONE TEAM, ONE NUMBER — these homes get posted in a few places; here they're all
-       in one, with one team who answers. Numbers below are filled from homes.js. -->
-  <section class="oneteam reveal">
-    <div class="oneteam-inner">
-      <div class="sec-label" style="color:#ffb3b3">Who you'll be talking to</div>
-      <h2>One number. One team. Every home on this site.</h2>
-      <ul>
-        <li><span class="m">✓</span><span><strong>You'll know exactly who you're dealing with.</strong> Book a tour and you meet the same people who unlock the door and walk you through it — usually the same day.</span></li>
-        <li><span class="m">✓</span><span><strong>You see it with your own eyes before you decide.</strong> Every home is walked in person, and you'll never be asked for money to "hold" a home you haven't stood in.</span></li>
-        <li><span class="m">✓</span><span><strong>If the one you wanted sells, you're not starting over.</strong> <span id="otHomes">—</span> homes across <span id="otCities">—</span> towns, refreshed every week — tell us what you need and we'll send you the next one.</span></li>
-      </ul>
-      <div class="hero-cta">
-        <a class="btn btn-lime" href="/#listings">See the homes</a>
-      </div>
-    </div>
   </section>
 
   <!-- TRUST BAND -->
@@ -1054,8 +1056,10 @@ function startHomePage(){
   const availableCount = LISTINGS.filter(h => !isPending(h)).length;
   $("statHomes").textContent = availableCount;
   $("statCities").textContent = allCities.length;
-  $("otHomes").textContent = availableCount;
-  $("otCities").textContent = allCities.length;
+  const mapHomes = LISTINGS.filter(h => !isPending(h) && h.id !== "duquoin-il-322-cole" && typeof h.lat === "number" && typeof h.lng === "number" && !h.contractor);
+  const mapTowns = new Set(mapHomes.map(h => (h.city || "") + "|" + (h.state || "")).filter(key => key !== "|"));
+  if ($("otHomes")) $("otHomes").textContent = String(mapHomes.length);
+  if ($("otCities")) $("otCities").textContent = String(mapTowns.size);
 
   function featureTag(h){
     if (isNewHome(h)) return "New";

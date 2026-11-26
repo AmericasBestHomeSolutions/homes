@@ -53,6 +53,28 @@ def scam_answer(lang: str = "en") -> str:
     if CONFIRM_WYOMING_ADDRESS:
         parts.insert(1, "The office address is 30 N Gould St, Ste R, Sheridan, WY 82801.")
     return " ".join(parts)
+
+
+def walkthrough_line(lang: str = "en") -> str:
+    """Navy-block line. The hold-money sentence stays off until Joe confirms it."""
+    if lang == "es":
+        if CONFIRM_TOUR_BEFORE_PAY:
+            return 'Cada casa se recorre en persona, y no le pediremos dinero para "apartar" una casa en la que no ha estado.'
+        return "Cada casa se recorre en persona antes de decidir."
+    if CONFIRM_TOUR_BEFORE_PAY:
+        return 'Every home is walked in person, and you\'ll never be asked for money to "hold" a home you haven\'t stood in.'
+    return "Every home is walked in person before you decide."
+
+
+def hold_line(lang: str = "en") -> str:
+    """Extra listing sentence. Empty unless CONFIRM_TOUR_BEFORE_PAY is True."""
+    if not CONFIRM_TOUR_BEFORE_PAY:
+        return ""
+    if lang == "es":
+        return "No le pediremos dinero para apartar una casa que no ha visto."
+    return "We'll never ask for money to hold a home you haven't seen."
+
+
 SYSTEMS = ("furnace", "plumbing", "electrical", "roof", "foundation")
 SYSTEM_LABELS = {
     "en": {

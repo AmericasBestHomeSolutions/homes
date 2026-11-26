@@ -1304,6 +1304,63 @@ def _stamp_weekly_hero(root: Path, homes: list[dict]) -> bool:
     return _write_if_changed(index, new)
 
 
+def map_available(homes: list[dict]) -> tuple[list[dict], set[tuple[str, str]]]:
+    """Homes the homepage map pins on arrival.
+
+    Same rules as the map: not pending, not Du Quoin, numeric coordinates.
+    The type filter defaults to lighter work, so contractor specials are not in that set.
+    """
+    kept = []
+    for home in homes:
+        if str(home.get("status") or "").strip().lower() == "pending":
+            continue
+        if (home.get("id") or "") == "duquoin-il-322-cole":
+            continue
+        if str(home.get("contractor") or "").strip():
+            continue
+        try:
+            lat = float(home.get("lat"))
+            lng = float(home.get("lng"))
+        except (TypeError, ValueError):
+            continue
+        if lat != lat or lng != lng:
+            continue
+        kept.append(home)
+    towns = set()
+    for home in kept:
+        city = (home.get("city") or "").strip()
+        state = (home.get("state") or "").strip().upper()
+        if city and state:
+            towns.add((city, state))
+    return kept, towns
+
+
+def _stamp_inventory(root: Path, homes: list[dict], lang: str = "en") -> None:
+    import listing_facts
+    kept, towns = map_available(homes)
+    index = root / "index.html"
+    if not index.is_file():
+        return
+    text = index.read_text(encoding="utf-8")
+    text = re.sub(r'(<span id="otHomes">)[^<]*(</span>)', rf'\g<1>{len(kept)}\2', text, count=1)
+    text = re.sub(r'(<span id="otCities">)[^<]*(</span>)', rf'\g<1>{len(towns)}\2', text, count=1)
+    walk = listing_facts.walkthrough_line(lang)
+    text = re.sub(r'(<span id="otWalk">)[^<]*(</span>)', rf'\g<1>{walk}\2', text, count=1)
+    index.write_text(text, encoding="utf-8")
+    hold = listing_facts.hold_line(lang)
+    home_tpl = root / "home.html"
+    if home_tpl.is_file():
+        page = home_tpl.read_text(encoding="utf-8")
+        page = re.sub(
+            r"<!-- hold-line:start -->.*?<!-- hold-line:end -->",
+            f"<!-- hold-line:start -->{hold}<!-- hold-line:end -->",
+            page,
+            count=1,
+            flags=re.S,
+        )
+        home_tpl.write_text(page, encoding="utf-8")
+
+
 def _stamp_scam_copy(root: Path) -> None:
     """Write the scam answer from listing_facts flags into the pages that show it."""
     import listing_facts
@@ -1336,6 +1393,7 @@ def rebuild(root: Path, lang: str = "en") -> str:
         return "seo: skipped (home.html or homes.js missing)"
     _stamp_scam_copy(root)
     homes = load_homes(root)
+    _stamp_inventory(root, homes, lang)
     template = (root / "home.html").read_text(encoding="utf-8")
     today = date.today().isoformat()
     sm = root / "sitemap.xml"

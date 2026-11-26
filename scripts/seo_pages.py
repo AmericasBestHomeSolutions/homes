@@ -1280,7 +1280,7 @@ def pick_weekly_hero(homes: list[dict], today: date | None = None) -> dict | Non
     return pool[today.isocalendar().week % len(pool)]
 
 
-def _stamp_weekly_hero(root: Path, homes: list[dict]) -> bool:
+def _stamp_weekly_hero(root: Path, homes: list[dict], lang: str = "en") -> bool:
     home = pick_weekly_hero(homes)
     index = Path(root) / "index.html"
     if home is None or not index.is_file():
@@ -1291,7 +1291,8 @@ def _stamp_weekly_hero(root: Path, homes: list[dict]) -> bool:
     def place(value: object) -> str:
         return str(value or "").strip().strip(",").strip()
 
-    caption = "A real home you can tour: " + ", ".join(
+    lead = "Una casa real que puede visitar" if lang == "es" else "A real home you can tour"
+    caption = lead + ": " + ", ".join(
         part for part in (place(home.get("address")), place(home.get("city")), place(home.get("state"))) if part
     )
     block = (
@@ -1361,24 +1362,33 @@ def _stamp_inventory(root: Path, homes: list[dict], lang: str = "en") -> None:
         home_tpl.write_text(page, encoding="utf-8")
 
 
-def _stamp_scam_copy(root: Path) -> None:
+def _stamp_scam_copy(root: Path, lang: str = "en") -> None:
     """Write the scam answer from listing_facts flags into the pages that show it."""
     import listing_facts
-    answer = listing_facts.scam_answer("en")
+    lang = "es" if lang == "es" else "en"
+    answer = listing_facts.scam_answer(lang)
     escaped = answer.replace("\\", "\\\\").replace('"', '\\"')
-    for name in ("home.html", "index.html", "how-it-works.html"):
+    if lang == "es":
+        names = ("home.html", "index.html", "como-funciona.html")
+        id_pat = r'(id="scam(?:Answer|SheetAnswer)Es">)(.*?)(</)'
+        q_pat = r'("name":"¿Es esto una estafa\?","acceptedAnswer":\{"@type":"Answer","text":")((?:\\.|[^"\\])*)(")'
+    else:
+        names = ("home.html", "index.html", "how-it-works.html")
+        id_pat = r'(id="scam(?:Answer|SheetAnswer)">)(.*?)(</)'
+        q_pat = r'("name":"Is this a scam\?","acceptedAnswer":\{"@type":"Answer","text":")((?:\\.|[^"\\])*)(")'
+    for name in names:
         path = root / name
         if not path.is_file():
             continue
         text = path.read_text(encoding="utf-8")
         new = re.sub(
-            r'(id="scam(?:Answer|SheetAnswer)">)(.*?)(</)',
+            id_pat,
             lambda m: m.group(1) + answer + m.group(3),
             text,
             flags=re.S,
         )
         new = re.sub(
-            r'("name":"Is this a scam\?","acceptedAnswer":\{"@type":"Answer","text":")((?:\\.|[^"\\])*)(")',
+            q_pat,
             lambda m: m.group(1) + escaped + m.group(3),
             new,
             count=1,
@@ -1391,7 +1401,7 @@ def rebuild(root: Path, lang: str = "en") -> str:
     root = Path(root)
     if not (root / "home.html").is_file() or not (root / "homes.js").is_file():
         return "seo: skipped (home.html or homes.js missing)"
-    _stamp_scam_copy(root)
+    _stamp_scam_copy(root, lang)
     homes = load_homes(root)
     _stamp_inventory(root, homes, lang)
     template = (root / "home.html").read_text(encoding="utf-8")
@@ -1428,7 +1438,7 @@ def rebuild(root: Path, lang: str = "en") -> str:
     _write_buyer_index(root, homes)
     index_changed = bool(_stamp_cities_on_index(root, groups, lang))
     index_changed = _stamp_finance(root, homes, lang) or index_changed
-    index_changed = _stamp_weekly_hero(root, homes) or index_changed
+    index_changed = _stamp_weekly_hero(root, homes, lang) or index_changed
     if index_changed:
         index_loc = domain + "/"
         entries = [(loc, today if loc == index_loc else last, pri, en, es) for loc, last, pri, en, es in entries]

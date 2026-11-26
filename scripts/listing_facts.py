@@ -311,6 +311,13 @@ def _fit_facts(home: dict, lang: str) -> list[str]:
     return facts
 
 
+def qualify_sentence(lang: str = "en") -> str:
+    """Soft qualify line. English stays the published sentence."""
+    if lang == "es":
+        return "una identificación válida, el enganche y un pago mensual que se ajuste a su presupuesto"
+    return "No bank loan needed. We keep it simple: if the down payment and monthly payment fit your budget, we'll walk you through the next steps."
+
+
 def eval_html(home: dict, facts_doc: dict, lang: str) -> str:
     """The three blocks under the price row. Static HTML, no post-load injection."""
     lang = "es" if lang == "es" else "en"
@@ -327,7 +334,7 @@ def eval_html(home: dict, facts_doc: dict, lang: str) -> str:
         paperwork = "Las condiciones finales se confirman en sus documentos."
         month_title = "Su pago mensual y las condiciones"
         month_l, price_l = "Pago mensual", "Precio"
-        qualify = "No hace falta un préstamo bancario. Lo mantenemos simple: si el enganche y el pago mensual caben en su presupuesto, le acompañamos en los siguientes pasos."
+        qualify = qualify_sentence("es")
         cond_title = "Condición: se vende como está"
         cond_copy = ("Cada casa se vende como está. Necesita algo de trabajo y el precio lo refleja. "
                      "Usted se encarga de las reparaciones. Recorra la casa antes de firmar.")
@@ -353,7 +360,7 @@ def eval_html(home: dict, facts_doc: dict, lang: str) -> str:
         paperwork = "Final terms are confirmed in your paperwork."
         month_title = "Your monthly payment and terms"
         month_l, price_l = "Monthly payment", "Price"
-        qualify = "No bank loan needed. We keep it simple: if the down payment and monthly payment fit your budget, we'll walk you through the next steps."
+        qualify = qualify_sentence("en")
         cond_title = "Condition: sold as-is"
         cond_copy = ("Every home is sold as-is. It needs some work, and the price reflects that. "
                      "You handle the repairs. Walk through the home before you sign.")

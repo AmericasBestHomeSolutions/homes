@@ -385,13 +385,20 @@ body.page-search #story,
 body.page-search #trustBand{display:none !important}
 .card-book{display:none !important}
 a.st-go,.btn-primary{background:#C62F2A}
-.see-all{display:flex;align-items:center;justify-content:center;min-height:420px;flex:0 0 min(78vw,300px);background:#E6EEFA;color:#15315e;font-weight:800;text-decoration:none;border-radius:16px;padding:16px;text-align:center}
+.see-all{display:flex;align-items:center;justify-content:center;min-height:300px;flex:0 0 min(78vw,300px);background:#E6EEFA;color:#15315e;font-weight:800;text-decoration:none;border-radius:16px;padding:16px;text-align:center}
 .hero-promise{margin:12px 16px 8px;font-size:22px;font-weight:800;line-height:1.25;color:#0F2444}
 .week-hero{margin:0 16px 12px}
 .week-hero img{width:100%;height:140px;object-fit:cover;object-position:50% 60%;border-radius:16px;display:block}
-body.page-search #how .step{padding:12px 14px}
-body.page-search #how .steps{gap:8px}
-body.page-search .joe-intro img{width:140px}
+body.page-search #how .step{padding:8px 10px;gap:8px}
+body.page-search #how .steps{gap:6px}
+body.page-search #how .step h3{font-size:15px;margin:0}
+body.page-search #how .step p{font-size:13px;margin:0}
+body.page-search #how,body.page-search #faq,body.page-search #reviews,body.page-search #joe-intro,body.page-search #cities,body.page-search #soldSec{margin-top:8px}
+body.page-search #how{margin-top:8px}
+body.page-search .joe-intro img{width:88px !important}
+body.page-search .week-hero img{height:100px}
+body.page-search .row-scroller .card{min-height:340px}
+body.page-search #faq .ans{font-size:15px}
 .week-hero figcaption{font-size:13px;color:#5b6577;margin-top:6px}
 .chip-label{font:800 12px system-ui,sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#5b6577;margin-top:4px}
 .range-chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 6px;-webkit-overflow-scrolling:touch}
@@ -800,7 +807,7 @@ body.page-search .hdr-search{display:none !important}
       <h3 class="sec-title">Straight answers</h3>
     </div>
     <div class="faq">
-      <details open id="scamFaq">
+      <details id="scamFaq">
         <summary>Is this a scam?</summary>
         <p class="ans">You tour the home in person before you pay anything to hold it. The company is Americas Best Home Solutions LLC, 30 N Gould St, Ste R, Sheridan, WY 82801. Joseph Hernandez is the Executive Director. His photo is on this site, and the buyer reviews are Logan and Trinity, both in Decatur. You sign the paperwork, and then you get the keys. You can write admin@americasbesthomesolutions.com.</p>
       </details>

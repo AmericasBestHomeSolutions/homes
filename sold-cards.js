@@ -79,7 +79,7 @@
 
   function renderSection(cards, lang) {
     const T = strings(lang);
-    return (cards || []).map(card => renderCard(card, T)).filter(Boolean).join("");
+    return (cards || []).slice(0, 8).map(card => renderCard(card, T)).filter(Boolean).join("");
   }
 
   function addStyle(doc) {

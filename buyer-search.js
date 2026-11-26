@@ -404,9 +404,25 @@
     resetPage();
   }
 
+  function uniqueListing(query, homes) {
+    var place = resolvePlace(query, homes || []);
+    if (place && (place.kind === "city" || place.kind === "zip")) return null;
+    var stop = { st: 1, street: 1, rd: 1, road: 1, ave: 1, avenue: 1, dr: 1, drive: 1, ln: 1, lane: 1, ct: 1, court: 1, blvd: 1, boulevard: 1, way: 1, pl: 1, place: 1, ter: 1, terrace: 1 };
+    var words = String(query || "").toLowerCase().replace(/[.,#]/g, " ").split(/\s+/).filter(function (word) {
+      return word && !stop[word];
+    });
+    if (!words.length) return null;
+    var hits = (homes || []).filter(function (home) {
+      var hay = String(home.address || "").toLowerCase().replace(/[.,#]/g, " ");
+      return words.every(function (word) { return hay.indexOf(word) !== -1; });
+    });
+    return hits.length === 1 ? hits[0] : null;
+  }
+
   root.BuyerSearch = {
     groups: groups,
     resolvePlace: resolvePlace,
+    uniqueListing: uniqueListing,
     haversine: haversine,
     cleanZip: cleanZip,
     loadZips: loadZips,

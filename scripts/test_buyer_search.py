@@ -68,6 +68,47 @@ process.stdout.write(JSON.stringify({
                 self.assertGreaterEqual(row["miles"], 30)
                 self.assertLessEqual(row["miles"], 45)
 
+    def test_address_search_opens_one_listing(self):
+        node = shutil.which("node")
+        if not node:
+            self.skipTest("node is not installed")
+        script = r"""
+const fs = require("fs");
+const vm = require("vm");
+const ctx = { console };
+vm.createContext(ctx);
+vm.runInContext(fs.readFileSync("buyer-search.js", "utf8"), ctx);
+const text = fs.readFileSync("homes.js", "utf8").split("const SOLD_CARDS")[0];
+const homes = [];
+for (const match of text.matchAll(/\n  \{\n    id: "([^"]+)",[\s\S]*?\n  \},/g)) {
+  const block = match[0];
+  const field = (key) => {
+    const m = block.match(new RegExp("\\n    " + key + ":\\s*(\"(?:\\\\.|[^\"\\\\])*\"|[^,\\n]*),"));
+    if (!m) return null;
+    const raw = m[1].trim();
+    if (raw.startsWith('"')) return JSON.parse(raw);
+    return raw;
+  };
+  homes.push({ id: match[1], address: field("address"), city: field("city"), state: field("state"), zip: field("zip") });
+}
+const one = (q) => {
+  const hit = ctx.BuyerSearch.uniqueListing(q, homes);
+  return hit ? hit.id : "";
+};
+process.stdout.write(JSON.stringify({
+  fox: one("2949 Foxbridge Rd"),
+  street: one("Foxbridge"),
+  city: one("Springfield, IL"),
+  oak: one("Oak")
+}));
+"""
+        out = subprocess.check_output([node, "-e", script], cwd=ROOT, text=True)
+        data = json.loads(out)
+        self.assertEqual(data["fox"], "springfield-il-2949-foxbridge")
+        self.assertEqual(data["street"], "springfield-il-2949-foxbridge")
+        self.assertEqual(data["city"], "")
+        self.assertEqual(data["oak"], "")
+
 
 if __name__ == "__main__":
     unittest.main()

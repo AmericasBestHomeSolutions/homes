@@ -287,6 +287,8 @@ def eval_html(home: dict, facts_doc: dict, lang: str) -> str:
             keys_note = "En Illinois hay 3 días para rescindir después de firmar, y después recibe las llaves."
         else:
             keys_note = f"En {state}, las llaves se entregan enseguida después de firmar." if state else "En los demás estados, las llaves se entregan enseguida después de firmar."
+        scam_q = "¿Es esto una estafa?"
+        scam_a = ("Usted visita la casa antes de pagar algo para reservarla. La empresa de este sitio es Americas Best Home Solutions LLC. Joseph Hernandez es el director ejecutivo, con su foto y las reseñas de compradores de Decatur en la página principal. Usted firma los documentos antes de recibir las llaves.")
     else:
         cash_title, down_label = "Cash to get the keys", "Down payment"
         paperwork = "Final terms are confirmed in your paperwork."
@@ -311,6 +313,8 @@ def eval_html(home: dict, facts_doc: dict, lang: str) -> str:
             keys_note = "In Illinois there is a 3-day right of rescission after signing, then keys."
         else:
             keys_note = f"In {state}, keys right away after signing." if state else "In other states, keys right away after signing."
+        scam_q = "Is this a scam?"
+        scam_a = ("You tour the home before you pay anything to hold it. Americas Best Home Solutions LLC is the company on this site. Joseph Hernandez is the Executive Director, with his photo and the Decatur buyer reviews on the homepage. You sign the paperwork before you get the keys.")
 
     cash_rows = []
     if down:
@@ -353,6 +357,9 @@ def eval_html(home: dict, facts_doc: dict, lang: str) -> str:
         f'<section class="eval-block" id="cashKeys"><h2>{_esc(cash_title)}</h2>'
         f'<ul class="eval-lines">{"".join(cash_rows)}</ul>'
         f'<p class="eval-total">{_esc(paperwork)}</p></section>\n'
+        f'<details class="scam-note" id="scamNote"><summary>{_esc(scam_q)}</summary>'
+        f'<p>{_esc(scam_a)}</p></details>\n'
+        f'<script type="application/ld+json">{json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": scam_q, "acceptedAnswer": {"@type": "Answer", "text": scam_a}}]}, ensure_ascii=False).replace("<", "\\u003c")}</script>\n'
         f'<section class="eval-block" id="termsBlock"><h2>{_esc(month_title)}</h2><ul class="eval-lines">'
         f'{_row(month_l, monthly) if monthly else ""}'
         f'{_row(price_l, price) if price else ""}'

@@ -28,6 +28,7 @@
 <link rel="alternate" hreflang="es" href="https://casasconfinanciamiento.com/"/>
 <link rel="alternate" hreflang="x-default" href="https://getownerfinancedhomes.com/"/>
 <script type="application/ld+json" id="seo-org">{"@context":"https://schema.org","@type":"Organization","@id":"https://getownerfinancedhomes.com/#organization","name":"Americas Best Home Solutions","legalName":"Americas Best Home Solutions LLC","url":"https://getownerfinancedhomes.com/","logo":"https://getownerfinancedhomes.com/images/brand/logo-mark-480.png","email":"admin@americasbesthomesolutions.com","address":{"@type":"PostalAddress","streetAddress":"30 N Gould St, Ste R","addressLocality":"Sheridan","addressRegion":"WY","postalCode":"82801","addressCountry":"US"}}</script>
+<script type="application/ld+json" id="seo-faq">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this a scam?","acceptedAnswer":{"@type":"Answer","text":"You tour the home in person before you pay anything to hold it. The company is Americas Best Home Solutions LLC, 30 N Gould St, Ste R, Sheridan, WY 82801. Joseph Hernandez is the Executive Director. His photo is on this site, and the buyer reviews are Logan and Trinity, both in Decatur. You sign the paperwork, and then you get the keys. You can write admin@americasbesthomesolutions.com."}},{"@type":"Question","name":"Do I need a bank to buy one of these homes?","acceptedAnswer":{"@type":"Answer","text":"No. There is no bank and no mortgage application. The purchase is a written contract. We market the home and walk through the process with you."}},{"@type":"Question","name":"What do I pay to move in?","acceptedAnswer":{"@type":"Answer","text":"Each home lists its down payment and monthly payment on its page. We go over all of it with you before anything is signed."}}]}</script>
 
 <!-- ════════════════════════════════════════════════════════════════════════
      AMERICAS BEST HOME SOLUTIONS — BROWSE ALL HOMES (home page)
@@ -791,6 +792,21 @@ body.page-search .hdr-search{display:none !important}
     <p style="text-align:center;margin-top:18px"><a href="how-it-works.html" style="font-weight:700;color:var(--pine);text-decoration:none;border-bottom:2px solid var(--go);padding-bottom:2px">See exactly how owner financing works →</a></p>
   </section>
 
+  <section class="section" id="faq">
+    <div class="sec-head">
+      <div class="sec-label">Questions</div>
+      <h3 class="sec-title">Straight answers</h3>
+    </div>
+    <div class="faq">
+      <details open id="scamFaq">
+        <summary>Is this a scam?</summary>
+        <p class="ans">You tour the home in person before you pay anything to hold it. The company is Americas Best Home Solutions LLC, 30 N Gould St, Ste R, Sheridan, WY 82801. Joseph Hernandez is the Executive Director. His photo is on this site, and the buyer reviews are Logan and Trinity, both in Decatur. You sign the paperwork, and then you get the keys. You can write admin@americasbesthomesolutions.com.</p>
+      </details>
+      <details><summary>Do I need a bank to buy one of these homes?</summary><p class="ans">No. There is no bank and no mortgage application. The purchase is a written contract. We market the home and walk through the process with you.</p></details>
+      <details><summary>What do I pay to move in?</summary><p class="ans">Each home lists its down payment and monthly payment on its page. We go over all of it with you before anything is signed.</p></details>
+    </div>
+  </section>
+
   <!-- TESTIMONIALS — removed 2026-09-24 (Joe): the old quotes were invented drafts. Add a section back here ONLY with real buyers' words (first name + city), after real closings. -->
 
   <!-- REVIEWS — real, Joe-approved only. Fed by reviews.json (scripts/reviews_publish.py). Hidden until the first approved review. -->
@@ -920,7 +936,7 @@ body.page-search .hdr-search{display:none !important}
       <article><h3>No bank in the way</h3><p>No mortgage application and no bank approval deciding whether you get a home.</p></article>
     </div>
     <p class="lede">Your past doesn't have to decide your future. If you've been turned away by banks, this was built for you.</p>
-    <div class="faq" id="faq">
+    <div class="faq">
       <details open><summary>Is this the same as renting?</summary><p class="ans">No. When you rent, the money is gone and the home stays the landlord's. Here, you're the buyer from day one and every payment goes toward owning the home at the price you agreed to.</p></details>
       <details><summary>Do I need a bank to buy one of these homes?</summary><p class="ans">No — there's no bank and no mortgage application. The home's owner is the seller, so the purchase is agreed in a written contract between you and the owner. We market the home and guide you through the process.</p></details>
       <details><summary>What do I pay to move in?</summary><p class="ans">Each home lists its move-in payment and monthly payment right on its page. There are no hidden numbers — we go over all of it with you before anything is signed.</p></details>
@@ -1482,7 +1498,12 @@ function startHomePage(){
       });
       page = 1; render(false); syncURL(); chips();
     });
-    q.addEventListener("keydown", e => { if (e.key === "Enter"){ q.blur(); render(true); } });
+    q.addEventListener("keydown", e => {
+      if (e.key !== "Enter") return;
+      const hit = window.BuyerSearch && BuyerSearch.uniqueListing(q.value, LISTINGS);
+      if (hit) { location.href = hit.id + ".html"; return; }
+      q.blur(); render(true);
+    });
     const cities = [...new Set(LISTINGS.map(h => h.city + ", " + h.state))].sort();
     dl.innerHTML = cities.map(c => `<option value="${c}">`).join("");
   })();
@@ -1630,6 +1651,8 @@ function startHomePage(){
     };
     // Search: apply, put the sheet and the keyboard away, and (phones) jump to the results
     const search = () => {
+      const hit = window.BuyerSearch && BuyerSearch.uniqueListing($("fQ").value, LISTINGS);
+      if (hit) { location.href = hit.id + ".html"; return; }
       page = 1; render(false); syncURL(); setSheet(false);
       if (document.activeElement && document.activeElement.blur && document.activeElement.id === "fQ") document.activeElement.blur();
       if (phone()) $("listings").scrollIntoView({block:"start", behavior:"smooth"});
@@ -1668,6 +1691,10 @@ function startHomePage(){
     });
   })();
   applyURL();
+  (function(){
+    const hit = window.BuyerSearch && BuyerSearch.uniqueListing($("fQ") && $("fQ").value, LISTINGS);
+    if (hit) location.replace(hit.id + ".html");
+  })();
   ["fDown","fPayMax"].forEach(id => {
     const other = id === "fDown" ? "buyerDown" : "buyerPay";
     if ($(other) && [...$(other).options].some(o => o.value === $(id).value)) $(other).value = $(id).value;

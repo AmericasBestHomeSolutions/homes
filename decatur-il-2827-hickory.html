@@ -106,7 +106,7 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
 
 /* ── CTA BUTTONS ─────────────────────────────────────────── */
 .cta-group{display:flex;gap:10px;margin:18px 0 6px;flex-wrap:wrap}
-.cta-group .btn-secondary{flex-basis:100%;font-size:15px;padding:12px 16px}
+.cta-group .btn-secondary{display:none !important}
 .btn{flex:1;min-width:150px;text-align:center;text-decoration:none;font-family:'DM Sans',sans-serif;font-weight:700;font-size:17px;padding:16px 18px;border-radius:14px;transition:transform .12s ease,background .15s ease}
 .btn-primary{background:var(--go);color:#fff}
 .btn-primary:hover{background:var(--go-hover)}
@@ -322,6 +322,17 @@ html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(
     <div class="gallery" id="gallery"></div>
     </div>
 
+    <div class="deal-strip">
+      <div class="deal-cell hero-cell"><div class="num" id="dMonthly">$199</div><div class="lab">per month</div></div>
+      <div class="deal-cell"><div class="num" id="dMoveIn">$900</div><div class="lab">to move in</div></div>
+      <div class="deal-cell price-cell"><div class="num" id="dPrice">$15,000</div><div class="lab">price</div></div>
+    </div>
+    <div class="cta-group">
+      <a class="btn btn-primary" id="ctaText" href="/book/2827-hickory">Book a tour</a>
+      <a class="btn btn-secondary" id="ctaSms" href="#" hidden>Have a question? Text us</a>
+    </div>
+    <p class="tours-open" id="toursOpen">Tours open: pick your time on the next screen. No password.</p>
+
     <h1 class="headline" id="headline">2827 E Hickory St, Decatur, IL — $15,000, $900 down, $199/mo</h1>
 <p class="seo-facts" id="seoFacts">Owner-financed home at 2827 E Hickory St, Decatur, IL. Purchase price $15,000. Down payment $900. Monthly payment $199. 2 beds, 1 bath. 528 square feet.</p>
 <p class="seo-city" id="seoCity"><a href="/decatur-il.html">Owner financed homes in Decatur, IL</a></p>
@@ -337,17 +348,6 @@ html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(
       <span style="display:block;font-size:14px;margin-top:4px">This home is for investors and contractors. It needs structural or systems work, sold as-is. Inspect it yourself and price the repairs before you commit.</span>
     </div>
 
-    <div class="deal-strip">
-      <div class="deal-cell hero-cell"><div class="num" id="dMonthly">$199</div><div class="lab">per month</div></div>
-      <div class="deal-cell"><div class="num" id="dMoveIn">$900</div><div class="lab">to move in</div></div>
-      <div class="deal-cell price-cell"><div class="num" id="dPrice">$15,000</div><div class="lab">price</div></div>
-    </div>
-
-    <div class="cta-group">
-      <a class="btn btn-primary" id="ctaText" href="/book/2827-hickory">Book a tour</a>
-      <a class="btn btn-secondary" id="ctaSms" href="#" hidden>Have a question? Text us</a>
-    </div>
-    <p class="tours-open" id="toursOpen">Tours open: pick your time on the next screen. No password.</p>
     <p class="account-link"><a href="/account/?lang=en">My account: tours and paperwork</a></p>
     <p class="cta-note" id="ctaNote">Tours are in person. Pick a time and we'll meet you there.</p>
     <div class="hc-hero" id="hcHero"></div>

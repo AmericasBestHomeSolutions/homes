@@ -83,7 +83,7 @@
     .card-body .hc-cmpbtn{margin-top:10px}
     .hc-hero{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:12px 0 0}
     .hc-hero .hc-heart{box-shadow:none;border:1.5px solid var(--line,#e2e8f2);background:#fff}
-    .hc-tray{position:fixed;right:14px;bottom:14px;z-index:55;display:none;gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:calc(100vw - 28px)}
+    .hc-tray{position:fixed;right:14px;bottom:96px;z-index:90;display:none;gap:8px;flex-wrap:wrap;justify-content:flex-end;max-width:calc(100vw - 28px)}
     .hc-tray.show{display:flex} body.tl-pad .hc-tray{bottom:84px}
     .hc-tray button{font:700 14px 'DM Sans',system-ui,sans-serif;border:0;border-radius:999px;padding:12px 18px;min-height:46px;cursor:pointer;box-shadow:0 4px 16px rgba(15,36,68,.35);background:var(--pine,#15315e);color:#fff}
     .hc-tray button.alt{background:#fff;color:var(--pine,#15315e);border:1.5px solid var(--pine,#15315e)}

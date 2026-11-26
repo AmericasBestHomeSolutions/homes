@@ -351,19 +351,17 @@ def eval_html(home: dict, facts_doc: dict, lang: str) -> str:
             f'<div class="fit-grid">{family_html}{rental_html}</div></section>'
         )
     key_items = "".join(f"<li>{_esc(step)}</li>" for step in keys)
+    price_small = f'<p class="price-small">{_esc(price_l)} {_esc(price)}</p>' if price else ""
     return (
         '<div class="buyer-eval" id="buyerEval" data-baked="1">\n'
         f'<p class="qualify-line">{_esc(qualify)}</p>\n'
         f'<section class="eval-block" id="cashKeys"><h2>{_esc(cash_title)}</h2>'
         f'<ul class="eval-lines">{"".join(cash_rows)}</ul>'
+        f'{price_small}'
         f'<p class="eval-total">{_esc(paperwork)}</p></section>\n'
         f'<details class="scam-note" id="scamNote"><summary>{_esc(scam_q)}</summary>'
         f'<p>{_esc(scam_a)}</p></details>\n'
         f'<script type="application/ld+json">{json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": scam_q, "acceptedAnswer": {"@type": "Answer", "text": scam_a}}]}, ensure_ascii=False).replace("<", "\\u003c")}</script>\n'
-        f'<section class="eval-block" id="termsBlock"><h2>{_esc(month_title)}</h2><ul class="eval-lines">'
-        f'{_row(month_l, monthly) if monthly else ""}'
-        f'{_row(price_l, price) if price else ""}'
-        f'</ul><p class="eval-total">{_esc(paperwork)}</p></section>\n'
         f'<section class="eval-block" id="keysBlock"><h2>{_esc(keys_title)}</h2>'
         f'<ol class="key-steps">{key_items}</ol><p>{_esc(keys_note)}</p></section>\n'
         f'<section class="eval-block" id="conditionBlock"><h2>{_esc(cond_title)}</h2>'

@@ -149,9 +149,19 @@ body{background:var(--paper);color:var(--ink);font-family:'DM Sans',system-ui,sa
 .why-card h3{font-family:'Bricolage Grotesque',sans-serif;font-weight:700;font-size:18px;margin-bottom:4px;color:var(--pine)}
 .why-card p{font-size:15px;color:#44566f}
 
-.gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.gallery .tile{aspect-ratio:4/3;border-radius:12px;overflow:hidden;background:#eaeef5;display:flex;align-items:center;justify-content:center}
+.photo-row{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 0 12px;-webkit-overflow-scrolling:touch}
+.photo-row .hero-photo,.photo-row .tile{flex:0 0 88%;scroll-snap-align:start;aspect-ratio:4/3;max-height:42vh}
+.gallery{display:contents}
+.gallery .tile{border-radius:12px;overflow:hidden;background:#eaeef5;display:flex;align-items:center;justify-content:center}
 .gallery .tile img{width:100%;height:100%;object-fit:cover;display:block}
+.deal-cell.price-cell{display:none}
+.deal-strip{grid-template-columns:1.4fr 1fr}
+.price-small{margin:8px 0 0;font-size:13px;color:#5b6577}
+@media(min-width:900px){
+  .photo-row{display:grid;grid-template-columns:2fr 1fr 1fr;overflow:visible;scroll-snap-type:none}
+  .photo-row .hero-photo{grid-column:1;grid-row:1 / span 2;max-height:none;min-height:360px;aspect-ratio:auto}
+  .photo-row .tile{flex:none;max-height:none;aspect-ratio:4/3}
+}
 .gallery .ph{font-family:'DM Mono',monospace;font-size:11px;color:#97a0b2;letter-spacing:1px}
 
 .lead{margin-top:48px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px 22px;text-align:center}
@@ -297,6 +307,7 @@ html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(
 
   <!-- HERO -->
   <section class="hero">
+    <div class="photo-row" id="photoRow">
     <div class="hero-photo" id="heroFace">
       <span class="status-tag" id="statusTag">Available</span>
       <picture><source type="image/webp" srcset="images/cards/stlouis-mo-3738-sylvan-320.webp 320w, images/cards/stlouis-mo-3738-sylvan-480.webp 480w" sizes="(max-width: 860px) calc(100vw - 40px), 680px"><img id="heroImg" alt="Home for sale in St. Louis, MO" src="images/cards/stlouis-mo-3738-sylvan-480.webp" srcset="images/cards/stlouis-mo-3738-sylvan-320.webp 320w, images/cards/stlouis-mo-3738-sylvan-480.webp 480w" sizes="(max-width: 860px) calc(100vw - 40px), 680px" width="480" height="293" fetchpriority="high"></picture>
@@ -307,6 +318,8 @@ html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(
         <path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9h14v-9"/><path d="M10 19v-5h4v5"/>
       </svg>
       <div class="fcity" id="heroCity"></div>
+    </div>
+    <div class="gallery" id="gallery"></div>
     </div>
 
     <h1 class="headline" id="headline">3738 Sylvan Pl, St. Louis, MO — $99,000, $2,000 down, $875/mo</h1>
@@ -327,7 +340,7 @@ html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(
     <div class="deal-strip">
       <div class="deal-cell hero-cell"><div class="num" id="dMonthly">$875</div><div class="lab">per month</div></div>
       <div class="deal-cell"><div class="num" id="dMoveIn">$2,000</div><div class="lab">to move in</div></div>
-      <div class="deal-cell"><div class="num" id="dPrice">$99,000</div><div class="lab">price</div></div>
+      <div class="deal-cell price-cell"><div class="num" id="dPrice">$99,000</div><div class="lab">price</div></div>
     </div>
 
     <div class="cta-group">
@@ -341,10 +354,9 @@ html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(
     <!-- buyer-eval:start -->
 <div class="buyer-eval" id="buyerEval" data-baked="1">
 <p class="qualify-line">No bank loan needed. We keep it simple: if the down payment and monthly payment fit your budget, we&#x27;ll walk you through the next steps.</p>
-<section class="eval-block" id="cashKeys"><h2>Cash to get the keys</h2><ul class="eval-lines"><li><span class="k">Down payment</span><span class="v">$2,000</span></li></ul><p class="eval-total">Final terms are confirmed in your paperwork.</p></section>
+<section class="eval-block" id="cashKeys"><h2>Cash to get the keys</h2><ul class="eval-lines"><li><span class="k">Down payment</span><span class="v">$2,000</span></li></ul><p class="price-small">Price $99,000</p><p class="eval-total">Final terms are confirmed in your paperwork.</p></section>
 <details class="scam-note" id="scamNote"><summary>Is this a scam?</summary><p>You tour the home before you pay anything to hold it. Americas Best Home Solutions LLC is the company on this site. Joseph Hernandez is the Executive Director, with his photo and the Decatur buyer reviews on the homepage. You sign the paperwork before you get the keys.</p></details>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is this a scam?", "acceptedAnswer": {"@type": "Answer", "text": "You tour the home before you pay anything to hold it. Americas Best Home Solutions LLC is the company on this site. Joseph Hernandez is the Executive Director, with his photo and the Decatur buyer reviews on the homepage. You sign the paperwork before you get the keys."}}]}</script>
-<section class="eval-block" id="termsBlock"><h2>Your monthly payment and terms</h2><ul class="eval-lines"><li><span class="k">Monthly payment</span><span class="v">$875</span></li><li><span class="k">Price</span><span class="v">$99,000</span></li></ul><p class="eval-total">Final terms are confirmed in your paperwork.</p></section>
 <section class="eval-block" id="keysBlock"><h2>Steps to the keys</h2><ol class="key-steps"><li>Pick a home and tour it</li><li>We send a welcome packet</li><li>You send the down payment or deposit</li><li>We do the paperwork</li><li>Get the keys</li></ol><p>In MO, keys right away after signing.</p></section>
 <section class="eval-block" id="conditionBlock"><h2>Condition: sold as-is</h2><p class="eval-copy">Every home is sold as-is. It needs some work, and the price reflects that. You handle the repairs. Walk through the home before you sign.</p><ul class="cond-rows"><li class="cond-unknown"><span class="cond-ic" aria-hidden="true">?</span><span class="cond-name">Furnace / heating</span><span class="cond-state">Not yet known</span></li><li class="cond-unknown"><span class="cond-ic" aria-hidden="true">?</span><span class="cond-name">Plumbing</span><span class="cond-state">Not yet known</span></li><li class="cond-unknown"><span class="cond-ic" aria-hidden="true">?</span><span class="cond-name">Electrical</span><span class="cond-state">Not yet known</span></li><li class="cond-unknown"><span class="cond-ic" aria-hidden="true">?</span><span class="cond-name">Roof</span><span class="cond-state">Not yet known</span></li><li class="cond-unknown"><span class="cond-ic" aria-hidden="true">?</span><span class="cond-name">Foundation</span><span class="cond-state">Not yet known</span></li></ul></section>
 <section class="eval-block" id="fitBlock"><h2>How this home could fit</h2><div class="fit-grid"><article class="fit-card"><h3>For a family</h3><ul><li>2 bedrooms</li><li>1 bathroom</li><li>1,000 sqft</li><li>$99,000 price</li><li>$875/mo</li></ul><p class="fit-note">An illustration from this listing&#x27;s own facts, not a buyer&#x27;s story.</p></article><article class="fit-card"><h3>To renovate and rent</h3><ul><li>Purchase price $99,000</li><li>Monthly payment $875</li></ul><p class="fit-note">An illustration from this listing&#x27;s own facts, not a buyer&#x27;s story.</p></article></div></section></div>
@@ -355,13 +367,6 @@ html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(
       <li>A payment close to rent</li>
       <li>No bank in the way</li>
     </ul>
-  </section>
-
-  <!-- GALLERY -->
-  <section class="section reveal" id="gallerySection">
-    <div class="sec-label">Take a look</div>
-    <h2 class="sec-title">Inside the home</h2>
-    <div class="gallery" id="gallery"></div>
   </section>
 
   <!-- ABOUT THIS HOME -->
@@ -697,16 +702,14 @@ function startListing(){
   if (C.photos && C.photos.length){
     g.innerHTML = C.photos.map(src=>tile(src, true)).join("");
   } else if (typeof C.photoCount === "number") {
-    $("gallerySection").hidden = true;
   } else {
     // probe -1.jpg, -2.jpg… in order (same contiguous rule the generator uses) and stop at
     // the first miss; only photos that really exist become tiles. Nothing at all → the
-    // section hides, so a photoless home doesn't open with a heading over an empty grid.
-    $("gallerySection").hidden = true;
+    // hero photo stays, so a photoless home doesn't open with an empty grid.
     (function probe(i){
       if (i > MAX_GALLERY) return;
       const src = `images/${C.id}-${i}.jpg`, im = new Image();
-      im.onload  = () => { g.insertAdjacentHTML("beforeend", tile(src, false)); $("gallerySection").hidden = false; probe(i+1); };
+      im.onload  = () => { g.insertAdjacentHTML("beforeend", tile(src, false)); probe(i+1); };
       im.onerror = () => {};
       im.src = src;
     })(1);
@@ -783,7 +786,7 @@ document.addEventListener("listing-ready", function(){
   if (!h || !window.HomesMap) return;
   const q = encodeURIComponent([h.address, h.city, h.state, h.zip].filter(Boolean).join(", "));
   document.getElementById("mapGoogle").href = "https://www.google.com/maps/search/?api=1&query=" + q;
-  if (window.HomesCart){ const slot = document.getElementById("hcHero") || document.getElementById("ctaNote"); if (slot) { if (slot.id === "hcHero") slot.innerHTML = HomesCart.heart(h, true) + HomesCart.compare(h); else slot.insertAdjacentHTML("afterend", '<div class="hc-hero">' + HomesCart.heart(h, true) + HomesCart.compare(h) + '</div>'); } HomesCart.sync(); }
+  if (window.HomesCart){ const slot = document.getElementById("hcHero") || document.getElementById("ctaNote"); const bits = HomesCart.heart(h, true) + (HomesCart.tour ? HomesCart.tour(h) : "") + HomesCart.compare(h); if (slot) { if (slot.id === "hcHero") slot.innerHTML = bits; else slot.insertAdjacentHTML("afterend", '<div class="hc-hero">' + bits + '</div>'); } HomesCart.sync(); }
   HomesMap.mini({ el: document.getElementById("mapEl"), home: h, section: document.getElementById("mapSec"), note: document.getElementById("mapNote") });
 });
 </script>
@@ -793,8 +796,15 @@ document.addEventListener("listing-ready", function(){
 #stickyTour .st-p{flex:1;min-width:0;font:800 18px 'Bricolage Grotesque',sans-serif;color:var(--pine,#15315e);line-height:1.1}
 #stickyTour .st-p small{display:block;font:500 11px 'DM Mono',monospace;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft,#5b6b82)}
 #stickyTour a{flex:0 0 auto;text-decoration:none;font:700 15px 'DM Sans',sans-serif;padding:12px 14px;border-radius:12px;text-align:center;min-height:48px;min-width:48px;display:inline-flex;align-items:center;justify-content:center}
-#stickyTour a.st-go{background:var(--go,#d43333);color:#fff}
-#stickyTour a.st-sms{background:#fff;color:var(--pine,#15315e);border:1.5px solid var(--line,#d5dbe6)}
+#stickyTour a.st-go{background:#C62F2A;color:#fff;font-size:16px;padding:12px 16px}
+#stickyTour .st-ask{flex:0 0 auto;border:0;background:transparent;color:#15315e;font:600 13px system-ui,sans-serif;text-decoration:underline;padding:8px 4px;cursor:pointer}
+#askSheet{border:0;border-radius:18px 18px 0 0;padding:16px 16px 24px;width:min(560px,100%);max-height:80vh;overflow:auto}
+#askSheet::backdrop{background:rgba(15,36,68,.45)}
+#askSheet h2{margin:0 0 8px;font-size:22px}
+#askSheet details{border-top:1px solid #e2e8f2;padding:10px 0}
+#askSheet summary{font-weight:700;cursor:pointer}
+#askSheet p{margin:8px 0 0;line-height:1.45}
+#askSheet .ask-text{display:inline-block;margin-top:12px;font-weight:700}
 @media(max-width:899px){body.page-home{padding-bottom:84px}#stickyTour{transform:none}}
 @media(min-width:900px){#stickyTour{left:auto;right:24px;bottom:24px;border:1px solid var(--line,#dfe6f0);border-radius:16px;max-width:520px;transform:translateY(110%);transition:transform .25s}#stickyTour.on{transform:none}}
 #lb{position:fixed;inset:0;z-index:200;background:rgba(8,16,30,.94);display:none;align-items:center;justify-content:center;touch-action:pan-y}
@@ -805,7 +815,19 @@ document.addEventListener("listing-ready", function(){
 #lb .ct{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:#cfd9ea;font:500 13px 'DM Mono',monospace}
 #gallery img,#heroImg{cursor:zoom-in}
 </style>
-<div id="stickyTour" aria-hidden="true"><div class="st-p"><span id="stPay"></span><small id="stLab">price</small></div><a id="stSms" class="st-sms" href="#" hidden>Text us</a><a id="stBtn" class="st-go" href="/book/3738-sylvan">Book a tour</a></div>
+<div id="stickyTour" aria-hidden="true"><div class="st-p"><span id="stPay"></span><small id="stLab">per month</small></div><button type="button" id="stAsk" class="st-ask">Have a question?</button><a id="stBtn" class="st-go" href="/book/3738-sylvan">Book a tour</a></div>
+<dialog id="askSheet">
+  <h2>Quick answers</h2>
+  <details open><summary>Is this a scam?</summary><p>You tour the home before you pay anything to hold it. Americas Best Home Solutions LLC is the company on this site. Joseph Hernandez is the Executive Director, with his photo and the Decatur buyer reviews on the homepage. You sign the paperwork before you get the keys.</p></details>
+  <details><summary>What does the down payment cover?</summary><p>The down payment is the cash listed on the home. It is what you send before the keys. We go over it with you before anything is signed.</p></details>
+  <details><summary>What does the monthly payment include?</summary><p>What your monthly payment includes is confirmed in your paperwork.</p></details>
+  <details><summary>Do I need credit, or an ID?</summary><p>Bring a valid ID. There is no bank and no mortgage application. You need the down payment and a monthly payment that fits your budget.</p></details>
+  <details><summary>Who handles repairs?</summary><p>Every home is sold as-is. It needs some work, and the price reflects that. You handle the repairs. Walk through the home before you sign.</p></details>
+  <details><summary>When do I get the keys?</summary><p>In Illinois there is a 3-day right of rescission after signing, then keys. In other states, keys right after signing.</p></details>
+  <details><summary>Can I tour first?</summary><p>Yes. Tours are in person. We'll never ask for money to hold a home you haven't seen.</p></details>
+  <p><a id="askText" class="ask-text" href="#" hidden>Still have a question? Text us</a></p>
+  <form method="dialog"><button type="submit">Close</button></form>
+</dialog>
 <div id="lb" role="dialog" aria-modal="true"><button class="x" aria-label="Close">&#10005;</button><button class="pv" aria-label="Previous">&#8249;</button><img alt=""><button class="nx" aria-label="Next">&#8250;</button><div class="ct"></div></div>
 <script>
 document.addEventListener("DOMContentLoaded", function(){
@@ -818,16 +840,17 @@ document.addEventListener("DOMContentLoaded", function(){
     if (!main || !bar) return false;
     $("stBtn").href = main.href;
     $("stBtn").textContent = main.textContent || "Book a tour";
-    $("stPay").textContent = ($("dPrice").textContent||"").trim();
-    $("stLab").textContent = "price";
-    const stSms = $("stSms");
-    if (stSms) {
-      const href = sms ? String(sms.getAttribute("href") || "") : "";
-      if (sms && !sms.hidden && href.indexOf("sms:") === 0) { stSms.href = sms.href; stSms.hidden = false; }
-      else stSms.hidden = true;
-    }
+    const monthly = ($("dMonthly") && $("dMonthly").textContent || "").trim();
+    const down = ($("dMoveIn") && $("dMoveIn").textContent || "").trim();
+    $("stPay").textContent = monthly;
+    $("stLab").textContent = down ? down + " down" : "per month";
+    const ask = $("askText");
+    const href = sms ? String(sms.getAttribute("href") || "") : "";
+    if (ask && href.indexOf("sms:") === 0) { ask.href = sms.href; ask.hidden = false; }
     return true;
   }
+  const askBtn = $("stAsk"), sheet = $("askSheet");
+  if (askBtn && sheet) askBtn.addEventListener("click", () => { fill(); sheet.showModal(); });
   if (!fill()) {
     if (bar) { bar.hidden = true; bar.setAttribute("aria-hidden", "true"); }
   } else if (phone) {

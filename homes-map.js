@@ -352,22 +352,19 @@
       const map = L.map(el, { scrollWheelZoom:false, tap:true }).setView([home.lat, home.lng], home.geo==="approx" ? 12 : 15);
       L.tileLayer(tileURL, { maxZoom:19, attribution:T.attrib }).addTo(map);
       L.marker([home.lat, home.lng], { icon:pinIcon(L, home, "cur"), zIndexOffset:1000 }).addTo(map);
-      // the 10 closest other homes within 10 miles — enough to compare, not a pile-up in dense cities
+      // Nearby available homes, not only the ones inside a tight 10-mile ring.
       const all = opts.solo ? [] : ALL().filter(h => h.id !== home.id && pinned(h) && !isPending(h))
-        .map(h => (h._dist = miles(home.lat, home.lng, h.lat, h.lng), h)).filter(h => h._dist <= 10)
+        .map(h => (h._dist = miles(home.lat, home.lng, h.lat, h.lng), h)).filter(h => h._dist <= 50)
         .sort((x, y) => x._dist - y._dist);
-      const near = all.slice(0, 10);
+      const near = all.slice(0, 30);
       near.forEach(h => L.marker([h.lat, h.lng], { icon:pinIcon(L, h, "dim") }).bindPopup(() => popupHTML(h), { maxWidth:260 }).on("popupopen", () => window.HomesCart && HomesCart.sync()).addTo(map));
       if (near.length && home.geo !== "approx"){
         map.fitBounds(L.latLngBounds([[home.lat, home.lng]].concat(near.map(h => [h.lat, h.lng]))), { padding:[36,36], maxZoom:15 });
       }
       setTimeout(() => map.invalidateSize(), 400);
-      const note = opts.note; if (note) note.textContent = all.length ? (ES ? `${all.length} casas más a menos de 10 mi · mostrando las ${near.length} más cercanas` : `${all.length} other homes within 10 mi · showing the ${near.length} closest`) : "";
+      const note = opts.note; if (note) note.textContent = all.length ? (ES ? `${all.length} casas disponibles a menos de 50 mi · mostrando las ${near.length} más cercanas` : `${all.length} available homes within 50 mi · showing the ${near.length} closest`) : (ES ? "No hay otras casas disponibles a menos de 50 mi." : "No other available homes within 50 miles.");
     };
-    if ("IntersectionObserver" in window){
-      const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)){ io.disconnect(); start(); } }, { rootMargin:"300px" });
-      io.observe(el);
-    } else start();
+    start();
   }
 
   function refit(){

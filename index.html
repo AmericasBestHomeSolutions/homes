@@ -1104,6 +1104,7 @@ function startHomePage(){
         ${(h.photos||[]).length>1?`<button type="button" class="pg pv" aria-label="Previous photo">‹</button><button type="button" class="pg nx" aria-label="Next photo">›</button><span class="pdots">${Array.from({length:Math.min(6,(h.photos||[]).length)},(_,k)=>`<i${k?"":" class=\"on\""}></i>`).join("")}</span>`:""}
         ${pending ? `<span class="status-tag pending">Pending</span>` : (tag ? `<span class="z-feat">${tag}</span>` : "")}
         ${window.HomesCart?HomesCart.heart(h):""}
+        ${window.HomesCart&&HomesCart.tour?HomesCart.tour(h):""}
       </div>
       <div class="card-body">
         <div class="card-price"><span class="num">${money(h.monthlyPayment)}</span><span class="per">/mo</span></div>
@@ -1255,6 +1256,9 @@ function startHomePage(){
       rowHTML("Just over your budget", "just-over", over)
     ]);
   }
+  function mapPins(){
+    return LISTINGS.filter(h => !isPending(h) && typeof h.lat === "number" && typeof h.lng === "number");
+  }
   function render(scroll){
     const place = window.BuyerSearch ? BuyerSearch.resolvePlace($("fQ").value, LISTINGS) : null;
     if (place && (place.kind === "city" || place.kind === "zip")) {
@@ -1273,6 +1277,7 @@ function startHomePage(){
         if (!result) return false;
         staticFresh = false;
         paintGroups(result);
+        if (window.HomesMap) HomesMap.update(mapPins());
         return true;
       };
       if (place.kind === "zip" && !window.__zipIndex && BuyerSearch.loadZips) {
@@ -1299,7 +1304,7 @@ function startHomePage(){
         rowHTML("Pending", "row-pending", pending)
       ]);
       const goBtn = $("sheetGo"); if (goBtn) goBtn.textContent = shown.length ? `Show ${shown.length} home${shown.length===1?"":"s"}` : "No homes match";
-      if (window.HomesMap) HomesMap.update(shown);
+      if (window.HomesMap) HomesMap.update(mapPins());
       chips();
       const head0 = document.querySelector("body.page-search .topbar");
       if (head0) document.documentElement.style.setProperty("--zhead", (head0.offsetHeight + 8) + "px");
@@ -1326,7 +1331,7 @@ function startHomePage(){
       : "";
     renderPager(pages);
     const goBtn = $("sheetGo"); if (goBtn) goBtn.textContent = shown.length ? `Show ${shown.length} home${shown.length===1?"":"s"}` : "No homes match";
-    if (window.HomesMap) HomesMap.update(shown);
+    if (window.HomesMap) HomesMap.update(mapPins());
     if (window.HomesCart) HomesCart.sync();
     chips();
     const head = document.querySelector("body.page-search .topbar");

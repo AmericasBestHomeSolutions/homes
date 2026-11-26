@@ -290,28 +290,54 @@
     var es = (document.documentElement.lang || "en") === "es";
     var extra = document.getElementById("buyerExtra");
     var empty = document.getElementById("cityEmpty");
+    var pageSize = 24;
+    var shown = pageSize;
+    var moreBtn = document.getElementById("showMoreHomes");
+    if (!moreBtn) {
+      moreBtn = document.createElement("button");
+      moreBtn.type = "button";
+      moreBtn.id = "showMoreHomes";
+      moreBtn.className = "chip-clear";
+      moreBtn.hidden = true;
+      list.insertAdjacentElement("afterend", moreBtn);
+      moreBtn.addEventListener("click", function () {
+        shown += pageSize;
+        applyLocal();
+      });
+    }
     function applyLocal() {
       var limits = readLimits(form);
-      var availableShown = 0, photoShown = false;
+      var availableShown = 0, photoShown = false, matched = 0;
       Array.prototype.forEach.call(list.children, function (li) {
+        if (!li.classList || !li.classList.contains("swipe-card")) return;
         var ok = inBudget({
           moveIn: li.getAttribute("data-down"),
           monthlyPayment: li.getAttribute("data-pay"),
           beds: li.getAttribute("data-beds")
         }, limits);
-        li.hidden = !ok;
+        if (!ok) { li.hidden = true; li.dataset.paged = ""; return; }
+        matched += 1;
+        li.hidden = matched > shown;
+        li.dataset.paged = matched > shown ? "1" : "";
         var pending = /pending/i.test(li.getAttribute("data-status") || "");
-        if (ok && !pending) {
+        if (!pending && matched <= shown) {
           availableShown += 1;
           if (li.getAttribute("data-photo") === "1") photoShown = true;
         }
       });
+      if (moreBtn) {
+        var left = matched - shown;
+        moreBtn.hidden = left <= 0;
+        moreBtn.textContent = es
+          ? ("Mostrar " + Math.min(pageSize, Math.max(left, 0)) + " más")
+          : ("Show " + Math.min(pageSize, Math.max(left, 0)) + " more");
+      }
       if (empty) empty.hidden = availableShown > 0 || list.querySelector(":scope > :not([hidden])");
       if (!extra) return;
       var over = "";
       if (!photoShown) {
         Array.prototype.forEach.call(list.children, function (li) {
-          if (li.hidden && !/pending/i.test(li.getAttribute("data-status") || "") && li.getAttribute("data-photo") === "1") {
+          if (li.hidden && li.dataset.paged !== "1" && !/pending/i.test(li.getAttribute("data-status") || "") && li.getAttribute("data-photo") === "1") {
             over += li.outerHTML.replace(' hidden=""', "").replace(" hidden", "");
           }
         });
@@ -353,10 +379,11 @@
         .then(function (doc) { catalog = doc.homes || []; run(catalog); })
         .catch(function () {});
     }
-    form.addEventListener("submit", function (event) { event.preventDefault(); applyLocal(); });
-    form.addEventListener("change", applyLocal);
+    function resetPage() { shown = pageSize; applyLocal(); }
+    form.addEventListener("submit", function (event) { event.preventDefault(); resetPage(); });
+    form.addEventListener("change", resetPage);
     form.addEventListener("input", function (event) {
-      if (event.target && event.target.id === "fQ") applyLocal();
+      if (event.target && event.target.id === "fQ") resetPage();
     });
     var clearBtn = form.querySelector("#clearBuyer");
     if (clearBtn && !clearBtn.dataset.wired) {
@@ -371,9 +398,10 @@
             b.setAttribute("aria-pressed", i === 0 ? "true" : "false");
           });
         });
-        applyLocal();
+        resetPage();
       });
     }
+    resetPage();
   }
 
   root.BuyerSearch = {

@@ -344,7 +344,7 @@ body.page-search #cities .sec-sub{margin:4px 0 0;max-width:62ch}
 .joe-slot[hidden]{display:none !important}
 html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(--brand-primary,#15315e);border-radius:12px;padding:12px 14px;margin:10px 0;background:#fff}
 .trust-block{margin:28px 16px}
-.trust-block h2{font-family:'Bricolage Grotesque',sans-serif;font-size:26px;margin:0 0 8px}
+.trust-block h2,.trust-block h3{font-family:system-ui,sans-serif;font-size:26px;font-weight:800;margin:0 0 8px}
 .trust-steps{display:grid;gap:10px;margin-top:10px}
 .trust-steps article{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px}
 body.page-search .hdr-search{display:none}
@@ -402,6 +402,15 @@ body.page-search .buyer-panel{position:static;background:#fff}
 .filter-slim{position:fixed;z-index:28;left:8px;right:8px;top:var(--zhead,64px);height:56px;max-height:56px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 14px;border:1px solid var(--line,#e2e8f2);border-radius:14px;background:#fff;box-shadow:0 8px 22px rgba(15,36,68,.12);color:var(--pine,#15315e);font:700 14px system-ui,sans-serif;text-align:left}
 .filter-slim #filterSlimText{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .filter-slim #filterSlimEdit{flex:0 0 auto;min-height:36px;padding:0 12px;border-radius:999px;background:var(--pine,#15315e);color:#fff;display:inline-flex;align-items:center}
+.filter-backdrop{display:none}
+body.sheet-open .filter-backdrop{display:block;position:fixed;inset:0;background:rgba(15,36,68,.45);z-index:70}
+body.sheet-open #buyerSearch{position:fixed;z-index:80;background:#fff;overflow:auto;box-shadow:0 16px 48px rgba(15,36,68,.22)}
+@media(max-width:860px){
+  body.sheet-open #buyerSearch{left:0;right:0;bottom:0;top:auto;max-height:86vh;border-radius:18px 18px 0 0;padding-bottom:24px}
+}
+@media(min-width:861px){
+  body.sheet-open #buyerSearch{top:72px;left:50%;width:min(560px,92vw);max-height:78vh;border-radius:16px;transform:translateX(-50%)}
+}
 body.page-search .view-toggle{position:static !important;left:auto !important;bottom:auto !important;transform:none !important;margin:12px 16px 20px;z-index:1}
 #stickyTour{z-index:80}
 body.page-search .city-pills{display:flex !important;flex-wrap:nowrap !important;overflow-x:auto;scroll-snap-type:x mandatory;gap:8px;padding-bottom:10px}
@@ -543,6 +552,7 @@ body.page-search .hdr-search{display:none !important}
     </div>
     <button type="button" class="chip-clear" id="clearBuyer">Clear filters</button>
   </form>
+  <div class="filter-backdrop" id="filterBackdrop" hidden></div>
   <button type="button" id="filterSlim" class="filter-slim" hidden>
     <span id="filterSlimText">Find a home</span>
     <span id="filterSlimEdit">Filters</span>
@@ -648,7 +658,7 @@ body.page-search .hdr-search{display:none !important}
       <source type="image/webp" srcset="/images/joe-headshot-600.webp">
       <img src="/images/joe-headshot-600.jpg" alt="Joseph Hernandez" width="600" height="717" loading="lazy" decoding="async">
     </picture>
-    <h2>Joseph Hernandez, Executive Director</h2>
+    <h3>Joseph Hernandez, Executive Director</h3>
     <p>Executive Director, Americas Best Home Solutions · Owner-Financed Homes · Bilingual EN/ES</p>
     <p>I'm Joseph Hernandez. I help families get into homes they can own without a bank loan. Every home here is sold as-is and priced for the work it needs, and you'll deal with me and my team directly from your first tour to your keys.</p>
     <p><a href="/how-it-works">How it works</a> · <a href="https://www.linkedin.com/in/joseph-hernandez-9511958">Connect on LinkedIn</a></p>
@@ -1436,8 +1446,23 @@ function startHomePage(){
         if (away) paintSlim();
       }, { rootMargin: "-8px 0px 0px 0px", threshold: 0 });
       watch.observe(panel);
-      slim.addEventListener("click", function(){
-        panel.scrollIntoView({ behavior: "smooth", block: "start" });
+      const backdrop = $("filterBackdrop");
+      function openSheet(){
+        document.body.classList.add("sheet-open");
+        if (backdrop) backdrop.hidden = false;
+        panel.setAttribute("role", "dialog");
+        panel.setAttribute("aria-modal", "true");
+      }
+      function closeSheet(){
+        document.body.classList.remove("sheet-open");
+        if (backdrop) backdrop.hidden = true;
+        panel.removeAttribute("role");
+        panel.removeAttribute("aria-modal");
+      }
+      slim.addEventListener("click", openSheet);
+      if (backdrop) backdrop.addEventListener("click", closeSheet);
+      document.addEventListener("keydown", function(event){
+        if (event.key === "Escape") closeSheet();
       });
       panel.addEventListener("change", paintSlim);
       panel.addEventListener("input", paintSlim);

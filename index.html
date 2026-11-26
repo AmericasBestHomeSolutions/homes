@@ -114,9 +114,10 @@ body{
 /* ── ONE TEAM, ONE NUMBER ────────────────────────────────── */
 .meet-joe{display:grid;grid-template-columns:1fr;margin:12px 16px;border-radius:22px;overflow:hidden;border:1px solid #d5deea;background:#fff;scroll-margin-top:calc(var(--zhead, 80px) + 72px)}
 .meet-bio{padding:20px 18px;display:flex;flex-direction:column;gap:8px}
-.meet-bio img{width:120px;height:auto;border-radius:16px}
+.meet-bio img{width:148px;height:auto;border-radius:16px}
 .meet-bio h3{margin:0;font-size:22px;line-height:1.2}
 .meet-bio p{margin:0}
+.meet-role{font-size:13px;line-height:1.4;color:#5b6577}
 .meet-bio a{font-weight:700}
 .meet-navy{background:#15315e;color:#fff;padding:22px 18px;height:100%}
 .meet-navy h2{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(22px,3vw,28px);letter-spacing:-.4px;line-height:1.15;margin:8px 0 14px;color:#fff}
@@ -125,8 +126,8 @@ body{
 .meet-navy li strong{color:#fff}
 .meet-navy li .m{flex-shrink:0;width:20px;height:20px;border-radius:6px;background:rgba(255,255,255,.15);color:#7ee8a2;display:flex;align-items:center;justify-content:center;margin-top:2px;font-weight:800;font-size:12px}
 @media(min-width:900px){
-  .meet-joe{grid-template-columns:1fr 1fr;align-items:stretch}
-  .meet-bio img{width:160px}
+  .meet-joe{grid-template-columns:1fr 1fr;align-items:stretch;scroll-margin-top:var(--zhead, 80px)}
+  .meet-bio img{width:220px}
 }
 
 /* ── TRUST BAND ──────────────────────────────────────────── */
@@ -418,6 +419,9 @@ body.page-search .buyer-panel{position:static;background:#fff}
 .filter-slim{position:fixed;z-index:28;left:8px;right:8px;top:var(--zhead,64px);height:56px;max-height:56px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 14px;border:1px solid var(--line,#e2e8f2);border-radius:14px;background:#fff;box-shadow:0 8px 22px rgba(15,36,68,.12);color:var(--pine,#15315e);font:700 14px system-ui,sans-serif;text-align:left}
 .filter-slim #filterSlimText{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .filter-slim #filterSlimEdit{flex:0 0 auto;min-height:36px;padding:0 12px;border-radius:999px;background:var(--pine,#15315e);color:#fff;display:inline-flex;align-items:center}
+@media(min-width:861px){
+  body.page-search .filter-slim{display:none !important}
+}
 .filter-backdrop{display:none}
 body.sheet-open .filter-backdrop{display:block;position:fixed;inset:0;background:rgba(15,36,68,.45);z-index:70}
 body.sheet-open #buyerSearch{position:fixed;z-index:80;background:#fff;overflow:auto;box-shadow:0 16px 48px rgba(15,36,68,.22)}
@@ -678,7 +682,8 @@ body.page-search .hdr-search{display:none !important}
         <img src="/images/joe-headshot-600.jpg" alt="Joseph Hernandez" width="600" height="717" loading="lazy" decoding="async">
       </picture>
       <h3>Joseph Hernandez, Executive Director</h3>
-      <p>I'm Joseph Hernandez. You deal with me from the first tour to the keys.</p>
+      <p class="meet-role">Americas Best Home Solutions · Owner-Financed Homes · Bilingual EN/ES</p>
+      <p>I help families get into homes they can own without a bank loan. Every home here is sold as-is and priced for the work it needs, and you'll deal with me and my team directly from your first tour to your keys.</p>
       <p><a href="/how-it-works">How it works</a> · <a href="https://www.linkedin.com/in/joseph-hernandez-9511958">Connect on LinkedIn</a></p>
     </article>
     <article class="meet-navy" id="oneTeam">

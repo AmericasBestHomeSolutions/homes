@@ -327,8 +327,8 @@ def _fit_facts(home: dict, lang: str) -> list[str]:
 def qualify_sentence(lang: str = "en") -> str:
     """Soft qualify line. English stays the published sentence."""
     if lang == "es":
-        return "una identificación válida, el enganche y un pago mensual que se ajuste a su presupuesto"
-    return "No bank loan needed. We keep it simple: if the down payment and monthly payment fit your budget, we'll walk you through the next steps."
+        return "No necesita préstamo de banco. Si el enganche y la mensualidad se ajustan a su presupuesto, nuestro equipo lo acompaña en cada paso."
+    return "No bank loan needed. If the down payment and monthly fit your budget, our team will guide you through every step."
 
 
 def eval_html(home: dict, facts_doc: dict, lang: str) -> str:
@@ -343,7 +343,7 @@ def eval_html(home: dict, facts_doc: dict, lang: str) -> str:
 
     state = str(home.get("state") or "").strip().upper()
     if lang == "es":
-        cash_title, down_label = "Dinero para recibir las llaves", "Enganche"
+        cash_title, down_label = "Enganche para mudarse", "Enganche"
         paperwork = "Las condiciones finales se confirman en sus documentos."
         month_title = "Su pago mensual y las condiciones"
         month_l, price_l = "Pago mensual", "Precio"
@@ -354,23 +354,23 @@ def eval_html(home: dict, facts_doc: dict, lang: str) -> str:
         fit_title = "Cómo podría servirle esta casa"
         family_title, rental_title = "Para una familia", "Para renovar y rentar"
         illustrate = "Es un ejemplo con los datos de este anuncio, no la historia de un comprador."
-        keys_title = "Pasos hasta las llaves"
+        keys_title = "De la primera visita a sus llaves, en 5 pasos"
         keys = [
-            "Elija una casa y visítela",
+            "Agende una hora y nuestro equipo le muestra la casa en persona.",
             "Le enviamos un paquete de bienvenida",
-            "Usted envía el enganche o el depósito",
-            "Hacemos los documentos",
-            "Reciba las llaves",
+            "Usted envía el enganche que aparece en la página de la casa, o el depósito.",
+            "Preparamos el papeleo, y usted lo revisa y lo firma antes de recibir las llaves.",
+            "Las llaves son suyas.",
         ]
         if state == "IL":
-            keys_note = "En Illinois hay 3 días para rescindir después de firmar, y después recibe las llaves."
+            keys_note = "En Illinois primero tiene 3 días después de firmar para cambiar de opinión."
         else:
-            keys_note = f"En {state}, las llaves se entregan enseguida después de firmar." if state else "En los demás estados, las llaves se entregan enseguida después de firmar."
+            keys_note = "En los demás estados, recibe las llaves al firmar."
         scam_q = "¿Es esto una estafa?"
         scam_a = scam_answer("es")
         scam_html = scam_answer_html("es")
     else:
-        cash_title, down_label = "Cash to get the keys", "Down payment"
+        cash_title, down_label = "Down payment to move in", "Down payment"
         paperwork = "Final terms are confirmed in your paperwork."
         month_title = "Your monthly payment and terms"
         month_l, price_l = "Monthly payment", "Price"
@@ -381,18 +381,18 @@ def eval_html(home: dict, facts_doc: dict, lang: str) -> str:
         fit_title = "How this home could fit"
         family_title, rental_title = "For a family", "To renovate and rent"
         illustrate = "An illustration from this listing's own facts, not a buyer's story."
-        keys_title = "Steps to the keys"
+        keys_title = "From first tour to your keys, in 5 steps"
         keys = [
-            "Pick a home and tour it",
+            "Book a time and our team shows you the home in person.",
             "We send a welcome packet",
-            "You send the down payment or deposit",
-            "We do the paperwork",
-            "Get the keys",
+            "You send the down payment shown on the home's page, or the deposit.",
+            "We prepare the paperwork, and you review and sign it before you get the keys.",
+            "The keys are yours.",
         ]
         if state == "IL":
-            keys_note = "In Illinois there is a 3-day right of rescission after signing, then keys."
+            keys_note = "In Illinois you first have 3 days after signing to change your mind."
         else:
-            keys_note = f"In {state}, keys right away after signing." if state else "In other states, keys right away after signing."
+            keys_note = "In other states, you get the keys right after signing."
         scam_q = "Is this a scam?"
         scam_a = scam_answer("en")
         scam_html = scam_answer_html("en")

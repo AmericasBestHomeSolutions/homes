@@ -539,11 +539,11 @@ def _card_html(home: dict, index: int, listed: dict[str, str], today: date, lang
     purchase = _money(home.get("lockedPrice"))
     if lang == "es":
         per, down_word, avail = "/mes", "de enganche", "Disponible ahora"
-        pending_word = "Pendiente: visitas cerradas"
+        pending_word = "Pendiente · sin visitas por ahora"
         price_word = "precio"
     else:
         per, down_word, avail = "/mo", "down", "Available now"
-        pending_word = "Pending: tours closed"
+        pending_word = "Pending · not open for tours"
         price_word = "price"
     down_html = f'<div class="card-down">{down} {down_word}</div>' if down else ""
     price_html = f'<div class="card-ask">{purchase} {price_word}</div>' if purchase else ""

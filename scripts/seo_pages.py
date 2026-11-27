@@ -840,27 +840,28 @@ def _city_page(group: dict, lang: str) -> str:
         noun = "casa" if n == 1 else "casas"
         desc = (f"{n} {noun} con financiamiento del dueño en {city}, {state}. "
                 f"Cada anuncio muestra la dirección, el precio, el enganche y el pago mensual. Sin banco.")
-        lead = (f"{n} {'casa' if n == 1 else 'casas'} en {city}, {state} que puede comprar con financiamiento del dueño. "
-                f"El precio, el enganche y el pago mensual están en cada anuncio. No hay banco ni solicitud hipotecaria.")
+        lead = (f"{n} {'casa' if n == 1 else 'casas'} en {city} que puede comprar con financiamiento del dueño. "
+                f"Cada una muestra su precio, enganche y mensualidad, y nuestro equipo las muestra todas en persona.")
         eyebrow = "Financiamiento del dueño"
         browse = "Ver todas las casas"
+        tour_cta = "Agende una visita en cualquier casa"
         nav = [(" /#listings".replace(" ", ""), "Casas"), ("/como-funciona.html", "Cómo funciona"),
                ("/nosotros", "Nosotros"), ("/contacto", "Contacto")]
-        pending_word = "Pendiente"
+        pending_word = "Pendiente · sin visitas por ahora"
     else:
         title = f"Owner Financed Homes in {city}, {state}"
         h1 = title
         noun = "home" if n == 1 else "homes"
         desc = (f"{n} owner-financed {noun} in {city}, {state}. "
                 f"Each listing shows the address, purchase price, down payment, and monthly payment. No bank.")
-        lead = (f"{n} owner-financed {'home' if n == 1 else 'homes'} in {city}, {state}. "
-                f"Every listing below shows the address, purchase price, down payment, and monthly payment. "
-                f"No bank and no mortgage application.")
+        lead = (f"{n} {'home' if n == 1 else 'homes'} in {city} you can own with owner financing. "
+                f"Each one shows its price, down payment and monthly, and our team shows every home in person.")
         eyebrow = "Owner financing"
         browse = "Browse all homes"
+        tour_cta = "Book a tour on any home"
         nav = [("/#listings", "Homes"), ("/how-it-works", "How it works"),
                ("/about", "About"), ("/contact", "Contact")]
-        pending_word = "Pending"
+        pending_word = "Pending · not open for tours"
     items = []
     for i, home in enumerate(group["homes"], 1):
         bits = [f"{home.get('city')}, {home.get('state')}"]
@@ -1043,11 +1044,12 @@ html.preview .joe-slot[hidden]{{display:block !important;border:1.5px dashed var
     <span class="eyebrow">{esc(eyebrow)}</span>
     <h1>{esc(h1)}</h1>
     <p class="lead">{esc(lead)}</p>
+    <p class="lead"><a href="#cityHomes">{esc(tour_cta)}</a></p>
   </section>
   <div class="row-scroller" id="cityHomes">
       {rows}
   </div>
-  <p id="cityEmpty" hidden>{'Nada en ese rango. Pruebe un rango más amplio o menos recámaras.' if lang == 'es' else 'Nothing in that range. Try a wider payment range or fewer bedrooms. Nearby homes show below when we have them.'}</p>
+  <p id="cityEmpty" hidden>{'Ninguna casa coincide con esos filtros por ahora. Pruebe un rango más amplio o una ciudad cercana, o toque «Avíseme por texto de casas nuevas» y le avisamos cuando llegue una.' if lang == 'es' else 'No homes match those filters right now. Try a wider range or a nearby city, or tap “Text me new homes like this” and we’ll let you know when one comes in.'}</p>
   <div id="buyerExtra"></div>
   <p class="city-back"><a href="/">{esc(browse)}</a></p>
 </div>

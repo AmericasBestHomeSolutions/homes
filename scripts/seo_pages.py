@@ -1420,31 +1420,39 @@ def _stamp_buyer_questions(root: Path, lang: str = "en") -> None:
             path.write_text(new, encoding="utf-8")
 
 
+def _fill_scam_box(text: str, element_id: str, inner: str) -> str:
+    """Replace one scam box with the paragraph HTML. A <p> box becomes a <div>."""
+    pat = rf'<(p|div)(\s[^>]*\bid="{re.escape(element_id)}"[^>]*)>(.*?)</\1>'
+
+    def repl(match: re.Match) -> str:
+        return f"<div{match.group(2)}>{inner}</div>"
+
+    return re.sub(pat, repl, text, count=1, flags=re.S)
+
+
 def _stamp_scam_copy(root: Path, lang: str = "en") -> None:
-    """Write the scam answer from listing_facts flags into the pages that show it."""
+    """Write scam_paragraphs into every page that shows the scam answer."""
     import listing_facts
     lang = "es" if lang == "es" else "en"
     answer = listing_facts.scam_answer(lang)
+    inner = listing_facts.scam_answer_html(lang)
     escaped = answer.replace("\\", "\\\\").replace('"', '\\"')
     if lang == "es":
         names = ("home.html", "index.html", "como-funciona.html")
-        id_pat = r'(id="scam(?:Answer|SheetAnswer)Es">)(.*?)(</)'
+        box_ids = ("scamAnswerEs", "scamSheetAnswerEs")
         q_pat = r'("name":"¿Es esto una estafa\?","acceptedAnswer":\{"@type":"Answer","text":")((?:\\.|[^"\\])*)(")'
     else:
         names = ("home.html", "index.html", "how-it-works.html")
-        id_pat = r'(id="scam(?:Answer|SheetAnswer)">)(.*?)(</)'
+        box_ids = ("scamAnswer", "scamSheetAnswer")
         q_pat = r'("name":"Is this a scam\?","acceptedAnswer":\{"@type":"Answer","text":")((?:\\.|[^"\\])*)(")'
     for name in names:
         path = root / name
         if not path.is_file():
             continue
         text = path.read_text(encoding="utf-8")
-        new = re.sub(
-            id_pat,
-            lambda m: m.group(1) + answer + m.group(3),
-            text,
-            flags=re.S,
-        )
+        new = text
+        for box_id in box_ids:
+            new = _fill_scam_box(new, box_id, inner)
         new = re.sub(
             q_pat,
             lambda m: m.group(1) + escaped + m.group(3),

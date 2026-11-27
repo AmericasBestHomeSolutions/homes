@@ -17,42 +17,38 @@ from pathlib import Path
 
 PATH = Path("data") / "home-facts.json"
 
-# Joe confirmed both on 2026-11-26. Rebuilding publishes the hold sentence
-# and the Wyoming office address in the scam answer, the listing note, and
-# the question sheet.
+# Joe confirmed both on 2026-11-26. They still publish the navy hold line,
+# the listing-step hold sentence, and the Wyoming address on the navy block.
+# The scam answer is only scam_paragraphs.
 CONFIRM_TOUR_BEFORE_PAY = True
 CONFIRM_WYOMING_ADDRESS = True
 
 
-def scam_answer(lang: str = "en") -> str:
-    """Buyer-facing scam answer. Hold and office lines follow the flags above."""
+def scam_paragraphs(lang: str = "en") -> list[str]:
+    """The scam answer, one paragraph per item. Nothing else is appended."""
     if lang == "es":
-        parts = [
-            "La empresa de este sitio es Americas Best Home Solutions LLC.",
-            "Joseph Hernandez es el director ejecutivo y su foto está en este sitio.",
-            "Las reseñas son de Logan y Trinity, en Decatur.",
-            "Usted visita la casa en persona primero.",
-            "Usted firma los documentos antes de recibir las llaves.",
-            "Puede escribir a admin@americasbesthomesolutions.com.",
+        return [
+            "No. Suena diferente porque casi todos conocen una sola forma de comprar casa: con un préstamo del banco. Aquí, el vendedor financia la casa, así que no hay banco de por medio.",
+            "Solo necesita una identificación válida, el enganche y un pago mensual que se ajuste a su presupuesto. La página de cada casa muestra su enganche y su pago mensual.",
+            "Las casas se venden tal como están, por eso usted las visita en persona antes de pagar cualquier cosa para apartarlas. Firma los papeles antes de recibir las llaves.",
+            "Joseph Hernandez, Director Ejecutivo de Americas Best Home Solutions LLC, y su equipo lo acompañan desde la primera visita hasta las llaves.",
         ]
-        if CONFIRM_TOUR_BEFORE_PAY:
-            parts.insert(3, "Usted visita la casa en persona antes de pagar algo para reservarla.")
-        if CONFIRM_WYOMING_ADDRESS:
-            parts.insert(1, "La oficina está en 30 N Gould St, Ste R, Sheridan, WY 82801.")
-        return " ".join(parts)
-    parts = [
-        "Americas Best Home Solutions LLC is the company on this site.",
-        "Joseph Hernandez is the Executive Director, and his photo is on this site.",
-        "The buyer reviews are from Logan and Trinity in Decatur.",
-        "You tour the home in person first.",
-        "You sign the paperwork before you get the keys.",
-        "You can write admin@americasbesthomesolutions.com.",
+    return [
+        "No. It sounds unusual because most people only know one way to buy a home: a bank loan. Here, the seller finances the home, so there's no bank in the middle.",
+        "All you need is a valid ID, the down payment, and a monthly payment that fits your budget. Each home shows its down payment and monthly on its page.",
+        "Homes are sold as-is, so you tour in person before you pay anything to hold one. You sign the paperwork before you get the keys.",
+        "Joseph Hernandez, Executive Director of Americas Best Home Solutions LLC, and his team are with you from first tour to keys.",
     ]
-    if CONFIRM_TOUR_BEFORE_PAY:
-        parts.insert(3, "You tour the home in person before you pay anything to hold it.")
-    if CONFIRM_WYOMING_ADDRESS:
-        parts.insert(1, "The office address is 30 N Gould St, Ste R, Sheridan, WY 82801.")
-    return " ".join(parts)
+
+
+def scam_answer(lang: str = "en") -> str:
+    """Scam answer as one line for JSON-LD. Paragraphs are joined with spaces."""
+    return " ".join(scam_paragraphs(lang))
+
+
+def scam_answer_html(lang: str = "en") -> str:
+    """Scam answer as separate paragraphs for HTML."""
+    return "".join(f"<p>{_esc(part)}</p>" for part in scam_paragraphs(lang))
 
 
 def walkthrough_line(lang: str = "en") -> str:
@@ -372,6 +368,7 @@ def eval_html(home: dict, facts_doc: dict, lang: str) -> str:
             keys_note = f"En {state}, las llaves se entregan enseguida después de firmar." if state else "En los demás estados, las llaves se entregan enseguida después de firmar."
         scam_q = "¿Es esto una estafa?"
         scam_a = scam_answer("es")
+        scam_html = scam_answer_html("es")
     else:
         cash_title, down_label = "Cash to get the keys", "Down payment"
         paperwork = "Final terms are confirmed in your paperwork."
@@ -398,6 +395,7 @@ def eval_html(home: dict, facts_doc: dict, lang: str) -> str:
             keys_note = f"In {state}, keys right away after signing." if state else "In other states, keys right away after signing."
         scam_q = "Is this a scam?"
         scam_a = scam_answer("en")
+        scam_html = scam_answer_html("en")
 
     cash_rows = []
     if down:
@@ -443,7 +441,7 @@ def eval_html(home: dict, facts_doc: dict, lang: str) -> str:
         f'{price_small}'
         f'<p class="eval-total">{_esc(paperwork)}</p></section>\n'
         f'<details class="scam-note" id="scamNote"><summary>{_esc(scam_q)}</summary>'
-        f'<p>{_esc(scam_a)}</p></details>\n'
+        f'{scam_html}</details>\n'
         f'<script type="application/ld+json">{json.dumps({"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": scam_q, "acceptedAnswer": {"@type": "Answer", "text": scam_a}}]}, ensure_ascii=False).replace("<", "\\u003c")}</script>\n'
         f'<section class="eval-block" id="keysBlock"><h2>{_esc(keys_title)}</h2>'
         f'<ol class="key-steps">{key_items}</ol><p>{_esc(keys_note)}</p></section>\n'

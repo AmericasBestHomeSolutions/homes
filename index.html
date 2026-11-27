@@ -345,7 +345,7 @@ body.page-search #cities{margin:28px 0 0;padding:14px 16px 28px;background:#fff;
 body.page-search #cities .sec-title{font-size:clamp(22px,3vw,28px)}
 body.page-search #cities .sec-sub{margin:4px 0 0;max-width:62ch}
 .buyer-panel{display:grid;gap:10px;padding:14px 16px 8px;background:#fff}
-.buyer-panel h1{font-family:system-ui,sans-serif;font-weight:800;font-size:28px;line-height:1.05;letter-spacing:-.4px;margin:0;min-height:30px}
+.buyer-panel h2{font-family:system-ui,sans-serif;font-weight:800;font-size:28px;line-height:1.05;letter-spacing:-.4px;margin:0;min-height:30px}
 .buyer-panel label{display:grid;gap:4px;font:800 12px 'DM Sans',sans-serif;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft)}
 .buyer-panel input,.buyer-panel select{font:600 16px 'DM Sans',sans-serif;text-transform:none;letter-spacing:0;min-height:48px;border-radius:12px;border:1.5px solid var(--line);padding:10px 12px;width:100%;background:#fff;color:var(--ink)}
 .buyer-budgets{display:grid;grid-template-columns:1fr 1fr;gap:8px}
@@ -398,8 +398,12 @@ body.page-search #trustBand{display:none !important}
 .card-book{display:none !important}
 a.st-go,.btn-primary{background:#C62F2A}
 .see-all{display:flex;align-items:center;justify-content:center;min-height:300px;flex:0 0 min(78vw,300px);background:#E6EEFA;color:#15315e;font-weight:800;text-decoration:none;border-radius:16px;padding:16px;text-align:center}
-.hero-promise{margin:12px 16px 8px;font-size:22px;font-weight:800;line-height:1.25;color:#0F2444}
+.hero-block{margin:8px 16px 16px}
+h1.hero-promise{margin:22px 0 14px;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(28px,4.4vw,42px);line-height:1.12;letter-spacing:-.5px;color:#0F2444;max-width:18em}
+.new-chip{display:inline-flex;align-items:center;margin:0 0 14px;padding:6px 12px;border-radius:999px;background:#E6EEFA;color:#15315e;font:800 13px system-ui,sans-serif;text-decoration:none}
+.new-chip[hidden]{display:none !important}
 .week-hero{margin:0 16px 12px}
+.hero-block .week-hero{margin:0}
 .week-hero img{width:100%;height:140px;object-fit:cover;object-position:50% 60%;border-radius:16px;display:block}
 body.page-search #how .step{padding:8px 10px;gap:8px}
 body.page-search #how .steps{gap:6px}
@@ -509,7 +513,7 @@ body.page-search .hdr-search{display:none !important}
     <div class="z-sort">
       <p class="count" id="count"></p>
       <label class="sort-pill">Sort
-        <select id="fSort" aria-label="Sort"><option value="">Featured</option><option value="monthly-asc">Monthly ↑</option><option value="down-asc">Down payment ↑</option></select>
+        <select id="fSort" aria-label="Sort"><option value="">Featured</option><option value="listed-desc">Newest</option><option value="monthly-asc">Monthly ↑</option><option value="down-asc">Down payment ↑</option></select>
       </label>
     </div>
     <div class="filter-sheet" id="filterSheet" hidden>
@@ -539,13 +543,15 @@ body.page-search .hdr-search{display:none !important}
     </div>
   </header>
 
-  <p class="hero-promise">Own a home without a bank loan. See every home's down payment and monthly, then tour it with our team.</p>
-  <p id="newThisWeek" hidden></p>
+  <div class="hero-block">
+  <h1 class="hero-promise">Own a home without a bank loan. See every home's down payment and monthly, then tour it with our team.</h1>
+  <a id="newThisWeek" class="new-chip" href="/?sort=listed-desc#listings" hidden></a>
   <!-- weekly-hero:start -->
 <figure class="week-hero"><img src="images/cards/oblong-il-807-illinois-480.webp" alt="A real home you can tour: 807 W Illinois St, Oblong, IL" width="480" height="360" fetchpriority="high"><figcaption>A real home you can tour: 807 W Illinois St, Oblong, IL</figcaption></figure>
 <!-- weekly-hero:end -->
+  </div>
   <form class="buyer-panel" id="buyerSearch" action="/" method="get">
-    <h1>Find a home</h1>
+    <h2>Find a home</h2>
     <label>City or ZIP
       <input id="fQ" name="q" type="search" inputmode="search" autocomplete="off" enterkeyhint="search" list="qHints" placeholder="City or ZIP" aria-label="City or ZIP">
     </label>
@@ -621,7 +627,7 @@ body.page-search .hdr-search{display:none !important}
   <section class="hero">
     <div class="hero-inner">
       <span class="eyebrow"><svg width="12" height="12" viewBox="0 0 24 24" fill="#ffffff" aria-hidden="true"><path d="M12 2 3 7v6c0 5 3.8 8.4 9 11 5.2-2.6 9-6 9-11V7l-9-5z"/></svg> Owner Financing · No Bank Needed</span>
-      <h1>Own the home.<br><em>Skip the bank.</em></h1>
+      <p class="hero-lead" style="font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(32px,7vw,52px);line-height:1.03;letter-spacing:-1.2px;margin-bottom:10px">Own the home.<br><em>Skip the bank.</em></p>
       <p class="hero-lead">Owner-financed homes across Illinois, Missouri, Michigan, Alabama and more. See the down payment and the monthly payment on every home, then tour it in person.</p>
       <p class="reassure">Your past doesn't have to decide your future. If you've been turned away by banks, this was built for you.</p>
       <div class="hero-cta">
@@ -1194,8 +1200,10 @@ function startHomePage(){
       (!words.length || (hay => words.every(w => hay.includes(w)))(((h.address||"")+" "+(h.city||"")+" "+(h.state||"")+" "+(h.zip||"")).toLowerCase().replace(/[.,#]/g," ")))
     );
     const num = (v, fallback=0) => Number(v) || fallback;
+    const listedAt = h => Date.parse(((typeof LISTED_ON !== "undefined" ? LISTED_ON : (window.LISTED_ON || {}))[h.id]) || "") || 0;
     if (sort === "monthly-asc")   list.sort((a,b) => num(a.monthlyPayment,Infinity) - num(b.monthlyPayment,Infinity));
     else if (sort === "down-asc") list.sort((a,b) => num(a.moveIn,Infinity) - num(b.moveIn,Infinity));  // "Ask us" ($0) sorts last
+    else if (sort === "listed-desc") list.sort((a,b) => listedAt(b) - listedAt(a));
     else list.sort(defaultOrder());  // real photos first, then near the visitor, then newest listed
     return window.HomesMap ? HomesMap.applyGeo(list) : list;
   }

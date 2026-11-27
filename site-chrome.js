@@ -110,7 +110,7 @@
     esLink.hreflang = es ? "en" : "es";
   }
 
-  if (!nav.querySelector(".lang")) {
+  if (!nav.querySelector(".lang") && !nav.querySelector(".nav-lang, a.nav-es")) {
     const lang = document.createElement("div");
     lang.className = "lang";
     lang.setAttribute("role", "group");
@@ -140,7 +140,7 @@
     saved.innerHTML = (es ? "Guardados" : "Saved") + (savedCount ? '<span class="count">' + savedCount + "</span>" : "");
     menu.append(saved);
   }
-  if (!nav.querySelector("a.my-account")) {
+  if (!nav.querySelector("a.my-account, a.nav-account")) {
     // Buyer account (sign in with an email code; see and change tours) lives on the CRM.
     const acct = document.createElement("a");
     acct.className = "my-account";

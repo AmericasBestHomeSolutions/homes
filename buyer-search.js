@@ -404,6 +404,192 @@
     resetPage();
   }
 
+  var DIR = { n: "north", s: "south", e: "east", w: "west", ne: "northeast", nw: "northwest", se: "southeast", sw: "southwest" };
+  var DIR_FROM = { north: "n", south: "s", east: "e", west: "w", northeast: "ne", northwest: "nw", southeast: "se", southwest: "sw" };
+  var STREET = { st: "street", street: "st", ave: "avenue", avenue: "ave", rd: "road", road: "rd", dr: "drive", drive: "dr", ln: "lane", lane: "ln", ct: "court", court: "ct", blvd: "boulevard", boulevard: "blvd", pl: "place", place: "pl", ter: "terrace", terrace: "ter", hwy: "highway", highway: "hwy", pkwy: "parkway", parkway: "pkwy" };
+
+  function foldToken(word) {
+    return String(word || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+  }
+
+  function tokenAlts(word) {
+    var base = foldToken(word);
+    var alts = {};
+    if (!base) return [];
+    alts[base] = 1;
+    if (DIR[base]) alts[DIR[base]] = 1;
+    if (DIR_FROM[base]) alts[DIR_FROM[base]] = 1;
+    if (STREET[base]) alts[STREET[base]] = 1;
+    return Object.keys(alts);
+  }
+
+  function queryTokens(query) {
+    return String(query || "").toLowerCase().replace(/[.,#]/g, " ").split(/\s+/).filter(Boolean);
+  }
+
+  function matchAddresses(query, homes) {
+    var raw = String(query || "").trim();
+    if (raw.length < 2) return [];
+    var place = resolvePlace(raw, homes || []);
+    if (place && (place.kind === "city" || place.kind === "zip")) return [];
+    var words = queryTokens(raw);
+    var number = "";
+    var rest = [];
+    words.forEach(function (word) {
+      if (!number && /^\d+[a-z]?$/.test(word)) number = word.replace(/[a-z]$/i, "");
+      else rest.push(word);
+    });
+    if (!number && !rest.length) return [];
+    var hits = [];
+    (homes || []).forEach(function (home) {
+      if (!home || home.id === "duquoin-il-322-cole") return;
+      if (/^sold$/i.test(String(home.status || ""))) return;
+      if (number) {
+        var addrNum = String(home.address || "").match(/^\s*(\d+)/);
+        if (!addrNum || addrNum[1] !== number) return;
+      }
+      var bag = {};
+      queryTokens([home.address, home.city, home.state, cleanZip(home.zip)].filter(Boolean).join(" ")).forEach(function (token) {
+        tokenAlts(token).forEach(function (alt) { bag[alt] = 1; });
+      });
+      var ok = rest.every(function (word) {
+        return tokenAlts(word).some(function (alt) { return bag[alt]; });
+      });
+      if (!ok) return;
+      hits.push({ home: home, score: (number ? 8 : 0) + rest.length + (isPending(home) ? 0 : 1) });
+    });
+    hits.sort(function (a, b) {
+      return b.score - a.score || String(a.home.address || "").localeCompare(String(b.home.address || ""));
+    });
+    return hits.slice(0, 6).map(function (row) { return row.home; });
+  }
+
+  function moneyLabel(value) {
+    var n = num(value);
+    if (!isFinite(n) || n <= 0) return "";
+    return "$" + Math.round(n).toLocaleString();
+  }
+
+  function suggestCopy() {
+    var es = (document.documentElement.lang || "en").toLowerCase().startsWith("es");
+    return es ? {
+      placeholder: "Dirección, ciudad o código postal",
+      label: "Dirección, ciudad o código postal",
+      empty: "Ninguna casa coincide con esa dirección.",
+      pending: "Pendiente · sin visitas por ahora",
+      down: "enganche",
+      mo: "/mes"
+    } : {
+      placeholder: "Address, city, or ZIP",
+      label: "Address, city, or ZIP",
+      empty: "No homes match that address.",
+      pending: "Pending · not open for tours",
+      down: "down",
+      mo: "/mo"
+    };
+  }
+
+  function mountSuggest(input, homes) {
+    if (!input || input.dataset.suggest === "1") return;
+    input.dataset.suggest = "1";
+    var copy = suggestCopy();
+    input.placeholder = copy.placeholder;
+    input.setAttribute("aria-label", copy.label);
+    input.setAttribute("aria-autocomplete", "list");
+    input.setAttribute("aria-expanded", "false");
+    input.removeAttribute("list");
+    var label = input.closest("label");
+    if (label) {
+      label.style.position = "relative";
+      var text = label.childNodes[0];
+      if (text && text.nodeType === 3 && /\S/.test(text.nodeValue || "")) text.nodeValue = copy.label + "\n";
+    }
+    var box = document.createElement("div");
+    box.className = "addr-suggest";
+    box.setAttribute("role", "listbox");
+    box.hidden = true;
+    input.insertAdjacentElement("afterend", box);
+    if (!document.getElementById("addrSuggestStyle")) {
+      var style = document.createElement("style");
+      style.id = "addrSuggestStyle";
+      style.textContent = ".addr-suggest{position:absolute;z-index:50;left:0;right:0;top:calc(100% + 6px);background:#fff;border:1px solid #d5deea;border-radius:14px;box-shadow:0 12px 32px rgba(15,36,68,.16);max-height:min(60vh,360px);overflow:auto;text-transform:none;letter-spacing:0;font-family:'DM Sans',system-ui,sans-serif}"
+        + ".addr-suggest[hidden]{display:none !important}"
+        + ".addr-suggest a,.addr-suggest .addr-empty{display:flex;gap:10px;align-items:center;padding:8px 10px;text-decoration:none;color:#16213a;border-bottom:1px solid #eef2f7}"
+        + ".addr-suggest a.active,.addr-suggest a:hover{background:#E6EEFA}"
+        + ".addr-suggest img{width:52px;height:40px;object-fit:cover;border-radius:8px;background:#e6eef8;flex:0 0 auto}"
+        + ".addr-suggest .addr-main{display:flex;flex-direction:column;gap:2px;min-width:0;flex:1}"
+        + ".addr-suggest .addr-street{display:block;font-weight:800;font-size:14px;line-height:1.25;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}"
+        + ".addr-suggest .addr-meta{display:block;font-size:12px;line-height:1.3;font-weight:600;color:#5b6577}"
+        + ".addr-suggest .addr-empty{color:#5b6577;font-size:14px;font-weight:600}";
+      document.head.appendChild(style);
+    }
+    var active = -1;
+    var current = [];
+    function close() {
+      box.hidden = true;
+      box.innerHTML = "";
+      active = -1;
+      current = [];
+      input.setAttribute("aria-expanded", "false");
+    }
+    function paint(list, query) {
+      current = list;
+      active = list.length ? 0 : -1;
+      if (String(query || "").trim().length < 2) { close(); return; }
+      var place = resolvePlace(query, homes || []);
+      if (place && (place.kind === "city" || place.kind === "zip")) { close(); return; }
+      box.hidden = false;
+      input.setAttribute("aria-expanded", "true");
+      if (!list.length) {
+        box.innerHTML = '<div class="addr-empty" role="status">' + copy.empty + "</div>";
+        return;
+      }
+      box.innerHTML = list.map(function (home, i) {
+        var photo = home.hasPhoto ? '<img src="/images/cards/' + esc(home.id) + '-480.webp" alt="">' : '<img alt="" src="/images/_placeholder-home.svg">';
+        var pay = moneyLabel(home.monthlyPayment);
+        var down = moneyLabel(home.moveIn);
+        var money = [pay ? pay + copy.mo : "", down ? down + " " + copy.down : ""].filter(Boolean).join(" · ");
+        var pending = isPending(home) ? " · " + copy.pending : "";
+        return '<a role="option" data-i="' + i + '" href="/' + esc(home.id) + '.html"' + (i === active ? ' class="active"' : "") + ">"
+          + photo + '<span class="addr-main"><span class="addr-street">' + esc(String(home.address || "").replace(/,\s*$/, "")) + "</span>"
+          + '<span class="addr-meta">' + esc([home.city, home.state].filter(Boolean).join(", ")) + pending + (money ? " · " + money : "") + "</span></span></a>";
+      }).join("");
+    }
+    function move(step) {
+      if (box.hidden || !current.length) return;
+      active = (active + step + current.length) % current.length;
+      Array.prototype.forEach.call(box.querySelectorAll("a"), function (el, i) {
+        el.classList.toggle("active", i === active);
+      });
+    }
+    input.addEventListener("input", function () {
+      paint(matchAddresses(input.value, homes), input.value);
+    });
+    input.addEventListener("keydown", function (event) {
+      if (event.key === "ArrowDown") { event.preventDefault(); move(1); }
+      else if (event.key === "ArrowUp") { event.preventDefault(); move(-1); }
+      else if (event.key === "Escape") close();
+      else if (event.key === "Enter" && !box.hidden && current.length && active >= 0) {
+        event.preventDefault();
+        event.stopPropagation();
+        window.location.href = "/" + current[active].id + ".html";
+      }
+    }, true);
+    input.addEventListener("blur", function () { setTimeout(close, 180); });
+    document.addEventListener("click", function (event) {
+      if (!box.contains(event.target) && event.target !== input) close();
+    });
+  }
+
+  function bootSuggest() {
+    var input = document.getElementById("fQ");
+    if (!input) return;
+    var ready = (typeof HOMES !== "undefined" && HOMES && HOMES.length) ? Promise.resolve(HOMES) : fetch("/data/buyer-index.json", { credentials: "same-origin" }).then(function (response) {
+      return response.ok ? response.json() : { homes: [] };
+    }).then(function (doc) { return doc.homes || []; }).catch(function () { return []; });
+    ready.then(function (homes) { mountSuggest(input, homes); });
+  }
+
   function uniqueListing(query, homes) {
     var place = resolvePlace(query, homes || []);
     if (place && (place.kind === "city" || place.kind === "zip")) return null;
@@ -423,6 +609,8 @@
     groups: groups,
     resolvePlace: resolvePlace,
     uniqueListing: uniqueListing,
+    matchAddresses: matchAddresses,
+    mountSuggest: mountSuggest,
     haversine: haversine,
     cleanZip: cleanZip,
     loadZips: loadZips,
@@ -440,5 +628,9 @@
   if (typeof document !== "undefined" && document.documentElement && document.documentElement.hasAttribute("data-city-landing")) {
     if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", mountCity);
     else mountCity();
+  }
+  if (typeof document !== "undefined") {
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", bootSuggest);
+    else bootSuggest();
   }
 })(typeof window !== "undefined" ? window : globalThis);

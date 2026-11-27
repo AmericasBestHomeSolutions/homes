@@ -234,7 +234,8 @@ body.tl-pad{padding-bottom:70px}
 .buyer-eval{display:grid;gap:14px;margin:18px 0 8px}
 .scam-note{background:#fff;border:1px solid var(--line,#d5dbe6);border-radius:16px;padding:12px 14px}
 .scam-note summary{font-weight:800;cursor:pointer}
-.scam-note p{margin:8px 0 0;line-height:1.5}
+.scam-note p{margin:0;line-height:1.5}
+.scam-note p+p{margin-top:.75em}
 .eval-block{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px}
 .eval-block h2{font-family:'Bricolage Grotesque',sans-serif;font-size:22px;line-height:1.15;margin:0 0 8px}
 .eval-copy{margin:0 0 10px}
@@ -787,6 +788,8 @@ document.addEventListener("listing-ready", function(){
 #askSheet details{border-top:1px solid #e2e8f2;padding:10px 0}
 #askSheet summary{font-weight:700;cursor:pointer}
 #askSheet p{margin:8px 0 0;line-height:1.45}
+#askSheet #scamSheetAnswer p{margin:0;line-height:1.45}
+#askSheet #scamSheetAnswer p+p{margin-top:.75em}
 #askSheet .ask-text{display:inline-block;margin-top:12px;font-weight:700}
 @media(max-width:899px){body.page-home{padding-bottom:84px}#stickyTour{transform:none}}
 @media(min-width:900px){#stickyTour{left:auto;right:24px;bottom:24px;border:1px solid var(--line,#dfe6f0);border-radius:16px;max-width:520px;transform:translateY(110%);transition:transform .25s}#stickyTour.on{transform:none}}

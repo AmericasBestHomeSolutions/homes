@@ -97,7 +97,7 @@
 
     <div class="thanks">
       <h3>Message received.</h3>
-      <p>Thanks — we'll get back to you by email.</p>
+      <p>Thank you. A member of our team will write back to you personally.</p>
     </div>
   </section>
 
@@ -106,9 +106,10 @@
     <ul>
       <li><strong>Buyers.</strong> We'll confirm whether the home you're asking about is still available, go over the down payment and monthly amount, and set up a time for you to walk through it.</li>
       <li><strong>Sellers and agents.</strong> We'll ask for the address, condition, and what you need to net, and come back with a straight yes or no. See <a href="/how-it-works#sellers">how we buy</a> for the full process.</li>
-      <li><strong>Everyone.</strong> If we're not the right fit, we'll tell you that instead of stringing you along.</li>
+      <li><strong>Everyone.</strong> If we're not the right fit, our team will tell you honestly.</li>
     </ul>
     <p>Buyers book a tour from the home page. Full details of any messages we send are in our <a href="/messaging-terms">Messaging Terms</a> and <a href="/privacy-policy">Privacy Policy</a>.</p>
+    <p><a href="/">Browse homes and book a tour</a></p>
   </div>
 
   <footer class="foot">
@@ -140,7 +141,7 @@
   const id   = (CONTACT.formspreeId || "").trim();
   const hook = (CONTACT.makeWebhook || "").trim();
 
-  note.textContent = (id || hook) ? "We usually reply the same day."
+  note.textContent = (id || hook) ? "Thank you. A member of our team will write back to you personally."
     : "⚠ Form not connected yet — add a Formspree ID or Make webhook in homes.js.";
 
   form.addEventListener("submit", async (e) => {
@@ -160,7 +161,7 @@
     const results = await Promise.allSettled(targets);
 
     if (results.some(r => r.status === "fulfilled" && r.value.ok)) { card.classList.add("sent"); }
-    else { btn.disabled = false; btn.textContent = "Send message"; note.textContent = "Something went wrong — please email us instead."; }
+    else { btn.disabled = false; btn.textContent = "Send message"; note.textContent = "That didn't go through, and it's on our end. Please try again. If it still doesn't work, write to admin@americasbesthomesolutions.com and our team will take care of it."; }
   });
 })();
 </script>

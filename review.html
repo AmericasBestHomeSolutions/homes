@@ -352,7 +352,7 @@ const REVIEW = {
 
   // ── boot: fail closed unless keys are recorded for THIS deal ─
   (async function(){
-    if (!validHome || !dealCode) return lock("This link isn't complete", "Please use the link we sent you.");
+    if (!validHome || !dealCode) return lock("This review link is missing a piece", "Please open the link from your text again. If it still doesn't work, email admin@americasbesthomesolutions.com.");
     let ok = false;
     try { ok = await keysDelivered(); }
     catch(e){ return lock("We couldn't load this just now", "Please try again in a moment."); }

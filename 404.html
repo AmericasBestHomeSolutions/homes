@@ -70,8 +70,8 @@ footer{padding:22px 0 30px;text-align:center;font-size:13px;color:var(--ink-soft
         <path d="M16 28v22h32V28" stroke="rgba(255,255,255,.85)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
         <rect x="27" y="36" width="10" height="14" rx="1.5" stroke="#ff5c5c" stroke-width="3"/>
       </svg>
-      <h1>This home may have <em>found its owner</em> already.</h1>
-      <p class="sub">The page you're looking for isn't here — the home may be sold, or the link may be old. The good news: there are plenty more homes waiting.</p>
+      <h1>This home may already have its owner.</h1>
+      <p class="sub" id="goneCopy">It may have sold, or the link may be old. Homes are available right now, and our team would be glad to show you one.</p>
       <div class="ctas">
         <a class="btn btn-red" href="index.html">See available homes</a>
         <a class="btn btn-ghost" href="how-it-works.html">How owner financing works</a>
@@ -86,6 +86,16 @@ footer{padding:22px 0 30px;text-align:center;font-size:13px;color:var(--ink-soft
   <a href="/" style="color:inherit">Homes</a> · <a href="/how-it-works" style="color:inherit">How it works</a> · <a href="/about" style="color:inherit">About</a> · <a href="/contact" style="color:inherit">Contact</a> · <a href="/privacy-policy" style="color:inherit">Privacy Policy</a> · <a href="/messaging-terms" style="color:inherit">Messaging Terms</a><br>
   © 2026 Americas Best Home Solutions LLC
 </footer></div>
+<script src="/homes.js"></script>
+<script>
+(function () {
+  var n = (typeof HOMES !== "undefined" ? HOMES : []).filter(function (h) {
+    return !/^pending$/i.test(String((h && h.status) || "")) && h.id !== "duquoin-il-322-cole";
+  }).length;
+  var el = document.getElementById("goneCopy");
+  if (el) el.textContent = "It may have sold, or the link may be old. " + n + " homes are available right now, and our team would be glad to show you one.";
+})();
+</script>
 <script src="/site-chrome.js"></script>
 </body>
 </html>

@@ -277,7 +277,7 @@
       : "";
     var miles = home._miles == null ? "" : (es ? "a unas " + home._miles + " millas" : "about " + home._miles + " miles away");
     var bits = [moneyText(home.lockedPrice), moneyText(home.moveIn) ? moneyText(home.moveIn) + (es ? " enganche" : " down") : "", moneyText(home.monthlyPayment) ? moneyText(home.monthlyPayment) + (es ? "/mes" : "/mo") : ""].filter(Boolean);
-    var avail = pending ? (es ? "Pendiente: visitas cerradas" : "Pending: tours closed") : (es ? "Disponible ahora" : "Available now");
+    var avail = pending ? (es ? "Pendiente · sin visitas por ahora" : "Pending · not open for tours") : (es ? "Disponible ahora" : "Available now");
     return '<article class="swipe-card" data-down="' + esc(home.moveIn || "") + '" data-pay="' + esc(home.monthlyPayment || "") + '" data-beds="' + esc(beds || "") + '" data-status="' + esc(home.status || "") + '" data-photo="' + (home.hasPhoto ? "1" : "0") + '"><a href="/' + esc(home.id) + '.html">' + photo + '<p class="where">' + esc(home.address || home.id) + '</p><p class="meta">' + esc(bits.join(" · ")) + '</p><p class="meta">' + esc(bedLabel + (miles ? " · " + miles : "")) + '</p><p class="avail">' + esc(avail) + '</p></a></article>';
   }
 
@@ -368,7 +368,7 @@
         if (!result || !extra) return;
         var items = result.nearby.map(function (home) { return miniCard(home, es); }).join("");
         var title = es ? "Casas cercanas en su presupuesto" : "Nearby homes in your budget";
-        var note = es ? "Nada en ese rango en esta ciudad. Estas casas cercanas sí caben." : "Nothing in that range here. These nearby homes fit.";
+        var note = es ? "Ninguna casa coincide con esos filtros por ahora. Pruebe un rango más amplio o una ciudad cercana." : "No homes match those filters right now. Try a wider range or a nearby city.";
         var block = items ? '<section class="buyer-group" id="nearby"><h2>' + title + '</h2><p class="row-hint">' + note + '</p><div class="row-scroller">' + items + '</div></section>' : "";
         if (extra.querySelector("#nearby")) extra.querySelector("#nearby").outerHTML = block;
         else extra.insertAdjacentHTML("beforeend", block);

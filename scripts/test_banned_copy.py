@@ -24,7 +24,9 @@ BANNED = re.compile(
     r"no prepayment|tasa de inter[eé]s|interest rate|\binter[eé]s\b|property tax|\bimpuestos?\b|"
     r"\binsurance\b|seguro de casa|seguro del hogar|\bincome\b|\bingresos?\b|tax return|"
     r"declaraci[oó]n de impuestos|limited number|n[uú]mero limitado|worth more|vale más|"
-    r"walked away|\btaxes\b|\bescrow\b",
+    r"walked away|\btaxes\b|\bescrow\b|"
+    r"won't wait forever|same day|does not climb|stays put|does not move|"
+    r"\ba term\b|finance it to you|\bcredit\b|bilingual",
     re.IGNORECASE,
 )
 
@@ -32,6 +34,9 @@ SKIP = {"homes.js", "features.json", "zip-centroids.json"}
 
 
 def _visible(text: str) -> str:
+    # Per-home descriptions are generated from homes.js. That file is a
+    # generator handoff, so the baked paragraph is not site copy we edit.
+    text = re.sub(r'<p class="about-desc"[^>]*>.*?</p>', "", text, flags=re.S)
     for phrase in ALLOW:
         text = text.replace(phrase, "")
     return text

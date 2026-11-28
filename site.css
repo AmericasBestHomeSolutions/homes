@@ -245,10 +245,25 @@ body.page-search .card-down { font-weight: 800; margin-top: 6px; color: var(--in
 .page-home .wrap { max-width: 1100px; }
 .page-home #ctaCall, .page-home #ctaCall2 { background: transparent; color: var(--pine, #15315e); border: 0; box-shadow: none; }
 @media (min-width: 900px) {
-  .page-home .hero { display: grid; grid-template-columns: minmax(0,1.5fr) 320px; column-gap: 18px; align-items: start; }
-  .page-home .hero-photo { grid-column: 1; grid-row: 1 / span 8; }
-  .page-home .deal-strip, .page-home .cta-group, .page-home .cta-note, .page-home .why-compact,
-  .page-home .headline, .page-home .prop-addr, .page-home .prop-specs, .page-home .subhead { grid-column: 2; }
+  /* Photo on the left; address, payments and Book a tour on the right; everything else full width below.
+     Rows are fixed so the two columns never interleave. Row 6 (1fr) takes the photo's extra height. */
+  .page-home .hero { display: grid; grid-template-columns: minmax(0,1.5fr) 340px; grid-template-rows: auto auto auto auto auto 1fr; column-gap: 24px; align-items: start; }
+  .page-home .hero > * { grid-column: 1 / -1; }
+  .page-home .hero > .photo-row { grid-column: 1; grid-row: 1 / 7; margin: 0; }
+  .page-home .hero > .headline { grid-column: 2; grid-row: 1; margin-top: 0; }
+  .page-home .hero > .prop-specs { grid-column: 2; grid-row: 2; }
+  .page-home .hero > .deal-strip { grid-column: 2; grid-row: 3; margin-top: 4px; }
+  .page-home .hero > .cta-group { grid-column: 2; grid-row: 4; }
+  .page-home .hero > .tours-open { grid-column: 2; grid-row: 5; }
+  /* Main photo plus 3 thumbnails; every photo still opens in the photo viewer. */
+  .page-home .hero .photo-row { grid-template-columns: minmax(0,3fr) minmax(0,1fr); grid-template-rows: repeat(3, minmax(0,1fr)); height: clamp(360px, 38vw, 480px); gap: 8px; }
+  .page-home .hero .photo-row .hero-photo { grid-column: 1; grid-row: 1 / -1; min-height: 0; height: 100%; aspect-ratio: auto; }
+  .page-home .hero .photo-row .tile { grid-column: 2; aspect-ratio: auto; height: 100%; min-height: 0; }
+  .page-home .hero .photo-row .tile:nth-child(n+4) { display: none; }
+  .page-home .hero .photo-row .tile:nth-child(3):not(:last-child) { position: relative; }
+  .page-home .hero .photo-row .tile:nth-child(3):not(:last-child)::after { content: "See all photos"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(15,36,68,.55); color: #fff; font-weight: 700; font-size: 15px; pointer-events: none; }
+  .page-home .hero .photo-row:not(:has(.tile:nth-child(3))) { grid-template-columns: 1fr; grid-template-rows: 1fr; }
+  .page-home .hero .photo-row:not(:has(.tile:nth-child(3))) .tile { display: none; }
 }
 @media (max-width: 860px) {
   /* One short sticky row-stack so the first home card fits a 390x844 screen. */

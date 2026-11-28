@@ -471,6 +471,21 @@ body.page-search .z-sort,body.page-search .z-chips{margin:4px 16px 0}
 @media(max-width:860px){
   body.page-search .z-chips{display:none !important}
   .hero,.stats,#featuredSec,#why-strip,.buyer-intro{display:none !important}
+  /* Phone first screen: short headline, one search row, first home card above the fold. */
+  .hero-block{margin:2px 16px 0}
+  h1.hero-promise{margin:10px 0 8px;font-size:26px;line-height:1.1}
+  h1.hero-promise .hp-more{display:block;margin-top:6px;font:500 16px/1.4 system-ui,sans-serif;letter-spacing:0;color:#44566f}
+  body.page-search .buyer-panel{gap:8px;padding:10px 16px 4px}
+  body.page-search .buyer-panel h2{display:none}
+  body.page-search .buyer-panel .fq-lab,
+  body.page-search #buyerSearch .z-quick .qf>span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  body.page-search #buyerSearch .z-quick{grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto}
+  body.page-search #buyerSearch .z-quick .qf-more{grid-column:auto;align-self:end;padding:0 14px}
+  /* The Filters sheet has the same down payment and monthly ranges. A chip row stays visible only while it is set, so a filter from a shared link is never hidden. */
+  #buyerSearch .chip-label,#buyerSearch .range-chips,#buyerSearch #clearBuyer{display:none}
+  #buyerSearch .range-chips:has(>button:first-child[aria-pressed="false"]){display:flex}
+  #buyerSearch .chip-label:has(+ .range-chips>button:first-child[aria-pressed="false"]){display:block}
+  #buyerSearch:has(.range-chips>button:first-child[aria-pressed="false"]) #clearBuyer{display:inline-block}
 }
 </style>
 </head>
@@ -513,12 +528,12 @@ body.page-search .z-sort,body.page-search .z-chips{margin:4px 16px 0}
   </header>
 
   <div class="hero-block">
-  <h1 class="hero-promise">Own a home without a bank loan. See every home's down payment and monthly, then tour it with our team.</h1>
+  <h1 class="hero-promise">Own a home without a bank loan. <span class="hp-more">See every home's down payment and monthly, then tour it with our team.</span></h1>
   <a id="newThisWeek" class="new-chip" href="/?sort=listed-desc#listings" hidden></a>
   </div>
   <form class="buyer-panel" id="buyerSearch" action="/" method="get">
     <h2>Find a home</h2>
-    <label>Address, city, or ZIP
+    <label><span class="fq-lab">Address, city, or ZIP</span>
       <input id="fQ" name="q" type="search" inputmode="search" autocomplete="off" enterkeyhint="search" placeholder="Address, city, or ZIP" aria-label="Address, city, or ZIP">
     </label>
     <datalist id="qHints"></datalist>

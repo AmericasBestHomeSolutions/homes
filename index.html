@@ -363,7 +363,7 @@ html.preview .joe-slot[hidden]{display:block !important;border:1.5px dashed var(
 .trust-steps article{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 14px}
 body.page-search .hdr-search{display:none}
 @media(max-width:860px){
-  .hero,.stats,#featuredSec,#why-strip,.buyer-intro,body.page-search .z-quick{display:none}
+  .hero,.stats,#featuredSec,#why-strip,.buyer-intro{display:none}
 }
 </style>
 <script>(function(){if(/[?&]preview=1(?:&|$)/.test(location.search))document.documentElement.classList.add("preview");})();</script>
@@ -398,13 +398,10 @@ body.page-search #trustBand{display:none !important}
 .card-book{display:none !important}
 a.st-go,.btn-primary{background:#C62F2A}
 .see-all{display:flex;align-items:center;justify-content:center;min-height:300px;flex:0 0 min(78vw,300px);background:#E6EEFA;color:#15315e;font-weight:800;text-decoration:none;border-radius:16px;padding:16px;text-align:center}
-.hero-block{margin:8px 16px 16px}
+.hero-block{margin:8px 16px 4px}
 h1.hero-promise{margin:22px 0 14px;font-family:'Bricolage Grotesque',system-ui,sans-serif;font-weight:800;font-size:clamp(28px,4.4vw,42px);line-height:1.12;letter-spacing:-.5px;color:#0F2444;max-width:18em}
-.new-chip{display:inline-flex;align-items:center;margin:0 0 14px;padding:6px 12px;border-radius:999px;background:#E6EEFA;color:#15315e;font:800 13px system-ui,sans-serif;text-decoration:none}
+.new-chip{display:inline-flex;align-items:center;margin:0;padding:6px 12px;border-radius:999px;background:#E6EEFA;color:#15315e;font:800 13px system-ui,sans-serif;text-decoration:none}
 .new-chip[hidden]{display:none !important}
-.week-hero{margin:0 16px 12px}
-.hero-block .week-hero{margin:0}
-.week-hero img{width:100%;height:140px;object-fit:cover;object-position:50% 60%;border-radius:16px;display:block}
 body.page-search #how .step{padding:8px 10px;gap:8px}
 body.page-search #how .steps{gap:6px}
 body.page-search #how .step h3{font-size:15px;margin:0}
@@ -412,12 +409,10 @@ body.page-search #how .step p{font-size:13px;margin:0}
 body.page-search #how,body.page-search #faq,body.page-search #reviews,body.page-search #joe-intro,body.page-search #cities,body.page-search #soldSec{margin-top:8px}
 body.page-search #how{margin-top:8px}
 body.page-search .joe-intro img{width:88px !important}
-body.page-search .week-hero img{height:100px}
 body.page-search .row-scroller .card{min-height:340px}
 body.page-search #faq .ans{font-size:15px}
 #scamAnswer p{margin:0}
 #scamAnswer p+p{margin-top:.75em}
-.week-hero figcaption{font-size:13px;color:#5b6577;margin-top:6px}
 .chip-label{font:800 12px system-ui,sans-serif;letter-spacing:.04em;text-transform:uppercase;color:#5b6577;margin-top:4px}
 .range-chips{display:flex;gap:8px;overflow-x:auto;padding:2px 0 6px;-webkit-overflow-scrolling:touch}
 .range-chips button{flex:0 0 auto;min-height:44px;padding:0 14px;border-radius:999px;border:1.5px solid var(--line,#d5dbe6);background:#fff;font:700 14px system-ui,sans-serif;color:var(--pine,#15315e);cursor:pointer}
@@ -461,8 +456,20 @@ body.page-search #cards.rows{flex-direction:column;overflow:visible;gap:22px}
 .card{min-height:520px}
 body.page-search .hdr-search{display:none !important}
 .joe-intro img{width:200px;height:auto;aspect-ratio:600/717;border-radius:16px;display:block;margin-bottom:8px}
+body.page-search #buyerSearch .place-filters{position:relative}
+body.page-search #buyerSearch .z-quick{display:grid !important;grid-template-columns:1fr;gap:8px;align-items:end;padding:0;overflow:visible}
+body.page-search #buyerSearch .z-quick .qf{display:grid;gap:4px;min-width:0;font:800 12px system-ui,sans-serif;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft,#5b6577)}
+body.page-search #buyerSearch .z-quick select,body.page-search #buyerSearch .z-quick #fState{width:100%;max-width:none;min-width:0;min-height:48px;border-radius:12px;border:1.5px solid var(--line,#d5dbe6);padding:10px 12px;font:600 16px system-ui,sans-serif;background:#fff;color:var(--ink,#16213a)}
+body.page-search #buyerSearch .z-quick .qf-more{grid-column:1 / -1;min-height:48px;border-radius:12px;font:800 16px system-ui,sans-serif}
+body.page-search #buyerSearch .z-quick .qf-clear{grid-column:1 / -1;justify-self:start;min-height:44px;border:0;background:transparent;padding:0 4px}
+body.page-search #buyerSearch .filter-sheet{left:auto;right:0;top:calc(100% + 6px);width:min(460px,100%)}
+body.page-search .z-sort,body.page-search .z-chips{margin:4px 16px 0}
+@media(min-width:861px){
+  body.page-search #buyerSearch .z-quick{grid-template-columns:1fr 1fr auto}
+  body.page-search #buyerSearch .z-quick .qf-more{grid-column:auto;align-self:end;min-width:120px}
+}
 @media(max-width:860px){
-  body.page-search .z-quick,body.page-search .z-sort,body.page-search .z-chips{display:none !important}
+  body.page-search .z-chips{display:none !important}
   .hero,.stats,#featuredSec,#why-strip,.buyer-intro{display:none !important}
 }
 </style>
@@ -503,18 +510,24 @@ body.page-search .hdr-search{display:none !important}
         <span class="fcount" id="fCount" hidden>0</span>
       </button>
     </form>
+  </header>
+
+  <div class="hero-block">
+  <h1 class="hero-promise">Own a home without a bank loan. See every home's down payment and monthly, then tour it with our team.</h1>
+  <a id="newThisWeek" class="new-chip" href="/?sort=listed-desc#listings" hidden></a>
+  </div>
+  <form class="buyer-panel" id="buyerSearch" action="/" method="get">
+    <h2>Find a home</h2>
+    <label>Address, city, or ZIP
+      <input id="fQ" name="q" type="search" inputmode="search" autocomplete="off" enterkeyhint="search" placeholder="Address, city, or ZIP" aria-label="Address, city, or ZIP">
+    </label>
+    <datalist id="qHints"></datalist>
+    <div class="place-filters">
     <div class="z-quick" id="quickFilters" role="group" aria-label="Filter homes">
       <label class="qf"><span>State</span><select id="fState" aria-label="State"><option value="">All states</option></select></label>
       <label class="qf"><span>City</span><select id="fCity" aria-label="City"><option value="">All cities</option></select></label>
       <button type="button" class="qf-more" id="moreFilters" aria-controls="filterSheet">Filters</button>
       <button type="button" class="qf-clear" id="clearFilters" hidden>Clear all</button>
-    </div>
-    <div class="z-chips" id="chips"></div>
-    <div class="z-sort">
-      <p class="count" id="count"></p>
-      <label class="sort-pill">Sort
-        <select id="fSort" aria-label="Sort"><option value="">Featured</option><option value="listed-desc">Newest</option><option value="monthly-asc">Monthly ↑</option><option value="down-asc">Down payment ↑</option></select>
-      </label>
     </div>
     <div class="filter-sheet" id="filterSheet" hidden>
       <fieldset class="rng sheet-wide"><legend>Bedrooms (same number in both = exactly that many)</legend>
@@ -541,21 +554,7 @@ body.page-search .hdr-search{display:none !important}
       <button type="button" class="sheet-go" id="sheetGo">Show homes</button>
       <button type="button" class="sheet-clear" id="sheetClear">Clear all</button>
     </div>
-  </header>
-
-  <div class="hero-block">
-  <h1 class="hero-promise">Own a home without a bank loan. See every home's down payment and monthly, then tour it with our team.</h1>
-  <a id="newThisWeek" class="new-chip" href="/?sort=listed-desc#listings" hidden></a>
-  <!-- weekly-hero:start -->
-<figure class="week-hero"><img src="images/cards/oblong-il-807-illinois-480.webp" alt="A real home you can tour: 807 W Illinois St, Oblong, IL" width="480" height="360" fetchpriority="high"><figcaption>A real home you can tour: 807 W Illinois St, Oblong, IL</figcaption></figure>
-<!-- weekly-hero:end -->
-  </div>
-  <form class="buyer-panel" id="buyerSearch" action="/" method="get">
-    <h2>Find a home</h2>
-    <label>Address, city, or ZIP
-      <input id="fQ" name="q" type="search" inputmode="search" autocomplete="off" enterkeyhint="search" placeholder="Address, city, or ZIP" aria-label="Address, city, or ZIP">
-    </label>
-    <datalist id="qHints"></datalist>
+    </div>
     <input type="hidden" id="chipDownMin" value="">
     <input type="hidden" id="chipDownMax" value="">
     <input type="hidden" id="chipPayMin" value="">
@@ -592,6 +591,13 @@ body.page-search .hdr-search{display:none !important}
     <span id="filterSlimEdit">Filters</span>
   </button>
 
+    <div class="z-chips" id="chips"></div>
+    <div class="z-sort">
+      <p class="count" id="count"></p>
+      <label class="sort-pill">Sort
+        <select id="fSort" aria-label="Sort"><option value="">Featured</option><option value="listed-desc">Newest</option><option value="monthly-asc">Monthly ↑</option><option value="down-asc">Down payment ↑</option></select>
+      </label>
+    </div>
   <section class="section" id="listings">
     <div class="cards" id="cards">
 <!-- first-cards:start -->
